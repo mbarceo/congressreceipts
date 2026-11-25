@@ -37,7 +37,9 @@ for key in ("ice", "police", "corporate"):
 
 # 4-6. Member-specific tiles, from tracker.config.json "overview" (see its _note):
 #   costPromise: start of the promise "issue" whose scorecard status answers "Delivering on cost of living?"
-#   themes: [{"q", "rx", "section", "noun"}]: how often press releases mention a topic (under 10% = not a major theme)
+#   costPledge: how the tile's rule names that pledge (default "cost-of-living")
+#   themes: [{"q", "rx", "section", "noun", "note"}]: how often press releases mention a topic (under 10% = not a major theme);
+#           the optional note is added after the rule
 #   votes:  [{"q", "roll", "section", "what"}]: one recorded vote
 from config import CFG
 OV = CFG.get("overview", {})
@@ -46,13 +48,13 @@ LAB = {"delivered": "Delivered", "progress": "In progress", "stalled": "Stalled"
 pc = next((p for p in prom["promises"] if p["issue"].startswith(OV.get("costPromise", "Economic opportunity"))), None)
 if pc:
     tiles.append({"q": "Delivering on cost of living?", "v": LAB[pc["status"]], "href": "#scorecard",
-                  "rule": f"The promise scorecard's status for {PR['poss']} cost-of-living pledge. " + pc["why"], "n": len(pc["actions"])})
+                  "rule": f"The promise scorecard's status for {PR['poss']} {OV.get('costPledge') or 'cost-of-living'} pledge. " + pc["why"], "n": len(pc["actions"])})
 for t in OV.get("themes", []):
     rx = re.compile(t["rx"], re.I)
     hm = [s for s in stm if rx.search(s["title"] + " " + full.get(s["u"], ""))]
     share = len(hm) / len(stm)
     tiles.append({"q": t["q"], "v": "Not a major theme" if share < 0.10 else "A recurring theme", "href": f"stances.html#{t['section']}",
-                  "rule": f"{len(hm)} of {PR['poss']} {len(stm)} press releases ({share:.0%}) mention {t['noun']} at all; under 10% counts as not a major theme.",
+                  "rule": f"{len(hm)} of {PR['poss']} {len(stm)} press releases ({share:.0%}) mention {t['noun']} at all; under 10% counts as not a major theme." + (f" {t['note']}" if t.get("note") else ""),
                   "n": len(hm)})
 for t in OV.get("votes", []):
     ep = by[t["roll"]]

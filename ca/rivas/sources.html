@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- Built from site/sources.html by scripts/publish.py. Edit site/sources.html, not this copy. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -10,6 +11,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="site.css">
 <link rel="stylesheet" href="../../hub.css">
+<script src="site.js"></script>
 <style>
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 body{margin:0}
@@ -41,7 +43,7 @@ select.sel{font:inherit;font-size:.88rem;padding:6px 10px;border:1px solid var(-
   <header id="top">
     <span class="eyebrow">Sources and verification</span>
     <h1>How every claim is checked</h1>
-    <p class="lede">Every sourced claim on this site is listed below with its source, how it was checked, and when. Votes, bills and money are checked against official government records; quotes are matched word for word against her press releases or saved copies of the source pages.</p>
+    <p class="lede">Every sourced claim on this site is listed below with its source, how it was checked, and when. Votes, bills and money are checked against official government records; quotes are matched word for word against {{poss}} press releases or saved copies of the source pages.</p>
   </header>
 
   <section id="summary"><div class="tally" id="tiles"></div></section>
@@ -49,13 +51,13 @@ select.sel{font:inherit;font-size:.88rem;padding:6px 10px;border:1px solid var(-
   <section id="method">
     <div class="sec-head"><span class="eyebrow">Method</span><h2>Five kinds of checks</h2></div>
     <div class="method">
-      <article><h3>Votes</h3><p>Each vote is matched to the House Clerk's official roll-call record: how Rivas voted, and every tally quoted.</p></article>
-      <article><h3>Bills and committees</h3><p>Sponsorships and public laws are matched to govinfo.gov's official bill records. Committee seats are read from her own entry in the Clerk's member file.</p></article>
+      <article><h3>Votes</h3><p>Each vote is matched to {{voteSourceLong}}: how {{short}} voted, and every tally quoted.</p></article>
+      <article><h3>Bills and committees</h3><p>Sponsorships and public laws are matched to govinfo.gov's official bill records. <span data-only="house">Committee seats are read from {{poss}} own entry in the House Clerk's member file.</span><span data-only="senate">Committee seats are matched to the senate.gov committee membership lists.</span></p></article>
       <article><h3>Money and vote math</h3><p>Dollar figures, percentages and ranks are recomputed from FEC filings and roll-call files with separate code, then compared with the number shown.</p></article>
-      <article><h3>Her press releases</h3><p>Quotes and dollar figures must appear in the full text of the release cited. All 144 of her releases are saved for this.</p></article>
-      <article><h3>Other sources</h3><p>Each cited page is fetched and saved. Quotes, figures and required terms in the claim must appear on it. Two party PDFs were read by hand, and the page says what was read.</p></article>
+      <article><h3>{{Poss}} press releases</h3><p>Quotes and dollar figures must appear in the full text of the release cited. Every release on the Statements page is saved for this.</p></article>
+      <article><h3>Other sources</h3><p>Each cited page is fetched and saved. Quotes, figures and required terms in the claim must appear on it. A source that can't be read automatically (such as a scanned PDF) is read by hand, and its row says what was read.</p></article>
     </div>
-    <p class="muted" style="margin:0;font-size:.82rem"><b>Primary</b> sources are official records and the people's and groups' own sites: the House Clerk, govinfo, the FEC, the Secretary of State, her House and campaign websites, caucus rosters and the state party. <b>Secondary</b> sources are news reports and trackers. <b>Partial</b> means the source loaded but some detail could not be matched; <b>Failed</b> means a vote, tally or quote did not match, or the source did not load.</p>
+    <p class="muted" style="margin:0;font-size:.82rem"><b>Primary</b> sources are official records and the people's and groups' own sites: <span data-only="house">the House Clerk</span><span data-only="senate">senate.gov</span>, govinfo, the FEC, election officials, {{poss}} official and campaign websites, caucus rosters and party organizations. <b>Secondary</b> sources are news reports and trackers. <b>Partial</b> means the source loaded but some detail could not be matched; <b>Failed</b> means a vote, tally or quote did not match, or the source did not load.</p>
   </section>
 
   <section id="figures">
@@ -70,7 +72,7 @@ select.sel{font:inherit;font-size:.88rem;padding:6px 10px;border:1px solid var(-
   <section id="claims">
     <div class="sec-head"><span class="eyebrow">Claim by claim</span><h2>Every sourced claim</h2></div>
     <div class="controls">
-      <input class="search" id="q" type="search" placeholder="Search claims, e.g. Laken Riley, AIPAC, Jeffries" aria-label="Search claims">
+      <input class="search" id="q" type="search" placeholder="Search claims, e.g. AIPAC, Laken Riley, {{leaderLast}}" aria-label="Search claims">
       <select class="sel" id="pageSel" aria-label="Filter by page"></select>
       <select class="sel" id="statusSel" aria-label="Filter by result"><option value="">All results</option><option value="verified">Verified</option><option value="partial">Partial</option><option value="failed">Failed</option><option value="negative-finding">No finding</option></select>
       <select class="sel" id="tierSel" aria-label="Filter by source type"><option value="">All sources</option><option value="primary">Primary only</option><option value="secondary">Secondary only</option></select>
@@ -83,6 +85,7 @@ select.sel{font:inherit;font-size:.88rem;padding:6px 10px;border:1px solid var(-
   <footer>The checks are run by <code>scripts/run_checks.sh</code> in this site's project files (extract_claims.py, verify_bills.py, verify_computed.py and verify_all.py). Saved copies of every source page are kept with the project files for audit; they are not republished here. Spot an error? Every row links to its source so you can check it yourself.</footer>
 </div>
 <script>
+TRACKER.ready.then(M => {
 const esc = s => String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const PAGE = {townhalls:"Town halls", overview:"Overview", stances:"Stances", establishment:"Establishment", money:"Money"};
 const LABEL = {"verified":"Verified","negative-finding":"No finding","partial":"Partial","failed":"Failed"};
@@ -124,11 +127,11 @@ Promise.all([fetch("data/verification.json").then(r=>r.json()), fetch("data/comp
   const pages = [...new Set(ALL.map(r=>r.page))];
   $("pageSel").innerHTML = `<option value="">All pages</option>` + pages.map(p=>`<option value="${esc(p)}">${esc(PAGE[p]||p)}</option>`).join("");
   render();
-}).catch(()=>{ $("rows").innerHTML = `<tr><td colspan="5">The verification data didn't load. Reload the page to try again.</td></tr>`; });
+}).catch(()=>{ $("rows").innerHTML = `<tr><td colspan="5">No verification results yet: run <code>./scripts/run_checks.sh</code> after the data is built (see SCAFFOLD.md).</td></tr>`; });
 ["q","pageSel","tierSel","statusSel"].forEach(id=>$(id).addEventListener(id==="q"?"input":"change", render));
 $("more").addEventListener("click", more);
+});
 </script>
-<script src="site.js"></script>
 <script src="../../hub.js" data-base="../../"></script>
 </body>
 </html>

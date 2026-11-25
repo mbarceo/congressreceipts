@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* Layout: a district accountability ledger — summary band, then scorecard, stances, money, sources in one 960px column */
+/* Layout: an accountability ledger — summary band, then scorecard, stances, money, sources in one 960px column */
 :root{
   /* Palette: forest green and sage. The dark values below override these: the site is dark-only by choice. */
   --divider:#c9d0cb;

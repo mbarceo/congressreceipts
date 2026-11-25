@@ -1,23 +1,45 @@
 {
-  "_note": "Member-specific values for the build scripts (read via scripts/config.py).",
+  "_note": "Member-specific values. Scripts read it through scripts/config.py; pages read member, leader and profile through site.js. Fields starting with TODO must be filled before the step that needs them.",
   "member": {
     "name": "Luz Rivas",
-    "title": "Rep. Luz Rivas",
+    "first": "Luz",
+    "last": "Rivas",
     "short": "Rivas",
+    "honorific": "Rep.",
+    "title": "Rep. Luz Rivas",
+    "pronouns": {
+      "subj": "she",
+      "obj": "her",
+      "poss": "her"
+    },
     "bioguide": "R000620",
+    "voteId": "R000620",
     "party": "Democrat",
     "state": "CA",
+    "stateName": "California",
+    "chamber": "house",
     "district": "29",
     "districtLabel": "CA-29",
+    "seatLabel": "California's 29th District",
     "geoid": "0629",
+    "area": "San Fernando Valley",
     "congress": 119,
     "inOfficeSince": "2025-01-03",
     "site": "https://rivas.house.gov",
+    "domain": "rivas.house.gov",
     "pressPath": "/media/press-releases",
+    "pressLayout": "auto",
+    "campaignSite": "https://www.luzforcongress.com",
+    "portrait": "assets/rivas.jpg",
     "committees": [
       "Natural Resources",
       "Science, Space, and Technology"
     ]
+  },
+  "leader": {
+    "name": "Hakeem Jeffries",
+    "voteId": "J000294",
+    "title": "House Democratic leader"
   },
   "fec": {
     "candidateId": "H4CA29141",
@@ -32,6 +54,46 @@
     },
     "keyEnv": "FEC_API_KEY",
     "leadershipRx": "JEFFRIES|JEFF PAC",
+    "_leadersNote": "leaders.<chamber> lists the party leaders whose committees' money build_establishment.py totals per cycle (chamber = member.chamber). A gift counts when the giving committee's FEC ID is in 'ids' or its name matches 'rx' (name-only matches are printed for checking). 'numKey' exposes a leader's all-cycle total to establishment_items.json as {dccc} or {dscc}. leadershipRx/leadershipIds drive the Money page's single-leader box: House 'JEFFRIES|JEFF PAC'; Senate 'SCHUMER|^IMPACT$' with leadershipIds [\"C00346312\", \"C00348607\"].",
+    "leaders": {
+      "house": {
+        "title": "Money from leadership",
+        "note": "Contributions from each leader's campaign committee, leadership PAC and joint fundraising committees, from FEC filings. For comparison, the Tran tracker counts $135,759 from the same leaders to Rep. Derek Tran (CA-45), a swing-seat freshman, in 2025–26.",
+        "list": [
+          {
+            "name": "Hakeem Jeffries",
+            "role": "House Democratic Leader",
+            "rx": "JEFFRIES|JEFF PAC"
+          },
+          {
+            "name": "Nancy Pelosi",
+            "role": "Speaker Emerita",
+            "rx": "PELOSI|PAC TO THE FUTURE"
+          },
+          {
+            "name": "Katherine Clark",
+            "role": "Democratic Whip",
+            "rx": "KATHERINE CLARK|CLARK FRONTLINE|FAIR SHOT PAC|FIGHT FOR A DEMOCRATIC MAJORITY"
+          },
+          {
+            "name": "Pete Aguilar",
+            "role": "Caucus Chair",
+            "rx": "AGUILAR|CA LUV PAC|CALIFORNIA LEADERSHIP UNITED|PROGRESSIVE MAJORITY PAC"
+          },
+          {
+            "name": "Steny Hoyer",
+            "role": "Former Majority Leader",
+            "rx": "HOYER|AMERIPAC|SAVING AMERICAN DEMOCRACY"
+          },
+          {
+            "name": "DCCC",
+            "role": "Party campaign committee",
+            "rx": "^DCCC|DEMOCRATIC CONGRESSIONAL CAMPAIGN",
+            "numKey": "dccc"
+          }
+        ]
+      }
+    },
     "watch": [
       {
         "id": "detention",
@@ -81,7 +143,8 @@
         "why": "Advocacy groups tied to her district's communities.",
         "rx": "LATINO|HISPANIC|MEXICAN AMERICAN|UNIDOSUS|IMMIGRA|\\bACLU\\b|NAACP|CHCI|BOLD PAC|LA RAZA"
       }
-    ]
+    ],
+    "_cyclesNote": "cycles are FEC two-year periods named by their even end year. House: the first race and the current cycle. Senate (six-year terms): resolve_fec.py writes the election cycle that began the current term through the current cycle, e.g. Padilla (elected 2022) 2022, 2024, 2026; Schiff (elected 2024) 2024, 2026. Every build script loops over this list."
   },
   "geo": {
     "countyFips": [
@@ -95,7 +158,8 @@
   },
   "statements": {
     "localTerms": "san fernando|pacoima|sylmar|arleta|panorama city|north hills|van nuys|sun valley|north hollywood|mission hills|lake view terrace|lakeview terrace|shadow hills|sunland|tujunga|toluca lake|valley glen|valley village|lake balboa|sherman oaks",
-    "defaultLang": "en"
+    "defaultLang": "en",
+    "_note": "localTerms: |-separated place names that mark a release as local news (lowercase)."
   },
   "peers": [
     {
@@ -188,5 +252,286 @@
       "dist": "CA-26",
       "group": "Los Angeles neighbor"
     }
-  ]
+  ],
+  "_peersNote": "Members to compare with on the Overview and Money pages: {id, name, dist, group}. id is the vote id (bioguide for the House, LIS id for the Senate). Groups appear in config order; the build counts 'Party leadership', 'Centrist' and 'Progressive' in its summary.",
+  "profile": {
+    "_note": "Curated page text, rendered by the pages at runtime. Strings allow [label](url), **bold** and {{tokens}} (e.g. {{short}}, {{poss}}). Every fact typed here also goes in data/claims_static.json with its source.",
+    "lede": "A running check of what {{short}} promised San Fernando Valley voters, what she has done in office, and what she says on the issues people are fighting about. Every entry links to its source.",
+    "facts": [
+      {
+        "label": "Background",
+        "value": "Electrical engineer; founded DIY Girls; six years in the State Assembly"
+      },
+      {
+        "label": "2026 general",
+        "value": "Re-elected 57.3% to 42.7% over fellow Democrat Angélica María Dueñas, unofficial, all 115 precincts reporting"
+      },
+      {
+        "label": "2024 general",
+        "value": "Won an open seat 69.8% to 30.2% over Benito Bernal (R)"
+      }
+    ],
+    "factSources": [
+      "Committees: [House Clerk member data, Nov 3, 2026](https://clerk.house.gov/xml/lists/MemberData.xml). Background: [her campaign site](https://www.luzforcongress.com/about).",
+      "2026 general (unofficial, all 115 precincts reporting): Rivas 100,242 (57.3%), Dueñas 74,798 (42.7%). [CA Secretary of State](https://api.sos.ca.gov/returns/us-rep/district/29)",
+      "2024 general (certified): Rivas 146,312 (69.8%), Bernal 63,374 (30.2%). [CA Secretary of State, Statement of Vote](https://elections.cdn.sos.ca.gov/sov/2024-general/sov/25-us-rep-congress.pdf)"
+    ],
+    "committees": [
+      {
+        "name": "Natural Resources Committee",
+        "subs": [
+          {
+            "name": "Energy and Mineral Resources Subcommittee",
+            "role": "member"
+          },
+          {
+            "name": "Water, Wildlife and Fisheries Subcommittee",
+            "role": "member"
+          }
+        ],
+        "blurb": "Oversees federal public lands, water, and energy and mineral development. Her office says these panels \"play key roles in addressing the climate crisis\" and in preserving public lands and water. [Source](https://rivas.house.gov/media/press-releases/congresswoman-rivas-named-key-natural-resources-subcommittees-address-climate)"
+      },
+      {
+        "name": "Science, Space, and Technology Committee",
+        "subs": [
+          {
+            "name": "Research and Technology Subcommittee",
+            "role": "member"
+          },
+          {
+            "name": "Investigations and Oversight Subcommittee",
+            "role": "member"
+          }
+        ],
+        "blurb": "Oversees federal science agencies and research programs. Her office ties it to clean energy, STEM education and AI oversight. [Source](https://rivas.house.gov/media/press-releases/congresswoman-luz-rivas-selected-key-panels-house-committee-science-space-and)"
+      }
+    ],
+    "committeesNote": "Committee and subcommittee seats: [House Clerk member data](https://clerk.house.gov/xml/lists/MemberData.xml) (published Nov 3, 2026), matching [her office's list](https://rivas.house.gov/about/committees-and-caucuses). Caucuses: her office's list. Leadership seat: [her office, Oct 2025](https://rivas.house.gov/media/press-releases/congresswoman-luz-rivas-leads-freshman-democrats-demand-meeting-speaker).",
+    "caucuses": [
+      [
+        "Freshman Representative to Leadership, House Democrats (119th Congress)",
+        "Leadership seat"
+      ],
+      [
+        "Congressional STEM Education Caucus",
+        "Co-chair"
+      ],
+      [
+        "Congressional Hispanic Caucus",
+        "Member"
+      ],
+      [
+        "Congressional Progressive Caucus",
+        "Member"
+      ],
+      [
+        "Democratic Women's Caucus",
+        "Member"
+      ],
+      [
+        "Congressional Labor Caucus",
+        "Member"
+      ],
+      [
+        "Congressional Asian Pacific American Caucus",
+        "Member"
+      ],
+      [
+        "Congressional Artificial Intelligence Caucus",
+        "Member"
+      ],
+      [
+        "Congressional Caucus on Armenian Issues",
+        "Member"
+      ],
+      [
+        "Congressional Equality Caucus",
+        "Member"
+      ],
+      [
+        "Congressional Real Estate Caucus",
+        "Member"
+      ],
+      [
+        "House Sustainable Energy and Environment Coalition (SEEC)",
+        "Member"
+      ],
+      [
+        "Gun Violence Prevention Task Force",
+        "Member"
+      ],
+      [
+        "U.S.-Mexico Caucus",
+        "Member"
+      ]
+    ],
+    "promiseYear": "2024",
+    "promisesIntro": "Each 2024 campaign promise set against her bills, votes and district work. Her campaign site had no issues page, so the explicit promises come from her own words on that site and in her candidacy announcement. Two more are themes of the record she ran on, labeled as such. \"Stalled\" means she acted but the outcome didn't move her way or her bill hasn't advanced. Statuses are this tracker's judgment; each says what it rests on.",
+    "offices": [
+      {
+        "name": "Washington, D.C. office",
+        "lines": [
+          "1319 Longworth House Office Building",
+          "Washington, DC 20515"
+        ],
+        "phone": "(202) 225-6131",
+        "note": "Capitol Hill. Best for votes and legislation."
+      },
+      {
+        "name": "Arleta district office",
+        "lines": [
+          "9300 Laurel Canyon Blvd, First Floor",
+          "Arleta, CA 91331"
+        ],
+        "phone": "(818) 253-3535",
+        "note": "In the district. Best for event dates and help with federal agencies, including DACA renewals."
+      }
+    ],
+    "online": [
+      "[Email her](https://rivas.house.gov/contact/email-me) (CA-29 residents)",
+      "[Invite her to an event](https://rivas.house.gov/contact/request-an-appearance)",
+      "[Get help with a federal agency](https://rivas.house.gov/services/help-federal-agency)",
+      "[Ayuda con agencias federales](https://rivas.house.gov/services/ayuda-con-agencias-federales)"
+    ],
+    "onlineNote": "The email form checks that you live in the district.",
+    "handles": [
+      {
+        "platform": "Website",
+        "office": {
+          "text": "rivas.house.gov",
+          "url": "https://rivas.house.gov"
+        },
+        "campaign": {
+          "text": "luzforcongress.com",
+          "url": "https://www.luzforcongress.com"
+        }
+      },
+      {
+        "platform": "X",
+        "office": {
+          "text": "@RepLuzRivas",
+          "url": "https://x.com/RepLuzRivas"
+        },
+        "campaign": {
+          "text": "@Luzrivas",
+          "url": "https://x.com/Luzrivas"
+        }
+      },
+      {
+        "platform": "Instagram",
+        "office": {
+          "text": "@RepLuzRivas",
+          "url": "https://instagram.com/RepLuzRivas"
+        },
+        "campaign": {
+          "text": "@Luzmrivas",
+          "url": "https://instagram.com/Luzmrivas"
+        }
+      },
+      {
+        "platform": "Facebook",
+        "office": {
+          "text": "congresswomanluzrivas",
+          "url": "https://facebook.com/congresswomanluzrivas"
+        },
+        "campaign": null
+      }
+    ],
+    "channelsNote": "Offices and House accounts: [rivas.house.gov/contact](https://rivas.house.gov/contact). Campaign accounts: links on [luzforcongress.com](https://www.luzforcongress.com).",
+    "map": {
+      "heading": "CA-29 is mostly the northeast San Fernando Valley",
+      "intro": "Nearly everyone in the district lives in the City of Los Angeles, in communities like Pacoima, Sylmar, Panorama City and Van Nuys; the rest live in the City of San Fernando. Prop 50 redrew the lines for the 2026 election. The new map takes effect Jan 3, 2027; until then she represents the 2023 lines.",
+      "note": "Shaded areas are the parts of each community inside the district; the dark line is the district boundary. Shares are by land area, not population; slivers under 5% are left out as boundary-file mismatches. Communities: [LA County Countywide Statistical Areas](https://egis-lacounty.hub.arcgis.com/datasets/countywide-statistical-areas-csa) (LA County Enterprise GIS). District lines: U.S. Census Bureau TIGERweb (119th and 120th Congressional Districts). Population: 2020 Census, from the [California Senate Office of Demographics](https://sdmg.senate.ca.gov/committeehome/2025-congressional-districts/congressional-district-29-2025). Her campaign site lists 16 communities in the district, all of which appear here.",
+      "modes": [
+        {
+          "key": "new",
+          "label": "2027 lines (Prop 50)"
+        },
+        {
+          "key": "old",
+          "label": "Current lines (2023–26)"
+        }
+      ],
+      "population": {
+        "mode": "new",
+        "total": 760066,
+        "parts": [
+          [
+            "la",
+            "City of Los Angeles",
+            735380,
+            "18.8% of the city"
+          ],
+          [
+            "city",
+            "City of San Fernando",
+            24055,
+            "the whole city"
+          ],
+          [
+            "uninc",
+            "Unincorporated LA County",
+            627,
+            ""
+          ]
+        ],
+        "source": "2020 Census"
+      },
+      "kinds": {
+        "la": "City of Los Angeles communities"
+      },
+      "neighbors": [
+        "Burbank",
+        "Glendale",
+        "Granada Hills",
+        "Northridge",
+        "Reseda",
+        "Encino",
+        "Tujunga",
+        "Studio City",
+        "Sunland",
+        "Santa Clarita",
+        "Porter Ranch",
+        "Chatsworth"
+      ],
+      "smallLabels": [
+        "Toluca Terrace",
+        "Toluca Woods",
+        "Toluca Lake",
+        "Valley Village",
+        "Valley Glen"
+      ]
+    },
+    "money": {
+      "watchIntro": "Her constituents care most about immigration enforcement, housing and the cost of living, public safety and homelessness. These groups total the PACs and donor employers whose names fit each category.",
+      "trackaipacNote": "Track AIPAC is also listed among the 2026 endorsers of her general-election opponent, Angélica María Dueñas ([Dueñas campaign site](https://angelica4congress.com/endorsements/))."
+    },
+    "events": {
+      "intro": "Public events from her press releases and local news. Her office's [events page](https://rivas.house.gov/about/events) lists no upcoming events.",
+      "help": "Her office also posts help pages on [immigrants' rights](https://rivas.house.gov/services/know-your-rights), [DACA renewal](https://rivas.house.gov/services/daca-renewal-resources-and-faqs) and [help with a federal agency](https://rivas.house.gov/services/help-federal-agency).",
+      "ask": "Her office does not post upcoming events online. Call the district office to ask, or see every way to reach her on the [Overview](./#channels)."
+    }
+  },
+  "overview": {
+    "_note": "Member-specific Overview tiles (scripts/build_overview.py). costPromise: start of the promise 'issue' in data/promises.json whose status answers 'Delivering on cost of living?'; costPledge: how the tile names that pledge (default 'cost-of-living'). themes may add a 'note' after the rule. themes: [{q, rx, section, noun}] counts press releases mentioning a topic (e.g. Luz Rivas: Focused on homelessness?). votes: [{q, roll, section, what}] shows one recorded vote (e.g. the Epstein Files Transparency Act, House roll 2025-289).",
+    "costPromise": "Economic opportunity",
+    "costPledge": "economic-opportunity and cost-of-living",
+    "themes": [
+      {
+        "q": "Focused on homelessness?",
+        "rx": "homeless|unhoused|encampment",
+        "section": "homelessness",
+        "noun": "homelessness",
+        "note": "One funded project and one bill."
+      }
+    ],
+    "votes": [
+      {
+        "q": "Release the Epstein files?",
+        "roll": "2025-289",
+        "section": "accountability",
+        "what": "the Epstein Files Transparency Act"
+      }
+    ]
+  }
 }

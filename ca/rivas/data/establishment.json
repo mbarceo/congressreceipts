@@ -349,7 +349,7 @@
  "jeffriesDiffs": [
   {
    "id": "2025-151",
-   "date": "4-Jun-2025",
+   "date": "2025-06-04",
    "bill": "H R 2483",
    "q": "On Passage",
    "title": "SUPPORT for Patients and Communities Reauthorization Act",
@@ -359,7 +359,7 @@
   },
   {
    "id": "2025-175",
-   "date": "24-Jun-2025",
+   "date": "2025-06-24",
    "bill": "H RES 537",
    "q": "On Motion to Table",
    "title": "Impeaching Donald J. Trump, President of the United States, for high crimes and misdemeanors",
@@ -369,7 +369,7 @@
   },
   {
    "id": "2025-200",
-   "date": "17-Jul-2025",
+   "date": "2025-07-17",
    "bill": "S 1582",
    "q": "On Passage",
    "title": "GENIUS Act",
@@ -379,7 +379,7 @@
   },
   {
    "id": "2025-305",
-   "date": "21-Nov-2025",
+   "date": "2025-11-21",
    "bill": "H CON RES 58",
    "q": "On Agreeing to the Resolution",
    "title": "Denouncing the horrors of socialism",
@@ -389,7 +389,7 @@
   },
   {
    "id": "2025-320",
-   "date": "10-Dec-2025",
+   "date": "2025-12-10",
    "bill": "S 1071",
    "q": "On Passage",
    "title": "To require the Secretary of Veterans Affairs to disinter the remains of Fernando V. Cota from Fort Sam Houston National Cemetery, Texas, and for other purposes",
@@ -399,7 +399,7 @@
   },
   {
    "id": "2026-045",
-   "date": "22-Jan-2026",
+   "date": "2026-01-22",
    "bill": "H R 7148",
    "q": "On Passage",
    "title": "Consolidated Appropriations Act, 2026",
@@ -409,7 +409,7 @@
   },
   {
    "id": "2026-084",
-   "date": "5-Mar-2026",
+   "date": "2026-03-05",
    "bill": "H RES 1099",
    "q": "On Motion to Suspend the Rules and Agree",
    "title": "Reaffirming Iran remains the largest state sponsor of terrorism",
@@ -419,7 +419,7 @@
   },
   {
    "id": "2026-164",
-   "date": "13-May-2026",
+   "date": "2026-05-13",
    "bill": "H R 1346",
    "q": "On Passage",
    "title": "Nationwide Consumer and Fuel Retailer Choice Act",
@@ -429,7 +429,7 @@
   },
   {
    "id": "2026-201",
-   "date": "4-Jun-2026",
+   "date": "2026-06-04",
    "bill": "H CON RES 84",
    "q": "On Agreeing to the Resolution",
    "title": "Directing the President pursuant to section 5(c) of the War Powers Resolution to remove United States Armed Forces from Lebanon",
@@ -439,7 +439,7 @@
   },
   {
    "id": "2026-238",
-   "date": "14-Jul-2026",
+   "date": "2026-07-14",
    "bill": "H R 139",
    "q": "On Passage",
    "title": "Sunshine Protection Act",
@@ -449,7 +449,7 @@
   },
   {
    "id": "2026-309",
-   "date": "16-Sep-2026",
+   "date": "2026-09-16",
    "bill": "H R 9576",
    "q": "On Passage",
    "title": "National Fraud Enforcement Division Act",
@@ -469,13 +469,32 @@
   "jeffAgree": "98.4",
   "both": 675,
   "ndiff": 11,
+  "leaderName": "Hakeem Jeffries",
   "unity": 98.1,
   "rank": 60,
   "tied": 1,
   "dems": 215,
   "contested": 76,
+  "splitYesBills": 2,
+  "splitYesNoms": 0,
+  "splitNoBills": 9,
+  "splitNoNoms": 0,
   "jeffC": 84.5,
   "gottC": 28.1,
   "aocC": 85.1
+ },
+ "cycles": [
+  {
+   "id": "2024",
+   "label": "2023-24 (first race)"
+  },
+  {
+   "id": "2026",
+   "label": "2025-26 (re-election)"
+  }
+ ],
+ "leaderSection": {
+  "title": "Money from leadership",
+  "note": "Contributions from each leader's campaign committee, leadership PAC and joint fundraising committees, from FEC filings. For comparison, the Tran tracker counts $135,759 from the same leaders to Rep. Derek Tran (CA-45), a swing-seat freshman, in 2025–26."
  }
 }

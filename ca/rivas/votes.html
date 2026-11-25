@@ -1,13 +1,16 @@
 <!doctype html>
+<!-- Built from site/votes.html by scripts/publish.py. Edit site/votes.html, not this copy. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Every recorded House vote by Rep. Luz Rivas, from the official roll-call record, next to how most Democrats voted.">
 <title>Rivas Vote Record</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="site.css">
 <link rel="stylesheet" href="../../hub.css">
+<script src="site.js"></script>
 <style>
 html{color-scheme:light}
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -36,13 +39,13 @@ body{margin:0}
   <nav class="sitenav" aria-label="Pages"></nav>
   <header>
     <div class="ident">
-      <img class="portrait" src="assets/rivas.jpg" alt="Official House portrait of Rep. Luz Rivas" width="400" height="500">
+      <img class="portrait" alt="" width="335" height="410">
       <div class="ident-text">
-        <span class="eyebrow">House roll-call record · 119th Congress</span>
-        <h1>How Luz Rivas votes</h1>
+        <span class="eyebrow">{{chamberName}} roll-call record · {{congressOrd}} Congress</span>
+        <h1>How {{name}} votes</h1>
       </div>
     </div>
-    <p class="lede">Every recorded House vote, straight from the House Clerk's roll-call files. Each row shows how Rivas voted next to how most Democrats voted, so you can spot where she splits from her party.</p>
+    <p class="lede">Every recorded {{chamberName}} vote, straight from {{voteSourceLong}}. Each row shows how {{short}} voted next to how most Democrats voted, so you can spot party splits.</p>
     <p class="status" id="status"></p>
   </header>
 
@@ -54,7 +57,7 @@ body{margin:0}
     <div class="sec-head">
       <span class="eyebrow">Roll calls</span>
       <h2>Vote by vote</h2>
-      <p>Rows marked <span class="pill s-break">Breaks with party</span> are votes where Rivas voted Yea or Nay against the Democratic majority. Procedural votes (rules, motions to table, quorum calls) are hidden unless you include them.</p>
+      <p>Rows marked <span class="pill s-break">Breaks with party</span> are votes where {{short}} voted Yea or Nay against the Democratic majority. Procedural votes (rules, motions to table, quorum calls) are hidden unless you include them.</p>
     </div>
     <div class="controls">
       <input class="search" id="q" type="search" placeholder="Search bill name or number, e.g. Laken Riley or H R 1" aria-label="Search votes">
@@ -63,19 +66,21 @@ body{margin:0}
       <span class="count" id="count"></span>
     </div>
     <div class="vtable"><table>
-      <thead><tr><th>Date</th><th>Bill and question</th><th>Rivas</th><th>Most Dems</th><th>Result</th><th>Roll</th></tr></thead>
+      <thead><tr><th>Date</th><th>Bill and question</th><th>{{short}}</th><th>Most Dems</th><th>Result</th><th>Roll</th></tr></thead>
       <tbody id="rows"></tbody>
     </table></div>
     <button class="more" id="more" type="button" hidden>Show more</button>
   </section>
 
-  <footer>Source: House Clerk roll-call XML (<span class="mono">clerk.house.gov/evs</span>), member ID <span class="mono">T000491</span>. "Most Dems" is how the majority of House Democrats voted on that roll call. Bill links go to congress.gov.</footer>
+  <footer>Source: {{voteSource}} roll-call XML (<span class="mono">{{voteXml}}</span>), member ID <span class="mono">{{voteId}}</span>. "Most Dems" is how the majority of {{chamberName}} Democrats voted on that roll call<span data-only="senate"> (counting independents who caucus with them, such as Sanders and King)</span>. Bill links go to congress.gov.</footer>
 </div>
 
 <script>
+TRACKER.ready.then(M => {
 const esc = s => String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const BILLTYPE = {"H R":"house-bill","S":"senate-bill","H RES":"house-resolution","S RES":"senate-resolution","H J RES":"house-joint-resolution","S J RES":"senate-joint-resolution","H CON RES":"house-concurrent-resolution","S CON RES":"senate-concurrent-resolution"};
-const billUrl = b => { const m = /^([A-Z ]+?)\s+(\d+)$/.exec(b||""); return m && BILLTYPE[m[1]] ? `https://www.congress.gov/bill/119th-congress/${BILLTYPE[m[1]]}/${m[2]}` : null; };
+// House XML writes "H R 29"; Senate XML writes "H.R. 29" or "S.J.Res. 12": normalize both
+const billUrl = b => { const m = /^([A-Z ]+?)\s*(\d+)$/.exec(String(b||"").toUpperCase().replace(/\./g," ").replace(/\s+/g," ").trim()); return m && BILLTYPE[m[1].trim()] ? `https://www.congress.gov/bill/${M.congressOrd}-congress/${BILLTYPE[m[1].trim()]}/${m[2]}` : null; };
 const PROC = /previous question|motion to table|motion to commit|motion to adjourn|call of the house|call by states|election of the speaker|motion to refer|motion to reconsider|motion to recommit|motion to discharge/i;
 const isProc = v => PROC.test(v.q) || /^H RES \d+$/.test(v.bill) && /agreeing to the resolution/i.test(v.q) && !v.desc.match(/^(Denouncing|Condemning|Recognizing|Honoring|Supporting|Expressing|Impeaching|Providing for congressional)/i) && /providing for consideration/i.test(v.desc);
 const isBreak = v => (v.member==="Yea"||v.member==="Nay") && (v.dSide==="Yea"||v.dSide==="Nay") && v.member!==v.dSide;
@@ -117,9 +122,9 @@ function more(){
       <td class="num">${fmtD(v.date)}</td>
       <td><div class="t">${u?`<a href="${u}" target="_blank" rel="noopener">${esc(v.bill)}</a>`:esc(v.bill||"—")} · ${esc(name)}</div><div class="qq">${esc(v.q)}${brk?' · <span class="pill s-break">Breaks with party</span>':""}</div></td>
       <td>${vpill(v.member)}</td>
-      <td>${v.dSide?vpill(v.dSide):"—"}<div class="qq mono">${v.dY}–${v.dN}</div></td>
+      <td>${v.dSide?vpill(v.dSide):"—"}<div title="${v.cY!=null?'Democratic caucus, including independents who caucus with Democrats':'Democrats'}" class="qq mono">${v.cY!=null?v.cY+"–"+v.cN:v.dY+"–"+v.dN}</div></td>
       <td><span class="qq">${esc(v.result)}</span><div class="qq mono">${v.yea}–${v.nay}</div></td>
-      <td class="num"><a href="https://clerk.house.gov/Votes/${v.y}${v.n}" target="_blank" rel="noopener">${v.y} #${v.n}</a></td>
+      <td class="num"><a href="${esc(v.url||M.voteSourceUrl)}" target="_blank" rel="noopener">${v.y} #${v.n}</a></td>
     </tr>`;}).join(""));
   document.getElementById("count").textContent = `${filtered.length.toLocaleString()} votes`;
   document.getElementById("more").hidden = shown >= filtered.length;
@@ -127,18 +132,17 @@ function more(){
 fetch("data/votes.json").then(r=>r.json()).then(data=>{
   ALL = data;
   const years = [...new Set(ALL.map(v=>v.y))], last = ALL.reduce((a,v)=>v.date>a?v.date:a,"");
-  document.getElementById("status").textContent = years.includes(2026)
-    ? `Covers ${ALL.length} roll calls from Jan 2025 through ${fmtD(last)}.`
-    : `Covers the 2025 session: ${ALL.length} roll calls through ${fmtD(last)}. 2026 votes are being added.`;
+  const first = ALL.reduce((a,v)=>!a||v.date<a?v.date:a,"");
+  document.getElementById("status").textContent = ALL.length ? `Covers ${ALL.length} roll calls from ${fmtD(first)} through ${fmtD(last)}.` : "No roll calls loaded yet.";
   try{ const f = JSON.parse(localStorage.getItem("tv-f")||"{}"); document.getElementById("onlyBreaks").checked=!!f.ob; document.getElementById("showProc").checked=!!f.sp; }catch(e){}
   tiles(); apply();
-}).catch(()=>{ document.getElementById("status").textContent = "The vote data didn't load. Reload the page to try again."; });
+}).catch(()=>{ document.getElementById("status").textContent = M.senate ? "Votes aren't built yet: run scripts/fetch_votes_senate.py, then build_votes.py (see SCAFFOLD.md)." : "Votes aren't built yet: run scripts/fetch_votes.sh, then build_votes.py (see SCAFFOLD.md)."; });
 document.getElementById("q").addEventListener("input", apply);
 document.getElementById("onlyBreaks").addEventListener("change", apply);
 document.getElementById("showProc").addEventListener("change", apply);
 document.getElementById("more").addEventListener("click", more);
+});
 </script>
-<script src="site.js"></script>
 <script src="../../hub.js" data-base="../../"></script>
 </body>
 </html>

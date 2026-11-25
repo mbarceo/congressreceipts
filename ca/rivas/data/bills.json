@@ -1,0 +1,29 @@
+{
+ "_note": "Every bill a page makes a claim about: role this member is said to have (sponsor, cosponsor or none) and the public law claimed, if any. Checked by scripts/verify_bills.py against govinfo BILLSTATUS.",
+ "bills": [
+  {
+   "bill": "hr5157",
+   "role": "sponsor",
+   "law": null,
+   "note": "Streamlining American Manufacturing Strategy Act (stand-alone; never left committee)"
+  },
+  {
+   "bill": "s1071",
+   "role": "none",
+   "law": "119-60",
+   "note": "FY2026 NDAA, which carried H.R. 5157 as Sec. 8802"
+  },
+  {
+   "bill": "hr7374",
+   "role": "sponsor",
+   "law": null,
+   "note": "Housing Without Fear Act"
+  },
+  {
+   "bill": "hr6644",
+   "role": "none",
+   "law": "119-101",
+   "note": "21st Century ROAD to Housing Act"
+  }
+ ]
+}

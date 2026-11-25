@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- Built from site/money.html by scripts/publish.py. Edit site/money.html, not this copy. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -10,6 +11,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="site.css">
 <link rel="stylesheet" href="../../hub.css">
+<script src="site.js"></script>
 <style>
 html{color-scheme:light}
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
@@ -59,20 +61,20 @@ body{margin:0}
   <nav class="sitenav" aria-label="Pages"></nav>
   <header id="top">
     <div class="ident">
-      <img class="portrait" src="assets/rivas.jpg" alt="Official House portrait of Rep. Luz Rivas" width="400" height="500">
+      <img class="portrait" alt="" width="335" height="410">
       <div class="ident-text">
         <span class="eyebrow">Campaign money · FEC filings</span>
-        <h1>Who funds Luz Rivas</h1>
+        <h1>Who funds {{name}}</h1>
       </div>
     </div>
-    <p class="lede">Where her campaign money comes from, which industries are giving on the issues her district cares about, how much is from pro-Israel groups, and how that compares with other House members. <span id="committee"></span></p>
+    <p class="lede">Where {{poss}} campaign money comes from, which industries are giving on the issues {{poss}} {{seatNoun}} cares about, how much is from pro-Israel groups, and how that compares with other members of Congress. <span id="committee"></span></p>
   </header>
 
   <section id="sources">
     <div class="sec-head">
       <span class="eyebrow">Sources of money</span>
-      <h2>Where her contributions come from</h2>
-      <p>Every dollar her campaign reported receiving, split by who gave it. Pro-Israel groups are shown as their own slice; money from individual donors who support Israel can't be identified from FEC records, so it stays in the individual slices.</p>
+      <h2>Where {{poss}} contributions come from</h2>
+      <p>Every dollar {{poss}} campaign reported receiving, split by who gave it. Pro-Israel groups are shown as their own slice; money from individual donors who support Israel can't be identified from FEC records, so it stays in the individual slices.</p>
     </div>
     <div class="cycles" id="cycles" role="group" aria-label="Election cycle"></div>
     <div id="pieBody"></div>
@@ -90,8 +92,8 @@ body{margin:0}
   <section id="watch">
     <div class="sec-head">
       <span class="eyebrow">Industry watch</span>
-      <h2>Who is giving on her district's issues</h2>
-      <p>Her constituents care most about immigration enforcement, housing and the cost of living, public safety and homelessness. These groups total the PACs and donor employers whose names fit each category.</p>
+      <h2>Who is giving on {{poss}} {{seatNoun}}'s issues</h2>
+      <p id="watchIntro">These groups total the PACs and donor employers whose names fit each category.</p>
     </div>
     <div id="watchBody"></div>
   </section>
@@ -99,7 +101,7 @@ body{margin:0}
   <section id="employers">
     <div class="sec-head">
       <span class="eyebrow">Individual donors</span>
-      <h2>Where her donors work</h2>
+      <h2>Where {{poss}} donors work</h2>
       <p>Employers named most often by people who gave $200 or more, ranked by total given. Retired, self-employed and blank entries are left out. <span class="flag" style="color:var(--accent)">Law firm</span> marks law practices.</p>
     </div>
     <div id="empBody"></div>
@@ -109,7 +111,7 @@ body{margin:0}
     <div class="sec-head">
       <span class="eyebrow">Individual donors</span>
       <h2>Largest individual contributions</h2>
-      <p>People who gave the most, from FEC records of contributions over $200. The legal limit was $3,300 per person per election in 2023–24 and $3,500 in 2025–26, so the top of this list is donors who maxed out for the primary and general in both cycles ($10,300).</p>
+      <p>People who gave the most, from FEC records of contributions over $200. The legal limit per person per election was $3,300 in 2023–24 and $3,500 in 2025–26, and the primary and general count as separate elections, so the top of this list is donors who gave the maximum in each.</p>
     </div>
     <div id="donorBody"></div>
   </section>
@@ -118,7 +120,7 @@ body{margin:0}
     <div class="sec-head">
       <span class="eyebrow">Pro-Israel lobby</span>
       <h2>Track AIPAC figures</h2>
-      <p>Track AIPAC adds up money from AIPAC and allied groups, including J Street and DMFI. Its figure is shown beside what could be checked in her FEC filings.</p>
+      <p>Track AIPAC adds up money from AIPAC and allied groups, including J Street and DMFI. Its figure is shown beside what could be checked in {{poss}} FEC filings.</p>
     </div>
     <div id="israelBody"></div>
   </section>
@@ -126,8 +128,8 @@ body{margin:0}
   <section id="outside">
     <div class="sec-head">
       <span class="eyebrow">Outside spending</span>
-      <h2>Super PACs and groups that spent on her races</h2>
-      <p>Independent expenditures reported to the FEC: money groups spent on their own ads, mail and canvassing for or against Rivas. Spending aimed at her opponents is not included here.</p>
+      <h2>Super PACs and groups that spent on {{poss}} races</h2>
+      <p>Independent expenditures reported to the FEC: money groups spent on their own ads, mail and canvassing for or against {{short}}. Spending aimed at {{poss}} opponents is not included here.</p>
     </div>
     <div id="outsideBody"></div>
   </section>
@@ -145,7 +147,7 @@ body{margin:0}
     <div class="sec-head">
       <span class="eyebrow">Compared with other members</span>
       <h2>Pro-Israel lobby money, member by member</h2>
-      <p id="compareNote">Track AIPAC's "Israel Lobby Total" for Rivas and the members she is most often compared with.</p>
+      <p id="compareNote">Track AIPAC's "Israel Lobby Total" for {{short}} and the members {{subj}} is most often compared with.</p>
     </div>
     <div class="bars" id="bars"></div>
   </section>
@@ -155,6 +157,11 @@ body{margin:0}
 <div class="tip" id="tip" hidden></div>
 
 <script>
+TRACKER.ready.then(M => {
+const P = M.profile || {}, MON_ = P.money || {};
+if(MON_.watchIntro) document.getElementById("watchIntro").innerHTML = TRACKER.md(MON_.watchIntro, M);
+// The main party leader's committees, as build_fec.py matches them: FEC ID in fec.leadershipIds or name matching fec.leadershipRx
+const LEAD_RX = new RegExp((M.cfg.fec || {}).leadershipRx || M.leaderLast.toUpperCase(), "i"), LEAD_IDS = (M.cfg.fec || {}).leadershipIds || [];
 const esc = s => String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const usd = n => "$" + Math.round(n).toLocaleString("en-US");
 const fmtD = d => new Date(d+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
@@ -173,6 +180,8 @@ const HOWTO = `Run <code>resolve_fec.py</code>, then <code>fetch_fec.py</code> a
 
 let FEC = null, TA = null, cycle = "all", pacFilter = "all", pacShow = 40;
 const cyc = () => FEC.cycles[cycle];
+// Span of the cycles loaded, e.g. "2024–26"; six-year Senate terms show more cycles
+const SPAN = () => { const ks = Object.keys(FEC.cycles).filter(k=>/^\d{4}$/.test(k)).sort(); return ks.length ? (ks.length>1 ? `${ks[0]}–${ks[ks.length-1].slice(2)}` : ks[0]) : "FEC"; };
 const CMTE_URL = () => /^C\d{8}$/.test(FEC.ids.committeeId||"") ? `https://www.fec.gov/data/committee/${FEC.ids.committeeId}/` : "https://www.fec.gov/data/";
 const pick = (rows, amtKey) => rows.filter(r=>cycle==="all" || r.byCycle[cycle]).map(r=>({...r, amt: cycle==="all"?r[amtKey]:r.byCycle[cycle]})).sort((a,b)=>b.amt-a.amt);
 
@@ -186,13 +195,13 @@ function aipacGifts(){   // AIPAC's own PAC, from the itemized committee contrib
 }
 function renderPie(){
   const box = $("pieBody");
-  if(!FEC){ box.innerHTML = WAIT("FEC contribution data is not loaded yet", `The breakdown of every contribution, with pro-Israel PACs as their own slice, appears here once her filings are downloaded. ${HOWTO}`); return; }
+  if(!FEC){ box.innerHTML = WAIT("FEC contribution data is not loaded yet", `The breakdown of every contribution, with pro-Israel PACs as their own slice, appears here once ${esc(M.poss)} filings are downloaded. ${HOWTO}`); return; }
   const d = cyc(), total = SLICES.reduce((s,x)=>s+(d.slices[x.k]||0),0), pro = d.slices.proisrael||0;
   let a = 0, paths = "";
   SLICES.forEach(s=>{ const v = d.slices[s.k]||0; if(!v) return; const a1 = a + v/total*2*Math.PI;
     paths += `<path d="${arc(150,150,140,84,a,Math.min(a1,a+2*Math.PI-1e-4))}" fill="${s.c}" data-k="${s.k}"/>`; a = a1; });
   const aip = aipacGifts();
-  box.innerHTML = `<p class="notice" style="margin:0"><b>${usd(pro)}</b> of the <b>${usd(total)}</b> she raised (${total?(pro/total*100).toFixed(1):0}%) came from pro-Israel groups. AIPAC's own PAC gave <b>${usd(aip)}</b>.</p>
+  box.innerHTML = `<p class="notice" style="margin:0"><b>${usd(pro)}</b> of the <b>${usd(total)}</b> ${esc(M.subj)} raised (${total?(pro/total*100).toFixed(1):0}%) came from pro-Israel groups. AIPAC's own PAC gave <b>${usd(aip)}</b>.</p>
   <div class="piewrap">
     <svg id="pie" viewBox="0 0 300 300" role="img" aria-label="Contributions by source, ${esc(d.label)}">${paths}
       <text class="ctr1" x="150" y="150" text-anchor="middle">${usd(total)}</text>
@@ -220,14 +229,14 @@ function renderCycles(){
 }
 function renderPacs(){
   const box = $("pacBody");
-  if(!FEC){ box.innerHTML = WAIT("PAC donor list is not loaded yet", `Every PAC contribution from her FEC filings will be listed here, with pro-Israel groups flagged. ${HOWTO}`); return; }
+  if(!FEC){ box.innerHTML = WAIT("PAC donor list is not loaded yet", `Every PAC contribution from ${esc(M.poss)} FEC filings will be listed here, with pro-Israel groups flagged. ${HOWTO}`); return; }
   const rows = pick(FEC.pacs,"amount"), shown = rows.filter(p=>pacFilter==="all"||p.proIsrael);
   const pro = rows.filter(p=>p.proIsrael).reduce((s,p)=>s+p.amt,0);
   const raised = Object.values(cyc().slices).reduce((s,v)=>s+v,0);
-  const lead = rows.filter(p=>/JEFFRIES|JEFF PAC/i.test(p.name)).reduce((s,p)=>s+p.amt,0);
+  const lead = rows.filter(p=>LEAD_IDS.includes(p.id) || LEAD_RX.test(p.name)).reduce((s,p)=>s+p.amt,0);
   box.innerHTML = `<div class="tally"><div class="tile"><span class="n">${rows.length}</span><span class="l">PACs, campaigns and committees that gave</span></div>
     <div class="tile"><span class="n">${usd(pro)}</span><span class="l">Pro-Israel money, ${raised?(pro/raised*100).toFixed(1):0}% of everything raised</span></div>
-    <div class="tile"><span class="n">${usd(lead)}</span><span class="l">From Hakeem Jeffries' committees</span></div></div>
+    <div class="tile"><span class="n">${usd(lead)}</span><span class="l">From ${esc(TRACKER.poss(M.leaderName))} committees</span></div></div>
     <div class="filters" id="pacFilter" role="group" aria-label="Filter donors"><button class="chip-btn" type="button" data-f="all" aria-pressed="${pacFilter==="all"}">All donors</button><button class="chip-btn" type="button" data-f="pro" aria-pressed="${pacFilter==="pro"}">Pro-Israel only</button></div>
     <div class="handles"><table><thead><tr><th>Committee</th><th>Type</th><th style="text-align:right">Amount</th><th style="text-align:right">Gifts</th></tr></thead>
     <tbody>${shown.slice(0,pacShow).map(p=>`<tr><td>${esc(p.name)} ${p.proIsrael?'<span class="flag">Pro-Israel</span>':""}${p.id?` <a class="src mono" href="https://www.fec.gov/data/committee/${esc(p.id)}/" target="_blank" rel="noopener">${esc(p.id)}</a>`:""}</td><td class="muted" style="font-size:.8rem">${esc(p.kind)}</td><td class="mono" style="text-align:right;font-variant-numeric:tabular-nums">${usd(p.amt)}</td><td class="mono" style="text-align:right">${p.n}</td></tr>`).join("")}</tbody></table></div>
@@ -238,7 +247,7 @@ function renderPacs(){
 }
 function renderWatch(){
   const box = $("watchBody");
-  if(!FEC || !FEC.watch){ box.innerHTML = WAIT("Industry data is not loaded yet", `Appears once her PAC and employer data is built. ${HOWTO}`); return; }
+  if(!FEC || !FEC.watch){ box.innerHTML = WAIT("Industry data is not loaded yet", `Appears once ${esc(M.poss)} PAC and employer data is built. ${HOWTO}`); return; }
   const amt = (o,key)=> cycle==="all" ? o[key] : (o.byCycle[cycle]||0);
   const cards = FEC.watch.map(w=>{
     const pacs = w.pacs.map(p=>({...p,a:amt(p,"amount")})).filter(p=>p.a>0).sort((a,b)=>b.a-a.a);
@@ -248,7 +257,7 @@ function renderWatch(){
   });
   box.innerHTML = `<div class="wgrid">${cards.map(c=>`<div class="wcard"><h3>${esc(c.w.label)}</h3><p class="why">${esc(c.w.why)}</p>
     <div class="amt"><b>${usd(c.pt)}</b> from ${c.pacs.length} PAC${c.pacs.length===1?"":"s"} · <b>${usd(c.et)}</b> from donors at ${c.emps.length} employer${c.emps.length===1?"":"s"}</div>
-    ${c.pacs.length||c.emps.length?`<ul>${c.pacs.slice(0,4).map(p=>`<li>${esc(p.name)} <span class="mono">${usd(p.a)}</span></li>`).join("")}${c.emps.slice(0,4).map(e=>`<li>${esc(e.name)} <span class="muted">(employees)</span> <span class="mono">${usd(e.a)}</span></li>`).join("")}</ul>`:'<p class="why">No matching donors in her filings.</p>'}
+    ${c.pacs.length||c.emps.length?`<ul>${c.pacs.slice(0,4).map(p=>`<li>${esc(p.name)} <span class="mono">${usd(p.a)}</span></li>`).join("")}${c.emps.slice(0,4).map(e=>`<li>${esc(e.name)} <span class="muted">(employees)</span> <span class="mono">${usd(e.a)}</span></li>`).join("")}</ul>`:`<p class="why">No matching donors in ${esc(M.poss)} filings.</p>`}
     </div>`).join("")}</div>
     <p class="muted" style="margin:0;font-size:.8rem">Matched on committee and employer names, so a hit means the name fits the category, not a verified classification. Employer totals cover only the top donor employers the FEC lists, and employees giving personally is not the same as the company giving.</p>`;
 }
@@ -269,7 +278,7 @@ function renderDonors(){
   const rows = pick(FEC.donors,"total").slice(0,50);
   box.innerHTML = `<div class="handles"><table><thead><tr><th>Employer</th><th>Occupation</th><th style="text-align:right">Total</th></tr></thead>
     <tbody>${rows.map(d=>`<tr><td>${esc(d.employer||"Not reported")}</td><td class="muted">${esc(d.occupation||"Not reported")}</td><td class="mono" style="text-align:right;font-variant-numeric:tabular-nums">${usd(d.amt)}</td></tr>`).join("")}</tbody></table></div>
-    <p class="muted" style="margin:0;font-size:.8rem">Donor names and locations are left out on purpose: they are public in FEC records, but this site lists only the employer and occupation each donor reported. Totals combine a donor's gifts to her campaign committee within the selected cycle; some donors also gave through joint fundraising committees, which isn't shown here. A total above the cycle limit can include a gift that was later refunded or reassigned to another election.</p>`;
+    <p class="muted" style="margin:0;font-size:.8rem">Donor names and locations are left out on purpose: they are public in FEC records, but this site lists only the employer and occupation each donor reported. Totals combine a donor's gifts to ${esc(M.poss)} campaign committee within the selected cycle; some donors also gave through joint fundraising committees, which isn't shown here. A total above the cycle limit can include a gift that was later refunded or reassigned to another election.</p>`;
 }
 function renderIsrael(){
   const me = TA && TA.members.find(m=>m.group==="me");
@@ -278,14 +287,14 @@ function renderIsrael(){
   if(FEC){
     const pros = FEC.pacs.filter(p=>p.proIsrael).sort((a,b)=>b.amount-a.amount);
     const proTotal = pros.reduce((s,p)=>s+p.amount,0);
-    cells.push({f:usd(proTotal), w:`Total pro-Israel money in her FEC filings, counted for this page across ${pros.length} committee${pros.length===1?"":"s"} (rows below).`, c:"2024–26", u:CMTE_URL()});
+    cells.push({f:usd(proTotal), w:`Total pro-Israel money in ${M.poss} FEC filings, counted for this page across ${pros.length} committee${pros.length===1?"":"s"} (rows below).`, c:SPAN(), u:CMTE_URL()});
     pros.forEach(p=>cells.push({f:usd(p.amount), w:p.name+(p.kind==="Earmarked via conduit"?"" :" (direct contribution)"), c:Object.keys(p.byCycle).map(k=>FEC.cycles[k]?FEC.cycles[k].label.split(" ")[0]:k).join(" & "), u:p.id?"https://www.fec.gov/data/committee/"+p.id+"/":CMTE_URL()}));
-    if(!pros.some(p=>p.id===IDS.aipacPac)) cells.push({f:"$0", w:"AIPAC PAC. No itemized contributions to her campaign in the filings downloaded.", c:"2024–26", u:"https://www.fec.gov/data/committee/"+IDS.aipacPac+"/"});
+    if(!pros.some(p=>p.id===IDS.aipacPac)) cells.push({f:"$0", w:`AIPAC PAC. No itemized contributions to ${M.poss} campaign in the filings downloaded.`, c:SPAN(), u:"https://www.fec.gov/data/committee/"+IDS.aipacPac+"/"});
   }
   if(!cells.length){ $("israelBody").innerHTML = WAIT("Track AIPAC data is not loaded yet", "Run <code>fetch_trackaipac.py</code>."); return; }
   $("israelBody").innerHTML = `<div class="handles"><table><thead><tr><th>Amount</th><th>What it counts</th><th>Source</th></tr></thead><tbody>${cells.map(r=>`<tr><td class="mono" style="white-space:nowrap;font-variant-numeric:tabular-nums">${esc(r.f)}</td><td>${esc(r.w)}</td><td class="mono"><a class="src" href="${esc(r.u)}" target="_blank" rel="noopener">${esc(r.c)}</a></td></tr>`).join("")}</tbody></table></div>
-    ${FEC?"":`<p class="muted" style="margin:0;font-size:.8rem">Her FEC-itemized figures appear here once her filings are loaded. ${HOWTO}</p>`}
-    <p class="muted" style="margin:0;font-size:.8rem">Track AIPAC is an advocacy site; its total is a third-party figure${TA?` read on ${fmtD(TA.read)}`:""}. Compare it with the FEC-itemized rows, not instead of them. Track AIPAC is also listed among the 2026 endorsers of her general-election opponent, Angélica María Dueñas (<a href="https://angelica4congress.com/endorsements/" target="_blank" rel="noopener">Dueñas campaign site</a>).</p>`;
+    ${FEC?"":`<p class="muted" style="margin:0;font-size:.8rem">${esc(M.Poss)} FEC-itemized figures appear here once ${esc(M.poss)} filings are loaded. ${HOWTO}</p>`}
+    <p class="muted" style="margin:0;font-size:.8rem">Track AIPAC is an advocacy site; its total is a third-party figure${TA?` read on ${fmtD(TA.read)}`:""}. Compare it with the FEC-itemized rows, not instead of them.${MON_.trackaipacNote ? " " + TRACKER.md(MON_.trackaipacNote, M) : ""}</p>`;
 }
 function renderOutside(){
   const box = $("outsideBody"), ub = $("udpBody");
@@ -294,19 +303,19 @@ function renderOutside(){
   const lab = k => FEC.cycles[k] ? FEC.cycles[k].label.split(" ")[0] : k;
   const sum = (c,side)=>FEC.outside.filter(x=>x.cycle===c && x.side===side).reduce((s,x)=>s+x.total,0);
   const rows = FEC.outside.filter(x=>cycle==="all" || x.cycle===cycle);
-  box.innerHTML = `<div class="tally">${cyOrder.flatMap(c=>[[usd(sum(c,"support")),`Spent for her, ${lab(c)}`],[usd(sum(c,"oppose")),`Spent against her, ${lab(c)}`]]).map(([n,l])=>`<div class="tile"><span class="n">${n}</span><span class="l">${esc(l)}</span></div>`).join("")}</div>
-    <div class="handles"><table><thead><tr><th>Group</th><th>Cycle</th><th>For or against Rivas</th><th style="text-align:right">Amount</th></tr></thead><tbody>${rows.filter(x=>x.total>=1000).map(x=>`<tr><td>${esc(x.committee)} <a class="src mono" href="https://www.fec.gov/data/committee/${esc(x.id)}/" target="_blank" rel="noopener">${esc(x.id)}</a></td><td class="mono">${esc(lab(x.cycle))}</td><td>${x.side==="support"?'<span class="pill s-delivered">For</span>':'<span class="pill s-contradicted">Against</span>'}</td><td class="mono" style="text-align:right;font-variant-numeric:tabular-nums">${usd(x.total)}</td></tr>`).join("")}<tr><td colspan="4" class="muted" style="font-size:.8rem">Groups that spent under $1,000 are left out of this list but counted in the totals.</td></tr></tbody></table></div>
+  box.innerHTML = `<div class="tally">${cyOrder.flatMap(c=>[[usd(sum(c,"support")),`Spent for ${M.obj}, ${lab(c)}`],[usd(sum(c,"oppose")),`Spent against ${M.obj}, ${lab(c)}`]]).map(([n,l])=>`<div class="tile"><span class="n">${n}</span><span class="l">${esc(l)}</span></div>`).join("")}</div>
+    <div class="handles"><table><thead><tr><th>Group</th><th>Cycle</th><th>For or against ${esc(M.short)}</th><th style="text-align:right">Amount</th></tr></thead><tbody>${rows.filter(x=>x.total>=1000).map(x=>`<tr><td>${esc(x.committee)} <a class="src mono" href="https://www.fec.gov/data/committee/${esc(x.id)}/" target="_blank" rel="noopener">${esc(x.id)}</a></td><td class="mono">${esc(lab(x.cycle))}</td><td>${x.side==="support"?'<span class="pill s-delivered">For</span>':'<span class="pill s-contradicted">Against</span>'}</td><td class="mono" style="text-align:right;font-variant-numeric:tabular-nums">${usd(x.total)}</td></tr>`).join("")}<tr><td colspan="4" class="muted" style="font-size:.8rem">Groups that spent under $1,000 are left out of this list but counted in the totals.</td></tr></tbody></table></div>
     <p class="muted" style="margin:0;font-size:.8rem">Source: FEC independent expenditures by candidate (Schedule E), through ${fmtD(FEC.cycles.all.through)}.</p>`;
   const udp = FEC.outside.filter(x=>x.id===IDS.udp || /UNITED DEMOCRACY/i.test(x.committee||""));
   const aip = aipacGifts();
-  ub.innerHTML = `<div class="tally">${cyOrder.map(c=>`<div class="tile"><span class="n">${usd(udp.filter(x=>x.cycle===c).reduce((s,x)=>s+x.total,0))}</span><span class="l">UDP spending for or against Rivas, ${esc(lab(c))} (FEC)</span></div>`).join("")}
-    <div class="tile"><span class="n">${usd(aip)}</span><span class="l">From AIPAC's PAC to her campaign, both cycles (FEC filings)</span></div></div>
-    <p class="muted" style="margin:0;font-size:.8rem">UDP money for or against her opponents is not in this data. Check <a href="https://www.fec.gov/data/committee/${IDS.udp}/" target="_blank" rel="noopener">UDP's FEC page</a> for race-by-race spending.</p>`;
+  ub.innerHTML = `<div class="tally">${cyOrder.map(c=>`<div class="tile"><span class="n">${usd(udp.filter(x=>x.cycle===c).reduce((s,x)=>s+x.total,0))}</span><span class="l">UDP spending for or against ${esc(M.short)}, ${esc(lab(c))} (FEC)</span></div>`).join("")}
+    <div class="tile"><span class="n">${usd(aip)}</span><span class="l">From AIPAC's PAC to ${esc(M.poss)} campaign, all cycles shown (FEC filings)</span></div></div>
+    <p class="muted" style="margin:0;font-size:.8rem">UDP money for or against ${esc(M.poss)} opponents is not in this data. Check <a href="https://www.fec.gov/data/committee/${IDS.udp}/" target="_blank" rel="noopener">UDP's FEC page</a> for race-by-race spending.</p>`;
 }
 function renderBars(){
   if(!TA){ $("bars").innerHTML = WAIT("Track AIPAC comparison is not loaded yet", "Run <code>fetch_trackaipac.py</code>."); return; }
   const P = [...TA.members].sort((a,b)=>b.total-a.total), max = Math.max(...P.map(p=>p.total),1);
-  $("compareNote").textContent = `Track AIPAC's "Israel Lobby Total" for Rivas and the members she is most often compared with, read ${fmtD(TA.read)}. Members marked "rejects AIPAC" are labeled that way by Track AIPAC.`;
+  $("compareNote").textContent = `Track AIPAC's "Israel Lobby Total" for ${M.short} and the members ${M.subj} is most often compared with, read ${fmtD(TA.read)}. Members marked "rejects AIPAC" are labeled that way by Track AIPAC.`;
   $("bars").innerHTML = P.map(p=>`<div class="brow ${p.group==="me"?"me":""}"><span class="nm" title="${esc(p.name)} (${esc(p.dist)})">${esc(p.name)} <small>${esc(p.dist)}${p.rejects?" · rejects AIPAC":""}</small></span>
     <span class="track"><span class="fill" style="width:${(p.total/max*100).toFixed(1)}%"></span></span><a class="v" href="${esc(p.url)}" target="_blank" rel="noopener">${usd(p.total)}</a></div>`).join("");
 }
@@ -318,8 +327,8 @@ function renderAll(){
 renderAll();
 const get = p => fetch(p).then(r=>{ if(!r.ok) throw 0; return r.json(); }).catch(()=>null);
 Promise.all([get("data/fec/summary.json"), get("data/trackaipac.json")]).then(([f,t])=>{ FEC = f; TA = t; renderAll(); });
+});
 </script>
-<script src="site.js"></script>
 <script src="../../hub.js" data-base="../../"></script>
 </body>
 </html>

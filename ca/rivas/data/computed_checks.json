@@ -1,20 +1,20 @@
 [
  {
-  "label": "Votes where she and Jeffries both cast Yea or Nay",
+  "label": "Votes where the member and Hakeem Jeffries both cast Yea or Nay",
   "shown": 675,
   "actual": 675,
   "ok": true,
   "source": "House Clerk roll-call XML"
  },
  {
-  "label": "Votes where she split from Jeffries",
+  "label": "Votes where the member split from Hakeem Jeffries",
   "shown": 11,
   "actual": 11,
   "ok": true,
   "source": "House Clerk roll-call XML"
  },
  {
-  "label": "Agreement with Jeffries (%)",
+  "label": "Agreement with Hakeem Jeffries (%)",
   "shown": 98.4,
   "actual": 98.4,
   "ok": true,
@@ -42,6 +42,20 @@
   "source": "House Clerk roll-call XML"
  },
  {
+  "label": "Agreement with Katherine Clark on contested votes (%)",
+  "shown": 81.9,
+  "actual": 81.9,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Pete Aguilar on contested votes (%)",
+  "shown": 77.8,
+  "actual": 77.8,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
   "label": "Agreement with Josh Gottheimer on contested votes (%)",
   "shown": 28.1,
   "actual": 28.1,
@@ -49,9 +63,79 @@
   "source": "House Clerk roll-call XML"
  },
  {
+  "label": "Agreement with Ritchie Torres on contested votes (%)",
+  "shown": 65.8,
+  "actual": 65.8,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Jared Golden on contested votes (%)",
+  "shown": 18.9,
+  "actual": 18.9,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
   "label": "Agreement with Alexandria Ocasio-Cortez on contested votes (%)",
   "shown": 85.1,
   "actual": 85.1,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Ilhan Omar on contested votes (%)",
+  "shown": 83.8,
+  "actual": 83.8,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Rashida Tlaib on contested votes (%)",
+  "shown": 87.3,
+  "actual": 87.3,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Greg Casar on contested votes (%)",
+  "shown": 88.5,
+  "actual": 88.5,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Ro Khanna on contested votes (%)",
+  "shown": 81.7,
+  "actual": 81.7,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Laura Friedman on contested votes (%)",
+  "shown": 83.3,
+  "actual": 83.3,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Brad Sherman on contested votes (%)",
+  "shown": 81.7,
+  "actual": 81.7,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Jimmy Gomez on contested votes (%)",
+  "shown": 78.5,
+  "actual": 78.5,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Julia Brownley on contested votes (%)",
+  "shown": 78.9,
+  "actual": 78.9,
   "ok": true,
   "source": "House Clerk roll-call XML"
  },
@@ -91,7 +175,7 @@
   "source": "FEC Schedule A, committee C00710848"
  },
  {
-  "label": "Pro-Israel money in her filings, both cycles",
+  "label": "Pro-Israel money in the FEC filings, all cycles",
   "shown": 113406.76,
   "actual": 113406.76,
   "ok": true,
@@ -102,14 +186,14 @@
   "shown": 13000,
   "actual": 13000.0,
   "ok": true,
-  "source": "FEC Schedule A, by leader committee name"
+  "source": "FEC Schedule A, by leader committee ID or name (fec.leaders in tracker.config.json)"
  },
  {
   "label": "Party leaders' committees, 2025-26",
   "shown": 7000,
   "actual": 7000.0,
   "ok": true,
-  "source": "FEC Schedule A, by leader committee name"
+  "source": "FEC Schedule A, by leader committee ID or name (fec.leaders in tracker.config.json)"
  },
  {
   "label": "Corporate PAC money, 2023-24",
@@ -154,7 +238,7 @@
   "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
  },
  {
-  "label": "Press releases on her House site",
+  "label": "Press releases on the official site",
   "shown": 144,
   "actual": 144,
   "ok": true,
