@@ -104,8 +104,8 @@ Promise.all([fetch("data/leaders.json").then(r => r.json()), fetch("data/attenda
       <div><div class="nm">${esc(m.name)}</div><div class="sub">${esc(m.party)} · ${esc(m.seat === "Senate" ? "U.S. Senate · " + m.path.slice(0, 2).toUpperCase() : m.seat)}</div></div></div>
       <dl><dt>Votes missed</dt><dd>${a.rate != null ? a.rate.toFixed(1) + "%" : "—"}</dd>
         <dt>With ${esc(m.leader.split(" ").pop())} on split votes</dt><dd>${m.agreeSplit != null ? m.agreeSplit.toFixed(1) + "%" : "—"}</dd>
-        <dt>Establishment Democrat?</dt><dd class="${m.verdict ? "" : "pend"}">${esc(m.verdict || "In progress")}</dd>
-        <dt>Claims verified</dt><dd class="${m.checks ? "" : "pend"}">${m.checks ? `${m.checks.verified} of ${m.checks.total}` : "In progress"}</dd></dl></a>`; }).join("");
+        <dt>Establishment Democrat?</dt><dd class="${m.verdict ? "" : "pend"}">${esc(m.verdict || "Coming soon")}</dd>
+        <dt>Claims verified</dt><dd class="${m.checks ? "" : "pend"}">${m.checks ? `${m.checks.verified} of ${m.checks.total}` : "Coming soon"}</dd></dl></a>`; }).join("");
 }).catch(() => { $("mem").innerHTML = '<p class="muted">The member list didn\'t load. Reload the page to try again.</p>'; });
 </script>
 </body>

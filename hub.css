@@ -44,3 +44,6 @@
 .cr-site-foot .disclaimer{display:block;margin-top:24px}
 .cr-site-foot .disclaimer p{max-width:none;font-size:.8rem;line-height:1.55}
 .cr-site-foot .disclaimer b{color:var(--ink)}
+
+/* "Coming soon" label for sections still being researched */
+.soon{display:inline-block;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:1px 8px;margin-right:6px;vertical-align:1px}

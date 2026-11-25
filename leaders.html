@@ -97,7 +97,7 @@ fetch("data/leaders.json").then(r => r.json()).then(D => {
     const cyc = Object.keys(m.money).sort();
     const money = m.moneyTotal == null ? "—" : `${usd(m.moneyTotal)}<div class="muted" style="font-size:.72rem">${cyc.map(c => `${span(c)} ${usd(m.money[c])}`).join(" · ")}</div>`;
     return `<tr><td><div class="who"><img src="${esc(m.portrait)}" alt=""><div><a href="${esc(m.path)}establishment.html">${esc(m.name)}</a><small>${esc(m.party)} · ${esc(m.seat === "Senate" ? "Senate" : m.seat)} · leader: ${esc(m.leader)}</small></div></div></td>
-      <td class="vd${m.verdict ? "" : " none"}">${esc(m.verdict || "Not built yet")}</td>
+      <td class="vd${m.verdict ? "" : " none"}">${esc(m.verdict || "Coming soon")}</td>
       <td class="n">${pct(m.agree)}</td><td class="n">${pct(m.agreeSplit)}</td><td class="n">${m.splits ?? "—"}</td>
       <td class="n">${pct(m.unity)}<div class="muted" style="font-size:.72rem">rank ${m.rank} of ${m.dems}</div></td><td class="n">${money}</td></tr>`;
   }).join("");
