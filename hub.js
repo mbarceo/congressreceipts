@@ -27,6 +27,7 @@
       <a href="https://www.fec.gov/data/">FEC filings</a><a href="https://www.govinfo.gov/">govinfo bill records</a><a href="https://www.census.gov/">Census Bureau</a></div>
     <div><h2>Project</h2><a href="${REPO}">Source code and data</a></div>
   </div>
+  <div class="in disclaimer"><p><b>Disclaimer:</b> Congress Receipts is built entirely from publicly available information: official government records (House and Senate roll-call votes, Federal Election Commission filings, congress.gov and govinfo bill records, Census data), members' own public statements, websites and archived campaign sites, and published news reports. It uses no private, leaked or purchased data. Summaries and verdicts are this project's reading of those public records, each with its stated rule; the linked source is always the official record. Information is provided as-is for public education and may lag the latest filings.</p></div>
   <div class="in legal"><span>© ${year} Congress Receipts</span><span>No ads. No tracking cookies. Donor names and addresses are never published.</span></div>`;
   (document.querySelector(".wrap") || document.body).insertAdjacentElement("afterend", sf);
 })();

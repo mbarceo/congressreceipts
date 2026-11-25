@@ -41,3 +41,6 @@
 .cr-site-foot .about{gap:10px}
 .cr-site-foot .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 20px;margin-top:26px;padding-top:16px;border-top:1px solid var(--line);font-size:.78rem;color:var(--muted)}
 @media (max-width:760px){.cr-site-foot .in{grid-template-columns:1fr 1fr}.cr-site-foot .about{grid-column:1/-1}}
+.cr-site-foot .disclaimer{display:block;margin-top:24px}
+.cr-site-foot .disclaimer p{max-width:none;font-size:.8rem;line-height:1.55}
+.cr-site-foot .disclaimer b{color:var(--ink)}
