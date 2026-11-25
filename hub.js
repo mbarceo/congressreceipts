@@ -1,4 +1,4 @@
-// Congress Receipts: draws the shared header and footer on the hub pages, so the nav is written once.
+// Congress Receipts: draws the shared header and the site-wide footer on the hub pages and every tracker page, so the nav is written once.
 // Each hub page sets <body data-page="home|find|attendance|leaders">. Member tracker pages load this script with
 // data-base="../../" (added by scripts/publish.py): links then point back up to the hub, and the header scrolls away
 // instead of sticking, because the tracker keeps its own sticky page tabs.
@@ -15,8 +15,19 @@
   document.body.prepend(head);
   const btn = head.querySelector(".cr-menu");
   btn.addEventListener("click", () => { const o = head.classList.toggle("open"); btn.setAttribute("aria-expanded", o); btn.textContent = o ? "Close" : "Menu"; });
-  const foot = document.querySelector("footer.cr-foot");
-  if (foot && !foot.dataset.custom) foot.insertAdjacentHTML("beforeend",
-    `<span>Congress Receipts is a nonpartisan project. Every claim links to its source; votes, tallies, quotes and dollar figures are checked against the official record.</span>
-     <span><a href="index.html#how">How we check</a> · <a href="https://github.com/mbarceo/congressreceipts">Source code and data</a></span>`);
+  // Site-wide footer, on hub pages and every tracker page (page-specific source notes stay in each page's own footer)
+  const year = new Date().getFullYear(), REPO = "https://github.com/mbarceo/congressreceipts";
+  const sf = document.createElement("footer"); sf.className = "cr-site-foot";
+  sf.innerHTML = `<div class="in">
+    <div class="about"><a class="cr-brand" href="${base}index.html"><img src="${base}assets/logo.svg" alt="" width="28" height="28"><b>Congress Receipts</b></a>
+      <p>An independent, nonpartisan project researched, built and maintained by one person. Not affiliated with any party, campaign, member of Congress or advocacy group, and not an endorsement of anyone.</p>
+      <p>Every claim links to its source. Votes, tallies, quotes and dollar figures are checked against the official record.</p></div>
+    <nav aria-label="Footer"><h2>Explore</h2>${NAV.map(([, h, l]) => `<a href="${base}${h}">${l}</a>`).join("")}<a href="${base}index.html#how">How we check</a></nav>
+    <div><h2>Sources</h2><a href="https://clerk.house.gov/Votes">House Clerk roll calls</a><a href="https://www.senate.gov/legislative/votes_new.htm">Senate roll calls</a>
+      <a href="https://www.fec.gov/data/">FEC filings</a><a href="https://www.govinfo.gov/">govinfo bill records</a><a href="https://www.census.gov/">Census Bureau</a></div>
+    <div><h2>Contact</h2><a href="${REPO}/issues/new?title=Correction%3A%20">Report a correction</a><a href="${REPO}">Source code and data</a>
+      <p class="small">Corrections are reviewed and fixed at the source data, then re-checked.</p></div>
+  </div>
+  <div class="in legal"><span>© ${year} Congress Receipts</span><span>No ads. No tracking cookies. Donor names and addresses are never published.</span></div>`;
+  (document.querySelector(".wrap") || document.body).insertAdjacentElement("afterend", sf);
 })();
