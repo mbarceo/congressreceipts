@@ -25,8 +25,7 @@
     <nav aria-label="Footer"><h2>Explore</h2>${NAV.map(([, h, l]) => `<a href="${base}${h}">${l}</a>`).join("")}<a href="${base}index.html#how">How we check</a></nav>
     <div><h2>Sources</h2><a href="https://clerk.house.gov/Votes">House Clerk roll calls</a><a href="https://www.senate.gov/legislative/votes_new.htm">Senate roll calls</a>
       <a href="https://www.fec.gov/data/">FEC filings</a><a href="https://www.govinfo.gov/">govinfo bill records</a><a href="https://www.census.gov/">Census Bureau</a></div>
-    <div><h2>Contact</h2><a href="${REPO}/issues/new?title=Correction%3A%20">Report a correction</a><a href="${REPO}">Source code and data</a>
-      <p class="small">Corrections are reviewed and fixed at the source data, then re-checked.</p></div>
+    <div><h2>Project</h2><a href="${REPO}">Source code and data</a></div>
   </div>
   <div class="in legal"><span>© ${year} Congress Receipts</span><span>No ads. No tracking cookies. Donor names and addresses are never published.</span></div>`;
   (document.querySelector(".wrap") || document.body).insertAdjacentElement("afterend", sf);
