@@ -2605,5 +2605,20 @@
   "status": "verified",
   "method": "senate.gov committee membership files: the senator's own entries",
   "evidence": "Assignments in the senate.gov membership files: Joint Committee of Congress on the Library; Joint Committee on Printing; Committee on the Budget; Committee on Energy and Natural Resources; Subcommittee on Energy; Subcommittee on Public Lands, Forests, and Mining; Subcommittee on Water and Power; Committee on Environment and Public Works; Subcommittee on Clean Air, Climate, and Nuclear Innovation and Safety; Subcommittee on Fisheries, Water, and Wildlife; Subcommittee on Transportation and Infrastructure; Committee on the Judiciary; Subcommittee on Border Security and Immigration (Ranking); Subcommittee on Federal Courts, Oversight, Agency Action, and Federal Rights; Subcommittee on Privacy, Technology, and the Law; Subcommittee on the Constitution; Committee on Rules and Administration (Ranking)"
+ },
+ "overview:Offices:1": {
+  "text": "Washington office: 331 Hart Senate Office Building, (202) 224-3553. California offices: Los Angeles, 255 East Temple Street, Suite 1860, (310) 231-4494; San Francisco, 333 Bush Street, Suite 3225, (415) 981-9369; Sacramento, 501 I Street, Suite 7-800, (916) 448-2787; San Diego, 600 B Street, Suite 2240, (619) 239-3884; Fresno, 2500 Tulare Street, Suite 5290, (559) 497-5109.",
+  "page": "overview",
+  "section": "Offices",
+  "url": "https://www.govinfo.gov/content/pkg/CDIR-2026-02-20/text/CDIR-2026-02-20.txt",
+  "urls": [
+   "https://www.govinfo.gov/content/pkg/CDIR-2026-02-20/text/CDIR-2026-02-20.txt"
+  ],
+  "checked": "2026-11-25",
+  "issues": [],
+  "tier": "primary",
+  "status": "verified",
+  "method": "Fetched source page; matched quotes, figures and required terms",
+  "evidence": "https://www.govinfo.gov/content/pkg/CDIR-2026-02-20/text/CDIR-2026-02-20.txt"
  }
 }

@@ -16,7 +16,7 @@
   const btn = head.querySelector(".cr-menu");
   btn.addEventListener("click", () => { const o = head.classList.toggle("open"); btn.setAttribute("aria-expanded", o); btn.textContent = o ? "Close" : "Menu"; });
   // Site-wide footer, on hub pages and every tracker page (page-specific source notes stay in each page's own footer)
-  const year = new Date().getFullYear(), REPO = "https://github.com/mbarceo/congressreceipts";
+  const year = new Date().getFullYear();
   const sf = document.createElement("footer"); sf.className = "cr-site-foot";
   sf.innerHTML = `<div class="in">
     <div class="about"><a class="cr-brand" href="${base}index.html"><img src="${base}assets/logo.svg" alt="" width="28" height="28"><b>Congress Receipts</b></a>
@@ -25,7 +25,6 @@
     <nav aria-label="Footer"><h2>Explore</h2>${NAV.map(([, h, l]) => `<a href="${base}${h}">${l}</a>`).join("")}<a href="${base}index.html#how">How we check</a></nav>
     <div><h2>Sources</h2><a href="https://clerk.house.gov/Votes">House Clerk roll calls</a><a href="https://www.senate.gov/legislative/votes_new.htm">Senate roll calls</a>
       <a href="https://www.fec.gov/data/">FEC filings</a><a href="https://www.govinfo.gov/">govinfo bill records</a><a href="https://www.census.gov/">Census Bureau</a></div>
-    <div><h2>Project</h2><a href="${REPO}">Source code and data</a></div>
   </div>
   <div class="in disclaimer"><p><b>Disclaimer:</b> Congress Receipts is built entirely from publicly available information: official government records (House and Senate roll-call votes, Federal Election Commission filings, congress.gov and govinfo bill records, Census data), members' own public statements, websites and archived campaign sites, and published news reports. It uses no private, leaked or purchased data. Summaries and verdicts are this project's reading of those public records, each with its stated rule; the linked source is always the official record. Information is provided as-is for public education and may lag the latest filings.</p></div>
   <div class="in legal"><span>© ${year} Congress Receipts</span><span>No ads. No tracking cookies. Donor names and addresses are never published.</span></div>`;

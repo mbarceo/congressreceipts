@@ -373,11 +373,43 @@
     "caucuses": [],
     "promiseYear": "",
     "promisesIntro": "",
-    "offices": [],
+    "offices": [
+      {
+        "name": "Washington, D.C. office",
+        "lines": ["331 Hart Senate Office Building", "Washington, DC 20510"],
+        "phone": "(202) 224-3553",
+        "note": "Best for votes and legislation."
+      },
+      {
+        "name": "Los Angeles office",
+        "lines": ["255 East Temple Street, Suite 1860", "Los Angeles, CA 90012"],
+        "phone": "(310) 231-4494"
+      },
+      {
+        "name": "San Francisco office",
+        "lines": ["333 Bush Street, Suite 3225", "San Francisco, CA 94104"],
+        "phone": "(415) 981-9369"
+      },
+      {
+        "name": "Sacramento office",
+        "lines": ["501 I Street, Suite 7-800", "Sacramento, CA 95814"],
+        "phone": "(916) 448-2787"
+      },
+      {
+        "name": "San Diego office",
+        "lines": ["600 B Street, Suite 2240", "San Diego, CA 92101"],
+        "phone": "(619) 239-3884"
+      },
+      {
+        "name": "Fresno office",
+        "lines": ["2500 Tulare Street, Suite 5290", "Fresno, CA 93721"],
+        "phone": "(559) 497-5109"
+      }
+    ],
     "online": [],
     "onlineNote": "",
     "handles": [],
-    "channelsNote": "",
+    "channelsNote": "Office addresses and phone numbers: [Congressional Directory, 119th Congress, Feb 20, 2026](https://www.govinfo.gov/content/pkg/CDIR-2026-02-20/text/CDIR-2026-02-20.txt) (U.S. Government Publishing Office).",
     "money": {
       "watchIntro": "",
       "trackaipacNote": ""
