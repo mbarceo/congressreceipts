@@ -2,6 +2,10 @@
 // Each hub page sets <body data-page="home|find|attendance|leaders">. Member tracker pages load this script with
 // data-base="../../" (added by scripts/publish.py): links then point back up to the hub, and the header scrolls away
 // instead of sticking, because the tracker keeps its own sticky page tabs.
+// Data files change with every rebuild: always revalidate them with the server (a cheap 304 when unchanged), so a returning
+// visitor never mixes fresh pages with a stale cached data file.
+(() => { const f = window.fetch.bind(window);
+  window.fetch = (u, o) => f(u, typeof u === "string" && /(^|\/)data\/[^?#]*\.json/.test(u) ? Object.assign({cache: "no-cache"}, o) : o); })();
 (() => {
   const base = (document.currentScript && document.currentScript.dataset.base) || "";
   const NAV = [["home", "index.html", "Home"], ["find", "find.html", "Find your rep"],

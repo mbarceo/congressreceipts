@@ -99,7 +99,7 @@ def norm(name):
     n = re.sub(r"[.,&]", " ", (name or "").upper())
     n = re.sub(r"\b(LLP|LLC|INC|PC|APC|PLLC|CORP|CORPORATION|CO|LTD|THE|LAW FIRM|LAW GROUP)\b", " ", n)
     return re.sub(r"\s+", " ", n).strip()
-LAW = re.compile(r"\bLAW\b|\bLLP\b|ATTORNEY|\bLEGAL\b|\bPLLC\b|\bAPC\b", re.I)
+LAW = re.compile(r"\bLAW\b|\bLLP\b|ATTORNEY|\bLEGAL\b|\bPLLC\b|\bAPC\b" + ("|" + FEC["lawFirmsRx"] if FEC.get("lawFirmsRx") else ""), re.I)   # fec.lawFirmsRx: firms without "law" in the name
 emp = {}
 for cycle in tuple(map(str, FEC["cycles"])):
     p = os.path.join(RAW, f"by_employer_{cycle}.json")
@@ -111,7 +111,8 @@ for cycle in tuple(map(str, FEC["cycles"])):
         x = emp.setdefault(k, {"name": e.title(), "total": 0.0, "count": 0, "byCycle": {}, "law": bool(LAW.search(e))})
         x["total"] += r["total"]; x["count"] += r["count"]
         x["byCycle"][cycle] = round(x["byCycle"].get(cycle, 0) + r["total"], 2)
-out["employers"] = sorted(({**v, "total": round(v["total"], 2)} for v in emp.values()), key=lambda v: -v["total"])[:60]
+emp_all = sorted(({**v, "total": round(v["total"], 2)} for v in emp.values()), key=lambda v: -v["total"])
+out["employers"] = emp_all[:60]
 
 donors = {}
 for cycle in tuple(map(str, FEC["cycles"])):
@@ -155,11 +156,13 @@ for w in FEC["watch"]:
     rx, nx = re.compile(w["rx"], re.I), re.compile(w["not"], re.I) if w.get("not") else None
     hit = lambda s: bool(rx.search(s)) and not (nx and nx.search(s))
     pm = [p for p in out["pacs"] if hit(p["name"])]
-    em = [e for e in out.get("employers", []) if hit(e["name"])]
+    # fec.watchFull: match every donor employer and list every matching PAC and employer (default: top 60 employers, 12 listed)
+    em = [e for e in (emp_all if FEC.get("watchFull") else out.get("employers", [])) if hit(e["name"])]
+    cap = None if FEC.get("watchFull") else 12
     watch.append({"id": w["id"], "label": w["label"], "why": w["why"],
                   "pacTotal": round(sum(p["amount"] for p in pm), 2), "empTotal": round(sum(e["total"] for e in em), 2),
-                  "pacs": [{"name": p["name"], "id": p["id"], "amount": p["amount"], "byCycle": p["byCycle"]} for p in pm[:12]],
-                  "employers": [{"name": e["name"], "total": e["total"], "byCycle": e["byCycle"]} for e in em[:12]]})
+                  "pacs": [{"name": p["name"], "id": p["id"], "amount": p["amount"], "byCycle": p["byCycle"]} for p in pm[:cap]],
+                  "employers": [{"name": e["name"], "total": e["total"], "byCycle": e["byCycle"]} for e in em[:cap]]})
 out["watch"] = watch
 out["ids"] = {"member": M["name"], "candidateId": FEC["candidateId"], "committeeId": FEC["committeeId"]}
 json.dump(out, open(SUMMARY, "w"), indent=1)

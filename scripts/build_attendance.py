@@ -56,6 +56,8 @@ def critical_rolls(path):
         st = json.load(open(sp))
         for iss in st.get("issues", []):
             for r in iss.get("rolls", []): add(r.get("url") or (vote_url_from_id(r["id"]) if r.get("id") else ""), iss["name"])
+            for it in iss.get("items", []):   # curated record items (dated actions, some of them roll calls)
+                for u in [it.get("u")] + list(it.get("more") or []) + list(it.get("also") or []): add(u if isinstance(u, str) else (u or {}).get("u"), iss["name"])
         for it in st.get("israel", {}).get("items", []): add(it.get("u"), "Israel and Palestine")
     cp = os.path.join(path, "data/cards.json")
     if os.path.exists(cp):

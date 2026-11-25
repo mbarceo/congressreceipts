@@ -147,6 +147,8 @@
         "rx": "GOOGLE|ALPHABET|MICROSOFT|AMAZON|\\bMETA\\b|FACEBOOK|APPLE INC|OPENAI|ANTHROPIC|NVIDIA|AUTODESK|\\bINTEL\\b|QUALCOMM|ORACLE|SALESFORCE|Y COMBINATOR|LITTLE TECH|COUPANG|CISCO|ADOBE"
       }
     ],
+    "watchFull": true,
+    "lawFirmsRx": "& [A-Z]+$|SHERNOFF|PANISH|SINGLETON|GREENE BROILLET|TAYLOR (&|AND )?RING|ARIAS|DORDICK|KAZEROUNI|ABIR COHEN|TREYZON|CORRALES|OMOFOMA|VARTAZARIAN|SEBER BULGER|BD&J",
     "_cyclesNote": "cycles are FEC two-year periods named by their even end year. House: the first race and the current cycle. Senate (six-year terms): resolve_fec.py writes the election cycle that began the current term through the current cycle, e.g. Padilla (elected 2022) 2022, 2024, 2026; Schiff (elected 2024) 2024, 2026. Every build script loops over this list."
   },
   "geo": {

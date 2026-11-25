@@ -1211,7 +1211,7 @@
     {
      "id": "2025-007",
      "date": "2025-01-09",
-     "topic": "Israel and Palestine",
+     "topic": "Israel & Iran",
      "bill": "H R 23",
      "desc": "Illegitimate Court Counteraction Act",
      "q": "On Passage",
@@ -1430,6 +1430,19 @@
      "url": "https://clerk.house.gov/Votes/2025275"
     },
     {
+     "id": "2025-285",
+     "date": "2025-11-12",
+     "topic": "Shutdowns",
+     "bill": "H R 5371",
+     "desc": "Continuing Appropriations and Extensions Act, 2026",
+     "q": "On Motion to Concur in the Senate Amendment",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2025285"
+    },
+    {
      "id": "2025-289",
      "date": "2025-11-18",
      "topic": "Epstein files",
@@ -1638,6 +1651,19 @@
      "url": "https://clerk.house.gov/Votes/2026171"
     },
     {
+     "id": "2026-199",
+     "date": "2026-06-03",
+     "topic": "Israel & Iran",
+     "bill": "H CON RES 86",
+     "desc": "Directing the President, pursuant to section 5(c) of the War Powers Resolution, to remove United States Armed Forces from hostilities with Iran",
+     "q": "On Agreeing to the Resolution",
+     "vote": "Yea",
+     "dSide": "Yea",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2026199"
+    },
+    {
      "id": "2026-233",
      "date": "2026-06-30",
      "topic": "Epstein files",
@@ -1653,7 +1679,7 @@
     {
      "id": "2026-243",
      "date": "2026-07-15",
-     "topic": "Israel and Palestine",
+     "topic": "Israel & Iran",
      "bill": "H R 8595",
      "desc": "",
      "q": "On Agreeing to the Amendment",
@@ -1717,16 +1743,16 @@
      "type": "Roundtable",
      "title": "Roundtable with veterans and local leaders, joined by Hakeem Jeffries and Lou Correa",
      "city": "CA-45",
-     "role": "",
+     "role": "hosted",
      "approx": "Announced Mar 12, 2026",
      "source": "https://tran.house.gov/media/press-releases/icymi-leader-hakeem-jeffries-joins-us-representative-derek-tran-roundtable"
     },
     {
      "date": "2025-11-03",
-     "type": "In person",
+     "type": "Town hall",
      "title": "Town hall on the government shutdown",
      "city": "Westminster",
-     "role": "",
+     "role": "hosted",
      "approx": "",
      "source": "https://tran.house.gov/media/press-releases/representative-derek-tran-holds-town-hall-meeting"
     },
@@ -1741,19 +1767,19 @@
     },
     {
      "date": "2025-04-21",
-     "type": "In person",
+     "type": "Town hall",
      "title": "Town halls in Cerritos and Buena Park",
      "city": "Cerritos and Buena Park",
-     "role": "",
+     "role": "hosted",
      "approx": "Week of Apr 21, 2025",
      "source": "https://tran.house.gov/media/press-releases/rep-derek-tran-addresses-constituent-concerns-about-social-security-economy"
     },
     {
      "date": "2025-04-10",
-     "type": "Televised",
+     "type": "Televised town hall",
      "title": "CNN town hall with battleground members, moderated by Jake Tapper and Kaitlan Collins",
      "city": "Washington, D.C.",
-     "role": "",
+     "role": "participated",
      "approx": "",
      "source": "https://tran.house.gov/media/press-releases/rep-derek-tran-presents-forward-looking-vision-opportunities-bipartisan"
     }
@@ -2652,6 +2678,32 @@
      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00081.htm"
     },
     {
+     "id": "2025-097",
+     "date": "2025-02-27",
+     "topic": "Money and business",
+     "bill": "H.J.Res. 35",
+     "desc": "H. J. Res. 35: A joint resolution providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to \"Wast",
+     "q": "On the Joint Resolution",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Joint Resolution Passed",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00097.htm"
+    },
+    {
+     "id": "2025-106",
+     "date": "2025-03-05",
+     "topic": "Money and business",
+     "bill": "S.J.Res. 28",
+     "desc": "S.J. Res. 28: A joint resolution disapproving the rule submitted by the Bureau of Consumer Financial Protection relating to \"Defining Larger Participants of a Market for General-Use Digital Consumer P",
+     "q": "On the Joint Resolution",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Joint Resolution Passed",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00106.htm"
+    },
+    {
      "id": "2025-127",
      "date": "2025-03-14",
      "topic": "Public safety",
@@ -2663,6 +2715,32 @@
      "status": "broke",
      "result": "Bill Passed",
      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00127.htm"
+    },
+    {
+     "id": "2025-151",
+     "date": "2025-03-26",
+     "topic": "Money and business",
+     "bill": "H.J.Res. 25",
+     "desc": "H.J.Res. 25: A joint resolution providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Internal Revenue Service relating to \"Gross Proceed",
+     "q": "On the Joint Resolution",
+     "vote": "Yea",
+     "dSide": "Nay",
+     "status": "broke",
+     "result": "Joint Resolution Passed",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00151.htm"
+    },
+    {
+     "id": "2025-153",
+     "date": "2025-03-27",
+     "topic": "Money and business",
+     "bill": "S.J.Res. 18",
+     "desc": "S.J.Res. 18: A joint resolution disapproving the rule submitted by the Bureau of Consumer Financial Protection relating to \"Overdraft Lending: Very Large Financial Institutions\".",
+     "q": "On the Joint Resolution",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Joint Resolution Passed",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00153.htm"
     },
     {
      "id": "2025-165",
@@ -2689,6 +2767,32 @@
      "status": "with",
      "result": "Joint Resolution Defeated",
      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00225.htm"
+    },
+    {
+     "id": "2025-237",
+     "date": "2025-05-07",
+     "topic": "Money and business",
+     "bill": "S.J.Res. 13",
+     "desc": "S.J. Res. 13: A joint resolution providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Office of the Comptroller of the Currency of the D",
+     "q": "On the Joint Resolution",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Joint Resolution Passed",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00237.htm"
+    },
+    {
+     "id": "2025-318",
+     "date": "2025-06-17",
+     "topic": "Money and business",
+     "bill": "S. 1582",
+     "desc": "S. 1582, As Amended: A bill to provide for the regulation of payment stablecoins, and for other purposes.",
+     "q": "On Passage of the Bill",
+     "vote": "Yea",
+     "dSide": "Nay",
+     "status": "broke",
+     "result": "Bill Passed",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00318.htm"
     },
     {
      "id": "2025-321",
@@ -3001,6 +3105,19 @@
      "status": "with",
      "result": "Amendment Rejected",
      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00160.htm"
+    },
+    {
+     "id": "2026-234",
+     "date": "2026-09-15",
+     "topic": "Money and business",
+     "bill": "H.R. 3633",
+     "desc": "Motion to Invoke Cloture: Motion to Proceed to H.R. 3633: To provide for a system of regulation of the offer and sale of digital commodities by the Securities and Exchange Commission and the Commodity",
+     "q": "On Cloture on the Motion to Proceed",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Cloture on the Motion to Proceed Rejected",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00234.htm"
     },
     {
      "id": "2026-252",

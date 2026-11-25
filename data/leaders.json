@@ -45,14 +45,14 @@
    "rank": 189,
    "dems": 215,
    "money": {
-    "2024": 56500,
+    "2024": 61500,
     "2026": 135759
    },
-   "moneyTotal": 192259,
+   "moneyTotal": 197259,
    "verdict": "Mostly yes",
    "checks": {
-    "verified": 185,
-    "total": 185,
+    "verified": 183,
+    "total": 183,
     "checked": "2026-11-25"
    }
   },
@@ -80,8 +80,8 @@
    "moneyTotal": 85000,
    "verdict": "Mostly yes",
    "checks": {
-    "verified": 173,
-    "total": 173,
+    "verified": 174,
+    "total": 174,
     "checked": "2026-11-25"
    }
   },
@@ -94,15 +94,18 @@
    "portrait": "ca/schiff/assets/portrait.jpg",
    "leader": "Chuck Schumer",
    "agree": 93.1,
-   "agreeN": null,
+   "agreeN": 904,
    "agreeSplit": 63.5,
    "splitVotes": 180,
-   "splits": null,
+   "splits": 62,
    "unity": 93.4,
    "rank": 32,
    "dems": 47,
-   "money": {},
-   "moneyTotal": null,
+   "money": {
+    "2024": 25000,
+    "2026": 0
+   },
+   "moneyTotal": 25000,
    "verdict": null,
    "checks": null
   }

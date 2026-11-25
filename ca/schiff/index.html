@@ -9,9 +9,9 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="site.css">
-<link rel="stylesheet" href="../../hub.css">
-<script src="site.js"></script>
+<link rel="stylesheet" href="site.css?v=f760020c">
+<link rel="stylesheet" href="../../hub.css?v=e7599542">
+<script src="site.js?v=9d18080b"></script>
 <style>
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 body{margin:0}
@@ -250,8 +250,9 @@ if(M.house){
       const items = GEO.places.filter(p => cls(p)===k && inMode(p)).sort((a,b) => size(b) - size(a) || a.n.localeCompare(b.n));
       if(!items.length) return "";
       return `<div class="citycol"><h3><i class="sw ${k}"></i>${esc(LAB(k))}</h3><ul>${items.map(p => {
-        const isNew = mode===MODES[0].key && other && !(p[other] && p[other].share >= MIN);
-        const st = stat(p,mode), sh = st ? (st.pct >= 100 ? "whole city" : `${st.pct}% of city`) : p[mode].share >= 0.95 ? "whole area" : `${Math.round(p[mode].share*100)}% of area`;
+        const st = stat(p,mode);
+        const isNew = st && "old" in st ? !st.old : mode===MODES[0].key && other && !(p[other] && p[other].share >= MIN);   // placeStats "old": in the previous district
+        const sh = st ? (st.pct >= 100 ? "whole city" : `${st.pct}% of city`) : p[mode].share >= 0.95 ? "whole area" : `${Math.round(p[mode].share*100)}% of area`;
         return `<li><span>${esc(p.n)}${p.cdp && BYC?' <span class="muted">(unincorporated)</span>':""}${isNew?' <span class="pill s-progress">New</span>':""}</span><span class="mono muted">${sh}</span></li>`; }).join("")}</ul></div>`;
     }).join("");
     const leaving = mode===MODES[0].key && other ? GEO.places.filter(p => p[other] && p[other].share >= MIN && !(p[mode] && p[mode].share >= MIN)).map(p => p.n) : [];
@@ -332,7 +333,8 @@ function renderAlignment(a, ta, votes, fec){
     <td class="mono" style="text-align:right">${t ? usd(t.total) : "—"}${t?.rejects?'<br><span class="muted" style="font-size:.72rem">rejects AIPAC</span>':""}</td></tr>`; }).join("");
   const avg = g => { const xs = a.peers.filter(p => p.group===g).map(p => p.contested); return xs.length ? Math.round(xs.reduce((s,x)=>s+x,0)/xs.length) : null; };
   const sides = [["Progressive","progressives"],["Party leadership","party leaders"],["Centrist","centrists"]].filter(([g]) => avg(g) != null).map(([g,l]) => `${l} about ${avg(g)}%`);
-  const lead = (ta?.members || []).filter(m => m.group === "Party leadership" || m.group === "Centrist").map(m => m.total);
+  // Leaders' and centrists' Track AIPAC totals, by the peer groups in tracker.config.json
+  const lead = a.peers.filter(p => p.group === "Party leadership" || p.group === "Centrist").map(p => TA[p.name]?.total).filter(x => x != null);
   const lo = Math.min(...lead), hi = Math.max(...lead);
   const cmp = me && lead.length ? (me.total < lo ? "below" : me.total > hi ? "above" : "within the range of") : "";
   $("alignTake").textContent =
@@ -395,6 +397,6 @@ fetch("data/verification.json").then(r=>r.json()).then(v=>{
   document.getElementById("verifyNote").textContent = `Last checked ${new Date(last+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"})}: ${ok} of ${all.length} sourced claims verified against their sources.`;
 }).catch(()=>{});
 </script>
-<script src="../../hub.js" data-base="../../"></script>
+<script src="../../hub.js?v=7d1210bf" data-base="../../"></script>
 </body>
 </html>
