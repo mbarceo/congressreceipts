@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Which California members of Congress show up: missed votes, town halls, and how each voted on the critical bills, from the official roll-call records.">
+<title>Who’s Showing Up · Congress Receipts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="hub.css">
+<style>
+[hidden]{display:none!important}
+/* Status marks for the critical-vote timeline (fixed status steps; shape + legend carry the meaning, never color alone) */
+:root{--st-broke:#ec835a;--st-missed:#fab219;--st-with:#6f8079}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.card .who{display:flex;gap:12px;align-items:center}
+.card img{width:56px;height:70px;object-fit:cover;border-radius:6px;flex:none;background:var(--line)}
+.card .nm{font-family:var(--f-display);font-weight:700;font-size:1.05rem;line-height:1.2}
+.card .big{font-family:var(--f-display);font-weight:800;font-size:2rem;line-height:1}
+.card .sub{font-size:.82rem;color:var(--muted)}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin:0;font-size:.84rem}
+.card dt{color:var(--muted)} .card dd{margin:0;font-variant-numeric:tabular-nums}
+.card a.go{font-size:.85rem;margin-top:auto}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:.84rem;color:var(--muted);align-items:center}
+.legend svg{vertical-align:-3px;margin-right:6px}
+.tl{display:flex;flex-direction:column;gap:6px}
+.tl-row{display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:center}
+.tl-row .lab{font-size:.86rem;line-height:1.25}
+.tl-row .lab b{font-family:var(--f-display)} .tl-row .lab span{display:block;color:var(--muted);font-size:.76rem}
+.tl svg{display:block;width:100%;overflow:visible}
+.tl .axis text{fill:var(--muted);font-family:var(--f-mono);font-size:10px}
+.tl .axis line{stroke:var(--line)}
+.tl .base{stroke:var(--line);stroke-width:1}
+.tl .m{cursor:pointer}
+.tl .m:focus{outline:none} .tl .m:focus-visible .hit{stroke:var(--accent);stroke-width:2;fill:transparent}
+@media (max-width:620px){.tl-row{grid-template-columns:1fr;gap:2px}}
+.tip{position:fixed;z-index:20;max-width:320px;background:var(--surface);border:1px solid var(--divider);border-radius:8px;padding:10px 12px;font-size:.8rem;
+  box-shadow:0 6px 24px rgba(0,0,0,.45);pointer-events:none}
+.tip b{font-family:var(--f-display)} .tip .k{color:var(--muted)}
+table.t{width:100%;border-collapse:collapse;font-size:.84rem}
+table.t th{text-align:left;font-weight:600;color:var(--muted);font-size:.76rem;border-bottom:1px solid var(--line);padding:6px 8px}
+table.t td{border-bottom:1px solid var(--line);padding:7px 8px;vertical-align:top}
+.tbl{overflow-x:auto}
+details{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+details+details{margin-top:8px}
+summary{cursor:pointer;font-weight:600}
+.st{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:4px 12px;font:inherit;font-size:.8rem;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body data-page="attendance">
+<div class="wrap hub">
+  <header>
+    <span class="eyebrow">Attendance · 119th Congress</span>
+    <h1>Who’s showing up</h1>
+    <p class="lede">Missed votes, town halls, and how each member voted on the critical bills their tracker follows. Every number is counted from the official roll-call records (House Clerk and senate.gov) and links to its source.</p>
+    <p class="muted" id="asof" style="margin:0;font-size:.85rem"></p>
+  </header>
+
+  <section>
+    <div class="sec-head"><span class="eyebrow">Attendance</span><h2>Votes missed</h2>
+      <p class="muted">"Missed" means recorded as Not Voting. Members miss votes for illness, family, travel or other official duties; this page reports the record, not the reason. The comparison counts members who served at least 80% of the Congress, and ties count as not fewer.</p></div>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="eyebrow">Critical votes</span><h2>When they broke with their party or didn't vote</h2>
+      <p class="muted">Each dot is a vote the member's tracker treats as critical (the votes behind its Stances page and evidence cards), so the House and Senate rows cover different bills. "Broke" means voting Yea or Nay against how most Democrats voted (in the Senate, the Democratic caucus, counting independents who caucus with them). Hover or tap a dot for the bill.</p></div>
+    <div class="filters" id="filters" role="group" aria-label="Issue filter"></div>
+    <div class="legend" id="legend"></div>
+    <div class="tl" id="tl"></div>
+    <details><summary>Show these votes as a table</summary><div class="tbl"><table class="t"><thead><tr><th>Date</th><th>Member</th><th>Issue</th><th>Bill and question</th><th>Vote</th><th>Most Democrats</th></tr></thead><tbody id="critRows"></tbody></table></div></details>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="eyebrow">Every missed vote</span><h2>The votes each member missed</h2></div>
+    <div id="missed"></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="eyebrow">Showing up at home</span><h2>Town halls and public events</h2>
+      <p class="muted">From each member's own press releases and local news, as collected on their tracker. Televised national town halls are listed but not counted as town halls with constituents.</p></div>
+    <div id="events"></div>
+  </section>
+
+  <footer class="cr-foot muted" style="font-size:.82rem"><span>Sources: House Clerk roll-call XML (clerk.house.gov/evs) and senate.gov roll-call XML, counted by <span class="mono">scripts/build_attendance.py</span>, which refuses to build if a tracker's vote list and the official files disagree. Events come from each member's tracker, with their source links. Nonpartisan summary, not an endorsement.</span></footer>
+</div>
+<div class="tip" id="tip" hidden></div>
+<script src="hub.js"></script>
+
+<script>
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const $ = id => document.getElementById(id);
+const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const fmt = d => { const t = new Date(d + (d.length === 7 ? "-15" : "") + "T12:00:00"); return `${MON[t.getMonth()]} ${d.length === 7 ? "" : t.getDate() + ", "}${t.getFullYear()}`; };
+const ext = ' target="_blank" rel="noopener"';
+// Marks: shape + color per status, so meaning never rests on color alone
+const MARK = {
+  broke:   {label: "Broke with most Democrats", svg: (x, y) => `<path d="M${x} ${y-6}L${x+6} ${y}L${x} ${y+6}L${x-6} ${y}Z" fill="var(--st-broke)" stroke="var(--surface)" stroke-width="2"/>`},
+  missed:  {label: "Didn't vote (Not Voting)", svg: (x, y) => `<circle cx="${x}" cy="${y}" r="5" fill="var(--surface)" stroke="var(--st-missed)" stroke-width="2.5"/>`},
+  present: {label: "Voted Present", svg: (x, y) => `<circle cx="${x}" cy="${y}" r="5" fill="var(--surface)" stroke="var(--st-missed)" stroke-width="2" stroke-dasharray="2 2"/>`},
+  with:    {label: "Voted with most Democrats", svg: (x, y) => `<circle cx="${x}" cy="${y}" r="3" fill="var(--st-with)"/>`},
+};
+const icon = k => `<svg width="14" height="14" viewBox="-7 -7 14 14" aria-hidden="true">${MARK[k].svg(0, 0)}</svg>`;
+
+fetch("data/attendance.json").then(r => r.json()).then(D => {
+  const M = D.members;
+  $("asof").textContent = "Votes through " + fmt(Object.values(D.chambers).map(c => c.through).sort().pop()) + ".";
+
+  // ---- Attendance cards ----
+  $("cards").innerHTML = M.map(m => { const c = D.chambers[m.chamber];
+    const ev = m.eventsResearched ? `${m.townHalls} town hall${m.townHalls === 1 ? "" : "s"} · ${m.events.length} public event${m.events.length === 1 ? "" : "s"} listed` : "Not researched yet";
+    return `<article class="card"><div class="who"><img src="${esc(m.portrait)}" alt="Official portrait of ${esc(m.name)}" loading="lazy">
+      <div><div class="nm">${esc(m.name)}</div><div class="sub">${esc(m.party)} · ${esc(m.seat === "Senate" ? "U.S. Senate" : m.seat)}</div></div></div>
+      <div><span class="big">${m.rate.toFixed(1)}%</span> <span class="sub">of votes missed</span></div>
+      <dl><dt>Missed</dt><dd>${m.missed} of ${m.rolls} roll calls</dd>
+        <dt>Chamber</dt><dd>median ${c.median}%; ${m.fewer} of ${c.members} ${m.chamber === "senate" ? "senators" : "representatives"} missed fewer</dd>
+        <dt>Critical</dt><dd>${m.critical.filter(x => x.status === "missed").length} missed, ${m.critical.filter(x => x.status === "broke").length} broke with party, of ${m.critical.length}</dd>
+        <dt>At home</dt><dd>${ev}</dd></dl>
+      <a class="go" href="${esc(m.url)}">Open ${esc(m.name.split(" ").pop())}'s tracker →</a></article>`; }).join("");
+
+  // ---- Critical-vote timeline ----
+  const topics = [...new Set(M.flatMap(m => m.critical.map(x => x.topic)))].sort();
+  let topic = "";
+  $("filters").innerHTML = [["", "All issues"], ...topics.map(t => [t, t])].map(([v, l]) =>
+    `<button class="chip" data-t="${esc(v)}" aria-pressed="${v === "" ? "true" : "false"}">${esc(l)}</button>`).join("");
+  $("filters").addEventListener("click", e => { const b = e.target.closest(".chip"); if (!b) return;
+    topic = b.dataset.t; $("filters").querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed", x === b)); draw(); });
+  $("legend").innerHTML = ["broke", "missed", "present", "with"].map(k => `<span>${icon(k)}${MARK[k].label}</span>`).join("");
+
+  const all = M.flatMap(m => m.critical.map(x => x.date));
+  const t0 = new Date("2025-01-01T00:00:00").getTime(), t1 = new Date(all.sort().pop() + "T23:59:59").getTime();
+  const tip = $("tip");
+  const showTip = (el, ev) => { const m = M[+el.dataset.m], x = m.critical[+el.dataset.i];
+    tip.innerHTML = `<b>${esc(m.name)}</b> · ${fmt(x.date)}<br>${esc(x.bill)} ${esc(x.desc)}<br><span class="k">${esc(x.q)}</span><br>
+      ${icon(x.status)} Voted <b>${esc(x.vote)}</b>; most Democrats: ${esc(x.dSide || "split evenly")}<br><span class="k">${esc(x.topic)} · ${esc(x.result)}</span>`;
+    tip.hidden = false; const r = el.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
+    tip.style.left = Math.max(8, Math.min(innerWidth - w - 8, r.left + r.width / 2 - w / 2)) + "px";
+    tip.style.top = (r.top - h - 10 < 8 ? r.bottom + 10 : r.top - h - 10) + "px"; };
+  function draw() {
+    const W = Math.max(240, $("tl").clientWidth - (innerWidth > 620 ? 162 : 0)), H = 34, pad = 8;
+    const X = d => pad + (new Date(d + "T12:00:00").getTime() - t0) / (t1 - t0) * (W - 2 * pad);
+    const ticks = []; for (let y = 2025; y <= new Date(t1).getFullYear(); y++) for (const mo of [0, 3, 6, 9]) { const t = new Date(y, mo, 1).getTime(); if (t >= t0 && t <= t1) ticks.push([t, mo ? MON[mo] : String(y)]); }
+    const axis = `<div class="tl-row"><span></span><svg viewBox="0 0 ${W} 18" height="18" class="axis" aria-hidden="true">${ticks.map(([t, l]) => { const x = pad + (t - t0) / (t1 - t0) * (W - 2 * pad);
+      return `<line x1="${x}" x2="${x}" y1="12" y2="18"/><text x="${x}" y="9" text-anchor="middle">${l}</text>`; }).join("")}</svg></div>`;
+    $("tl").innerHTML = axis + M.map((m, mi) => {
+      const rows = m.critical.map((x, i) => [x, i]).filter(([x]) => !topic || x.topic === topic);
+      // draw "with" first so breaks and misses sit on top
+      const order = rows.sort((a, b) => (a[0].status === "with") - (b[0].status === "with")).reverse();
+      const marks = order.map(([x, i]) => { const cx = X(x.date).toFixed(1), cy = H / 2;
+        return `<g class="m" tabindex="0" role="img" data-m="${mi}" data-i="${i}" aria-label="${esc(`${fmt(x.date)}: ${MARK[x.status].label}. ${x.bill} ${x.desc}`)}">
+          <circle class="hit" cx="${cx}" cy="${cy}" r="11" fill="transparent"/>${MARK[x.status].svg(+cx, cy)}</g>`; }).join("");
+      const n = k => rows.filter(([x]) => x.status === k).length;
+      return `<div class="tl-row"><div class="lab"><b>${esc(m.name)}</b><span>${n("broke")} broke · ${n("missed")} missed · ${rows.length} critical</span></div>
+        <svg viewBox="0 0 ${W} ${H}" height="${H}"><line class="base" x1="${pad}" x2="${W - pad}" y1="${H / 2}" y2="${H / 2}"/>${marks}</svg></div>`; }).join("");
+    $("tl").querySelectorAll(".m").forEach(g => { g.addEventListener("mouseenter", e => showTip(g, e)); g.addEventListener("focus", e => showTip(g, e));
+      g.addEventListener("mouseleave", () => tip.hidden = true); g.addEventListener("blur", () => tip.hidden = true);
+      g.addEventListener("click", e => { e.stopPropagation(); showTip(g, e); }); });
+    $("critRows").innerHTML = M.flatMap(m => m.critical.filter(x => (!topic || x.topic === topic) && x.status !== "with").map(x => [m, x]))
+      .sort((a, b) => b[1].date.localeCompare(a[1].date))
+      .map(([m, x]) => `<tr><td class="mono" style="white-space:nowrap">${esc(x.date)}</td><td>${esc(m.name)}</td><td>${esc(x.topic)}</td>
+        <td><a href="${esc(x.url)}"${ext}>${esc(x.bill)}</a> ${esc(x.desc)}<div class="muted" style="font-size:.76rem">${esc(x.q)}</div></td>
+        <td><span class="st">${icon(x.status)}${esc(x.vote)}</span></td><td>${esc(x.dSide || "Split")}</td></tr>`).join("")
+      || `<tr><td colspan="6" class="muted">No breaks or missed votes on this issue.</td></tr>`;
+  }
+  draw(); addEventListener("resize", () => { tip.hidden = true; draw(); });
+  document.addEventListener("click", () => tip.hidden = true); addEventListener("scroll", () => tip.hidden = true, {passive: true});
+
+  // ---- Every missed vote ----
+  $("missed").innerHTML = M.map(m => `<details><summary>${esc(m.name)}: ${m.missed} missed vote${m.missed === 1 ? "" : "s"}</summary>
+    <div class="tbl"><table class="t"><thead><tr><th>Date</th><th>Bill and question</th></tr></thead><tbody>${m.missedVotes.map(v =>
+      `<tr><td class="mono" style="white-space:nowrap">${esc(v.date)}</td><td><a href="${esc(v.url)}"${ext}>${esc(v.bill || "Roll call")}</a> ${esc(v.desc)}<div class="muted" style="font-size:.76rem">${esc(v.q)}</div></td></tr>`).join("")}</tbody></table></div></details>`).join("");
+
+  // ---- Events ----
+  $("events").innerHTML = M.map(m => !m.eventsResearched
+    ? `<details><summary>${esc(m.name)}: not researched yet</summary><p class="muted">Town halls and public events for ${esc(m.name)} haven't been collected yet.</p></details>`
+    : `<details><summary>${esc(m.name)}: ${m.townHalls} town hall${m.townHalls === 1 ? "" : "s"}, ${m.events.length} event${m.events.length === 1 ? "" : "s"} listed</summary>
+      <div class="tbl"><table class="t"><thead><tr><th>Date</th><th>Event</th><th>Where</th></tr></thead><tbody>${m.events.map(e =>
+        `<tr><td class="mono" style="white-space:nowrap">${esc(e.approx || e.date)}</td><td><span class="muted">${esc(e.type)}${e.role ? " · " + esc(e.role) : ""}</span><br><a href="${esc(e.source)}"${ext}>${esc(e.title)}</a></td><td>${esc(e.city)}</td></tr>`).join("")
+        || `<tr><td colspan="3" class="muted">None found since January 2025.</td></tr>`}</tbody></table></div></details>`).join("");
+}).catch(() => { $("cards").innerHTML = '<p class="muted">The attendance data didn\'t load. Reload the page to try again.</p>'; });
+</script>
+</body>
+</html>

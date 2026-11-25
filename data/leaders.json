@@ -1,0 +1,110 @@
+{
+ "members": [
+  {
+   "name": "Luz Rivas",
+   "party": "D",
+   "seat": "CA-29",
+   "chamber": "house",
+   "path": "ca/rivas/",
+   "portrait": "ca/rivas/assets/rivas.jpg",
+   "leader": "Hakeem Jeffries",
+   "agree": 98.4,
+   "agreeN": 675,
+   "agreeSplit": 84.5,
+   "splitVotes": 76,
+   "splits": 11,
+   "unity": 98.1,
+   "rank": 60,
+   "dems": 215,
+   "money": {
+    "2024": 13000,
+    "2026": 7000
+   },
+   "moneyTotal": 20000,
+   "verdict": "Mostly yes",
+   "checks": {
+    "verified": 212,
+    "total": 212,
+    "checked": "2026-11-25"
+   }
+  },
+  {
+   "name": "Derek Tran",
+   "party": "D",
+   "seat": "CA-45",
+   "chamber": "house",
+   "path": "ca/tran/",
+   "portrait": "ca/tran/assets/tran.jpg",
+   "leader": "Hakeem Jeffries",
+   "agree": 93.5,
+   "agreeN": 679,
+   "agreeSplit": 45.8,
+   "splitVotes": 76,
+   "splits": 44,
+   "unity": 94.0,
+   "rank": 189,
+   "dems": 215,
+   "money": {
+    "2024": 56500,
+    "2026": 135759
+   },
+   "moneyTotal": 192259,
+   "verdict": "Mostly yes",
+   "checks": {
+    "verified": 185,
+    "total": 185,
+    "checked": "2026-11-25"
+   }
+  },
+  {
+   "name": "Alex Padilla",
+   "party": "D",
+   "seat": "Senate",
+   "chamber": "senate",
+   "path": "ca/padilla/",
+   "portrait": "ca/padilla/assets/portrait.jpg",
+   "leader": "Chuck Schumer",
+   "agree": 94.1,
+   "agreeN": 900,
+   "agreeSplit": 67.1,
+   "splitVotes": 180,
+   "splits": 53,
+   "unity": 95.7,
+   "rank": 16,
+   "dems": 47,
+   "money": {
+    "2022": 85000,
+    "2024": 0,
+    "2026": 0
+   },
+   "moneyTotal": 85000,
+   "verdict": "Mostly yes",
+   "checks": {
+    "verified": 173,
+    "total": 173,
+    "checked": "2026-11-25"
+   }
+  },
+  {
+   "name": "Adam Schiff",
+   "party": "D",
+   "seat": "Senate",
+   "chamber": "senate",
+   "path": "ca/schiff/",
+   "portrait": "ca/schiff/assets/portrait.jpg",
+   "leader": "Chuck Schumer",
+   "agree": 93.1,
+   "agreeN": null,
+   "agreeSplit": 63.5,
+   "splitVotes": 180,
+   "splits": null,
+   "unity": 93.4,
+   "rank": 32,
+   "dems": 47,
+   "money": {},
+   "moneyTotal": null,
+   "verdict": null,
+   "checks": null
+  }
+ ]
+}

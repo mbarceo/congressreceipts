@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Which members of Congress side with their party's leaders, and which break with them: votes, splits and money from leadership, from official records.">
+<title>Leaders Tracker · Congress Receipts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="hub.css">
+<style>
+.strip{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px 10px;display:flex;flex-direction:column;gap:6px}
+.strip h3{margin:0}
+.strip svg{width:100%;display:block;overflow:visible}
+.strip .ax text{fill:var(--muted);font-family:var(--f-mono);font-size:10px}
+.strip .ax line{stroke:var(--line)}
+.strip .lab{fill:var(--ink);font-family:var(--f-body);font-size:12px;font-weight:600}
+.strip .val{fill:var(--muted);font-family:var(--f-mono);font-size:11px}
+table.t{width:100%;border-collapse:collapse;font-size:.86rem}
+table.t th{text-align:left;font-weight:600;color:var(--muted);font-size:.76rem;border-bottom:1px solid var(--line);padding:6px 8px;vertical-align:bottom}
+table.t td{border-bottom:1px solid var(--line);padding:9px 8px;vertical-align:middle}
+table.t td.n{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+table.t th.n{text-align:right}
+.tbl{overflow-x:auto}
+.who{display:flex;align-items:center;gap:10px;min-width:170px}
+.who img{width:34px;height:42px;object-fit:cover;border-radius:4px;flex:none}
+.who a{font-weight:600}
+.who small{display:block;color:var(--muted);font-size:.75rem}
+.vd{font-weight:600;white-space:nowrap}
+.vd.none{color:var(--muted);font-weight:400}
+.defs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.defs div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:.86rem}
+.defs b{display:block;font-family:var(--f-display);margin-bottom:4px}
+</style>
+</head>
+<body data-page="leaders">
+<div class="wrap hub">
+  <header>
+    <span class="eyebrow">Leaders tracker · 119th Congress</span>
+    <h1>Who backs the party leaders?</h1>
+    <p class="lede">How often each member votes with their party's leader in their chamber (Hakeem Jeffries in the House, Chuck Schumer in the Senate), how often they break away, and how much money the leaders' committees gave them. The public's view and the establishment's don't always line up; this shows where each member sits.</p>
+  </header>
+
+  <section>
+    <div class="sec-head"><span class="eyebrow">The telling votes</span><h2>Agreement with the leader when Democrats split</h2>
+      <p>On most votes nearly every Democrat votes the same way, so overall agreement is high for everyone. The votes where at least one Democrat in ten voted the other way show who sides with leadership when it counts.</p></div>
+    <div id="strips" style="display:flex;flex-direction:column;gap:12px"></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="eyebrow">Every member</span><h2>The full comparison</h2></div>
+    <div class="tbl"><table class="t"><thead><tr><th>Member</th><th>Establishment verdict</th><th class="n">Same vote as leader</th><th class="n">When Democrats split</th><th class="n">Times split from leader</th><th class="n">Votes with most Democrats</th><th class="n">Money from leaders</th></tr></thead><tbody id="rows"></tbody></table></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="eyebrow">What the columns mean</span><h2>How it's measured</h2></div>
+    <div class="defs">
+      <div><b>Same vote as leader</b>Share of roll calls where both the member and the leader voted Yea or Nay and voted the same way. From the official House Clerk and senate.gov records.</div>
+      <div><b>When Democrats split</b>The same, counting only votes where at least 10% of Democrats voted against the rest of the party.</div>
+      <div><b>Votes with most Democrats</b>Party unity: how often the member voted with the Democratic majority, and their rank among Democrats in their chamber (1 = most often). Ties share a rank.</div>
+      <div><b>Money from leaders</b>Contributions from party leaders' campaign committees, leadership PACs and party campaign committees (DCCC, DSCC), from FEC filings, all cycles tracked.</div>
+      <div><b>Establishment verdict</b>The headline on each member's Establishment page, which states the rule it follows. Not every tracker has one yet.</div>
+    </div>
+  </section>
+
+  <footer class="cr-foot muted" style="font-size:.82rem"><span>Each member's figures come from their own tracker, where every vote and contribution links to its source.</span></footer>
+</div>
+<script src="hub.js"></script>
+<script>
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const $ = id => document.getElementById(id);
+const usd = n => "$" + Math.round(n).toLocaleString("en-US");
+const pct = n => n == null ? "—" : n.toFixed(1) + "%";
+const span = c => `${+c - 1}–${c.slice(2)}`;
+fetch("data/leaders.json").then(r => r.json()).then(D => {
+  const M = D.members;
+  // One strip per chamber: each member's agreement with the leader on split votes, 0-100%
+  const draw = () => {
+    $("strips").innerHTML = ["house", "senate"].map(ch => {
+      const ms = M.filter(m => m.chamber === ch && m.agreeSplit != null).sort((a, b) => a.agreeSplit - b.agreeSplit);
+      if (!ms.length) return "";
+      const W = Math.max(280, $("strips").clientWidth - 38), pad = 12, rowH = 26, H = 26 + ms.length * rowH;
+      const X = v => pad + v / 100 * (W - 2 * pad);
+      const ticks = [0, 25, 50, 75, 100].map(v => `<line x1="${X(v)}" x2="${X(v)}" y1="16" y2="${H}" /><text x="${X(v)}" y="10" text-anchor="middle">${v}%</text>`).join("");
+      const rows = ms.map((m, i) => { const y = 30 + i * rowH, x = X(m.agreeSplit), right = m.agreeSplit > 62;
+        return `<line x1="${X(0)}" x2="${x}" y1="${y}" y2="${y}" stroke="var(--divider)" stroke-width="2"/>
+          <circle cx="${x}" cy="${y}" r="6" fill="var(--accent)" stroke="var(--surface)" stroke-width="2"><title>${esc(m.name)}: ${pct(m.agreeSplit)} with ${esc(m.leader)} on ${m.splitVotes} split votes</title></circle>
+          <text class="lab" x="${right ? x - 12 : x + 12}" y="${y + 4}" text-anchor="${right ? "end" : "start"}">${esc(m.name)} <tspan class="val">${pct(m.agreeSplit)}</tspan></text>`; }).join("");
+      return `<div class="strip"><h3>${ch === "house" ? "House · with Hakeem Jeffries" : "Senate · with Chuck Schumer"}</h3>
+        <span class="muted" style="font-size:.8rem">${ms[0].splitVotes} votes where Democrats split</span>
+        <svg viewBox="0 0 ${W} ${H}" height="${H}" role="img" aria-label="${esc(ms.map(m => `${m.name} ${pct(m.agreeSplit)}`).join(", "))}"><g class="ax">${ticks}</g>${rows}</svg></div>`;
+    }).join("");
+  };
+  draw(); addEventListener("resize", draw);
+  $("rows").innerHTML = M.map(m => {
+    const cyc = Object.keys(m.money).sort();
+    const money = m.moneyTotal == null ? "—" : `${usd(m.moneyTotal)}<div class="muted" style="font-size:.72rem">${cyc.map(c => `${span(c)} ${usd(m.money[c])}`).join(" · ")}</div>`;
+    return `<tr><td><div class="who"><img src="${esc(m.portrait)}" alt=""><div><a href="${esc(m.path)}establishment.html">${esc(m.name)}</a><small>${esc(m.party)} · ${esc(m.seat === "Senate" ? "Senate" : m.seat)} · leader: ${esc(m.leader)}</small></div></div></td>
+      <td class="vd${m.verdict ? "" : " none"}">${esc(m.verdict || "Not built yet")}</td>
+      <td class="n">${pct(m.agree)}</td><td class="n">${pct(m.agreeSplit)}</td><td class="n">${m.splits ?? "—"}</td>
+      <td class="n">${pct(m.unity)}<div class="muted" style="font-size:.72rem">rank ${m.rank} of ${m.dems}</div></td><td class="n">${money}</td></tr>`;
+  }).join("");
+}).catch(() => { $("rows").innerHTML = '<tr><td colspan="7" class="muted">The comparison didn\'t load. Reload the page to try again.</td></tr>'; });
+</script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Find your representative and senators by ZIP code, name or state, and open their Congress Receipts tracker.">
+<title>Find Your Rep · Congress Receipts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="hub.css">
+<style>
+.search{display:flex;gap:8px;flex-wrap:wrap}
+.search input,.search select{background:var(--surface);color:var(--ink);border:1px solid var(--divider);border-radius:10px;padding:12px 14px;font:inherit;font-size:1rem;min-width:0}
+.search input{flex:1 1 260px}
+.search select{flex:0 1 220px}
+.search input:focus,.search select:focus{outline:2px solid var(--accent);outline-offset:1px}
+.note{font-size:.85rem;color:var(--muted);margin:0}
+.results{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.rep{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;gap:12px;align-items:center;min-width:0}
+.rep .av{width:48px;height:60px;border-radius:6px;flex:none;object-fit:cover;background:var(--accent-soft);display:grid;place-items:center;
+  font-family:var(--f-display);font-weight:700;color:var(--accent)}
+.rep .t{min-width:0;display:flex;flex-direction:column;gap:3px}
+.rep .nm{font-family:var(--f-display);font-weight:700;line-height:1.2}
+.rep .sub{font-size:.8rem;color:var(--muted)}
+.rep a.go{font-size:.85rem;font-weight:600}
+.rep.tracked{border-color:var(--accent)}
+.chip-s{display:inline-block;font-size:.72rem;border:1px solid var(--line);border-radius:999px;padding:1px 8px;color:var(--muted);width:max-content}
+.group h3{margin:6px 0 10px}
+</style>
+</head>
+<body data-page="find">
+<div class="wrap hub">
+  <header>
+    <span class="eyebrow">Find your rep</span>
+    <h1>Who represents you?</h1>
+    <p class="lede">Type a ZIP code to see your House member and both senators, or search by name. Members with a Congress Receipts tracker link to it; we're adding more.</p>
+  </header>
+
+  <section>
+    <form class="search" id="f" role="search" onsubmit="return false">
+      <label class="sr" for="q" hidden>ZIP code or name</label>
+      <input id="q" type="search" inputmode="search" autocomplete="postal-code" placeholder="ZIP code or name, e.g. 91331 or Padilla" aria-label="ZIP code or name">
+      <select id="st" aria-label="Browse by state"><option value="">Browse by state</option></select>
+    </form>
+    <p class="note" id="msg" aria-live="polite"></p>
+    <div id="out" style="display:flex;flex-direction:column;gap:22px"></div>
+  </section>
+
+  <footer class="cr-foot muted" style="font-size:.82rem"><span id="src"></span></footer>
+</div>
+<script src="hub.js"></script>
+<script>
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const $ = id => document.getElementById(id);
+const STATES = {AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"California",CO:"Colorado",CT:"Connecticut",DE:"Delaware",FL:"Florida",GA:"Georgia",HI:"Hawaii",ID:"Idaho",IL:"Illinois",IN:"Indiana",IA:"Iowa",KS:"Kansas",KY:"Kentucky",LA:"Louisiana",ME:"Maine",MD:"Maryland",MA:"Massachusetts",MI:"Michigan",MN:"Minnesota",MS:"Mississippi",MO:"Missouri",MT:"Montana",NE:"Nebraska",NV:"Nevada",NH:"New Hampshire",NJ:"New Jersey",NM:"New Mexico",NY:"New York",NC:"North Carolina",ND:"North Dakota",OH:"Ohio",OK:"Oklahoma",OR:"Oregon",PA:"Pennsylvania",RI:"Rhode Island",SC:"South Carolina",SD:"South Dakota",TN:"Tennessee",TX:"Texas",UT:"Utah",VT:"Vermont",VA:"Virginia",WA:"Washington",WV:"West Virginia",WI:"Wisconsin",WY:"Wyoming",DC:"District of Columbia",PR:"Puerto Rico",GU:"Guam",VI:"U.S. Virgin Islands",AS:"American Samoa",MP:"Northern Mariana Islands"};
+const PARTY = {D: "Democrat", R: "Republican", I: "Independent", ID: "Independent"};
+let DIR, ZIPS, TRACK = {};
+const seatLabel = m => m.chamber === "senate" ? `U.S. Senate · ${STATES[m.state] || m.state}` : (m.seat.endsWith("-AL") ? `${STATES[m.state] || m.state} (at large)` : `District ${m.seat}`);
+const initials = n => n.split(" ").filter(w => /^[A-Z]/.test(w)).slice(0, 2).map(w => w[0]).join("");
+const card = m => {
+  const t = TRACK[m.path];
+  return `<article class="rep${m.path ? " tracked" : ""}">${t ? `<img class="av" src="${esc(t.portrait)}" alt="Official portrait of ${esc(m.name)}">` : `<span class="av" aria-hidden="true">${esc(m.vacant ? "—" : initials(m.name))}</span>`}
+    <div class="t"><span class="nm">${esc(m.name)}</span><span class="sub">${esc(m.vacant ? "Seat vacant" : (PARTY[m.party] || m.party))} · ${esc(seatLabel(m))}</span>
+    ${m.path ? `<a class="go" href="${esc(m.path)}/">Open the tracker →</a>` : `<span class="chip-s">Not tracked yet</span>`}</div></article>`;
+};
+const group = (title, list) => list.length ? `<div class="group"><h3>${esc(title)}</h3><div class="results">${list.map(card).join("")}</div></div>` : "";
+const sortH = (a, b) => (parseInt(a.seat.split("-")[1]) || 0) - (parseInt(b.seat.split("-")[1]) || 0);
+
+async function run() {
+  const q = $("q").value.trim(), st = $("st").value; let html = "", msg = "";
+  if (/^\d{5}$/.test(q)) {
+    ZIPS = ZIPS || await fetch("data/zips.json").then(r => r.json());
+    const seats = ZIPS[q];
+    if (!seats) { msg = `No congressional district found for ZIP ${q}. Some ZIP codes are for P.O. boxes or single buildings and have no area of their own; try a nearby residential ZIP.`; }
+    else {
+      const house = DIR.members.filter(m => m.chamber === "house" && seats.includes(m.seat)).sort(sortH);
+      const states = [...new Set(seats.map(s => s.split("-")[0]))];
+      const sen = DIR.members.filter(m => m.chamber === "senate" && states.includes(m.state));
+      msg = seats.length > 1 ? `ZIP ${q} crosses ${seats.length} districts (${seats.join(", ")}). Your address decides which one is yours; the House Clerk's lookup at house.gov can tell you exactly.` : `ZIP ${q} is in ${seats[0]}.`;
+      html = group("Your representative" + (house.length > 1 ? "s (one of these)" : ""), house) + group("Your senators", sen);
+    }
+  } else if (q.length >= 2) {
+    const n = q.toLowerCase();
+    const hit = DIR.members.filter(m => !m.vacant && m.name.toLowerCase().includes(n));
+    msg = hit.length ? `${hit.length} member${hit.length === 1 ? "" : "s"} match “${q}”.` : `No member matches “${q}”.`;
+    html = group("Senate", hit.filter(m => m.chamber === "senate")) + group("House", hit.filter(m => m.chamber === "house").sort(sortH));
+  } else if (st) {
+    const all = DIR.members.filter(m => m.state === st);
+    msg = `${STATES[st] || st}: ${all.filter(m => m.chamber === "senate").length} senators and ${all.filter(m => m.chamber === "house").length} House seats.`;
+    html = group("Senate", all.filter(m => m.chamber === "senate")) + group("House", all.filter(m => m.chamber === "house").sort(sortH));
+  } else {
+    const t = DIR.members.filter(m => m.path);
+    msg = `${t.length} members have a tracker so far.`;
+    html = group("Tracked so far", t);
+  }
+  $("msg").textContent = msg; $("out").innerHTML = html;
+}
+
+Promise.all([fetch("data/directory.json").then(r => r.json()), fetch("data/leaders.json").then(r => r.json())]).then(([d, l]) => {
+  DIR = d; l.members.forEach(m => TRACK[m.path.replace(/\/$/, "")] = m);
+  const states = [...new Set(d.members.map(m => m.state))].sort((a, b) => (STATES[a] || a).localeCompare(STATES[b] || b));
+  $("st").insertAdjacentHTML("beforeend", states.map(s => `<option value="${s}">${esc(STATES[s] || s)}</option>`).join(""));
+  $("src").innerHTML = `Member lists from the <a href="${esc(d.sources.house)}">House Clerk</a> and ${esc(d.sources.senate)}; ZIP codes from the <a href="${esc(d.sources.zips)}">Census Bureau's ZIP-to-district file</a> for the 119th Congress. Updated ${esc(d.built)}.`;
+  const u = new URLSearchParams(location.search); if (u.get("q")) $("q").value = u.get("q");
+  let t; $("q").addEventListener("input", () => { $("st").value = ""; clearTimeout(t); t = setTimeout(run, 200); });
+  $("st").addEventListener("change", () => { $("q").value = ""; run(); });
+  run();
+}).catch(() => { $("msg").textContent = "The member list didn't load. Reload the page to try again."; });
+</script>
+</body>
+</html>
