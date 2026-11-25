@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="../../hub.css">
 <style>
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 body{margin:0}
@@ -128,5 +129,6 @@ Promise.all([fetch("data/verification.json").then(r=>r.json()), fetch("data/comp
 $("more").addEventListener("click", more);
 </script>
 <script src="site.js"></script>
+<script src="../../hub.js" data-base="../../"></script>
 </body>
 </html>

@@ -7,6 +7,7 @@
 <title>Who Funds Derek Tran</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="../../hub.css">
 <style>
 html{color-scheme:light}
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
@@ -356,5 +357,6 @@ fetch("data/fec/summary.json").then(r=>{ if(!r.ok) throw 0; return r.json(); }).
 fetch("data/trackaipac.json").then(r=>{ if(!r.ok) throw 0; return r.json(); }).then(d=>{ if(d && Array.isArray(d.members) && d.members.length){ TA = d; renderBars(); renderIsrael(); } }).catch(()=>{});
 </script>
 <script src="site.js"></script>
+<script src="../../hub.js" data-base="../../"></script>
 </body>
 </html>
