@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Tracks Rep. Luz Rivas (CA-29): promises, votes, money, stances and constituent events, with a source for every claim.">
+<title>CA-29 Rivas Tracker</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+[hidden]{display:none!important}
+img{max-width:100%}
+/* CA-29 map: the district is one county, so color by kind of place instead of by county */
+#map .incd.la{fill:var(--la)} #map .incd.city{fill:var(--oc)} #map .incd.uninc,#map .incd.other{fill:var(--sage)}
+.sw.la,.cb.la{background:var(--la)} .sw.city,.cb.city{background:var(--oc)} .sw.uninc,.cb.uninc{background:var(--sage)}
+#map .lbl{font-size:12px}
+#map .lbl.sm{font-size:10px}
+.vbtn .vrule{font-size:.78rem;line-height:1.35;opacity:.9;margin-top:2px}
+.vbtn.pending .pp-v{font-size:1.15rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="sitenav" aria-label="Pages"></nav>
+  <header id="top">
+    <div class="ident">
+      <img class="portrait" src="assets/rivas.jpg" alt="Official House portrait of Rep. Luz Rivas" width="400" height="500">
+      <div class="ident-text">
+        <span class="eyebrow">U.S. House · California's 29th District · 119th Congress</span>
+        <h1>Rep. Luz Rivas</h1>
+      </div>
+    </div>
+    <p class="lede">A running check of what Rivas promised San Fernando Valley voters, what she has done in office, and what she says on the issues people are fighting about. Every entry links to its source.</p>
+    <div class="facts">
+      <span><b>Party</b> Democrat</span>
+      <span><b>In office since</b> Jan 2025</span>
+      <span><b>District</b> CA-29, San Fernando Valley</span>
+      <span><b>Committees</b> Natural Resources; Science, Space, and Technology</span>
+      <span><b>Background</b> Electrical engineer; founded DIY Girls; six years in the State Assembly</span>
+      <span><b>2026 general</b> Re-elected 57.3% to 42.7% over fellow Democrat Angélica María Dueñas, unofficial, all 115 precincts reporting</span>
+      <span><b>2024 general</b> Won an open seat 69.8% to 30.2% over Benito Bernal (R)</span>
+    </div>
+    <ul class="plain fact-src">
+      <li>Committees: <a class="src" href="https://clerk.house.gov/xml/lists/MemberData.xml" target="_blank" rel="noopener">House Clerk member data, Nov 3, 2026</a>. Background: <a class="src" href="https://www.luzforcongress.com/about" target="_blank" rel="noopener">her campaign site</a>.</li>
+      <li>2026 general (unofficial, all 115 precincts reporting): Rivas 100,242 (57.3%), Dueñas 74,798 (42.7%). <a class="src" href="https://api.sos.ca.gov/returns/us-rep/district/29" target="_blank" rel="noopener">CA Secretary of State</a></li>
+      <li>2024 general (certified): Rivas 146,312 (69.8%), Bernal 63,374 (30.2%). <a class="src" href="https://elections.cdn.sos.ca.gov/sov/2024-general/sov/25-us-rep-congress.pdf" target="_blank" rel="noopener">CA Secretary of State, Statement of Vote</a></li>
+    </ul>
+    <p class="notice">Votes, party alignment, statements, stances, the promise scorecard, the district map and campaign money (FEC filings through Oct 14, 2026) are built from primary sources. <span id="verifyNote"></span> <a href="sources.html">See how every claim is checked →</a></p>
+  </header>
+
+  <section id="verdicts">
+    <div class="sec-head">
+      <span class="eyebrow">Quick verdicts</span>
+      <h2>Where she lands on the big questions</h2>
+      <p>Click a verdict to see every vote and statement behind it. Each one says the rule that produced it.</p>
+    </div>
+    <div class="vbtns" id="vbtns"></div>
+  </section>
+
+  <section id="district">
+    <div class="sec-head">
+      <span class="eyebrow">The district</span>
+      <h2>CA-29 is mostly the northeast San Fernando Valley</h2>
+      <p>Nearly everyone in the district lives in the City of Los Angeles, in communities like Pacoima, Sylmar, Panorama City and Van Nuys; the rest live in the City of San Fernando. Prop 50 redrew the lines for the 2026 election. The new map takes effect Jan 3, 2027; until then she represents the 2023 lines.</p>
+    </div>
+    <div class="filters" id="mapToggle" role="group" aria-label="Choose district map">
+      <button class="chip-btn" type="button" data-m="new" aria-pressed="true">2027 lines (Prop 50)</button>
+      <button class="chip-btn" type="button" data-m="old" aria-pressed="false">Current lines (2023–26)</button>
+    </div>
+    <div class="countybar" id="countyBar"></div>
+    <div class="mapwrap"><svg id="map" viewBox="0 0 900 1148" role="img" aria-label="Map of communities in California's 29th District"></svg></div>
+    <div class="citylists" id="cityLists"></div>
+    <p class="muted" style="margin:0;font-size:.8rem">Shaded areas are the parts of each community inside the district; the dark line is the district boundary. Shares are by land area, not population; slivers under 5% are left out as boundary-file mismatches. Communities: <a href="https://egis-lacounty.hub.arcgis.com/datasets/countywide-statistical-areas-csa" target="_blank" rel="noopener">LA County Countywide Statistical Areas</a> (LA County Enterprise GIS). District lines: U.S. Census Bureau TIGERweb (119th and 120th Congressional Districts). Population: 2020 Census, from the <a href="https://sdmg.senate.ca.gov/committeehome/2025-congressional-districts/congressional-district-29-2025" target="_blank" rel="noopener">California Senate Office of Demographics</a>. Her campaign site lists 16 communities in the district, all of which appear here.</p>
+  </section>
+
+  <section id="committees">
+    <div class="sec-head">
+      <span class="eyebrow">Committees and caucuses</span>
+      <h2>Where she works in Congress</h2>
+      <p>Committees are where bills are written and amended. Caucuses are voluntary groups of members organized around a cause or a political lean.</p>
+    </div>
+    <div class="comm-grid">
+      <article class="comm">
+        <h3>Natural Resources Committee</h3>
+        <ul>
+          <li><b>Energy and Mineral Resources Subcommittee</b> <span class="muted">· member</span></li>
+          <li><b>Water, Wildlife and Fisheries Subcommittee</b> <span class="muted">· member</span></li>
+        </ul>
+        <p class="muted">Oversees federal public lands, water, and energy and mineral development. Her office says these panels "play key roles in addressing the climate crisis" and in preserving public lands and water. <a class="src" href="https://rivas.house.gov/media/press-releases/congresswoman-rivas-named-key-natural-resources-subcommittees-address-climate" target="_blank" rel="noopener">Source</a></p>
+      </article>
+      <article class="comm">
+        <h3>Science, Space, and Technology Committee</h3>
+        <ul>
+          <li><b>Research and Technology Subcommittee</b> <span class="muted">· member</span></li>
+          <li><b>Investigations and Oversight Subcommittee</b> <span class="muted">· member</span></li>
+        </ul>
+        <p class="muted">Oversees federal science agencies and research programs. Her office ties it to clean energy, STEM education and AI oversight. <a class="src" href="https://rivas.house.gov/media/press-releases/congresswoman-luz-rivas-selected-key-panels-house-committee-science-space-and" target="_blank" rel="noopener">Source</a></p>
+      </article>
+    </div>
+    <div class="handles"><table>
+      <thead><tr><th>Caucus or role</th><th>Role</th></tr></thead>
+      <tbody id="caucusRows"></tbody>
+    </table></div>
+    <p class="muted" style="margin:0;font-size:.8rem">Committee and subcommittee seats: <a href="https://clerk.house.gov/xml/lists/MemberData.xml" target="_blank" rel="noopener">House Clerk member data</a> (published Nov 3, 2026), matching <a href="https://rivas.house.gov/about/committees-and-caucuses" target="_blank" rel="noopener">her office's list</a>. Caucuses: her office's list. Leadership seat: <a href="https://rivas.house.gov/media/press-releases/congresswoman-luz-rivas-leads-freshman-democrats-demand-meeting-speaker" target="_blank" rel="noopener">her office, Oct 2025</a>.</p>
+  </section>
+
+  <section id="scorecard">
+    <div class="sec-head">
+      <span class="eyebrow">Promise scorecard</span>
+      <h2>How she's doing on her promises</h2>
+      <p>Each 2024 campaign promise set against her bills, votes and district work. Her campaign site had no issues page, so the explicit promises come from her own words on that site and in her candidacy announcement. Two more are themes of the record she ran on, labeled as such. "Stalled" means she acted but the outcome didn't move her way or her bill hasn't advanced. Statuses are this tracker's judgment; each says what it rests on.</p>
+    </div>
+    <div class="tally" id="tally"></div>
+    <div class="promises" id="promises"></div>
+    <p class="muted" id="noPromise" style="margin:0;font-size:.85rem"></p>
+  </section>
+
+  <section id="alignment">
+    <div class="sec-head">
+      <span class="eyebrow">Who she votes with</span>
+      <h2>How she lines up with party leaders and factions</h2>
+      <p id="glanceNote">Computed from every House roll call in 2025 and 2026. Most votes split along party lines, so she agrees with nearly every Democrat most of the time. The telling column is <b>contested votes</b>: roll calls where at least 10% of Democrats broke from the rest of their party.</p>
+    </div>
+    <div class="tally" id="alignTiles"></div>
+    <div class="handles"><table class="align-t">
+      <thead><tr><th>Member</th><th>Group</th><th style="text-align:right">All votes</th><th>Contested votes</th><th style="text-align:right">Israel-related</th><th style="text-align:right">Track AIPAC total</th></tr></thead>
+      <tbody id="alignRows"></tbody>
+    </table></div>
+    <p class="notice" id="alignTake" style="margin:0"></p>
+    <div>
+      <h3 style="font-size:1rem;margin-bottom:8px">Ties to House Democratic leader Hakeem Jeffries</h3>
+      <ul class="plain" id="jeffries"></ul>
+    </div>
+    <p class="muted" style="margin:0;font-size:.8rem">Vote data: House Clerk roll calls, counting only votes where both members voted Yea or Nay. Israel-related votes are the roll calls whose titles mention Israel, Iran, Gaza, Hamas, antisemitism or the International Criminal Court. Track AIPAC totals: see the <a href="money.html#compare">Money tab</a>. <a href="votes.html">See every vote →</a> · <a href="establishment.html">Establishment check →</a></p>
+  </section>
+
+  <section id="recent">
+    <div class="sec-head">
+      <span class="eyebrow">Latest</span>
+      <h2>Recent statements</h2>
+      <p>Press releases from her House site, newest first.</p>
+    </div>
+    <ul class="plain" id="recentList"></ul>
+    <p><a href="statements.html">All statements →</a></p>
+  </section>
+
+  <section id="channels">
+    <div class="sec-head">
+      <span class="eyebrow">Reach her</span>
+      <h2>Offices and official channels</h2>
+      <p>The fastest way to ask when her next event is, or to tell her where you stand on a bill.</p>
+    </div>
+    <div class="offices" id="offices"></div>
+    <div class="handles"><table>
+      <thead><tr><th>Platform</th><th>House office</th><th>Campaign</th></tr></thead>
+      <tbody>
+        <tr><td>Website</td><td><a href="https://rivas.house.gov" target="_blank" rel="noopener">rivas.house.gov</a></td><td><a href="https://www.luzforcongress.com" target="_blank" rel="noopener">luzforcongress.com</a></td></tr>
+        <tr><td>X</td><td><a href="https://x.com/RepLuzRivas" target="_blank" rel="noopener">@RepLuzRivas</a></td><td><a href="https://x.com/Luzrivas" target="_blank" rel="noopener">@Luzrivas</a></td></tr>
+        <tr><td>Instagram</td><td><a href="https://instagram.com/RepLuzRivas" target="_blank" rel="noopener">@RepLuzRivas</a></td><td><a href="https://instagram.com/Luzmrivas" target="_blank" rel="noopener">@Luzmrivas</a></td></tr>
+        <tr><td>Facebook</td><td><a href="https://facebook.com/congresswomanluzrivas" target="_blank" rel="noopener">congresswomanluzrivas</a></td><td>—</td></tr>
+      </tbody>
+    </table></div>
+    <p class="muted" style="margin:0;font-size:.8rem">Offices and House accounts: <a href="https://rivas.house.gov/contact" target="_blank" rel="noopener">rivas.house.gov/contact</a>. Campaign accounts: links on <a href="https://www.luzforcongress.com" target="_blank" rel="noopener">luzforcongress.com</a>.</p>
+  </section>
+
+  <footer>Compiled from public records: House Clerk roll calls and member data, rivas.house.gov press releases, FEC filings, LA County and Census boundary files, the California Senate Office of Demographics, and her campaign site. This page is a nonpartisan summary, not an endorsement.</footer>
+</div>
+<div class="tip" id="tip" hidden></div>
+<script>
+const el = (tag, props = {}, kids = []) => { const n = Object.assign(document.createElement(tag), props); kids.forEach(k => n.append(k)); return n; };
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt = n => Number(n).toLocaleString("en-US");
+const usd = n => "$" + Math.round(n).toLocaleString("en-US");
+const getJSON = p => fetch(p).then(r => { if(!r.ok) throw 0; return r.json(); });
+const longDate = iso => new Date(iso+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
+
+// ---------- Quick verdicts ----------
+function renderVerdicts(ov, est){
+  const tiles = ov.tiles.map(t => ({...t, go:"See the evidence →"}));
+  tiles.push(est && est.headline
+    ? {q: est.question || "Establishment Democrat?", v: est.headline, href: "establishment.html", go: "Open the Establishment tab →", rule: est.rule || ""}
+    : {q: "Establishment Democrat?", v: "See the Establishment page", href: "establishment.html", go: "Open the Establishment tab →", rule: "", pending: true});
+  document.getElementById("vbtns").innerHTML = tiles.map(t => `<a class="vbtn${t.pending?" pending":""}" href="${esc(t.href)}">
+    <span class="pp-q">${esc(t.q)}</span><span class="pp-v">${esc(t.v)}</span>
+    ${t.rule?`<span class="vrule">${esc(t.rule)}</span>`:""}<span class="vgo">${esc(t.go)}</span></a>`).join("");
+}
+Promise.all([getJSON("data/overview.json"), getJSON("data/establishment.json").catch(() => null)])
+  .then(([ov, est]) => renderVerdicts(ov, est))
+  .catch(() => { document.getElementById("vbtns").innerHTML = '<p class="muted">The verdicts didn\'t load. Reload the page to try again.</p>'; });
+
+// ---------- District map ----------
+// 2027 lines population by place: 2020 Census, California Senate Office of Demographics (CD29 2025 page)
+const POP27 = {total:760066, parts:[["la","City of Los Angeles",735380,"18.8% of the city"],["city","City of San Fernando",24055,"the whole city"],["uninc","Unincorporated LA County",627,""]]};
+const KINDS = {la:"City of Los Angeles communities", city:"Other cities", uninc:"Unincorporated areas", other:"Other"};
+const MIN = 0.05;   // shares below this are boundary-file slivers, not real parts of the district
+const NEIGHBORS = ["Burbank","Glendale","Granada Hills","Northridge","Reseda","Encino","Tujunga","Studio City","Sunland","Santa Clarita","Porter Ranch","Chatsworth"];
+const SMALL = new Set(["Toluca Terrace","Toluca Woods","Toluca Lake","Valley Village","Valley Glen"]);
+let GEO = null;
+function renderMap(mode){
+  const svg = document.getElementById("map");
+  if(!GEO){ svg.innerHTML = `<text x="450" y="300" text-anchor="middle" class="lbl">Loading map…</text>`; return; }
+  const {w,h,ky} = GEO;
+  const inMode = p => p[mode] && p[mode].share >= MIN;
+  svg.setAttribute("viewBox",`0 0 ${w} ${h}`);
+  let g = `<defs><clipPath id="cdclip"><path d="${GEO.cd[mode]}"/></clipPath></defs>`;
+  g += `<rect class="water" x="0" y="0" width="${w}" height="${h}"/>`;
+  g += `<path class="land other" d="${GEO.other||""}"/>` + Object.entries(GEO.counties).map(([k,d]) => `<path class="land ${k}" d="${d}"/>`).join("");
+  g += GEO.places.map(p => `<path class="city" d="${p.d}"/>`).join("");
+  g += `<g clip-path="url(#cdclip)">${GEO.places.filter(inMode).map(p =>
+      `<path class="incd ${p.kind}" d="${p.d}"><title>${esc(p.n)}: ${Math.round(p[mode].share*100)}% of its area in the district</title></path>`).join("")}</g>`;
+  g += `<path class="cd-outline" d="${GEO.cd[mode]}"/>`;
+  g += GEO.places.filter(p => !p[mode] && NEIGHBORS.includes(p.n) && p.ctr[0]>40 && p.ctr[0]<w-40 && p.ctr[1]>20 && p.ctr[1]<h-20)
+    .map(p => `<text class="nb" x="${p.ctr[0]}" y="${p.ctr[1]}" text-anchor="middle">${esc(p.n)}</text>`).join("");
+  g += GEO.places.filter(p => inMode(p) && p[mode].share >= 0.3).map(p => {
+    const [x,y] = p[mode].lbl;
+    return `<text class="lbl${SMALL.has(p.n)?" sm":""}" x="${x}" y="${y+4}" text-anchor="middle">${esc(p.n)}</text>`; }).join("");
+  const mi5 = 5/69*ky, sy = h-28;
+  g += `<g class="scale"><line x1="24" y1="${sy}" x2="${24+mi5}" y2="${sy}"/><line x1="24" y1="${sy-6}" x2="24" y2="${sy+6}"/><line x1="${24+mi5}" y1="${sy-6}" x2="${24+mi5}" y2="${sy+6}"/><text x="24" y="${sy-12}">5 miles</text></g>`;
+  g += `<text class="compass" x="${w-28}" y="34" text-anchor="middle">N ↑</text>`;
+  svg.innerHTML = g;
+
+  const bar = document.getElementById("countyBar"), lists = document.getElementById("cityLists");
+  if(mode === "new"){
+    bar.innerHTML = `<div class="cb-track" role="img" aria-label="District population by place">${POP27.parts.map(([k,,n]) => `<span class="cb ${k}" style="width:${n/POP27.total*100}%"></span>`).join("")}</div>
+      <div class="cb-legend">${POP27.parts.map(([k,l,n,note]) => `<span><i class="sw ${k}"></i>${esc(l)} · ${fmt(n)} residents (${(n/POP27.total*100).toFixed(1)}%${note?`; ${esc(note)}`:""})</span>`).join("")}<span class="muted">Total ${fmt(POP27.total)}, 2020 Census</span></div>`;
+  } else {
+    bar.innerHTML = `<div class="cb-legend"><span><i class="sw la"></i>City of Los Angeles</span><span><i class="sw city"></i>City of San Fernando</span><span class="muted">Population for the current lines isn't shown; the source covers only the 2027 map.</span></div>`;
+  }
+  const other = mode === "new" ? "old" : "new";
+  const groups = ["la","city","uninc"].map(k => {
+    const items = GEO.places.filter(p => p.kind===k && inMode(p)).sort((a,b) => b[mode].share - a[mode].share || a.n.localeCompare(b.n));
+    if(!items.length) return "";
+    return `<div class="citycol"><h3><i class="sw ${k}"></i>${KINDS[k]}</h3><ul>${items.map(p => {
+      const isNew = mode==="new" && !(p[other] && p[other].share >= MIN);
+      const sh = p[mode].share >= 0.95 ? "whole area" : `${Math.round(p[mode].share*100)}% of area`;
+      return `<li><span>${esc(p.n)}${isNew?' <span class="pill s-progress">New</span>':""}</span><span class="mono muted">${sh}</span></li>`; }).join("")}</ul></div>`;
+  }).join("");
+  const leaving = mode==="new" ? GEO.places.filter(p => p.old && p.old.share >= MIN && !(p.new && p.new.share >= MIN)).map(p => p.n) : [];
+  lists.innerHTML = groups + (leaving.length ? `<p class="muted" style="margin:0;font-size:.85rem;grid-column:1/-1">Mostly or entirely leaving the district under Prop 50 (under 5% of the area remains): ${leaving.map(esc).join(", ")}.</p>` : "");
+}
+document.getElementById("mapToggle").addEventListener("click", e => {
+  const b = e.target.closest("button"); if(!b) return;
+  document.querySelectorAll("#mapToggle button").forEach(x => x.setAttribute("aria-pressed", x===b));
+  renderMap(b.dataset.m);
+});
+renderMap("new");
+getJSON("data/geo/map.json").then(d => { GEO = d; renderMap(document.querySelector('#mapToggle [aria-pressed="true"]').dataset.m); })
+  .catch(() => { document.getElementById("map").innerHTML = `<text x="450" y="300" text-anchor="middle" class="lbl">The map didn't load. Reload the page to try again.</text>`; });
+
+// ---------- Caucuses (her office's list; leadership role from her campaign site) ----------
+const CAUCUSES = [
+  ["Freshman Representative to Leadership, House Democrats (119th Congress)","Leadership seat"],
+  ["Congressional STEM Education Caucus","Co-chair"],
+  ["Congressional Hispanic Caucus","Member"],["Congressional Progressive Caucus","Member"],["Democratic Women's Caucus","Member"],
+  ["Congressional Labor Caucus","Member"],["Congressional Asian Pacific American Caucus","Member"],["Congressional Artificial Intelligence Caucus","Member"],
+  ["Congressional Caucus on Armenian Issues","Member"],["Congressional Equality Caucus","Member"],["Congressional Real Estate Caucus","Member"],
+  ["House Sustainable Energy and Environment Coalition (SEEC)","Member"],["Gun Violence Prevention Task Force","Member"],["U.S.-Mexico Caucus","Member"],
+];
+document.getElementById("caucusRows").innerHTML = CAUCUSES.map(([n,r]) => `<tr><td>${esc(n)}</td><td>${esc(r)}</td></tr>`).join("");
+
+// ---------- Promise scorecard ----------
+const STATUS = {delivered:["Delivered","s-delivered"], progress:["In progress","s-progress"], stalled:["Stalled","s-stalled"], contradicted:["Contradicted","s-contradicted"], none:["No action found","s-none"]};
+const KIND = {explicit:"Her words, 2024", record:"Ran on her record, not a stated pledge"};
+getJSON("data/promises_built.json").then(d => {
+  const counts = {}; d.promises.forEach(p => counts[p.status] = (counts[p.status] || 0) + 1);
+  document.getElementById("tally").innerHTML = Object.entries(STATUS).map(([k,[l]]) => `<div class="tile"><span class="n">${counts[k] || 0}</span><span class="l">${l}</span></div>`).join("");
+  const link = (u, t) => `<a class="src" href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>`;
+  document.getElementById("promises").innerHTML = d.promises.map(p => `
+    <article class="promise">
+      <div class="top"><h3>${esc(p.issue)}</h3><span class="pill ${STATUS[p.status][1]}">${STATUS[p.status][0]}</span></div>
+      <p style="margin:0"><span class="eyebrow">${esc(KIND[p.kind])}</span> ${p.quote ? `<q>${esc(p.promise)}</q>` : esc(p.promise)} ${p.src.map(s => link(s.u, s.label)).join(" ")}</p>
+      <ul>${p.actions.map(a => `<li>${esc(a.text)} ${link(a.u, "Source")}</li>`).join("")}</ul>
+      <p class="muted" style="margin:0;font-size:.85rem">${esc(p.why)}</p>
+    </article>`).join("");
+  document.getElementById("noPromise").textContent = d.noPromise;
+}).catch(() => { document.getElementById("promises").innerHTML = '<p class="muted">The scorecard didn\'t load. Reload the page to try again.</p>'; });
+
+// ---------- Vote alignment ----------
+function renderAlignment(a, ta, votes, fec){
+  const TA = Object.fromEntries((ta?.members || []).map(m => [m.name, m]));
+  const me = (ta?.members || []).find(m => m.group === "me");
+  document.getElementById("alignTiles").innerHTML = [
+    [a.memberUnity+"%","Her Yea and Nay votes cast with the Democratic majority"],
+    [`${a.memberRank}${a.memberTied?" (tied)":""} of ${a.dems}`,"Rank among House Democrats for party-line voting (1 = most)"],
+    [a.medianUnity+"%","The typical House Democrat"],
+    [a.contested,"Contested votes, where Democrats split"],
+  ].map(([n,l]) => `<div class="tile"><span class="n">${n}</span><span class="l">${l}</span></div>`).join("");
+  const groups = ["Party leadership","Centrist","Progressive","Los Angeles neighbor"];
+  const rows = [...a.peers].sort((x,y) => groups.indexOf(x.group)-groups.indexOf(y.group) || y.contested-x.contested);
+  document.getElementById("alignRows").innerHTML = rows.map(p => { const t = TA[p.name]; return `<tr>
+    <td><b>${esc(p.name)}</b> <span class="muted mono">${esc(p.dist)}</span></td>
+    <td class="muted">${esc(p.group)}</td>
+    <td class="mono" style="text-align:right">${p.all}%</td>
+    <td><div class="abar"><span style="width:${p.contested}%"></span></div><span class="mono">${p.contested}%</span> <span class="muted mono">of ${p.nc}</span></td>
+    <td class="mono" style="text-align:right">${p.israel}% <span class="muted">of ${p.ni}</span></td>
+    <td class="mono" style="text-align:right">${t ? usd(t.total) : "—"}${t?.rejects?'<br><span class="muted" style="font-size:.72rem">rejects AIPAC</span>':""}</td></tr>`; }).join("");
+  const avg = g => { const xs = a.peers.filter(p => p.group===g).map(p => p.contested); return xs.length ? Math.round(xs.reduce((s,x)=>s+x,0)/xs.length) : null; };
+  const lead = (ta?.members || []).filter(m => m.group === "Party leadership" || m.group === "Centrist").map(m => m.total);
+  document.getElementById("alignTake").textContent =
+    `On contested votes she sided with progressives about ${avg("Progressive")}% of the time, party leaders about ${avg("Party leadership")}%, and centrists about ${avg("Centrist")}%. ` +
+    `She votes with her party more often than ${a.dems - a.memberRank - (a.memberTied||0)} of ${a.dems-1} other House Democrats${a.memberTied?` and exactly as often as ${a.memberTied} more`:""}.` +
+    (me && lead.length ? ` Her Track AIPAC total (${usd(me.total)}) is well below the leaders' and centrists' (${usd(Math.min(...lead))}–${usd(Math.max(...lead))}).` : "");
+  const speaker = votes.find(v => v.y===2025 && v.n===2);
+  const items = [];
+  if(speaker) items.push(`Voted for ${esc(speaker.member)} for Speaker when the 119th Congress opened (${longDate(speaker.date)}). <a class="src" href="https://clerk.house.gov/Votes/2025002" target="_blank" rel="noopener">Roll call</a>`);
+  const j = fec?.jeffries;
+  if(j) items.push(j.total ? `Received ${usd(j.total)} from Jeffries' committees: ${j.items.map(p => `${esc(p.name.replace(/\s+/g," ").trim())} ${usd(p.amount)} (${Object.keys(p.byCycle).join(", ")})`).join("; ")}, per FEC filings. <a class="src" href="money.html#pacs">Money tab</a>` : `No contributions from Jeffries' committees in her FEC filings. <a class="src" href="money.html#pacs">Money tab</a>`);
+  const jp = (a.peers.find(p => p.name === "Hakeem Jeffries"));
+  if(jp) items.push(`Agrees with Jeffries on ${jp.all}% of votes and ${jp.contested}% of contested votes. <a class="src" href="establishment.html">Establishment tab</a>`);
+  document.getElementById("jeffries").innerHTML = items.map(x => `<li>${x}</li>`).join("");
+}
+Promise.all([getJSON("data/alignment.json"), getJSON("data/trackaipac.json").catch(() => null), getJSON("data/votes.json"), getJSON("data/fec/summary.json").catch(() => null)])
+  .then(([a, ta, v, f]) => renderAlignment(a, ta, v, f))
+  .catch(() => { document.getElementById("alignTake").textContent = "The vote alignment data didn't load. Reload the page to try again."; });
+
+// ---------- Recent statements ----------
+getJSON("data/statements.json").then(list => {
+  const ul = document.getElementById("recentList");
+  list.filter(s => s.lang === "en").slice(0, 6).forEach(s => {
+    const a = el("a", {href: s.u, target: "_blank", rel: "noopener", textContent: s.title});
+    ul.append(el("li", {}, [el("span", {className: "muted", textContent: s.date + " · "}), a]));
+  });
+});
+
+// ---------- Offices ----------
+const OFFICES = [
+  {name:"Washington, D.C. office", lines:["1319 Longworth House Office Building","Washington, DC 20515"], phone:"(202) 225-6131", note:"Capitol Hill. Best for votes and legislation."},
+  {name:"Arleta district office", lines:["9300 Laurel Canyon Blvd, First Floor","Arleta, CA 91331"], phone:"(818) 253-3535", note:"In the district. Best for event dates and help with federal agencies, including DACA renewals."},
+];
+document.getElementById("offices").innerHTML = OFFICES.map(o => `<article class="office"><h3>${esc(o.name)}</h3>
+  <p class="addr">${o.lines.map(esc).join("<br>")}</p>
+  <div class="phone"><span class="mono">${esc(o.phone)}</span><button class="copy" type="button" data-copy="${esc(o.phone)}">Copy</button></div>
+  <p class="muted">${esc(o.note)}</p></article>`).join("") +
+  `<article class="office"><h3>Online</h3><p class="addr"><a href="https://rivas.house.gov/contact/email-me" target="_blank" rel="noopener">Email her</a> (CA-29 residents)<br><a href="https://rivas.house.gov/contact/request-an-appearance" target="_blank" rel="noopener">Invite her to an event</a><br><a href="https://rivas.house.gov/services/help-federal-agency" target="_blank" rel="noopener">Get help with a federal agency</a><br><a href="https://rivas.house.gov/services/ayuda-con-agencias-federales" target="_blank" rel="noopener">Ayuda con agencias federales</a></p><p class="muted">The email form checks that you live in the district.</p></article>`;
+document.addEventListener("click", e => {
+  const b = e.target.closest(".copy"); if(!b) return;
+  const done = () => { b.textContent = "Copied"; setTimeout(() => b.textContent = "Copy", 1500); };
+  const sel = () => { const r = document.createRange(); r.selectNodeContents(b.previousElementSibling); const s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+  try{ navigator.clipboard.writeText(b.dataset.copy).then(done, sel); }catch(err){ sel(); }
+});
+</script>
+<script>
+// "Last checked" line from the verification run (data/verification.json)
+fetch("data/verification.json").then(r=>r.json()).then(v=>{
+  const all = Object.values(v), ok = all.filter(r=>r.status==="verified").length, last = all.reduce((a,r)=>r.checked>a?r.checked:a,"");
+  document.getElementById("verifyNote").textContent = `Last checked ${new Date(last+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"})}: ${ok} of ${all.length} sourced claims verified against their sources.`;
+}).catch(()=>{});
+</script>
+<script src="site.js"></script>
+</body>
+</html>

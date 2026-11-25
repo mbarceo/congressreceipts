@@ -1,0 +1,78 @@
+{
+ "read": "2026-11-25",
+ "source": "Track AIPAC (trackaipac.com), Israel Lobby Total",
+ "members": [
+  {
+   "name": "Alex Padilla",
+   "dist": "CA",
+   "group": "me",
+   "party": "d",
+   "total": 104055,
+   "url": "https://www.trackaipac.com/tracker/people/member-alex-padilla-ca-sen-d",
+   "rejects": false
+  },
+  {
+   "name": "Chuck Schumer",
+   "dist": "NY",
+   "group": "Party leadership",
+   "party": "d",
+   "total": 428480,
+   "url": "https://www.trackaipac.com/tracker/people/member-chuck-schumer-ny-sen-d",
+   "rejects": false
+  },
+  {
+   "name": "Dick Durbin",
+   "dist": "IL",
+   "group": "Party leadership",
+   "party": "d",
+   "total": 637579,
+   "url": "https://www.trackaipac.com/tracker/people/member-dick-durbin-il-sen-d",
+   "rejects": false
+  },
+  {
+   "name": "Cory Booker",
+   "dist": "NJ",
+   "group": "Party leadership",
+   "party": "d",
+   "total": 843721,
+   "url": "https://www.trackaipac.com/tracker/people/member-cory-booker-nj-sen-d",
+   "rejects": false
+  },
+  {
+   "name": "Adam Schiff",
+   "dist": "CA",
+   "group": "California",
+   "party": "d",
+   "total": 5611163,
+   "url": "https://www.trackaipac.com/tracker/people/member-adam-schiff-ca-sen-d",
+   "rejects": false
+  },
+  {
+   "name": "Bernie Sanders",
+   "dist": "VT",
+   "group": "Progressive wing",
+   "party": "d",
+   "total": 13763,
+   "url": "https://www.trackaipac.com/tracker/people/member-bernie-sanders-vt-sen-i",
+   "rejects": true
+  },
+  {
+   "name": "Elizabeth Warren",
+   "dist": "MA",
+   "group": "Progressive wing",
+   "party": "d",
+   "total": 30216,
+   "url": "https://www.trackaipac.com/tracker/people/member-elizabeth-warren-ma-sen-d",
+   "rejects": false
+  },
+  {
+   "name": "John Fetterman",
+   "dist": "PA",
+   "group": "Moderate wing",
+   "party": "d",
+   "total": 487491,
+   "url": "https://www.trackaipac.com/tracker/people/member-john-fetterman-pa-sen-d",
+   "rejects": false
+  }
+ ]
+}

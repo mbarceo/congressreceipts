@@ -1,0 +1,80 @@
+<!doctype html>
+<!-- Built from site/townhalls.html by scripts/publish.py. Edit site/townhalls.html, not this copy. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="When Sen. Alex Padilla meets constituents: town halls, public meetings and events from press releases and local news, each with a source.">
+<title>Padilla Town Halls</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="site.css">
+<script src="site.js"></script>
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+[hidden]{display:none!important}
+.evrole{font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-family:var(--f-mono);color:var(--accent);margin-left:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="sitenav" aria-label="Pages"></nav>
+  <header id="top">
+    <div class="ident">
+      <img class="portrait" alt="" width="335" height="410">
+      <div class="ident-text"><span class="eyebrow">Meeting constituents</span><h1>Town halls and events</h1></div>
+    </div>
+    <p class="lede">Every public event with {{title}} found in {{poss}} press releases and local news, newest first. Each links to its source.</p>
+  </header>
+
+  <section id="townhalls">
+    <div class="sec-head">
+      <span class="eyebrow">Town halls and events</span>
+      <h2>When {{short}} meets constituents</h2>
+      <p id="evIntro">Public events from {{poss}} press releases and local news.</p>
+    </div>
+    <div class="tally" id="thTiles"></div>
+    <div id="thList"></div>
+    <p class="muted" style="margin:0;font-size:.8rem">"Hosted" means {{poss}} office ran the event; "took part" means another group hosted it. This list includes only events {{poss}} releases or local press describe, so it may miss some. <span id="evHelp"></span></p>
+  </section>
+
+  <section id="ask">
+    <div class="sec-head"><span class="eyebrow">Ask {{poss}} office</span><h2>Find out about the next event</h2><p id="askIntro">Call an office to ask, or see every way to reach {{obj}} on the <a href="./#channels">Overview</a>.</p></div>
+    <div class="facts" id="askPhones"></div>
+    <p class="muted" style="margin:0;font-size:.8rem">Phone numbers: <a href="{{site}}" target="_blank" rel="noopener">{{domain}}</a>.</p>
+  </section>
+</div>
+<script>
+TRACKER.ready.then(M => {
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const getJSON = p => fetch(p).then(r => { if(!r.ok) throw 0; return r.json(); });
+const longDate = iso => new Date(iso+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
+const P = M.profile || {}, EV = P.events || {}, md = s => TRACKER.md(s, M);
+// Curated text (profile.events in tracker.config.json): intro (e.g. what the office's events page lists), help (links to service pages), ask
+if(EV.intro) document.getElementById("evIntro").innerHTML = md(EV.intro);
+document.getElementById("evHelp").innerHTML = md(EV.help || "");
+if(EV.ask) document.getElementById("askIntro").innerHTML = md(EV.ask);
+const phones = (P.offices || []).filter(o => o.phone);
+document.getElementById("askPhones").innerHTML = phones.map(o => `<span><b>${esc(o.name)}</b> <span class="mono">${esc(o.phone)}</span></span>`).join("") || `<span class="muted">Office phone numbers aren't filled in yet (profile.offices).</span>`;
+// ---------- Events ----------
+getJSON("data/overview.json").then(ov => {
+  const ev = [...(ov.events || [])].sort((a,b) => b.date.localeCompare(a.date));
+  const hostedTH = ev.filter(e => e.type === "Town hall" && e.role === "hosted").length;
+  const lastPublic = ev.find(e => e.type === "Town hall" || e.type === "Public meeting");
+  document.getElementById("thTiles").innerHTML = [
+    [hostedTH, `Public town halls ${M.subj} hosted, in ${M.poss} releases`],
+    [ev.length, `Constituent events in ${M.poss} releases and local news`],
+    [lastPublic ? longDate(lastPublic.date) : "—", lastPublic ? `Last public town hall or meeting ${M.subj} spoke at (${lastPublic.city || ""})` : "Last public town hall"],
+  ].map(([n,l]) => `<div class="tile"><span class="n" style="font-size:${String(n).length>6?"1.2rem":""}">${esc(n)}</span><span class="l">${esc(l)}</span></div>`).join("");
+  document.getElementById("thList").innerHTML = ev.map(e => `<article class="ev"><div class="ev-date"><span class="m">${esc(e.approx || longDate(e.date))}</span></div>
+    <div><div><span class="k">${esc(e.type)}</span><span class="evrole">${e.role === "hosted" ? "Hosted" : "Took part"}</span></div><div class="t">${esc(e.title)}</div>
+    ${e.city?`<div class="muted">${esc(e.city)}</div>`:""}${e.notes?`<p class="ex">${esc(e.notes)}</p>`:""}
+    <div class="ev-links"><a class="src" href="${esc(e.source)}" target="_blank" rel="noopener">Source</a></div></div></article>`).join("")
+    || `<p class="muted">No events listed yet: add sourced events to data/events.json, then run <code>scripts/build_overview.py</code>.</p>`;
+}).catch(() => { document.getElementById("thList").innerHTML = `<p class="muted">The event list isn't built yet: add sourced events to data/events.json, then run <code>scripts/build_overview.py</code>.</p>`; });
+});
+</script>
+</body>
+</html>

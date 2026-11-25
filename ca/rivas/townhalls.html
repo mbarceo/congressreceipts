@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="When Rep. Luz Rivas meets constituents: town halls, public meetings and events from her press releases and local news, each with a source.">
+<title>Rivas Town Halls</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+[hidden]{display:none!important}
+.evrole{font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-family:var(--f-mono);color:var(--accent);margin-left:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="sitenav" aria-label="Pages"></nav>
+  <header id="top">
+    <div class="ident">
+      <img class="portrait" src="assets/rivas.jpg" alt="Official House portrait of Rep. Luz Rivas" width="400" height="500">
+      <div class="ident-text"><span class="eyebrow">Meeting constituents</span><h1>Town halls and events</h1></div>
+    </div>
+    <p class="lede">Every public event with Rep. Luz Rivas found in her press releases and local news, newest first. Each links to its source.</p>
+  </header>
+
+  <section id="townhalls">
+    <div class="sec-head">
+      <span class="eyebrow">Town halls and events</span>
+      <h2>When she meets constituents</h2>
+      <p>Public events from her press releases and local news. Her office's <a href="https://rivas.house.gov/about/events" target="_blank" rel="noopener">events page</a> lists no upcoming events.</p>
+    </div>
+    <div class="tally" id="thTiles"></div>
+    <div id="thList"></div>
+    <p class="muted" style="margin:0;font-size:.8rem">"Hosted" means her office ran the event; "took part" means another group hosted it. This list includes only events her releases or local press describe, so it may miss some. Her office also posts help pages on <a href="https://rivas.house.gov/services/know-your-rights" target="_blank" rel="noopener">immigrants' rights</a>, <a href="https://rivas.house.gov/services/daca-renewal-resources-and-faqs" target="_blank" rel="noopener">DACA renewal</a> and <a href="https://rivas.house.gov/services/help-federal-agency" target="_blank" rel="noopener">help with a federal agency</a>.</p>
+  </section>
+
+
+  <section id="ask">
+    <div class="sec-head"><span class="eyebrow">Ask her office</span><h2>Find out about her next event</h2><p>Her office does not post upcoming events online. Call the district office to ask, or see every way to reach her on the <a href="./#channels">Overview</a>.</p></div>
+    <div class="facts"><span><b>Arleta district office</b> <span class="mono">(818) 253-3535</span></span><span><b>Washington office</b> <span class="mono">(202) 225-6131</span></span></div>
+    <p class="muted" style="margin:0;font-size:.8rem">Phone numbers: <a href="https://rivas.house.gov/contact" target="_blank" rel="noopener">rivas.house.gov/contact</a>.</p>
+  </section>
+</div>
+<script>
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const getJSON = p => fetch(p).then(r => { if(!r.ok) throw 0; return r.json(); });
+const longDate = iso => new Date(iso+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
+// ---------- Events ----------
+getJSON("data/overview.json").then(ov => {
+  const ev = [...ov.events].sort((a,b) => b.date.localeCompare(a.date));
+  const hostedTH = ev.filter(e => e.type === "Town hall" && e.role === "hosted").length;
+  const lastPublic = ev.find(e => e.type === "Town hall" || e.type === "Public meeting");
+  document.getElementById("thTiles").innerHTML = [
+    [hostedTH, "Public town halls she hosted, in her releases"],
+    [ev.length, "Constituent events in her releases and local news"],
+    [lastPublic ? longDate(lastPublic.date) : "—", lastPublic ? `Last public town hall or meeting she spoke at (${lastPublic.city || ""})` : "Last public town hall"],
+  ].map(([n,l]) => `<div class="tile"><span class="n" style="font-size:${String(n).length>6?"1.2rem":""}">${esc(n)}</span><span class="l">${esc(l)}</span></div>`).join("");
+  document.getElementById("thList").innerHTML = ev.map(e => `<article class="ev"><div class="ev-date"><span class="m">${esc(e.approx || longDate(e.date))}</span></div>
+    <div><div><span class="k">${esc(e.type)}</span><span class="evrole">${e.role === "hosted" ? "Hosted" : "Took part"}</span></div><div class="t">${esc(e.title)}</div>
+    ${e.city?`<div class="muted">${esc(e.city)}</div>`:""}${e.notes?`<p class="ex">${esc(e.notes)}</p>`:""}
+    <div class="ev-links"><a class="src" href="${esc(e.source)}" target="_blank" rel="noopener">Source</a></div></div></article>`).join("");
+}).catch(() => { document.getElementById("thList").innerHTML = '<p class="muted">The event list didn\'t load. Call the Arleta office at (818) 253-3535.</p>'; });
+
+</script>
+<script src="site.js"></script>
+</body>
+</html>

@@ -1,0 +1,555 @@
+{
+ "_note": "Evidence cards for the Stances page's big questions (palestine, ice, police, corporate). Build: python3 -I scripts/build_cards.py -> data/cards.json, which palestine.js, ice.js, corporate.js and scripts/extract_claims.js read. Item order here is the order shown. Curated items: d, s (side key), t, u, optional hi (shown in compact view), unv (Unverified pill), brk. Roll-call items: 'rolls' lists House Clerk roll ids (year + roll number, as in https://clerk.house.gov/Votes/<id>) with 'yea' = the side a Yea vote is on; his vote, the item's side, the 'Breaks with party' pill and the date (single roll) come from data/votes.json. Multi-roll items must share one vote. Placeholders in t: {Vote} = 'Voted for' / 'Voted against' / 'Voted “Present” on' / 'Did not vote on'; {DemMaj}/{demMaj} = 'Most Democrats voted no (187–9)'; {dcount} = Democrats majority–minority; {dopposed} = 'opposed' / 'supported' / 'split on'; {dside} = 'no' / 'yes'; {dall} = 'opposed by most Democrats' (all rolls); {brk_phrase} = 'breaking with most Democrats' / 'voting with most Democrats'; {dsame} = number of Democrats who voted as he did; {env_count} = his record on 2025 Congressional Review Act resolutions on environmental and energy rules. Money placeholders come from data/fec/establishment_calc.json, data/fec/summary.json and data/fec/raw (see build_cards.py). 'check' asserts his vote on a roll a curated item describes without linking to it.",
+ "cards": [
+  {
+   "key": "palestine",
+   "q": "Pro-Palestine?",
+   "v": "Mixed",
+   "neutral": "mixed",
+   "sum": "He has moved toward conditioning U.S. military aid to Israel and pressing for Gaza humanitarian access, and opposed sanctions on the International Criminal Court. He also backs Israel's defense, including Iron Dome, and is aligned with J Street, a pro-Israel, pro-two-state group, rather than AIPAC. He has not called for ending all aid to Israel.",
+   "short": "Backs conditions on military aid to Israel and Gaza humanitarian access, and opposed ICC sanctions. Also backs Iron Dome and sides with J Street, not AIPAC.",
+   "items": [
+    {
+     "d": "2026-08",
+     "s": "pal",
+     "t": "Co-led a letter from 65 members urging Secretary Rubio to ease Israeli “dual-use” restrictions blocking humanitarian aid to Gaza.",
+     "u": "https://tran.house.gov/media/press-releases/representatives-tran-bera-and-carbajal-lead-65-members-urging-secretary-rubio"
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2026243",
+       "yea": "pal"
+      }
+     ],
+     "t": "{Vote} the Massie amendment to cut $3.3B in military aid to Israel, saying he wants to “end unconditional funding for Israel.”",
+     "also": [
+      "https://tran.house.gov/media/press-releases/representative-derek-tran-supports-massie-amendment-block-us-military-funding"
+     ]
+    },
+    {
+     "d": "2026-07",
+     "s": "isr",
+     "t": "In the same statement, said he supports continued funding for Israel's defense, including Iron Dome.",
+     "u": "https://tran.house.gov/media/press-releases/representative-derek-tran-supports-massie-amendment-block-us-military-funding"
+    },
+    {
+     "d": "2026-04",
+     "s": "pal",
+     "t": "Hosted CAIR-LA's Hussam Ayloush at his Capitol office during Muslim Advocacy Day; Republicans attacked him for it.",
+     "u": "https://freebeacon.com/democrats/california-democrat-hosts-cair-leader-who-said-israel-should-be-attacked/"
+    },
+    {
+     "d": "2026-02",
+     "s": "mixed",
+     "t": "Took a J Street Education Fund trip to Israel (Feb 13–20, 2026, $19,864) to “explore the current situation in Israel and the Palestinian territories.” J Street backs Israel and a two-state solution.",
+     "u": "https://www.legistorm.com/trip/group/16351.html"
+    },
+    {
+     "d": "2025-12",
+     "s": "pal",
+     "t": "Cosponsors the Block the Bombs Act (H.R. 3565), which would restrict transfers of certain bombs to Israel.",
+     "u": "https://www.congress.gov/bill/119th-congress/house-bill/3565"
+    },
+    {
+     "d": "2025-07",
+     "s": "pal",
+     "unv": 1,
+     "t": "Gave a floor speech saying Israel was killing Palestinians seeking aid, as reported by the Washington Free Beacon. The exact wording is unverified.",
+     "u": "https://freebeacon.com/democrats/california-democrat-hosts-cair-leader-who-said-israel-should-be-attacked/"
+    },
+    {
+     "d": "2025-06",
+     "s": "isr",
+     "t": "Called a nuclear Iran dangerous to the U.S. and Israel, while urging diplomacy over military strikes.",
+     "u": "https://tran.house.gov/media/press-releases/rep-derek-tran-conflict-between-israel-and-iran"
+    },
+    {
+     "rolls": [
+      {
+       "roll": "20257",
+       "yea": "isr"
+      }
+     ],
+     "t": "{Vote} H.R. 23, the bill to sanction the International Criminal Court after it issued warrants for Israeli leaders."
+    },
+    {
+     "d": "2024–26",
+     "s": "mixed",
+     "t": "Took about {proisrael_about} from pro-Israel groups, almost all through J Street, and {aipac} from AIPAC's PAC. Endorsed by J Street, not AIPAC.",
+     "u": "money.html"
+    }
+   ]
+  },
+  {
+   "key": "ice",
+   "q": "Pro-ICE?",
+   "v": "Mostly no",
+   "neutral": "mix",
+   "sum": "He has voted against funding ICE without reforms, called for agents to stand down after the Minneapolis killings, and opposed most Republican immigration-enforcement bills. But he broke with most Democrats to vote for the Laken Riley Act, a resolution thanking ICE personnel, and two bills deporting immigrants convicted of certain crimes or fraud.",
+   "short": "Votes against ICE funding without reforms and most enforcement bills, but broke with Democrats on the Laken Riley Act and a resolution thanking ICE.",
+   "pro": "Supports ICE / enforcement",
+   "con": "Critical of ICE / enforcement",
+   "items": [
+    {
+     "d": "2026-07",
+     "s": "con",
+     "t": "Introduced H.R. 9883, the Private Detention Corporate Accountability Act, setting a $5M minimum payout for wrongful deaths in private ICE detention.",
+     "u": "https://www.congress.gov/bill/119th-congress/house-bill/9883"
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2026120",
+       "yea": "con"
+      }
+     ],
+     "t": "{Vote} H.R. 1689 to grant Temporary Protected Status to Haitians."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2026102",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} H.Res. 1128, which backed full DHS funding and thanked DHS staff including ICE. {DemMaj}."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "202694",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} the Deporting Fraudsters Act (H.R. 1958), {brk_phrase}."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "202687",
+       "yea": "pro"
+      }
+     ],
+     "hi": 1,
+     "t": "{Vote} DHS appropriations (H.R. 7744) because it funded ICE without reforms."
+    },
+    {
+     "d": "2026-02",
+     "s": "con",
+     "hi": 1,
+     "check": [
+      {
+       "roll": "202653",
+       "expect": "Nay"
+      }
+     ],
+     "t": "Voted against the final funding package (H.R. 7148): “I will not be complicit in the wrongful targeting and killing of American citizens.”",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-opposes-funding-ice-demands-reforms-protect-us-citizens"
+    },
+    {
+     "d": "2026-01",
+     "s": "con",
+     "t": "Cosponsored articles of impeachment against DHS Secretary Kristi Noem (H.Res. 996).",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-cosponsors-articles-impeachment-against-homeland-security"
+    },
+    {
+     "d": "2026-01",
+     "s": "con",
+     "hi": 1,
+     "t": "Joined 14 other veterans in Congress demanding ICE and CBP stand down after federal agents killed two people in Minneapolis.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-veterans-congress-demand-ice-and-cbp-stand-down"
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2025340",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} the Kayla Hamilton Act (H.R. 4371)."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2025264",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} the Stop Illegal Entry Act (H.R. 3486), saying it “will only sow more division.”",
+     "also": [
+      "https://tran.house.gov/media/press-releases/representative-tran-issues-statement-following-house-vote-hr-3486"
+     ]
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2025183",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} H.R. 875, which makes DUI grounds for deportation."
+    },
+    {
+     "d": "2025-06",
+     "s": "con",
+     "t": "Said of the Southern California raids: “what ICE is doing right now is not making us safer.”",
+     "u": "https://tran.house.gov/media/press-releases/icymi-representative-derek-tran-addresses-ice-deportation-actions-across"
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2025158",
+       "yea": "pro"
+      }
+     ],
+     "hi": 1,
+     "t": "{Vote} H.Res. 488, which “expresses gratitude to law enforcement officers, including U.S. Immigration and Customs Enforcement personnel.” {DemMaj}.",
+     "also": [
+      "https://www.govinfo.gov/content/pkg/BILLS-119hres488eh/html/BILLS-119hres488eh.htm"
+     ]
+    },
+    {
+     "d": "2025-06",
+     "s": "con",
+     "t": "Opposed the National Guard deployment to Los Angeles during the immigration raids.",
+     "u": "https://tran.house.gov/media/press-releases/rep-derek-tran-demands-oversight-immigration-enforcement-southern-california"
+    },
+    {
+     "rolls": [
+      {
+       "roll": "202542",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} the Agent Raul Gonzalez Officer Safety Act (H.R. 35), which raised penalties for fleeing Border Patrol."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "202517",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} the Preventing Violence Against Women by Illegal Aliens Act (H.R. 30), {brk_phrase}."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "202523",
+       "yea": "pro"
+      }
+     ],
+     "hi": 1,
+     "t": "{Vote} the Laken Riley Act, which requires ICE to detain immigrants charged with theft. He was one of {dsame} Democrats."
+    }
+   ]
+  },
+  {
+   "key": "police",
+   "q": "Pro-police?",
+   "v": "Mostly yes",
+   "neutral": "mix",
+   "sum": "He votes for most police-support and crime bills, often breaking with his party on D.C. crime and bail measures. His no votes came on resolutions with partisan language or new gun privileges for federal officers.",
+   "short": "Backs most police and crime bills, often breaking with his party. Voted no on resolutions with partisan language.",
+   "pro": "Supports police",
+   "con": "Against",
+   "items": [
+    {
+     "rolls": [
+      {
+       "roll": "2026171",
+       "yea": "pro"
+      }
+     ],
+     "hi": 1,
+     "t": "{Vote} the Cashless Bail Reporting Act (H.R. 5625); {demMaj}."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2026162",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} H.Res. 1252 memorializing officers killed in the line of duty."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2026165",
+       "yea": "pro"
+      }
+     ],
+     "hi": 1,
+     "t": "{Vote} H.Con.Res. 96, a pro-police resolution whose preamble attacked “progressive politicians” and sanctuary cities. {DemMaj}.",
+     "also": [
+      "https://www.govinfo.gov/content/pkg/BILLS-119hconres96eh/html/BILLS-119hconres96eh.htm"
+     ]
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2026157",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} the Combating Organized Retail Crime Act (H.R. 2853)."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "202670",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} the Law-Enforcement Innovate to De-Escalate Act (H.R. 2189), {brk_phrase}."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2025275",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} the District of Columbia Policing Protection Act (H.R. 5143), {brk_phrase}."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2025270",
+       "yea": "pro"
+      }
+     ],
+     "hi": 1,
+     "t": "{Vote} the DC CRIMES Act (H.R. 4922), {brk_phrase}."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2025185",
+       "yea": "pro"
+      }
+     ],
+     "hi": 1,
+     "t": "{Vote} H.Res. 516 condemning the June 2025 Los Angeles riots. {DemMaj}."
+    },
+    {
+     "d": "2025-06",
+     "s": "pro",
+     "t": "Wrote to the Defense Secretary about the LA deployment: “Public safety will always be my top priority.”",
+     "u": "https://tran.house.gov/media/press-releases/reps-tran-cisneros-and-whitesides-demand-answers-secretary-hegseth-regarding"
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2025131",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} H.R. 2240 on officer safety and wellness data."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2025130",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} H.R. 2255, which lets federal officers buy their retired service weapons."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2025123",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} H.Con.Res. 30 expressing support for local law enforcement officers."
+    }
+   ]
+  },
+  {
+   "key": "corporate",
+   "q": "Pro-corporate?",
+   "v": "Leaning yes",
+   "sum": "He ran in 2024 pledging to refuse corporate PAC money, kept that pledge through the race, then took {corp26} from {ncorp26} corporate PACs in 2025–26. He often breaks with most Democrats to back business deregulation and crypto bills. But he votes to keep consumer-protection rules, backs labor unions, and has taken on rideshare companies and private prisons.",
+   "short": "Took {corp26} from corporate PACs in 2025–26 after a 2024 pledge to refuse them. Backs crypto and deregulation bills, but sides with consumers and unions on others.",
+   "pro": "Pro-corporate",
+   "con": "Consumer or labor side",
+   "items": [
+    {
+     "d": "2025–26",
+     "s": "pro",
+     "hi": 1,
+     "names": [
+      "AMAZON",
+      "BOEING",
+      "LOCKHEED",
+      "ANDURIL",
+      "COINBASE",
+      "WALMART",
+      "DELOITTE",
+      "KPMG"
+     ],
+     "t": "Took {corp26} from {ncorp26} corporate PACs in 2025–26, such as Amazon, Boeing, Lockheed Martin, Anduril, Coinbase and Walmart, plus law and accounting firms such as Deloitte and KPMG. In 2023–24 it was {corp24}; four committees this page once counted as corporate were a union and advocacy groups. Counts use each committee's FEC type, then its name.",
+     "u": "money.html"
+    },
+    {
+     "d": "2024",
+     "s": "con",
+     "hi": 1,
+     "t": "Pledged in his 2024 race: “I won’t accept a dime of corporate PAC money.” End Citizens United, which backs candidates who refuse it, gave his campaign {ecu24} in 2023–24 and nothing in 2025–26 (FEC records).",
+     "u": "https://freebeacon.com/democrats/california-congressman-who-campaigned-on-no-corporate-pac-money-pledge-takes-tens-of-thousands-of-dollars-from-corporate-pacs/"
+    },
+    {
+     "d": "2025–26",
+     "s": "pro",
+     "t": "Took {trade26} from trade associations and cooperatives such as bankers, realtors, hospitals and sugar growers, up from {trade24} in 2023–24.",
+     "u": "money.html"
+    },
+    {
+     "d": "2025-07",
+     "rolls": [
+      {
+       "roll": "2025199",
+       "yea": "pro"
+      },
+      {
+       "roll": "2025200",
+       "yea": "pro"
+      }
+     ],
+     "hi": 1,
+     "t": "{Vote} the GENIUS Act and the CLARITY Act, the crypto industry's top bills. Most Democrats {dopposed} CLARITY ({dcount})."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "202571",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} the repeal of the IRS rule requiring crypto platforms to report user transactions (H.J.Res. 25). Most Democrats voted {dside}."
+    },
+    {
+     "d": "2025-12",
+     "rolls": [
+      {
+       "roll": "2025328",
+       "yea": "pro"
+      },
+      {
+       "roll": "2025311",
+       "yea": "pro"
+      },
+      {
+       "roll": "2025324",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} the Increasing Investor Opportunities Act, the DUMP Red Tape Act and the Electric Supply Chain Act, all {dall}."
+    },
+    {
+     "d": "2026",
+     "rolls": [
+      {
+       "roll": "2026271",
+       "yea": "pro"
+      },
+      {
+       "roll": "202623",
+       "yea": "pro"
+      },
+      {
+       "roll": "202612",
+       "yea": "pro"
+      },
+      {
+       "roll": "2026164",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} the Main Street Act, the SHOWER Act on showerhead efficiency rules, the Affordable HOMES Act and the fuel retailer (E15) bill, all {dall}."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2026321",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} the Retirement Fairness for Charities Act, which most Democrats {dopposed} ({dcount})."
+    },
+    {
+     "d": "2025-04",
+     "rolls": [
+      {
+       "roll": "202595",
+       "yea": "pro"
+      },
+      {
+       "roll": "202596",
+       "yea": "pro"
+      }
+     ],
+     "hi": 1,
+     "t": "{Vote} repealing consumer-protection rules on bank overdraft fees and big tech payment apps (S.J.Res. 18 and 28)."
+    },
+    {
+     "d": "2025",
+     "rolls": [
+      {
+       "roll": "2025143",
+       "yea": "pro"
+      }
+     ],
+     "env": 1,
+     "t": "Voted against {env_count} Republican resolutions in 2025 repealing environmental and energy rules."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2025332",
+       "yea": "con"
+      }
+     ],
+     "hi": 1,
+     "t": "{Vote} the Protect America's Workforce Act, restoring union rights for federal workers. Labor PACs gave him {labor26} in 2025–26."
+    },
+    {
+     "d": "2026-07",
+     "s": "con",
+     "t": "Led a bipartisan push with Rep. Anna Paulina Luna against shielding rideshare companies from liability lawsuits.",
+     "u": "https://tran.house.gov/media/press-releases/representatives-tran-luna-lead-bipartisan-effort-against-amendment-shielding"
+    },
+    {
+     "d": "2026-07",
+     "s": "con",
+     "t": "Introduced a bill holding private ICE detention companies liable for wrongful deaths (H.R. 9883).",
+     "u": "https://www.congress.gov/bill/119th-congress/house-bill/9883"
+    },
+    {
+     "d": "2025",
+     "s": "con",
+     "t": "Cosponsored the Stop Price Gouging in Grocery Stores Act and the Stop the Trump Electricity Price Hikes Act.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-helps-introduce-legislation-assess-true-costs-trumps"
+    },
+    {
+     "d": "2025-12",
+     "rolls": [
+      {
+       "roll": "2025310",
+       "yea": "pro"
+      },
+      {
+       "roll": "2025358",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} the Small Business Regulatory Reduction Act and the Mining Regulatory Clarity Act."
+    }
+   ]
+  }
+ ]
+}

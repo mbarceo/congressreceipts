@@ -1,0 +1,113 @@
+{
+ "_note": "Hand-curated. Roll ids are chosen by reading senate.gov's official titles; his vote is pulled from data/votes.json, never typed here. statementRx matches titles; statementPicks adds specific releases with a verbatim snippet found by 'rx' in the release's full text (data/statements_full.json). No editorial verdicts except the Israel card's headline, set in 'israel.headline'.",
+ "issues": [
+  {
+   "id": "immigration",
+   "name": "Immigration and ICE",
+   "intro": "Immigration enforcement votes: the Laken Riley Act, Homeland Security leadership, and the fight over ICE funding in the 2026 Homeland Security appropriations bill.",
+   "statementRx": "\\bice\\b|immigra|detention|detainee|birthright|citizenship|deport|asylum|\\bdaca\\b|dreamer|noem|raids?\\b|homeland security",
+   "rolls": [
+    "2025-003",
+    "2025-007",
+    "2025-017",
+    "2025-321",
+    "2026-063",
+    "2026-018",
+    "2026-038",
+    "2026-074",
+    "2026-149",
+    "2026-156",
+    "2026-111",
+    "2026-092"
+   ],
+   "statementPicks": []
+  },
+  {
+   "id": "cost-of-living",
+   "name": "Housing and cost of living",
+   "intro": "The 2025 and 2026 reconciliation bills, tariffs, health insurance subsidies, government funding and the bipartisan housing supply bill.",
+   "statementRx": "housing|rent\\b|homeowner|afford|cost of living|prices|tariff|grocer|medicaid|health care|premium",
+   "rolls": [
+    "2025-372",
+    "2025-225",
+    "2025-600",
+    "2025-644",
+    "2025-411",
+    "2025-618",
+    "2026-011",
+    "2026-020",
+    "2026-053",
+    "2026-163"
+   ],
+   "statementPicks": []
+  },
+  {
+   "id": "public-safety",
+   "name": "Public safety",
+   "intro": "Police funding, fentanyl penalties, and limits on using the National Guard and the military for domestic law enforcement.",
+   "statementRx": "police|law enforcement|public safety|crime|fentanyl|gun|firearm|national guard|wildfire|firefight",
+   "rolls": [
+    "2025-081",
+    "2025-127",
+    "2025-566",
+    "2025-567",
+    "2025-569",
+    "2026-160"
+   ],
+   "statementPicks": []
+  }
+ ],
+ "israel": {
+  "question": "Israel or Palestine?",
+  "headline": "TBD",
+  "headlineWhy": "State the rule behind the headline once the statement items are in.",
+  "summary": "",
+  "items": [
+   {
+    "d": "2025-04",
+    "rolls": [
+     "2025-165",
+     "2025-166"
+    ],
+    "text": "Voted {vote} on both of Sen. Sanders's April 2025 resolutions to block arms sales to Israel. Both failed.",
+    "yea": "pal"
+   },
+   {
+    "d": "2025-07",
+    "rolls": [
+     "2025-454",
+     "2025-455"
+    ],
+    "text": "Voted {vote} on both July 2025 resolutions to block weapons sales and exports to Israel, which most of the Democratic caucus supported. Both failed.",
+    "yea": "pal"
+   },
+   {
+    "d": "2026-04",
+    "rolls": [
+     "2026-080",
+     "2026-081"
+    ],
+    "text": "Voted {vote} on both April 2026 resolutions to block arms sales to Israel. Both failed.",
+    "yea": "pal"
+   },
+   {
+    "d": "2026-09",
+    "roll": "2026-252",
+    "text": "Voted {vote} to force a State Department report on Israel's human rights practices (S.Res. 852). It failed {yea}–{nay}; the Democratic caucus voted {cY}–{cN}.",
+    "yea": "pal"
+   },
+   {
+    "d": "2025-01",
+    "dir": "neutral",
+    "roll": "2025-022",
+    "text": "Voted {vote} on taking up H.R. 23, which sanctions the International Criminal Court. It failed {yea}–{nay}; the Democratic caucus voted {cY}–{cN}."
+   },
+   {
+    "d": "Career",
+    "dir": "isr",
+    "u": "money.html",
+    "text": "Track AIPAC counts {trackaipac} in pro-Israel lobby money to his campaigns over his career."
+   }
+  ]
+ }
+}

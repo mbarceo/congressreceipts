@@ -1,0 +1,247 @@
+[
+ {
+  "label": "J Street earmarked donations, 2023-24",
+  "shown": 83533,
+  "actual": 83532.67,
+  "ok": true,
+  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+ },
+ {
+  "label": "J Street earmarked donations, 2025-26",
+  "shown": 131010,
+  "actual": 131009.9,
+  "ok": true,
+  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+ },
+ {
+  "label": "J Street earmarked donations, total",
+  "shown": 214543,
+  "actual": 214542.57,
+  "ok": true,
+  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+ },
+ {
+  "label": "J Street direct contributions, 2025-26",
+  "shown": 2057,
+  "actual": 2057.1,
+  "ok": true,
+  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+ },
+ {
+  "label": "JACPAC earmarked donations, 2025-26",
+  "shown": 2500,
+  "actual": 2500.0,
+  "ok": true,
+  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+ },
+ {
+  "label": "DMFI PAC, 2023-24",
+  "shown": 1000,
+  "actual": 1000.0,
+  "ok": true,
+  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+ },
+ {
+  "label": "Total pro-Israel money",
+  "shown": 220100,
+  "actual": 220099.67,
+  "ok": true,
+  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+ },
+ {
+  "label": "Total raised, both cycles",
+  "shown": 12502347,
+  "actual": 12502346.81,
+  "ok": true,
+  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+ },
+ {
+  "label": "Pro-Israel share of money raised (%)",
+  "shown": 1.8,
+  "actual": 1.76,
+  "ok": true,
+  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+ },
+ {
+  "label": "AIPAC PAC (C00797670) to Tran, both cycles",
+  "shown": 0,
+  "actual": 0,
+  "ok": true,
+  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+ },
+ {
+  "label": "United Democracy Project spending for/against Tran",
+  "shown": 0,
+  "actual": 0,
+  "ok": true,
+  "source": "FEC Schedule E by candidate"
+ },
+ {
+  "label": "End Citizens United, 2023-24 (direct + earmarked)",
+  "shown": 9550,
+  "actual": 9550.01,
+  "ok": true,
+  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+ },
+ {
+  "label": "End Citizens United, 2025-26",
+  "shown": 0,
+  "actual": 0,
+  "ok": true,
+  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+ },
+ {
+  "label": "Corporate PAC money, 2025-26",
+  "shown": 305250,
+  "actual": 305250,
+  "ok": true,
+  "source": "FEC Schedule A, classified by FEC organization type, then name (scripts/build_establishment.py)"
+ },
+ {
+  "label": "Corporate PACs that gave, 2025-26",
+  "shown": 91,
+  "actual": 91,
+  "ok": true,
+  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+ },
+ {
+  "label": "Corporate PAC money, 2023-24",
+  "shown": 0,
+  "actual": 0,
+  "ok": true,
+  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+ },
+ {
+  "label": "Trade association money, 2025-26",
+  "shown": 137507,
+  "actual": 137507,
+  "ok": true,
+  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+ },
+ {
+  "label": "Trade association money, 2023-24",
+  "shown": 35500,
+  "actual": 35500,
+  "ok": true,
+  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+ },
+ {
+  "label": "Labor PAC money, 2025-26",
+  "shown": 196500,
+  "actual": 196500,
+  "ok": true,
+  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+ },
+ {
+  "label": "Jeffries committees, total",
+  "shown": 74942,
+  "actual": 74942,
+  "ok": true,
+  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+ },
+ {
+  "label": "Jeffries Battleground Protection Fund",
+  "shown": 56942,
+  "actual": 56942.0,
+  "ok": true,
+  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+ },
+ {
+  "label": "Party leaders' committees, 2023-24",
+  "shown": 56500,
+  "actual": 56500,
+  "ok": true,
+  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+ },
+ {
+  "label": "Party leaders' committees, 2025-26",
+  "shown": 135759,
+  "actual": 135759,
+  "ok": true,
+  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+ },
+ {
+  "label": "Outside spending for Tran, 2023-24",
+  "shown": 4358605,
+  "actual": 4358605.4,
+  "ok": true,
+  "source": "FEC Schedule E by candidate"
+ },
+ {
+  "label": "House Majority PAC for Tran, 2023-24",
+  "shown": 1889515,
+  "actual": 1889514.64,
+  "ok": true,
+  "source": "FEC Schedule E by candidate"
+ },
+ {
+  "label": "Congressional Leadership Fund against Tran, 2023-24",
+  "shown": 11363827,
+  "actual": 11363827.49,
+  "ok": true,
+  "source": "FEC Schedule E by candidate"
+ },
+ {
+  "label": "Fairshake spending for/against Tran, 2025-26",
+  "shown": 0,
+  "actual": 0,
+  "ok": true,
+  "source": "FEC Schedule E by candidate"
+ },
+ {
+  "label": "Party-unity score (%)",
+  "shown": 94.0,
+  "actual": 94.0,
+  "ok": true,
+  "source": "House Clerk roll-call XML (scripts/build_alignment.py)"
+ },
+ {
+  "label": "Party-unity rank among Democrats",
+  "shown": 189,
+  "actual": 189,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Jeffries on contested votes (%)",
+  "shown": 45.8,
+  "actual": 45.8,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Leadership PACs giving $5,000 on Mar 28-29, 2024",
+  "shown": 4,
+  "actual": 4,
+  "ok": true,
+  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+ },
+ {
+  "label": "Jeffries for Congress, both cycles",
+  "shown": 8000,
+  "actual": 8000.0,
+  "ok": true,
+  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+ },
+ {
+  "label": "Jeffries leadership PAC (JEFF PAC), 2023-24",
+  "shown": 10000,
+  "actual": 10000.0,
+  "ok": true,
+  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+ },
+ {
+  "label": "Each Red to Blue-week leadership PAC gift ($)",
+  "shown": 5000,
+  "actual": 5000.0,
+  "ok": true,
+  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+ },
+ {
+  "label": "AIPAC PAC to Michelle Steel, 2023-24",
+  "shown": 19512,
+  "actual": 19512,
+  "ok": true,
+  "source": "ProPublica FEC Itemizer rows (saved copy)"
+ }
+]

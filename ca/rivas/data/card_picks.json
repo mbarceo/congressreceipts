@@ -1,0 +1,45 @@
+{
+ "_note": "Evidence cards for the Stances page's 'big questions'. Each item points one way: 'pro' or 'con' (labels per card). Roll items: 'yea' says which side a Yea vote is on; her vote, and therefore the item's side, comes from data/votes.json. Release items: 'stmt' must match one release. Headlines are computed in scripts/build_cards.py by the rule stated on each card. Build: python3 -I scripts/build_cards.py (after build_stances.py and build_establishment.py).",
+ "cards": [
+  {"key": "ice", "q": "Pro-ICE?", "eb": "Immigration enforcement", "pro": "Pro-enforcement", "con": "Against ICE or for immigrants", "section": "immigration",
+   "rollsFromIssue": "immigration", "issueYea": "pro", "issueYeaOverrides": {"2026-120": "con"},
+   "items": [
+    {"d": "2026-01", "s": "con", "hi": 1, "stmt": "calls-ice-be-dismantled", "t": "Called for ICE to be dismantled, saying it is “broken beyond repair” and a threat to public safety."},
+    {"d": "2026-01", "s": "con", "hi": 1, "stmt": "vote-hell-no-funding-dhs-ice", "more": ["votes-hell-no-again-short-term-funding-ice-dhs", "votes-hell-no-third-time-funding-bill-ice"], "t": "Issued three releases (Jan, Feb and Mar 2026) saying she voted “hell no” on funding bills for ICE and DHS."},
+    {"d": "2026-01", "s": "con", "stmt": "calls-impeachment-dhs-secretary-kristi-noem", "t": "Called for the impeachment of Homeland Security Secretary Kristi Noem."},
+    {"d": "2026-05", "s": "con", "hi": 1, "stmt": "reps-rivas-lofgren-mullin-and-whitesides-conduct-unannounced", "more": ["conducts-oversight-dilley-family-detention", "joins-colleagues-unannounced-oversight-visit-adelanto"], "t": "Made unannounced oversight visits to immigration detention facilities, including Adelanto (Oct 2026) and the Dilley family detention center in Texas (Jul 2026)."},
+    {"d": "2026-06", "s": "con", "stmt": "introduces-bill-support-communities-impacted-ice-raids", "t": "Introduced a bill creating an office to provide mental health services to communities affected by immigration raids."},
+    {"d": "2025-08", "s": "con", "stmt": "introduces-immigration-bill-after-constituent", "t": "Introduced an immigration bill after a constituent was transferred from the Adelanto detention center to Arizona."},
+    {"d": "2025-06", "s": "con", "stmt": "demands-answers-and-disciplinary-action-ice-breaking", "t": "Demanded answers and disciplinary action from ICE over what she called lawbreaking and misconduct during the Los Angeles raids."}
+   ]},
+  {"key": "police", "q": "Pro-police?", "eb": "Policing and crime", "pro": "Police or tough-on-crime side", "con": "Against", "section": "public-safety",
+   "rollsFromIssue": "public-safety", "issueYea": "pro",
+   "items": []},
+  {"key": "corporate", "q": "Pro-corporate?", "eb": "Money and business", "pro": "Business side", "con": "Consumer or labor side", "section": null,
+   "rolls": [
+    {"roll": "2025-071", "yea": "pro", "t": "the repeal of the IRS rule requiring crypto platforms to report user transactions (H.J. Res. 25)"},
+    {"roll": "2025-095", "yea": "pro", "t": "repealing the consumer bureau's rule on big-tech payment apps (S.J. Res. 28)"},
+    {"roll": "2025-096", "yea": "pro", "t": "repealing the consumer bureau's overdraft-fee rule (S.J. Res. 18)"},
+    {"roll": "2025-199", "yea": "pro", "t": "the CLARITY Act, the crypto industry's market-structure bill"},
+    {"roll": "2025-200", "yea": "pro", "t": "the GENIUS Act on stablecoins, which Jeffries voted for"},
+    {"roll": "2025-041", "yea": "pro", "t": "the Midnight Rules Relief Act, letting Congress repeal batches of late-term regulations"},
+    {"roll": "2025-310", "yea": "pro", "t": "the Small Business Regulatory Reduction Act"},
+    {"roll": "2025-311", "yea": "pro", "t": "the DUMP Red Tape Act"},
+    {"roll": "2025-324", "yea": "pro", "t": "the Electric Supply Chain Act"},
+    {"roll": "2025-328", "yea": "pro", "t": "the Increasing Investor Opportunities Act"},
+    {"roll": "2025-358", "yea": "pro", "t": "the Mining Regulatory Clarity Act"},
+    {"roll": "2026-164", "yea": "pro", "t": "the fuel-retailer (E15) bill, which Jeffries voted for"},
+    {"roll": "2026-271", "yea": "pro", "t": "the Main Street Act"},
+    {"roll": "2026-321", "yea": "pro", "t": "the Retirement Fairness for Charities and Educational Institutions Act"},
+    {"roll": "2025-332", "yea": "con", "t": "the Protect America's Workforce Act, restoring federal workers' collective bargaining"},
+    {"roll": "2026-216", "yea": "con", "t": "the Faster Labor Contracts Act"}
+   ],
+   "items": [
+    {"d": "2025–26", "s": "pro", "hi": 1, "money": "corp", "t": "Took {corp26} from {ncorp26} corporate PACs in 2025–26, up from {corp24} from {ncorp24} in 2023–24, including defense contractors and drug companies."},
+    {"d": "2025–26", "s": "pro", "money": "trade", "t": "Took {trade26} from trade associations and cooperatives in 2025–26, up from {trade24} in 2023–24."},
+    {"d": "2025-12", "s": "pro", "stmt": "first-bill-signed-law", "t": "Her Streamlining American Manufacturing Strategy Act, pitched as removing “manufacturing hurdles” for industry, became law as Section 8802 of the FY2026 defense bill (which she voted against)."},
+    {"d": "2025–26", "s": "con", "money": "labor", "t": "Labor PACs gave {labor26} in 2025–26, compared with {corp26} from corporate PACs."},
+    {"d": "2026-08", "s": "con", "stmt": "introduces-bill-protect-public-health-and-our", "t": "Introduced a bill to hold oil and gas companies accountable for pollution."}
+   ]}
+ ]
+}

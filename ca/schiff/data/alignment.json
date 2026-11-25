@@ -1,0 +1,103 @@
+{
+ "memberUnity": 93.4,
+ "memberRank": 32,
+ "memberTied": 0,
+ "dems": 47,
+ "medianUnity": 94.4,
+ "rolls": 938,
+ "contested": 180,
+ "israelRolls": 34,
+ "peers": [
+  {
+   "id": "S270",
+   "name": "Chuck Schumer",
+   "dist": "NY",
+   "group": "Party leadership",
+   "all": 93.1,
+   "n": 904,
+   "contested": 63.5,
+   "nc": 170,
+   "israel": 94.1,
+   "ni": 34,
+   "unity": 96.8
+  },
+  {
+   "id": "S253",
+   "name": "Dick Durbin",
+   "dist": "IL",
+   "group": "Party leadership",
+   "all": 90.2,
+   "n": 881,
+   "contested": 51.8,
+   "nc": 164,
+   "israel": 88.2,
+   "ni": 34,
+   "unity": 93.0
+  },
+  {
+   "id": "S370",
+   "name": "Cory Booker",
+   "dist": "NJ",
+   "group": "Party leadership",
+   "all": 94.8,
+   "n": 854,
+   "contested": 74.4,
+   "nc": 160,
+   "israel": 100.0,
+   "ni": 33,
+   "unity": 94.2
+  },
+  {
+   "id": "S413",
+   "name": "Alex Padilla",
+   "dist": "CA",
+   "group": "California",
+   "all": 95.6,
+   "n": 877,
+   "contested": 74.8,
+   "nc": 155,
+   "israel": 100.0,
+   "ni": 34,
+   "unity": 95.7
+  },
+  {
+   "id": "S313",
+   "name": "Bernie Sanders",
+   "dist": "VT",
+   "group": "Progressive wing",
+   "all": 93.3,
+   "n": 841,
+   "contested": 66.4,
+   "nc": 152,
+   "israel": 86.7,
+   "ni": 30,
+   "unity": 94.7
+  },
+  {
+   "id": "S366",
+   "name": "Elizabeth Warren",
+   "dist": "MA",
+   "group": "Progressive wing",
+   "all": 93.3,
+   "n": 894,
+   "contested": 66.3,
+   "nc": 169,
+   "israel": 88.2,
+   "ni": 34,
+   "unity": 94.9
+  },
+  {
+   "id": "S418",
+   "name": "John Fetterman",
+   "dist": "PA",
+   "group": "Moderate wing",
+   "all": 81.4,
+   "n": 851,
+   "contested": 43.7,
+   "nc": 151,
+   "israel": 32.4,
+   "ni": 34,
+   "unity": 80.4
+  }
+ ]
+}

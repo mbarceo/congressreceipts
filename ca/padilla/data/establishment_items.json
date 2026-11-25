@@ -1,0 +1,215 @@
+{
+ "_note": "Hand-curated, sourced items for establishment.html. Numbers in {braces} are filled by scripts/build_establishment.py from FEC data, House roll calls and data/alignment.json; never type a number here. Tag e = sign of establishment alignment, i = sign of independence. Headline is an editorial call; 'why' states the rule.",
+ "question": "Establishment Democrat?",
+ "headline": "Mostly yes",
+ "summary": "He entered the Senate by appointment from Gov. Gavin Newsom, launched his 2022 campaign with Chuck Schumer's and the DSCC's endorsement, won the California Democratic Party's endorsement, served as a DSCC vice chair for the 2024 cycle, and is the top Democrat on the Senate Rules Committee. He votes with Schumer {jeffAgree}% of the time. Of his {ndiff} splits with Schumer, {splitNoBills} are No votes on legislation Schumer backed, among them the March 2025 stopgap, the final FY2026 defense bill and the January 2026 funding packages; {splitYesBills} are Yes votes on legislation Schumer opposed, such as the GENIUS stablecoin bill; {splitYesNoms} are Yes votes on nominees Schumer opposed; and {splitNoNoms} are No votes on nominees Schumer backed.",
+ "why": "\"Mostly yes\" because his path to the seat, his party roles and his voting record line up with Senate Democratic leadership and the state party. His independence shows in {ndiff} votes where he split from Schumer and in his Medicare for All cosponsorship.",
+ "roles": {
+  "Chuck Schumer": "Democratic Leader",
+  "Dick Durbin": "Democratic Whip",
+  "Amy Klobuchar": "Chair of Steering & Policy Committee",
+  "Cory Booker": "Chair of Strategic Communications Committee",
+  "Mark Warner": "Vice Chair of the Conference",
+  "Elizabeth Warren": "Vice Chair of the Conference",
+  "Tammy Baldwin": "Democratic Conference Secretary",
+  "DSCC": "Senate Democrats' party campaign committee"
+ },
+ "tiles": [
+  [
+   "{jeffAgree}%",
+   "Votes cast the same way as Chuck Schumer ({both} votes where both voted Yea or Nay)"
+  ],
+  [
+   "Appointed",
+   "Named to the Senate by Gov. Gavin Newsom in December 2020"
+  ],
+  [
+   "DSCC vice chair",
+   "One of two vice chairs of the Senate Democrats' campaign committee for the 2024 cycle"
+  ],
+  [
+   "Rules ranking member",
+   "Top Democrat on the Senate Committee on Rules and Administration, 119th Congress"
+  ]
+ ],
+ "signs": {
+  "e": [
+   {
+    "text": "Gov. Gavin Newsom selected him in December 2020 to fill the Senate seat Kamala Harris left to become Vice President.",
+    "src": [
+     [
+      "Governor's announcement (archived)",
+      "https://web.archive.org/web/20201222180253/https://www.gov.ca.gov/2020/12/22/governor-gavin-newsom-selects-secretary-of-state-alex-padilla-as-californias-next-united-states-senator/"
+     ]
+    ]
+   },
+   {
+    "text": "Chuck Schumer and the Democratic Senatorial Campaign Committee endorsed him when he launched his 2022 campaign in April 2021.",
+    "src": [
+     [
+      "His campaign release (archived)",
+      "https://web.archive.org/web/20210510085706/https://alex-padilla.com/release-senator-alex-padilla-announces-launch-of-2022-election-campaign/"
+     ]
+    ]
+   },
+   {
+    "text": "The California Democratic Party endorsed him in 2022 for both the special election and the regular election for a full term.",
+    "src": [
+     [
+      "CDP endorsing caucus results",
+      "https://cadem.org/wp-content/uploads/2022/03/2022-Endorsing-Caucus-Results.pdf"
+     ],
+     [
+      "His campaign release (archived)",
+      "https://web.archive.org/web/20220519111722/https://alex-padilla.com/alex-padilla-earns-endorsement-of-california-democratic-party/"
+     ]
+    ]
+   },
+   {
+    "text": "Served as one of two vice chairs of the DSCC for the 2024 cycle, named in January 2023 (news report).",
+    "src": [
+     [
+      "Roll Call",
+      "https://rollcall.com/2023/01/09/peters-will-run-senate-democrats-campaign-arm-again/"
+     ]
+    ]
+   },
+   {
+    "text": "Ranking Member of the Senate Committee on Rules and Administration in the 119th Congress.",
+    "src": [
+     [
+      "His release",
+      "https://www.padilla.senate.gov/newsroom/press-releases/ranking-members-padilla-morelle-slam-trump-administrations-plan-to-recklessly-sell-federal-buildings-with-congressional-offices-across-the-country/"
+     ]
+    ]
+   },
+   {
+    "text": "Votes the same way as Schumer on {jeffAgree}% of the {both} roll calls where both cast a Yea or Nay.",
+    "src": [
+     [
+      "Every break with Schumer",
+      "#breaks"
+     ]
+    ]
+   },
+   {
+    "text": "Money from Senate Democratic leaders' committees: {lead22} in 2021–22, {lead24} in 2023–24 and {lead26} in 2025–26, including {dscc} from the DSCC.",
+    "src": [
+     [
+      "FEC totals below",
+      "#leaders"
+     ]
+    ]
+   }
+  ],
+  "i": [
+   {
+    "text": "Broke with Schumer on {ndiff} votes, including voting against cloture on the March 2025 stopgap funding bill that Schumer voted to advance, against the final FY2026 defense authorization, and against the January 2026 appropriations packages.",
+    "src": [
+     [
+      "March 2025 stopgap",
+      "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00128.htm"
+     ],
+     [
+      "FY2026 defense bill",
+      "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00648.htm"
+     ],
+     [
+      "January 2026 appropriations",
+      "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00011.htm"
+     ],
+     [
+      "All {ndiff}",
+      "#breaks"
+     ]
+    ]
+   },
+   {
+    "text": "Some breaks go the other way: he voted for the GENIUS stablecoin bill (S. 1582), which Schumer opposed.",
+    "src": [
+     [
+      "Roll call",
+      "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00318.htm"
+     ]
+    ]
+   },
+   {
+    "text": "Original cosponsor of Bernie Sanders' Medicare for All Act (S. 1506); Schumer is not a cosponsor.",
+    "src": [
+     [
+      "Bill text",
+      "https://www.govinfo.gov/content/pkg/BILLS-119s1506is/html/BILLS-119s1506is.htm"
+     ]
+    ]
+   }
+  ]
+ },
+ "timeline": [
+  {
+   "d": "2020-12-22",
+   "k": "e",
+   "text": "Gov. Gavin Newsom selects him to fill Kamala Harris's Senate seat.",
+   "u": "https://web.archive.org/web/20201222180253/https://www.gov.ca.gov/2020/12/22/governor-gavin-newsom-selects-secretary-of-state-alex-padilla-as-californias-next-united-states-senator/"
+  },
+  {
+   "d": "2021-01-20",
+   "k": "e",
+   "text": "Sworn in as the first Latino to represent California in the U.S. Senate.",
+   "u": "https://web.archive.org/web/20220929074539/https://alex-padilla.com/about/"
+  },
+  {
+   "d": "2021-04-20",
+   "k": "e",
+   "text": "Launches his 2022 campaign with endorsements from Schumer and the DSCC.",
+   "u": "https://web.archive.org/web/20210510085706/https://alex-padilla.com/release-senator-alex-padilla-announces-launch-of-2022-election-campaign/"
+  },
+  {
+   "d": "2022-03-06",
+   "k": "e",
+   "text": "The California Democratic Party endorses him for both 2022 Senate elections.",
+   "u": "https://web.archive.org/web/20220519111722/https://alex-padilla.com/alex-padilla-earns-endorsement-of-california-democratic-party/"
+  },
+  {
+   "d": "2023-01-09",
+   "k": "e",
+   "text": "Named a DSCC vice chair for the 2024 cycle, with Sen. Tina Smith (news report).",
+   "u": "https://rollcall.com/2023/01/09/peters-will-run-senate-democrats-campaign-arm-again/"
+  },
+  {
+   "d": "2025-03-14",
+   "k": "i",
+   "text": "Voted Nay on cloture on the March 2025 stopgap funding bill (H.R. 1968); Schumer voted Yea.",
+   "u": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00128.htm"
+  },
+  {
+   "d": "2025-06-17",
+   "k": "i",
+   "text": "Voted Yea on passage of the GENIUS stablecoin bill (S. 1582); Schumer voted Nay.",
+   "u": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00318.htm"
+  },
+  {
+   "d": "2025-12-17",
+   "k": "i",
+   "text": "Voted Nay on concurring in the House amendment to S. 1071, the final FY2026 defense authorization; Schumer voted Yea.",
+   "u": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00648.htm"
+  },
+  {
+   "d": "2026-01-15",
+   "k": "i",
+   "text": "Voted Nay on the consolidated appropriations bill H.R. 6938; Schumer voted Yea.",
+   "u": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00011.htm"
+  },
+  {
+   "d": "2026-01-30",
+   "k": "i",
+   "text": "Voted Nay on the further consolidated appropriations bill H.R. 7148; Schumer voted Yea.",
+   "u": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00020.htm"
+  }
+ ],
+ "left": [
+  {
+   "text": "He is an original cosponsor of the Medicare for All Act (S. 1506), and his 2022 campaign site listed Medicare for All among the issues he was fighting for.",
+   "u": "https://www.govinfo.gov/content/pkg/BILLS-119s1506is/html/BILLS-119s1506is.htm"
+  }
+ ]
+}

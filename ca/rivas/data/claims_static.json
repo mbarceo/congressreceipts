@@ -1,0 +1,158 @@
+{
+ "_note": "Facts typed directly into the pages (not built from data). Each lists the exact terms that must appear on its source. 'check': 'clerk-committees' verifies committee seats against her own entry in the Clerk's member file instead of a text search.",
+ "claims": [
+  {
+   "page": "overview",
+   "section": "Header",
+   "text": "Committees: Natural Resources; Science, Space, and Technology.",
+   "url": "https://clerk.house.gov/xml/lists/MemberData.xml",
+   "check": "clerk-committees",
+   "must": [
+    "Natural Resources",
+    "Science, Space, and Technology"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Committees",
+   "text": "Subcommittees: Energy and Mineral Resources; Water, Wildlife and Fisheries; Research and Technology; Investigations and Oversight.",
+   "url": "https://clerk.house.gov/xml/lists/MemberData.xml",
+   "check": "clerk-committees",
+   "must": [
+    "Energy and Mineral Resources",
+    "Water, Wildlife and Fisheries",
+    "Research and Technology",
+    "Investigations and Oversight"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Header",
+   "text": "Background: electrical engineer; founded DIY Girls; six years in the State Assembly.",
+   "url": "https://www.luzforcongress.com/about",
+   "must": [
+    "Electrical Engineering",
+    "DIY",
+    "six years"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Committees",
+   "text": "Freshman Representative to Leadership, House Democrats, 119th Congress.",
+   "url": "https://rivas.house.gov/media/press-releases/congresswoman-luz-rivas-leads-freshman-democrats-demand-meeting-speaker",
+   "must": [
+    "Freshman Representative to Leadership"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Committees",
+   "text": "Caucuses: co-chair of the Congressional STEM Education Caucus; member of the Hispanic, Progressive, Democratic Women's, Labor, Asian Pacific American, Artificial Intelligence, Armenian Issues, Equality and Real Estate caucuses, SEEC, the Gun Violence Prevention Task Force and the U.S.-Mexico Caucus.",
+   "url": "https://rivas.house.gov/about/committees-and-caucuses",
+   "must": [
+    "STEM Education",
+    "Hispanic",
+    "Progressive",
+    "Women",
+    "Labor",
+    "Asian Pacific",
+    "Artificial Intelligence",
+    "Armenian",
+    "Equality",
+    "Real Estate",
+    "Sustainable Energy",
+    "Gun Violence",
+    "Mexico"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Offices",
+   "text": "Washington office: 1319 Longworth House Office Building, (202) 225-6131. Arleta district office: 9300 Laurel Canyon Blvd, First Floor, (818) 253-3535.",
+   "url": "https://rivas.house.gov/contact",
+   "must": [
+    "1319 Longworth",
+    "225-6131",
+    "9300 Laurel Canyon",
+    "253-3535"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "District",
+   "text": "Prop 50 redrew CA-29 for the 2026 election; the 2027 district has 760,066 residents (2020 Census): 735,380 in the City of Los Angeles, 24,055 in San Fernando and 627 unincorporated.",
+   "url": "https://sdmg.senate.ca.gov/committeehome/2025-congressional-districts/congressional-district-29-2025",
+   "must": [
+    "760,066",
+    "735,380",
+    "24,055",
+    "627"
+   ]
+  },
+  {
+   "page": "establishment",
+   "section": "Election",
+   "text": "Won the Nov 3, 2026 general election over fellow Democrat Angélica María Dueñas, 57.3% to 42.7% (unofficial).",
+   "url": "https://api.sos.ca.gov/returns/us-rep/district/29",
+   "must": [
+    "57.3",
+    "42.7",
+    "Due"
+   ]
+  },
+  {
+   "page": "establishment",
+   "section": "Party endorsement",
+   "text": "The California Democratic Party endorsed her (“CA 29 - Luz Rivas”) for the June 2026 primary.",
+   "url": "https://cadem.org/wp-content/uploads/2026/02/Final-RATIFIED-2026-Primary-Election-Consent-Calendar.pdf",
+   "manual": "PDF read by hand on Nov 23, 2026: the U.S. Congress list reads “CA 29 - Luz Rivas”."
+  },
+  {
+   "page": "establishment",
+   "section": "Party endorsement",
+   "text": "The California Democratic Party endorsed her (“CA 29 - Luz Rivas”) for the November 2026 general election.",
+   "url": "https://cadem.org/wp-content/uploads/2026/08/FINAL-2026-General-Election-Endorsements.pdf",
+   "manual": "PDF read by hand on Nov 23, 2026: the U.S. Congress list reads “CA 29 - Luz Rivas”."
+  },
+  {
+   "page": "overview",
+   "section": "Promises",
+   "text": "Her manufacturing bill became law as Section 8802 of the FY2026 defense bill, “Alignment of timing of updates of strategic plan with updates to National Strategy for Advanced Manufacturing.”",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1071enr/xml/BILLS-119s1071enr.xml",
+   "must": [
+    "Sec. 8802",
+    "Alignment of timing of updates of strategic plan with updates to National Strategy for Advanced Manufacturing"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Header",
+   "text": "2026 general (unofficial, all 115 precincts reporting): Rivas 100,242 (57.3%), Dueñas 74,798 (42.7%).",
+   "url": "https://api.sos.ca.gov/returns/us-rep/district/29",
+   "must": [
+    "100,242",
+    "74,798",
+    "57.3",
+    "42.7"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Header",
+   "text": "2024 general (certified): Rivas 146,312 (69.8%), Bernal 63,374 (30.2%).",
+   "url": "https://elections.cdn.sos.ca.gov/sov/2024-general/sov/25-us-rep-congress.pdf",
+   "manual": "Read from the Secretary of State's official Statement of Vote, U.S. Representative (sov/2024-general/sov/25-us-rep-congress, spreadsheet version), on Nov 24, 2026: 29th Congressional District, Luz Maria Rivas (DEM) 146,312, Benito Benny Bernal (REP) 63,374; percent 69.8% and 30.2%."
+  },
+  {
+   "page": "money",
+   "section": "Pro-Israel lobby",
+   "text": "Track AIPAC is listed among the 2026 endorsers of her general-election opponent, Angélica María Dueñas.",
+   "url": "https://angelica4congress.com/endorsements/",
+   "must": [
+    "2026 Endorsements",
+    "Track AIPAC"
+   ]
+  }
+ ]
+}

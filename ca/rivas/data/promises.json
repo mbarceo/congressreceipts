@@ -1,0 +1,239 @@
+{
+ "_note": "Hand-curated campaign promises and the record against them. kind 'explicit' = her own words in 2024; 'record' = implied by the record her 2024 site ran on, not a stated pledge. Actions: 'roll' fills her vote and the tally from data/votes.json; 'stmt' must match exactly one release in data/statements.json; 'u' is any other source. Status is an editorial call: 'why' must say what it rests on. Build: python3 -I scripts/build_promises.py",
+ "sources": {
+  "site2024": {
+   "label": "Her 2024 campaign site (archived Oct 31, 2024)",
+   "u": "https://web.archive.org/web/20241031093755/https://www.luzforcongress.com/"
+  },
+  "announce": {
+   "label": "Candidacy announcement, Nov 2023 (City News Service, citing the LA Times)",
+   "u": "https://heysocal.com/2023/11/20/rivas-announces-bid-for-congress-endorsed-by-rep-cardenas"
+  },
+  "sworn": {
+   "label": "Her swearing-in statement, Jan 3, 2025",
+   "stmt": "sworn-119th-congress"
+  }
+ },
+ "noPromise": "Her 2024 campaign made no specific promise on immigration enforcement, public safety, homelessness or housing beyond the pledges below. The Stances page has her record on those issues.",
+ "promises": [
+  {
+   "issue": "District needs and federal funding",
+   "kind": "explicit",
+   "status": "delivered",
+   "promise": "Residents of the San Fernando Valley deserve a Member of Congress who will focus on their needs",
+   "quote": true,
+   "src": [
+    "site2024"
+   ],
+   "actions": [
+    {
+     "stmt": "delivers-over-4-million-critical-projects-ca-29",
+     "text": "Funding law signed Jan 2026 included three of her community projects, over $4 million, among them $2.06 million to expand the CIRCLE crisis-response call centers for non-urgent LAPD calls involving unhoused people."
+    },
+    {
+     "stmt": "announces-additional-10-million-community-project",
+     "text": "Announced over $10 million more in community project funding for CA-29 in the next appropriations package signed into law (Feb 2026)."
+    },
+    {
+     "stmt": "secures-850000-federal-funding-key-pacoima-wash",
+     "text": "$850,000 for safety repairs to Pacoima Wash bridges (Aug 2026)."
+    },
+    {
+     "stmt": "presents-850000-federal-funding-san-fernando-garden",
+     "text": "$850,000 for cool roofs at the San Fernando Gardens public housing development (May 2026)."
+    },
+    {
+     "stmt": "secures-50-million-authorizations-san-fernando-vall",
+     "text": "$50 million in authorizations for the San Fernando Valley in a water bill (Jul 2026). Authorizations allow spending; they are not money in hand."
+    },
+    {
+     "u": "https://sanfernandosun.com/2025/08/06/freshman-on-the-hill-rep-luz-rivas-battles-trumps-immigration-policies",
+     "text": "During the 2025 ICE raids her office handed out Know Your Rights information, connected constituents to legal aid and helped families locate detained relatives (San Fernando Valley Sun)."
+    }
+   ],
+   "why": "Federal money was secured and signed into law. The dollar figures come from her office and were not independently audited."
+  },
+  {
+   "issue": "Economic opportunity and cost of living",
+   "kind": "explicit",
+   "status": "progress",
+   "promise": "I will fight to make sure every family has economic opportunity",
+   "quote": true,
+   "src": [
+    "site2024"
+   ],
+   "actions": [
+    {
+     "u": "https://www.govinfo.gov/content/pkg/BILLS-119s1071enr/xml/BILLS-119s1071enr.xml",
+     "text": "Her Streamlining American Manufacturing Strategy Act (H.R. 5157), which aligns federal advanced-manufacturing planning timelines, became law as Section 8802 of the FY2026 defense bill (Public Law 119-60), signed Dec 18, 2025. The stand-alone bill never left committee. She voted against that defense bill in the House."
+    },
+    {
+     "roll": "2025-320",
+     "text": "Voted {vote} on final House passage of the FY2026 defense bill (S. 1071) that carried her manufacturing provision. It passed {yea}–{nay}."
+    },
+    {
+     "roll": "2026-224",
+     "text": "Voted {vote} on the 21st Century ROAD to Housing Act (H.R. 6644), which passed {yea}–{nay} and became Public Law 119-101 on July 11, 2026, without the President's signature."
+    },
+    {
+     "stmt": "introduces-bill-help-multigenerational",
+     "text": "Introduced a bill to help multigenerational households afford accessibility and safety upgrades (Feb 2026). Her releases report no further action."
+    },
+    {
+     "roll": "2025-190",
+     "text": "Voted {vote} on the final One Big Beautiful Bill Act, which she called the “One Big Ugly Bill.” It passed {yea}–{nay}."
+    }
+   ],
+   "why": "Her manufacturing provision became law inside a defense bill she voted against, and a housing bill she backed was enacted, but the promise is broad and her main cost-of-living votes were on the losing side."
+  },
+  {
+   "issue": "Social Security, Medicare and the safety net",
+   "kind": "explicit",
+   "status": "stalled",
+   "promise": "protect Social Security and Medicare",
+   "quote": true,
+   "src": [
+    "site2024"
+   ],
+   "actions": [
+    {
+     "roll": "2025-050",
+     "text": "Voted {vote} on the Republican budget resolution (Feb 2025), saying it guts Medicaid for over 370,000 CA-29 constituents. It passed {yea}–{nay}."
+    },
+    {
+     "roll": "2025-100",
+     "text": "Voted {vote} on the final budget resolution (Apr 2025), saying it would strip programs like Medicaid and Social Security. It passed {yea}–{nay}."
+    },
+    {
+     "roll": "2025-145",
+     "text": "Voted {vote} on the House version of the One Big Beautiful Bill Act (May 2025). It passed {yea}–{nay}."
+    },
+    {
+     "roll": "2025-190",
+     "text": "Voted {vote} on the final version (Jul 2025), citing cuts to Medicaid, the ACA and Medicare. It passed {yea}–{nay}."
+    },
+    {
+     "stmt": "advance-leader-jeffries-healthcare",
+     "text": "Backed Democratic Leader Jeffries' discharge petition to extend the ACA's enhanced premium tax credits for three years, which her release says the House passed (Jan 2026)."
+    }
+   ],
+   "why": "She voted against every budget and reconciliation bill she said would cut these programs, but they passed over her votes. No bill of her own on Social Security or Medicare was found."
+  },
+  {
+   "issue": "Climate change",
+   "kind": "explicit",
+   "status": "stalled",
+   "promise": "reduce the threat of climate change",
+   "quote": true,
+   "src": [
+    "site2024"
+   ],
+   "actions": [
+    {
+     "roll": "2025-111",
+     "text": "Voted {vote} on H.J. Res. 87, disapproving the EPA's waiver for California's clean-truck and zero-emission vehicle standards. It passed {yea}–{nay}."
+    },
+    {
+     "roll": "2025-112",
+     "text": "Voted {vote} on H.J. Res. 89, disapproving the EPA's waiver for California's low-NOx engine pollution standards. It passed {yea}–{nay}."
+    },
+    {
+     "roll": "2025-035",
+     "text": "Voted {vote} on the Protecting American Energy Production Act. It passed {yea}–{nay}."
+    },
+    {
+     "stmt": "introduces-bill-support-and-uplift-environmental",
+     "text": "Introduced a bill to support environmental justice communities (Dec 2025). Her releases report no further action."
+    },
+    {
+     "stmt": "introduces-bill-protect-public-health-and-our",
+     "text": "Introduced a bill to hold oil and gas companies accountable for pollution (Aug 2026). Her releases report no further action."
+    },
+    {
+     "stmt": "introduces-resolution-supporting-greenhouse-gas",
+     "text": "Introduced a resolution supporting the EPA's Greenhouse Gas Reporting Program (Apr 2026)."
+    }
+   ],
+   "why": "She opposed every rollback found, but those measures passed, and her own climate bills have not advanced as far as her releases show."
+  },
+  {
+   "issue": "Workers and labor",
+   "kind": "explicit",
+   "status": "progress",
+   "promise": "In Congress, I will continue to be a voice for workers and opportunity for all.",
+   "quote": true,
+   "src": [
+    "site2024"
+   ],
+   "actions": [
+    {
+     "roll": "2025-332",
+     "text": "Voted {vote} on the Protect America's Workforce Act (H.R. 2550), to nullify the executive order excluding many federal workers from labor-management programs. It reached the floor by discharge petition and passed the House {yea}–{nay}."
+    },
+    {
+     "roll": "2026-216",
+     "text": "Voted {vote} on the Faster Labor Contracts Act (H.R. 5408), to speed first contracts under the National Labor Relations Act, also forced to the floor by discharge petition. It passed the House {yea}–{nay}."
+    },
+    {
+     "stmt": "co-sponsors-slew-bills-halt",
+     "text": "Cosponsored five bills to pause layoffs at DOE, NASA, NSF, NIST and NOAA during the 2025 federal workforce cuts."
+    }
+   ],
+   "why": "Two labor bills she backed passed the House; this tracker has not confirmed whether either became law. Her own cosponsored bills on federal layoffs have no reported action."
+  },
+  {
+   "issue": "Homelessness",
+   "kind": "record",
+   "status": "progress",
+   "promise": "Her 2024 site ran on her Assembly homelessness record: creating the state Interagency Council on Homelessness and services for homeless students.",
+   "quote": false,
+   "src": [
+    "site2024"
+   ],
+   "actions": [
+    {
+     "stmt": "delivers-over-4-million-critical-projects-ca-29",
+     "text": "$2.06 million to expand CIRCLE call centers that respond to non-urgent LAPD calls involving unhoused people, signed into law Jan 2026."
+    },
+    {
+     "stmt": "introduces-bill-protect-immigrant-families-public",
+     "text": "Introduced the Housing Without Fear Act (H.R. 7374) to protect immigrant families in public housing from eviction (Feb 2026)."
+    }
+   ],
+   "why": "This was a theme of the record she ran on, not a pledge. In Congress the record so far is one funded project and one bill."
+  },
+  {
+   "issue": "STEM and computer science education",
+   "kind": "record",
+   "status": "progress",
+   "promise": "Her 2024 site highlighted leading STEM education policy in California, including computer science and climate education.",
+   "quote": false,
+   "src": [
+    "site2024"
+   ],
+   "actions": [
+    {
+     "stmt": "presents-over-1000000-federal-funding-technology-an",
+     "text": "Over $1 million in federal funding for technology and STEM at CSUN (Jun 2026)."
+    },
+    {
+     "stmt": "introduces-first-bill-rebuild-stem-workforce",
+     "text": "Introduced her first bill, to rebuild the STEM workforce (Jun 2025)."
+    },
+    {
+     "stmt": "introduces-bill-improve-ai-literacy",
+     "text": "Introduced a bill on AI literacy and education (Nov 2025)."
+    },
+    {
+     "stmt": "introduces-bill-expand-access-computer-science",
+     "text": "Introduced a bill to expand computer science education programs (Dec 2025)."
+    },
+    {
+     "stmt": "introduces-bill-expand-access-undergraduate",
+     "text": "Introduced a bill to expand undergraduate STEM research programs (Aug 2026)."
+    }
+   ],
+   "why": "Funding was delivered and she co-chairs the STEM Education Caucus, but none of her STEM bills has advanced as far as her releases show."
+  }
+ ]
+}

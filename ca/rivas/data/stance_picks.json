@@ -1,0 +1,250 @@
+{
+ "_note": "Hand-curated. Roll ids are chosen by reading the Clerk's titles; her vote is pulled from data/votes.json, never typed here. statementRx matches titles; statementPicks adds specific releases with a verbatim snippet found by 'rx' in the release's full text (data/statements_full.json). No editorial verdicts except the Israel card's headline, set in 'israel.headline'.",
+ "issues": [
+  {
+   "id": "immigration",
+   "name": "Immigration and ICE",
+   "intro": "Immigration enforcement has been the biggest subject of her public statements, including oversight visits to detention facilities.",
+   "statementRx": "\\bice\\b|immigra|detention|detainee|birthright|citizenship|deport|adelanto|dilley|\\bdaca\\b|noem|raids?\\b",
+   "rolls": [
+    "2025-006",
+    "2025-023",
+    "2025-017",
+    "2025-153",
+    "2025-171",
+    "2025-184",
+    "2025-185",
+    "2025-264",
+    "2026-087",
+    "2026-094",
+    "2026-120"
+   ],
+   "statementPicks": []
+  },
+  {
+   "id": "cost-of-living",
+   "name": "Housing and cost of living",
+   "intro": "Housing, budget and reconciliation votes, plus her statements on housing, rent and prices. The Housing for the 21st Century Act is the bipartisan housing bill her July 2026 release says became law.",
+   "statementRx": "housing|afford|\\brent\\b|budget|shutdown|big beautiful|\\btax|tariff|cost of living",
+   "rolls": [
+    "2025-050",
+    "2025-100",
+    "2025-145",
+    "2025-190",
+    "2026-012",
+    "2026-057",
+    "2026-224"
+   ],
+   "statementPicks": [
+    {
+     "u": "introduces-bill-protect-immigrant-families-public",
+     "rx": "leave immigrant families homeless"
+    },
+    {
+     "u": "introduces-bill-help-multigenerational",
+     "rx": "multigenerational families[’'] housing costs"
+    }
+   ]
+  },
+  {
+   "id": "public-safety",
+   "name": "Public safety",
+   "intro": "Votes on crime, policing and drug bills, and how her releases talk about safety. Rows marked \"Breaks with party\" are votes against most Democrats. She backed officer-support and anti-fentanyl measures that had broad support and opposed several Republican crime bills.",
+   "statementRx": "political violence|policing|\\bpolice\\b|law enforcement|\\bcrime\\b",
+   "statementPicks": [
+    {
+     "u": "calls-ice-be-dismantled",
+     "rx": "threat to our public safety"
+    },
+    {
+     "u": "calls-impeachment-dhs-secretary-kristi-noem",
+     "rx": "compromised public safety"
+    },
+    {
+     "u": "delivers-over-4-million",
+     "rx": "public safety across the San Fernando Valley"
+    }
+   ],
+   "rolls": [
+    "2025-123",
+    "2025-131",
+    "2026-162",
+    "2025-220",
+    "2026-284",
+    "2025-033",
+    "2025-166",
+    "2026-157",
+    "2026-171",
+    "2026-169",
+    "2026-070",
+    "2026-165",
+    "2025-270",
+    "2025-298"
+   ]
+  },
+  {
+   "id": "homelessness",
+   "name": "Homelessness",
+   "intro": "Homelessness is not a major theme in her releases: only a handful mention it, and no roll calls here are clearly about it. What exists is federal funding she requested, a bill on evictions, and a letter noting ICE agents at homeless shelters.",
+   "statementRx": "homeless|unhoused|encampment",
+   "statementPicks": [
+    {
+     "u": "delivers-over-4-million",
+     "rx": "CIRCLE call centers"
+    },
+    {
+     "u": "introduces-bill-protect-immigrant-families-public",
+     "rx": "leave immigrant families homeless"
+    },
+    {
+     "u": "demands-meeting-ice-and-cbp-leadership",
+     "rx": "homeless shelters"
+    }
+   ],
+   "rolls": []
+  },
+  {
+   "id": "war-powers",
+   "name": "War powers",
+   "intro": "Votes on War Powers Resolution measures directing the President to end or remove U.S. forces from hostilities, in the Clerk's wording.",
+   "statementRx": "\\bwar\\b|\\biran\\b|venezuela|war powers",
+   "rolls": [
+    "2025-345",
+    "2025-346",
+    "2026-048",
+    "2026-085",
+    "2026-114",
+    "2026-170",
+    "2026-199",
+    "2026-232",
+    "2026-282",
+    "2026-307"
+   ]
+  },
+  {
+   "id": "accountability",
+   "name": "Executive power and accountability",
+   "intro": "Impeachment votes, the Epstein files, censures, emergency powers, and her statements on court rulings and oversight.",
+   "statementRx": "impeach|supreme court|executive order|unconstitutional|oversight|epstein|voting rights|constitution",
+   "rolls": [
+    "2025-175",
+    "2025-322",
+    "2026-298",
+    "2026-317",
+    "2025-289",
+    "2025-062",
+    "2025-297",
+    "2026-065"
+   ],
+   "notes": {
+    "2025-175": "A motion to table kills the resolution. Nay is a vote against tabling it.",
+    "2025-322": "A motion to table kills the resolution. Nay is a vote against tabling it.",
+    "2026-298": "A motion to table kills the resolution. Nay is a vote against tabling it. Her release is titled \"Votes to Proceed with Impeachment Proceedings.\"",
+    "2026-317": "A motion to refer sends the resolution to committee. Nay is a vote against referring it. Her release is titled \"Votes to Proceed with Impeachment Proceedings.\""
+   }
+  },
+  {
+   "id": "health",
+   "name": "Health care",
+   "intro": "Votes on health bills and the November 2025 funding bill she opposed over health care, plus her statements on the ACA and Medicaid.",
+   "statementRx": "health|medicaid|\\baca\\b|affordable care|insurance",
+   "rolls": [
+    "2025-349",
+    "2025-362",
+    "2025-285"
+   ]
+  },
+  {
+   "id": "science-education",
+   "name": "Science, education and technology",
+   "intro": "Her signature area in statements and bills she introduced. The votes below are bills on schools, colleges and student aid, federal science funding, and AI and online safety, picked by reading the Clerk's titles. She backed the bipartisan science and technology bills and, with most Democrats, opposed Republican bills restricting schools' and colleges' ties to China and adding FAFSA fraud screening.",
+   "statementRx": "\\bstem\\b|education|science|school|\\bnsf\\b|research|technology|nasa|cyber|computer|\\bai\\b",
+   "rolls": [
+    "2025-136",
+    "2026-007",
+    "2026-033",
+    "2025-104",
+    "2026-082",
+    "2025-312",
+    "2025-313",
+    "2025-314",
+    "2025-120",
+    "2026-217"
+   ]
+  }
+ ],
+ "israel": {
+  "headline": "Leans toward Israel",
+  "question": "Israel or Palestine?",
+  "summary": "She voted No on the Massie aid amendment and says U.S. policy toward Israel must change as the aid agreement expires. She has criticized Netanyahu and called for Gaza humanitarian aid, the war's end and the hostages' return. AIPAC's PAC is the largest committee source of her campaign money. She has not backed limits on aid to Israel in the votes found so far.",
+  "items": [
+   {
+    "d": "2026-07",
+    "dir": "isr",
+    "roll": "2026-243",
+    "text": "Voted {vote} on Massie Amendment No. 8 to the State Department funding bill (H.R. 8595); her statement ties it to U.S. aid to Israel. It failed {yea}–{nay}; Democrats split {dY}–{dN}, Republicans {rY}–{rN}."
+   },
+   {
+    "d": "2024–26",
+    "dir": "isr",
+    "u": "money.html",
+    "text": "Took {aipacTotal} from AIPAC's PAC, her largest committee source of money: {aipacDirect} given directly and {aipacEarmark} in donations earmarked through it. With {dmfi} from DMFI PAC, pro-Israel groups gave {proTotal}, {proPct} of everything she raised (FEC, through {through})."
+   },
+   {
+    "d": "2026-07",
+    "dir": "mixed",
+    "u": "massie-amendment",
+    "text": "Explaining that vote, she said she disagrees with many of Netanyahu's actions but called the amendment poorly drafted and partisan, said it endangers humanitarian aid, and said Middle East policy must change as the 2016 aid agreement expires.",
+    "rx": "change to our Middle East policy must happen"
+   },
+   {
+    "d": "2025-10",
+    "dir": "mixed",
+    "u": "marking-two-years-hamas-october-7th",
+    "text": "On the second anniversary of Oct. 7, mourned the victims and called for the hostages to come home. Also said many Gaza civilians have suffered and that humanitarian aid must be delivered and the war ended.",
+    "rx": "humanitarian aid is delivered"
+   },
+   {
+    "d": "2025-01",
+    "dir": "neutral",
+    "roll": "2025-007",
+    "text": "Recorded as {vote} on H.R. 23, the Illegitimate Court Counteraction Act, which sanctions the International Criminal Court. It passed {yea}–{nay}; Democrats voted {dY}–{dN}."
+   },
+   {
+    "d": "2026-03",
+    "dir": "neutral",
+    "roll": "2026-084",
+    "text": "Voted {vote} on a resolution reaffirming that Iran is the largest state sponsor of terrorism. It passed {yea}–{nay}; Democrats voted {dY}–{dN}."
+   },
+   {
+    "d": "2026-03 to 2026-09",
+    "dir": "neutral",
+    "rolls": [
+     "2026-085",
+     "2026-114",
+     "2026-170",
+     "2026-199",
+     "2026-282",
+     "2026-307"
+    ],
+    "text": "Voted Yea on {yeaCount} of {n} roll calls under the War Powers Resolution to remove U.S. forces from hostilities with Iran."
+   },
+   {
+    "d": "2026-06",
+    "dir": "neutral",
+    "rolls": [
+     "2026-201",
+     "2026-232"
+    ],
+    "text": "Voted Yea on {yeaCount} of {n} roll calls under the War Powers Resolution on U.S. forces in Lebanon."
+   },
+   {
+    "d": "2024–26",
+    "dir": "neutral",
+    "u": "money.html",
+    "text": "Track AIPAC lists a {trackaipac} Israel Lobby total for her. It does not itemize that figure. The Money page shows what her FEC filings contain."
+   }
+  ],
+  "headlineWhy": "\"Leans toward Israel\" is the headline because more items point toward Israel than toward Palestinians or conditions on aid: her No vote on the aid amendment and AIPAC's PAC as her largest committee donor. She has also criticized Netanyahu and called for Gaza humanitarian aid, so it is not a one-sided record. No item here is a vote to limit aid."
+ }
+}

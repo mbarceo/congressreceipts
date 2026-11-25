@@ -1,0 +1,44 @@
+{
+ "_note": "Hand-curated, sourced items for establishment.html. Numbers in {braces} are filled by scripts/build_establishment.py from FEC data, House roll calls and data/alignment.json; never type a number here. Tag e = sign of establishment alignment, i = sign of independence. Headline is an editorial call; 'why' states the rule.",
+ "question": "Establishment Democrat?",
+ "headline": "Mostly yes",
+ "summary": "She sits at the leadership table as the freshman class's representative, the California Democratic Party backed her over a Democratic challenger in 2026, her predecessor endorsed her as his successor, and she votes with Hakeem Jeffries {jeffAgree}% of the time. Her independence shows on the left: she is in the Progressive Caucus, gets almost no money from party leaders, and her {ndiff} breaks with Jeffries include opposing a vote to table Trump's impeachment and a January 2026 funding bill.",
+ "why": "\"Mostly yes\" because her formal ties to party leadership and the state party, and her voting record, line up with the establishment. The signs of independence are real but small, and they push left rather than against leadership.",
+ "roles": {"Hakeem Jeffries": "House Democratic Leader", "Katherine Clark": "Democratic Whip", "Nancy Pelosi": "Speaker Emerita", "Pete Aguilar": "Caucus Chair", "Steny Hoyer": "Former Majority Leader", "DCCC": "Party campaign committee"},
+ "tiles": [
+  ["{jeffAgree}%", "Votes cast the same way as Hakeem Jeffries ({both} votes where both voted Yea or Nay)"],
+  ["Freshman rep", "Her class's representative to House Democratic leadership, 119th Congress"],
+  ["{lead26}", "From party leaders' committees in 2025–26 ({lead24} in 2023–24)"],
+  ["CPC", "Member of the Congressional Progressive Caucus"]
+ ],
+ "signs": {
+  "e": [
+   {"text": "Serves as the Freshman Representative to Leadership for the 119th Congress, her class's seat in House Democratic leadership.", "src": [["Her release", "https://rivas.house.gov/media/press-releases/congresswoman-luz-rivas-leads-freshman-democrats-demand-meeting-speaker"]]},
+   {"text": "The California Democratic Party endorsed her over fellow Democrat Angélica María Dueñas in both the June 2026 primary and the November 2026 general.", "src": [["Primary endorsements", "https://cadem.org/wp-content/uploads/2026/02/Final-RATIFIED-2026-Primary-Election-Consent-Calendar.pdf"], ["General endorsements", "https://cadem.org/wp-content/uploads/2026/08/FINAL-2026-General-Election-Endorsements.pdf"]]},
+   {"text": "Rep. Tony Cárdenas announced his retirement and his endorsement of her on the same day in November 2023. Her 2024 endorsers included Caucus Chair Pete Aguilar and Whip Katherine Clark.", "src": [["City News Service", "https://heysocal.com/2023/11/20/rivas-announces-bid-for-congress-endorsed-by-rep-cardenas"], ["2024 campaign site", "https://web.archive.org/web/20241031093755/https://www.luzforcongress.com/"]]},
+   {"text": "Votes the same way as Jeffries on {jeffAgree}% of the {both} roll calls where both cast a Yea or Nay, and voted for him for Speaker.", "src": [["Speaker vote", "https://clerk.house.gov/Votes/2025002"], ["Every break with Jeffries", "#breaks"]]},
+   {"text": "Corporate PAC money grew from {corp24} ({ncorp24} PACs) in 2023–24 to {corp26} ({ncorp26} PACs) in 2025–26.", "src": [["FEC totals below", "#money"]]}
+  ],
+  "i": [
+   {"text": "Member of the Congressional Progressive Caucus. Not a member of the centrist New Democrat Coalition, the Blue Dog Coalition or the Problem Solvers Caucus.", "src": [["CPC", "https://progressives.house.gov/caucus-members"], ["New Dems", "https://newdemocratcoalition.house.gov/members"], ["Blue Dogs", "https://bluedogs-gluesenkampperez.house.gov/members"], ["Problem Solvers", "https://problemsolverscaucus.house.gov/caucus-members"]]},
+   {"text": "Gets little money from party leaders: {lead24} from leaders' committees in 2023–24, {lead26} in 2025–26, and {dccc} from the DCCC.", "src": [["FEC totals below", "#leaders"]]},
+   {"text": "Broke with Jeffries on {ndiff} votes, including voting against tabling a Trump impeachment resolution in June 2025 (most Democrats voted to table it) and against the January 2026 consolidated appropriations bill.", "src": [["Impeachment tabling", "https://clerk.house.gov/Votes/2025175"], ["Appropriations", "https://clerk.house.gov/Votes/2026045"], ["All {ndiff}", "#breaks"]]}
+  ]
+ },
+ "timeline": [
+  {"d": "2023-11-20", "k": "e", "text": "Rep. Tony Cárdenas announces his retirement and endorses her.", "u": "https://heysocal.com/2023/11/20/rivas-announces-bid-for-congress-endorsed-by-rep-cardenas"},
+  {"d": "2025-01-03", "k": "e", "text": "Votes for Hakeem Jeffries for Speaker.", "u": "https://clerk.house.gov/Votes/2025002"},
+  {"d": "2025-06-24", "k": "i", "text": "Votes against tabling a Trump impeachment resolution; Jeffries and most Democrats vote to table it.", "u": "https://clerk.house.gov/Votes/2025175"},
+  {"d": "2025-10-30", "k": "e", "text": "As Freshman Representative to Leadership, leads 23 freshman Democrats in demanding a meeting with Speaker Johnson during the shutdown.", "u": "https://rivas.house.gov/media/press-releases/congresswoman-luz-rivas-leads-freshman-democrats-demand-meeting-speaker"},
+  {"d": "2026-01-22", "k": "i", "text": "Votes against the consolidated appropriations bill that Jeffries supports. A day earlier she said she would vote “hell no” on funding DHS and ICE.", "u": "https://clerk.house.gov/Votes/2026045"},
+  {"d": "2026-02-22", "k": "e", "text": "The California Democratic Party endorses her for the primary.", "u": "https://cadem.org/wp-content/uploads/2026/02/Final-RATIFIED-2026-Primary-Election-Consent-Calendar.pdf"},
+  {"d": "2026-08-02", "k": "e", "text": "The California Democratic Party endorses her for the general election against Democrat Angélica María Dueñas.", "u": "https://cadem.org/wp-content/uploads/2026/08/FINAL-2026-General-Election-Endorsements.pdf"},
+  {"d": "2026-11-03", "k": "e", "text": "Wins the Democrat-vs-Democrat general election over Dueñas, 57.3% to 42.7% (unofficial, all 115 precincts reporting as of Nov 23, 2026).", "u": "https://api.sos.ca.gov/returns/us-rep/district/29"}
+ ],
+ "left": [
+  {"text": "She is a member of the Congressional Progressive Caucus.", "u": "https://progressives.house.gov/caucus-members"},
+  {"text": "Her only serious challenger in 2026 came from within her party: Democrat Angélica María Dueñas, who took 42.7% in the general election.", "u": "https://api.sos.ca.gov/returns/us-rep/district/29"},
+  {"text": "Dueñas's campaign site lists eight groups under its 2026 endorsements: Northridge Indivisible, Feel the Bern LA, Feel the Bern SFV, Organize for Peace, Track AIPAC / Citizens against AIPAC, Courage for Democracy / Citizens Impeachment, Progressive Voter Network and CAIR Action (read Nov 24, 2026).", "u": "https://angelica4congress.com/endorsements/"},
+  {"text": "On the {contested} votes where Democrats split, she agreed with Alexandria Ocasio-Cortez {aocC}% of the time, Jeffries {jeffC}%, and centrist Josh Gottheimer {gottC}%.", "u": "./#alignment"}
+ ]
+}

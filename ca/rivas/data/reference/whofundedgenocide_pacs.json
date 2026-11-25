@@ -1,0 +1,2192 @@
+{
+  "fetched": "2026-11-24",
+  "source": "https://whofundedgenocide.com/",
+  "methodology": "The site, titled 'Who Funded Genocide', says it is published by 'Archive Genocide' and compiled by an unnamed 'member of our team'; corrections go through a Telegram contact channel. It is an advocacy project that counts 'pro-Israel political money' two ways: (a) a compiled member scorecard 'drawn from lobby-group disclosures' that includes bundled individual giving and is marked 'pending independent FEC verification', and (b) FEC-recomputed figures counting only direct committee-to-candidate contributions (FEC pas2, type 24K), plus independent expenditures (Schedule E) reported separately, for a roster of 44 'pro-Israel lobby committees' (J Street explicitly excluded). Cited sources are FEC bulk data (webk committee summaries 2014-2026, Schedule E 2018-2026, pas2 2014-2026, candidate master, itemized individual contributions indiv22/24/26), with OpenSecrets and Track AIPAC used as external cross-checks and archived candidates.proisraelnetwork.org pages for a sponsorship roster. Headline PAC receipts cover the 2022-2026 cycles ($564,409,098) with a 2014-2026 figure ($712,883,972); the donor database is 'concentrated in calendar 2025, with some records reaching back to late 2021'; FEC snapshots were fetched 2026-11-01 (verification generated 2026-11-01; summary.json build 2026-08-29; home page 'Generated 2026-08-25').",
+  "pacs": [
+    {
+      "name": "United Democracy Project (AIPAC super PAC)",
+      "fec_id": "C00799031",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/united-democracy-project-aipac-super-pac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)",
+        "AIPAC-affiliated (per name shown on site)",
+        "super PAC (per name shown on site)",
+        "independent-expenditure target: US House (mixed)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 235940699.22,
+        "from_individuals": 230267383.24,
+        "ie_against": 68788794.13,
+        "ie_for": 53317162.82,
+        "as_shown_on_page": {
+          "total_receipts": 235940699.0,
+          "from_individual_donors": 230267383.0,
+          "spent_against_candidates": 68788794.0,
+          "spent_supporting_candidates": 53317163.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 235940699.22,
+        "from_individuals": 230267383.24,
+        "from_affiliates": 0.0,
+        "other_pac": 67494.48,
+        "cycles_present": [
+          "2022",
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [
+        {
+          "candidate": "Abdul El-Sayed",
+          "state": "MI",
+          "direction": "against",
+          "amount": 20903438.0
+        },
+        {
+          "candidate": "Jamaal Bowman",
+          "state": "NY",
+          "direction": "against",
+          "amount": 9865493.0
+        },
+        {
+          "candidate": "Cori Bush",
+          "state": "MO",
+          "direction": "against",
+          "amount": 7700052.0
+        },
+        {
+          "candidate": "Dave Min",
+          "state": "CA",
+          "direction": "against",
+          "amount": 4615289.0
+        },
+        {
+          "candidate": "Donna Edwards",
+          "state": "MD",
+          "direction": "against",
+          "amount": 4258736.0
+        },
+        {
+          "candidate": "Thomas Massie",
+          "state": "KY",
+          "direction": "against",
+          "amount": 3896751.0
+        },
+        {
+          "candidate": "Summer Lee",
+          "state": "PA",
+          "direction": "against",
+          "amount": 3642759.0
+        },
+        {
+          "candidate": "Tom Malinowski",
+          "state": "NJ",
+          "direction": "against",
+          "amount": 2457397.0
+        },
+        {
+          "candidate": "Brandon Herrera",
+          "state": "TX",
+          "direction": "against",
+          "amount": 2060410.0
+        },
+        {
+          "candidate": "Jessica Cisneros",
+          "state": "TX",
+          "direction": "against",
+          "amount": 1867997.0
+        },
+        {
+          "candidate": "Aisha Wahab",
+          "state": "CA",
+          "direction": "against",
+          "amount": 1642140.0
+        },
+        {
+          "candidate": "John Hostettler",
+          "state": "IN",
+          "direction": "against",
+          "amount": 1567919.0
+        },
+        {
+          "candidate": "Shri Thanedar",
+          "state": "MI",
+          "direction": "against",
+          "amount": 1428679.0
+        },
+        {
+          "candidate": "David Kim",
+          "state": "CA",
+          "direction": "against",
+          "amount": 576453.0
+        },
+        {
+          "candidate": "Cristina Garcia",
+          "state": "CA",
+          "direction": "against",
+          "amount": 515088.0
+        },
+        {
+          "candidate": "Kina Collins",
+          "state": "IL",
+          "direction": "against",
+          "amount": 494453.0
+        },
+        {
+          "candidate": "Nina Turner",
+          "state": "OH",
+          "direction": "against",
+          "amount": 342233.0
+        },
+        {
+          "candidate": "Andy Levin",
+          "state": "MI",
+          "direction": "against",
+          "amount": 341793.0
+        },
+        {
+          "candidate": "Erica Smith",
+          "state": "NC",
+          "direction": "against",
+          "amount": 335413.0
+        },
+        {
+          "candidate": "Bob Good",
+          "state": "VA",
+          "direction": "against",
+          "amount": 132230.0
+        },
+        {
+          "candidate": "George Latimer",
+          "state": "NY",
+          "direction": "for",
+          "amount": 84326.0
+        },
+        {
+          "candidate": "Jason Friedman",
+          "state": "IL",
+          "direction": "against",
+          "amount": 59748.0
+        }
+      ],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "AIPAC PAC",
+      "fec_id": "C00797670",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/aipac-pac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)",
+        "AIPAC-affiliated (per name shown on site)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 134209445.6,
+        "from_individuals": 127472022.94,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 134209446.0,
+          "from_individual_donors": 127472023.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 134209445.6,
+        "from_individuals": 127472022.94,
+        "from_affiliates": 0.0,
+        "other_pac": 782800.14,
+        "cycles_present": [
+          "2022",
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": {
+          "direct_total": 20000.0,
+          "direct_rows": 4,
+          "earmarked_memo_X_total": 88906.76,
+          "earmarked_memo_X_rows": 73,
+          "by_cycle": {
+            "2024": {
+              "direct": 10000.0,
+              "earmarked": 10650.0
+            },
+            "2026": {
+              "direct": 10000.0,
+              "earmarked": 78256.76
+            }
+          },
+          "fec_contributor_names": [
+            "AMERICAN ISRAEL PUBLIC AFFAIRS COMMITTEE POLITICAL ACTION COMMITTEE"
+          ],
+          "recipient_committee_ids": [
+            "C00857417"
+          ]
+        },
+        "tran": null
+      }
+    },
+    {
+      "name": "Preserve America PAC (Miriam Adelson)",
+      "fec_id": "C00878801",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/preserve-america-pac-miriam-adelson/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)",
+        "independent-expenditure target: presidential"
+      ],
+      "totals_2014_2026": {
+        "receipts": 114790602.46,
+        "from_individuals": 114790602.46,
+        "ie_against": 112266879.52,
+        "ie_for": 55000.0,
+        "as_shown_on_page": {
+          "total_receipts": 114790602.0,
+          "from_individual_donors": 114790602.0,
+          "spent_against_candidates": 112266880.0,
+          "spent_supporting_candidates": 55000.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 114790602.46,
+        "from_individuals": 114790602.46,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "Preserve America PAC (Sheldon Adelson)",
+      "fec_id": "C00756882",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/preserve-america-pac-sheldon-adelson/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)",
+        "independent-expenditure target: presidential"
+      ],
+      "totals_2014_2026": {
+        "receipts": 105819923.76,
+        "from_individuals": 105322042.41,
+        "ie_against": 102990138.91,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 105819924.0,
+          "from_individual_donors": 105322042.0,
+          "spent_against_candidates": 102990139.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 497881.35,
+        "from_individuals": 0.0,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2022"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "RJC Victory Fund (Republican Jewish Coalition super PAC)",
+      "fec_id": "C00528554",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/rjc-victory-fund-republican-jewish-coalition-super-pac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)",
+        "super PAC (per name shown on site)",
+        "independent-expenditure target: presidential (mixed)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 34458905.05,
+        "from_individuals": 33358892.15,
+        "ie_against": 24268921.66,
+        "ie_for": 6908943.31,
+        "as_shown_on_page": {
+          "total_receipts": 34458905.0,
+          "from_individual_donors": 33358892.0,
+          "spent_against_candidates": 24268922.0,
+          "spent_supporting_candidates": 6908943.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 27476101.05,
+        "from_individuals": 26876088.15,
+        "from_affiliates": 0.0,
+        "other_pac": 525000.0,
+        "cycles_present": [
+          "2022",
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [
+        {
+          "candidate": "Thomas Massie",
+          "state": "KY",
+          "direction": "against",
+          "amount": 3232621.0
+        },
+        {
+          "candidate": "John Karl Fetterman",
+          "state": "PA",
+          "direction": "against",
+          "amount": 1802783.0
+        },
+        {
+          "candidate": "Abdul El-Sayed",
+          "state": "MI",
+          "direction": "against",
+          "amount": 1354388.0
+        },
+        {
+          "candidate": "Susan Wild",
+          "state": "PA",
+          "direction": "against",
+          "amount": 712921.0
+        },
+        {
+          "candidate": "Yadira Caraveo",
+          "state": "CO",
+          "direction": "against",
+          "amount": 668153.0
+        },
+        {
+          "candidate": "Matthew Cartwright",
+          "state": "PA",
+          "direction": "against",
+          "amount": 436471.0
+        },
+        {
+          "candidate": "Brandon Herrera",
+          "state": "TX",
+          "direction": "against",
+          "amount": 385758.0
+        },
+        {
+          "candidate": "Robert J Harvie",
+          "state": "PA",
+          "direction": "against",
+          "amount": 383500.0
+        },
+        {
+          "candidate": "Carl J. Marlinga",
+          "state": "MI",
+          "direction": "against",
+          "amount": 287280.0
+        },
+        {
+          "candidate": "Amish Shah",
+          "state": "AZ",
+          "direction": "against",
+          "amount": 286578.0
+        },
+        {
+          "candidate": "Robert Casey",
+          "state": "PA",
+          "direction": "for",
+          "amount": 120336.0
+        },
+        {
+          "candidate": "Elissa Slotkin",
+          "state": "MI",
+          "direction": "against",
+          "amount": 78546.0
+        },
+        {
+          "candidate": "Ruben Gallego",
+          "state": "AZ",
+          "direction": "against",
+          "amount": 48799.0
+        },
+        {
+          "candidate": "Jacky Rosen",
+          "state": "NV",
+          "direction": "for",
+          "amount": 48756.0
+        }
+      ],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "DMFI PAC",
+      "fec_id": "C00710848",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/dmfi-pac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)",
+        "independent-expenditure target: US House (mixed)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 29627057.1,
+        "from_individuals": 1805725.55,
+        "ie_against": 17891024.76,
+        "ie_for": 11721807.96,
+        "as_shown_on_page": {
+          "total_receipts": 29627057.0,
+          "from_individual_donors": 1805726.0,
+          "spent_against_candidates": 17891025.0,
+          "spent_supporting_candidates": 11721808.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 23290533.62,
+        "from_individuals": 1280614.27,
+        "from_affiliates": 0.0,
+        "other_pac": 105.0,
+        "cycles_present": [
+          "2022",
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [
+        {
+          "candidate": "Laurie Buckhout",
+          "state": "NC",
+          "direction": "against",
+          "amount": 5039644.0
+        },
+        {
+          "candidate": "Ammar Campa-Najjar",
+          "state": "CA",
+          "direction": "against",
+          "amount": 2000000.0
+        },
+        {
+          "candidate": "Nina Turner",
+          "state": "OH",
+          "direction": "against",
+          "amount": 1741673.0
+        },
+        {
+          "candidate": "Jennifer Kiggans",
+          "state": "VA",
+          "direction": "against",
+          "amount": 965901.0
+        },
+        {
+          "candidate": "Marie Newman",
+          "state": "IL",
+          "direction": "against",
+          "amount": 504267.0
+        },
+        {
+          "candidate": "Randy Villegas",
+          "state": "CA",
+          "direction": "against",
+          "amount": 500000.0
+        },
+        {
+          "candidate": "Erica Smith",
+          "state": "NC",
+          "direction": "against",
+          "amount": 376466.0
+        },
+        {
+          "candidate": "Mehmet Oz",
+          "state": "PA",
+          "direction": "against",
+          "amount": 264082.0
+        },
+        {
+          "candidate": "Raquel Teran",
+          "state": "AZ",
+          "direction": "against",
+          "amount": 180056.0
+        },
+        {
+          "candidate": "Kevin Coughlin",
+          "state": "OH",
+          "direction": "against",
+          "amount": 167724.0
+        },
+        {
+          "candidate": "Austin Theriault",
+          "state": "ME",
+          "direction": "against",
+          "amount": 149600.0
+        },
+        {
+          "candidate": "Delia Ramirez",
+          "state": "IL",
+          "direction": "against",
+          "amount": 143348.0
+        },
+        {
+          "candidate": "Daniel Lee",
+          "state": "CA",
+          "direction": "against",
+          "amount": 142936.0
+        },
+        {
+          "candidate": "Madison Gilbert",
+          "state": "OH",
+          "direction": "against",
+          "amount": 114000.0
+        },
+        {
+          "candidate": "Sam Brown",
+          "state": "NV",
+          "direction": "against",
+          "amount": 95700.0
+        },
+        {
+          "candidate": "Jamaal Bowman",
+          "state": "NY",
+          "direction": "against",
+          "amount": 95247.0
+        },
+        {
+          "candidate": "Lori Chavez-Deremer",
+          "state": "OR",
+          "direction": "against",
+          "amount": 94901.0
+        },
+        {
+          "candidate": "Dave Min",
+          "state": "CA",
+          "direction": "against",
+          "amount": 83333.0
+        },
+        {
+          "candidate": "Esther Joy King",
+          "state": "IL",
+          "direction": "against",
+          "amount": 75000.0
+        },
+        {
+          "candidate": "Cristina Garcia",
+          "state": "CA",
+          "direction": "against",
+          "amount": 65680.0
+        },
+        {
+          "candidate": "Anthony Desposito",
+          "state": "NY",
+          "direction": "against",
+          "amount": 52848.0
+        },
+        {
+          "candidate": "Omari Hardy",
+          "state": "FL",
+          "direction": "against",
+          "amount": 31940.0
+        },
+        {
+          "candidate": "Scott Perry",
+          "state": "PA",
+          "direction": "against",
+          "amount": 25570.0
+        },
+        {
+          "candidate": "Kirsten Engel",
+          "state": "AZ",
+          "direction": "against",
+          "amount": 24750.0
+        },
+        {
+          "candidate": "Amy Vilela",
+          "state": "NV",
+          "direction": "against",
+          "amount": 16152.0
+        },
+        {
+          "candidate": "Maureen Galindo",
+          "state": "TX",
+          "direction": "against",
+          "amount": 14264.0
+        },
+        {
+          "candidate": "David Canepa",
+          "state": "CA",
+          "direction": "against",
+          "amount": 12500.0
+        },
+        {
+          "candidate": "John Cavanaugh",
+          "state": "NE",
+          "direction": "against",
+          "amount": 1870.0
+        }
+      ],
+      "fec_tracker_match": {
+        "rivas": {
+          "direct_total": 4500.0,
+          "direct_rows": 2,
+          "earmarked_memo_X_total": 0.0,
+          "earmarked_memo_X_rows": 0,
+          "by_cycle": {
+            "2024": {
+              "direct": 2000.0,
+              "earmarked": 0.0
+            },
+            "2026": {
+              "direct": 2500.0,
+              "earmarked": 0.0
+            }
+          },
+          "fec_contributor_names": [
+            "DMFI PAC"
+          ],
+          "recipient_committee_ids": [
+            "C00857417"
+          ]
+        },
+        "tran": {
+          "direct_total": 1000.0,
+          "direct_rows": 1,
+          "earmarked_memo_X_total": 0.0,
+          "earmarked_memo_X_rows": 0,
+          "by_cycle": {
+            "2024": {
+              "direct": 1000.0,
+              "earmarked": 0.0
+            }
+          },
+          "fec_contributor_names": [
+            "DMFI PAC"
+          ],
+          "recipient_committee_ids": [
+            "C00851790"
+          ]
+        }
+      }
+    },
+    {
+      "name": "NORPAC",
+      "fec_id": "C00247403",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/norpac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 17044080.22,
+        "from_individuals": 16724303.25,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 17044080.0,
+          "from_individual_donors": 16724303.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 8644781.39,
+        "from_individuals": 8425380.07,
+        "from_affiliates": 0.0,
+        "other_pac": 3500.0,
+        "cycles_present": [
+          "2022",
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "Republican Jewish Coalition PAC",
+      "fec_id": "C00345132",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/republican-jewish-coalition-pac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 12074626.6,
+        "from_individuals": 11947243.72,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 12074627.0,
+          "from_individual_donors": 11947244.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 7783520.59,
+        "from_individuals": 7661467.71,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2022",
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "Pro-Israel America PAC",
+      "fec_id": "C00699470",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/pro-israel-america-pac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 7072572.07,
+        "from_individuals": 7037987.89,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 7072572.0,
+          "from_individual_donors": 7037988.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 3785803.38,
+        "from_individuals": 3766088.9,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2022",
+          "2024"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "Joint Action Committee (JACPAC)",
+      "fec_id": "C00139659",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/joint-action-committee-jacpac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 5096770.41,
+        "from_individuals": 5025085.5,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 5096770.0,
+          "from_individual_donors": 5025086.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 2846189.41,
+        "from_individuals": 2785896.5,
+        "from_affiliates": 0.0,
+        "other_pac": 275.0,
+        "cycles_present": [
+          "2022",
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": {
+          "direct_total": 0.0,
+          "direct_rows": 0,
+          "earmarked_memo_X_total": 2500.0,
+          "earmarked_memo_X_rows": 1,
+          "by_cycle": {
+            "2026": {
+              "direct": 0.0,
+              "earmarked": 2500.0
+            }
+          },
+          "fec_contributor_names": [
+            "JOINT ACTION COMMITTEE FOR POLITICAL AFFAIRS"
+          ],
+          "recipient_committee_ids": [
+            "C00851790"
+          ]
+        }
+      }
+    },
+    {
+      "name": "U.S. Israel PAC",
+      "fec_id": "C00127811",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/u-s-israel-pac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 1520542.92,
+        "from_individuals": 1465309.79,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 1520543.0,
+          "from_individual_donors": 1465310.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 544580.12,
+        "from_individuals": 537120.42,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2022",
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "Americans United in Support of Democracy",
+      "fec_id": "C00113019",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/americans-united-in-support-of-democracy/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 1275650.0,
+        "from_individuals": 1275650.0,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 1275650.0,
+          "from_individual_donors": 1275650.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 215500.0,
+        "from_individuals": 215500.0,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2022",
+          "2024"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "Maryland Assoc. for Concerned Citizens",
+      "fec_id": "C00195024",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/maryland-assoc-for-concerned-citizens/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 1228200.0,
+        "from_individuals": 1218700.0,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 1228200.0,
+          "from_individual_donors": 1218700.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 496750.0,
+        "from_individuals": 489750.0,
+        "from_affiliates": 0.0,
+        "other_pac": 500.0,
+        "cycles_present": [
+          "2022",
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "The Desert Caucus",
+      "fec_id": "C00102368",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/the-desert-caucus/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 1225286.82,
+        "from_individuals": 1214486.82,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 1225287.0,
+          "from_individual_donors": 1214487.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 261924.5,
+        "from_individuals": 256924.5,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2022",
+          "2024"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "American Principles",
+      "fec_id": "C00492579",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/american-principles/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 1148314.04,
+        "from_individuals": 1111684.71,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 1148314.0,
+          "from_individual_donors": 1111685.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 390971.71,
+        "from_individuals": 380131.71,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2022",
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "Citizens Organized PAC",
+      "fec_id": "C00110585",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/citizens-organized-pac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 1095501.0,
+        "from_individuals": 1062501.0,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 1095501.0,
+          "from_individual_donors": 1062501.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 380100.0,
+        "from_individuals": 363100.0,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2022",
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "National Action Committee",
+      "fec_id": "C00147983",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/national-action-committee/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 1086614.0,
+        "from_individuals": 999364.0,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 1086614.0,
+          "from_individual_donors": 999364.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 9070.0,
+        "from_individuals": 9070.0,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2022",
+          "2024"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "Zioness PAC",
+      "fec_id": "C00891259",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/zioness-pac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 988775.92,
+        "from_individuals": 988551.92,
+        "ie_against": 0.0,
+        "ie_for": 1089807.92,
+        "as_shown_on_page": {
+          "total_receipts": 988776.0,
+          "from_individual_donors": 988552.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 1089808.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 988775.92,
+        "from_individuals": 988551.92,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "To Protect Our Heritage PAC",
+      "fec_id": "C00135541",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/to-protect-our-heritage-pac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 982449.27,
+        "from_individuals": 971823.38,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 982449.0,
+          "from_individual_donors": 971823.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 486623.4,
+        "from_individuals": 481013.88,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2022",
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "SunPAC",
+      "fec_id": "C00378216",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/sunpac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 868984.17,
+        "from_individuals": 868954.66,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 868984.0,
+          "from_individual_donors": 868955.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 474604.66,
+        "from_individuals": 474604.66,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2022",
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "Louisianians for American Security",
+      "fec_id": "C00144170",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/louisianians-for-american-security/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 792344.44,
+        "from_individuals": 696405.49,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 792344.0,
+          "from_individual_donors": 696405.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 372633.65,
+        "from_individuals": 295626.0,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2022",
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "Washington PAC",
+      "fec_id": "C00138560",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/washington-pac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 642820.0,
+        "from_individuals": 635847.0,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 642820.0,
+          "from_individual_donors": 635847.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 1000.0,
+        "from_individuals": 0.0,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2022"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "Friends of Israel PAC (FIPAC)",
+      "fec_id": "C00141747",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/friends-of-israel-pac-fipac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 565801.57,
+        "from_individuals": 565565.0,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 565802.0,
+          "from_individual_donors": 565565.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 36236.57,
+        "from_individuals": 36000.0,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2022",
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "National PAC",
+      "fec_id": "C00150995",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/national-pac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 552302.96,
+        "from_individuals": 537851.0,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 552303.0,
+          "from_individual_donors": 537851.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 0,
+        "from_individuals": 0,
+        "from_affiliates": 0,
+        "other_pac": 0,
+        "cycles_present": []
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "Grand Canyon State Caucus",
+      "fec_id": "C00473249",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/grand-canyon-state-caucus/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 426079.17,
+        "from_individuals": 426305.97,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 426079.0,
+          "from_individual_donors": 426306.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 165884.68,
+        "from_individuals": 166118.11,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2022",
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "Bi-County PAC",
+      "fec_id": "C00204388",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/bi-county-pac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 346392.53,
+        "from_individuals": 341390.0,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 346393.0,
+          "from_individual_donors": 341390.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 300.0,
+        "from_individuals": 300.0,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2022",
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "World Alliance for Israel PAC",
+      "fec_id": "C00236596",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/world-alliance-for-israel-pac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 275460.69,
+        "from_individuals": 270040.61,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 275461.0,
+          "from_individual_donors": 270041.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 0,
+        "from_individuals": 0,
+        "from_affiliates": 0,
+        "other_pac": 0,
+        "cycles_present": []
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "Heartland PAC",
+      "fec_id": "C00131557",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/heartland-pac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 272194.08,
+        "from_individuals": 272102.93,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 272194.0,
+          "from_individual_donors": 272103.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 5.25,
+        "from_individuals": 0.0,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2022",
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "American Pro-Israel PAC",
+      "fec_id": "C00687657",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/american-pro-israel-pac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 237660.0,
+        "from_individuals": 237660.0,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 237660.0,
+          "from_individual_donors": 237660.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 0.0,
+        "from_individuals": 0.0,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2022",
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "Because I Care PAC",
+      "fec_id": "C00381624",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/because-i-care-pac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 223729.9,
+        "from_individuals": 213550.0,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 223730.0,
+          "from_individual_donors": 213550.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 10179.9,
+        "from_individuals": 10000.0,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2022",
+          "2024"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "CityPAC",
+      "fec_id": "C00187526",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/citypac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 223328.96,
+        "from_individuals": 221128.75,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 223329.0,
+          "from_individual_donors": 221129.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 38418.18,
+        "from_individuals": 38397.13,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2022",
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "Mid Manhattan PAC",
+      "fec_id": "C00165944",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/mid-manhattan-pac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 165538.79,
+        "from_individuals": 164271.7,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 165539.0,
+          "from_individual_donors": 164272.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 64200.0,
+        "from_individuals": 64200.0,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2022",
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "United PAC",
+      "fec_id": "C00152280",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/united-pac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 154293.5,
+        "from_individuals": 154293.5,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 154294.0,
+          "from_individual_donors": 154294.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 50337.0,
+        "from_individuals": 50337.0,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2022",
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "Democrats for Israel",
+      "fec_id": "C00429571",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/democrats-for-israel/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 139063.81,
+        "from_individuals": 127045.81,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 139064.0,
+          "from_individual_donors": 127046.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 60158.81,
+        "from_individuals": 53193.81,
+        "from_affiliates": 0.0,
+        "other_pac": 5115.0,
+        "cycles_present": [
+          "2022",
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "NATPAC 1947",
+      "fec_id": "C00710772",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/natpac-1947/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 98785.26,
+        "from_individuals": 91283.29,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 98785.0,
+          "from_individual_donors": 91283.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 48953.27,
+        "from_individuals": 48951.3,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2022",
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "Pro-Israel America Action Fund",
+      "fec_id": "C00740936",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/pro-israel-america-action-fund/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 85202.1,
+        "from_individuals": 48625.0,
+        "ie_against": 0.0,
+        "ie_for": 51066.21,
+        "as_shown_on_page": {
+          "total_receipts": 85202.0,
+          "from_individual_donors": 48625.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 51066.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 44202.1,
+        "from_individuals": 13625.0,
+        "from_affiliates": 0.0,
+        "other_pac": 30000.0,
+        "cycles_present": [
+          "2022"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "Americans for Good Government",
+      "fec_id": "C00138701",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/americans-for-good-government/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 60642.43,
+        "from_individuals": 60475.0,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 60642.0,
+          "from_individual_donors": 60475.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 0,
+        "from_individuals": 0,
+        "from_affiliates": 0,
+        "other_pac": 0,
+        "cycles_present": []
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "Jewish Unity PAC",
+      "fec_id": "C00753459",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/jewish-unity-pac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 55710.5,
+        "from_individuals": 55710.5,
+        "ie_against": 0.0,
+        "ie_for": 36842.65,
+        "as_shown_on_page": {
+          "total_receipts": 55710.0,
+          "from_individual_donors": 55710.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 36843.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 2050.0,
+        "from_individuals": 2050.0,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2022"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "St. Louisans for Better Government",
+      "fec_id": "C00148155",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/st-louisans-for-better-government/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 8060.04,
+        "from_individuals": 8016.75,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 8060.0,
+          "from_individual_donors": 8017.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 0,
+        "from_individuals": 0,
+        "from_affiliates": 0,
+        "other_pac": 0,
+        "cycles_present": []
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "ZOA PAC",
+      "fec_id": "C00548628",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/zoa-pac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 3330.0,
+        "from_individuals": 80.0,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 3330.0,
+          "from_individual_donors": 80.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 80.0,
+        "from_individuals": 80.0,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2022",
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "PAC of Cherry Hill NJ",
+      "fec_id": "C00232611",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/pac-of-cherry-hill-nj/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 158.57,
+        "from_individuals": 125.0,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 159.0,
+          "from_individual_donors": 125.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 0,
+        "from_individuals": 0,
+        "from_affiliates": 0,
+        "other_pac": 0,
+        "cycles_present": []
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "Northwest PAC",
+      "fec_id": "C00302414",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/northwest-pac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 64.8,
+        "from_individuals": 59.92,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 65.0,
+          "from_individual_donors": 60.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 0,
+        "from_individuals": 0,
+        "from_affiliates": 0,
+        "other_pac": 0,
+        "cycles_present": []
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "Young Jewish Leadership PAC",
+      "fec_id": "C00305607",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/young-jewish-leadership-pac/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)"
+      ],
+      "totals_2014_2026": {
+        "receipts": 7.0,
+        "from_individuals": 0.0,
+        "ie_against": 0.0,
+        "ie_for": 0.0,
+        "as_shown_on_page": {
+          "total_receipts": 7.0,
+          "from_individual_donors": 0.0,
+          "spent_against_candidates": 0.0,
+          "spent_supporting_candidates": 0.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 0,
+        "from_individuals": 0,
+        "from_affiliates": 0,
+        "other_pac": 0,
+        "cycles_present": []
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "Democratic Majority for Israel (IE)",
+      "fec_id": "C90022864",
+      "fec_id_source": "site",
+      "site_url": "https://whofundedgenocide.com/committee/democratic-majority-for-israel-ie/",
+      "labels": [
+        "pro-Israel lobby committee (site roster of 44)",
+        "independent-expenditure target: presidential"
+      ],
+      "totals_2014_2026": {
+        "receipts": 0.0,
+        "from_individuals": 0.0,
+        "ie_against": 700400.0,
+        "ie_for": 102700.0,
+        "as_shown_on_page": {
+          "total_receipts": 0.0,
+          "from_individual_donors": 0.0,
+          "spent_against_candidates": 700400.0,
+          "spent_supporting_candidates": 102700.0
+        }
+      },
+      "totals_2022_2026": {
+        "receipts": 0.0,
+        "from_individuals": 0.0,
+        "from_affiliates": 0.0,
+        "other_pac": 0.0,
+        "cycles_present": [
+          "2024",
+          "2026"
+        ]
+      },
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": null
+      }
+    },
+    {
+      "name": "J Street",
+      "fec_id": "C00441949",
+      "fec_id_source": "site (also C00815753 listed by site)",
+      "site_url": "https://whofundedgenocide.com/data/network_pacs.v2.json",
+      "labels": [
+        "EXCLUDED from the site's 44-committee PAC roster",
+        "scorecard backer label \"JStreet\" on member pages"
+      ],
+      "site_note": "network_pacs.v2.json \"excluded\": J Street (C00441949, C00815753) \"opposes AIPAC-backed candidates - including it would net opposing sides against each other\". Home page describes J Street as a liberal, pro-diplomacy lobby that often opposes AIPAC.",
+      "totals_2014_2026": null,
+      "totals_2022_2026": null,
+      "ie_candidates_on_page": [],
+      "fec_tracker_match": {
+        "rivas": null,
+        "tran": {
+          "direct_total": 2057.1,
+          "direct_rows": 2,
+          "earmarked_memo_X_total": 214542.57,
+          "earmarked_memo_X_rows": 320,
+          "by_cycle": {
+            "2024": {
+              "direct": 0.0,
+              "earmarked": 83532.67
+            },
+            "2026": {
+              "direct": 2057.1,
+              "earmarked": 131009.9
+            }
+          },
+          "fec_contributor_names": [
+            "JSTREETPAC"
+          ],
+          "recipient_committee_ids": [
+            "C00851790"
+          ]
+        }
+      }
+    }
+  ],
+  "other_committees_named_not_in_pac_roster": {
+    "scorecard_backer_labels": {
+      "labels": [
+        "AIPAC",
+        "American Principles",
+        "DMFI",
+        "FIPAC",
+        "JAC",
+        "JStreet",
+        "NORPAC",
+        "Pro-Israel America",
+        "RJC",
+        "USI PAC"
+      ],
+      "note": "Short labels used in the home-page members scorecard (\"Backed by\") and member pages (\"Committees backing this member\"). The site does not map these labels to FEC IDs; described as lobby groups, presence-counted per member, from lobby-group disclosures.",
+      "url": "https://whofundedgenocide.com/"
+    },
+    "donor_detailed_slice": {
+      "committees": [
+        "Democracy Engine (conduit)",
+        "Democracy Engine PAC",
+        "AIPAC PAC",
+        "Ed Gallrein"
+      ],
+      "note": "Home page \"four committees\" with full itemized donor files (data/summary.json \"disclosed\"). Site says Democracy Engine is a payment conduit whose money flows mostly to mainstream Democratic committees and is shown for traceability, not as pro-Israel spending. Ed Gallrein is a candidate committee.",
+      "url": "https://whofundedgenocide.com/data/summary.json"
+    },
+    "conduit_recipient_committees": {
+      "note": "data/recipients.json lists 96 recipient committees ($1,221,012 total) of the Democracy Engine slice (e.g. BLAKE FOR THE NORTH COUNTRY, FORWARD MAJORITY ACTION, JON OSSOFF FOR SENATE, ONE GIANT LEAP PAC, VOTEVETS). These are recipients, not pro-Israel PACs; not enumerated here.",
+      "url": "https://whofundedgenocide.com/data/recipients.json"
+    },
+    "proisraelnetwork_roster_fec_links": {
+      "note": "The home page \"Pro-Israel Network fundraising roster\" (candidates.proisraelnetwork.org, archived) links ~32 FEC committee IDs of recipient candidate/joint-fundraising committees (e.g. C00349233 linked for Bob Menendez, C00895821 \"GOP Joint Fundraising\"). These are recipients/sponsored candidates, not PACs in the roster; not enumerated.",
+      "url": "https://whofundedgenocide.com/"
+    },
+    "organisation_donors_on_map": {
+      "note": "The /map/ page lists organisations that contributed to roster PACs, including \"Manzanita Action Fund\" ($1,600,000 to United Democracy Project), \"Women Vote\" ($500,000 to DMFI PAC), \"Republican Jewish Coalition\" ($5,480,000 to RJC Victory Fund), \"Democratic Majority for Israel\" ($2,800,000 to DMFI PAC), \"American Israel Public Affairs Committee\" ($51,500,000 to United Democracy Project). Donors, not roster PACs; no FEC IDs shown.",
+      "url": "https://whofundedgenocide.com/map/"
+    },
+    "global_page": {
+      "note": "/global/ lists non-US / nonprofit entities (e.g. \"Christians United For Israel Action Fund\", EIN 461868892, category advocacy) from nonprofit registers, not FEC committees.",
+      "url": "https://whofundedgenocide.com/global/"
+    }
+  },
+  "rivas": {
+    "url": "https://whofundedgenocide.com/member/luz-rivas/",
+    "party_office": "Democrat, Representative, CA-29",
+    "pro_israel_money_associated_compiled": 55450,
+    "from_aipac_linked_committees_compiled": 0,
+    "direct_contributions_fec_verified": 17007,
+    "fec_direct_from_aipac_linked_committees": 15007,
+    "ie": 0,
+    "fec_ie_against": 0,
+    "committees_backing_this_member": [
+      "AIPAC"
+    ],
+    "house_votes": "1 substantive vote recorded: HR 23 Illegitimate Court Counteraction Act, 2025-01-09, Not Voting",
+    "voting_dataset_amount": 32014,
+    "notes": "Same figures in data/reconciliation.json (donations 55450, fec_direct 17007, aipac 0, fec_aipac 15007, matched true). Site does not break the figures down by PAC or state a date range for this member. No Schedule E entries for Rivas in data/schedule_e.json."
+  },
+  "tran": {
+    "url": "https://whofundedgenocide.com/member/derek-tran/",
+    "party_office": "Democrat, Representative, CA-45",
+    "pro_israel_money_associated_compiled": 122508,
+    "from_aipac_linked_committees_compiled": 0,
+    "direct_contributions_fec_verified": 1000,
+    "fec_direct_from_aipac_linked_committees": 0,
+    "ie": 0,
+    "fec_ie_against": 0,
+    "committees_backing_this_member": [
+      "DMFI",
+      "JStreet"
+    ],
+    "house_votes": "1 substantive vote recorded: HR 23 Illegitimate Court Counteraction Act, 2025-01-09, Nay",
+    "voting_dataset_amount": 1000,
+    "notes": "Same figures in data/reconciliation.json (donations 122508, fec_direct 1000, aipac 0, fec_aipac 0, matched true). Site does not break the figures down by PAC. No Schedule E entries for Tran in data/schedule_e.json. The compiled $122,508 likely includes J Street-associated money since JStreet is a listed backer, but the site does not say so explicitly."
+  },
+  "notes": [
+    "All 44 roster PACs have FEC IDs shown on their own site pages; none needed lookup from tracker FEC data. J Street IDs come from the site's network_pacs.v2.json \"excluded\" note.",
+    "Democratic Majority for Israel (IE) has ID C90022864 (a C9 independent-expenditure filer ID, not C00 format) and shows $0 receipts.",
+    "Receipts on the /committee/ index and committee pages are 2014-2026 totals (network_pacs.v2.json); pac_receipts.json gives 2022-2026 totals (sums to $564,409,097.79). Note verification.json says the 2022-2026 file covers \"10 core committees\" but the file actually lists all 44.",
+    "Labels: the site assigns no category beyond \"pro-Israel lobby committee\" plus an IE-target tag (US House (mixed) / presidential / presidential (mixed)); \"AIPAC\" and \"super PAC\" labels here come only from the parenthetical in the name as the site shows it.",
+    "fec_tracker_match sums contribution_receipt_amount by contributor_id from each tracker's committee_contribs_2024.json and committee_contribs_2026.json. memo_code \"X\" rows are earmarked individual contributions itemized with the conduit PAC as contributor_id (memo_text e.g. \"EARMARKED THROUGH THIS ORGANIZATION\"); direct rows are memo_code null. No duplicate transaction rows found. A name-pattern scan for pro-Israel PAC names without matching IDs found none.",
+    "The tracker FEC totals differ from the site's member figures (e.g. Rivas: site FEC direct $17,007 incl. $15,007 AIPAC-linked; tracker data shows $20,000 direct from AIPAC PAC + $4,500 DMFI PAC over 2024 and 2026 cycles). The site does not state the cycle window for member figures; likely different periods/scope.",
+    "Site languages (/ar/, /de/ etc.) and /global/<lang>/ translations were not fetched individually (assumed translations of the same pages); /j-soc/ and /manufacturedconsensus/ pages concern Israeli government spending, not FEC PACs.",
+    "Not fetched: data/donors.json, data/receipts/, /downloads/ CSVs, and the 524 member pages other than Rivas and Tran. No pages failed to load (all HTTP 200).",
+    "11 committee URLs listed in sitemap.xml (american-principles, american-pro-israel-pac, citypac, democratic-majority-for-israel-ie, heartland-pac, joint-action-committee-jacpac, mid-manhattan-pac, natpac-1947, pac-of-cherry-hill-nj, st-louisans-for-better-government, zioness-pac) return the /committee/ index page at the trailing-slash URL; their actual pages load at <url>index.html. site_url records the sitemap URL.",
+    "Raw pages saved under /private/tmp/claude-501/wfg/."
+  ]
+}

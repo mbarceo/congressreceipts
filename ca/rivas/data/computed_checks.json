@@ -1,0 +1,170 @@
+[
+ {
+  "label": "Votes where she and Jeffries both cast Yea or Nay",
+  "shown": 675,
+  "actual": 675,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Votes where she split from Jeffries",
+  "shown": 11,
+  "actual": 11,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Jeffries (%)",
+  "shown": 98.4,
+  "actual": 98.4,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Party-unity score (%)",
+  "shown": 98.1,
+  "actual": 98.1,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Party-unity rank among Democrats",
+  "shown": 60,
+  "actual": 60,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Hakeem Jeffries on contested votes (%)",
+  "shown": 84.5,
+  "actual": 84.5,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Josh Gottheimer on contested votes (%)",
+  "shown": 28.1,
+  "actual": 28.1,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Alexandria Ocasio-Cortez on contested votes (%)",
+  "shown": 85.1,
+  "actual": 85.1,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Contested votes (Democrats split at least 90-10)",
+  "shown": 76,
+  "actual": 76,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "AIPAC PAC, direct contributions",
+  "shown": 20000.0,
+  "actual": 20000.0,
+  "ok": true,
+  "source": "FEC Schedule A, committee C00797670"
+ },
+ {
+  "label": "AIPAC PAC, earmarked donations",
+  "shown": 88906.76,
+  "actual": 88906.76,
+  "ok": true,
+  "source": "FEC Schedule A memo entries, committee C00797670"
+ },
+ {
+  "label": "AIPAC PAC, total (direct + earmarked)",
+  "shown": 108906.76,
+  "actual": 108906.76,
+  "ok": true,
+  "source": "FEC Schedule A, committee C00797670"
+ },
+ {
+  "label": "DMFI PAC",
+  "shown": 4500.0,
+  "actual": 4500.0,
+  "ok": true,
+  "source": "FEC Schedule A, committee C00710848"
+ },
+ {
+  "label": "Pro-Israel money in her filings, both cycles",
+  "shown": 113406.76,
+  "actual": 113406.76,
+  "ok": true,
+  "source": "FEC Schedule A"
+ },
+ {
+  "label": "Party leaders' committees, 2023-24",
+  "shown": 13000,
+  "actual": 13000.0,
+  "ok": true,
+  "source": "FEC Schedule A, by leader committee name"
+ },
+ {
+  "label": "Party leaders' committees, 2025-26",
+  "shown": 7000,
+  "actual": 7000.0,
+  "ok": true,
+  "source": "FEC Schedule A, by leader committee name"
+ },
+ {
+  "label": "Corporate PAC money, 2023-24",
+  "shown": 42500.0,
+  "actual": 42500,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
+ },
+ {
+  "label": "Labor PAC money, 2023-24",
+  "shown": 142500,
+  "actual": 142500,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
+ },
+ {
+  "label": "Trade PAC money, 2023-24",
+  "shown": 51834,
+  "actual": 51834,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
+ },
+ {
+  "label": "Corporate PAC money, 2025-26",
+  "shown": 124790.0,
+  "actual": 124790,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
+ },
+ {
+  "label": "Labor PAC money, 2025-26",
+  "shown": 144500,
+  "actual": 144500,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
+ },
+ {
+  "label": "Trade PAC money, 2025-26",
+  "shown": 99000,
+  "actual": 99000,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
+ },
+ {
+  "label": "Press releases on her House site",
+  "shown": 144,
+  "actual": 144,
+  "ok": true,
+  "source": "rivas.house.gov press releases"
+ },
+ {
+  "label": "Releases mentioning homelessness",
+  "shown": 6,
+  "actual": 6,
+  "ok": true,
+  "source": "Full text of every release"
+ }
+]

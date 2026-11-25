@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Tran and the Establishment</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+[hidden]{display:none!important}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.col{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.col h3{display:flex;align-items:center;gap:8px}
+.col ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;font-size:.9rem}
+.lead-t td{font-size:.88rem;vertical-align:middle}
+.lead-t .num{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.pair{display:flex;align-items:center;gap:6px}
+.pair .b{height:10px;border-radius:0 3px 3px 0;min-width:2px}
+.pair .b.y24{background:var(--muted);opacity:.6} .pair .b.y26{background:var(--accent)}
+.legend-inline{display:flex;gap:16px;font-size:.8rem;color:var(--muted);flex-wrap:wrap}
+.legend-inline i{display:inline-block;width:12px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.tl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.tl li{display:grid;grid-template-columns:96px 1fr;gap:4px 16px;padding:11px 0;border-top:1px solid var(--line);font-size:.9rem}
+.tl li>*{min-width:0}
+.tl .d{font-family:var(--f-mono);font-size:.75rem;color:var(--muted);padding-top:2px}
+.tag-e{font-size:.68rem;font-weight:700;border-radius:4px;padding:1px 7px;color:#fff;background:#2f6fb3;margin-right:6px}
+.tag-i{font-size:.68rem;font-weight:700;border-radius:4px;padding:1px 7px;color:#fff;background:#2f8f5b;margin-right:6px}
+.brk-t td{font-size:.85rem;vertical-align:top} .brk-t .qq{color:var(--muted);font-size:.8rem}
+.v-yea{border:1px solid var(--ink,currentColor);font-weight:700} .v-nay{border:1px dashed var(--muted);color:var(--muted)}
+@media (max-width:520px){.tl li{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="sitenav" aria-label="Pages"><a href="./">Overview</a><a href="money.html">Money</a><a href="establishment.html" aria-current="page">Establishment</a><a href="./#townhalls">Town halls</a><a href="stances.html">Stances</a><a href="votes.html">Every vote</a><a href="statements.html">Statements</a><a href="sources.html">Sources</a></nav>
+  <header>
+    <div class="ident">
+      <img class="portrait" src="assets/tran.jpg" alt="Official House portrait of Rep. Derek Tran" width="400" height="500">
+      <div class="ident-text">
+        <span class="eyebrow">Party ties · 2024–26</span>
+        <h1>Allegiance to establishment Democrats</h1>
+      </div>
+    </div>
+    <p class="lede">How closely Tran is tied to House Democratic leadership and the party's campaign machine, and where he has acted on his own. Every item links to its source.</p>
+  </header>
+
+  <section id="verdict">
+    <div class="sec-head">
+      <span class="eyebrow">The short answer</span>
+      <h2>Is he an establishment Democrat?</h2>
+    </div>
+    <div class="pp-card">
+      <div class="pp-head">
+        <div class="pp-flag"><span class="pp-q">Establishment?</span><span class="pp-v">Mostly yes</span></div>
+        <p class="pp-sum">The party's campaign arm recruited and protected him, Hakeem Jeffries campaigned for him, and he helped nominate Jeffries for Speaker. Money from party leaders' committees more than doubled after he took office. His independence shows on immigration enforcement and one Israel aid vote, not on leadership fights. On votes that split Democrats he sides with centrists more than with leadership or progressives.</p>
+      </div>
+    </div>
+    <div class="tally" id="tiles"></div>
+  </section>
+
+  <section id="indicators">
+    <div class="sec-head">
+      <span class="eyebrow">Evidence</span>
+      <h2>The strongest signs each way</h2>
+    </div>
+    <div class="cols">
+      <div class="col"><h3><span class="tag-e">Establishment</span>Signs of alignment</h3>
+        <ol>
+          <li>Recruited into the DCCC's <b>Red to Blue</b> program in 2024 and its <b>Frontline</b> incumbent-protection program in 2025–26, and kept on Frontline after Prop 50 made his seat safer. <a class="src" href="https://dccc.org/derek-tran-added-to-dcccs-coveted-red-to-blue-program" target="_blank" rel="noopener">Red to Blue</a> <a class="src" href="https://dccc.org/2026-frontline/" target="_blank" rel="noopener">Frontline</a></li>
+          <li>Jeffries campaigned for him in Anaheim (Oct 2024), held a joint event in Buena Park (Mar 2026) and endorsed him. Tran was <b>one of five Democrats who formally nominated Jeffries for Speaker</b> (Nov 18, 2026). <a class="src" href="https://www.pressdemocrat.com/2024/10/14/democrat-hakeem-jeffries-stumps-in-california-in-a-bid-to-reclaim-house-control/" target="_blank" rel="noopener">AP</a> <a class="src" href="https://tran.house.gov/media/press-releases/icymi-leader-hakeem-jeffries-joins-us-representative-derek-tran-roundtable" target="_blank" rel="noopener">Roundtable</a> <a class="src" href="https://www.nbcnews.com/politics/congress/democrats-formally-nominate-rep-hakeem-jeffries-paving-way-first-black-rcna609619" target="_blank" rel="noopener">NBC News</a></li>
+          <li>Money from party leaders' committees rose from <b>$56,500</b> in 2023–24 to <b>$135,759</b> in 2025–26. In 2024, four leadership PACs each gave $5,000 on Mar 28–29, the days the DCCC named him a Red to Blue candidate. <a class="src" href="#leaders">FEC totals below</a></li>
+          <li>Member of the centrist <b>New Democrat Coalition</b>, endorsed by its Action Fund, and co-chair of the House Democratic Caucus <b>National Security Task Force</b>. <a class="src" href="https://newdemocratcoalition.house.gov/members" target="_blank" rel="noopener">NDC members</a> <a class="src" href="https://web.archive.org/web/20261103052415/https://www.derektranforcongress.com/endorsements-v" target="_blank" rel="noopener">Endorsements</a> <a class="src" href="https://tran.house.gov/media/press-releases/representative-derek-tran-announces-leadership-national-security-task-force" target="_blank" rel="noopener">Task force</a></li>
+          <li>Party-aligned groups spent heavily for him in 2024: House Majority PAC spent $1.89M supporting him, per FEC records, on top of its spending against Michelle Steel. <a class="src" href="money.html#outside">FEC data</a></li>
+        </ol>
+      </div>
+      <div class="col"><h3><span class="tag-i">Independent</span>Signs of independence</h3>
+        <ol>
+          <li>In his 2024 primary the <b>California Democratic Party endorsed his rival</b>, Kim Nguyen-Penaloza. He won by about 366 votes. <a class="src" href="https://theliberaloc.com/?p=49708" target="_blank" rel="noopener">Endorsement</a> <a class="src" href="https://en.wikipedia.org/wiki/2024_California%27s_45th_congressional_district_election" target="_blank" rel="noopener">Primary result</a></li>
+          <li>Voted for the <b>Laken Riley Act</b> and other Republican immigration bills, and for the resolution thanking ICE, against most Democrats. <a class="src" href="https://clerk.house.gov/Votes/202523" target="_blank" rel="noopener">Laken Riley</a> <a class="src" href="https://clerk.house.gov/Votes/2025158" target="_blank" rel="noopener">H.Res. 488</a></li>
+          <li>Voted for the <b>Massie amendment</b> to cut $3.3B in military aid to Israel, which Jeffries opposed (Whip Clark and most Democrats voted yes). <a class="src" href="https://clerk.house.gov/Votes/2026243" target="_blank" rel="noopener">Roll call</a> <a class="src" href="https://www.cbsnews.com/news/us-israel-aid-house-democrats-massie-amendment/" target="_blank" rel="noopener">CBS News</a></li>
+          <li>Ranks <b>189th of 215</b> House Democrats for voting with his party. <a class="src" href="./#alignment">Computed from roll calls</a></li>
+          <li>Not a member of the Blue Dog Coalition or Problem Solvers Caucus. Also not in the Congressional Progressive Caucus. <a class="src" href="https://bluedogs-gluesenkampperez.house.gov/members" target="_blank" rel="noopener">Blue Dogs</a> <a class="src" href="https://problemsolverscaucus.house.gov/caucus-members" target="_blank" rel="noopener">Problem Solvers</a> <a class="src" href="https://progressives.house.gov/caucus-members" target="_blank" rel="noopener">CPC</a></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="leaders">
+    <div class="sec-head">
+      <span class="eyebrow">Money from leadership</span>
+      <h2>What party leaders' committees gave him</h2>
+      <p>Contributions from each leader's campaign committee, leadership PAC and joint fundraising committees, from FEC filings.</p>
+    </div>
+    <div class="legend-inline"><span><i style="background:var(--muted);opacity:.6"></i>2023–24 (first race)</span><span><i style="background:var(--accent)"></i>2025–26 (as an incumbent)</span></div>
+    <div class="handles"><table class="lead-t"><thead><tr><th>Leader</th><th>Committees</th><th style="min-width:180px"></th><th style="text-align:right">2023–24</th><th style="text-align:right">2025–26</th></tr></thead><tbody id="leadRows"></tbody></table></div>
+  </section>
+
+  <section id="programs">
+    <div class="sec-head">
+      <span class="eyebrow">The party machine</span>
+      <h2>Programs, outside money and endorsements</h2>
+    </div>
+    <ul class="tl" id="timeline"></ul>
+  </section>
+
+  <section id="votes">
+    <div class="sec-head">
+      <span class="eyebrow">Votes</span>
+      <h2>How he votes compared with leadership</h2>
+      <p>From House roll calls in 2025–26. See the <a href="./#alignment">full alignment table</a> on the overview.</p>
+    </div>
+    <div class="tally" id="voteTiles"></div>
+  </section>
+
+  <section id="breaks">
+    <div class="sec-head">
+      <span class="eyebrow">Votes</span>
+      <h2>Every vote where he split from Jeffries</h2>
+      <p id="breaksNote">From House Clerk roll calls, counting only votes where both Tran and Jeffries cast Yea or Nay.</p>
+    </div>
+    <div class="tally" id="breakTiles"></div>
+    <div class="handles"><table class="brk-t"><thead><tr><th>Date</th><th>Bill and question</th><th>Tran</th><th>Jeffries</th></tr></thead><tbody id="breakRows"></tbody></table></div>
+  </section>
+
+  <section id="left">
+    <div class="sec-head">
+      <span class="eyebrow">The progressive left</span>
+      <h2>Where progressive groups stand</h2>
+    </div>
+    <ul class="plain">
+      <li>Not a member of the Congressional Progressive Caucus. Nearby Rep. Dave Min (CA-47) is. <a class="src" href="https://progressives.house.gov/caucus-members" target="_blank" rel="noopener">CPC members</a></li>
+      <li>We found no endorsement, criticism or primary challenge from Justice Democrats, Our Revolution, the Working Families Party, Sunrise or DSA. He had no progressive challenger in 2026.</li>
+      <li>MoveOn and J Street endorsed him in 2024. <a class="src" href="https://jstreetpac.org/candidate/tran-victory-fund" target="_blank" rel="noopener">J Street</a></li>
+         </ul>
+  </section>
+
+  <footer>Sources: FEC filings, House Clerk roll calls, DCCC, his campaign and House websites, AP, NBC, CBS, ProPublica, Free Beacon and California Globe. Two of those outlets lean right; their corporate PAC claims were checked against FEC data. This page is a nonpartisan summary, not an endorsement.</footer>
+</div>
+
+<script>
+const esc = s => String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const usd = n => "$" + Math.round(n).toLocaleString("en-US");
+const LEADERS = [
+  ["Hakeem Jeffries","House Democratic Leader","Jeffries for Congress; Jobs, Education & Families First (JEFF PAC); Jeffries Battleground Protection Fund",14000,60942],
+  ["Katherine Clark","Democratic Whip","Katherine Clark for Congress; Fair Shot PAC; Clark Frontline Victory Fund",7000,29576],
+  ["Nancy Pelosi","Speaker Emerita","Nancy Pelosi for Congress; PAC to the Future",12000,14000],
+  ["Pete Aguilar","Caucus Chair","Pete Aguilar for Congress; CA LUV PAC",11500,14000],
+  ["Steny Hoyer","Former Majority Leader","Hoyer for Congress; AmeriPAC",7000,10000],
+  ["DCCC","Party campaign committee","Democratic Congressional Campaign Committee",5000,7241],
+];
+const TL = [
+  ["2024-03-28","e","DCCC adds him to Red to Blue, its program for top recruits.","https://dccc.org/derek-tran-added-to-dcccs-coveted-red-to-blue-program"],
+  ["2024-03-29","e","Within two days, the leadership PACs of Jeffries, Clark, Aguilar and Hoyer each give him $5,000, per FEC records.","money.html#pacs"],
+  ["2023-11-20","i","California Democratic Party endorses his primary rival, Kim Nguyen-Penaloza.","https://theliberaloc.com/?p=49708"],
+  ["2024-05-15","i","End Citizens United endorses him for refusing corporate PAC money.","https://endcitizensunited.org/latest-news/press-releases/end-citizens-united-let-america-vote-endorses-derek-tran-for-congress"],
+  ["2024-09-09","e","DMFI PAC (Democratic Majority for Israel) endorses him for the general election.","https://dmfipac.org/news-updates/press-release/dmfi-pac-announces-new-slate-of-2024-general-election-endorsements/"],
+  ["2024-10-12","e","Hakeem Jeffries campaigns for him at Golden Sea Restaurant in Anaheim, near Little Saigon.","https://www.pressdemocrat.com/2024/10/14/democrat-hakeem-jeffries-stumps-in-california-in-a-bid-to-reclaim-house-control/"],
+  ["2024-11-05","e","In the 2024 general election, House Majority PAC spends $1.89M supporting him, while the Republican Congressional Leadership Fund spends $11.36M against him, per FEC records.","money.html#outside"],
+  ["2025-01-03","e","Votes for Jeffries for Speaker.","https://clerk.house.gov/Votes/20252"],
+  ["2025-03-06","e","Named to the DCCC's Frontline program for vulnerable incumbents.","https://dccc.org/dccc-announces-members-of-2026-frontline-program"],
+  ["2025-03-14","e","Leads 66 House Democrats urging Senate leader Chuck Schumer to block the Republican funding bill, the same position as House leadership.","https://tran.house.gov/media/press-releases/congressman-derek-tran-leads-house-democrats-issuing-urgent-appeal-leader"],
+  ["2025-06-24","e","Named co-chair of the House Democratic Caucus National Security Task Force.","https://tran.house.gov/media/press-releases/representative-derek-tran-announces-leadership-national-security-task-force"],
+  ["2025-11-07","i","The Washington Free Beacon reports he took $46,500 from corporate PACs after pledging in his 2024 race not to take \u201ca dime\u201d of it.","https://freebeacon.com/democrats/california-congressman-who-campaigned-on-no-corporate-pac-money-pledge-takes-tens-of-thousands-of-dollars-from-corporate-pacs/"],
+  ["2026-10-14","i","FEC filings through Oct 14, 2026 show $305,250 from 91 corporate PACs in 2025\u201326, and none in 2023\u201324.","money.html#pacs"],
+  ["2026-03-12","e","Hosts Jeffries in Buena Park for a veterans roundtable.","https://tran.house.gov/media/press-releases/icymi-leader-hakeem-jeffries-joins-us-representative-derek-tran-roundtable"],
+  ["2026-07-15","i","Votes for the Massie amendment to cut Israel military aid, which Jeffries opposed.","https://www.cbsnews.com/news/us-israel-aid-house-democrats-massie-amendment/"],
+  ["2025-08-18","e","Jeffries forms the Jeffries Battleground Protection Fund, which goes on to send Tran $56,942 in 2025–26.","money.html"],
+  ["2026-11-18","e","One of five Democrats who formally nominate Jeffries for Speaker; urges “discipline” and “unity.”","https://www.nbcnews.com/politics/congress/democrats-formally-nominate-rep-hakeem-jeffries-paving-way-first-black-rcna609619"],
+].sort((a,b)=>b[0].localeCompare(a[0]));
+const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+const t24 = LEADERS.reduce((s,l)=>s+l[3],0), t26 = LEADERS.reduce((s,l)=>s+l[4],0);
+document.getElementById("tiles").innerHTML = [
+  [usd(t26), "From party leaders' committees in 2025–26, up from " + usd(t24)],
+  ["Frontline", "DCCC incumbent-protection program, 2025–26"],
+  ["189 of 215", "Rank among House Democrats for party-line voting"],
+  ["1 of 5", "Democrats who formally nominated Jeffries for Speaker"],
+].map(([n,l])=>`<div class="tile"><span class="n" style="font-size:1.5rem">${esc(n)}</span><span class="l">${esc(l)}</span></div>`).join("");
+
+const max = Math.max(...LEADERS.map(l=>l[4]));
+document.getElementById("leadRows").innerHTML = LEADERS.map(([n,role,cm,a,b])=>`<tr>
+  <td><b>${esc(n)}</b><br><span class="muted" style="font-size:.78rem">${esc(role)}</span></td>
+  <td class="muted" style="font-size:.78rem">${esc(cm)}</td>
+  <td><div class="pair"><span class="b y24" style="width:${(a/max*160).toFixed(0)}px" title="2023–24: ${usd(a)}"></span></div><div class="pair" style="margin-top:3px"><span class="b y26" style="width:${(b/max*160).toFixed(0)}px" title="2025–26: ${usd(b)}"></span></div></td>
+  <td class="num">${usd(a)}</td><td class="num"><b>${usd(b)}</b></td></tr>`).join("") +
+  `<tr><td><b>Total</b></td><td></td><td></td><td class="num">${usd(t24)}</td><td class="num"><b>${usd(t26)}</b></td></tr>`;
+
+document.getElementById("timeline").innerHTML = TL.map(([d,k,t,u])=>{ const dt = new Date(d+"T12:00:00");
+  return `<li><span class="d">${MON[dt.getMonth()]} ${dt.getFullYear()}</span><span><span class="${k==="e"?"tag-e":"tag-i"}">${k==="e"?"Establishment":"Independent"}</span>${esc(t)} <a class="src" href="${esc(u)}"${u.startsWith("http")?' target="_blank" rel="noopener"':""}>Source</a></span></li>`; }).join("");
+
+fetch("data/alignment.json").then(r=>r.json()).then(a=>{
+  const p = n => a.peers.find(x=>x.name===n);
+  document.getElementById("voteTiles").innerHTML = [
+    [a.tranUnity+"%","Votes cast with the Democratic majority (typical Democrat: "+a.medianUnity+"%)"],
+    [p("Hakeem Jeffries").contested+"%","Agreement with Jeffries on the "+a.contested+" votes where Democrats split"],
+    [p("Josh Gottheimer").contested+"%","Agreement with centrist Josh Gottheimer on those votes"],
+    [p("Alexandria Ocasio-Cortez").contested+"%","Agreement with Alexandria Ocasio-Cortez on those votes"],
+  ].map(([n,l])=>`<div class="tile"><span class="n">${esc(n)}</span><span class="l">${esc(l)}</span></div>`).join("");
+}).catch(()=>{});
+
+// Every roll call where Tran and Jeffries cast opposite votes (data/establishment_votes.json, from scripts/build_establishment.py)
+fetch("data/establishment_votes.json").then(r=>r.json()).then(d=>{
+  const vp = v => `<span class="pill ${v==="Yea"?"v-yea":"v-nay"}">${esc(v)}</span>`;
+  const tY = d.diffs.filter(x=>x.tran==="Yea").length;
+  document.getElementById("breaksNote").textContent = `Tran and Jeffries both cast a Yea or Nay on ${d.both} roll calls in 2025–26. They voted opposite ways on ${d.splits}: Tran voted Yea and Jeffries Nay on ${tY}, and the reverse on ${d.splits-tY}. Each is listed below with the House Clerk's wording.`;
+  document.getElementById("breakTiles").innerHTML = [
+    [d.agreePct+"%","Same vote as Jeffries, of the "+d.both+" roll calls where both voted Yea or Nay"],
+    [d.splits,"Roll calls where they voted opposite ways"],
+  ].map(([n,l])=>`<div class="tile"><span class="n">${esc(n)}</span><span class="l">${esc(l)}</span></div>`).join("");
+  document.getElementById("breakRows").innerHTML = d.diffs.map(x=>`<tr><td class="mono" style="white-space:nowrap;font-size:.78rem">${esc(x.date)}</td><td><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.bill)}</a>${x.desc?" · "+esc(x.desc):""}${x.amendment?`<div class="qq">Amendment: ${esc(x.amendment)}</div>`:""}<div class="qq">${esc(x.question)}${x.result?" ("+esc(x.result)+")":""}</div></td><td>${vp(x.tran)}</td><td>${vp(x.jeffries)}</td></tr>`).join("");
+}).catch(()=>{ document.getElementById("breaksNote").textContent = "The vote data didn't load. Reload the page to try again."; });
+</script>
+<script src="site.js"></script>
+</body>
+</html>

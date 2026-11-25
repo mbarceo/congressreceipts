@@ -1,0 +1,51 @@
+{
+ "_note": "Evidence cards for the Stances page's 'big questions'. Each item points one way: 'pro' or 'con' (labels per card). Roll items: 'yea' says which side a Yea vote is on; his vote, and therefore the item's side, comes from data/votes.json. Release items: 'stmt' must match one release. Headlines are computed in scripts/build_cards.py by the rule stated on each card. Money placeholders: {corpCur} {ncorpCur} {corpPrev} {tradeCur} {laborCur} (latest and previous FEC cycle) or per cycle, e.g. {corp26}. Build: python3 -I scripts/build_cards.py (after build_stances.py and build_establishment.py).",
+ "cards": [
+  {
+   "key": "ice",
+   "q": "Pro-ICE?",
+   "eb": "Immigration enforcement",
+   "pro": "Pro-enforcement",
+   "con": "Against ICE or for immigrants",
+   "section": "immigration",
+   "rollsFromIssue": "immigration",
+   "issueYea": "pro",
+   "issueYeaOverrides": {"2026-018": "con", "2026-149": "con", "2026-156": "con", "2026-111": "con"},
+   "items": []
+  },
+  {
+   "key": "police",
+   "q": "Pro-police?",
+   "eb": "Policing and crime",
+   "pro": "Police or tough-on-crime side",
+   "con": "Against",
+   "section": "public-safety",
+   "rollsFromIssue": "public-safety",
+   "issueYea": "pro",
+   "issueYeaOverrides": {"2025-566": "con", "2025-567": "con", "2025-569": "con"},
+   "items": []
+  },
+  {
+   "key": "corporate",
+   "q": "Pro-corporate?",
+   "eb": "Money and business",
+   "pro": "Business side",
+   "con": "Consumer or labor side",
+   "section": null,
+   "rolls": [
+    {"roll": "2025-151", "yea": "pro", "t": "repealing the IRS rule requiring crypto brokers to report users' sales (H.J.Res. 25)"},
+    {"roll": "2025-106", "yea": "pro", "t": "repealing the consumer bureau's rule on big-tech payment apps (S.J.Res. 28)"},
+    {"roll": "2025-153", "yea": "pro", "t": "repealing the consumer bureau's overdraft-fee rule (S.J.Res. 18)"},
+    {"roll": "2025-318", "yea": "pro", "t": "the GENIUS Act regulating payment stablecoins (S. 1582)"},
+    {"roll": "2026-234", "yea": "pro", "t": "taking up the CLARITY Act, the crypto industry's market-structure bill (H.R. 3633)"},
+    {"roll": "2025-237", "yea": "pro", "t": "repealing the Comptroller of the Currency's bank-merger review rule (S.J.Res. 13)"},
+    {"roll": "2025-097", "yea": "pro", "t": "repealing the EPA's methane fee on oil and gas producers (H.J.Res. 35)"}
+   ],
+   "items": [
+    {"d": "2025–26", "s": "pro", "hi": 1, "money": "corp", "t": "Took {corpCur} from {ncorpCur} corporate PACs in 2025–26, compared with {corpPrev} in 2023–24."},
+    {"d": "2025–26", "s": "pro", "money": "trade", "t": "Took {tradeCur} from trade associations and cooperatives in 2025–26."},
+    {"d": "2025–26", "s": "con", "money": "labor", "t": "Labor PACs gave {laborCur} in 2025–26, compared with {corpCur} from corporate PACs."}
+   ]
+  }
+ ]
+}

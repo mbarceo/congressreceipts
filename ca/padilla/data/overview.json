@@ -1,0 +1,88 @@
+{
+ "tiles": [
+  {
+   "q": "Israel or Palestine?",
+   "v": "Middle, leans Israel",
+   "href": "stances.html#israel-palestine",
+   "rule": "The headline of the Israel and Palestine card, which tags each of its items by direction.",
+   "n": 12
+  },
+  {
+   "q": "Pro-ICE?",
+   "v": "Mostly no",
+   "href": "stances.html#card-ice",
+   "rule": "\"No\" when nothing found in his record points toward ICE; \"Mostly no\" when at least three times as many items point the other way. Toward enforcement: 1 vote and 0 statements or actions. Against: 11 votes and 0 statements or actions.",
+   "n": 12
+  },
+  {
+   "q": "Pro-police?",
+   "v": "Mixed",
+   "href": "stances.html#card-police",
+   "rule": "\"Mixed\" when at least 3 items point each way, counting votes, bills and funding. On the police side: 2 votes and 6 bills, resolutions or funding items. On the reform side: 4 votes and 7 bills or statements.",
+   "n": 19
+  },
+  {
+   "q": "Pro-corporate?",
+   "v": "Mostly no",
+   "href": "stances.html#card-corporate",
+   "rule": "His votes decide the headline: 2 of the 7 business, finance and labor votes picked went the business way (a third or fewer is \"Mostly no\", two thirds or more \"Mostly yes\").",
+   "n": 10
+  },
+  {
+   "q": "Delivering on cost of living?",
+   "v": "In progress",
+   "href": "#scorecard",
+   "rule": "The promise scorecard's status for his cost-of-living pledge. A housing-supply bill he voted for became law, but he was on the losing side of the 2025 reconciliation law, and his own housing bill has not moved. The promise is broad.",
+   "n": 6
+  },
+  {
+   "q": "Focused on wildfire recovery?",
+   "v": "A recurring theme",
+   "href": "stances.html#public-safety",
+   "rule": "249 of his 2077 press releases (12%) mention wildfires at all; under 10% counts as not a major theme.",
+   "n": 249
+  }
+ ],
+ "events": [
+  {
+   "date": "2026-03-31",
+   "type": "Site visit",
+   "role": "hosted",
+   "title": "Toured Santa Clara Valley Medical Center with frontline physicians to discuss the impact of federal health care cuts",
+   "city": "San Jose",
+   "source": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-meets-with-doctors-sounds-alarm-on-health-care-cuts-from-trumps-so-called-one-big-beautiful-bill/"
+  },
+  {
+   "date": "2025-08-27",
+   "type": "Roundtable",
+   "role": "hosted",
+   "title": "Roundtable with the Sacramento Rapid Response Network and partner groups on supporting immigrant communities",
+   "city": "Sacramento",
+   "source": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-hosts-roundtable-with-sacramento-rapid-response-network-to-discuss-efforts-to-support-immigrant-communities/"
+  },
+  {
+   "date": "2025-04-23",
+   "type": "Site visit",
+   "role": "participated",
+   "title": "Toured an affordable housing facility for low-income seniors with San Francisco Mayor Daniel Lurie",
+   "city": "San Francisco",
+   "source": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-mayor-lurie-tour-san-francisco-senior-housing-facility-highlight-affordable-housing-solutions/"
+  },
+  {
+   "date": "2025-04-16",
+   "type": "Roundtable",
+   "role": "hosted",
+   "title": "Roundtable with veterans, VA service providers and Rep. Mike Levin on proposed VA cuts",
+   "city": "San Diego",
+   "source": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-levin-host-roundtable-with-veterans-and-service-providers-in-san-diego-to-highlight-impact-of-va-cuts/"
+  },
+  {
+   "date": "2025-03-21",
+   "type": "Site visit",
+   "role": "participated",
+   "title": "Eaton Fire recovery tour and briefing with Sen. Cory Booker, FEMA and local leaders, including stops at affected homes and small businesses",
+   "city": "Altadena",
+   "source": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-booker-receive-eaton-fire-recovery-update-visit-residences-and-impacted-small-businesses-in-altadena/"
+  }
+ ]
+}

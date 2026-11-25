@@ -1,0 +1,212 @@
+[
+ {
+  "label": "Votes where the member and Chuck Schumer both cast Yea or Nay",
+  "shown": 900,
+  "actual": 900,
+  "ok": true,
+  "source": "Senate roll-call XML (senate.gov)"
+ },
+ {
+  "label": "Votes where the member split from Chuck Schumer",
+  "shown": 53,
+  "actual": 53,
+  "ok": true,
+  "source": "Senate roll-call XML (senate.gov)"
+ },
+ {
+  "label": "Agreement with Chuck Schumer (%)",
+  "shown": 94.1,
+  "actual": 94.1,
+  "ok": true,
+  "source": "Senate roll-call XML (senate.gov)"
+ },
+ {
+  "label": "Party-unity score (%)",
+  "shown": 95.7,
+  "actual": 95.7,
+  "ok": true,
+  "source": "Senate roll-call XML (senate.gov)"
+ },
+ {
+  "label": "Party-unity rank among Democrats",
+  "shown": 16,
+  "actual": 16,
+  "ok": true,
+  "source": "Senate roll-call XML (senate.gov)"
+ },
+ {
+  "label": "Agreement with Chuck Schumer on contested votes (%)",
+  "shown": 67.1,
+  "actual": 67.1,
+  "ok": true,
+  "source": "Senate roll-call XML (senate.gov)"
+ },
+ {
+  "label": "Agreement with Dick Durbin on contested votes (%)",
+  "shown": 43.9,
+  "actual": 43.9,
+  "ok": true,
+  "source": "Senate roll-call XML (senate.gov)"
+ },
+ {
+  "label": "Agreement with Cory Booker on contested votes (%)",
+  "shown": 84.9,
+  "actual": 84.9,
+  "ok": true,
+  "source": "Senate roll-call XML (senate.gov)"
+ },
+ {
+  "label": "Agreement with Adam Schiff on contested votes (%)",
+  "shown": 74.8,
+  "actual": 74.8,
+  "ok": true,
+  "source": "Senate roll-call XML (senate.gov)"
+ },
+ {
+  "label": "Agreement with Bernie Sanders on contested votes (%)",
+  "shown": 77.6,
+  "actual": 77.6,
+  "ok": true,
+  "source": "Senate roll-call XML (senate.gov)"
+ },
+ {
+  "label": "Agreement with Elizabeth Warren on contested votes (%)",
+  "shown": 79.9,
+  "actual": 79.9,
+  "ok": true,
+  "source": "Senate roll-call XML (senate.gov)"
+ },
+ {
+  "label": "Agreement with John Fetterman on contested votes (%)",
+  "shown": 31.1,
+  "actual": 31.1,
+  "ok": true,
+  "source": "Senate roll-call XML (senate.gov)"
+ },
+ {
+  "label": "Contested votes (Democrats split at least 90-10)",
+  "shown": 180,
+  "actual": 180,
+  "ok": true,
+  "source": "Senate roll-call XML (senate.gov)"
+ },
+ {
+  "label": "AIPAC PAC, direct contributions",
+  "shown": 5000.0,
+  "actual": 5000.0,
+  "ok": true,
+  "source": "FEC Schedule A, committee C00797670"
+ },
+ {
+  "label": "AIPAC PAC, earmarked donations",
+  "shown": 0,
+  "actual": 0,
+  "ok": true,
+  "source": "FEC Schedule A memo entries, committee C00797670"
+ },
+ {
+  "label": "AIPAC PAC, total (direct + earmarked)",
+  "shown": 5000.0,
+  "actual": 5000.0,
+  "ok": true,
+  "source": "FEC Schedule A, committee C00797670"
+ },
+ {
+  "label": "DMFI PAC",
+  "shown": 2000.0,
+  "actual": 2000.0,
+  "ok": true,
+  "source": "FEC Schedule A, committee C00710848"
+ },
+ {
+  "label": "Pro-Israel money in the FEC filings, all cycles",
+  "shown": 9500.0,
+  "actual": 9500.0,
+  "ok": true,
+  "source": "FEC Schedule A"
+ },
+ {
+  "label": "Party leaders' committees, 2021-22",
+  "shown": 85000,
+  "actual": 85000.0,
+  "ok": true,
+  "source": "FEC Schedule A, by leader committee ID or name (fec.leaders in tracker.config.json)"
+ },
+ {
+  "label": "Party leaders' committees, 2023-24",
+  "shown": 0,
+  "actual": 0,
+  "ok": true,
+  "source": "FEC Schedule A, by leader committee ID or name (fec.leaders in tracker.config.json)"
+ },
+ {
+  "label": "Party leaders' committees, 2025-26",
+  "shown": 0,
+  "actual": 0,
+  "ok": true,
+  "source": "FEC Schedule A, by leader committee ID or name (fec.leaders in tracker.config.json)"
+ },
+ {
+  "label": "Corporate PAC money, 2021-22",
+  "shown": 791834.0,
+  "actual": 791834,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
+ },
+ {
+  "label": "Labor PAC money, 2021-22",
+  "shown": 362100,
+  "actual": 362100,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
+ },
+ {
+  "label": "Trade PAC money, 2021-22",
+  "shown": 356800,
+  "actual": 356800,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
+ },
+ {
+  "label": "Corporate PAC money, 2023-24",
+  "shown": 120100.0,
+  "actual": 120100,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
+ },
+ {
+  "label": "Labor PAC money, 2023-24",
+  "shown": 29500,
+  "actual": 29500,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
+ },
+ {
+  "label": "Trade PAC money, 2023-24",
+  "shown": 46500,
+  "actual": 46500,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
+ },
+ {
+  "label": "Corporate PAC money, 2025-26",
+  "shown": 105500.0,
+  "actual": 105500,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
+ },
+ {
+  "label": "Labor PAC money, 2025-26",
+  "shown": 16500,
+  "actual": 16500,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
+ },
+ {
+  "label": "Trade PAC money, 2025-26",
+  "shown": 52000,
+  "actual": 52000,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
+ }
+]

@@ -1,0 +1,46 @@
+{
+ "_note": "Constituent events from his own releases or local press. 'stmt' must match exactly one release in data/statements.json; 'u' is any other source. role: hosted = her office ran it; participated = someone else hosted. Build: python3 -I scripts/build_overview.py",
+ "_found": "Searched padilla.senate.gov press releases and news coverage (WordPress search for town hall, telephone town hall, tele-town hall, community meeting, listening session, roundtable) and the web, Nov 25, 2026: no town hall, telephone town hall or virtual town hall held by Sen. Padilla since January 2025 was found. Listed below are the in-person public events in California his own releases describe. Washington rallies (Mar 26, 2025; Jan 13 and Apr 1, 2026), a virtual media briefing with Housing California (May 12, 2025) and his unannounced oversight visits to immigration detention sites (Oct 2026) are left out as not constituent events.",
+ "events": [
+  {
+   "date": "2026-03-31",
+   "type": "Site visit",
+   "role": "hosted",
+   "title": "Toured Santa Clara Valley Medical Center with frontline physicians to discuss the impact of federal health care cuts",
+   "city": "San Jose",
+   "u": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-meets-with-doctors-sounds-alarm-on-health-care-cuts-from-trumps-so-called-one-big-beautiful-bill/"
+  },
+  {
+   "date": "2025-08-27",
+   "type": "Roundtable",
+   "role": "hosted",
+   "title": "Roundtable with the Sacramento Rapid Response Network and partner groups on supporting immigrant communities",
+   "city": "Sacramento",
+   "u": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-hosts-roundtable-with-sacramento-rapid-response-network-to-discuss-efforts-to-support-immigrant-communities/"
+  },
+  {
+   "date": "2025-04-23",
+   "type": "Site visit",
+   "role": "participated",
+   "title": "Toured an affordable housing facility for low-income seniors with San Francisco Mayor Daniel Lurie",
+   "city": "San Francisco",
+   "u": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-mayor-lurie-tour-san-francisco-senior-housing-facility-highlight-affordable-housing-solutions/"
+  },
+  {
+   "date": "2025-04-16",
+   "type": "Roundtable",
+   "role": "hosted",
+   "title": "Roundtable with veterans, VA service providers and Rep. Mike Levin on proposed VA cuts",
+   "city": "San Diego",
+   "u": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-levin-host-roundtable-with-veterans-and-service-providers-in-san-diego-to-highlight-impact-of-va-cuts/"
+  },
+  {
+   "date": "2025-03-21",
+   "type": "Site visit",
+   "role": "participated",
+   "title": "Eaton Fire recovery tour and briefing with Sen. Cory Booker, FEMA and local leaders, including stops at affected homes and small businesses",
+   "city": "Altadena",
+   "u": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-booker-receive-eaton-fire-recovery-update-visit-residences-and-impacted-small-businesses-in-altadena/"
+  }
+ ]
+}

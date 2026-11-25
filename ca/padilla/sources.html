@@ -1,0 +1,135 @@
+<!doctype html>
+<!-- Built from site/sources.html by scripts/publish.py. Edit site/sources.html, not this copy. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Every claim on the Padilla tracker with its source, how it was checked against official records, and when.">
+<title>Padilla Tracker Sources</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="site.css">
+<script src="site.js"></script>
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+[hidden]{display:none!important}
+.method{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.method article{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.method h3{font-size:.95rem;margin:0}
+.method p{margin:0;font-size:.85rem;color:var(--muted)}
+.controls{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.search{font:inherit;font-size:.9rem;padding:7px 12px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);min-width:0;flex:1 1 240px}
+select.sel{font:inherit;font-size:.88rem;padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink)}
+.count{font-size:.85rem;color:var(--muted)}
+.ctable{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.ctable table{min-width:820px}
+.ctable td{font-size:.84rem;vertical-align:top}
+.ctable td.claim{max-width:440px}
+.st{font-size:.7rem;font-weight:700;border-radius:999px;padding:2px 9px;white-space:nowrap}
+.st.verified{color:var(--ok);background:var(--ok-bg)}
+.st.negative-finding{color:var(--stall);background:var(--stall-bg)}
+.st.partial,.st.failed{color:var(--bad);background:var(--bad-bg)}
+.tier{font-family:var(--f-mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.ev{color:var(--muted);font-size:.78rem;margin-top:4px;word-break:break-word}
+.more{align-self:center;font:inherit;font-size:.88rem;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 18px;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="sitenav" aria-label="Pages"></nav>
+  <header id="top">
+    <span class="eyebrow">Sources and verification</span>
+    <h1>How every claim is checked</h1>
+    <p class="lede">Every sourced claim on this site is listed below with its source, how it was checked, and when. Votes, bills and money are checked against official government records; quotes are matched word for word against {{poss}} press releases or saved copies of the source pages.</p>
+  </header>
+
+  <section id="summary"><div class="tally" id="tiles"></div></section>
+
+  <section id="method">
+    <div class="sec-head"><span class="eyebrow">Method</span><h2>Five kinds of checks</h2></div>
+    <div class="method">
+      <article><h3>Votes</h3><p>Each vote is matched to {{voteSourceLong}}: how {{short}} voted, and every tally quoted.</p></article>
+      <article><h3>Bills and committees</h3><p>Sponsorships and public laws are matched to govinfo.gov's official bill records. <span data-only="house">Committee seats are read from {{poss}} own entry in the House Clerk's member file.</span><span data-only="senate">Committee seats are matched to the senate.gov committee membership lists.</span></p></article>
+      <article><h3>Money and vote math</h3><p>Dollar figures, percentages and ranks are recomputed from FEC filings and roll-call files with separate code, then compared with the number shown.</p></article>
+      <article><h3>{{Poss}} press releases</h3><p>Quotes and dollar figures must appear in the full text of the release cited. Every release on the Statements page is saved for this.</p></article>
+      <article><h3>Other sources</h3><p>Each cited page is fetched and saved. Quotes, figures and required terms in the claim must appear on it. A source that can't be read automatically (such as a scanned PDF) is read by hand, and its row says what was read.</p></article>
+    </div>
+    <p class="muted" style="margin:0;font-size:.82rem"><b>Primary</b> sources are official records and the people's and groups' own sites: <span data-only="house">the House Clerk</span><span data-only="senate">senate.gov</span>, govinfo, the FEC, election officials, {{poss}} official and campaign websites, caucus rosters and party organizations. <b>Secondary</b> sources are news reports and trackers. <b>Partial</b> means the source loaded but some detail could not be matched; <b>Failed</b> means a vote, tally or quote did not match, or the source did not load.</p>
+  </section>
+
+  <section id="figures">
+    <div class="sec-head">
+      <span class="eyebrow">Money and vote math</span>
+      <h2>Recomputed figures</h2>
+      <p>Each figure is recalculated from the raw data and compared with the number shown on the site.</p>
+    </div>
+    <div class="ctable"><table><thead><tr><th>Figure</th><th style="text-align:right">On the site</th><th style="text-align:right">Recomputed</th><th>Data</th><th>Result</th></tr></thead><tbody id="figRows"></tbody></table></div>
+  </section>
+
+  <section id="claims">
+    <div class="sec-head"><span class="eyebrow">Claim by claim</span><h2>Every sourced claim</h2></div>
+    <div class="controls">
+      <input class="search" id="q" type="search" placeholder="Search claims, e.g. AIPAC, Laken Riley, {{leaderLast}}" aria-label="Search claims">
+      <select class="sel" id="pageSel" aria-label="Filter by page"></select>
+      <select class="sel" id="statusSel" aria-label="Filter by result"><option value="">All results</option><option value="verified">Verified</option><option value="partial">Partial</option><option value="failed">Failed</option><option value="negative-finding">No finding</option></select>
+      <select class="sel" id="tierSel" aria-label="Filter by source type"><option value="">All sources</option><option value="primary">Primary only</option><option value="secondary">Secondary only</option></select>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="ctable"><table><thead><tr><th>Claim</th><th>Where</th><th>Source</th><th>Checked</th><th>Result</th></tr></thead><tbody id="rows"></tbody></table></div>
+    <button class="more" id="more" type="button" hidden>Show more</button>
+  </section>
+
+  <footer>The checks are run by <code>scripts/run_checks.sh</code> in this site's project files (extract_claims.py, verify_bills.py, verify_computed.py and verify_all.py). Saved copies of every source page are kept with the project files for audit; they are not republished here. Spot an error? Every row links to its source so you can check it yourself.</footer>
+</div>
+<script>
+TRACKER.ready.then(M => {
+const esc = s => String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const PAGE = {townhalls:"Town halls", overview:"Overview", stances:"Stances", establishment:"Establishment", money:"Money"};
+const LABEL = {"verified":"Verified","negative-finding":"No finding","partial":"Partial","failed":"Failed"};
+const $ = id => document.getElementById(id);
+let ALL = [], shown = 0, filtered = [];
+const fmt = n => Math.abs(n) >= 1000 ? Math.round(n).toLocaleString("en-US") : String(n);
+function srcLink(r){
+  const u = r.url || "";
+  if(u.startsWith("http")){ const host = u.replace(/^https?:\/\/(www\.)?/,"").split("/")[0]; return `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(host)}</a>${r.urls.length>1?` <span class="muted">+${r.urls.length-1}</span>`:""}`; }
+  if(u) return `<a href="${esc(u)}">Computed on this site</a>`;
+  return "<span class='muted'>Search, no link</span>";
+}
+function render(){
+  const q = $("q").value.trim().toLowerCase(), pg = $("pageSel").value, tier = $("tierSel").value, st = $("statusSel").value;
+  filtered = ALL.filter(r => (!pg || r.page===pg) && (!tier || r.tier===tier) && (!st || r.status===st) && (!q || (r.text+" "+r.url+" "+r.section).toLowerCase().includes(q)));
+  shown = 0; $("rows").innerHTML = ""; more();
+}
+function more(){
+  const slice = filtered.slice(shown, shown+60); shown += slice.length;
+  $("rows").insertAdjacentHTML("beforeend", slice.map(r=>`<tr>
+    <td class="claim">${esc(r.text)}${r.evidence && !String(r.evidence).startsWith("http") ? `<div class="ev">${esc(r.evidence)}</div>`:""}${r.issues && r.issues.length ? `<div class="ev">${esc(r.issues.join("; "))}</div>`:""}</td>
+    <td>${esc(PAGE[r.page]||r.page)}<div class="ev">${esc(r.section)}</div></td>
+    <td>${srcLink(r)}<div class="tier">${esc(r.tier)}</div><div class="ev">${esc(r.method)}</div></td>
+    <td class="mono">${esc(r.checked)}</td>
+    <td><span class="st ${esc(r.status)}">${esc(LABEL[r.status]||r.status)}</span></td></tr>`).join(""));
+  $("count").textContent = `${filtered.length} claims`;
+  $("more").hidden = shown >= filtered.length;
+}
+Promise.all([fetch("data/verification.json").then(r=>r.json()), fetch("data/computed_checks.json").then(r=>r.json())]).then(([v, comp])=>{
+  ALL = Object.values(v);
+  const n = s => ALL.filter(r=>r.status===s).length, last = ALL.reduce((a,r)=>r.checked>a?r.checked:a,"");
+  $("tiles").innerHTML = [
+    [ALL.length, "Claims tracked"], [n("verified"), "Verified against their source"],
+    [comp.filter(c=>c.ok).length + " of " + comp.length, "Money and vote figures that match on recomputation"],
+    [ALL.filter(r=>r.tier==="primary").length, "Claims resting on primary sources"],
+    [new Date(last+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"}), "Last checked"],
+  ].map(([a,b])=>`<div class="tile"><span class="n">${esc(a)}</span><span class="l">${esc(b)}</span></div>`).join("");
+  $("figRows").innerHTML = comp.map(c=>`<tr><td>${esc(c.label)}</td><td class="mono" style="text-align:right">${esc(fmt(c.shown))}</td><td class="mono" style="text-align:right">${esc(fmt(c.actual))}</td><td class="muted">${esc(c.source)}</td><td><span class="st ${c.ok?"verified":"failed"}">${c.ok?"Match":"Mismatch"}</span></td></tr>`).join("");
+  const pages = [...new Set(ALL.map(r=>r.page))];
+  $("pageSel").innerHTML = `<option value="">All pages</option>` + pages.map(p=>`<option value="${esc(p)}">${esc(PAGE[p]||p)}</option>`).join("");
+  render();
+}).catch(()=>{ $("rows").innerHTML = `<tr><td colspan="5">No verification results yet: run <code>./scripts/run_checks.sh</code> after the data is built (see SCAFFOLD.md).</td></tr>`; });
+["q","pageSel","tierSel","statusSel"].forEach(id=>$(id).addEventListener(id==="q"?"input":"change", render));
+$("more").addEventListener("click", more);
+});
+</script>
+</body>
+</html>

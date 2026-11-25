@@ -1,0 +1,159 @@
+{
+ "_note": "Every bill a page makes a claim about: role this member is said to have (sponsor, cosponsor or none) and the public law claimed, if any. Checked by scripts/verify_bills.py against govinfo BILLSTATUS.",
+ "bills": [
+  {
+   "bill": "s2523",
+   "role": "cosponsor",
+   "law": null,
+   "note": "John Lewis Voting Rights Advancement Act"
+  },
+  {
+   "bill": "s2994",
+   "role": "sponsor",
+   "law": null
+  },
+  {
+   "bill": "s4369",
+   "role": "sponsor",
+   "law": null
+  },
+  {
+   "bill": "s1477",
+   "role": "sponsor",
+   "law": null,
+   "note": "Housing for All Act"
+  },
+  {
+   "bill": "s1506",
+   "role": "cosponsor",
+   "law": null,
+   "note": "Medicare for All"
+  },
+  {
+   "bill": "s2468",
+   "role": "sponsor",
+   "law": null,
+   "note": "registry bill"
+  },
+  {
+   "bill": "hr1",
+   "role": "none",
+   "law": "119-21"
+  },
+  {
+   "bill": "hr6644",
+   "role": "none",
+   "law": "119-101"
+  },
+  {
+   "bill": "hjres87",
+   "role": "none",
+   "law": "119-15"
+  },
+  {
+   "bill": "s5",
+   "role": "none",
+   "law": "119-1"
+  },
+  {
+   "bill": "119-sres735",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "119-sres220",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "118-sres697",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "117-sres643",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "119-s3897",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "119-s4394",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "118-s4235",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "117-s2151",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "118-s4991",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "119-s3470",
+   "role": "sponsor",
+   "law": null
+  },
+  {
+   "bill": "117-s2103",
+   "role": "sponsor",
+   "law": null
+  },
+  {
+   "bill": "117-s5309",
+   "role": "sponsor",
+   "law": null
+  },
+  {
+   "bill": "119-s5545",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "118-s4844",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "117-s738",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "119-s3187",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "118-s4940",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "117-s3343",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "119-s5795",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "119-s2198",
+   "role": "cosponsor",
+   "law": null
+  }
+ ]
+}

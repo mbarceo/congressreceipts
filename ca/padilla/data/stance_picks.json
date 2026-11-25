@@ -1,0 +1,154 @@
+{
+ "_note": "Hand-curated. Roll ids are chosen by reading senate.gov's official titles; his vote is pulled from data/votes.json, never typed here. statementRx matches titles; statementPicks adds specific releases with a verbatim snippet found by 'rx' in the release's full text (data/statements_full.json). No editorial verdicts except the Israel card's headline, set in 'israel.headline'.",
+ "issues": [
+  {
+   "id": "immigration",
+   "name": "Immigration and ICE",
+   "intro": "Immigration enforcement votes: the Laken Riley Act, Homeland Security leadership, and the fight over ICE funding in the 2026 Homeland Security appropriations bill.",
+   "statementRx": "\\bice\\b|immigra|detention|detainee|birthright|citizenship|deport|asylum|\\bdaca\\b|dreamer|noem|raids?\\b|homeland security",
+   "rolls": [
+    "2025-003",
+    "2025-007",
+    "2025-017",
+    "2025-321",
+    "2026-063",
+    "2026-018",
+    "2026-038",
+    "2026-074",
+    "2026-149",
+    "2026-156",
+    "2026-111",
+    "2026-092"
+   ],
+   "statementPicks": []
+  },
+  {
+   "id": "cost-of-living",
+   "name": "Housing and cost of living",
+   "intro": "The 2025 and 2026 reconciliation bills, tariffs, health insurance subsidies, government funding and the bipartisan housing supply bill.",
+   "statementRx": "housing|rent\\b|homeowner|afford|cost of living|prices|tariff|grocer|medicaid|health care|premium",
+   "rolls": [
+    "2025-372",
+    "2025-225",
+    "2025-600",
+    "2025-644",
+    "2025-411",
+    "2025-618",
+    "2026-011",
+    "2026-020",
+    "2026-053",
+    "2026-163"
+   ],
+   "statementPicks": []
+  },
+  {
+   "id": "public-safety",
+   "name": "Public safety",
+   "intro": "Police funding, fentanyl penalties, and limits on using the National Guard and the military for domestic law enforcement.",
+   "statementRx": "police|law enforcement|public safety|crime|fentanyl|gun|firearm|national guard|wildfire|firefight",
+   "rolls": [
+    "2025-081",
+    "2025-127",
+    "2025-566",
+    "2025-567",
+    "2025-569",
+    "2026-160"
+   ],
+   "statementPicks": []
+  }
+ ],
+ "israel": {
+  "question": "Israel or Palestine?",
+  "headline": "Middle, leans Israel",
+  "headlineWhy": "“Middle” because his record points both ways; “leans Israel” because he voted against four of the six resolutions to block arms sales to Israel, has taken pro-Israel PAC money, and tied his two votes to block sales in 2026 to the Iran war and settlements while saying he strongly supports Israel’s right to defend itself.",
+  "summary": "He voted against all four 2025 resolutions to block arms sales to Israel, then for two in April 2026, saying the weapons might be used in the Iran war or for settlement expansion. He has joined Senate Democratic letters on Gaza humanitarian aid, medical visas for Gazans and West Bank settler violence, and voted for a State Department report on Israel’s human rights record. Pro-Israel PACs gave his campaign $9,500 directly; Track AIPAC counts $104,055, far less than Schumer, Booker or Schiff.",
+  "items": [
+   {
+    "d": "2025-04",
+    "rolls": [
+     "2025-165",
+     "2025-166"
+    ],
+    "text": "Voted {vote} on both of Sen. Sanders's April 2025 resolutions to block arms sales to Israel. Both failed.",
+    "yea": "pal"
+   },
+   {
+    "d": "2025-07",
+    "rolls": [
+     "2025-454",
+     "2025-455"
+    ],
+    "text": "Voted {vote} on both July 2025 resolutions to block weapons sales and exports to Israel, which most of the Democratic caucus supported. Both failed.",
+    "yea": "pal"
+   },
+   {
+    "d": "2026-04",
+    "rolls": [
+     "2026-080",
+     "2026-081"
+    ],
+    "text": "Voted {vote} on both April 2026 resolutions to block arms sales to Israel. Both failed.",
+    "yea": "pal"
+   },
+   {
+    "d": "2026-09",
+    "roll": "2026-252",
+    "text": "Voted {vote} to force a State Department report on Israel's human rights practices (S.Res. 852). It failed {yea}–{nay}; the Democratic caucus voted {cY}–{cN}.",
+    "yea": "pal"
+   },
+   {
+    "d": "2025-01",
+    "dir": "neutral",
+    "roll": "2025-022",
+    "text": "Voted {vote} on taking up H.R. 23, which sanctions the International Criminal Court. It failed {yea}–{nay}; the Democratic caucus voted {cY}–{cN}."
+   },
+   {
+    "d": "Career",
+    "dir": "isr",
+    "u": "money.html",
+    "text": "Track AIPAC counts {trackaipac} in pro-Israel lobby money to his campaigns over his career."
+   },
+   {
+    "d": "2026-04",
+    "dir": "mixed",
+    "u": "padilla-schiff-statement-on-vote-of-joint-resolutions-of-disapproval-of-sales-to-israel",
+    "rx": "might be used in Iran or to facilitate further settlement activity",
+    "text": "Explaining his April 2026 votes with Sen. Schiff, said they “strongly support Israel’s right to defend itself” but would vote to block sales of weapons that “might be used in Iran or to facilitate further settlement activity.”"
+   },
+   {
+    "d": "2025-07",
+    "dir": "pal",
+    "u": "padilla-joins-senate-democrats-in-calling-for-large-scale-expansion-of-humanitarian-aid-in-gaza",
+    "rx": "large-scale expansion of humanitarian aid",
+    "text": "Joined 40 senators calling for a large-scale expansion of humanitarian aid in Gaza and renewed diplomacy to secure a ceasefire."
+   },
+   {
+    "d": "2025-09",
+    "dir": "pal",
+    "u": "urging-state-department-to-resume-medical-and-humanitarian-visas-for-civilians-in-gaza",
+    "rx": "suspension of all visitor visas",
+    "text": "Joined 41 Democratic colleagues urging the State Department to resume medical and humanitarian visas for civilians in Gaza."
+   },
+   {
+    "d": "2026-08",
+    "dir": "pal",
+    "u": "urging-netanyahu-to-immediately-crack-down-on-settler-violence",
+    "rx": "reduce violence in the West Bank",
+    "text": "Joined Schumer, Booker and 41 other Democratic senators urging Prime Minister Netanyahu to crack down on settler violence in the West Bank."
+   },
+   {
+    "d": "2025-06",
+    "dir": "isr",
+    "u": "padilla-statement-on-trump-administrations-strikes-on-iranian-nuclear-facilities",
+    "rx": "essential to Israel",
+    "text": "On the U.S. strikes on Iran’s nuclear sites, said dismantling Iran’s nuclear program is “essential to Israel’s safety and right to exist,” while faulting the president for acting without congressional authorization."
+   },
+   {
+    "d": "2022",
+    "dir": "isr",
+    "u": "money.html",
+    "text": "Pro-Israel PACs gave his campaign {proTotal} directly, all in 2022: AIPAC’s PAC, JACPAC and DMFI PAC (FEC, through {through})."
+   }
+  ]
+ }
+}

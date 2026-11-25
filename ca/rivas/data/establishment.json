@@ -1,0 +1,481 @@
+{
+ "question": "Establishment Democrat?",
+ "headline": "Mostly yes",
+ "summary": "She sits at the leadership table as the freshman class's representative, the California Democratic Party backed her over a Democratic challenger in 2026, her predecessor endorsed her as his successor, and she votes with Hakeem Jeffries 98.4% of the time. Her independence shows on the left: she is in the Progressive Caucus, gets almost no money from party leaders, and her 11 breaks with Jeffries include opposing a vote to table Trump's impeachment and a January 2026 funding bill.",
+ "why": "\"Mostly yes\" because her formal ties to party leadership and the state party, and her voting record, line up with the establishment. The signs of independence are real but small, and they push left rather than against leadership.",
+ "tiles": [
+  [
+   "98.4%",
+   "Votes cast the same way as Hakeem Jeffries (675 votes where both voted Yea or Nay)"
+  ],
+  [
+   "Freshman rep",
+   "Her class's representative to House Democratic leadership, 119th Congress"
+  ],
+  [
+   "$7,000",
+   "From party leaders' committees in 2025–26 ($13,000 in 2023–24)"
+  ],
+  [
+   "CPC",
+   "Member of the Congressional Progressive Caucus"
+  ]
+ ],
+ "signs": {
+  "e": [
+   {
+    "text": "Serves as the Freshman Representative to Leadership for the 119th Congress, her class's seat in House Democratic leadership.",
+    "src": [
+     [
+      "Her release",
+      "https://rivas.house.gov/media/press-releases/congresswoman-luz-rivas-leads-freshman-democrats-demand-meeting-speaker"
+     ]
+    ]
+   },
+   {
+    "text": "The California Democratic Party endorsed her over fellow Democrat Angélica María Dueñas in both the June 2026 primary and the November 2026 general.",
+    "src": [
+     [
+      "Primary endorsements",
+      "https://cadem.org/wp-content/uploads/2026/02/Final-RATIFIED-2026-Primary-Election-Consent-Calendar.pdf"
+     ],
+     [
+      "General endorsements",
+      "https://cadem.org/wp-content/uploads/2026/08/FINAL-2026-General-Election-Endorsements.pdf"
+     ]
+    ]
+   },
+   {
+    "text": "Rep. Tony Cárdenas announced his retirement and his endorsement of her on the same day in November 2023. Her 2024 endorsers included Caucus Chair Pete Aguilar and Whip Katherine Clark.",
+    "src": [
+     [
+      "City News Service",
+      "https://heysocal.com/2023/11/20/rivas-announces-bid-for-congress-endorsed-by-rep-cardenas"
+     ],
+     [
+      "2024 campaign site",
+      "https://web.archive.org/web/20241031093755/https://www.luzforcongress.com/"
+     ]
+    ]
+   },
+   {
+    "text": "Votes the same way as Jeffries on 98.4% of the 675 roll calls where both cast a Yea or Nay, and voted for him for Speaker.",
+    "src": [
+     [
+      "Speaker vote",
+      "https://clerk.house.gov/Votes/2025002"
+     ],
+     [
+      "Every break with Jeffries",
+      "#breaks"
+     ]
+    ]
+   },
+   {
+    "text": "Corporate PAC money grew from $42,500 (19 PACs) in 2023–24 to $124,790 (53 PACs) in 2025–26.",
+    "src": [
+     [
+      "FEC totals below",
+      "#money"
+     ]
+    ]
+   }
+  ],
+  "i": [
+   {
+    "text": "Member of the Congressional Progressive Caucus. Not a member of the centrist New Democrat Coalition, the Blue Dog Coalition or the Problem Solvers Caucus.",
+    "src": [
+     [
+      "CPC",
+      "https://progressives.house.gov/caucus-members"
+     ],
+     [
+      "New Dems",
+      "https://newdemocratcoalition.house.gov/members"
+     ],
+     [
+      "Blue Dogs",
+      "https://bluedogs-gluesenkampperez.house.gov/members"
+     ],
+     [
+      "Problem Solvers",
+      "https://problemsolverscaucus.house.gov/caucus-members"
+     ]
+    ]
+   },
+   {
+    "text": "Gets little money from party leaders: $13,000 from leaders' committees in 2023–24, $7,000 in 2025–26, and $0 from the DCCC.",
+    "src": [
+     [
+      "FEC totals below",
+      "#leaders"
+     ]
+    ]
+   },
+   {
+    "text": "Broke with Jeffries on 11 votes, including voting against tabling a Trump impeachment resolution in June 2025 (most Democrats voted to table it) and against the January 2026 consolidated appropriations bill.",
+    "src": [
+     [
+      "Impeachment tabling",
+      "https://clerk.house.gov/Votes/2025175"
+     ],
+     [
+      "Appropriations",
+      "https://clerk.house.gov/Votes/2026045"
+     ],
+     [
+      "All {ndiff}",
+      "#breaks"
+     ]
+    ]
+   }
+  ]
+ },
+ "timeline": [
+  {
+   "d": "2026-11-03",
+   "k": "e",
+   "text": "Wins the Democrat-vs-Democrat general election over Dueñas, 57.3% to 42.7% (unofficial, all 115 precincts reporting as of Nov 23, 2026).",
+   "u": "https://api.sos.ca.gov/returns/us-rep/district/29"
+  },
+  {
+   "d": "2026-08-02",
+   "k": "e",
+   "text": "The California Democratic Party endorses her for the general election against Democrat Angélica María Dueñas.",
+   "u": "https://cadem.org/wp-content/uploads/2026/08/FINAL-2026-General-Election-Endorsements.pdf"
+  },
+  {
+   "d": "2026-02-22",
+   "k": "e",
+   "text": "The California Democratic Party endorses her for the primary.",
+   "u": "https://cadem.org/wp-content/uploads/2026/02/Final-RATIFIED-2026-Primary-Election-Consent-Calendar.pdf"
+  },
+  {
+   "d": "2026-01-22",
+   "k": "i",
+   "text": "Votes against the consolidated appropriations bill that Jeffries supports. A day earlier she said she would vote “hell no” on funding DHS and ICE.",
+   "u": "https://clerk.house.gov/Votes/2026045"
+  },
+  {
+   "d": "2025-10-30",
+   "k": "e",
+   "text": "As Freshman Representative to Leadership, leads 23 freshman Democrats in demanding a meeting with Speaker Johnson during the shutdown.",
+   "u": "https://rivas.house.gov/media/press-releases/congresswoman-luz-rivas-leads-freshman-democrats-demand-meeting-speaker"
+  },
+  {
+   "d": "2025-06-24",
+   "k": "i",
+   "text": "Votes against tabling a Trump impeachment resolution; Jeffries and most Democrats vote to table it.",
+   "u": "https://clerk.house.gov/Votes/2025175"
+  },
+  {
+   "d": "2025-01-03",
+   "k": "e",
+   "text": "Votes for Hakeem Jeffries for Speaker.",
+   "u": "https://clerk.house.gov/Votes/2025002"
+  },
+  {
+   "d": "2023-11-20",
+   "k": "e",
+   "text": "Rep. Tony Cárdenas announces his retirement and endorses her.",
+   "u": "https://heysocal.com/2023/11/20/rivas-announces-bid-for-congress-endorsed-by-rep-cardenas"
+  }
+ ],
+ "left": [
+  {
+   "text": "She is a member of the Congressional Progressive Caucus.",
+   "u": "https://progressives.house.gov/caucus-members"
+  },
+  {
+   "text": "Her only serious challenger in 2026 came from within her party: Democrat Angélica María Dueñas, who took 42.7% in the general election.",
+   "u": "https://api.sos.ca.gov/returns/us-rep/district/29"
+  },
+  {
+   "text": "Dueñas's campaign site lists eight groups under its 2026 endorsements: Northridge Indivisible, Feel the Bern LA, Feel the Bern SFV, Organize for Peace, Track AIPAC / Citizens against AIPAC, Courage for Democracy / Citizens Impeachment, Progressive Voter Network and CAIR Action (read Nov 24, 2026).",
+   "u": "https://angelica4congress.com/endorsements/"
+  },
+  {
+   "text": "On the 76 votes where Democrats split, she agreed with Alexandria Ocasio-Cortez 85.1% of the time, Jeffries 84.5%, and centrist Josh Gottheimer 28.1%.",
+   "u": "./#alignment"
+  }
+ ],
+ "leaders": [
+  {
+   "name": "Hakeem Jeffries",
+   "role": "House Democratic Leader",
+   "y2024": 7000,
+   "y2026": 0,
+   "committees": [
+    "Jeffries For Congress",
+    "Jobs, Education, & Families First  Jeff Pac"
+   ]
+  },
+  {
+   "name": "Nancy Pelosi",
+   "role": "Speaker Emerita",
+   "y2024": 0,
+   "y2026": 0,
+   "committees": []
+  },
+  {
+   "name": "Katherine Clark",
+   "role": "Democratic Whip",
+   "y2024": 2000,
+   "y2026": 2000,
+   "committees": [
+    "Fair Shot Pac"
+   ]
+  },
+  {
+   "name": "Pete Aguilar",
+   "role": "Caucus Chair",
+   "y2024": 4000,
+   "y2026": 0,
+   "committees": [
+    "Pete Aguilar For Congress"
+   ]
+  },
+  {
+   "name": "Steny Hoyer",
+   "role": "Former Majority Leader",
+   "y2024": 0,
+   "y2026": 5000,
+   "committees": [
+    "Ameripac: The Fund For A Greater America"
+   ]
+  },
+  {
+   "name": "DCCC",
+   "role": "Party campaign committee",
+   "y2024": 0,
+   "y2026": 0,
+   "committees": []
+  }
+ ],
+ "categories": {
+  "2024": {
+   "corporate": 42500,
+   "trade": 51834,
+   "ideological": 118974,
+   "labor": 142500,
+   "candidate": 28749
+  },
+  "2026": {
+   "labor": 144500,
+   "trade": 99000,
+   "corporate": 124790,
+   "candidate": 2000,
+   "ideological": 76500
+  }
+ },
+ "corporatePACs": {
+  "2024": [
+   "ABBOTT LABORATORIES EMPLOYEE POLITICAL ACTION COMMITTEE",
+   "AMGEN INC. POLITICAL ACTION COMMITTEE",
+   "ANHEUSER-BUSCH COMPANIES LLC POLITICAL ACTION COMMITTEE",
+   "AT&T INC. EMPLOYEE FEDERAL POLITICAL ACTION COMMITTEE (AT&T EMPLOYEE FEDERAL PAC)",
+   "BNSF RAILWAY COMPANY RAILPAC (BNSF RAILPAC)",
+   "CAREFIRST BLUECROSS BLUESHIELD ASSOCIATES FEDERAL PAC",
+   "CHARTER COMMUNICATIONS INC. POLITICAL ACTION COMMITTEE",
+   "COMCAST CORPORATION & NBCUNIVERSAL POLITICAL ACTION COMMITTEE - FEDERAL",
+   "DELTA AIR LINES PAC",
+   "EDISON INTERNATIONAL PAC",
+   "ELEVANCE HEALTH, INC. POLITICAL ACTION COMMITTEE (ELEVANCE HEALTH PAC)",
+   "ELI LILLY AND COMPANY POLITICAL ACTION COMMITTEE",
+   "GOOGLE LLC NETPAC",
+   "HERBALIFE INTERNATIONAL INC. PAC",
+   "PFIZER INC. PAC",
+   "PG&E CORPORATION EMPLOYEES ENERGYPAC",
+   "THE HOME DEPOT INC. POLITICAL ACTION COMMITTEE",
+   "UNITEDHEALTH GROUP INCORPORATED PAC (UNITEDHEALTH GROUP PAC)",
+   "VERIZON COMMUNICATIONS, INC. POLITICAL ACTION COMMITTEE (VERIZON PAC)"
+  ],
+  "2026": [
+   "ABBOTT LABORATORIES EMPLOYEE POLITICAL ACTION COMMITTEE",
+   "AEROVIRONMENT, INC PAC",
+   "AMEREN CORPORATION FEDERAL POLITICAL ACTION COMMITTEE (AMEREN FEDPAC)",
+   "AMERICAN AIRLINES INC. POLITICAL ACTION COMMITTEE (AAPAC)",
+   "AMGEN INC. POLITICAL ACTION COMMITTEE",
+   "ANHEUSER-BUSCH COMPANIES LLC POLITICAL ACTION COMMITTEE",
+   "AT&T INC. EMPLOYEE FEDERAL POLITICAL ACTION COMMITTEE (AT&T EMPLOYEE FEDERAL PAC)",
+   "BLUE SHIELD OF CALIFORNIA PAC (SHIELD PAC)",
+   "BNSF RAILWAY COMPANY RAILPAC (BNSF RAILPAC)",
+   "CHARTER COMMUNICATIONS INC. POLITICAL ACTION COMMITTEE",
+   "COMCAST CORPORATION & NBCUNIVERSAL POLITICAL ACTION COMMITTEE - FEDERAL",
+   "CVS HEALTH PAC",
+   "DAVITA INC. POLITICAL ACTION COMMITTEE (DAPAC)",
+   "DELTA AIR LINES PAC",
+   "EDISON INTERNATIONAL PAC",
+   "EDWARDS LIFESCIENCES POLITICAL ACTION COMMITTEE (A.K.A. EDWARDS PAC)",
+   "ELEVANCE HEALTH, INC. POLITICAL ACTION COMMITTEE (ELEVANCE HEALTH PAC)",
+   "EMPLOYEES OF NORTHROP GRUMMAN CORPORATION PAC",
+   "FEDEX CORPORATION POLITICAL ACTION COMMITTEE",
+   "GENENTECH INC. POLITICAL ACTION COMMITTEE (GENENPAC)",
+   "GENERAL DYNAMICS CORPORATION POLITICAL ACTION COMMITTEE (GENERAL DYNAMICS EMPLOYEE PAC)",
+   "GENERAL MOTORS COMPANY POLITICAL ACTION COMMITTEE (GM PAC)",
+   "GILEAD SCIENCES INC HEALTHCARE POLICY PAC",
+   "GOOGLE LLC NETPAC",
+   "HONEYWELL INTERNATIONAL INC. TECHNOLOGIES PUBLIC AFFAIRS COUNCIL (HONPAC)",
+   "INFINEON TECHNOLOGIES AMERICAS CORP. POLITICAL ACTION COMMITTEE (IFAM PAC)",
+   "INTERDIGITAL, INC., PAC",
+   "LEIDOS INC. POLITICAL ACTION COMMITTEE",
+   "LUNDBECK LLC EMPLOYEE POLITICAL ACTION COMMITTEE",
+   "MCDONALDS CORPORATION POLITICAL ACTION COMMITTEE",
+   "MICROSOFT CORPORATION STAKEHOLDERS VOLUNTARY PAC - MSVPAC",
+   "NETJETS INC. PAC",
+   "PERIMETER SOLUTIONS INC. POLITICAL ACTION COMMITTEE",
+   "PFIZER INC. PAC",
+   "PG&E CORPORATION EMPLOYEES ENERGYPAC",
+   "PHARMAVITE LLC POLITICAL ACTION COMMITTEE (PHARMAVITE PAC)",
+   "PPG INDUSTRIES INC. PAC",
+   "PRICEWATERHOUSECOOPERS POLITICAL ACTION COMMITTEE I",
+   "SAZERAC COMPANY, INC. PAC (SAZERACPAC)",
+   "SEMPRA ENERGY EMPLOYEES POLITICAL ACTION COMMITTEE- FEDERAL",
+   "STATE FARM MUTUAL AUTOMOBILE INSURANCE COMPANY FEDERAL POLITICAL ACTION COMMITTEE (STATE FARM FEDERAL PAC)",
+   "T-MOBILE US, INC.  POLITICAL ACTION COMMITTEE (T-PAC)",
+   "TAKEDA PHARMACEUTICALS AMERICA INC. POLITICAL ACTION COMMITTEE",
+   "THE BOEING COMPANY PAC",
+   "THE HOME DEPOT INC. POLITICAL ACTION COMMITTEE",
+   "THE NIELSEN COMPANY (US), LLC FEDERAL POLITICAL ACTION COMMITTEE (NIELSEN PAC)",
+   "TOYOTA MOTOR NORTH AMERICA, INC POLITICAL ACTION COMMITTEE (TOYOTA/LEXUS PAC)",
+   "TRANSDIGM GROUP INC. EMPLOYEE POLITICAL ACTION COMMITTEE",
+   "TWDC ENTERPRISES 18 CORP. EMPLOYEES PAC AKA 'THE WALT DISNEY COMPANY EMPLOYEES PAC' OR 'DISNEY PAC'",
+   "VERIZON COMMUNICATIONS, INC. POLITICAL ACTION COMMITTEE (VERIZON PAC)",
+   "XCEL ENERGY EMPLOYEE POLITICAL ACTION COMMITTEE (XPAC)",
+   "Y COMBINATOR MANAGEMENT, LLC POLITICAL COMMITTEE (LITTLE TECH PAC)",
+   "ZENECA INC. POLITICAL ACTION COMMITTEE (AZPAC)"
+  ]
+ },
+ "jeffriesDiffs": [
+  {
+   "id": "2025-151",
+   "date": "4-Jun-2025",
+   "bill": "H R 2483",
+   "q": "On Passage",
+   "title": "SUPPORT for Patients and Communities Reauthorization Act",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://clerk.house.gov/Votes/2025151"
+  },
+  {
+   "id": "2025-175",
+   "date": "24-Jun-2025",
+   "bill": "H RES 537",
+   "q": "On Motion to Table",
+   "title": "Impeaching Donald J. Trump, President of the United States, for high crimes and misdemeanors",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://clerk.house.gov/Votes/2025175"
+  },
+  {
+   "id": "2025-200",
+   "date": "17-Jul-2025",
+   "bill": "S 1582",
+   "q": "On Passage",
+   "title": "GENIUS Act",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://clerk.house.gov/Votes/2025200"
+  },
+  {
+   "id": "2025-305",
+   "date": "21-Nov-2025",
+   "bill": "H CON RES 58",
+   "q": "On Agreeing to the Resolution",
+   "title": "Denouncing the horrors of socialism",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://clerk.house.gov/Votes/2025305"
+  },
+  {
+   "id": "2025-320",
+   "date": "10-Dec-2025",
+   "bill": "S 1071",
+   "q": "On Passage",
+   "title": "To require the Secretary of Veterans Affairs to disinter the remains of Fernando V. Cota from Fort Sam Houston National Cemetery, Texas, and for other purposes",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://clerk.house.gov/Votes/2025320"
+  },
+  {
+   "id": "2026-045",
+   "date": "22-Jan-2026",
+   "bill": "H R 7148",
+   "q": "On Passage",
+   "title": "Consolidated Appropriations Act, 2026",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://clerk.house.gov/Votes/2026045"
+  },
+  {
+   "id": "2026-084",
+   "date": "5-Mar-2026",
+   "bill": "H RES 1099",
+   "q": "On Motion to Suspend the Rules and Agree",
+   "title": "Reaffirming Iran remains the largest state sponsor of terrorism",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://clerk.house.gov/Votes/2026084"
+  },
+  {
+   "id": "2026-164",
+   "date": "13-May-2026",
+   "bill": "H R 1346",
+   "q": "On Passage",
+   "title": "Nationwide Consumer and Fuel Retailer Choice Act",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://clerk.house.gov/Votes/2026164"
+  },
+  {
+   "id": "2026-201",
+   "date": "4-Jun-2026",
+   "bill": "H CON RES 84",
+   "q": "On Agreeing to the Resolution",
+   "title": "Directing the President pursuant to section 5(c) of the War Powers Resolution to remove United States Armed Forces from Lebanon",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://clerk.house.gov/Votes/2026201"
+  },
+  {
+   "id": "2026-238",
+   "date": "14-Jul-2026",
+   "bill": "H R 139",
+   "q": "On Passage",
+   "title": "Sunshine Protection Act",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://clerk.house.gov/Votes/2026238"
+  },
+  {
+   "id": "2026-309",
+   "date": "16-Sep-2026",
+   "bill": "H R 9576",
+   "q": "On Passage",
+   "title": "National Fraud Enforcement Division Act",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://clerk.house.gov/Votes/2026309"
+  }
+ ],
+ "nums": {
+  "lead24": "$13,000",
+  "lead26": "$7,000",
+  "dccc": "$0",
+  "corp24": "$42,500",
+  "corp26": "$124,790",
+  "ncorp24": 19,
+  "ncorp26": 53,
+  "jeffAgree": "98.4",
+  "both": 675,
+  "ndiff": 11,
+  "unity": 98.1,
+  "rank": 60,
+  "tied": 1,
+  "dems": 215,
+  "contested": 76,
+  "jeffC": 84.5,
+  "gottC": 28.1,
+  "aocC": 85.1
+ }
+}

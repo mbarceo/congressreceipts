@@ -1,0 +1,11 @@
+{
+ "_note": "Constituent events from her own releases or local press. 'stmt' must match exactly one release in data/statements.json; 'u' is any other source. role: hosted = her office ran it; participated = someone else hosted. Build: python3 -I scripts/build_overview.py",
+ "events": [
+  {"date": "2026-10-21", "type": "Listening session", "role": "hosted", "title": "Listening session with community leaders and TPS holders on Temporary Protected Status for El Salvador", "stmt": "hosts-community-leaders-listening-session-tps"},
+  {"date": "2026-05-28", "type": "Workshop", "role": "hosted", "title": "DACA renewal workshop for students at Los Angeles Mission College, with CARECEN", "stmt": "holds-daca-workshop-students"},
+  {"date": "2026-05-05", "type": "Town hall", "role": "participated", "title": "Immigration town hall at Pacoima Charter Elementary School, hosted by One LA-IAF", "city": "Pacoima", "stmt": "participates-immigration-town-hall-pacoima"},
+  {"date": "2026-06", "approx": "Spring 2026", "type": "Roundtable", "role": "hosted", "title": "Mental health roundtable with school leaders on the impact of ICE raids", "notes": "Date not given; her June 18, 2026 release mentions it alongside the May 5 town hall, without saying when it took place.", "stmt": "introduces-bill-support-communities-impacted-ice"},
+  {"date": "2025-08-04", "type": "Public meeting", "role": "participated", "title": "Spoke to the San Fernando City Council and residents about ICE raids and what her office was doing", "city": "San Fernando", "u": "https://sanfernandosun.com/2025/08/06/freshman-on-the-hill-rep-luz-rivas-battles-trumps-immigration-policies"},
+  {"date": "2025-02-03", "type": "Listening session", "role": "hosted", "title": "Listening session with community health organizations on the federal funding freeze", "stmt": "hosts-listening-session-community-health-organizations"}
+ ]
+}

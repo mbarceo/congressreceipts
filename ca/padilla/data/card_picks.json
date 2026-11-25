@@ -1,0 +1,203 @@
+{
+ "_note": "Evidence cards for the Stances page's 'big questions'. Each item points one way: 'pro' or 'con' (labels per card). Roll items: 'yea' says which side a Yea vote is on; his vote, and therefore the item's side, comes from data/votes.json. Release items: 'stmt' must match one release. Headlines are computed in scripts/build_cards.py by the rule stated on each card. Money placeholders: {corpCur} {ncorpCur} {corpPrev} {tradeCur} {laborCur} (latest and previous FEC cycle) or per cycle, e.g. {corp26}. Build: python3 -I scripts/build_cards.py (after build_stances.py and build_establishment.py).",
+ "cards": [
+  {
+   "key": "ice",
+   "q": "Pro-ICE?",
+   "eb": "Immigration enforcement",
+   "pro": "Pro-enforcement",
+   "con": "Against ICE or for immigrants",
+   "section": "immigration",
+   "rollsFromIssue": "immigration",
+   "issueYea": "pro",
+   "issueYeaOverrides": {
+    "2026-018": "con",
+    "2026-149": "con",
+    "2026-156": "con",
+    "2026-111": "con"
+   },
+   "items": []
+  },
+  {
+   "key": "police",
+   "q": "Pro-police?",
+   "eb": "Policing and crime",
+   "pro": "Police or tough-on-crime side",
+   "con": "Reform, oversight or limits",
+   "section": "public-safety",
+   "rollsFromIssue": "public-safety",
+   "issueYea": "pro",
+   "issueYeaOverrides": {
+    "2025-566": "con",
+    "2025-567": "con",
+    "2025-569": "con"
+   },
+   "items": [
+    {
+     "d": "2026-02",
+     "s": "pro",
+     "hi": 1,
+     "stmt": "secures-over-24-million-for-25-projects",
+     "t": "Secured $1.03 million for LAPD’s West Los Angeles and Pacific divisions to stand up real-time crime centers and expand their sensor networks."
+    },
+    {
+     "d": "2022–26",
+     "s": "pro",
+     "bill": "119-sres735",
+     "more": [
+      "https://www.congress.gov/bill/119th-congress/senate-resolution/220",
+      "https://www.congress.gov/bill/118th-congress/senate-resolution/697",
+      "https://www.congress.gov/bill/117th-congress/senate-resolution/643"
+     ],
+     "t": "Cosponsored the National Police Week resolutions in 2022, 2024, 2025 and 2026."
+    },
+    {
+     "d": "2026-05",
+     "s": "pro",
+     "bill": "119-s3897",
+     "t": "Cosponsored the Officer John Barnes and Chief Michael Ansbro Public Safety Officers’ Benefit Program Expansion Act of 2026."
+    },
+    {
+     "d": "2026-05",
+     "s": "pro",
+     "bill": "119-s4394",
+     "t": "Cosponsored the Promoting Police Leadership Act."
+    },
+    {
+     "d": "2024-06",
+     "s": "pro",
+     "bill": "118-s4235",
+     "t": "Cosponsored the Reauthorizing Support and Treatment for Officers in Crisis Act of 2024."
+    },
+    {
+     "d": "2022-05",
+     "s": "pro",
+     "bill": "117-s2151",
+     "t": "Cosponsored a bill letting COPS grants pay for police recruits to attend academies if they agree to serve in their own communities."
+    },
+    {
+     "d": "2024-08",
+     "s": "con",
+     "hi": 1,
+     "bill": "118-s4991",
+     "t": "Cosponsored the George Floyd Justice in Policing Act of 2024, which bans no-knock warrants in drug cases, pushes states to ban chokeholds, and includes the Stop Militarizing Law Enforcement Act, restricting the Pentagon’s transfers of surplus military equipment to police."
+    },
+    {
+     "d": "2025-12",
+     "s": "con",
+     "hi": 1,
+     "bill": "119-s3470",
+     "more": [
+      "https://www.congress.gov/bill/117th-congress/senate-bill/2103"
+     ],
+     "t": "Sponsored the Accountability for Federal Law Enforcement Act (2021, reintroduced 2025), giving people abused by federal law enforcement the right to sue."
+    },
+    {
+     "d": "2022-12",
+     "s": "con",
+     "bill": "117-s5309",
+     "t": "Sponsored the PEACE Act, written with Rep. Ro Khanna, to limit federal officers’ use of lethal force."
+    },
+    {
+     "d": "2021–26",
+     "s": "con",
+     "bill": "119-s5545",
+     "more": [
+      "https://www.congress.gov/bill/118th-congress/senate-bill/4844",
+      "https://www.congress.gov/bill/117th-congress/senate-bill/738"
+     ],
+     "t": "Cosponsored the Police Training and Independent Review Act in 2021, 2024 and 2026."
+    },
+    {
+     "d": "2021–25",
+     "s": "con",
+     "bill": "119-s3187",
+     "more": [
+      "https://www.congress.gov/bill/118th-congress/senate-bill/4940",
+      "https://www.congress.gov/bill/117th-congress/senate-bill/3343"
+     ],
+     "t": "Cosponsored the Bivens Act in 2021, 2024 and 2025."
+    },
+    {
+     "d": "2026-11",
+     "s": "con",
+     "bill": "119-s5795",
+     "t": "Cosponsored a bill funding mental-health professionals to respond instead of police in emergencies involving people with mental illness or developmental disabilities."
+    },
+    {
+     "d": "2025-07",
+     "s": "con",
+     "bill": "119-s2198",
+     "t": "Cosponsored the Military in Law Enforcement Accountability Act."
+    }
+   ],
+   "countAll": true
+  },
+  {
+   "key": "corporate",
+   "q": "Pro-corporate?",
+   "eb": "Money and business",
+   "pro": "Business side",
+   "con": "Consumer or labor side",
+   "section": null,
+   "rolls": [
+    {
+     "roll": "2025-151",
+     "yea": "pro",
+     "t": "repealing the IRS rule requiring crypto brokers to report users' sales (H.J.Res. 25)"
+    },
+    {
+     "roll": "2025-106",
+     "yea": "pro",
+     "t": "repealing the consumer bureau's rule on big-tech payment apps (S.J.Res. 28)"
+    },
+    {
+     "roll": "2025-153",
+     "yea": "pro",
+     "t": "repealing the consumer bureau's overdraft-fee rule (S.J.Res. 18)"
+    },
+    {
+     "roll": "2025-318",
+     "yea": "pro",
+     "t": "the GENIUS Act regulating payment stablecoins (S. 1582)"
+    },
+    {
+     "roll": "2026-234",
+     "yea": "pro",
+     "t": "taking up the CLARITY Act, the crypto industry's market-structure bill (H.R. 3633)"
+    },
+    {
+     "roll": "2025-237",
+     "yea": "pro",
+     "t": "repealing the Comptroller of the Currency's bank-merger review rule (S.J.Res. 13)"
+    },
+    {
+     "roll": "2025-097",
+     "yea": "pro",
+     "t": "repealing the EPA's methane fee on oil and gas producers (H.J.Res. 35)"
+    }
+   ],
+   "items": [
+    {
+     "d": "2025–26",
+     "s": "pro",
+     "hi": 1,
+     "money": "corp",
+     "t": "Took {corpCur} from {ncorpCur} corporate PACs in 2025–26, compared with {corpPrev} in 2023–24."
+    },
+    {
+     "d": "2025–26",
+     "s": "pro",
+     "money": "trade",
+     "t": "Took {tradeCur} from trade associations and cooperatives in 2025–26."
+    },
+    {
+     "d": "2025–26",
+     "s": "con",
+     "money": "labor",
+     "t": "Labor PACs gave {laborCur} in 2025–26, compared with {corpCur} from corporate PACs."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,101 @@
+{
+ "tiles": [
+  {
+   "q": "Israel or Palestine?",
+   "v": "Leans toward Israel",
+   "href": "stances.html#israel-palestine",
+   "rule": "The headline of the Israel and Palestine card, which tags each of its items by direction.",
+   "n": 9
+  },
+  {
+   "q": "Pro-ICE?",
+   "v": "No",
+   "href": "stances.html#card-ice",
+   "rule": "\"No\" when nothing found in her record points toward ICE: 11 votes and 7 statements and actions point the other way.",
+   "n": 18
+  },
+  {
+   "q": "Pro-police?",
+   "v": "Mixed",
+   "href": "stances.html#card-police",
+   "rule": "\"Mixed\" when at least 3 picked votes point each way. She cast 6 on the police or tough-on-crime side and 8 against.",
+   "n": 14
+  },
+  {
+   "q": "Pro-corporate?",
+   "v": "Mostly no",
+   "href": "stances.html#card-corporate",
+   "rule": "Her votes decide the headline: all 16 business, finance and labor votes picked went the consumer or labor way. It is \"Mostly no\" rather than \"No\" because corporate PAC money to her campaign roughly tripled.",
+   "n": 21
+  },
+  {
+   "q": "Delivering on cost of living?",
+   "v": "In progress",
+   "href": "#scorecard",
+   "rule": "The promise scorecard's status for her economic-opportunity and cost-of-living pledge. Her manufacturing provision became law inside a defense bill she voted against, and a housing bill she backed was enacted, but the promise is broad and her main cost-of-living votes were on the losing side.",
+   "n": 5
+  },
+  {
+   "q": "Focused on homelessness?",
+   "v": "Not a major theme",
+   "href": "stances.html#homelessness",
+   "rule": "6 of her 144 press releases (4%) mention homelessness at all; under 10% counts as not a major theme. One funded project and one bill.",
+   "n": 3
+  },
+  {
+   "q": "Release the Epstein files?",
+   "v": "Voted yes",
+   "href": "stances.html#accountability",
+   "rule": "Her vote on the Epstein Files Transparency Act, which passed 427–1 (roll 2025-289).",
+   "n": 3
+  }
+ ],
+ "events": [
+  {
+   "date": "2026-10-21",
+   "type": "Listening session",
+   "role": "hosted",
+   "title": "Listening session with community leaders and TPS holders on Temporary Protected Status for El Salvador",
+   "source": "https://rivas.house.gov/media/press-releases/congresswoman-luz-rivas-hosts-community-leaders-listening-session-tps-el"
+  },
+  {
+   "date": "2026-05-28",
+   "type": "Workshop",
+   "role": "hosted",
+   "title": "DACA renewal workshop for students at Los Angeles Mission College, with CARECEN",
+   "source": "https://rivas.house.gov/media/press-releases/congresswoman-luz-rivas-holds-daca-workshop-students-los-angeles-mission"
+  },
+  {
+   "date": "2026-05-05",
+   "type": "Town hall",
+   "role": "participated",
+   "title": "Immigration town hall at Pacoima Charter Elementary School, hosted by One LA-IAF",
+   "city": "Pacoima",
+   "source": "https://rivas.house.gov/media/press-releases/congresswoman-luz-rivas-participates-immigration-town-hall-pacoima"
+  },
+  {
+   "date": "2026-06",
+   "type": "Roundtable",
+   "role": "hosted",
+   "title": "Mental health roundtable with school leaders on the impact of ICE raids",
+   "approx": "Spring 2026",
+   "notes": "Date not given; her June 18, 2026 release mentions it alongside the May 5 town hall, without saying when it took place.",
+   "source": "https://rivas.house.gov/media/press-releases/congresswoman-luz-rivas-introduces-bill-support-communities-impacted-ice-raids"
+  },
+  {
+   "date": "2025-08-04",
+   "type": "Public meeting",
+   "role": "participated",
+   "title": "Spoke to the San Fernando City Council and residents about ICE raids and what her office was doing",
+   "city": "San Fernando",
+   "source": "https://sanfernandosun.com/2025/08/06/freshman-on-the-hill-rep-luz-rivas-battles-trumps-immigration-policies"
+  },
+  {
+   "date": "2025-02-03",
+   "type": "Listening session",
+   "role": "hosted",
+   "title": "Listening session with community health organizations on the federal funding freeze",
+   "source": "https://rivas.house.gov/media/press-releases/congresswoman-rivas-hosts-listening-session-community-health-organizations"
+  }
+ ]
+}

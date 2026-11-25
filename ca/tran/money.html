@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Who Funds Derek Tran</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>
+html{color-scheme:light}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  --s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--s5:#e87ba4;--s6:#008300}
+:root{--s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181;--s6:#0ca30c}
+:root[data-theme="dark"]{--s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181;--s6:#0ca30c}
+body{margin:0}
+[hidden]{display:none!important}
+.cycles{display:flex;gap:6px;flex-wrap:wrap}
+.piewrap{display:grid;grid-template-columns:minmax(220px,300px) 1fr;gap:24px 36px;align-items:center}
+.piewrap>*{min-width:0}
+@media (max-width:640px){.piewrap{grid-template-columns:1fr}}
+#pie{width:100%;max-width:300px;height:auto;display:block;margin:0 auto}
+#pie path{stroke:var(--surface);stroke-width:2;cursor:default;transition:opacity .15s}
+#pie.hl path:not(.on){opacity:.35}
+#pie .ctr1{font-family:var(--f-display);font-size:26px;font-weight:800;fill:var(--ink)}
+#pie .ctr2{font-family:var(--f-body);font-size:11px;fill:var(--muted)}
+.legend-t{width:100%;border-collapse:collapse;font-size:.88rem}
+.legend-t td{padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:middle}
+.legend-t td.num{text-align:right;font-family:var(--f-mono);font-size:.8rem;font-variant-numeric:tabular-nums;white-space:nowrap}
+.legend-t tr{cursor:default}
+.legend-t tr.on td{background:var(--accent-soft)}
+.key{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:8px;vertical-align:-1px}
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);font-size:.8rem;padding:6px 10px;border-radius:6px;z-index:20;max-width:240px}
+.flag{font-size:.7rem;font-weight:600;border-radius:999px;padding:1px 8px;color:var(--s2);border:1px solid currentColor;white-space:nowrap}
+.bars{display:flex;flex-direction:column;gap:6px}
+.brow{display:grid;grid-template-columns:minmax(120px,190px) 1fr 90px;gap:10px;align-items:center;font-size:.85rem}
+.brow>*{min-width:0}
+.brow .nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brow .nm small{color:var(--muted)}
+.brow .track{height:14px;position:relative}
+.brow .fill{position:absolute;inset:0 auto 0 0;background:var(--line);border-radius:0 4px 4px 0;min-width:2px}
+.brow.me .fill{background:var(--accent)}
+.brow.me .nm{font-weight:700}
+.brow .v{font-family:var(--f-mono);font-size:.78rem;text-align:right;font-variant-numeric:tabular-nums}
+.pending{border:1px dashed var(--line);border-radius:8px;padding:24px 20px;color:var(--muted)}
+.pending b{color:var(--ink);display:block;font-family:var(--f-display);margin-bottom:4px}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:12px}
+.wcard{border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:14px 16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.wcard h3{margin:0;font-size:1rem}
+.wcard .why{margin:0;font-size:.82rem;color:var(--muted)}
+.wcard .amt{font-family:var(--f-mono);font-size:.82rem}
+.wcard ul{margin:0;padding-left:18px;font-size:.84rem}
+.wcard li .mono{font-family:var(--f-mono);font-size:.8rem;white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="sitenav" aria-label="Pages"></nav>
+  <header>
+    <div class="ident">
+      <img class="portrait" src="assets/tran.jpg" alt="Official House portrait of Rep. Derek Tran" width="400" height="500">
+      <div class="ident-text">
+        <span class="eyebrow">Campaign money · FEC filings</span>
+        <h1>Who funds Derek Tran</h1>
+      </div>
+    </div>
+    <p class="lede">Where his campaign money comes from, how much is from pro-Israel PACs, and how that compares with other House members. Campaign committee: Derek Tran For Congress, <span class="mono">C00851790</span>.</p>
+  </header>
+
+  <section id="sources">
+    <div class="sec-head">
+      <span class="eyebrow">Sources of money</span>
+      <h2>Where his contributions come from</h2>
+      <p>Every dollar his campaign reported receiving, split by who gave it. Pro-Israel PACs are shown as their own slice; money from individual donors who support Israel can't be identified from FEC records, so it stays in the individual slices.</p>
+    </div>
+    <div class="cycles" id="cycles" role="group" aria-label="Election cycle"></div>
+    <div id="pieBody"></div>
+  </section>
+
+  <section id="pacs">
+    <div class="sec-head">
+      <span class="eyebrow">PAC donors</span>
+      <h2>Every PAC that gave</h2>
+      <p>Political action committees and other committees that contributed, largest first. <span class="flag">Pro-Israel</span> marks groups that OpenSecrets and Track AIPAC count as pro-Israel.</p>
+    </div>
+    <div id="pacBody"></div>
+  </section>
+
+  <section id="watch">
+    <div class="sec-head">
+      <span class="eyebrow">Industry watch</span>
+      <h2>Who is giving on his district's issues</h2>
+      <p>Industries tied to his record and committees (Armed Services and Small Business) and to Orange County issues: immigration enforcement, public safety, housing costs, health care and jobs. Each card totals the PACs and donor employers whose names fit the category.</p>
+    </div>
+    <div id="watchBody"></div>
+  </section>
+
+  <section id="employers">
+    <div class="sec-head">
+      <span class="eyebrow">Individual donors</span>
+      <h2>Where his donors work</h2>
+      <p>Employers named most often by people who gave $200 or more, ranked by total given. Retired, self-employed and blank entries are left out. <span class="flag" style="color:var(--accent)">Law firm</span> marks law practices.</p>
+    </div>
+    <div id="empBody"></div>
+  </section>
+
+  <section id="donors">
+    <div class="sec-head">
+      <span class="eyebrow">Individual donors</span>
+      <h2>Largest individual contributions</h2>
+      <p>People who gave the most, from FEC records of contributions over $200. The legal limit was $3,300 per person per election in 2023–24 and $3,500 in 2025–26, so the top of this list is donors who maxed out for the primary and general in both cycles ($10,300).</p>
+    </div>
+    <div id="donorBody"></div>
+  </section>
+
+  <section id="israel">
+    <div class="sec-head">
+      <span class="eyebrow">Pro-Israel lobby</span>
+      <h2>Track AIPAC figures</h2>
+      <p>Track AIPAC adds up money from AIPAC and allied groups, including J Street and DMFI. These are its figures, alongside what could be checked in FEC filings.</p>
+    </div>
+    <div id="israelBody"></div>
+  </section>
+
+  <section id="outside">
+    <div class="sec-head">
+      <span class="eyebrow">Outside spending</span>
+      <h2>Super PACs and groups that spent on his races</h2>
+      <p>Independent expenditures reported to the FEC: money groups spent on their own ads, mail and canvassing for or against Tran. Spending aimed at his opponents is not included here.</p>
+    </div>
+    <div class="tally" id="ieTiles"></div>
+    <div class="handles"><table><thead><tr><th>Group</th><th>Cycle</th><th>For or against Tran</th><th style="text-align:right">Amount</th></tr></thead><tbody id="ieRows"></tbody></table></div>
+    <p class="muted" style="margin:0;font-size:.8rem">Source: FEC independent expenditures by candidate (Schedule E), through Election Day 2026. A third-party tracker had reported about $1M from the crypto super PAC Fairshake for Tran in 2026; FEC records show no Fairshake spending for or against him.</p>
+  </section>
+
+  <section id="udp">
+    <div class="sec-head">
+      <span class="eyebrow">AIPAC's super PAC</span>
+      <h2>United Democracy Project</h2>
+      <p>United Democracy Project (UDP) is the super PAC AIPAC created in 2021. It doesn't donate to campaigns; it spends on its own ads and mail for or against candidates. AIPAC's regular PAC still exists alongside it.</p>
+    </div>
+    <div class="tally">
+      <div class="tile"><span class="n">$0</span><span class="l">UDP spending for or against Tran or his opponents, 2024</span></div>
+      <div class="tile"><span class="n">$0</span><span class="l">UDP spending for or against Tran, 2026 (FEC, through Election Day)</span></div>
+      <div class="tile"><span class="n">$0</span><span class="l">From AIPAC's PAC to his campaign, both cycles (FEC filings)</span></div>
+      <div class="tile"><span class="n">$4M+</span><span class="l">UDP spent next door in CA-47 against Dave Min, 2024</span></div>
+    </div>
+    <ul class="plain">
+      <li><b>2024:</b> UDP's only California House spending was in CA-34 and CA-47. In CA-47 it spent over $4 million, mostly on TV and mailers, against Dave Min before the March primary. Min won anyway. <a class="src" href="https://www.kqed.org/news/12016915/aipac-spent-big-in-the-2024-election-how-did-the-money-show-up-in-californias-congressional-races" target="_blank" rel="noopener">KQED</a> <a class="src" href="https://projects.propublica.org/itemizer/committee/C00799031/2024/independent-expenditures" target="_blank" rel="noopener">ProPublica</a></li>
+      <li><b>2026:</b> FEC independent-expenditure records show no UDP spending for or against Tran. UDP's California money this cycle went to the CA-14 race. <a class="src" href="https://www.fec.gov/data/candidate/H4CA45170/" target="_blank" rel="noopener">FEC</a> <a class="src" href="https://jewishinsider.com/2026/08/aipac-closes-a-rocky-primary-season-with-a-california-gamble/" target="_blank" rel="noopener">Jewish Insider</a></li>
+      <li><b>In 2023–24, AIPAC's PAC gave $19,512 to his Republican opponent, Michelle Steel,</b> and nothing to Tran (total of the itemized gifts dated 2023 and 2024). <a class="src" href="https://projects.propublica.org/itemizer/committee/C00704981/pac-donations/C00797670" target="_blank" rel="noopener">ProPublica</a></li>
+      <li>Track AIPAC's <span id="taTran">$241,559</span> figure for Tran counts money from pro-Israel donors and PACs; FEC records show most of it came through J Street. It is not UDP spending. <a class="src" href="https://www.trackaipac.com/tracker/people/member-derek-tran-ca-45-d" target="_blank" rel="noopener">Track AIPAC</a></li>
+    </ul>
+  </section>
+
+  <section id="compare">
+    <div class="sec-head">
+      <span class="eyebrow">Compared with other members</span>
+      <h2>Pro-Israel lobby money, member by member</h2>
+      <p id="compareNote">Track AIPAC's "Israel Lobby Total" for Tran and the members he is most often compared with, read Nov 23, 2026. Members marked "rejects AIPAC" are labeled that way by Track AIPAC.</p>
+    </div>
+    <div class="bars" id="bars"></div>
+  </section>
+
+  <footer>Sources: Federal Election Commission filings (api.open.fec.gov), Track AIPAC (trackaipac.com), ProPublica FEC Itemizer. Pro-Israel classification follows OpenSecrets' pro-Israel industry list. Industry groupings are matched on committee and employer names, so a few may be misclassified. This page is a nonpartisan summary, not an endorsement.</footer>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script>
+const esc = s => String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const usd = n => "$" + Math.round(n).toLocaleString("en-US");
+const NAV = [["./","Overview"],["money.html","Money"],["establishment.html","Establishment"],["./#townhalls","Town halls"],["stances.html","Stances"],["votes.html","Every vote"],["statements.html","Statements"],["sources.html","Sources"]];
+document.querySelector(".sitenav").innerHTML = NAV.map(([h,t])=>`<a href="${h}"${h==="money.html"?' aria-current="page"':""}>${t}</a>`).join("");
+
+// Pie slices: fixed order and color per category, never re-colored by rank
+const SLICES = [
+  {k:"small", label:"Small individual donors (under $200)", c:"var(--s1)"},
+  {k:"proisrael", label:"Pro-Israel groups (PACs and J Street earmarks)", c:"var(--s2)"},
+  {k:"large", label:"Individual donors ($200 and up)", c:"var(--s3)"},
+  {k:"otherpac", label:"Other PACs and committees", c:"var(--s4)"},
+  {k:"party", label:"Party committees", c:"var(--s5)"},
+  {k:"other", label:"Candidate, transfers and other", c:"var(--s6)"},
+];
+const PP = "https://projects.propublica.org/itemizer/committee/C00851790/pac-donations/";
+const ISRAEL = {
+  rows:[
+    {f:"$241,559",w:"Track AIPAC's current Israel Lobby Total. It says it uses fec.gov data but doesn't itemize it.",c:"2024–26",u:"https://www.trackaipac.com/tracker/people/member-derek-tran-ca-45-d"},
+    {f:"$220,100",w:"Total pro-Israel money in his FEC filings, counted for this page: J Street earmarks and direct gifts, DMFI and JACPAC (rows below).",c:"2024–26",u:"https://www.fec.gov/data/committee/C00851790/"},
+    {f:"$214,543",w:"Individual donations earmarked through JStreetPAC: $83,533 in 2023–24 and $131,010 in 2025–26.",c:"2024–26",u:"https://www.fec.gov/data/committee/C00441949/"},
+    {f:"$2,057",w:"JStreetPAC direct contributions.",c:"2025–26",u:"https://www.fec.gov/data/committee/C00441949/"},
+    {f:"$2,500",w:"Donations earmarked through the Joint Action Committee for Political Affairs (JACPAC).",c:"2025–26",u:"https://www.fec.gov/data/committee/C00851790/"},
+    {f:"$1,000",w:"DMFI PAC direct contribution, Sep 24, 2024.",c:"2023–24",u:PP+"C00710848"},
+    {f:"$0",w:"AIPAC PAC. No contributions to Tran. In 2024 AIPAC PAC gave about $19,512 to his opponent, Michelle Steel.",c:"2024 & 2026",u:"https://projects.propublica.org/itemizer/committee/C00704981/pac-donations/C00797670"},
+  ],
+  notes:[
+    "Endorsed by J Street PAC, not AIPAC. No United Democracy Project or DMFI outside spending in CA-45 in 2024.",
+    "Not on the August 2025 AIPAC trip to Israel. Took a Feb 13–19, 2026 trip to Israel paid for by the J Street Education Fund ($19,864).",
+  ]
+};
+const TA_BASE = "https://www.trackaipac.com/tracker/people/";
+const fmtD = d => new Date(d+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
+// Track AIPAC figures come from data/trackaipac.json (scripts/fetch_trackaipac.py). PEERS is the fallback
+// shown only if that file fails to load: the figures as typed and read Nov 23, 2026.
+let TA = null;
+const PEERS_READ = "2026-11-23";
+const PEERS = [
+  ["Derek Tran","CA-45",241559,"member-derek-tran-ca-45-d",1],
+  ["Josh Gottheimer","NJ-5",2398662,"member-josh-gottheimer-nj-05-d"],
+  ["Ritchie Torres","NY-15",2134380,"member-ritchie-torres-ny-15-d"],
+  ["Pete Aguilar","CA-33",1537090,"member-pete-aguilar-ca-33-d"],
+  ["Hakeem Jeffries","NY-8",1497947,"member-hakeem-jeffries-ny-08-d"],
+  ["Jared Golden","ME-2",1070070,"member-jared-golden-me-02-d"],
+  ["Katherine Clark","MA-5",935294,"member-katherine-clark-ma-05-d"],
+  ["Young Kim (R)","CA-40",563039,"member-young-kim-ca-40-r"],
+  ["Ro Khanna","CA-17",170813,"member-ro-khanna-ca-17-d",0,1],
+  ["Dave Min","CA-47",99036,"member-dave-min-ca-47-d"],
+  ["Lou Correa","CA-46",79986,"member-lou-correa-ca-46-d"],
+  ["Greg Casar","TX-35",32866,"member-greg-casar-tx-35-d",0,1],
+  ["Rashida Tlaib","MI-12",5971,"member-rashida-tlaib-mi-12-d",0,1],
+  ["Alexandria Ocasio-Cortez","NY-14",0,"member-alexandria-ocasio-cortez-ny-14-d",0,1],
+  ["Ilhan Omar","MN-5",0,"member-ilhan-omar-mn-05-d",0,1],
+].sort((a,b)=>b[2]-a[2]);
+
+const taMembers = () => TA && Array.isArray(TA.members) && TA.members.length ? TA.members
+  : PEERS.map(([name,dist,total,slug,me,rejects])=>({name,dist,total,url:TA_BASE+slug,me:!!me,rejects:!!rejects}));
+const taRead = () => TA && TA.read ? TA.read : PEERS_READ;
+const taMe = () => taMembers().find(m=>m.me || m.group==="me");
+function renderBars(){
+  const P = [...taMembers()].sort((a,b)=>b.total-a.total), max = Math.max(...P.map(p=>p.total),1);
+  document.getElementById("compareNote").textContent = `Track AIPAC's "Israel Lobby Total" for Tran and the members he is most often compared with, read ${fmtD(taRead())}. Members marked "rejects AIPAC" are labeled that way by Track AIPAC.`;
+  document.getElementById("bars").innerHTML = P.map(p=>`
+    <div class="brow ${p.me||p.group==="me"?"me":""}"><span class="nm" title="${esc(p.name)} (${esc(p.dist)})">${esc(p.name)} <small>${esc(p.dist)}${p.rejects?" · rejects AIPAC":""}</small></span>
+      <span class="track"><span class="fill" style="width:${(p.total/max*100).toFixed(1)}%"></span></span>
+      <a class="v" href="${esc(p.url)}" target="_blank" rel="noopener">${usd(p.total)}</a></div>`).join("");
+}
+function renderIsrael(){
+  const me = taMe();
+  if(me){
+    Object.assign(ISRAEL.rows[0], {f:usd(me.total), u:me.url});
+    document.getElementById("taTran").textContent = usd(me.total);
+  }
+  document.getElementById("israelBody").innerHTML = `
+    <div class="handles"><table>
+      <thead><tr><th>Amount</th><th>What it counts</th><th>Cycle</th></tr></thead>
+      <tbody>${ISRAEL.rows.map(r=>`<tr><td class="mono" style="white-space:nowrap;font-variant-numeric:tabular-nums">${esc(r.f)}</td><td>${esc(r.w)} <a class="src" href="${esc(r.u)}" target="_blank" rel="noopener">Source</a></td><td class="mono">${esc(r.c)}</td></tr>`).join("")}</tbody>
+    </table></div>
+    <ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px">${ISRAEL.notes.map(n=>`<li>${esc(n)}</li>`).join("")}</ul>
+    <p class="muted" style="margin:0;font-size:.8rem">Track AIPAC is an advocacy site; its total is a third-party figure read on ${fmtD(taRead())}. Compare it with the FEC-itemized rows, not instead of them.</p>`;
+}
+
+let FEC = null, cycle = "all", pacFilter = "all", pacShow = 40;
+function arc(cx,cy,r,ri,a0,a1){
+  const p = (a,rr)=>[cx+rr*Math.sin(a), cy-rr*Math.cos(a)], big = a1-a0>Math.PI?1:0;
+  const [x0,y0]=p(a0,r),[x1,y1]=p(a1,r),[x2,y2]=p(a1,ri),[x3,y3]=p(a0,ri);
+  return `M${x0},${y0}A${r},${r} 0 ${big} 1 ${x1},${y1}L${x2},${y2}A${ri},${ri} 0 ${big} 0 ${x3},${y3}Z`;
+}
+function renderPie(){
+  const box = document.getElementById("pieBody");
+  if(!FEC){ box.innerHTML = `<div class="pending"><b>FEC contribution data is being added</b>The breakdown of every contribution, with pro-Israel PACs as their own slice, will appear here once his filings are downloaded from the FEC.</div>`; return; }
+  const d = FEC.cycles[cycle];
+  const total = SLICES.reduce((s,x)=>s+(d.slices[x.k]||0),0);
+  let a = 0, paths = "";
+  SLICES.forEach(s=>{ const v = d.slices[s.k]||0; if(!v) return; const a1 = a + v/total*2*Math.PI;
+    paths += `<path d="${arc(150,150,140,84,a,Math.min(a1,a+2*Math.PI-1e-4))}" fill="${s.c}" data-k="${s.k}"/>`; a = a1; });
+  const pro = d.slices.proisrael||0;
+  box.innerHTML = `<p class="notice" style="margin:0"><b>${usd(pro)}</b> of the <b>${usd(total)}</b> he raised (${(pro/total*100).toFixed(1)}%) came from pro-Israel groups, almost all of it individual donations routed through J Street PAC. AIPAC's own PAC gave $0.</p>
+  <div class="piewrap">
+    <svg id="pie" viewBox="0 0 300 300" role="img" aria-label="Contributions by source, ${esc(d.label)}">${paths}
+      <text class="ctr1" x="150" y="150" text-anchor="middle">${usd(total)}</text>
+      <text class="ctr2" x="150" y="172" text-anchor="middle">${esc(d.label)}</text></svg>
+    <table class="legend-t"><tbody>${SLICES.map(s=>{ const v = d.slices[s.k]||0;
+      return `<tr data-k="${s.k}"><td><span class="key" style="background:${s.c}"></span>${esc(s.label)}</td><td class="num">${usd(v)}</td><td class="num">${total?(v/total*100).toFixed(1):0}%</td></tr>`; }).join("")}</tbody></table>
+  </div>
+  <p class="muted" style="margin:0;font-size:.8rem">${esc(d.note||"")} Reports through ${new Date(d.through+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"})}.</p>`;
+  const tip = document.getElementById("tip"), pie = document.getElementById("pie");
+  const hl = k => { pie.classList.toggle("hl", !!k); pie.querySelectorAll("path").forEach(p=>p.classList.toggle("on", p.dataset.k===k));
+    box.querySelectorAll("tr[data-k]").forEach(r=>r.classList.toggle("on", r.dataset.k===k)); };
+  box.querySelectorAll("[data-k]").forEach(el=>{
+    el.addEventListener("pointerenter", e=>{ const k = el.dataset.k, s = SLICES.find(x=>x.k===k), v = d.slices[k]||0; hl(k);
+      tip.textContent = `${s.label}: ${usd(v)} (${(v/total*100).toFixed(1)}%)`; tip.hidden = false; });
+    el.addEventListener("pointermove", e=>{ tip.style.left = Math.min(e.clientX+14, innerWidth-250)+"px"; tip.style.top = (e.clientY+14)+"px"; });
+    el.addEventListener("pointerleave", ()=>{ hl(null); tip.hidden = true; });
+  });
+}
+function renderCycles(){
+  const box = document.getElementById("cycles");
+  if(!FEC){ box.hidden = true; return; }
+  box.innerHTML = Object.entries(FEC.cycles).map(([k,c])=>`<button class="chip-btn" type="button" data-c="${k}" aria-pressed="${k===cycle}">${esc(c.label)}</button>`).join("");
+  box.onclick = e=>{ const b = e.target.closest("button"); if(!b) return; cycle = b.dataset.c; renderCycles(); renderPie(); renderPacs(); renderWatch(); renderEmployers(); renderDonors(); renderOutside(); };
+}
+function renderPacs(){
+  const box = document.getElementById("pacBody");
+  if(!FEC){ box.innerHTML = `<div class="pending"><b>PAC donor list is being added</b>Every PAC contribution from his FEC filings will be listed here, with pro-Israel groups flagged.</div>`; return; }
+  const rows = FEC.pacs.filter(p=>cycle==="all" || p.byCycle[cycle]).map(p=>({...p, amt: cycle==="all"?p.amount:p.byCycle[cycle]})).sort((a,b)=>b.amt-a.amt);
+  const pro = rows.filter(p=>p.proIsrael).reduce((s,p)=>s+p.amt,0);
+  const raised = Object.values(FEC.cycles[cycle].slices).reduce((s,v)=>s+v,0);
+  const jef = rows.filter(p=>/JEFFRIES|JEFF PAC/i.test(p.name)).reduce((s,p)=>s+p.amt,0);
+  box.innerHTML = `<div class="tally"><div class="tile"><span class="n">${rows.length}</span><span class="l">PACs, campaigns and committees that gave</span></div>
+    <div class="tile"><span class="n">${usd(pro)}</span><span class="l">Pro-Israel money, ${raised?(pro/raised*100).toFixed(1):0}% of everything raised</span></div>
+    <div class="tile"><span class="n">${usd(jef)}</span><span class="l">From Hakeem Jeffries' committees</span></div></div>
+    <div class="filters" id="pacFilter" role="group" aria-label="Filter donors"><button class="chip-btn" type="button" data-f="all" aria-pressed="${pacFilter==="all"}">All donors</button><button class="chip-btn" type="button" data-f="pro" aria-pressed="${pacFilter==="pro"}">Pro-Israel only</button></div>
+    <div class="handles"><table><thead><tr><th>Committee</th><th>Type</th><th style="text-align:right">Amount</th><th style="text-align:right">Gifts</th></tr></thead>
+    <tbody>${rows.filter(p=>pacFilter==="all"||p.proIsrael).slice(0, pacShow).map(p=>`<tr><td>${esc(p.name)} ${p.proIsrael?'<span class="flag">Pro-Israel</span>':""}${p.id?` <a class="src mono" href="https://www.fec.gov/data/committee/${esc(p.id)}/" target="_blank" rel="noopener">${esc(p.id)}</a>`:""}</td><td class="muted" style="font-size:.8rem">${esc(p.kind)}</td><td class="mono" style="text-align:right;font-variant-numeric:tabular-nums">${usd(p.amt)}</td><td class="mono" style="text-align:right">${p.n}</td></tr>`).join("")}</tbody></table></div>
+    ${rows.filter(p=>pacFilter==="all"||p.proIsrael).length>pacShow?`<button class="chip-btn" type="button" id="pacMore" style="align-self:center">Show all ${rows.filter(p=>pacFilter==="all"||p.proIsrael).length}</button>`:""}
+    <p class="muted" style="margin:0;font-size:.8rem">"Earmarked" rows are individual donations passed through a group such as J Street PAC; the donors are individuals, but the group directs the money. ActBlue, the general Democratic payment platform, is not listed. The Jewish Democratic Council of America PAC passed through about $6,600 in 2024; it is not counted as pro-Israel here because Track AIPAC does not count it.</p>`;
+  box.querySelector("#pacFilter").onclick = e=>{ const b = e.target.closest("button"); if(!b) return; pacFilter = b.dataset.f; renderPacs(); };
+  const more = box.querySelector("#pacMore"); if(more) more.onclick = ()=>{ pacShow = 1e9; renderPacs(); };
+}
+function renderWatch(){
+  const box = document.getElementById("watchBody");
+  if(!FEC || !FEC.watch){ box.innerHTML = `<div class="pending"><b>Industry data is being added</b>PAC and employer totals by industry will appear here once his FEC data is built.</div>`; return; }
+  const amt = (o,key)=> cycle==="all" ? o[key] : (o.byCycle[cycle]||0);
+  const cards = FEC.watch.map(w=>{
+    const pacs = w.pacs.map(p=>({...p,a:amt(p,"amount")})).filter(p=>p.a>0).sort((a,b)=>b.a-a.a);
+    const emps = w.employers.map(e=>({...e,a:amt(e,"total")})).filter(e=>e.a>0).sort((a,b)=>b.a-a.a);
+    return {w,pacs,emps,pt:pacs.reduce((s,p)=>s+p.a,0),et:emps.reduce((s,e)=>s+e.a,0)};
+  });
+  box.innerHTML = `<div class="wgrid">${cards.map(c=>`<div class="wcard"><h3>${esc(c.w.label)}</h3><p class="why">${esc(c.w.why)}</p>
+    <div class="amt"><b>${usd(c.pt)}</b> from ${c.pacs.length} PAC${c.pacs.length===1?"":"s"} · <b>${usd(c.et)}</b> from donors at ${c.emps.length} employer${c.emps.length===1?"":"s"}</div>
+    ${c.pacs.length||c.emps.length?`<ul>${c.pacs.slice(0,4).map(p=>`<li>${esc(p.name)} <span class="mono">${usd(p.a)}</span></li>`).join("")}${c.pacs.length>4?`<li class="muted">${c.pacs.length-4} more PAC${c.pacs.length-4===1?"":"s"}</li>`:""}${c.emps.slice(0,4).map(e=>`<li>${esc(e.name)} <span class="muted">(employees)</span> <span class="mono">${usd(e.a)}</span></li>`).join("")}</ul>`:'<p class="why">No matching donors in his filings for this period.</p>'}
+    </div>`).join("")}</div>
+    <p class="muted" style="margin:0;font-size:.8rem">Matched on committee and employer names, so a hit means the name fits the category, not a verified classification. A company can fit more than one category (Anduril and Palantir appear under both detention and defense), so the cards don't add up to a total. Employer totals cover only the top donor employers the FEC lists, and employees giving personally is not the same as the company giving.</p>`;
+}
+function renderEmployers(){
+  const box = document.getElementById("empBody");
+  if(!FEC || !FEC.employers){ box.innerHTML = `<div class="pending"><b>Employer data is being added</b></div>`; return; }
+  const rows = FEC.employers.filter(e=>cycle==="all" || e.byCycle[cycle]).map(e=>({...e, amt: cycle==="all"?e.total:e.byCycle[cycle]})).sort((a,b)=>b.amt-a.amt).slice(0,25);
+  const law = rows.filter(e=>e.law).reduce((s,e)=>s+e.amt,0), all = rows.reduce((s,e)=>s+e.amt,0);
+  const max = Math.max(...rows.map(e=>e.amt));
+  box.innerHTML = `<p class="notice" style="margin:0">Law firms account for <b>${usd(law)}</b> of the ${usd(all)} given by employees of these top ${rows.length} employers (${(law/all*100).toFixed(0)}%). Tran was a consumer and worker-rights attorney before Congress.</p>
+    <div class="bars">${rows.map(e=>`<div class="brow"><span class="nm" title="${esc(e.name)}">${esc(e.name)}${e.law?' <small>· law firm</small>':""}</span>
+      <span class="track"><span class="fill" style="width:${(e.amt/max*100).toFixed(1)}%;${e.law?"background:var(--sage)":""}"></span></span><span class="v">${usd(e.amt)}</span></div>`).join("")}</div>
+    <p class="muted" style="margin:0;font-size:.8rem">Source: FEC contributions grouped by employer, as donors reported it. Spelling variants of the same employer are merged.</p>`;
+}
+function renderDonors(){
+  const box = document.getElementById("donorBody");
+  if(!FEC || !FEC.donors || !FEC.donors.length){ box.innerHTML = `<div class="pending"><b>Top donor list is being added</b>The largest individual contributions will appear here after the next FEC data download.</div>`; return; }
+  const rows = FEC.donors.filter(d=>cycle==="all" || d.byCycle[cycle]).map(d=>({...d, amt: cycle==="all"?d.total:d.byCycle[cycle]})).sort((a,b)=>b.amt-a.amt).slice(0,50);
+  box.innerHTML = `<div class="handles"><table><thead><tr><th>Employer</th><th>Occupation</th><th style="text-align:right">Total</th></tr></thead>
+    <tbody>${rows.map(d=>`<tr><td>${esc(d.employer||"Not reported")}</td><td class="muted">${esc(d.occupation||"Not reported")}</td><td class="mono" style="text-align:right;font-variant-numeric:tabular-nums">${usd(d.amt)}</td></tr>`).join("")}</tbody></table></div>
+    <p class="muted" style="margin:0;font-size:.8rem">Donor names and locations are left out on purpose: they are public in FEC records, but this site lists only the employer and occupation each donor reported. Totals combine a donor's gifts to his campaign committee within the selected cycle; some donors also gave through joint fundraising committees, which isn't shown here. A total above the cycle limit can include a gift that was later refunded or reassigned to another election.</p>`;
+}
+function renderOutside(){
+  if(!FEC || !FEC.outside) return;
+  const rows = FEC.outside.filter(x=>cycle==="all" || x.cycle===cycle);
+  const sum = (c,side)=>FEC.outside.filter(x=>x.cycle===c && x.side===side).reduce((s,x)=>s+x.total,0);
+  document.getElementById("ieTiles").innerHTML = [
+    [usd(sum("2024","support")),"Spent for him, 2023–24"],[usd(sum("2024","oppose")),"Spent against him, 2023–24"],
+    [usd(sum("2026","support")),"Spent for him, 2025–26"],[usd(sum("2026","oppose")),"Spent against him, 2025–26"],
+  ].map(([n,l])=>`<div class="tile"><span class="n">${n}</span><span class="l">${l}</span></div>`).join("");
+  document.getElementById("ieRows").innerHTML = rows.filter(x=>x.total>=1000).map(x=>`<tr><td>${esc(x.committee)} <a class="src mono" href="https://www.fec.gov/data/committee/${esc(x.id)}/" target="_blank" rel="noopener">${esc(x.id)}</a></td><td class="mono">${x.cycle==="2024"?"2023–24":"2025–26"}</td><td>${x.side==="support"?'<span class="pill s-delivered">For</span>':'<span class="pill s-contradicted">Against</span>'}</td><td class="mono" style="text-align:right;font-variant-numeric:tabular-nums">${usd(x.total)}</td></tr>`).join("") +
+    `<tr><td colspan="4" class="muted" style="font-size:.8rem">Groups that spent under $1,000 are left out of this list but counted in the totals.</td></tr>`;
+}
+renderBars(); renderIsrael(); renderPie(); renderPacs(); renderWatch(); renderEmployers(); renderDonors();
+fetch("data/fec/summary.json").then(r=>{ if(!r.ok) throw 0; return r.json(); }).then(d=>{ FEC = d; renderCycles(); renderPie(); renderPacs(); renderWatch(); renderEmployers(); renderDonors(); renderOutside(); }).catch(()=>{});
+fetch("data/trackaipac.json").then(r=>{ if(!r.ok) throw 0; return r.json(); }).then(d=>{ if(d && Array.isArray(d.members) && d.members.length){ TA = d; renderBars(); renderIsrael(); } }).catch(()=>{});
+</script>
+<script src="site.js"></script>
+</body>
+</html>

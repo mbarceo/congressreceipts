@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="How closely Rep. Luz Rivas is tied to House Democratic leadership and the party machine, and where she acts on her own, from FEC filings, roll calls and party records.">
+<title>Rivas and the Establishment</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+[hidden]{display:none!important}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.col{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.col h3{display:flex;align-items:center;gap:8px;margin:0}
+.col ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;font-size:.9rem}
+.lead-t td{font-size:.88rem;vertical-align:middle}
+.lead-t .num{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.pair{display:flex;align-items:center;gap:6px}
+.pair .b{height:10px;border-radius:0 3px 3px 0;min-width:2px}
+.pair .b.y24{background:var(--muted);opacity:.6} .pair .b.y26{background:var(--accent)}
+.legend-inline{display:flex;gap:16px;font-size:.8rem;color:var(--muted);flex-wrap:wrap}
+.legend-inline i{display:inline-block;width:12px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.tl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.tl li{display:grid;grid-template-columns:96px 1fr;gap:4px 16px;padding:11px 0;border-top:1px solid var(--line);font-size:.9rem}
+.tl li>*{min-width:0}
+.tl .d{font-family:var(--f-mono);font-size:.75rem;color:var(--muted);padding-top:2px}
+.tag-e{font-size:.68rem;font-weight:700;border-radius:4px;padding:1px 7px;color:#fff;background:#2f6fb3;margin-right:6px}
+.tag-i{font-size:.68rem;font-weight:700;border-radius:4px;padding:1px 7px;color:#fff;background:#2f8f5b;margin-right:6px}
+.v-yea{color:var(--ok);background:var(--ok-bg)} .v-nay{color:var(--bad);background:var(--bad-bg)}
+.brk-t td{font-size:.85rem;vertical-align:top} .brk-t .qq{color:var(--muted);font-size:.8rem}
+.cat-t td{font-size:.86rem} .cat-t .num{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+@media (max-width:520px){.tl li{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="sitenav" aria-label="Pages"></nav>
+  <header id="top">
+    <div class="ident">
+      <img class="portrait" src="assets/rivas.jpg" alt="Official House portrait of Rep. Luz Rivas" width="400" height="500">
+      <div class="ident-text">
+        <span class="eyebrow">Party ties · 2024–26</span>
+        <h1>Allegiance to establishment Democrats</h1>
+      </div>
+    </div>
+    <p class="lede">How closely Rivas is tied to House Democratic leadership and the party machine, and where she acts on her own. Every item links to its source.</p>
+  </header>
+
+  <section id="verdict">
+    <div class="sec-head"><span class="eyebrow">The short answer</span><h2>Is she an establishment Democrat?</h2></div>
+    <div class="pp-card" id="verdictCard"><p class="muted">Loading…</p></div>
+    <div class="tally" id="tiles"></div>
+  </section>
+
+  <section id="indicators">
+    <div class="sec-head"><span class="eyebrow">Evidence</span><h2>The strongest signs each way</h2></div>
+    <div class="cols" id="cols"></div>
+  </section>
+
+  <section id="leaders">
+    <div class="sec-head">
+      <span class="eyebrow">Money from leadership</span>
+      <h2>What party leaders' committees gave her</h2>
+      <p>Contributions from each leader's campaign committee, leadership PAC and joint fundraising committees, from FEC filings. For comparison, the Tran tracker counts $135,759 from the same leaders to Rep. Derek Tran (CA-45), a swing-seat freshman, in 2025–26.</p>
+    </div>
+    <div class="legend-inline"><span><i style="background:var(--muted);opacity:.6"></i>2023–24 (first race)</span><span><i style="background:var(--accent)"></i>2025–26 (as an incumbent)</span></div>
+    <div class="handles"><table class="lead-t"><thead><tr><th>Leader</th><th>Committees</th><th style="min-width:180px"></th><th style="text-align:right">2023–24</th><th style="text-align:right">2025–26</th></tr></thead><tbody id="leadRows"></tbody></table></div>
+  </section>
+
+  <section id="money">
+    <div class="sec-head">
+      <span class="eyebrow">PAC money by type</span>
+      <h2>Who her PAC money comes from</h2>
+      <p>Direct contributions from PACs, sorted into types by name. Earmarked donations (individual gifts passed through a PAC, such as AIPAC's) are not included; see the <a href="money.html#pacs">Money page</a>.</p>
+    </div>
+    <div class="handles"><table class="cat-t"><thead><tr><th>Type</th><th style="text-align:right">2023–24</th><th style="text-align:right">2025–26</th></tr></thead><tbody id="catRows"></tbody></table></div>
+    <details><summary>List the corporate PACs</summary><p class="muted" id="corpList" style="font-size:.82rem"></p></details>
+  </section>
+
+  <section id="programs">
+    <div class="sec-head"><span class="eyebrow">The party machine</span><h2>Endorsements, leadership and key votes</h2></div>
+    <ul class="tl" id="timeline"></ul>
+  </section>
+
+  <section id="breaks">
+    <div class="sec-head">
+      <span class="eyebrow">Votes</span>
+      <h2>Every vote where she split from Jeffries</h2>
+      <p id="breaksNote">From House roll calls, counting only votes where both cast Yea or Nay.</p>
+    </div>
+    <div class="tally" id="voteTiles"></div>
+    <div class="handles"><table class="brk-t"><thead><tr><th>Date</th><th>Bill and question</th><th>Rivas</th><th>Jeffries</th></tr></thead><tbody id="breakRows"></tbody></table></div>
+  </section>
+
+  <section id="left">
+    <div class="sec-head"><span class="eyebrow">The progressive left</span><h2>Where she sits on the left</h2></div>
+    <ul class="plain" id="leftList"></ul>
+  </section>
+
+  <footer>Sources: FEC filings, House Clerk roll calls, the California Democratic Party, the California Secretary of State, caucus membership pages, and her campaign and House websites. PAC types are matched on committee names, so a few may be misclassified. This page is a nonpartisan summary, not an endorsement.</footer>
+</div>
+
+<script>
+const esc = s => String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const usd = n => "$" + Math.round(n).toLocaleString("en-US");
+const $ = id => document.getElementById(id);
+const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const ext = u => u.startsWith("http") ? ' target="_blank" rel="noopener"' : "";
+const src = list => list.map(([t,u])=>`<a class="src" href="${esc(u)}"${ext(u)}>${esc(t)}</a>`).join(" ");
+const vp = v => `<span class="pill ${v==="Yea"?"v-yea":"v-nay"}">${esc(v)}</span>`;
+const CAT = [["labor","Labor unions"],["ideological","Advocacy and ideological groups"],["corporate","Corporate PACs"],["trade","Trade and professional associations"],["candidate","Other candidates' campaigns"]];
+
+fetch("data/establishment.json").then(r=>r.json()).then(d=>{
+  $("verdictCard").innerHTML = `<div class="pp-head"><div class="pp-flag"><span class="pp-q">${esc(d.question)}</span><span class="pp-v">${esc(d.headline)}</span></div><p class="pp-sum">${esc(d.summary)}</p></div><p class="muted" style="margin:0;font-size:.82rem">${esc(d.why)}</p>`;
+  $("tiles").innerHTML = d.tiles.map(([n,l])=>`<div class="tile"><span class="n" style="font-size:1.5rem">${esc(n)}</span><span class="l">${esc(l)}</span></div>`).join("");
+  const col = (k,title,cls) => `<div class="col"><h3><span class="${cls}">${title}</span>${k==="e"?"Signs of alignment":"Signs of independence"}</h3><ol>${d.signs[k].map(s=>`<li>${esc(s.text)} ${src(s.src.map(([t,u])=>[t.replace("{ndiff}",d.nums.ndiff),u]))}</li>`).join("")}</ol></div>`;
+  $("cols").innerHTML = col("e","Establishment","tag-e") + col("i","Independent","tag-i");
+
+  const L = d.leaders, t24 = L.reduce((s,l)=>s+l.y2024,0), t26 = L.reduce((s,l)=>s+l.y2026,0), max = Math.max(...L.map(l=>Math.max(l.y2024,l.y2026)),1);
+  $("leadRows").innerHTML = L.map(l=>`<tr><td><b>${esc(l.name)}</b><br><span class="muted" style="font-size:.78rem">${esc(l.role)}</span></td>
+    <td class="muted" style="font-size:.78rem">${esc(l.committees.join("; ")||"None found")}</td>
+    <td><div class="pair"><span class="b y24" style="width:${(l.y2024/max*160).toFixed(0)}px" title="2023–24: ${usd(l.y2024)}"></span></div><div class="pair" style="margin-top:3px"><span class="b y26" style="width:${(l.y2026/max*160).toFixed(0)}px" title="2025–26: ${usd(l.y2026)}"></span></div></td>
+    <td class="num">${usd(l.y2024)}</td><td class="num"><b>${usd(l.y2026)}</b></td></tr>`).join("") +
+    `<tr><td><b>Total</b></td><td></td><td></td><td class="num">${usd(t24)}</td><td class="num"><b>${usd(t26)}</b></td></tr>`;
+
+  $("catRows").innerHTML = CAT.map(([k,l])=>`<tr><td>${l}</td><td class="num">${usd(d.categories["2024"][k]||0)}</td><td class="num">${usd(d.categories["2026"][k]||0)}</td></tr>`).join("");
+  $("corpList").textContent = "2025–26: " + d.corporatePACs["2026"].map(n=>n.replace(/\s*(POLITICAL ACTION COMMITTEE|PAC)\b.*$/i,"").trim()).join(" · ");
+
+  $("timeline").innerHTML = d.timeline.map(e=>{ const dt = new Date(e.d+"T12:00:00");
+    return `<li><span class="d">${MON[dt.getMonth()]} ${dt.getFullYear()}</span><span><span class="${e.k==="e"?"tag-e":"tag-i"}">${e.k==="e"?"Establishment":"Independent"}</span>${esc(e.text)} <a class="src" href="${esc(e.u)}"${ext(e.u)}>Source</a></span></li>`; }).join("");
+
+  const n = d.nums;
+  $("breaksNote").textContent = `She and Jeffries both cast a Yea or Nay on ${n.both} roll calls in 2025–26. They split on ${n.ndiff}, listed below with the Clerk's wording.`;
+  $("voteTiles").innerHTML = [[n.jeffAgree+"%","Same vote as Jeffries"],[n.unity+"%","Votes cast with the Democratic majority (rank "+n.rank+(n.tied?", tied,":"")+" of "+n.dems+")"],[n.jeffC+"%","Agreement with Jeffries on the "+n.contested+" votes where Democrats split"],[n.aocC+"%","Agreement with Ocasio-Cortez on those votes"]]
+    .map(([a,b])=>`<div class="tile"><span class="n">${esc(a)}</span><span class="l">${esc(b)}</span></div>`).join("");
+  $("breakRows").innerHTML = d.jeffriesDiffs.map(x=>`<tr><td class="mono" style="white-space:nowrap;font-size:.78rem">${esc(x.date)}</td><td><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.bill)}</a> · ${esc(x.title)}<div class="qq">${esc(x.q)}</div></td><td>${vp(x.me)}</td><td>${vp(x.jeffries)}</td></tr>`).join("");
+
+  $("leftList").innerHTML = d.left.map(e=>`<li>${esc(e.text)} <a class="src" href="${esc(e.u)}"${ext(e.u)}>Source</a></li>`).join("");
+}).catch(()=>{ $("verdictCard").innerHTML = '<p class="muted">The establishment data didn\'t load. Reload the page to try again.</p>'; });
+</script>
+<script src="site.js"></script>
+</body>
+</html>

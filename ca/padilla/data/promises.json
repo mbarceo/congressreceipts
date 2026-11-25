@@ -1,0 +1,210 @@
+{
+ "_note": "Hand-curated campaign promises and the record against them. kind 'explicit' = his own words in 2022; 'record' = implied by the record his 2022 site ran on, not a stated pledge. Actions: 'roll' fills his vote and the tally from data/votes.json; 'stmt' must match exactly one release in data/statements.json; 'u' is any other source. Status is an editorial call: 'why' must say what it rests on. Build: python3 -I scripts/build_promises.py",
+ "sources": {
+  "site2022": {
+   "label": "His 2022 campaign site, home page (archived Oct 23, 2022)",
+   "u": "https://web.archive.org/web/20221023012246/https://alex-padilla.com/"
+  },
+  "about2022": {
+   "label": "His 2022 campaign site, Meet Alex page (archived Sep 29, 2022)",
+   "u": "https://web.archive.org/web/20220929074539/https://alex-padilla.com/about/"
+  },
+  "ad2022": {
+   "label": "His campaign release with the script of his “Defending the Dream” ad, May 12, 2022 (archived May 19, 2022)",
+   "u": "https://web.archive.org/web/20220519115948/https://alex-padilla.com/release-alex-padilla-releases-new-ad-in-lead-up-to-primary-election/"
+  }
+ },
+ "noPromise": "His 2022 campaign made no specific pledge on housing, homelessness, wildfires, public safety or guns; its Meet Alex page lists those as part of his first-year record, not as promises. His ad's line “I will always put our kids first” is too general to score. As of November 2026 his campaign site still carried the 2022 text, and no separate 2028 campaign site was found. The Stances page has his record on other issues.",
+ "promises": [
+  {
+   "issue": "Democracy and voting rights",
+   "kind": "explicit",
+   "status": "progress",
+   "promise": "I’ll always defend democracy.",
+   "quote": true,
+   "src": [
+    "ad2022"
+   ],
+   "actions": [
+    {
+     "u": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-holds-floor-block-to-push-back-against-trump-attacks-on-election-integrity-and-republicans-save-act/",
+     "text": "As Ranking Member of the Senate Rules Committee, led a Democratic floor block against the Republicans' SAVE Act and for election-security funding (Apr 2025)."
+    },
+    {
+     "roll": "2026-151",
+     "text": "Voted {vote} on waiving budget rules for a Lee amendment to require citizenship for voter registration and photo ID to vote. The motion needed 60 votes and failed {yea}–{nay}."
+    },
+    {
+     "roll": "2026-231",
+     "text": "Voted {vote} on cloture to take up S. 5271, a bill to require voters to show photo identification. Cloture needed 60 votes and failed {yea}–{nay}."
+    },
+    {
+     "u": "https://www.govinfo.gov/content/pkg/BILLS-119s2523is/html/BILLS-119s2523is.htm",
+     "text": "Original cosponsor of the John R. Lewis Voting Rights Advancement Act (S. 2523, July 2025). It was referred to the Judiciary Committee and has had no further action."
+    },
+    {
+     "u": "https://www.govinfo.gov/content/pkg/BILLS-119s2994is/html/BILLS-119s2994is.htm",
+     "text": "Introduced the Voter Purge Protection Act (S. 2994, Oct 2025). It was referred to the Rules Committee and has had no further action."
+    },
+    {
+     "u": "https://www.govinfo.gov/content/pkg/BILLS-119s4369is/html/BILLS-119s4369is.htm",
+     "text": "Introduced the Absentee and Mail Voter Protection Act (S. 4369, Apr 2026). It was referred to the Rules Committee and has had no further action."
+    }
+   ],
+   "why": "The Republican voter-ID and citizenship measures he voted against failed to reach 60 votes, but his own voting bills, and the John Lewis bill he cosponsors, have not moved past committee."
+  },
+  {
+   "issue": "Cost of living and working families",
+   "kind": "explicit",
+   "status": "progress",
+   "promise": "I’ll always fight for families working hard to pay the bills.",
+   "quote": true,
+   "src": [
+    "ad2022"
+   ],
+   "actions": [
+    {
+     "roll": "2025-372",
+     "text": "Voted {vote} on the Senate version of the One Big Beautiful Bill Act (H.R. 1). It passed {yea}–{nay}, with the Vice President voting Yea to break the tie."
+    },
+    {
+     "u": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+     "text": "H.R. 1 became Public Law 119-21 on July 4, 2025."
+    },
+    {
+     "u": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-statement-denouncing-senate-republicans-passage-of-billionaire-first-tax-bill/",
+     "text": "Called it a “billionaire-first budget reconciliation bill” in his statement after Senate passage (Jul 2025)."
+    },
+    {
+     "roll": "2026-053",
+     "text": "Voted {vote} on the 21st Century ROAD to Housing Act (H.R. 6644), a bill to increase the housing supply. It passed the Senate {yea}–{nay}."
+    },
+    {
+     "u": "https://www.govinfo.gov/content/pkg/PLAW-119publ101/html/PLAW-119publ101.htm",
+     "text": "The ROAD to Housing Act became Public Law 119-101 in July 2026."
+    },
+    {
+     "u": "https://www.govinfo.gov/content/pkg/BILLS-119s1477is/html/BILLS-119s1477is.htm",
+     "text": "Introduced the Housing for All Act (S. 1477, Apr 2025), his plan for the housing and homelessness crises. It was referred to the Banking Committee and has had no further action."
+    }
+   ],
+   "why": "A housing-supply bill he voted for became law, but he was on the losing side of the 2025 reconciliation law, and his own housing bill has not moved. The promise is broad."
+  },
+  {
+   "issue": "Health care access",
+   "kind": "explicit",
+   "status": "stalled",
+   "promise": "increase access to healthcare",
+   "quote": true,
+   "src": [
+    "site2022"
+   ],
+   "actions": [
+    {
+     "roll": "2025-080",
+     "text": "Voted {vote} on a Shaheen amendment to the February 2025 budget resolution to preserve and extend the Affordable Care Act's premium tax credits. It was rejected {yea}–{nay}."
+    },
+    {
+     "roll": "2025-372",
+     "text": "Voted {vote} on the One Big Beautiful Bill Act (H.R. 1), which his statement said would cut a trillion dollars from Medicaid. It passed {yea}–{nay} and became law."
+    },
+    {
+     "roll": "2025-644",
+     "text": "Voted {vote} on cloture to take up S. 3385, Democrats' bill to extend the enhanced ACA premium tax credits. Cloture needed 60 votes and failed {yea}–{nay}."
+    },
+    {
+     "u": "https://www.padilla.senate.gov/newsroom/press-releases/watch-padilla-california-health-care-leaders-blast-republicans-refusal-to-prevent-californians-health-care-costs-from-soaring/",
+     "text": "Joined California health care leaders to criticize Republicans for not extending the credits (Dec 2025)."
+    }
+   ],
+   "why": "He voted for every attempt found to extend the ACA premium credits and against the 2025 reconciliation law, but the extensions failed and the law passed."
+  },
+  {
+   "issue": "Medicare for All",
+   "kind": "explicit",
+   "status": "stalled",
+   "promise": "Alex Padilla is fighting for us on important issues – defending democracy, climate change, Medicare for All, immigration reform, and more.",
+   "quote": true,
+   "src": [
+    "site2022"
+   ],
+   "actions": [
+    {
+     "u": "https://www.govinfo.gov/content/pkg/BILLS-119s1506is/html/BILLS-119s1506is.htm",
+     "text": "Original cosponsor of Sen. Sanders' Medicare for All Act (S. 1506), introduced Apr 29, 2025. It was referred to the Finance Committee and has had no further action."
+    },
+    {
+     "u": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-joins-sanders-and-over-100-lawmakers-in-reintroduction-of-medicare-for-all/",
+     "text": "His release on the reintroduction: “Every American deserves access to high quality, affordable health care, regardless of their zip code or tax bracket.”"
+    }
+   ],
+   "why": "He cosponsors the bill, but it has not moved beyond referral to committee."
+  },
+  {
+   "issue": "Immigration reform",
+   "kind": "explicit",
+   "status": "stalled",
+   "promise": "Alex remains committed to ensuring that immigration reform is achieved.",
+   "quote": true,
+   "src": [
+    "about2022"
+   ],
+   "actions": [
+    {
+     "u": "https://www.govinfo.gov/content/pkg/BILLS-119s2468is/html/BILLS-119s2468is.htm",
+     "text": "Introduced S. 2468 (July 2025) to make the immigration registry under section 249 of the Immigration and Nationality Act available to certain long-term residents. It was referred to the Judiciary Committee and has had no further action."
+    },
+    {
+     "roll": "2025-007",
+     "text": "Voted {vote} on the Laken Riley Act (S. 5), which requires DHS to take into custody immigrants charged with theft, among other provisions. It passed {yea}–{nay}."
+    },
+    {
+     "u": "https://www.govinfo.gov/content/pkg/PLAW-119publ1/html/PLAW-119publ1.htm",
+     "text": "The Laken Riley Act became Public Law 119-1."
+    },
+    {
+     "roll": "2026-152",
+     "text": "Voted {vote} on waiving budget rules for a Durbin amendment to move ICE funds to the timely processing of DACA applications. The motion needed 60 votes and failed {yea}–{nay}."
+    }
+   ],
+   "why": "No immigration reform has been enacted. His registry bill has not moved, and the enforcement bill he opposed became law."
+  },
+  {
+   "issue": "Environment and climate",
+   "kind": "explicit",
+   "status": "stalled",
+   "promise": "protect our environment",
+   "quote": true,
+   "src": [
+    "site2022"
+   ],
+   "actions": [
+    {
+     "roll": "2025-277",
+     "text": "Voted {vote} on H.J.Res. 88, disapproving the EPA waiver for California's Advanced Clean Cars II standards. It passed {yea}–{nay}."
+    },
+    {
+     "roll": "2025-279",
+     "text": "Voted {vote} on H.J.Res. 87, disapproving the EPA waiver for California's heavy-duty vehicle and engine emission standards. It passed {yea}–{nay}."
+    },
+    {
+     "roll": "2025-281",
+     "text": "Voted {vote} on H.J.Res. 89, disapproving the EPA waiver for California's low-NOx engine standards. It passed {yea}–{nay}."
+    },
+    {
+     "u": "https://www.govinfo.gov/content/pkg/PLAW-119publ15/html/PLAW-119publ15.htm",
+     "text": "H.J.Res. 87 became Public Law 119-15."
+    },
+    {
+     "u": "https://www.padilla.senate.gov/newsroom/press-releases/we-will-not-forget-padilla-sends-strong-warning-as-republicans-go-nuclear-to-revoke-california-clean-air-waivers/",
+     "text": "Spoke repeatedly on the Senate floor against the waiver repeals, which Republicans advanced by overruling the Senate Parliamentarian (May 2025)."
+    },
+    {
+     "u": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-booker-reed-introduce-bills-to-permanently-protect-the-pacific-and-atlantic-oceans-from-offshore-drilling/",
+     "text": "Introduced bills with Sens. Booker and Reed to permanently protect the Pacific and Atlantic oceans from offshore drilling (Apr 2025)."
+    }
+   ],
+   "why": "He voted against all three resolutions revoking California's clean-air waivers, but they passed and at least one became law. The environmental bills of his found here have not advanced."
+  }
+ ]
+}
