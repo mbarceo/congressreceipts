@@ -1,0 +1,243 @@
+{
+ "_note": "Every bill a page makes a claim about: role this member is said to have (sponsor, cosponsor or none), the public law claimed, if any, and housePassed when a page says it passed the House. Checked by scripts/verify_bills.py against govinfo BILLSTATUS.",
+ "bills": [
+  {
+   "bill": "hr1637",
+   "role": "sponsor",
+   "law": null,
+   "note": "Protect Veteran Jobs Act"
+  },
+  {
+   "bill": "hr5788",
+   "role": "sponsor",
+   "law": null,
+   "housePassed": true,
+   "note": "504 Program Risk Oversight Act"
+  },
+  {
+   "bill": "hr4746",
+   "role": "sponsor",
+   "law": null,
+   "note": "Baby Food Tax Relief Act"
+  },
+  {
+   "bill": "hr4775",
+   "role": "sponsor",
+   "law": null,
+   "note": "SBIR/STTR Foreign Interference Safeguard Act"
+  },
+  {
+   "bill": "hr8066",
+   "role": "sponsor",
+   "law": null,
+   "note": "Carlton H. Ingram Veterans’ Benefits Improvement Act"
+  },
+  {
+   "bill": "hr9883",
+   "role": "sponsor",
+   "law": null,
+   "note": "Private Detention Corporate Accountability Act of 2026"
+  },
+  {
+   "bill": "hr10613",
+   "role": "sponsor",
+   "law": null,
+   "note": "Housing COST Act"
+  },
+  {
+   "bill": "hr10108",
+   "role": "sponsor",
+   "law": null,
+   "note": "Hazardous Materials Transparency Act"
+  },
+  {
+   "bill": "hr6678",
+   "role": "sponsor",
+   "law": null,
+   "note": "Senior Legal Hotline Act of 2025"
+  },
+  {
+   "bill": "hr7969",
+   "role": "sponsor",
+   "law": null,
+   "note": "Combating Chinese Communist Party Influence Act"
+  },
+  {
+   "bill": "hres366",
+   "role": "sponsor",
+   "law": null,
+   "note": "Recognizing the 50th anniversary of Black April and the Fall of Saigon on April 30, 1975."
+  },
+  {
+   "bill": "hres1235",
+   "role": "sponsor",
+   "law": null,
+   "note": "Recognizing the 51st anniversary of Black April and the Fall of Saigon on April 30, 1975."
+  },
+  {
+   "bill": "hconres50",
+   "role": "sponsor",
+   "law": null,
+   "note": "Recognizing the importance of the Vietnamese Heritage Flag."
+  },
+  {
+   "bill": "hres528",
+   "role": "sponsor",
+   "law": null,
+   "note": "Expressing support for the designation of June 19, 2025, as \"Veterans of the Republic of Vietnam Armed Forces Day\"."
+  },
+  {
+   "bill": "hres948",
+   "role": "sponsor",
+   "law": null,
+   "note": "Commemorating the 50th anniversary of Southeast Asian refugee resettlement and the many contributions and sacrifices of Southeast Asian Americans to the United States."
+  },
+  {
+   "bill": "hr3565",
+   "role": "cosponsor",
+   "law": null,
+   "note": "To provide for a limitation on the transfer of defense articles and defense services to Israel."
+  },
+  {
+   "bill": "hr2102",
+   "role": "cosponsor",
+   "law": null,
+   "housePassed": true,
+   "note": "Major Richard Star Act"
+  },
+  {
+   "bill": "hr4849",
+   "role": "cosponsor",
+   "law": null,
+   "note": "Protecting Health Care and Lowering Costs Act of 2025"
+  },
+  {
+   "bill": "hr4962",
+   "role": "cosponsor",
+   "law": null,
+   "note": "Toll of Tariffs Act of 2025"
+  },
+  {
+   "bill": "hr6215",
+   "role": "cosponsor",
+   "law": null,
+   "note": "Small Business RELIEF Act"
+  },
+  {
+   "bill": "hr4966",
+   "role": "cosponsor",
+   "law": null,
+   "note": "Stop Price Gouging in Grocery Stores Act of 2025"
+  },
+  {
+   "bill": "hr5673",
+   "role": "cosponsor",
+   "law": null,
+   "note": "Stop the Trump Electricity Price Hikes Act"
+  },
+  {
+   "bill": "hr3122",
+   "role": "cosponsor",
+   "law": null,
+   "note": "Vietnam Human Rights Act"
+  },
+  {
+   "bill": "hr2725",
+   "role": "cosponsor",
+   "law": null,
+   "note": "Affordable Housing Credit Improvement Act of 2025"
+  },
+  {
+   "bill": "hr537",
+   "role": "cosponsor",
+   "law": null,
+   "note": "INCREASE Housing Affordability Act"
+  },
+  {
+   "bill": "hr5653",
+   "role": "cosponsor",
+   "law": null,
+   "note": "Trust Through Transparency Act of 2025"
+  },
+  {
+   "bill": "hr7297",
+   "role": "cosponsor",
+   "law": null,
+   "note": "ICE and CBP Constitutional Accountability Act"
+  },
+  {
+   "bill": "hr5973",
+   "role": "cosponsor",
+   "law": null,
+   "note": "Stop Excessive Force in Immigration Act of 2025"
+  },
+  {
+   "bill": "hr7852",
+   "role": "cosponsor",
+   "law": null,
+   "note": "No Getting Rich in Congress Act"
+  },
+  {
+   "bill": "hr3779",
+   "role": "cosponsor",
+   "law": null,
+   "note": "STOCK Act 2.0"
+  },
+  {
+   "bill": "hr12",
+   "role": "cosponsor",
+   "law": null,
+   "note": "Women’s Health Protection Act of 2025"
+  },
+  {
+   "bill": "hr9941",
+   "role": "cosponsor",
+   "law": null,
+   "note": "Right to IVF Act of 2026"
+  },
+  {
+   "bill": "hr2029",
+   "role": "cosponsor",
+   "law": null,
+   "note": "Stop Comstock Act"
+  },
+  {
+   "bill": "hr1877",
+   "role": "cosponsor",
+   "law": null,
+   "note": "Protecting Americans’ Social Security Data Act"
+  },
+  {
+   "bill": "hr9187",
+   "role": "cosponsor",
+   "law": null,
+   "note": "Bipartisan Social Security Commission Act of 2026"
+  },
+  {
+   "bill": "hr842",
+   "role": "cosponsor",
+   "law": null,
+   "note": "Nancy Gardner Sewell Medicare Multi-Cancer Early Detection Screening Coverage Act"
+  },
+  {
+   "bill": "hr787",
+   "role": "cosponsor",
+   "law": null,
+   "housePassed": true,
+   "note": "Plain Language in Contracting Act"
+  },
+  {
+   "bill": "hres996",
+   "role": "cosponsor",
+   "law": null,
+   "note": "Impeaching Kristi Lynn Arnold Noem, Secretary of Homeland Security, for high crimes and misdemeanors."
+  },
+  {
+   "bill": "hr832",
+   "role": "cosponsor",
+   "law": null,
+   "housePassed": true,
+   "note": "Small Business Advocacy Improvements Act of 2025"
+  }
+ ]
+}

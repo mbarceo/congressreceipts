@@ -1,171 +1,262 @@
 [
  {
-  "label": "J Street earmarked donations, 2023-24",
-  "shown": 83533,
-  "actual": 83532.67,
+  "label": "Votes where the member and Hakeem Jeffries both cast Yea or Nay",
+  "shown": 679,
+  "actual": 679,
   "ok": true,
-  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+  "source": "House Clerk roll-call XML"
  },
  {
-  "label": "J Street earmarked donations, 2025-26",
-  "shown": 131010,
-  "actual": 131009.9,
+  "label": "Votes where the member split from Hakeem Jeffries",
+  "shown": 44,
+  "actual": 44,
   "ok": true,
-  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+  "source": "House Clerk roll-call XML"
  },
  {
-  "label": "J Street earmarked donations, total",
-  "shown": 214543,
-  "actual": 214542.57,
+  "label": "Agreement with Hakeem Jeffries (%)",
+  "shown": 93.5,
+  "actual": 93.5,
   "ok": true,
-  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+  "source": "House Clerk roll-call XML"
  },
  {
-  "label": "J Street direct contributions, 2025-26",
-  "shown": 2057,
-  "actual": 2057.1,
+  "label": "Party-unity score (%)",
+  "shown": 94.0,
+  "actual": 94.0,
   "ok": true,
-  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+  "source": "House Clerk roll-call XML"
  },
  {
-  "label": "JACPAC earmarked donations, 2025-26",
-  "shown": 2500,
-  "actual": 2500.0,
+  "label": "Party-unity rank among Democrats",
+  "shown": 189,
+  "actual": 189,
   "ok": true,
-  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+  "source": "House Clerk roll-call XML"
  },
  {
-  "label": "DMFI PAC, 2023-24",
-  "shown": 1000,
+  "label": "Agreement with Hakeem Jeffries on contested votes (%)",
+  "shown": 45.8,
+  "actual": 45.8,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Katherine Clark on contested votes (%)",
+  "shown": 47.9,
+  "actual": 47.9,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Pete Aguilar on contested votes (%)",
+  "shown": 54.2,
+  "actual": 54.2,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Josh Gottheimer on contested votes (%)",
+  "shown": 69.8,
+  "actual": 69.8,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Ritchie Torres on contested votes (%)",
+  "shown": 50.0,
+  "actual": 50.0,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Jared Golden on contested votes (%)",
+  "shown": 63.0,
+  "actual": 63.0,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Alexandria Ocasio-Cortez on contested votes (%)",
+  "shown": 28.8,
+  "actual": 28.8,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Ilhan Omar on contested votes (%)",
+  "shown": 32.9,
+  "actual": 32.9,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Rashida Tlaib on contested votes (%)",
+  "shown": 28.6,
+  "actual": 28.6,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Greg Casar on contested votes (%)",
+  "shown": 26.7,
+  "actual": 26.7,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Ro Khanna on contested votes (%)",
+  "shown": 44.3,
+  "actual": 44.3,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Lou Correa on contested votes (%)",
+  "shown": 65.7,
+  "actual": 65.7,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Dave Min on contested votes (%)",
+  "shown": 56.9,
+  "actual": 56.9,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Young Kim on contested votes (%)",
+  "shown": 71.2,
+  "actual": 71.2,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Contested votes (Democrats split at least 90-10)",
+  "shown": 76,
+  "actual": 76,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "AIPAC PAC, direct contributions",
+  "shown": 0,
+  "actual": 0,
+  "ok": true,
+  "source": "FEC Schedule A, committee C00797670"
+ },
+ {
+  "label": "AIPAC PAC, earmarked donations",
+  "shown": 0,
+  "actual": 0,
+  "ok": true,
+  "source": "FEC Schedule A memo entries, committee C00797670"
+ },
+ {
+  "label": "AIPAC PAC, total (direct + earmarked)",
+  "shown": 0,
+  "actual": 0,
+  "ok": true,
+  "source": "FEC Schedule A, committee C00797670"
+ },
+ {
+  "label": "DMFI PAC",
+  "shown": 1000.0,
   "actual": 1000.0,
   "ok": true,
-  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+  "source": "FEC Schedule A, committee C00710848"
  },
  {
-  "label": "Total pro-Israel money",
-  "shown": 220100,
+  "label": "Pro-Israel money in the FEC filings, all cycles",
+  "shown": 220099.67,
   "actual": 220099.67,
   "ok": true,
-  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+  "source": "FEC Schedule A"
  },
  {
-  "label": "Total raised, both cycles",
-  "shown": 12502347,
-  "actual": 12502346.81,
+  "label": "Party leaders' committees, 2023-24",
+  "shown": 61500,
+  "actual": 61500.0,
   "ok": true,
-  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+  "source": "FEC Schedule A, by leader committee ID or name (fec.leaders in tracker.config.json)"
  },
  {
-  "label": "Pro-Israel share of money raised (%)",
-  "shown": 1.8,
-  "actual": 1.76,
+  "label": "Party leaders' committees, 2025-26",
+  "shown": 135759,
+  "actual": 135759.35,
   "ok": true,
-  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
- },
- {
-  "label": "AIPAC PAC (C00797670) to Tran, both cycles",
-  "shown": 0,
-  "actual": 0,
-  "ok": true,
-  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
- },
- {
-  "label": "United Democracy Project spending for/against Tran",
-  "shown": 0,
-  "actual": 0,
-  "ok": true,
-  "source": "FEC Schedule E by candidate"
- },
- {
-  "label": "End Citizens United, 2023-24 (direct + earmarked)",
-  "shown": 9550,
-  "actual": 9550.01,
-  "ok": true,
-  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
- },
- {
-  "label": "End Citizens United, 2025-26",
-  "shown": 0,
-  "actual": 0,
-  "ok": true,
-  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
- },
- {
-  "label": "Corporate PAC money, 2025-26",
-  "shown": 305250,
-  "actual": 305250,
-  "ok": true,
-  "source": "FEC Schedule A, classified by FEC organization type, then name (scripts/build_establishment.py)"
- },
- {
-  "label": "Corporate PACs that gave, 2025-26",
-  "shown": 91,
-  "actual": 91,
-  "ok": true,
-  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+  "source": "FEC Schedule A, by leader committee ID or name (fec.leaders in tracker.config.json)"
  },
  {
   "label": "Corporate PAC money, 2023-24",
-  "shown": 0,
+  "shown": 0.0,
   "actual": 0,
   "ok": true,
-  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
  },
  {
-  "label": "Trade association money, 2025-26",
-  "shown": 137507,
-  "actual": 137507,
+  "label": "Labor PAC money, 2023-24",
+  "shown": 129500,
+  "actual": 129500,
   "ok": true,
-  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
  },
  {
-  "label": "Trade association money, 2023-24",
+  "label": "Trade PAC money, 2023-24",
   "shown": 35500,
   "actual": 35500,
   "ok": true,
-  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
+ },
+ {
+  "label": "Corporate PAC money, 2025-26",
+  "shown": 305250.0,
+  "actual": 305250,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
  },
  {
   "label": "Labor PAC money, 2025-26",
   "shown": 196500,
   "actual": 196500,
   "ok": true,
-  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
  },
  {
-  "label": "Jeffries committees, total",
-  "shown": 74942,
-  "actual": 74942,
+  "label": "Trade PAC money, 2025-26",
+  "shown": 137507,
+  "actual": 137507,
   "ok": true,
-  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
  },
  {
-  "label": "Jeffries Battleground Protection Fund",
+  "label": "End Citizens United, 2023-24 (direct + earmarked)",
+  "shown": 9550,
+  "actual": 9550.01,
+  "ok": true,
+  "source": "FEC Schedule A (END CITIZENS UNITED)"
+ },
+ {
+  "label": "Jeffries Battleground Protection Fund, 2025-26",
   "shown": 56942,
   "actual": 56942.0,
   "ok": true,
-  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+  "source": "FEC Schedule A (JEFFRIES BATTLEGROUND)"
  },
  {
-  "label": "Party leaders' committees, 2023-24",
-  "shown": 56500,
-  "actual": 56500,
+  "label": "Leadership PACs giving on Mar 28-29, 2024",
+  "shown": 4,
+  "actual": 4,
   "ok": true,
-  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
+  "source": "FEC Schedule A (JEFF PAC|AMERIPAC|FAIR SHOT|CA LUV|CALIFORNIA LEADERSHIP UNITED)"
  },
  {
-  "label": "Party leaders' committees, 2025-26",
-  "shown": 135759,
-  "actual": 135759,
+  "label": "Each of those leadership PAC gifts ($)",
+  "shown": 5000,
+  "actual": 5000.0,
   "ok": true,
-  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
- },
- {
-  "label": "Outside spending for Tran, 2023-24",
-  "shown": 4358605,
-  "actual": 4358605.4,
-  "ok": true,
-  "source": "FEC Schedule E by candidate"
+  "source": "FEC Schedule A (JEFF PAC|AMERIPAC|FAIR SHOT|CA LUV|CALIFORNIA LEADERSHIP UNITED)"
  },
  {
   "label": "House Majority PAC for Tran, 2023-24",
@@ -182,66 +273,17 @@
   "source": "FEC Schedule E by candidate"
  },
  {
-  "label": "Fairshake spending for/against Tran, 2025-26",
+  "label": "Fairshake spending for or against Tran, 2025-26",
   "shown": 0,
   "actual": 0,
   "ok": true,
   "source": "FEC Schedule E by candidate"
  },
  {
-  "label": "Party-unity score (%)",
-  "shown": 94.0,
-  "actual": 94.0,
-  "ok": true,
-  "source": "House Clerk roll-call XML (scripts/build_alignment.py)"
- },
- {
-  "label": "Party-unity rank among Democrats",
-  "shown": 189,
-  "actual": 189,
-  "ok": true,
-  "source": "House Clerk roll-call XML"
- },
- {
-  "label": "Agreement with Jeffries on contested votes (%)",
-  "shown": 45.8,
-  "actual": 45.8,
-  "ok": true,
-  "source": "House Clerk roll-call XML"
- },
- {
-  "label": "Leadership PACs giving $5,000 on Mar 28-29, 2024",
-  "shown": 4,
-  "actual": 4,
-  "ok": true,
-  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
- },
- {
-  "label": "Jeffries for Congress, both cycles",
-  "shown": 8000,
-  "actual": 8000.0,
-  "ok": true,
-  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
- },
- {
-  "label": "Jeffries leadership PAC (JEFF PAC), 2023-24",
-  "shown": 10000,
-  "actual": 10000.0,
-  "ok": true,
-  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
- },
- {
-  "label": "Each Red to Blue-week leadership PAC gift ($)",
-  "shown": 5000,
-  "actual": 5000.0,
-  "ok": true,
-  "source": "FEC Schedule A (committee contributions), api.open.fec.gov"
- },
- {
   "label": "AIPAC PAC to Michelle Steel, 2023-24",
   "shown": 19512,
-  "actual": 19512,
+  "actual": 19512.0,
   "ok": true,
-  "source": "ProPublica FEC Itemizer rows (saved copy)"
+  "source": "Saved copy of https://projects.propublica.org/itemizer/committee/C00704981/pac-donations/C00797670"
  }
 ]

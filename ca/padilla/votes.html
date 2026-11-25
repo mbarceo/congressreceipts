@@ -136,7 +136,7 @@ fetch("data/votes.json").then(r=>r.json()).then(data=>{
   document.getElementById("status").textContent = ALL.length ? `Covers ${ALL.length} roll calls from ${fmtD(first)} through ${fmtD(last)}.` : "No roll calls loaded yet.";
   try{ const f = JSON.parse(localStorage.getItem("tv-f")||"{}"); document.getElementById("onlyBreaks").checked=!!f.ob; document.getElementById("showProc").checked=!!f.sp; }catch(e){}
   tiles(); apply();
-}).catch(()=>{ document.getElementById("status").textContent = M.senate ? "Votes aren't built yet: run scripts/fetch_votes_senate.py, then build_votes.py (see SCAFFOLD.md)." : "Votes aren't built yet: run scripts/fetch_votes.sh, then build_votes.py (see SCAFFOLD.md)."; });
+}).catch(()=>{ document.getElementById("status").textContent = "Coming soon: the vote record is being compiled from the official roll calls."; });
 document.getElementById("q").addEventListener("input", apply);
 document.getElementById("onlyBreaks").addEventListener("change", apply);
 document.getElementById("showProc").addEventListener("change", apply);

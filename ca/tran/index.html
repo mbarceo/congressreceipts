@@ -1,20 +1,29 @@
 <!doctype html>
+<!-- Built from site/index.html by scripts/publish.py. Edit site/index.html, not this copy. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Tracks Rep. Derek Tran (CA-45): promises, votes, money, stances and town halls, with a source for every claim.">
+<meta name="description" content="Tracks Rep. Derek Tran (CA-45): promises, votes, money, stances and constituent events, with a source for every claim.">
 <title>CA-45 Tran Tracker</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="site.css">
 <link rel="stylesheet" href="../../hub.css">
+<script src="site.js"></script>
 <style>
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 body{margin:0}
 [hidden]{display:none!important}
 img{max-width:100%}
+/* District map (House only): colored by kind of place, as tagged by scripts/build_map.py */
+#map .incd.la{fill:var(--la)} #map .incd.city{fill:var(--oc)} #map .incd.uninc,#map .incd.other{fill:var(--sage)}
+.sw.la,.cb.la{background:var(--la)} .sw.city,.cb.city{background:var(--oc)} .sw.uninc,.cb.uninc{background:var(--sage)}
+#map .lbl{font-size:12px}
+#map .lbl.sm{font-size:10px}
+.vbtn .vrule{font-size:.78rem;line-height:1.35;opacity:.9;margin-top:2px}
+.vbtn.pending .pp-v{font-size:1.15rem}
 </style>
 </head>
 <body>
@@ -22,114 +31,82 @@ img{max-width:100%}
   <nav class="sitenav" aria-label="Pages"></nav>
   <header id="top">
     <div class="ident">
-      <img class="portrait" src="assets/tran.jpg" alt="Official House portrait of Rep. Derek Tran" width="400" height="500">
+      <img class="portrait" alt="" width="335" height="410">
       <div class="ident-text">
-        <span class="eyebrow">U.S. House · California's 45th District · 119th Congress</span>
-        <h1>Rep. Derek Tran</h1>
+        <span class="eyebrow">{{chamberLong}} · {{seatLabel}} · {{congressOrd}} Congress</span>
+        <h1>{{title}}</h1>
       </div>
     </div>
-    <p class="lede">A running check of what Tran promised voters in CA-45, what he has done in office, and what he says on the issues people are fighting about. Every entry links to its source.</p>
-    <div class="facts">
-      <span><b>Party</b> Democrat</span>
-      <span><b>In office since</b> Jan 2025</span>
-      <span><b>2026 general</b> Re-elected 61.0% to 39.0% over Chuong Vo (R), unofficial, all precincts reporting</span>
-      <span><b>2024 general</b> Beat Michelle Steel (R) by 653 votes</span>
-      <span><b>Committees</b> Armed Services; Small Business</span>
-      <span><b>Background</b> Army veteran; first Vietnamese American to represent Little Saigon</span>
-    </div>
-    <ul class="plain fact-src">
-      <li>2026 general (unofficial, all 424 precincts reporting): Tran 151,971 (61.0%), Vo 97,070 (39.0%). <a class="src" href="https://api.sos.ca.gov/returns/us-rep/district/45" target="_blank" rel="noopener">CA Secretary of State</a></li>
-      <li>2024 general: Tran 158,264 (50.1%), Steel 157,611 (49.9%), a 653-vote margin. <a class="src" href="https://en.wikipedia.org/wiki/2024_California%27s_45th_congressional_district_election" target="_blank" rel="noopener">Wikipedia, citing the Secretary of State</a></li>
-    </ul>
-    <p class="notice"><span id="verifyNote">Last updated Nov 23, 2026.</span> Items marked <span class="pill s-unv">Unverified</span> could not be confirmed against a primary source.</p>
+    <p class="lede" id="lede">A running check of {{shortPoss}} campaign promises to {{area}} voters, {{poss}} record in office, and {{poss}} words on the issues people are fighting about. Every entry links to its source.</p>
+    <div class="facts" id="facts"></div>
+    <ul class="plain fact-src" id="factSrc"></ul>
+    <p class="notice">Votes, party alignment, statements, stances, the promise scorecard, <span data-only="house">the district map, </span>and campaign money <span id="fecThrough"></span> are built from primary sources. <span id="verifyNote"></span> <a href="sources.html">See how every claim is checked →</a></p>
   </header>
 
-  <div id="view-overview" class="view">
   <section id="verdicts">
     <div class="sec-head">
       <span class="eyebrow">Quick verdicts</span>
-      <h2>Where he lands on the big questions</h2>
-      <p>Click a verdict to see every vote and statement behind it.</p>
+      <h2>Where {{short}} lands on the big questions</h2>
+      <p>Click a verdict to see every vote and statement behind it. Each one says the rule that produced it.</p>
     </div>
-    <div class="vbtns">
-      <a class="vbtn" href="stances.html#palestine"><span class="pp-q">Pro-Palestine?</span><span class="pp-v">Mixed</span><span class="vgo">See the evidence →</span></a>
-      <a class="vbtn" href="stances.html#ice"><span class="pp-q">Pro-ICE?</span><span class="pp-v">Mostly no</span><span class="vgo">See the evidence →</span></a>
-      <a class="vbtn" href="stances.html#police"><span class="pp-q">Pro-police?</span><span class="pp-v">Mostly yes</span><span class="vgo">See the evidence →</span></a>
-      <a class="vbtn" href="stances.html#corporate"><span class="pp-q">Pro-corporate?</span><span class="pp-v">Leaning yes</span><span class="vgo">See the evidence →</span></a>
-      <a class="vbtn" href="stances.html#epstein-files"><span class="pp-q">Release the Epstein files?</span><span class="pp-v">Voted yes</span><span class="vgo">See the evidence →</span></a>
-      <a class="vbtn" href="establishment.html"><span class="pp-q">Establishment Democrat?</span><span class="pp-v">Mostly yes</span><span class="vgo">Open the Establishment tab →</span></a>
-    </div>
+    <div class="vbtns" id="vbtns"></div>
   </section>
 
-  <section id="district">
+  <!-- House only: senators represent the whole state, so the map is hidden and the state section below shows instead -->
+  <section id="district" data-only="house">
     <div class="sec-head">
       <span class="eyebrow">The district</span>
-      <h2>CA-45 spans two counties</h2>
-      <p>Tran represents cities in both Los Angeles County and Orange County. Prop 50 redrew the lines for the 2026 election. The new map takes effect Jan 3, 2027; until then he represents the 2023 lines.</p>
+      <h2 id="mapHead">{{districtLabel}} at a glance</h2>
+      <p id="mapIntro"></p>
     </div>
-    <div class="filters" id="mapToggle" role="group" aria-label="Choose district map">
-      <button class="chip-btn" type="button" data-m="new" aria-pressed="true">2027 lines (Prop 50)</button>
-      <button class="chip-btn" type="button" data-m="old" aria-pressed="false">Current lines (2023–26)</button>
-    </div>
+    <div class="filters" id="mapToggle" role="group" aria-label="Choose district map"></div>
     <div class="countybar" id="countyBar"></div>
-    <div class="mapwrap"><svg id="map" viewBox="0 0 900 944" role="img" aria-label="Map of cities in California's 45th District, colored by county"></svg></div>
+    <div class="mapwrap"><svg id="map" viewBox="0 0 900 1148" role="img" aria-label="Map of communities in {{seatLabel}}"></svg></div>
     <div class="citylists" id="cityLists"></div>
-    <p class="muted" style="margin:0;font-size:.8rem">Shaded areas are the parts of each city inside the district; the dark line is the district boundary. Boundaries: U.S. Census Bureau TIGERweb (119th and 120th Congressional Districts). Population figures: 2020 Census, from the <a href="https://sdmg.senate.ca.gov/committeehome/2025-congressional-districts/congressional-district-45-2025" target="_blank" rel="noopener">California Senate Office of Demographics</a>. Current lines: <a href="https://en.wikipedia.org/wiki/California%27s_45th_congressional_district" target="_blank" rel="noopener">Wikipedia</a>. <a href="https://sdmg.senate.ca.gov/sites/sdmg.senate.ca.gov/files/2026-02/cd45_2025.png" target="_blank" rel="noopener">Official boundary map</a>.</p>
+    <p class="muted" style="margin:0;font-size:.8rem" id="mapNote"></p>
+  </section>
+
+  <!-- Senate only, and only when profile.state has text: statewide context in place of the district map -->
+  <section id="state" data-only="senate" hidden>
+    <div class="sec-head">
+      <span class="eyebrow">The state</span>
+      <h2 id="stateHead">Representing {{stateName}}</h2>
+      <p id="stateIntro"></p>
+    </div>
+    <div class="facts" id="stateFacts"></div>
+    <p class="muted" style="margin:0;font-size:.8rem" id="stateNote"></p>
   </section>
 
   <section id="committees">
     <div class="sec-head">
-      <span class="eyebrow">Committees and caucuses</span>
-      <h2>Where he works in Congress</h2>
-      <p>Committees are where bills are written and amended. Caucuses are voluntary groups of members organized around a cause or a political lean.</p>
+      <span class="eyebrow">Committees<span id="caucusEb"> and caucuses</span></span>
+      <h2>Where {{short}} works in Congress</h2>
+      <p>Committees are where bills are written and amended.<span id="caucusLede"> Caucuses are voluntary groups of members organized around a cause or a political lean.</span></p>
     </div>
-    <div class="comm-grid">
-      <article class="comm">
-        <h3>Armed Services Committee</h3>
-        <ul>
-          <li><b>Readiness Subcommittee</b> <span class="muted">· member</span> <a class="src" href="https://tran.house.gov/media/press-releases/congressman-tran-announces-subcommittees-after-prestigious-appointments-house" target="_blank" rel="noopener">Source</a></li>
-          <li><b>Intelligence and Special Operations Subcommittee</b> <span class="muted">· member</span> <a class="src" href="https://tran.house.gov/media/press-releases/congressman-tran-announces-subcommittees-after-prestigious-appointments-house" target="_blank" rel="noopener">Source</a></li>
-        </ul>
-        <p class="muted">Oversees the Pentagon, military bases and the defense budget, including the annual NDAA.</p>
-      </article>
-      <article class="comm">
-        <h3>Small Business Committee</h3>
-        <ul>
-          <li><b>Oversight, Investigations and Regulations Subcommittee</b> <span class="pill s-progress">Ranking Member</span> <a class="src" href="https://tran.house.gov/media/press-releases/congressman-tran-announces-subcommittees-after-prestigious-appointments-house" target="_blank" rel="noopener">Source</a></li>
-          <li><b>Contracting and Infrastructure Subcommittee</b> <span class="muted">· member</span> <a class="src" href="https://tran.house.gov/media/press-releases/congressman-tran-announces-subcommittees-after-prestigious-appointments-house" target="_blank" rel="noopener">Source</a></li>
-        </ul>
-        <p class="muted">Oversees the Small Business Administration and federal contracting. As Ranking Member he is the top Democrat on his subcommittee.</p>
-      </article>
-    </div>
-    <div class="handles"><table>
-      <thead><tr><th>Caucus</th><th>Role</th><th>What it is</th></tr></thead>
-      <tbody>
-        <tr><td>Lowering Costs Caucus</td><td>Co-founder <a class="src" href="https://tran.house.gov/media/press-releases/representatives-tran-landsman-and-scholten-launch-congressional-caucus-lower" target="_blank" rel="noopener">Source</a></td><td>Bipartisan group focused on household costs.</td></tr>
-        <tr><td>New Democrat Coalition</td><td>Member <a class="src" href="https://newdemocratcoalition.house.gov/members" target="_blank" rel="noopener">Source</a></td><td>The House's largest bloc of centrist, business-friendly Democrats.</td></tr>
-        <tr><td>Congressional Asian Pacific American Caucus</td><td>Executive board <span class="pill s-unv">Unverified</span></td><td>Asian American and Pacific Islander members.</td></tr>
-        <tr><td>Congressional Caucus on Vietnam</td><td>Co-chair <span class="pill s-unv">Unverified</span></td><td>U.S.–Vietnam relations and human rights.</td></tr>
-        <tr><td>Democratic Caucus National Security Task Force</td><td>Co-chair <a class="src" href="https://tran.house.gov/media/press-releases/representative-derek-tran-announces-leadership-national-security-task-force" target="_blank" rel="noopener">Source</a></td><td>House Democrats' national security policy group.</td></tr>
-        <tr><td>Congressional Taiwan Caucus</td><td>Member <span class="pill s-unv">Unverified</span></td><td>Support for Taiwan.</td></tr>
-      </tbody>
+    <div class="comm-grid" id="commGrid"></div>
+    <div class="handles" id="caucusBox"><table>
+      <thead><tr><th>Caucus or role</th><th>Role</th><th id="caucusWhat" hidden>What it is</th></tr></thead>
+      <tbody id="caucusRows"></tbody>
     </table></div>
-    <p class="muted" style="margin:0;font-size:.8rem">Committee assignments: <a href="https://tran.house.gov/media/press-releases/congressman-tran-announces-subcommittees-after-prestigious-appointments-house" target="_blank" rel="noopener">his office, Feb 18, 2025</a>. Lowering Costs Caucus: <a href="https://tran.house.gov/media/press-releases/representative-tran-helps-introduce-legislation-assess-true-costs-trumps" target="_blank" rel="noopener">his office</a>. Roles marked unverified come from <a href="https://en.wikipedia.org/wiki/Derek_Tran" target="_blank" rel="noopener">Wikipedia</a> only.</p>
+    <p class="muted" style="margin:0;font-size:.8rem" id="commNote"></p>
   </section>
 
   <section id="scorecard">
     <div class="sec-head">
       <span class="eyebrow">Promise scorecard</span>
-      <h2>How he's doing on his promises</h2>
-      <p>Each campaign promise set against his bills, votes and district work. "Stalled" means he acted but nothing moved past committee. His campaign issues page has no dates, so some promises are paraphrased from his platform.</p>
+      <h2>How {{short}} is doing on campaign promises</h2>
+      <p id="promiseIntro">Each campaign promise set against {{poss}} bills, votes and {{seatNoun}} work. Promises come from {{poss}} own words in archived campaign material; endorsers' words don't count. "Stalled" means {{subj}} acted but the outcome didn't move or the bill hasn't advanced. Statuses are this tracker's judgment; each says what it rests on.</p>
     </div>
     <div class="tally" id="tally"></div>
     <div class="promises" id="promises"></div>
+    <p class="muted" id="noPromise" style="margin:0;font-size:.85rem"></p>
   </section>
 
   <section id="alignment">
     <div class="sec-head">
-      <span class="eyebrow">Who he votes with</span>
-      <h2>How he lines up with party leaders and factions</h2>
-      <p>Computed from all House roll-call votes in 2025 and 2026. Most votes split along party lines, so he agrees with nearly every Democrat most of the time. The telling column is <b>contested votes</b>: roll calls where at least 10% of Democrats broke from the rest of their party.</p>
+      <span class="eyebrow">Who {{short}} votes with</span>
+      <h2>How {{short}} lines up with party leaders and factions</h2>
+      <p id="glanceNote">Computed from every {{chamberName}} roll call this Congress. Most votes split along party lines, so members agree with nearly every Democrat most of the time. The telling column is <b>contested votes</b>: roll calls where at least 10% of Democrats broke from the rest of their party.</p>
     </div>
     <div class="tally" id="alignTiles"></div>
     <div class="handles"><table class="align-t">
@@ -138,459 +115,288 @@ img{max-width:100%}
     </table></div>
     <p class="notice" id="alignTake" style="margin:0"></p>
     <div>
-      <h3 style="font-size:1rem;margin-bottom:8px">Ties to House Democratic leader Hakeem Jeffries</h3>
-      <ul class="plain">
-        <li>Voted for Jeffries for Speaker when the 119th Congress opened (Jan 3, 2025), and was one of five Democrats who formally nominated him for Speaker in the caucus vote on Nov 18, 2026. <a class="src" href="https://clerk.house.gov/Votes/20252" target="_blank" rel="noopener">Roll call</a> <a class="src" href="https://www.nbcnews.com/politics/congress/democrats-formally-nominate-rep-hakeem-jeffries-paving-way-first-black-rcna609619" target="_blank" rel="noopener">NBC News</a></li>
-        <li>Received $74,942 from Jeffries' committees: $56,942 through the Jeffries Battleground Protection Fund (2025–26), $10,000 from his leadership PAC (2024) and $8,000 from Jeffries for Congress (both cycles), per FEC filings. <a class="src" href="money.html">Money tab</a></li>
-        <li>Hosted Jeffries in the district for a roundtable with veterans and local leaders (Mar 2026). <a class="src" href="https://tran.house.gov/media/press-releases/icymi-leader-hakeem-jeffries-joins-us-representative-derek-tran-roundtable" target="_blank" rel="noopener">Source</a></li>
-        <li>Pointed to Jeffries' proposal on Israel aid in his statement backing the Massie amendment (Jul 2026). <a class="src" href="https://tran.house.gov/media/press-releases/representative-derek-tran-supports-massie-amendment-block-us-military-funding" target="_blank" rel="noopener">Source</a></li>
-        <li>Issued a statement praising Jeffries' election as the Democratic nominee for Speaker (Nov 18, 2026). <a class="src" href="https://tran.house.gov/media/press-releases/rep-derek-tran-statement-hakeem-jeffries-historic-election-democratic-nominee" target="_blank" rel="noopener">Source</a></li>
-      </ul>
+      <h3 style="font-size:1rem;margin-bottom:8px">Ties to {{leaderTitle}} {{leaderName}}</h3>
+      <ul class="plain" id="leaderTies"></ul>
     </div>
-    <p class="muted" style="margin:0;font-size:.8rem">Vote data: House Clerk roll calls, counting only votes where both members voted Yea or Nay. Israel-related votes are the 12 roll calls whose titles mention Israel, Iran, Gaza, Hamas, antisemitism or the International Criminal Court. Track AIPAC totals read <span id="aipacRead">Nov 23, 2026</span><span id="aipacSrc"></span>; see the <a href="money.html">Money tab</a> for details.</p>
+    <p class="muted" style="margin:0;font-size:.8rem">Vote data: <a href="{{voteSourceUrl}}" target="_blank" rel="noopener">{{voteSource}} roll calls</a>, counting only votes where both members voted Yea or Nay. Israel-related votes are the roll calls whose titles mention Israel, Iran, Gaza, Hamas, antisemitism or the International Criminal Court. Track AIPAC totals: see the <a href="money.html#compare">Money tab</a>. <a href="votes.html">See every vote →</a> · <a href="establishment.html">Establishment check →</a></p>
+  </section>
+
+  <section id="recent">
+    <div class="sec-head">
+      <span class="eyebrow">Latest</span>
+      <h2>Recent statements</h2>
+      <p>Press releases from {{domain}}, newest first.</p>
+    </div>
+    <ul class="plain" id="recentList"></ul>
+    <p><a href="statements.html">All statements →</a></p>
   </section>
 
   <section id="channels">
     <div class="sec-head">
-      <span class="eyebrow">Reach him</span>
+      <span class="eyebrow">Reach {{obj}}</span>
       <h2>Offices and official channels</h2>
+      <p>The fastest way to ask about upcoming events, or to say where you stand on a bill.</p>
     </div>
-    <div class="offices" id="officesOverview"></div>
-    <div class="handles"><table>
-      <thead><tr><th>Platform</th><th>House office</th><th>Campaign</th></tr></thead>
-      <tbody>
-        <tr><td>Website</td><td><a href="https://tran.house.gov">tran.house.gov</a></td><td><a href="https://www.derektranforcongress.com">derektranforcongress.com</a></td></tr>
-        <tr><td>X</td><td><a href="https://twitter.com/RepDerekTranCA">@RepDerekTranCA</a></td><td><a href="https://twitter.com/DerekTranCA45">@DerekTranCA45</a></td></tr>
-        <tr><td>Instagram</td><td><a href="https://www.instagram.com/repderektran">@repderektran</a></td><td><a href="https://instagram.com/DerekTranCA">@DerekTranCA</a></td></tr>
-        <tr><td>Facebook</td><td><a href="https://www.facebook.com/CongressmanTran">CongressmanTran</a></td><td><a href="https://facebook.com/DerekTranForCongress">DerekTranForCongress</a></td></tr>
-        <tr><td>Threads</td><td><span class="pill s-unv">Unverified</span> account exists; handle not linked</td><td>—</td></tr>
-      </tbody>
+    <div class="offices" id="offices"></div>
+    <div class="handles" id="handleBox"><table>
+      <thead><tr><th>Platform</th><th>{{officeNoun}}</th><th>Campaign</th></tr></thead>
+      <tbody id="handleRows"></tbody>
     </table></div>
-  </section>
-  </div>
-
-  <div id="view-townhalls" class="view" hidden>
-  <section>
-    <div class="sec-head">
-      <span class="eyebrow">Town halls</span>
-      <h2>When he meets constituents</h2>
-      <p>Public town halls and forums where Tran answers questions in person, by phone or online. Upcoming events are added as his office announces them.</p>
-    </div>
-    <div class="tally" id="thTiles"></div>
-    <h3 class="subhead">Upcoming</h3>
-    <div id="thUpcoming"><p class="muted">Loading events…</p></div>
-    <details class="editor" id="thEditor" hidden>
-      <summary>Add an event</summary>
-      <form id="thForm" novalidate>
-        <div class="fgrid">
-          <label>Date<input id="th-date" type="date" required></label>
-          <label>Time<input id="th-time" type="text" placeholder="6:00–7:30 PM"></label>
-          <label>Type<select id="th-type"><option>In person</option><option>Telephone</option><option>Virtual</option><option>Televised</option><option>Roundtable</option></select></label>
-          <label class="wide">Title<input id="th-title" type="text" required placeholder="Town hall on health care costs"></label>
-          <label>City<input id="th-city" type="text" placeholder="Garden Grove"></label>
-          <label class="wide">Address or call-in details<input id="th-addr" type="text"></label>
-          <label class="wide">RSVP or info link<input id="th-url" type="url" placeholder="https://"></label>
-          <label class="wide">Source<input id="th-src" type="url" placeholder="https:// link to the announcement"></label>
-        </div>
-        <div class="formrow"><button class="btn" type="submit">Save event</button><span class="muted" id="thMsg" role="status"></span></div>
-      </form>
-    </details>
+    <p class="muted" style="margin:0;font-size:.8rem" id="channelNote"></p>
   </section>
 
-  <section>
-    <div class="sec-head">
-      <span class="eyebrow">Every month</span>
-      <h2>Mobile office hours</h2>
-      <p>His staff, not Tran himself, hold regular drop-in hours for help with federal agencies: Social Security, Medicare, VA benefits, immigration cases, the IRS and passports. No appointment needed.</p>
-    </div>
-    <div class="moh" id="moh"></div>
-    <p class="muted" style="margin:0;font-size:.8rem">Schedule from <a href="https://tran.house.gov/mobile-office-hours" target="_blank" rel="noopener">tran.house.gov/mobile-office-hours</a>. Check there or call the Cypress office before going; dates can change around holidays.</p>
-  </section>
-
-  <section>
-    <div class="sec-head">
-      <span class="eyebrow">Record</span>
-      <h2>Past town halls and forums</h2>
-    </div>
-    <div id="thPast"></div>
-  </section>
-
-  <section>
-    <div class="sec-head">
-      <span class="eyebrow">Contact</span>
-      <h2>Call or write his offices</h2>
-      <p>The fastest way to ask when his next town hall is, or to tell him where you stand on a bill. Staff log calls by issue.</p>
-    </div>
-    <div class="offices" id="officesTH"></div>
-  </section>
-  </div>
-
-  <footer>Compiled from public records: tran.house.gov press releases, congress.gov, NBC Los Angeles, Ballotpedia and campaign finance data. Social posts were not read directly; stances come from official releases and press coverage. This page is a nonpartisan summary, not an endorsement.</footer>
+  <footer>Compiled from public records: {{voteSource}} roll calls, {{domain}} press releases, FEC filings<span data-only="house">, Census and local boundary files</span>, and {{poss}} official and campaign sites. This page is a nonpartisan summary, not an endorsement.</footer>
 </div>
-
+<div class="tip" id="tip" hidden></div>
 <script>
-const H = "https://tran.house.gov/media/press-releases/";
-const CLERK_V = n => "https://clerk.house.gov/Votes/"+n;
+const el = (tag, props = {}, kids = []) => { const n = Object.assign(document.createElement(tag), props); kids.forEach(k => n.append(k)); return n; };
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt = n => Number(n).toLocaleString("en-US");
+const usd = n => "$" + Math.round(n).toLocaleString("en-US");
+const getJSON = p => fetch(p).then(r => { if(!r.ok) throw 0; return r.json(); });
+const longDate = iso => new Date(iso+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
+const NOT_BUILT = (what) => `<p class="muted"><span class="soon">Coming soon</span> ${what} is still being researched.</p>`;
 
-const CAMP = "https://web.archive.org/web/20241101090742/https://www.derektranforcongress.com/";   // his 2024 campaign site as archived Nov 1, 2024 (four days before the election)
-const CLERK = n => "https://clerk.house.gov/Votes/"+n;
-const PROMISES = [
-  {issue:"District funding",status:"delivered",promise:"Bring federal dollars home to CA-45 communities.",src:H+"house-appropriations-committee-advances-over-14-million-representative-trans",
-   actions:[
-    {text:"House appropriators advanced more than $14 million for 15 of his community projects (Jul 2025).",u:H+"house-appropriations-committee-advances-over-14-million-representative-trans"},
-    {text:"Delivered more than $3 million for the Del Amo Boulevard bridge in Cerritos.",u:H+"representative-tran-brings-over-3-million-cerritos-del-amo-bridge-boulevard"},
-    {text:"Secured $1 million for Garden Grove firefighters.",u:H+"representative-derek-tran-secures-1-million-garden-grove-firefighters"},
-    {text:"Delivered $1 million to Cypress for flood prevention.",u:H+"representative-tran-delivers-1-million-cypress-flood-prevention-infrastructure"},
-    {text:"Presented $850,000 to the Buena Park Library District.",u:H+"representative-tran-presents-850000-buena-park-library-district-facility-and"},
-    {text:"Delivered nearly $1 million for public safety in Artesia.",u:H+"representative-tran-delivers-nearly-1-million-public-safety-artesia"},
-    {text:"GKN Aerospace chemical leak in Garden Grove: demanded answers from GKN with Rep. Robert Garcia (May 2026).",u:H+"representatives-tran-garcia-demand-answers-gkn-aerospace-garden-grove-chemical"},
-    {text:"Introduced H.R. 10108, the Hazardous Materials Transparency Act (Aug 2026).",u:"https://www.congress.gov/bill/119th-congress/house-bill/10108"},
-    {text:"Issued a statement on GKN's $125 million settlement (Oct 2026).",u:H+"representative-tran-issues-statement-gkns-125-million-settlement"}],
-   why:"Money was secured and delivered. The figures come from his office and were not independently audited."},
-  {issue:"Small business",status:"progress",promise:"small businesses are the backbone of our economy",quote:1,src:CAMP,
-   actions:[
-    {text:"His bill H.R. 5788 (504 Program Risk Oversight Act) passed the House on Jan 20, 2026, and was sent to the Senate.",u:H+"representative-tran-passes-bipartisan-bill-supporting-small-businesses"},
-    {text:"Cosponsored H.R. 787 (Plain Language in Contracting Act), which passed the House in June 2025.",u:H+"rep-derek-tran-celebrates-passage-key-legislation-cut-red-tape-small"},
-    {text:"Ranking Member of the Small Business oversight subcommittee.",u:H+"congressman-tran-announces-subcommittees-after-prestigious-appointments-house"}],
-   why:"His own bill cleared the House. It still needs Senate action."},
-  {issue:"Veterans & defense",status:"progress",promise:"Protect veterans' jobs and benefits and keep a strong national defense.",src:"https://tran.house.gov/media/press-releases/congressman-tran-announces-subcommittees-after-prestigious-appointments-house",
-   actions:[
-    {text:"Cosponsored the Major Richard Star Act (H.R. 2102), which passed the House 392-18 on Nov 12, 2026.",u:"https://clerk.house.gov/Votes/2026323"},
-    {text:"Voted yes on the final FY26 NDAA (Dec 10, 2025), citing the 3.8% troop pay raise. He had voted no on the House version in September.",u:H+"representative-tran-votes-raise-troop-pay-improve-military-readiness-national"},
-    {text:"His first bill, H.R. 1637 (Protect Veteran Jobs Act), has had no action since it was introduced on Feb 26, 2025.",u:"https://www.congress.gov/bill/119th-congress/house-bill/1637"}],
-   why:"The defense and benefits wins are real, but his veteran-jobs bill is stalled."},
-  {issue:"Social Security & Medicare",status:"progress",promise:"Oppose cuts to Social Security and Medicare.",src:CAMP,
-   actions:[
-    {text:"Voted no on H.R. 1 (May 22 and Jul 3, 2025).",u:CLERK("2025190")},
-    {text:"Voted yes on H.R. 5348 (Social Security Child Protection Act), which passed 386-0 on Dec 1, 2025.",u:"https://clerk.house.gov/Votes/2025306"},
-    {text:"Introduced H.R. 6678 (Senior Legal Hotline Act). Held town halls in Cerritos, Buena Park and Westminster.",u:H+"representative-derek-tran-holds-town-hall-meeting"}],
-   why:"His votes have been defensive and consistent. No bill he leads has become law."},
-  {issue:"Vietnamese-American community & human rights",status:"progress",promise:"Stand firm against Chinese Communist rule and push for human rights in Vietnam.",src:CAMP,
-   actions:[
-    {text:"Introduced Black April resolutions (2025 and 2026), a Vietnamese Heritage Flag resolution and H.R. 7969 (Combating CCP Influence Act).",u:H+"representative-tran-introduces-bipartisan-resolution-recognizing-51st"},
-    {text:"Got an appropriations amendment passed to fund the U.S.–Vietnam Human Rights Dialogue (Jul 2026).",u:H+"representative-tran-holds-vietnamese-government-accountable-human-rights"},
-    {text:"Wrote letters about prisoners of conscience, including journalist Le Huu Minh Tuan, and announced a State Department response in Oct 2026.",u:H+"representative-tran-secures-state-department-response-vietnams-human-rights"}],
-   why:"There is steady activity, but none of the resolutions has been adopted yet."},
-  {issue:"Cost of living & tariffs",status:"stalled",promise:"Lower costs for families, with tax cuts for middle-class families and small businesses.",src:"https://abc7.com/post/congressman-derek-tran-campaigns-election-californias-45th-congressional-district-crowded-gop-field/18726383/",
-   actions:[
-    {text:"Co-founded the Lowering Costs Caucus with Reps. Landsman and Scholten (Jun 2025).",u:H+"representatives-tran-landsman-and-scholten-launch-congressional-caucus-lower"},
-    {text:"Introduced H.R. 4746 (Baby Food Tax Relief Act). Cosponsored the Toll of Tariffs Act, Stop Price Gouging in Grocery Stores Act and Stop the Trump Electricity Price Hikes Act.",u:H+"representative-tran-helps-introduce-legislation-assess-true-costs-trumps"}],
-   why:"His central campaign issue, but none of these bills has had committee action."},
-  {issue:"Health care",status:"stalled",promise:"healthcare should be a right, not a privilege",quote:1,src:CAMP,
-   actions:[
-    {text:"Voted no on both House votes on the One Big Beautiful Bill Act (Medicaid and ACA cuts), which passed anyway.",u:CLERK("2025145")},
-    {text:"Cosponsored H.R. 4849 to make enhanced ACA credits permanent. He voted yes when a 3-year extension (H.R. 1834) passed the House 230-196 on Jan 8, 2026.",u:CLERK("202611")},
-    {text:"Voted no on funding bills that let ACA credits lapse.",u:H+"representative-tran-rejects-spending-proposal-fails-address-health-care-crisis"}],
-   why:"His votes match the promise, but the cuts became law and the credit extension hasn't been enacted."},
-  {issue:"Housing",status:"stalled",promise:"ensure that all workers can afford housing",quote:1,src:CAMP,
-   actions:[
-    {text:"Introduced H.R. 10613 (Housing COST Act, Sep 2026). Cosponsored the Affordable Housing Credit Improvement Act.",u:H+"representative-tran-introduces-legislation-lower-housing-costs-southern"},
-    {text:"Delivered $250K for affordable housing in Orange. Urged the President to sign the ROAD to Housing Act.",u:H+"representative-derek-tran-urges-president-sign-21st-century-road-housing-act"}],
-   why:"None of the housing bills he leads or cosponsors has advanced."},
-  {issue:"Immigration",status:"stalled",promise:"Oppose mass deportations, support reform with a path to citizenship, and hold ICE accountable.",src:"https://en.wikipedia.org/wiki/Derek_Tran",
-   actions:[
-    {text:"Introduced H.R. 9883 (Private Detention Corporate Accountability Act). Cosponsored ICE and CBP accountability bills. All remain in committee.",u:H+"representative-tran-introduces-legislation-hold-private-ice-detention-centers"},
-    {text:"Voted no on DHS funding without ICE reforms (Jan–Mar 2026), per his office.",u:H+"representative-tran-opposes-funding-ice-demands-reforms-protect-us-citizens"},
-    {text:"Voted yes on the Laken Riley Act (Jan 22, 2025), breaking with most Democrats.",u:CLERK("202523")}],
-   why:"His accountability bills haven't moved, and his Laken Riley yes vote complicates his record on this promise."},
-  {issue:"Ethics & anti-corruption",status:"stalled",promise:"Derek will fight to end this culture of corruption in our politics.",quote:1,src:CAMP,
-   actions:[
-    {text:"Cosponsored stock-trading bans H.R. 7852 (No Getting Rich in Congress Act) and STOCK Act 2.0.",u:H+"representative-tran-introduces-no-getting-rich-congress-act-combat-corruption"},
-    {text:"Voted yes on the Epstein Files Transparency Act (passed 427-1, Nov 18, 2025).",u:CLERK("2025289")},
-    {text:"Voted yes on the Republican-led Stop Insider Trading Act (H.R. 7008), which passed 232-198 on Jul 22, 2026. Democrats opposed it 13-198.",u:CLERK("2026280")}],
-   why:"The House passed a stock-trading bill with his vote, but it was the Republican version most Democrats opposed. The bans he cosponsored have not advanced."},
-  {issue:"Reproductive rights",status:"stalled",promise:"Codify a national right to abortion care.",src:CAMP,
-   actions:[
-    {text:"Cosponsored H.R. 12 (Women's Health Protection Act), the Right to IVF Act and the Stop Comstock Act.",u:H+"icymi-representative-tran-votes-protect-womens-choice-health-care"}],
-   why:"He is on record in support, but all three bills are in committee and have little chance in this House."},
-];
+TRACKER.ready.then(M => {
+const P = M.profile || {}, md = s => TRACKER.md(s, M), $ = id => document.getElementById(id);
 
-const fmtDate = (d,approx) => {
-  const dt = new Date(d+"T12:00:00");
-  return approx ? dt.toLocaleDateString("en-US",{month:"short",year:"numeric"})
-                : dt.toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
-};
-const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const STATUS = {delivered:["Delivered","s-delivered"],progress:["In progress","s-progress"],stalled:["Stalled","s-stalled"],contradicted:["Contradicted","s-contradicted"],none:["No action found","s-none"]};
+// ---------- Header (member fields in tracker.config.json; extra facts and sources in profile) ----------
+if(P.lede) $("lede").innerHTML = md(P.lede);
+const facts = [
+  ["Party", M.party], ["In office since", M.since],
+  M.senate ? ["State", M.stateName] : ["District", M.districtLabel + (M.area && M.area !== M.districtLabel ? ", " + M.area : "")],
+  ["Committees", M.committees.join("; ")],
+  ...(P.facts || []).map(f => [f.label, f.value]),
+].filter(([, v]) => v);
+$("facts").innerHTML = facts.map(([l, v]) => `<span><b>${esc(l)}</b> ${md(v)}</span>`).join("");
+$("factSrc").innerHTML = (P.factSources || []).map(s => `<li>${md(s)}</li>`).join("");
+$("factSrc").hidden = !(P.factSources || []).length;
+if(P.factsNote) $("verifyNote").insertAdjacentHTML("afterend", " " + md(P.factsNote));   // e.g. what an Unverified label means
+getJSON("data/fec/summary.json").then(f => { $("fecThrough").textContent = f.cycles?.all?.through ? `(FEC filings through ${longDate(f.cycles.all.through)})` : ""; })
+  .catch(() => { $("fecThrough").textContent = "(once FEC filings are loaded)"; });
 
-function renderPromises(){
-  const tally = document.getElementById("tally"), box = document.getElementById("promises");
-  if(!PROMISES){
-    tally.innerHTML = Object.values(STATUS).map(([l])=>`<div class="tile"><span class="n">—</span><span class="l">${l}</span></div>`).join("");
-    box.innerHTML = `<div class="pending"><b>Scorecard in progress</b>Campaign promises and his voting record are still being matched up. This section fills in next.</div>`;
-    return;
+// ---------- Quick verdicts ----------
+function renderVerdicts(ov, est){
+  const tiles = ov.tiles.map(t => ({...t, go:"See the evidence →"}));
+  tiles.push(est && est.headline
+    ? {q: est.question || "Establishment Democrat?", v: verdict(est.headline), href: "establishment.html", go: "Open the Establishment tab →", rule: est.rule || est.why || ""}
+    : {q: "Establishment Democrat?", v: "See the Establishment page", href: "establishment.html", go: "Open the Establishment tab →", rule: "", pending: true});
+  $("vbtns").innerHTML = tiles.map(t => `<a class="vbtn${t.pending?" pending":""}" href="${esc(t.href)}">
+    <span class="pp-q">${esc(t.q)}</span><span class="pp-v">${esc(verdict(t.v))}</span>
+    ${t.rule?`<span class="vrule">${esc(t.rule)}</span>`:""}<span class="vgo">${esc(t.go)}</span></a>`).join("");
+}
+Promise.all([getJSON("data/overview.json"), getJSON("data/establishment.json").catch(() => null)])
+  .then(([ov, est]) => renderVerdicts(ov, est))
+  .catch(() => { $("vbtns").innerHTML = NOT_BUILT("The quick verdicts"); });
+
+// ---------- District map (House only; profile.map holds the curated text and labels) ----------
+if(M.house){
+  const MP = P.map || {};
+  if(MP.heading) $("mapHead").innerHTML = md(MP.heading);
+  $("mapIntro").innerHTML = md(MP.intro || "");
+  $("mapNote").innerHTML = md(MP.note || "Shaded areas are the parts of each community inside the district; the dark line is the district boundary. Shares are by land area, not population; slivers under 5% are left out as boundary-file mismatches. District lines: U.S. Census Bureau TIGERweb.");
+  const MODES = MP.modes && MP.modes.length ? MP.modes : [{key:"new", label:"New lines"}, {key:"old", label:"Current lines"}];
+  $("mapToggle").innerHTML = MODES.map((m, i) => `<button class="chip-btn" type="button" data-m="${esc(m.key)}" aria-pressed="${i===0}">${esc(m.label)}</button>`).join("");
+  $("mapToggle").hidden = MODES.length < 2;
+  // Population by place (optional): {mode, total, parts: [[kind, label, residents, note]], source}
+  const POP = MP.population || null;
+  const KINDS = Object.assign({la:"City communities", city:"Other cities", uninc:"Unincorporated areas", other:"Other"}, MP.kinds || {});
+  const MIN = 0.05;   // shares below this are boundary-file slivers, not real parts of the district
+  const NEIGHBORS = MP.neighbors || [];
+  const SMALL = new Set(MP.smallLabels || []);
+  // Optional: colorBy "county" shades and groups places by county (GROUPS: {code: name}) instead of by kind of place;
+  // placeStats {mode, places: {name: {pop, pct, note}}} shows residents and the share of each city's population in place of
+  // area shares for that map; nudge {name: [dx, dy]} moves crowded labels; leavingNote replaces the computed "leaving" line.
+  const BYC = MP.colorBy === "county", GROUPS = MP.groups || {};
+  const KEYS = BYC ? Object.keys(GROUPS) : ["la","city","uninc"], LAB = k => BYC ? GROUPS[k] : KINDS[k];
+  const cls = p => BYC ? p.c : p.kind, NUDGE = MP.nudge || {};
+  const STATS = MP.placeStats || null, stat = (p, mode) => STATS && STATS.mode === mode ? (STATS.places || {})[p.n] : null;
+  let GEO = null;
+  function renderMap(mode){
+    const svg = $("map");
+    if(!GEO){ svg.innerHTML = `<text x="450" y="300" text-anchor="middle" class="lbl">Loading map…</text>`; return; }
+    const {w,h,ky} = GEO;
+    const inMode = p => p[mode] && p[mode].share >= MIN;
+    svg.setAttribute("viewBox",`0 0 ${w} ${h}`);
+    let g = `<defs><clipPath id="cdclip"><path d="${GEO.cd[mode]}"/></clipPath></defs>`;
+    g += `<rect class="water" x="0" y="0" width="${w}" height="${h}"/>`;
+    g += `<path class="land other" d="${GEO.other||""}"/>` + Object.entries(GEO.counties).map(([k,d]) => `<path class="land ${k}" d="${d}"/>`).join("");
+    g += GEO.places.map(p => `<path class="city" d="${p.d}"/>`).join("");
+    g += `<g clip-path="url(#cdclip)">${GEO.places.filter(inMode).map(p =>
+        `<path class="incd ${cls(p)}" d="${p.d}"><title>${esc(p.n)}: ${stat(p,mode) ? `${fmt(stat(p,mode).pop)} residents in the district (${stat(p,mode).pct}% of the city)` : `${Math.round(p[mode].share*100)}% of its area in the district`}</title></path>`).join("")}</g>`;
+    if(BYC) g += Object.keys(GROUPS).slice(0,1).map(k => GEO.counties[k] ? `<path class="county-line" d="${GEO.counties[k]}"/>` : "").join("");
+    g += `<path class="cd-outline" d="${GEO.cd[mode]}"/>`;
+    g += GEO.places.filter(p => !p[mode] && NEIGHBORS.includes(p.n) && p.ctr[0]>40 && p.ctr[0]<w-40 && p.ctr[1]>20 && p.ctr[1]<h-20)
+      .map(p => `<text class="nb" x="${p.ctr[0]}" y="${p.ctr[1]}" text-anchor="middle">${esc(p.n)}</text>`).join("");
+    g += GEO.places.filter(p => inMode(p) && p[mode].share >= 0.3).map(p => {
+      const [dx,dy] = NUDGE[p.n] || [0,0], [x,y] = [p[mode].lbl[0]+dx, p[mode].lbl[1]+dy], note = (stat(p,mode) || {}).note;
+      return `<text class="lbl${SMALL.has(p.n)?" sm":""}" x="${x}" y="${y+4}" text-anchor="middle">${esc(p.n)}${note?`<tspan class="note" x="${x}" dy="14">${esc(note)}</tspan>`:""}</text>`; }).join("");
+    const mi5 = 5/69*ky, sy = h-28;
+    g += `<g class="scale"><line x1="24" y1="${sy}" x2="${24+mi5}" y2="${sy}"/><line x1="24" y1="${sy-6}" x2="24" y2="${sy+6}"/><line x1="${24+mi5}" y1="${sy-6}" x2="${24+mi5}" y2="${sy+6}"/><text x="24" y="${sy-12}">5 miles</text></g>`;
+    g += `<text class="compass" x="${w-28}" y="34" text-anchor="middle">N ↑</text>`;
+    svg.innerHTML = g;
+
+    const bar = $("countyBar"), lists = $("cityLists");
+    const kindsHere = KEYS.filter(k => GEO.places.some(p => cls(p)===k && inMode(p)));
+    if(POP && POP.mode === mode){
+      bar.innerHTML = `<div class="cb-track" role="img" aria-label="District population by place">${POP.parts.map(([k,,n]) => `<span class="cb ${k}" style="width:${n/POP.total*100}%"></span>`).join("")}</div>
+        <div class="cb-legend">${POP.parts.map(([k,l,n,note]) => `<span><i class="sw ${k}"></i>${esc(l)} · ${fmt(n)} residents (${(n/POP.total*100).toFixed(1)}%${note?`; ${esc(note)}`:""})</span>`).join("")}<span class="muted">Total ${fmt(POP.total)}${POP.source?`, ${esc(POP.source)}`:""}</span></div>`;
+    } else {
+      bar.innerHTML = `<div class="cb-legend">${kindsHere.map(k => `<span><i class="sw ${k}"></i>${esc(LAB(k))}</span>`).join("")}${POP?`<span class="muted">Population for these lines isn't shown; the source covers only the other map.</span>`:""}</div>`;
+    }
+    const other = MODES.find(m => m.key !== mode)?.key;
+    const groups = KEYS.map(k => {
+      const size = p => stat(p,mode) ? stat(p,mode).pop : p[mode].share;
+      const items = GEO.places.filter(p => cls(p)===k && inMode(p)).sort((a,b) => size(b) - size(a) || a.n.localeCompare(b.n));
+      if(!items.length) return "";
+      return `<div class="citycol"><h3><i class="sw ${k}"></i>${esc(LAB(k))}</h3><ul>${items.map(p => {
+        const st = stat(p,mode);
+        const isNew = st && "old" in st ? !st.old : mode===MODES[0].key && other && !(p[other] && p[other].share >= MIN);   // placeStats "old": in the previous district
+        const sh = st ? (st.pct >= 100 ? "whole city" : `${st.pct}% of city`) : p[mode].share >= 0.95 ? "whole area" : `${Math.round(p[mode].share*100)}% of area`;
+        return `<li><span>${esc(p.n)}${p.cdp && BYC?' <span class="muted">(unincorporated)</span>':""}${isNew?' <span class="pill s-progress">New</span>':""}</span><span class="mono muted">${sh}</span></li>`; }).join("")}</ul></div>`;
+    }).join("");
+    const leaving = mode===MODES[0].key && other ? GEO.places.filter(p => p[other] && p[other].share >= MIN && !(p[mode] && p[mode].share >= MIN)).map(p => p.n) : [];
+    lists.innerHTML = groups + (mode===MODES[0].key && MP.leavingNote ? `<p class="muted" style="margin:0;font-size:.85rem;grid-column:1/-1">${md(MP.leavingNote)}</p>`
+      : leaving.length ? `<p class="muted" style="margin:0;font-size:.85rem;grid-column:1/-1">Mostly or entirely leaving the district under the new lines (under 5% of the area remains): ${leaving.map(esc).join(", ")}.</p>` : "");
   }
-  const counts = {}; PROMISES.forEach(p=>counts[p.status]=(counts[p.status]||0)+1);
-  tally.innerHTML = Object.entries(STATUS).map(([k,[l]])=>`<div class="tile"><span class="n">${counts[k]||0}</span><span class="l">${l}</span></div>`).join("");
-  box.innerHTML = PROMISES.map(p=>`
+  $("mapToggle").addEventListener("click", e => {
+    const b = e.target.closest("button"); if(!b) return;
+    document.querySelectorAll("#mapToggle button").forEach(x => x.setAttribute("aria-pressed", x===b));
+    renderMap(b.dataset.m);
+  });
+  renderMap(MODES[0].key);
+  getJSON("data/geo/map.json").then(d => { GEO = d; renderMap(document.querySelector('#mapToggle [aria-pressed="true"]').dataset.m); })
+    .catch(() => { $("map").innerHTML = `<text x="450" y="300" text-anchor="middle" class="lbl">District map coming soon.</text>`; });
+}
+
+// ---------- Statewide context (Senate only; profile.state: {heading, intro, facts: [{label, value}], note}) ----------
+if(M.senate && P.state && (P.state.intro || (P.state.facts || []).length)){
+  $("state").hidden = false;
+  if(P.state.heading) $("stateHead").innerHTML = md(P.state.heading);
+  $("stateIntro").innerHTML = md(P.state.intro || "");
+  $("stateFacts").innerHTML = (P.state.facts || []).map(f => `<span><b>${esc(f.label)}</b> ${md(f.value)}</span>`).join("");
+  $("stateNote").innerHTML = md(P.state.note || "");
+}
+
+// ---------- Committees and caucuses (profile.committees, profile.caucuses) ----------
+const COMMS = (P.committees && P.committees.length) ? P.committees : M.committees.map(n => ({name: n}));
+$("commGrid").innerHTML = COMMS.length ? COMMS.map(c => `<article class="comm"><h3>${esc(c.name)}</h3>
+  ${(c.subs || []).length ? `<ul>${c.subs.map(s => `<li><b>${esc(s.name)}</b> ${s.pill ? `<span class="pill s-progress">${esc(s.role)}</span>` : `<span class="muted">· ${esc(s.role || "member")}</span>`}${s.src ? ` <a class="src" href="${esc(s.src)}" target="_blank" rel="noopener">Source</a>` : ""}</li>`).join("")}</ul>` : ""}
+  ${c.blurb ? `<p class="muted">${md(c.blurb)}</p>` : ""}</article>`).join("")
+  : `<p class="muted"><span class="soon">Coming soon</span> Committee assignments are being added.</p>`;
+// Each caucus: [name, role] or {name, role, what, src, unv} (src links the role; unv marks it Unverified)
+const CAUCUSES = (P.caucuses || []).map(c => Array.isArray(c) ? {name: c[0], role: c[1]} : c);
+const WHAT = CAUCUSES.some(c => c.what);
+$("caucusWhat").hidden = !WHAT;
+$("caucusRows").innerHTML = CAUCUSES.map(c => `<tr><td>${esc(c.name)}</td><td>${esc(c.role)}${c.src ? ` <a class="src" href="${esc(c.src)}" target="_blank" rel="noopener">Source</a>` : ""}${c.unv ? ' <span class="pill s-unv">Unverified</span>' : ""}</td>${WHAT ? `<td>${esc(c.what || "")}</td>` : ""}</tr>`).join("");
+$("caucusBox").hidden = $("caucusEb").hidden = $("caucusLede").hidden = !CAUCUSES.length;
+$("commNote").innerHTML = md(P.committeesNote || "");
+
+// ---------- Promise scorecard ----------
+if(P.promisesIntro) $("promiseIntro").innerHTML = md(P.promisesIntro);
+const STATUS = {delivered:["Delivered","s-delivered"], progress:["In progress","s-progress"], stalled:["Stalled","s-stalled"], contradicted:["Contradicted","s-contradicted"], none:["No action found","s-none"]};
+const KIND = {explicit: `${M.Poss} words${P.promiseYear ? ", " + P.promiseYear : ""}`, record: `Ran on ${M.poss} record, not a stated pledge`, paraphrase: "Promise, paraphrased"};
+getJSON("data/promises_built.json").then(d => {
+  const counts = {}; d.promises.forEach(p => counts[p.status] = (counts[p.status] || 0) + 1);
+  $("tally").innerHTML = Object.entries(STATUS).map(([k,[l]]) => `<div class="tile"><span class="n">${counts[k] || 0}</span><span class="l">${l}</span></div>`).join("");
+  const link = (u, t) => `<a class="src" href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>`;
+  $("promises").innerHTML = d.promises.map(p => `
     <article class="promise">
       <div class="top"><h3>${esc(p.issue)}</h3><span class="pill ${STATUS[p.status][1]}">${STATUS[p.status][0]}</span></div>
-      <p style="margin:0"><span class="eyebrow">Promise</span> ${p.quote?`<q>${esc(p.promise)}</q>`:esc(p.promise)} <a class="src" href="${esc(p.src)}" target="_blank" rel="noopener">Source</a></p>
-      <ul>${p.actions.map(a=>`<li>${esc(a.text)}${a.u?` <a class="src" href="${esc(a.u)}" target="_blank" rel="noopener">Source</a>`:""}</li>`).join("")}</ul>
+      <p style="margin:0"><span class="eyebrow">${esc(KIND[p.kind])}</span> ${p.quote ? `<q>${esc(p.promise)}</q>` : esc(p.promise)} ${p.src.map(s => link(s.u, s.label)).join(" ")}</p>
+      <ul>${p.actions.map(a => `<li>${esc(a.text)} ${link(a.u, "Source")}</li>`).join("")}</ul>
       <p class="muted" style="margin:0;font-size:.85rem">${esc(p.why)}</p>
     </article>`).join("");
-}
-// District places. pop/pct = 2027 (Prop 50) lines; old = in 2023–26 district ("w" whole, "p" partial)
-const PLACES = [
-  {n:"Artesia",c:"LA",lat:33.866,lon:-118.083,pop:16447,pct:100,old:"w",lab:"l"},
-  {n:"Cerritos",c:"LA",lat:33.858,lon:-118.065,pop:49696,pct:100,old:"w",lab:"r"},
-  {n:"Hawaiian Gardens",c:"LA",lat:33.831,lon:-118.073,pop:14230,pct:100,old:"w",lab:"l"},
-  {n:"Lakewood",c:"LA",lat:33.853,lon:-118.134,pop:21696,pct:26.23,old:"p",lab:"b"},
-  {n:"Norwalk",c:"LA",lat:33.902,lon:-118.082,pop:55065,pct:53.37,old:"",lab:"r"},
-  {n:"Buena Park",c:"OC",lat:33.868,lon:-117.998,pop:84188,pct:100,old:"w",lab:"r"},
-  {n:"Cypress",c:"OC",lat:33.817,lon:-118.037,pop:50235,pct:100,old:"w",lab:"r"},
-  {n:"Fountain Valley",c:"OC",lat:33.709,lon:-117.954,pop:57120,pct:100,old:"w",lab:"r"},
-  {n:"Fullerton",c:"OC",lat:33.870,lon:-117.925,pop:65668,pct:45.63,old:"p",lab:"t"},
-  {n:"Garden Grove",c:"OC",lat:33.774,lon:-117.938,pop:172347,pct:100,old:"w",lab:"r"},
-  {n:"La Palma",c:"OC",lat:33.846,lon:-118.047,pop:15597,pct:100,old:"w",lab:"r"},
-  {n:"Los Alamitos",c:"OC",lat:33.803,lon:-118.072,pop:890,pct:7.55,old:"w",lab:"r"},
-  {n:"Midway City",c:"OC",lat:33.745,lon:-117.989,pop:8845,pct:100,old:"w",lab:"r",cdp:1},
-  {n:"Placentia",c:"OC",lat:33.872,lon:-117.870,pop:14884,pct:28.66,old:"w",lab:"t"},
-  {n:"Santa Ana",c:"OC",lat:33.746,lon:-117.868,pop:23846,pct:7.66,old:"",lab:"r"},
-  {n:"Seal Beach",c:"OC",lat:33.741,lon:-118.105,pop:607,pct:2.40,old:"",lab:"l"},
-  {n:"Stanton",c:"OC",lat:33.802,lon:-117.993,pop:13258,pct:34.83,old:"",lab:"r"},
-  {n:"Westminster",c:"OC",lat:33.759,lon:-117.994,pop:91083,pct:100,old:"w",lab:"l",note:"Little Saigon"},
-  {n:"Brea",c:"OC",lat:33.917,lon:-117.900,pop:0,old:"p",lab:"r"},
-  {n:"Yorba Linda",c:"OC",lat:33.889,lon:-117.813,pop:0,old:"p",lab:"l"},
-  {n:"Rossmoor",c:"OC",lat:33.786,lon:-118.081,pop:0,old:"w",lab:"l",cdp:1},
-];
-const COUNTY = {LA:{name:"Los Angeles County",pop:157730},OC:{name:"Orange County",pop:602338}};
-const fmt = n => n.toLocaleString("en-US");
-
-let GEO = null;
-const NEIGHBORS = ["Long Beach","Anaheim","Huntington Beach","Downey","Irvine","Orange","Whittier","Costa Mesa","Bellflower","La Mirada","Tustin"];
-// Small nudges (px) for labels that would collide in the crowded LA–OC border cities
-const NUDGE = {"Artesia":[-16,-8],"Cerritos":[12,0],"Hawaiian Gardens":[-30,4],"La Palma":[4,8],"Los Alamitos":[-8,6],"Rossmoor":[-6,-2],"Midway City":[4,12],"Stanton":[4,0]};
-function renderMap(mode){
-  const svg = document.getElementById("map");
-  if(!GEO){ svg.innerHTML = `<text x="450" y="300" text-anchor="middle" class="lbl off" style="text-decoration:none">Loading map…</text>`; return; }
-  const {w,h,x0,y1,kx,ky} = GEO;
-  const P = (lon,lat) => [(lon-x0)*kx, (y1-lat)*ky];
-  const inMap = p => mode==="new" ? p.pop>0 : !!p.old;
-  svg.setAttribute("viewBox",`0 0 ${w} ${h}`);
-  const byName = Object.fromEntries(PLACES.map(p=>[p.n,p]));
-  let g = `<defs><clipPath id="cdclip"><path d="${GEO.cd[mode]}"/></clipPath></defs>`;
-  g += `<rect class="water" x="0" y="0" width="${w}" height="${h}"/>`;
-  g += `<path class="land other" d="${GEO.other||""}"/><path class="land LA" d="${GEO.counties.LA}"/><path class="land OC" d="${GEO.counties.OC}"/>`;
-  g += GEO.places.map(p=>`<path class="city" d="${p.d}"/>`).join("");
-  // District portion of each city, filled by county
-  g += `<g clip-path="url(#cdclip)">${GEO.places.filter(p=>p[mode]).map(p=>{
-      const s = byName[p.n], pct = mode==="new" && s ? `${fmt(s.pop)} residents in district (${s.pct}% of city)` : `${Math.round(p[mode].share*100)}% of city's area in district`;
-      return `<path class="incd ${p.c}" d="${p.d}"><title>${esc(p.n)}: ${esc(pct)}</title></path>`;}).join("")}</g>`;
-  g += `<path class="county-line" d="${GEO.counties.LA}"/>`;
-  g += `<path class="cd-outline" d="${GEO.cd[mode]}"/>`;
-  // County names
-  const lax = 14, lay = 30, [ocx,ocy] = P(-117.80,33.705), [px,py] = P(-118.12,33.705);
-  g += `<text class="cty LA" x="${lax}" y="${lay}">Los Angeles County</text><text class="cty OC" x="${ocx}" y="${ocy}" text-anchor="end">Orange County</text>`;
-  // Neighbor labels (outside district)
-  g += GEO.places.filter(p=>!p[mode] && NEIGHBORS.includes(p.n) && p.ctr[0]>30 && p.ctr[0]<w-30 && p.ctr[1]>20 && p.ctr[1]<h-20)
-    .map(p=>`<text class="nb" x="${p.ctr[0]}" y="${p.ctr[1]}" text-anchor="middle">${esc(p.n)}</text>`).join("");
-  // District city labels
-  g += GEO.places.filter(p=>p[mode]).map(p=>{
-    const [nx,ny] = NUDGE[p.n]||[0,0], [x,y] = p[mode].lbl, note = byName[p.n]?.note;
-    return `<text class="lbl" x="${x+nx}" y="${y+ny+4}" text-anchor="middle">${esc(p.n)}${note?`<tspan class="note" x="${x+nx}" dy="14">${esc(note)}</tspan>`:""}</text>`;}).join("");
-  // 5-mile scale bar and north arrow
-  const mi5 = 5/69*ky, sy = h-28;
-  g += `<g class="scale"><line x1="24" y1="${sy}" x2="${24+mi5}" y2="${sy}"/><line x1="24" y1="${sy-6}" x2="24" y2="${sy+6}"/><line x1="${24+mi5}" y1="${sy-6}" x2="${24+mi5}" y2="${sy+6}"/><text x="24" y="${sy-12}">5 miles</text></g>`;
-  g += `<text class="compass" x="${w-28}" y="34" text-anchor="middle">N ↑</text>`;
-  svg.innerHTML = g;
-
-  // County split bar + city lists
-  const bar = document.getElementById("countyBar"), lists = document.getElementById("cityLists");
-  if(mode==="new"){
-    const tot = COUNTY.LA.pop+COUNTY.OC.pop, la = COUNTY.LA.pop/tot*100;
-    bar.innerHTML = `<div class="cb-track" role="img" aria-label="District population: ${la.toFixed(0)}% Los Angeles County, ${(100-la).toFixed(0)}% Orange County"><span class="cb LA" style="width:${la}%"></span><span class="cb OC" style="width:${100-la}%"></span></div>
-      <div class="cb-legend"><span><i class="sw LA"></i>Los Angeles County · ${fmt(COUNTY.LA.pop)} residents (${la.toFixed(1)}%)</span><span><i class="sw OC"></i>Orange County · ${fmt(COUNTY.OC.pop)} residents (${(100-la).toFixed(1)}%)</span></div>`;
-  } else {
-    bar.innerHTML = `<div class="cb-legend"><span><i class="sw LA"></i>Los Angeles County</span><span><i class="sw OC"></i>Orange County</span><span class="muted">Population split for the current lines isn't shown; the source covers only the 2027 map.</span></div>`;
-  }
-  lists.innerHTML = ["LA","OC"].map(c=>{
-    const items = PLACES.filter(p=>p.c===c && inMap(p)).sort((a,b)=>mode==="new"?b.pop-a.pop:a.n.localeCompare(b.n));
-    const added = mode==="new" ? PLACES.filter(p=>p.c===c&&p.pop>0&&!p.old).map(p=>p.n) : [];
-    return `<div class="citycol"><h3><i class="sw ${c}"></i>${COUNTY[c].name}</h3><ul>${items.map(p=>`<li><span>${esc(p.n)}${p.cdp?' <span class="muted">(unincorporated)</span>':""}${added.includes(p.n)?' <span class="pill s-progress">New</span>':""}</span><span class="mono muted">${mode==="new"?(p.pct<100?`${p.pct}% of city`:"whole city"):(p.old==="p"?"part":"whole")}</span></li>`).join("")}</ul></div>`;
-  }).join("") + (mode==="new" ? `<p class="muted" style="margin:0;font-size:.85rem;grid-column:1/-1">Dropped from the district by Prop 50: Brea, Yorba Linda and Rossmoor. Placentia shrinks to a partial city.</p>` : "");
-}
-document.getElementById("mapToggle").addEventListener("click",e=>{
-  const b = e.target.closest("button"); if(!b) return;
-  document.querySelectorAll("#mapToggle button").forEach(x=>x.setAttribute("aria-pressed",x===b));
-  renderMap(b.dataset.m);
-});
-
-const mapMode = () => document.querySelector('#mapToggle [aria-pressed="true"]').dataset.m;
-fetch("data/geo/map.json").then(r=>r.json()).then(d=>{ GEO = d; renderMap(mapMode()); })
-  .catch(()=>{ document.getElementById("map").innerHTML = `<text x="450" y="300" text-anchor="middle" class="lbl">The map didn't load. Reload the page to try again.</text>`; });
-// ---------- Navigation and views ----------
-const NAV = [["#overview","Overview","overview"],["money.html","Money"],["establishment.html","Establishment"],["#townhalls","Town halls","townhalls"],["stances.html","Stances"],["votes.html","Every vote"],["statements.html","Statements"],["sources.html","Sources"]];
-function route(){
-  const v = location.hash==="#townhalls" ? "townhalls" : "overview";
-  document.getElementById("view-overview").hidden = v!=="overview";
-  document.getElementById("view-townhalls").hidden = v!=="townhalls";
-  document.querySelector(".sitenav").innerHTML = NAV.map(([h,t,k])=>`<a href="${h}"${k===v?' aria-current="page"':""}>${t}</a>`).join("");
-  if(v==="townhalls") startTownHalls();
-}
-addEventListener("hashchange", ()=>{ route(); scrollTo(0,0); });
-
-// ---------- Offices ----------
-const OFFICES = [
-  {name:"Washington, D.C. office", lines:["1127 Longworth House Office Building","Washington, DC 20515"], phone:"(202) 225-2415", note:"Capitol Hill. Best for votes and legislation."},
-  {name:"Cypress district office", lines:["6803 International Ave., Suite 100","Cypress, CA 90630"], phone:"(714) 960-6483", note:"In the district. Best for town hall dates and casework."},
-];
-function renderOffices(id){
-  const el = document.getElementById(id); if(!el) return;
-  el.innerHTML = OFFICES.map((o,i)=>`<article class="office"><h3>${esc(o.name)}</h3>
-    <p class="addr">${o.lines.map(esc).join("<br>")}</p>
-    <div class="phone"><span class="mono">${esc(o.phone)}</span><button class="copy" type="button" data-copy="${esc(o.phone)}">Copy</button></div>
-    <p class="muted">${esc(o.note)}</p></article>`).join("") +
-    `<article class="office"><h3>Online</h3><p class="addr"><a href="https://tran.house.gov/contact/email-me" target="_blank" rel="noopener">Email him</a> (CA-45 residents)<br><a href="https://tran.house.gov/contact/request-an-appearance" target="_blank" rel="noopener">Invite him to an event</a><br><a href="https://tran.house.gov/casework" target="_blank" rel="noopener">Get help with a federal agency</a></p><p class="muted">The email form checks that you live in the district.</p></article>`;
-}
-document.addEventListener("click", e=>{
-  const b = e.target.closest(".copy"); if(!b) return;
-  const done = ()=>{ b.textContent = "Copied"; setTimeout(()=>b.textContent="Copy",1500); };
-  try{ navigator.clipboard.writeText(b.dataset.copy).then(done, ()=>{ selectText(b.previousElementSibling); }); }catch(err){ selectText(b.previousElementSibling); }
-});
-function selectText(el){ const r = document.createRange(); r.selectNodeContents(el); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); }
+  $("noPromise").textContent = d.noPromise || "";
+}).catch(() => { $("promises").innerHTML = NOT_BUILT("The promise scorecard"); });
 
 // ---------- Vote alignment ----------
-// Typed fallback (read Nov 23, 2026); replaced by data/trackaipac.json when it loads
-let AIPAC = {"Hakeem Jeffries":1497947,"Katherine Clark":935294,"Pete Aguilar":1537090,"Josh Gottheimer":2398662,"Ritchie Torres":2134380,"Jared Golden":1070070,"Alexandria Ocasio-Cortez":0,"Ilhan Omar":0,"Rashida Tlaib":5971,"Greg Casar":32866,"Ro Khanna":170813,"Lou Correa":79986,"Dave Min":99036,"Young Kim":563039};
-let REJECTS = new Set(["Alexandria Ocasio-Cortez","Ilhan Omar","Rashida Tlaib","Greg Casar","Ro Khanna"]);
-let AIPAC_TRAN = 241559; const AIPAC_URL = {};
-const aipacLoaded = fetch("data/trackaipac.json").then(r=>{ if(!r.ok) throw 0; return r.json(); }).then(t=>{
-  if(!t || !Array.isArray(t.members) || !t.members.length) return;
-  const m = {}, rej = new Set();
-  t.members.forEach(x=>{ const n = String(x.name||"").replace(/\s*\([A-Z]\)$/,""); if(typeof x.total==="number"){ m[n] = x.total; if(x.rejects) rej.add(n); if(typeof x.url==="string" && x.url.startsWith("https://")) AIPAC_URL[n] = x.url; } });
-  const me = t.members.find(x=>x.me===true || x.dist==="CA-45");
-  if(me && typeof me.total==="number") AIPAC_TRAN = me.total;
-  AIPAC = m; REJECTS = rej;
-  if(t.read){ const d = new Date(t.read+"T12:00:00"); document.getElementById("aipacRead").textContent = isNaN(d) ? t.read : d.toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"}); }
-  if(typeof t.source==="string" && t.source.startsWith("https://")) document.getElementById("aipacSrc").innerHTML = ` (<a href="${esc(t.source)}" target="_blank" rel="noopener">Track AIPAC</a>)`;
-}).catch(()=>{});
-const usd = n => "$" + Math.round(n).toLocaleString("en-US");
-function renderAlignment(a){
-  document.getElementById("alignTiles").innerHTML = [
-    [a.tranUnity+"%","Votes cast with the Democratic majority"],
-    [`${a.tranRank} of ${a.dems}`,"Rank among House Democrats for party-line voting (1 = most)"],
-    [a.medianUnity+"%","The typical House Democrat"],
+function renderAlignment(a, ta, votes, fec){
+  const TA = Object.fromEntries((ta?.members || []).map(m => [m.name.replace(/\s*\([A-Z]\)$/, ""), m]));   // "Young Kim (R)" -> "Young Kim"
+  const me = (ta?.members || []).find(m => m.group === "me");
+  const years = [...new Set(votes.map(v => v.y))].sort();
+  if(years.length) $("glanceNote").innerHTML = `Computed from every ${M.chamberName} roll call in ${years.join(" and ")}. Most votes split along party lines, so ${esc(M.short)} agrees with nearly every Democrat most of the time. The telling column is <b>contested votes</b>: roll calls where at least 10% of Democrats broke from the rest of their party.`;
+  $("alignTiles").innerHTML = [
+    [a.memberUnity+"%",`${M.Poss} Yea and Nay votes cast with the Democratic majority`],
+    [`${a.memberRank}${a.memberTied?" (tied)":""} of ${a.dems}`,`Rank among ${M.chamberName} Democrats for party-line voting (1 = most)`],
+    [a.medianUnity+"%",`The typical ${M.chamberName} Democrat`],
     [a.contested,"Contested votes, where Democrats split"],
-  ].map(([n,l])=>`<div class="tile"><span class="n">${n}</span><span class="l">${l}</span></div>`).join("");
-  const groups = ["Party leadership","Centrist","Progressive","Orange County neighbor"];
-  const rows = [...a.peers].sort((x,y)=>groups.indexOf(x.group)-groups.indexOf(y.group) || y.contested-x.contested);
-  document.getElementById("alignRows").innerHTML = rows.map(p=>`<tr>
+  ].map(([n,l]) => `<div class="tile"><span class="n">${n}</span><span class="l">${esc(l)}</span></div>`).join("");
+  const groups = [...new Set(a.peers.map(p => p.group))];   // config order
+  const rows = [...a.peers].sort((x,y) => groups.indexOf(x.group)-groups.indexOf(y.group) || y.contested-x.contested);
+  $("alignRows").innerHTML = rows.map(p => { const t = TA[p.name]; return `<tr>
     <td><b>${esc(p.name)}</b> <span class="muted mono">${esc(p.dist)}</span></td>
     <td class="muted">${esc(p.group)}</td>
     <td class="mono" style="text-align:right">${p.all}%</td>
     <td><div class="abar"><span style="width:${p.contested}%"></span></div><span class="mono">${p.contested}%</span> <span class="muted mono">of ${p.nc}</span></td>
     <td class="mono" style="text-align:right">${p.israel}% <span class="muted">of ${p.ni}</span></td>
-    <td class="mono" style="text-align:right">${AIPAC_URL[p.name]?`<a href="${esc(AIPAC_URL[p.name])}" target="_blank" rel="noopener">${usd(AIPAC[p.name]??0)}</a>`:usd(AIPAC[p.name]??0)}${REJECTS.has(p.name)?'<br><span class="muted" style="font-size:.72rem">rejects AIPAC</span>':""}</td></tr>`).join("");
-  const avg = g => { const xs = a.peers.filter(p=>p.group===g).map(p=>p.contested); return Math.round(xs.reduce((s,x)=>s+x,0)/xs.length); };
-  document.getElementById("alignTake").textContent =
-    `On contested votes he sided with the centrists about ${avg("Centrist")}% of the time, party leaders about ${avg("Party leadership")}%, and progressives about ${avg("Progressive")}%. `+
-    `He votes with his party less often than ${a.tranRank-1} of ${a.dems-1} other House Democrats. His Track AIPAC total (${usd(AIPAC_TRAN)}) is ${aipacCompare(a)}.`;
-}
-function aipacCompare(a){
-  const tot = g => a.peers.filter(p=>p.group===g && AIPAC[p.name]!=null).map(p=>AIPAC[p.name]);
-  const lc = [...tot("Party leadership"), ...tot("Centrist")], pr = tot("Progressive");
-  const M = n => "$" + (n/1e6).toFixed(1) + "M";
-  const side = (xs, word) => { const lo = xs.filter(x=>x<AIPAC_TRAN).length; return lo===xs.length ? `above all ${xs.length} ${word}'` : lo===0 ? `below all ${xs.length} ${word}'` : `above ${lo} of ${xs.length} ${word}'`; };
-  const parts = [];
-  if(lc.length) parts.push(`${side(lc,"leaders' and centrists")} (${M(Math.min(...lc))}–${M(Math.max(...lc))})`);
-  if(pr.length) parts.push(side(pr,"progressives"));
-  return parts.join(" and ") || "not available for comparison";
-}
-
-// ---------- Town halls ----------
-const TYPES_PUBLIC = new Set(["In person","Telephone","Virtual"]);
-let thStarted = false, thDocs = [], canEdit = false, thLoaded = false;
-const todayISO = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`; };
-const longDate = (iso) => new Date(iso+"T12:00:00").toLocaleDateString("en-US",{weekday:"short",month:"short",day:"numeric",year:"numeric"});
-const safeUrl = u => typeof u==="string" && u.startsWith("https://") ? u : "";
-function nthWeekday(y,m,n,wd){ const d = new Date(y,m,1); const off = (wd - d.getDay() + 7) % 7; return new Date(y,m,1+off+7*(n-1)); }
-function renderMOH(){
-  const SPOTS = [
-    {city:"Fountain Valley", n:1, label:"First Tuesday of every month", time:"11:00 AM – 1:00 PM", addr:"17967 Bushard St, Fountain Valley, CA 92708"},
-    {city:"Cerritos", n:2, label:"Second Tuesday of every month", time:"10:00 AM – 1:00 PM", addr:"12340 South St, Cerritos, CA 90703"},
-  ];
-  const now = new Date(); now.setHours(0,0,0,0);
-  document.getElementById("moh").innerHTML = SPOTS.map(s=>{
-    const next = []; for(let k=0; next.length<3 && k<6; k++){ const d = nthWeekday(now.getFullYear(), now.getMonth()+k, s.n, 2); if(d>=now) next.push(d); }
-    return `<article class="office"><h3>${esc(s.city)}</h3><p class="addr">${esc(s.label)}<br>${esc(s.time)}<br>${esc(s.addr)}</p>
-      <p class="muted" style="margin-bottom:4px">Next dates</p><ul class="plain mono" style="font-size:.82rem">${next.map(d=>`<li>${d.toLocaleDateString("en-US",{weekday:"short",month:"short",day:"numeric"})}</li>`).join("")}</ul></article>`;
-  }).join("");
-}
-function evCard(e, editable){
-  const u = safeUrl(e.url), src = safeUrl(e.source);
-  return `<article class="ev"><div class="ev-date"><span class="m">${esc(e.approx || longDate(e.date))}</span>${e.time?`<span class="muted">${esc(e.time)}</span>`:""}</div>
-    <div><div><span class="k">${esc(e.type||"")}</span></div><div class="t">${esc(e.title||"")}</div>
-    <div class="muted">${[e.city,e.address].filter(Boolean).map(esc).join(" · ")}</div>
-    ${e.notes?`<p class="ex">${esc(e.notes)}</p>`:""}
-    <div class="ev-links">${u?`<a href="${esc(u)}" target="_blank" rel="noopener">RSVP or details</a>`:""}${src?`<a class="src" href="${esc(src)}" target="_blank" rel="noopener">Source</a>`:""}
-    ${editable?`<button class="linkbtn del" type="button" data-id="${esc(e._id)}">Delete</button>`:""}</div></div></article>`;
-}
-function renderTownHalls(){
-  const t = todayISO();
-  const up = thDocs.filter(e=>e.date>=t).sort((a,b)=>a.date.localeCompare(b.date));
-  const past = thDocs.filter(e=>e.date<t).sort((a,b)=>b.date.localeCompare(a.date));
-  const lastPublic = past.find(e=>TYPES_PUBLIC.has(e.type));
-  const days = lastPublic ? Math.round((new Date(t+"T12:00:00") - new Date(lastPublic.date+"T12:00:00"))/864e5) : null;
-  const year = t.slice(0,4), thisYear = past.filter(e=>TYPES_PUBLIC.has(e.type) && e.date.startsWith(year)).length;
-  document.getElementById("thTiles").innerHTML = [
-    [up.length || "None", up.length ? "Upcoming events announced" : "Upcoming town halls announced"],
-    [days!=null ? days.toLocaleString() : "—", lastPublic ? `Days since his last public town hall (${lastPublic.city||""}, ${new Date(lastPublic.date+"T12:00:00").toLocaleDateString("en-US",{month:"short",year:"numeric"})})` : "Days since his last public town hall"],
-    [thisYear, `Public town halls held in ${year}`],
-  ].map(([n,l])=>`<div class="tile"><span class="n">${esc(n)}</span><span class="l">${esc(l)}</span></div>`).join("");
-  document.getElementById("thUpcoming").innerHTML = up.length ? up.map(e=>evCard(e,canEdit)).join("")
-    : `<div class="pending"><b>No town halls are scheduled right now</b>His website and press releases list no upcoming town halls. Call the Cypress office at (714) 960-6483 to ask when the next one will be.</div>`;
-  document.getElementById("thPast").innerHTML = past.length ? past.map(e=>evCard(e,canEdit)).join("") : `<p class="muted">No past events recorded yet.</p>`;
-}
-async function startTownHalls(){
-  if(thStarted) return; thStarted = true;
-  renderMOH(); renderOffices("officesTH");
-  const db = await window.claude?.use?.("db").catch(()=>null) ?? null;
-  if(!db){
-    // No live list here (e.g. GitHub Pages): show the saved list from data/townhalls.json
-    try{ const r = await fetch("data/townhalls.json"); thDocs = (await r.json()).filter(e=>typeof e.date==="string"); renderTownHalls(); }
-    catch(err){ document.getElementById("thUpcoming").innerHTML = `<div class="pending"><b>The event list didn't load</b>Reload the page, or call the Cypress office at (714) 960-6483.</div>`; document.getElementById("thPast").innerHTML = ""; document.getElementById("thTiles").innerHTML = ""; }
-    return;
+    <td class="mono" style="text-align:right">${t ? usd(t.total) : "—"}${t?.rejects?'<br><span class="muted" style="font-size:.72rem">rejects AIPAC</span>':""}</td></tr>`; }).join("");
+  const avg = g => { const xs = a.peers.filter(p => p.group===g).map(p => p.contested); return xs.length ? Math.round(xs.reduce((s,x)=>s+x,0)/xs.length) : null; };
+  const sides = [["Progressive","progressives"],["Party leadership","party leaders"],["Centrist","centrists"]].filter(([g]) => avg(g) != null).map(([g,l]) => `${l} about ${avg(g)}%`);
+  // Leaders' and centrists' Track AIPAC totals, by the peer groups in tracker.config.json
+  const lead = a.peers.filter(p => p.group === "Party leadership" || p.group === "Centrist").map(p => TA[p.name]?.total).filter(x => x != null);
+  const lo = Math.min(...lead), hi = Math.max(...lead);
+  const cmp = me && lead.length ? (me.total < lo ? "below" : me.total > hi ? "above" : "within the range of") : "";
+  $("alignTake").textContent =
+    (sides.length ? `On contested votes ${M.short} sided with ${sides.length > 1 ? sides.slice(0,-1).join(", ") + ", and " + sides[sides.length-1] : sides[0]} of the time. ` : "") +
+    `${M.Subj} voted with the party more often than ${a.dems - a.memberRank - (a.memberTied||0)} of ${a.dems-1} other ${M.chamberName} Democrats${a.memberTied?` and exactly as often as ${a.memberTied} more`:""}.` +
+    (cmp ? ` ${M.Poss} Track AIPAC total (${usd(me.total)}) is ${cmp} the leaders' and centrists' (${usd(lo)}–${usd(hi)}).` : "");
+  const items = [];
+  if(M.house){   // senators don't elect a Speaker
+    const speaker = votes.find(v => /election of the speaker/i.test(v.q || ""));
+    if(speaker) items.push(`Voted for ${esc(speaker.member)} for Speaker when the ${M.congressOrd} Congress opened (${longDate(speaker.date)}). <a class="src" href="${esc(speaker.url)}" target="_blank" rel="noopener">Roll call</a>`);
   }
-  const user = await window.claude.use("user").catch(()=>null);
-  canEdit = (await user?.canEdit?.()) ?? false;
-  document.getElementById("thEditor").hidden = !canEdit;
-  const timer = setTimeout(()=>{ if(!thLoaded) document.getElementById("thUpcoming").insertAdjacentHTML("afterbegin", `<p class="muted">The event list is taking a while to load and may be out of date.</p>`); }, 10000);
-  db.collection("townhalls").onSnapshot(snap=>{
-    thDocs = snap.docs.map(d=>({...d.data(), _id:d.id})).filter(e=>typeof e.date==="string");
-    if(!snap.metadata.fromCache){ thLoaded = true; clearTimeout(timer); }
-    renderTownHalls();
-  }, err=>{ clearTimeout(timer); thLoaded = true; document.getElementById("thUpcoming").innerHTML = `<div class="pending"><b>The event list couldn't load</b>Reload the page to try again.</div>`; });
-  document.getElementById("thForm").addEventListener("submit", async e=>{
-    e.preventDefault();
-    const v = id => document.getElementById(id).value.trim(), msg = document.getElementById("thMsg");
-    const ev = {date:v("th-date"), time:v("th-time"), type:v("th-type"), title:v("th-title"), city:v("th-city"), address:v("th-addr"), url:v("th-url"), source:v("th-src")};
-    if(!ev.date || !ev.title){ msg.textContent = "Add a date and a title."; return; }
-    if((ev.url && !safeUrl(ev.url)) || (ev.source && !safeUrl(ev.source))){ msg.textContent = "Links must start with https://"; return; }
-    msg.textContent = "Saving…";
-    try{ await db.collection("townhalls").add(ev); msg.textContent = "Saved."; e.target.reset(); }
-    catch(err){ msg.textContent = "Couldn't save. You may not have edit access."; }
-  });
-  document.addEventListener("click", async e=>{
-    const b = e.target.closest(".del"); if(!b) return;
-    if(b.dataset.armed!=="1"){ b.dataset.armed = "1"; b.textContent = "Confirm delete"; setTimeout(()=>{ b.dataset.armed=""; b.textContent="Delete"; }, 4000); return; }
-    try{ await db.collection("townhalls").doc(b.dataset.id).delete(); }catch(err){ b.textContent = "Couldn't delete"; }
-  });
+  const j = fec?.jeffries;   // build_fec.py stores the leader's committees under "jeffries" (matched by fec.leadershipRx)
+  const lc = `${M.leaderPoss} committees`;
+  if(j) items.push(j.total ? `Received ${usd(j.total)} from ${esc(lc)}: ${j.items.map(p => `${esc(p.name.replace(/\s+/g," ").trim())} ${usd(p.amount)} (${Object.keys(p.byCycle).join(", ")})`).join("; ")}, per FEC filings. <a class="src" href="money.html#pacs">Money tab</a>` : `No contributions from ${esc(lc)} in ${M.poss} FEC filings. <a class="src" href="money.html#pacs">Money tab</a>`);
+  const jp = a.peers.find(p => p.name === M.leaderName);
+  if(jp) items.push(`Agrees with ${esc(M.leaderLast)} on ${jp.all}% of votes and ${jp.contested}% of contested votes. <a class="src" href="establishment.html">Establishment tab</a>`);
+  (P.leaderTies || []).forEach(x => items.push(md(x)));   // curated, sourced ties (also in data/claims_static.json)
+  $("leaderTies").innerHTML = items.length ? items.map(x => `<li>${x}</li>`).join("") : `<li class="muted">Appears once votes and FEC data are built.</li>`;
 }
+Promise.all([getJSON("data/alignment.json"), getJSON("data/trackaipac.json").catch(() => null), getJSON("data/votes.json"), getJSON("data/fec/summary.json").catch(() => null)])
+  .then(([a, ta, v, f]) => renderAlignment(a, ta, v, f))
+  .catch(() => { $("alignTake").innerHTML = `<span class="soon">Coming soon</span> Vote alignment is being compiled from the official roll calls.`; });
 
-route(); renderOffices("officesOverview");
-fetch("data/alignment.json").then(r=>r.json()).then(a=>aipacLoaded.then(()=>renderAlignment(a))).catch(()=>{ document.getElementById("alignTake").textContent = "The vote alignment data didn't load. Reload the page to try again."; });
-renderMap("new"); renderPromises();
+// ---------- Recent statements ----------
+getJSON("data/statements.json").then(list => {
+  const ul = $("recentList");
+  list.filter(s => s.lang === "en").slice(0, 6).forEach(s => {
+    const a = el("a", {href: s.u, target: "_blank", rel: "noopener", textContent: s.title});
+    ul.append(el("li", {}, [el("span", {className: "muted", textContent: s.date + " · "}), a]));
+  });
+}).catch(() => { $("recentList").innerHTML = `<li class="muted">Statements aren't fetched yet (scripts/fetch_statements.py).</li>`; });
+
+// ---------- Offices and channels (profile.offices, profile.online, profile.handles) ----------
+const OFFICES = P.offices || [];
+const online = P.online || [];
+$("offices").innerHTML = OFFICES.map(o => `<article class="office"><h3>${esc(o.name)}</h3>
+  <p class="addr">${(o.lines || []).map(esc).join("<br>")}</p>
+  ${o.phone ? `<div class="phone"><span class="mono">${esc(o.phone)}</span><button class="copy" type="button" data-copy="${esc(o.phone)}">Copy</button></div>` : ""}
+  ${o.note ? `<p class="muted">${md(o.note)}</p>` : ""}</article>`).join("") +
+  (online.length ? `<article class="office"><h3>Online</h3><p class="addr">${online.map(md).join("<br>")}</p>${P.onlineNote ? `<p class="muted">${md(P.onlineNote)}</p>` : ""}</article>` : "") ||
+  `<p class="muted"><span class="soon">Coming soon</span> Office addresses are being added. Meanwhile, see <a href="${esc(M.site || "#")}" target="_blank" rel="noopener">${esc(M.domain || "the official site")}</a>.</p>`;
+const cell = h => (h && h.unv ? '<span class="pill s-unv">Unverified</span> ' : "") + (h && h.url ? `<a href="${esc(h.url)}" target="_blank" rel="noopener">${esc(h.text || h.url)}</a>` : (h && h.text ? esc(h.text) : "—"));
+const HANDLES = (P.handles && P.handles.length) ? P.handles
+  : [{platform: "Website", office: M.site ? {text: M.domain, url: M.site} : null, campaign: M.campaignSite ? {text: M.campaignDomain, url: M.campaignSite} : null}];
+$("handleRows").innerHTML = HANDLES.map(h => `<tr><td>${esc(h.platform)}</td><td>${cell(h.office)}</td><td>${cell(h.campaign)}</td></tr>`).join("");
+$("channelNote").innerHTML = md(P.channelsNote || "");
+document.addEventListener("click", e => {
+  const b = e.target.closest(".copy"); if(!b) return;
+  const done = () => { b.textContent = "Copied"; setTimeout(() => b.textContent = "Copy", 1500); };
+  const sel = () => { const r = document.createRange(); r.selectNodeContents(b.previousElementSibling); const s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+  try{ navigator.clipboard.writeText(b.dataset.copy).then(done, sel); }catch(err){ sel(); }
+});
+});
 </script>
 <script>
-// "Last checked" line from the verification run (data/verification.json); the typed date stays if it doesn't load
+// "Last checked" line from the verification run (data/verification.json)
 fetch("data/verification.json").then(r=>r.json()).then(v=>{
-  const all = Object.values(v), ok = all.filter(r=>r.status==="verified").length, last = all.reduce((a,r)=>r.checked>a?r.checked:a,"");
-  if(!all.length || !last) return;
+  const all = Object.values(v); if(!all.length) return;
+  const ok = all.filter(r=>r.status==="verified").length, last = all.reduce((a,r)=>r.checked>a?r.checked:a,"");
   document.getElementById("verifyNote").textContent = `Last checked ${new Date(last+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"})}: ${ok} of ${all.length} sourced claims verified against their sources.`;
 }).catch(()=>{});
 </script>
-<script src="site.js"></script>
 <script src="../../hub.js" data-base="../../"></script>
 </body>
 </html>

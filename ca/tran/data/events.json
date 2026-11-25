@@ -1,0 +1,50 @@
+{
+ "_note": "Constituent events from his own releases or news coverage. 'stmt' must match exactly one release in data/statements.json; 'u' is any other source. role: hosted = his office ran it; participated = someone else hosted. Build: python3 -I scripts/build_overview.py A missing role means the source doesn't say who hosted.",
+ "events": [
+  {
+   "date": "2025-04-10",
+   "type": "Televised town hall",
+   "role": "participated",
+   "title": "CNN town hall with battleground members, moderated by Jake Tapper and Kaitlan Collins",
+   "city": "Washington, D.C.",
+   "notes": "Discussed costs, veterans, health care and education alongside Reps. Lawler, Mackenzie and Hayes.",
+   "u": "https://tran.house.gov/media/press-releases/rep-derek-tran-presents-forward-looking-vision-opportunities-bipartisan"
+  },
+  {
+   "date": "2025-04-21",
+   "type": "Town hall",
+   "role": "hosted",
+   "title": "Town halls in Cerritos and Buena Park",
+   "approx": "Week of Apr 21, 2025",
+   "city": "Cerritos and Buena Park",
+   "notes": "Two events. Questions on the economy, immigration, Social Security and Medicaid. Exact dates not given in the release.",
+   "u": "https://tran.house.gov/media/press-releases/rep-derek-tran-addresses-constituent-concerns-about-social-security-economy"
+  },
+  {
+   "date": "2025-05-30",
+   "type": "Roundtable",
+   "title": "Roundtable with Latino community leaders",
+   "approx": "Announced May 30, 2025",
+   "city": "CA-45",
+   "u": "https://tran.house.gov/media/press-releases/rep-derek-tran-meets-latino-community-leaders-roundtable-discussion"
+  },
+  {
+   "date": "2025-11-03",
+   "type": "Town hall",
+   "role": "hosted",
+   "title": "Town hall on the government shutdown",
+   "city": "Westminster",
+   "notes": "Questions on health care costs, the shutdown and immigration enforcement in Southern California.",
+   "u": "https://tran.house.gov/media/press-releases/representative-derek-tran-holds-town-hall-meeting"
+  },
+  {
+   "date": "2026-03-12",
+   "type": "Roundtable",
+   "role": "hosted",
+   "title": "Roundtable with veterans and local leaders, joined by Hakeem Jeffries and Lou Correa",
+   "approx": "Announced Mar 12, 2026",
+   "city": "CA-45",
+   "u": "https://tran.house.gov/media/press-releases/icymi-leader-hakeem-jeffries-joins-us-representative-derek-tran-roundtable"
+  }
+ ]
+}

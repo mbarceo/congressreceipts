@@ -1,0 +1,783 @@
+{
+  "_note": "Member-specific values. Scripts read it through scripts/config.py; pages read member, leader and profile through site.js. Fields starting with TODO must be filled before the step that needs them.",
+  "member": {
+    "name": "Derek Tran",
+    "first": "Derek",
+    "last": "Tran",
+    "short": "Tran",
+    "honorific": "Rep.",
+    "title": "Rep. Derek Tran",
+    "pronouns": {
+      "subj": "he",
+      "obj": "him",
+      "poss": "his"
+    },
+    "bioguide": "T000491",
+    "voteId": "T000491",
+    "party": "Democrat",
+    "state": "CA",
+    "stateName": "California",
+    "chamber": "house",
+    "district": "45",
+    "districtLabel": "CA-45",
+    "seatLabel": "California's 45th District",
+    "geoid": "0645",
+    "area": "CA-45",
+    "congress": 119,
+    "inOfficeSince": "2025-01-03",
+    "site": "https://tran.house.gov",
+    "domain": "tran.house.gov",
+    "pressPath": "/media/press-releases",
+    "pressLayout": "auto",
+    "campaignSite": "https://www.derektranforcongress.com",
+    "portrait": "assets/tran.jpg",
+    "committees": [
+      "Armed Services",
+      "Small Business"
+    ],
+    "trackaipacSlug": "member-derek-tran-ca-45-d"
+  },
+  "leader": {
+    "name": "Hakeem Jeffries",
+    "voteId": "J000294",
+    "title": "House Democratic leader"
+  },
+  "fec": {
+    "candidateId": "H4CA45170",
+    "committeeId": "C00851790",
+    "cycles": [
+      2024,
+      2026
+    ],
+    "cycleLabels": {
+      "2024": "2023–24 (first race)",
+      "2026": "2025–26 (re-election)"
+    },
+    "keyEnv": "FEC_API_KEY",
+    "leadershipRx": "JEFFRIES|JEFF PAC",
+    "_leadersNote": "leaders.<chamber> lists the party leaders whose committees' money build_establishment.py totals per cycle (chamber = member.chamber). A gift counts when the giving committee's FEC ID is in 'ids' or its name matches 'rx' (name-only matches are printed for checking). 'numKey' exposes a leader's all-cycle total to establishment_items.json as {dccc} or {dscc}. leadershipRx/leadershipIds drive the Money page's single-leader box: House 'JEFFRIES|JEFF PAC'; Senate 'SCHUMER|^IMPACT$' with leadershipIds [\"C00346312\", \"C00348607\"].",
+    "leaders": {
+      "house": {
+        "title": "Money from leadership",
+        "note": "",
+        "list": [
+          {
+            "name": "Hakeem Jeffries",
+            "role": "House Democratic Leader",
+            "rx": "JEFFRIES|JEFF PAC"
+          },
+          {
+            "name": "Nancy Pelosi",
+            "role": "Speaker Emerita",
+            "rx": "PELOSI|PAC TO THE FUTURE"
+          },
+          {
+            "name": "Katherine Clark",
+            "role": "Democratic Whip",
+            "rx": "KATHERINE CLARK|CLARK FRONTLINE|FAIR SHOT PAC|FIGHT FOR A DEMOCRATIC MAJORITY"
+          },
+          {
+            "name": "Pete Aguilar",
+            "role": "Caucus Chair",
+            "rx": "AGUILAR|CA LUV PAC|CALIFORNIA LEADERSHIP UNITED|PROGRESSIVE MAJORITY PAC"
+          },
+          {
+            "name": "Steny Hoyer",
+            "role": "Former Majority Leader",
+            "rx": "HOYER|AMERIPAC|SAVING AMERICAN DEMOCRACY"
+          },
+          {
+            "name": "DCCC",
+            "role": "Party campaign committee",
+            "rx": "^DCCC|DEMOCRATIC CONGRESSIONAL CAMPAIGN",
+            "numKey": "dccc"
+          }
+        ]
+      }
+    },
+    "watch": [
+      {
+        "id": "detention",
+        "label": "Immigration detention and enforcement contractors",
+        "why": "Companies that run ICE detention or sell enforcement and surveillance technology. Tran has backed bills to hold ICE and private detention companies accountable.",
+        "rx": "GEO GROUP|CORECIVIC|CORE CIVIC|PALANTIR|ANDURIL|\\bAXON\\b|MOTOROLA SOLUTIONS|CLEARVIEW|MANAGEMENT (AND|&) TRAINING CORP"
+      },
+      {
+        "id": "police",
+        "label": "Police, sheriff and public-safety groups",
+        "why": "Law-enforcement unions, associations, corrections and firefighter groups.",
+        "rx": "POLICE|SHERIFF|FRATERNAL ORDER|LAW ENFORCEMENT|PEACE OFFICER|CORRECTION|PROTECTIVE LEAGUE|FIREFIGHTER|FIRE FIGHTER"
+      },
+      {
+        "id": "defense",
+        "label": "Defense contractors",
+        "why": "He sits on the House Armed Services Committee, which writes the annual defense budget bill.",
+        "rx": "LOCKHEED|NORTHROP|\\bRTX\\b|RAYTHEON|GENERAL DYNAMICS|BOEING|BAE SYSTEMS|L3HARRIS|LEONARDO DRS|TRANSDIGM|GENERAL ATOMICS|TEXTRON|CURTISS[- ]WRIGHT|HUNTINGTON INGALLS|LEIDOS|BOOZ ALLEN|ANDURIL|PALANTIR|SPACE EXPLORATION TECH|SPACEX|ROCKET LAB|AMENTUM|PARSONS CORP|HONEYWELL"
+      },
+      {
+        "id": "crypto",
+        "label": "Crypto and fintech",
+        "why": "Digital-asset and payments companies, an industry that spends heavily on House races.",
+        "rx": "COINBASE|BLOCKCHAIN|CRYPTO|FAIRSHAKE|\\bRIPPLE\\b|CIRCLE INTERNET|KRAKEN|PAYWARD|ROBINHOOD|\\bSTRIPE\\b|PAYPAL|GEMINI TRUST|GALAXY DIGITAL|CHAINALYSIS|DIGITAL ASSET|BITCOIN"
+      },
+      {
+        "id": "realestate",
+        "label": "Real estate, landlord and developer groups",
+        "why": "Industry money on the housing side of Orange County's cost-of-living fight.",
+        "rx": "REALTOR|HOME ?BUILDERS|APARTMENT|MULTIFAMILY|MORTGAGE BANKERS|REAL ESTATE|LANDLORD|PROPERTY OWNERS|REALTY|PROPERTIES|DEVELOPMENT CO|SENIORS HOUSING"
+      },
+      {
+        "id": "labor",
+        "label": "Labor unions",
+        "why": "Union PACs and member-funded labor committees.",
+        "rx": "\\bUNION\\b|WORKERS|TEACHERS|SEIU|AFL-CIO|TEAMSTERS|LABORERS|ELECTRICAL|CARPENTERS|MACHINISTS|NURSES|\\bCOPE\\b|AMERICAN FEDERATION OF STATE|CONSTRUCTION TRADES|OPERATING ENGINEERS|PIPE TRADES|PLUMBERS|LETTER CARRIERS|PILOTS ASSOC|UNITED PILOTS|AIR TRAFFIC CONTROLLERS|\\bUAW\\b|UNITE HERE|STEELWORKERS|THEATRICAL STAGE|WRITERS GUILD|SHEET METAL|LONGSHORE|NEA FUND|SMART TD",
+        "not": "CREDIT UNION"
+      },
+      {
+        "id": "health",
+        "label": "Health care, insurers and pharma",
+        "why": "Hospitals, health insurers, drug companies and distributors, pharmacies and medical groups.",
+        "rx": "HEALTH|MEDICAL|HOSPITAL|PHARMA|KAISER|DENTAL|BLUE ?CROSS|BLUE ?SHIELD|CENTENE|MOLINA|CIGNA|AETNA|HUMANA|ELEVANCE|MCKESSON|CENCORA|\\bCVS\\b|DAVITA|BECTON DICKINSON|EDWARDS LIFESCIENCES|SOLVENTUM|OPTOMETRIC|DERMATOLOGY|OSTEOPATHIC|ONCOLOGY|NURSE ANESTHETISTS|COMPOUNDING|FERTILITY|VIZIENT|NEUROLOG",
+        "not": "WORKERS|NURSES UNITED|\\bUNION\\b"
+      },
+      {
+        "id": "tech",
+        "label": "Technology and AI companies",
+        "why": "Big Tech, AI developers and the venture firms that fund them.",
+        "rx": "GOOGLE|ALPHABET|MICROSOFT|AMAZON|\\bMETA\\b|FACEBOOK|APPLE INC|OPENAI|ANTHROPIC|NVIDIA|AUTODESK|\\bINTEL\\b|QUALCOMM|ORACLE|SALESFORCE|Y COMBINATOR|LITTLE TECH|COUPANG|CISCO|ADOBE"
+      }
+    ],
+    "_cyclesNote": "cycles are FEC two-year periods named by their even end year. House: the first race and the current cycle. Senate (six-year terms): resolve_fec.py writes the election cycle that began the current term through the current cycle, e.g. Padilla (elected 2022) 2022, 2024, 2026; Schiff (elected 2024) 2024, 2026. Every build script loops over this list."
+  },
+  "geo": {
+    "countyFips": [
+      "06037",
+      "06059"
+    ],
+    "counties": {
+      "Los Angeles County": "LA",
+      "Orange County": "OC"
+    },
+    "padLon": 0.035,
+    "padLat": 0.03
+  },
+  "statements": {
+    "localTerms": "cerritos|garden grove|westminster|buena park|cypress|fullerton|fountain valley|la palma|artesia|norwalk|lakewood|santa ana|placentia|stanton|hawaiian gardens|seal beach|orange county|little saigon",
+    "defaultLang": "en",
+    "_note": "localTerms: |-separated place names that mark a release as local news (lowercase)."
+  },
+  "peers": [
+    {
+      "id": "J000294",
+      "name": "Hakeem Jeffries",
+      "dist": "NY-8",
+      "group": "Party leadership"
+    },
+    {
+      "id": "C001101",
+      "name": "Katherine Clark",
+      "dist": "MA-5",
+      "group": "Party leadership"
+    },
+    {
+      "id": "A000371",
+      "name": "Pete Aguilar",
+      "dist": "CA-33",
+      "group": "Party leadership"
+    },
+    {
+      "id": "G000583",
+      "name": "Josh Gottheimer",
+      "dist": "NJ-5",
+      "group": "Centrist"
+    },
+    {
+      "id": "T000486",
+      "name": "Ritchie Torres",
+      "dist": "NY-15",
+      "group": "Centrist"
+    },
+    {
+      "id": "G000592",
+      "name": "Jared Golden",
+      "dist": "ME-2",
+      "group": "Centrist"
+    },
+    {
+      "id": "O000172",
+      "name": "Alexandria Ocasio-Cortez",
+      "dist": "NY-14",
+      "group": "Progressive"
+    },
+    {
+      "id": "O000173",
+      "name": "Ilhan Omar",
+      "dist": "MN-5",
+      "group": "Progressive"
+    },
+    {
+      "id": "T000481",
+      "name": "Rashida Tlaib",
+      "dist": "MI-12",
+      "group": "Progressive"
+    },
+    {
+      "id": "C001131",
+      "name": "Greg Casar",
+      "dist": "TX-35",
+      "group": "Progressive"
+    },
+    {
+      "id": "K000389",
+      "name": "Ro Khanna",
+      "dist": "CA-17",
+      "group": "Progressive"
+    },
+    {
+      "id": "C001110",
+      "name": "Lou Correa",
+      "dist": "CA-46",
+      "group": "Orange County neighbor"
+    },
+    {
+      "id": "M001241",
+      "name": "Dave Min",
+      "dist": "CA-47",
+      "group": "Orange County neighbor"
+    },
+    {
+      "id": "K000397",
+      "name": "Young Kim",
+      "dist": "CA-40",
+      "group": "Orange County neighbor"
+    }
+  ],
+  "_peersNote": "Members to compare with on the Overview and Money pages: {id, name, dist, group}. id is the vote id (bioguide for the House, LIS id for the Senate). Groups appear in config order; the build counts 'Party leadership', 'Centrist' and 'Progressive' in its summary.",
+  "profile": {
+    "_note": "Curated page text, rendered by the pages at runtime. Strings allow [label](url), **bold** and {{tokens}} (e.g. {{short}}, {{poss}}). Every fact typed here also goes in data/claims_static.json with its source.",
+    "lede": "A running check of what Tran promised voters in CA-45, what he has done in office, and what he says on the issues people are fighting about. Every entry links to its source.",
+    "facts": [
+      {
+        "label": "2026 general",
+        "value": "Re-elected 61.0% to 39.0% over Chuong Vo (R), unofficial, all precincts reporting"
+      },
+      {
+        "label": "2024 general",
+        "value": "Beat Michelle Steel (R) by 653 votes"
+      },
+      {
+        "label": "Background",
+        "value": "Army veteran; first Vietnamese American to represent Little Saigon"
+      }
+    ],
+    "factSources": [
+      "2026 general (unofficial, all 424 precincts reporting): Tran 151,971 (61.0%), Vo 97,070 (39.0%). [CA Secretary of State](https://api.sos.ca.gov/returns/us-rep/district/45)",
+      "2024 general: Tran 158,264 (50.1%), Steel 157,611 (49.9%), a 653-vote margin. [Wikipedia, citing the Secretary of State](https://en.wikipedia.org/wiki/2024_California%27s_45th_congressional_district_election)"
+    ],
+    "factsNote": "Items marked **Unverified** could not be confirmed against a primary source.",
+    "committees": [
+      {
+        "name": "Armed Services Committee",
+        "subs": [
+          {
+            "name": "Readiness Subcommittee",
+            "role": "member",
+            "src": "https://tran.house.gov/media/press-releases/congressman-tran-announces-subcommittees-after-prestigious-appointments-house"
+          },
+          {
+            "name": "Intelligence and Special Operations Subcommittee",
+            "role": "member",
+            "src": "https://tran.house.gov/media/press-releases/congressman-tran-announces-subcommittees-after-prestigious-appointments-house"
+          }
+        ],
+        "blurb": "Oversees the Pentagon, military bases and the defense budget, including the annual NDAA."
+      },
+      {
+        "name": "Small Business Committee",
+        "subs": [
+          {
+            "name": "Oversight, Investigations and Regulations Subcommittee",
+            "role": "Ranking Member",
+            "pill": true,
+            "src": "https://tran.house.gov/media/press-releases/congressman-tran-announces-subcommittees-after-prestigious-appointments-house"
+          },
+          {
+            "name": "Contracting and Infrastructure Subcommittee",
+            "role": "member",
+            "src": "https://tran.house.gov/media/press-releases/congressman-tran-announces-subcommittees-after-prestigious-appointments-house"
+          }
+        ],
+        "blurb": "Oversees the Small Business Administration and federal contracting. As Ranking Member he is the top Democrat on his subcommittee."
+      }
+    ],
+    "committeesNote": "Committee assignments: [his office, Feb 18, 2025](https://tran.house.gov/media/press-releases/congressman-tran-announces-subcommittees-after-prestigious-appointments-house). Lowering Costs Caucus: [his office](https://tran.house.gov/media/press-releases/representative-tran-helps-introduce-legislation-assess-true-costs-trumps). Roles marked unverified come from [Wikipedia](https://en.wikipedia.org/wiki/Derek_Tran) only.",
+    "caucuses": [
+      {
+        "name": "Lowering Costs Caucus",
+        "role": "Co-founder",
+        "src": "https://tran.house.gov/media/press-releases/representatives-tran-landsman-and-scholten-launch-congressional-caucus-lower",
+        "what": "Bipartisan group focused on household costs."
+      },
+      {
+        "name": "New Democrat Coalition",
+        "role": "Member",
+        "src": "https://newdemocratcoalition.house.gov/members",
+        "what": "The House's largest bloc of centrist, business-friendly Democrats."
+      },
+      {
+        "name": "Congressional Asian Pacific American Caucus",
+        "role": "Executive board",
+        "unv": true,
+        "what": "Asian American and Pacific Islander members."
+      },
+      {
+        "name": "Congressional Caucus on Vietnam",
+        "role": "Co-chair",
+        "unv": true,
+        "what": "U.S.–Vietnam relations and human rights."
+      },
+      {
+        "name": "Democratic Caucus National Security Task Force",
+        "role": "Co-chair",
+        "src": "https://tran.house.gov/media/press-releases/representative-derek-tran-announces-leadership-national-security-task-force",
+        "what": "House Democrats' national security policy group."
+      },
+      {
+        "name": "Congressional Taiwan Caucus",
+        "role": "Member",
+        "unv": true,
+        "what": "Support for Taiwan."
+      }
+    ],
+    "promiseYear": "2024",
+    "promisesIntro": "Each campaign promise set against his bills, votes and district work. \"Stalled\" means he acted but nothing moved past committee. His campaign issues page has no dates, so some promises are paraphrased from his platform.",
+    "offices": [
+      {
+        "name": "Washington, D.C. office",
+        "lines": [
+          "1127 Longworth House Office Building",
+          "Washington, DC 20515"
+        ],
+        "phone": "(202) 225-2415",
+        "note": "Capitol Hill. Best for votes and legislation."
+      },
+      {
+        "name": "Cypress district office",
+        "lines": [
+          "6803 International Ave., Suite 100",
+          "Cypress, CA 90630"
+        ],
+        "phone": "(714) 960-6483",
+        "note": "In the district. Best for town hall dates and casework."
+      }
+    ],
+    "online": [
+      "[Email him](https://tran.house.gov/contact/email-me) (CA-45 residents)",
+      "[Invite him to an event](https://tran.house.gov/contact/request-an-appearance)",
+      "[Get help with a federal agency](https://tran.house.gov/casework)"
+    ],
+    "onlineNote": "The email form checks that you live in the district.",
+    "handles": [
+      {
+        "platform": "Website",
+        "office": {
+          "text": "tran.house.gov",
+          "url": "https://tran.house.gov"
+        },
+        "campaign": {
+          "text": "derektranforcongress.com",
+          "url": "https://www.derektranforcongress.com"
+        }
+      },
+      {
+        "platform": "X",
+        "office": {
+          "text": "@RepDerekTranCA",
+          "url": "https://twitter.com/RepDerekTranCA"
+        },
+        "campaign": {
+          "text": "@DerekTranCA45",
+          "url": "https://twitter.com/DerekTranCA45"
+        }
+      },
+      {
+        "platform": "Instagram",
+        "office": {
+          "text": "@repderektran",
+          "url": "https://www.instagram.com/repderektran"
+        },
+        "campaign": {
+          "text": "@DerekTranCA",
+          "url": "https://instagram.com/DerekTranCA"
+        }
+      },
+      {
+        "platform": "Facebook",
+        "office": {
+          "text": "CongressmanTran",
+          "url": "https://www.facebook.com/CongressmanTran"
+        },
+        "campaign": {
+          "text": "DerekTranForCongress",
+          "url": "https://facebook.com/DerekTranForCongress"
+        }
+      },
+      {
+        "platform": "Threads",
+        "office": {
+          "text": "account exists; handle not linked",
+          "unv": true
+        },
+        "campaign": null
+      }
+    ],
+    "channelsNote": "",
+    "leaderTies": [
+      "One of five Democrats who formally nominated Jeffries for Speaker in the caucus vote on Nov 18, 2026. [NBC News](https://www.nbcnews.com/politics/congress/democrats-formally-nominate-rep-hakeem-jeffries-paving-way-first-black-rcna609619)",
+      "Hosted Jeffries in the district for a roundtable with veterans and local leaders (Mar 2026). [Source](https://tran.house.gov/media/press-releases/icymi-leader-hakeem-jeffries-joins-us-representative-derek-tran-roundtable)",
+      "Pointed to Jeffries' proposal on Israel aid in his statement backing the Massie amendment (Jul 2026). [Source](https://tran.house.gov/media/press-releases/representative-derek-tran-supports-massie-amendment-block-us-military-funding)",
+      "Issued a statement praising Jeffries' election as the Democratic nominee for Speaker (Nov 18, 2026). [Source](https://tran.house.gov/media/press-releases/rep-derek-tran-statement-hakeem-jeffries-historic-election-democratic-nominee)"
+    ],
+    "map": {
+      "heading": "CA-45 spans two counties",
+      "intro": "Tran represents cities in both Los Angeles County and Orange County. Prop 50 redrew the lines for the 2026 election. The new map takes effect Jan 3, 2027; until then he represents the 2023 lines.",
+      "note": "Shaded areas are the parts of each city inside the district; the dark line is the district boundary. Boundaries: U.S. Census Bureau TIGERweb (119th and 120th Congressional Districts). Population figures: 2020 Census, from the [California Senate Office of Demographics](https://sdmg.senate.ca.gov/committeehome/2025-congressional-districts/congressional-district-45-2025). Current lines: [Wikipedia](https://en.wikipedia.org/wiki/California%27s_45th_congressional_district). [Official boundary map](https://sdmg.senate.ca.gov/sites/sdmg.senate.ca.gov/files/2026-02/cd45_2025.png).",
+      "modes": [
+        {
+          "key": "new",
+          "label": "2027 lines (Prop 50)"
+        },
+        {
+          "key": "old",
+          "label": "Current lines (2023–26)"
+        }
+      ],
+      "colorBy": "county",
+      "groups": {
+        "LA": "Los Angeles County",
+        "OC": "Orange County"
+      },
+      "population": {
+        "mode": "new",
+        "total": 760068,
+        "parts": [
+          [
+            "LA",
+            "Los Angeles County",
+            157730,
+            ""
+          ],
+          [
+            "OC",
+            "Orange County",
+            602338,
+            ""
+          ]
+        ],
+        "source": "2020 Census"
+      },
+      "placeStats": {
+        "mode": "new",
+        "_note": "Residents of each city inside the 2027 district and the share of the city's population, from the California Senate Office of Demographics (2020 Census). 'old' is w (whole) or p (part) when the city was in the 2023-26 district, empty when new.",
+        "places": {
+          "Artesia": {
+            "pop": 16447,
+            "pct": 100,
+            "old": "w"
+          },
+          "Cerritos": {
+            "pop": 49696,
+            "pct": 100,
+            "old": "w"
+          },
+          "Hawaiian Gardens": {
+            "pop": 14230,
+            "pct": 100,
+            "old": "w"
+          },
+          "Lakewood": {
+            "pop": 21696,
+            "pct": 26.23,
+            "old": "p"
+          },
+          "Norwalk": {
+            "pop": 55065,
+            "pct": 53.37,
+            "old": ""
+          },
+          "Buena Park": {
+            "pop": 84188,
+            "pct": 100,
+            "old": "w"
+          },
+          "Cypress": {
+            "pop": 50235,
+            "pct": 100,
+            "old": "w"
+          },
+          "Fountain Valley": {
+            "pop": 57120,
+            "pct": 100,
+            "old": "w"
+          },
+          "Fullerton": {
+            "pop": 65668,
+            "pct": 45.63,
+            "old": "p"
+          },
+          "Garden Grove": {
+            "pop": 172347,
+            "pct": 100,
+            "old": "w"
+          },
+          "La Palma": {
+            "pop": 15597,
+            "pct": 100,
+            "old": "w"
+          },
+          "Los Alamitos": {
+            "pop": 890,
+            "pct": 7.55,
+            "old": "w"
+          },
+          "Midway City": {
+            "pop": 8845,
+            "pct": 100,
+            "old": "w"
+          },
+          "Placentia": {
+            "pop": 14884,
+            "pct": 28.66,
+            "old": "w"
+          },
+          "Santa Ana": {
+            "pop": 23846,
+            "pct": 7.66,
+            "old": ""
+          },
+          "Seal Beach": {
+            "pop": 607,
+            "pct": 2.4,
+            "old": ""
+          },
+          "Stanton": {
+            "pop": 13258,
+            "pct": 34.83,
+            "old": ""
+          },
+          "Westminster": {
+            "pop": 91083,
+            "pct": 100,
+            "note": "Little Saigon",
+            "old": "w"
+          }
+        }
+      },
+      "leavingNote": "Dropped from the district by Prop 50: Brea, Yorba Linda and Rossmoor. Placentia shrinks to a partial city.",
+      "neighbors": [
+        "Long Beach",
+        "Anaheim",
+        "Huntington Beach",
+        "Downey",
+        "Irvine",
+        "Orange",
+        "Whittier",
+        "Costa Mesa",
+        "Bellflower",
+        "La Mirada",
+        "Tustin"
+      ],
+      "nudge": {
+        "Artesia": [
+          -16,
+          -8
+        ],
+        "Cerritos": [
+          12,
+          0
+        ],
+        "Hawaiian Gardens": [
+          -30,
+          4
+        ],
+        "La Palma": [
+          4,
+          8
+        ],
+        "Los Alamitos": [
+          -8,
+          6
+        ],
+        "Rossmoor": [
+          -6,
+          -2
+        ],
+        "Midway City": [
+          4,
+          12
+        ],
+        "Stanton": [
+          4,
+          0
+        ]
+      }
+    },
+    "money": {
+      "watchIntro": "Industries tied to his record and committees (Armed Services and Small Business) and to Orange County issues: immigration enforcement, public safety, housing costs, health care and jobs. Each card totals the PACs and donor employers whose names fit the category.",
+      "trackaipacNote": "",
+      "israelNotes": [
+        "Endorsed by J Street PAC, not AIPAC. No United Democracy Project or DMFI outside spending in CA-45 in 2024.",
+        "Not on the August 2025 AIPAC trip to Israel. Took a Feb 13–19, 2026 trip to Israel paid for by the J Street Education Fund ($19,864)."
+      ],
+      "udpNotes": [
+        "**2024:** UDP's only California House spending was in CA-34 and CA-47. In CA-47 it spent over $4 million, mostly on TV and mailers, against Dave Min before the March primary. Min won anyway. [KQED](https://www.kqed.org/news/12016915/aipac-spent-big-in-the-2024-election-how-did-the-money-show-up-in-californias-congressional-races) [ProPublica](https://projects.propublica.org/itemizer/committee/C00799031/2024/independent-expenditures)",
+        "**2026:** FEC independent-expenditure records show no UDP spending for or against Tran. UDP's California money this cycle went to the CA-14 race. [FEC](https://www.fec.gov/data/candidate/H4CA45170/) [Jewish Insider](https://jewishinsider.com/2026/08/aipac-closes-a-rocky-primary-season-with-a-california-gamble/)",
+        "**In 2023–24, AIPAC's PAC gave $19,512 to his Republican opponent, Michelle Steel,** and nothing to Tran (total of the itemized gifts dated 2023 and 2024). [ProPublica](https://projects.propublica.org/itemizer/committee/C00704981/pac-donations/C00797670)",
+        "Track AIPAC's figure for Tran counts money from pro-Israel donors and PACs; FEC records show most of it came through J Street. It is not UDP spending. [Track AIPAC](https://www.trackaipac.com/tracker/people/member-derek-tran-ca-45-d)"
+      ],
+      "outsideNote": "A third-party tracker had reported about $1M from the crypto super PAC Fairshake for Tran in 2026; FEC records show no Fairshake spending for or against him.",
+      "pacsNote": "The Jewish Democratic Council of America PAC passed through about $6,600 in 2024; it is not counted as pro-Israel here because Track AIPAC does not count it."
+    },
+    "events": {
+      "intro": "Public town halls and forums where Tran answers questions in person, by phone or online, from his press releases and news coverage.",
+      "help": "",
+      "ask": "His website and press releases list no upcoming town halls. Call the Cypress office to ask when the next one will be, or see every way to reach him on the [Overview](./#channels).",
+      "officeHours": {
+        "heading": "Mobile office hours",
+        "intro": "His staff, not Tran himself, hold regular drop-in hours for help with federal agencies: Social Security, Medicare, VA benefits, immigration cases, the IRS and passports. No appointment needed.",
+        "spots": [
+          {
+            "city": "Fountain Valley",
+            "week": 1,
+            "weekday": 2,
+            "label": "First Tuesday of every month",
+            "time": "11:00 AM – 1:00 PM",
+            "addr": "17967 Bushard St, Fountain Valley, CA 92708"
+          },
+          {
+            "city": "Cerritos",
+            "week": 2,
+            "weekday": 2,
+            "label": "Second Tuesday of every month",
+            "time": "10:00 AM – 1:00 PM",
+            "addr": "12340 South St, Cerritos, CA 90703"
+          }
+        ],
+        "note": "Schedule from [tran.house.gov/mobile-office-hours](https://tran.house.gov/mobile-office-hours). Check there or call the Cypress office before going; dates can change around holidays."
+      }
+    }
+  },
+  "overview": {
+    "_note": "Member-specific Overview tiles (scripts/build_overview.py). costPromise: start of the promise 'issue' in data/promises.json whose status answers 'Delivering on cost of living?'; costPledge: how the tile names that pledge (default 'cost-of-living'). themes may add a 'note' after the rule. themes: [{q, rx, section, noun}] counts press releases mentioning a topic (e.g. Luz Rivas: Focused on homelessness?). votes: [{q, roll, section, what}] shows one recorded vote (e.g. the Epstein Files Transparency Act, House roll 2025-289).",
+    "costPromise": null,
+    "themes": [],
+    "votes": [
+      {
+        "q": "Release the Epstein files?",
+        "roll": "2025-289",
+        "section": "epstein-files",
+        "what": "the Epstein Files Transparency Act"
+      }
+    ]
+  },
+  "computedChecks": [
+    {
+      "label": "End Citizens United, 2023-24 (direct + earmarked)",
+      "shown": 9550,
+      "contribs": {
+        "rx": "END CITIZENS UNITED",
+        "cycles": [
+          2024
+        ]
+      }
+    },
+    {
+      "label": "Jeffries Battleground Protection Fund, 2025-26",
+      "shown": 56942,
+      "contribs": {
+        "rx": "JEFFRIES BATTLEGROUND",
+        "cycles": [
+          2026
+        ],
+        "memo": "exclude"
+      }
+    },
+    {
+      "label": "Leadership PACs giving on Mar 28-29, 2024",
+      "shown": 4,
+      "tol": 0,
+      "contribs": {
+        "rx": "JEFF PAC|AMERIPAC|FAIR SHOT|CA LUV|CALIFORNIA LEADERSHIP UNITED",
+        "cycles": [
+          2024
+        ],
+        "dates": [
+          "2024-03-28",
+          "2024-03-29"
+        ],
+        "stat": "distinct"
+      }
+    },
+    {
+      "label": "Each of those leadership PAC gifts ($)",
+      "shown": 5000,
+      "tol": 0,
+      "contribs": {
+        "rx": "JEFF PAC|AMERIPAC|FAIR SHOT|CA LUV|CALIFORNIA LEADERSHIP UNITED",
+        "cycles": [
+          2024
+        ],
+        "dates": [
+          "2024-03-28",
+          "2024-03-29"
+        ],
+        "stat": "max"
+      }
+    },
+    {
+      "label": "House Majority PAC for Tran, 2023-24",
+      "shown": 1889515,
+      "outside": {
+        "id": "C00495028",
+        "side": "support",
+        "cycles": [
+          2024
+        ]
+      }
+    },
+    {
+      "label": "Congressional Leadership Fund against Tran, 2023-24",
+      "shown": 11363827,
+      "outside": {
+        "id": "C00504530",
+        "cycles": [
+          2024
+        ]
+      }
+    },
+    {
+      "label": "Fairshake spending for or against Tran, 2025-26",
+      "shown": 0,
+      "outside": {
+        "rx": "FAIRSHAKE",
+        "cycles": [
+          2026
+        ]
+      }
+    },
+    {
+      "label": "AIPAC PAC to Michelle Steel, 2023-24",
+      "shown": 19512,
+      "tol": 0,
+      "saved": {
+        "url": "https://projects.propublica.org/itemizer/committee/C00704981/pac-donations/C00797670",
+        "rx": "Political Action Committee (?:[A-Z][a-z]+\\.? \\d{1,2}, (\\d{4})) \\$([\\d,]+)",
+        "years": [
+          "2023",
+          "2024"
+        ]
+      }
+    }
+  ],
+  "_computedChecksNote": "Figures typed in curated text (cards, establishment items, money notes) and recomputed by scripts/verify_computed.py from the raw FEC files or a saved source copy; see that script for the fields."
+}

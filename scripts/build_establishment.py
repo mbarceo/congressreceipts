@@ -63,7 +63,8 @@ for c in CYCLES:
         # Some PAC contributions (mostly after the 2024 election) were filed as "other receipts" (line 15, type 15K)
         if ln == "15" and r.get("receipt_type") == "15K": ln = "11C"
         for w, l in LEADERS.items():
-            if ln in ("11C", "12", "11B") and leader_hit(w, l, r, n):
+            # Leaders' gifts filed as "other receipts" (line 15) count whatever their receipt type, as in verify_computed.py
+            if (ln in ("11C", "12", "11B") or r.get("line_number") == "15") and leader_hit(w, l, r, n):
                 lead[w]["y" + c] += a; lead[w]["committees"].add(n.title())
         if ln != "11C": continue
         # Order: unmistakable union or advocacy names first (the FEC files some unions, e.g. the NEA fund,

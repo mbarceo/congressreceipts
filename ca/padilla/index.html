@@ -85,7 +85,7 @@ img{max-width:100%}
     </div>
     <div class="comm-grid" id="commGrid"></div>
     <div class="handles" id="caucusBox"><table>
-      <thead><tr><th>Caucus or role</th><th>Role</th></tr></thead>
+      <thead><tr><th>Caucus or role</th><th>Role</th><th id="caucusWhat" hidden>What it is</th></tr></thead>
       <tbody id="caucusRows"></tbody>
     </table></div>
     <p class="muted" style="margin:0;font-size:.8rem" id="commNote"></p>
@@ -155,7 +155,7 @@ const fmt = n => Number(n).toLocaleString("en-US");
 const usd = n => "$" + Math.round(n).toLocaleString("en-US");
 const getJSON = p => fetch(p).then(r => { if(!r.ok) throw 0; return r.json(); });
 const longDate = iso => new Date(iso+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
-const NOT_BUILT = (what, how) => `<p class="muted">${what} isn't built yet${how ? `: run <code>${how}</code> (see SCAFFOLD.md)` : ""}.</p>`;
+const NOT_BUILT = (what) => `<p class="muted"><span class="soon">Coming soon</span> ${what} is still being researched.</p>`;
 
 TRACKER.ready.then(M => {
 const P = M.profile || {}, md = s => TRACKER.md(s, M), $ = id => document.getElementById(id);
@@ -171,6 +171,7 @@ const facts = [
 $("facts").innerHTML = facts.map(([l, v]) => `<span><b>${esc(l)}</b> ${md(v)}</span>`).join("");
 $("factSrc").innerHTML = (P.factSources || []).map(s => `<li>${md(s)}</li>`).join("");
 $("factSrc").hidden = !(P.factSources || []).length;
+if(P.factsNote) $("verifyNote").insertAdjacentHTML("afterend", " " + md(P.factsNote));   // e.g. what an Unverified label means
 getJSON("data/fec/summary.json").then(f => { $("fecThrough").textContent = f.cycles?.all?.through ? `(FEC filings through ${longDate(f.cycles.all.through)})` : ""; })
   .catch(() => { $("fecThrough").textContent = "(once FEC filings are loaded)"; });
 
@@ -178,15 +179,15 @@ getJSON("data/fec/summary.json").then(f => { $("fecThrough").textContent = f.cyc
 function renderVerdicts(ov, est){
   const tiles = ov.tiles.map(t => ({...t, go:"See the evidence →"}));
   tiles.push(est && est.headline
-    ? {q: est.question || "Establishment Democrat?", v: est.headline, href: "establishment.html", go: "Open the Establishment tab →", rule: est.rule || est.why || ""}
+    ? {q: est.question || "Establishment Democrat?", v: verdict(est.headline), href: "establishment.html", go: "Open the Establishment tab →", rule: est.rule || est.why || ""}
     : {q: "Establishment Democrat?", v: "See the Establishment page", href: "establishment.html", go: "Open the Establishment tab →", rule: "", pending: true});
   $("vbtns").innerHTML = tiles.map(t => `<a class="vbtn${t.pending?" pending":""}" href="${esc(t.href)}">
-    <span class="pp-q">${esc(t.q)}</span><span class="pp-v">${esc(t.v)}</span>
+    <span class="pp-q">${esc(t.q)}</span><span class="pp-v">${esc(verdict(t.v))}</span>
     ${t.rule?`<span class="vrule">${esc(t.rule)}</span>`:""}<span class="vgo">${esc(t.go)}</span></a>`).join("");
 }
 Promise.all([getJSON("data/overview.json"), getJSON("data/establishment.json").catch(() => null)])
   .then(([ov, est]) => renderVerdicts(ov, est))
-  .catch(() => { $("vbtns").innerHTML = NOT_BUILT("The verdicts page data", "scripts/build_overview.py"); });
+  .catch(() => { $("vbtns").innerHTML = NOT_BUILT("The quick verdicts"); });
 
 // ---------- District map (House only; profile.map holds the curated text and labels) ----------
 if(M.house){
@@ -203,6 +204,13 @@ if(M.house){
   const MIN = 0.05;   // shares below this are boundary-file slivers, not real parts of the district
   const NEIGHBORS = MP.neighbors || [];
   const SMALL = new Set(MP.smallLabels || []);
+  // Optional: colorBy "county" shades and groups places by county (GROUPS: {code: name}) instead of by kind of place;
+  // placeStats {mode, places: {name: {pop, pct, note}}} shows residents and the share of each city's population in place of
+  // area shares for that map; nudge {name: [dx, dy]} moves crowded labels; leavingNote replaces the computed "leaving" line.
+  const BYC = MP.colorBy === "county", GROUPS = MP.groups || {};
+  const KEYS = BYC ? Object.keys(GROUPS) : ["la","city","uninc"], LAB = k => BYC ? GROUPS[k] : KINDS[k];
+  const cls = p => BYC ? p.c : p.kind, NUDGE = MP.nudge || {};
+  const STATS = MP.placeStats || null, stat = (p, mode) => STATS && STATS.mode === mode ? (STATS.places || {})[p.n] : null;
   let GEO = null;
   function renderMap(mode){
     const svg = $("map");
@@ -215,37 +223,40 @@ if(M.house){
     g += `<path class="land other" d="${GEO.other||""}"/>` + Object.entries(GEO.counties).map(([k,d]) => `<path class="land ${k}" d="${d}"/>`).join("");
     g += GEO.places.map(p => `<path class="city" d="${p.d}"/>`).join("");
     g += `<g clip-path="url(#cdclip)">${GEO.places.filter(inMode).map(p =>
-        `<path class="incd ${p.kind}" d="${p.d}"><title>${esc(p.n)}: ${Math.round(p[mode].share*100)}% of its area in the district</title></path>`).join("")}</g>`;
+        `<path class="incd ${cls(p)}" d="${p.d}"><title>${esc(p.n)}: ${stat(p,mode) ? `${fmt(stat(p,mode).pop)} residents in the district (${stat(p,mode).pct}% of the city)` : `${Math.round(p[mode].share*100)}% of its area in the district`}</title></path>`).join("")}</g>`;
+    if(BYC) g += Object.keys(GROUPS).slice(0,1).map(k => GEO.counties[k] ? `<path class="county-line" d="${GEO.counties[k]}"/>` : "").join("");
     g += `<path class="cd-outline" d="${GEO.cd[mode]}"/>`;
     g += GEO.places.filter(p => !p[mode] && NEIGHBORS.includes(p.n) && p.ctr[0]>40 && p.ctr[0]<w-40 && p.ctr[1]>20 && p.ctr[1]<h-20)
       .map(p => `<text class="nb" x="${p.ctr[0]}" y="${p.ctr[1]}" text-anchor="middle">${esc(p.n)}</text>`).join("");
     g += GEO.places.filter(p => inMode(p) && p[mode].share >= 0.3).map(p => {
-      const [x,y] = p[mode].lbl;
-      return `<text class="lbl${SMALL.has(p.n)?" sm":""}" x="${x}" y="${y+4}" text-anchor="middle">${esc(p.n)}</text>`; }).join("");
+      const [dx,dy] = NUDGE[p.n] || [0,0], [x,y] = [p[mode].lbl[0]+dx, p[mode].lbl[1]+dy], note = (stat(p,mode) || {}).note;
+      return `<text class="lbl${SMALL.has(p.n)?" sm":""}" x="${x}" y="${y+4}" text-anchor="middle">${esc(p.n)}${note?`<tspan class="note" x="${x}" dy="14">${esc(note)}</tspan>`:""}</text>`; }).join("");
     const mi5 = 5/69*ky, sy = h-28;
     g += `<g class="scale"><line x1="24" y1="${sy}" x2="${24+mi5}" y2="${sy}"/><line x1="24" y1="${sy-6}" x2="24" y2="${sy+6}"/><line x1="${24+mi5}" y1="${sy-6}" x2="${24+mi5}" y2="${sy+6}"/><text x="24" y="${sy-12}">5 miles</text></g>`;
     g += `<text class="compass" x="${w-28}" y="34" text-anchor="middle">N ↑</text>`;
     svg.innerHTML = g;
 
     const bar = $("countyBar"), lists = $("cityLists");
-    const kindsHere = ["la","city","uninc"].filter(k => GEO.places.some(p => p.kind===k && inMode(p)));
+    const kindsHere = KEYS.filter(k => GEO.places.some(p => cls(p)===k && inMode(p)));
     if(POP && POP.mode === mode){
       bar.innerHTML = `<div class="cb-track" role="img" aria-label="District population by place">${POP.parts.map(([k,,n]) => `<span class="cb ${k}" style="width:${n/POP.total*100}%"></span>`).join("")}</div>
         <div class="cb-legend">${POP.parts.map(([k,l,n,note]) => `<span><i class="sw ${k}"></i>${esc(l)} · ${fmt(n)} residents (${(n/POP.total*100).toFixed(1)}%${note?`; ${esc(note)}`:""})</span>`).join("")}<span class="muted">Total ${fmt(POP.total)}${POP.source?`, ${esc(POP.source)}`:""}</span></div>`;
     } else {
-      bar.innerHTML = `<div class="cb-legend">${kindsHere.map(k => `<span><i class="sw ${k}"></i>${esc(KINDS[k])}</span>`).join("")}${POP?`<span class="muted">Population for these lines isn't shown; the source covers only the other map.</span>`:""}</div>`;
+      bar.innerHTML = `<div class="cb-legend">${kindsHere.map(k => `<span><i class="sw ${k}"></i>${esc(LAB(k))}</span>`).join("")}${POP?`<span class="muted">Population for these lines isn't shown; the source covers only the other map.</span>`:""}</div>`;
     }
     const other = MODES.find(m => m.key !== mode)?.key;
-    const groups = ["la","city","uninc"].map(k => {
-      const items = GEO.places.filter(p => p.kind===k && inMode(p)).sort((a,b) => b[mode].share - a[mode].share || a.n.localeCompare(b.n));
+    const groups = KEYS.map(k => {
+      const size = p => stat(p,mode) ? stat(p,mode).pop : p[mode].share;
+      const items = GEO.places.filter(p => cls(p)===k && inMode(p)).sort((a,b) => size(b) - size(a) || a.n.localeCompare(b.n));
       if(!items.length) return "";
-      return `<div class="citycol"><h3><i class="sw ${k}"></i>${esc(KINDS[k])}</h3><ul>${items.map(p => {
+      return `<div class="citycol"><h3><i class="sw ${k}"></i>${esc(LAB(k))}</h3><ul>${items.map(p => {
         const isNew = mode===MODES[0].key && other && !(p[other] && p[other].share >= MIN);
-        const sh = p[mode].share >= 0.95 ? "whole area" : `${Math.round(p[mode].share*100)}% of area`;
-        return `<li><span>${esc(p.n)}${isNew?' <span class="pill s-progress">New</span>':""}</span><span class="mono muted">${sh}</span></li>`; }).join("")}</ul></div>`;
+        const st = stat(p,mode), sh = st ? (st.pct >= 100 ? "whole city" : `${st.pct}% of city`) : p[mode].share >= 0.95 ? "whole area" : `${Math.round(p[mode].share*100)}% of area`;
+        return `<li><span>${esc(p.n)}${p.cdp && BYC?' <span class="muted">(unincorporated)</span>':""}${isNew?' <span class="pill s-progress">New</span>':""}</span><span class="mono muted">${sh}</span></li>`; }).join("")}</ul></div>`;
     }).join("");
     const leaving = mode===MODES[0].key && other ? GEO.places.filter(p => p[other] && p[other].share >= MIN && !(p[mode] && p[mode].share >= MIN)).map(p => p.n) : [];
-    lists.innerHTML = groups + (leaving.length ? `<p class="muted" style="margin:0;font-size:.85rem;grid-column:1/-1">Mostly or entirely leaving the district under the new lines (under 5% of the area remains): ${leaving.map(esc).join(", ")}.</p>` : "");
+    lists.innerHTML = groups + (mode===MODES[0].key && MP.leavingNote ? `<p class="muted" style="margin:0;font-size:.85rem;grid-column:1/-1">${md(MP.leavingNote)}</p>`
+      : leaving.length ? `<p class="muted" style="margin:0;font-size:.85rem;grid-column:1/-1">Mostly or entirely leaving the district under the new lines (under 5% of the area remains): ${leaving.map(esc).join(", ")}.</p>` : "");
   }
   $("mapToggle").addEventListener("click", e => {
     const b = e.target.closest("button"); if(!b) return;
@@ -254,7 +265,7 @@ if(M.house){
   });
   renderMap(MODES[0].key);
   getJSON("data/geo/map.json").then(d => { GEO = d; renderMap(document.querySelector('#mapToggle [aria-pressed="true"]').dataset.m); })
-    .catch(() => { $("map").innerHTML = `<text x="450" y="300" text-anchor="middle" class="lbl">The district map isn't built yet (scripts/fetch_geo.py, then build_map.py).</text>`; });
+    .catch(() => { $("map").innerHTML = `<text x="450" y="300" text-anchor="middle" class="lbl">District map coming soon.</text>`; });
 }
 
 // ---------- Statewide context (Senate only; profile.state: {heading, intro, facts: [{label, value}], note}) ----------
@@ -269,18 +280,21 @@ if(M.senate && P.state && (P.state.intro || (P.state.facts || []).length)){
 // ---------- Committees and caucuses (profile.committees, profile.caucuses) ----------
 const COMMS = (P.committees && P.committees.length) ? P.committees : M.committees.map(n => ({name: n}));
 $("commGrid").innerHTML = COMMS.length ? COMMS.map(c => `<article class="comm"><h3>${esc(c.name)}</h3>
-  ${(c.subs || []).length ? `<ul>${c.subs.map(s => `<li><b>${esc(s.name)}</b> <span class="muted">· ${esc(s.role || "member")}</span></li>`).join("")}</ul>` : ""}
+  ${(c.subs || []).length ? `<ul>${c.subs.map(s => `<li><b>${esc(s.name)}</b> ${s.pill ? `<span class="pill s-progress">${esc(s.role)}</span>` : `<span class="muted">· ${esc(s.role || "member")}</span>`}${s.src ? ` <a class="src" href="${esc(s.src)}" target="_blank" rel="noopener">Source</a>` : ""}</li>`).join("")}</ul>` : ""}
   ${c.blurb ? `<p class="muted">${md(c.blurb)}</p>` : ""}</article>`).join("")
-  : `<p class="muted">Committee assignments aren't filled in yet (member.committees and profile.committees in tracker.config.json).</p>`;
-const CAUCUSES = P.caucuses || [];
-$("caucusRows").innerHTML = CAUCUSES.map(([n,r]) => `<tr><td>${esc(n)}</td><td>${esc(r)}</td></tr>`).join("");
+  : `<p class="muted"><span class="soon">Coming soon</span> Committee assignments are being added.</p>`;
+// Each caucus: [name, role] or {name, role, what, src, unv} (src links the role; unv marks it Unverified)
+const CAUCUSES = (P.caucuses || []).map(c => Array.isArray(c) ? {name: c[0], role: c[1]} : c);
+const WHAT = CAUCUSES.some(c => c.what);
+$("caucusWhat").hidden = !WHAT;
+$("caucusRows").innerHTML = CAUCUSES.map(c => `<tr><td>${esc(c.name)}</td><td>${esc(c.role)}${c.src ? ` <a class="src" href="${esc(c.src)}" target="_blank" rel="noopener">Source</a>` : ""}${c.unv ? ' <span class="pill s-unv">Unverified</span>' : ""}</td>${WHAT ? `<td>${esc(c.what || "")}</td>` : ""}</tr>`).join("");
 $("caucusBox").hidden = $("caucusEb").hidden = $("caucusLede").hidden = !CAUCUSES.length;
 $("commNote").innerHTML = md(P.committeesNote || "");
 
 // ---------- Promise scorecard ----------
 if(P.promisesIntro) $("promiseIntro").innerHTML = md(P.promisesIntro);
 const STATUS = {delivered:["Delivered","s-delivered"], progress:["In progress","s-progress"], stalled:["Stalled","s-stalled"], contradicted:["Contradicted","s-contradicted"], none:["No action found","s-none"]};
-const KIND = {explicit: `${M.Poss} words${P.promiseYear ? ", " + P.promiseYear : ""}`, record: "Ran on this record, not a stated pledge"};
+const KIND = {explicit: `${M.Poss} words${P.promiseYear ? ", " + P.promiseYear : ""}`, record: `Ran on ${M.poss} record, not a stated pledge`, paraphrase: "Promise, paraphrased"};
 getJSON("data/promises_built.json").then(d => {
   const counts = {}; d.promises.forEach(p => counts[p.status] = (counts[p.status] || 0) + 1);
   $("tally").innerHTML = Object.entries(STATUS).map(([k,[l]]) => `<div class="tile"><span class="n">${counts[k] || 0}</span><span class="l">${l}</span></div>`).join("");
@@ -293,11 +307,11 @@ getJSON("data/promises_built.json").then(d => {
       <p class="muted" style="margin:0;font-size:.85rem">${esc(p.why)}</p>
     </article>`).join("");
   $("noPromise").textContent = d.noPromise || "";
-}).catch(() => { $("promises").innerHTML = NOT_BUILT("The promise scorecard", "scripts/build_promises.py"); });
+}).catch(() => { $("promises").innerHTML = NOT_BUILT("The promise scorecard"); });
 
 // ---------- Vote alignment ----------
 function renderAlignment(a, ta, votes, fec){
-  const TA = Object.fromEntries((ta?.members || []).map(m => [m.name, m]));
+  const TA = Object.fromEntries((ta?.members || []).map(m => [m.name.replace(/\s*\([A-Z]\)$/, ""), m]));   // "Young Kim (R)" -> "Young Kim"
   const me = (ta?.members || []).find(m => m.group === "me");
   const years = [...new Set(votes.map(v => v.y))].sort();
   if(years.length) $("glanceNote").innerHTML = `Computed from every ${M.chamberName} roll call in ${years.join(" and ")}. Most votes split along party lines, so ${esc(M.short)} agrees with nearly every Democrat most of the time. The telling column is <b>contested votes</b>: roll calls where at least 10% of Democrats broke from the rest of their party.`;
@@ -335,11 +349,12 @@ function renderAlignment(a, ta, votes, fec){
   if(j) items.push(j.total ? `Received ${usd(j.total)} from ${esc(lc)}: ${j.items.map(p => `${esc(p.name.replace(/\s+/g," ").trim())} ${usd(p.amount)} (${Object.keys(p.byCycle).join(", ")})`).join("; ")}, per FEC filings. <a class="src" href="money.html#pacs">Money tab</a>` : `No contributions from ${esc(lc)} in ${M.poss} FEC filings. <a class="src" href="money.html#pacs">Money tab</a>`);
   const jp = a.peers.find(p => p.name === M.leaderName);
   if(jp) items.push(`Agrees with ${esc(M.leaderLast)} on ${jp.all}% of votes and ${jp.contested}% of contested votes. <a class="src" href="establishment.html">Establishment tab</a>`);
+  (P.leaderTies || []).forEach(x => items.push(md(x)));   // curated, sourced ties (also in data/claims_static.json)
   $("leaderTies").innerHTML = items.length ? items.map(x => `<li>${x}</li>`).join("") : `<li class="muted">Appears once votes and FEC data are built.</li>`;
 }
 Promise.all([getJSON("data/alignment.json"), getJSON("data/trackaipac.json").catch(() => null), getJSON("data/votes.json"), getJSON("data/fec/summary.json").catch(() => null)])
   .then(([a, ta, v, f]) => renderAlignment(a, ta, v, f))
-  .catch(() => { $("alignTake").innerHTML = `Vote alignment isn't built yet: run the vote fetch, then <code>scripts/build_votes.py</code> and <code>build_alignment.py</code>.`; });
+  .catch(() => { $("alignTake").innerHTML = `<span class="soon">Coming soon</span> Vote alignment is being compiled from the official roll calls.`; });
 
 // ---------- Recent statements ----------
 getJSON("data/statements.json").then(list => {
@@ -358,8 +373,8 @@ $("offices").innerHTML = OFFICES.map(o => `<article class="office"><h3>${esc(o.n
   ${o.phone ? `<div class="phone"><span class="mono">${esc(o.phone)}</span><button class="copy" type="button" data-copy="${esc(o.phone)}">Copy</button></div>` : ""}
   ${o.note ? `<p class="muted">${md(o.note)}</p>` : ""}</article>`).join("") +
   (online.length ? `<article class="office"><h3>Online</h3><p class="addr">${online.map(md).join("<br>")}</p>${P.onlineNote ? `<p class="muted">${md(P.onlineNote)}</p>` : ""}</article>` : "") ||
-  `<p class="muted">Office addresses aren't filled in yet. See <a href="${esc(M.site || "#")}" target="_blank" rel="noopener">${esc(M.domain || "the official site")}</a>.</p>`;
-const cell = h => h && h.url ? `<a href="${esc(h.url)}" target="_blank" rel="noopener">${esc(h.text || h.url)}</a>` : (h && h.text ? esc(h.text) : "—");
+  `<p class="muted"><span class="soon">Coming soon</span> Office addresses are being added. Meanwhile, see <a href="${esc(M.site || "#")}" target="_blank" rel="noopener">${esc(M.domain || "the official site")}</a>.</p>`;
+const cell = h => (h && h.unv ? '<span class="pill s-unv">Unverified</span> ' : "") + (h && h.url ? `<a href="${esc(h.url)}" target="_blank" rel="noopener">${esc(h.text || h.url)}</a>` : (h && h.text ? esc(h.text) : "—"));
 const HANDLES = (P.handles && P.handles.length) ? P.handles
   : [{platform: "Website", office: M.site ? {text: M.domain, url: M.site} : null, campaign: M.campaignSite ? {text: M.campaignDomain, url: M.campaignSite} : null}];
 $("handleRows").innerHTML = HANDLES.map(h => `<tr><td>${esc(h.platform)}</td><td>${cell(h.office)}</td><td>${cell(h.campaign)}</td></tr>`).join("");

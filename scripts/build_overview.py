@@ -36,7 +36,7 @@ for key in ("ice", "police", "corporate"):
     tiles.append({"q": c["q"], "v": c["v"], "href": f"stances.html#card-{key}", "rule": c["rule"], "n": c["n"]})
 
 # 4-6. Member-specific tiles, from tracker.config.json "overview" (see its _note):
-#   costPromise: start of the promise "issue" whose scorecard status answers "Delivering on cost of living?"
+#   costPromise: start of the promise "issue" whose scorecard status answers "Delivering on cost of living?" (null: no tile)
 #   costPledge: how the tile's rule names that pledge (default "cost-of-living")
 #   themes: [{"q", "rx", "section", "noun", "note"}]: how often press releases mention a topic (under 10% = not a major theme);
 #           the optional note is added after the rule
@@ -45,7 +45,8 @@ from config import CFG
 OV = CFG.get("overview", {})
 PR = M.get("pronouns") or {"poss": "their"}
 LAB = {"delivered": "Delivered", "progress": "In progress", "stalled": "Stalled", "contradicted": "Contradicted", "none": "No action found"}
-pc = next((p for p in prom["promises"] if p["issue"].startswith(OV.get("costPromise", "Economic opportunity"))), None)
+CP = OV.get("costPromise", "Economic opportunity")   # null or "" turns the tile off
+pc = next((p for p in prom["promises"] if p["issue"].startswith(CP)), None) if CP else None
 if pc:
     tiles.append({"q": "Delivering on cost of living?", "v": LAB[pc["status"]], "href": "#scorecard",
                   "rule": f"The promise scorecard's status for {PR['poss']} {OV.get('costPledge') or 'cost-of-living'} pledge. " + pc["why"], "n": len(pc["actions"])})

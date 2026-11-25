@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* Layout: a district accountability ledger — summary band, then scorecard, stances, money, sources in one 960px column */
+/* Layout: an accountability ledger — summary band, then scorecard, stances, money, sources in one 960px column */
 :root{
   /* Palette: forest green and sage. The dark values below override these: the site is dark-only by choice. */
   --divider:#c9d0cb;
@@ -262,3 +262,6 @@ dialog.detail::backdrop{background:rgba(5,10,8,.7);-webkit-backdrop-filter:blur(
 .vbtn .pp-q{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;opacity:.9}
 .vbtn .pp-v{font-family:var(--f-display);font-size:1.7rem;font-weight:800;line-height:1.1}
 .vbtn .vgo{margin-top:8px;font-size:.82rem;font-weight:600;opacity:.85}
+
+/* "Coming soon" label for sections still being researched */
+.soon{display:inline-block;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:1px 8px;margin-right:6px;vertical-align:1px}

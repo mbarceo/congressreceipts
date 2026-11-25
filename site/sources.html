@@ -125,7 +125,7 @@ Promise.all([fetch("data/verification.json").then(r=>r.json()), fetch("data/comp
   const pages = [...new Set(ALL.map(r=>r.page))];
   $("pageSel").innerHTML = `<option value="">All pages</option>` + pages.map(p=>`<option value="${esc(p)}">${esc(PAGE[p]||p)}</option>`).join("");
   render();
-}).catch(()=>{ $("rows").innerHTML = `<tr><td colspan="5">No verification results yet: run <code>./scripts/run_checks.sh</code> after the data is built (see SCAFFOLD.md).</td></tr>`; });
+}).catch(()=>{ $("rows").innerHTML = `<tr><td colspan="5"><span class="soon">Coming soon</span> The source checks for this tracker are being run. Every claim will be listed here with how and when it was checked.</td></tr>`; });
 ["q","pageSel","tierSel","statusSel"].forEach(id=>$(id).addEventListener(id==="q"?"input":"change", render));
 $("more").addEventListener("click", more);
 });

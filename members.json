@@ -19,14 +19,9 @@
    "seat": "CA-45",
    "chamber": "house",
    "voteId": "T000491",
-   "format": "legacy",
+   "format": "shared",
    "portrait": "assets/tran.jpg",
-   "oldRepo": "ca-rep-45-tracker",
-   "establishment": {
-    "headline": "Mostly yes",
-    "source": "ca/tran/establishment.html",
-    "_note": "Derek Tran's legacy tracker writes its verdict into the page rather than a data file; remove once converted."
-   }
+   "oldRepo": "ca-rep-45-tracker"
   },
   {
    "path": "ca/padilla",

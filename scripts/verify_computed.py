@@ -99,6 +99,34 @@ for c in CYC:
         check(f"{k.title()} PAC money, {lab(c)}", shown, calc[c]["cat"].get(k, 0),
               "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)")
 
+# ---- Member-specific figures typed on the pages (tracker.config.json "computedChecks"; none by default) ----
+# Each: {"label", "shown" (the figure the page states), "contribs" | "outside" | "saved": {...}, "tol"}:
+#   contribs: rows of data/fec/raw/committee_contribs_<cycle>.json matching "id" (contributor_id) or "rx" (contributor
+#             name), optional "cycles", "dates" (YYYY-MM-DD list), "memo": "exclude" | "only" (default: all rows);
+#             "stat": "sum" (default) | "max" | "min" | "distinct" (number of different contributors)
+#   outside:  Schedule E rows in data/fec/summary.json "outside" matching "id" or "rx" (committee), optional "cycles", "side"
+#   saved:    a page saved in data/sources by verify_all.py ("url"); "rx" captures (year, amount) per row; sums "years"
+for cc in CFG.get("computedChecks", []):
+    if "contribs" in cc:
+        q = cc["contribs"]; cy = [str(c) for c in q.get("cycles", FEC["cycles"])]
+        rs = [r for c in cy for r in rows[c] if ((q.get("id") and r.get("contributor_id") == q["id"]) or (q.get("rx") and re.search(q["rx"], r.get("contributor_name") or "", re.I)))
+              and (not q.get("dates") or (r.get("contribution_receipt_date") or "")[:10] in q["dates"])
+              and {"exclude": r.get("memo_code") != "X", "only": r.get("memo_code") == "X"}.get(q.get("memo"), True)]
+        vals = [r.get("contribution_receipt_amount") or 0 for r in rs]
+        actual = {"sum": sum(vals), "max": max(vals, default=0), "min": min(vals, default=0), "distinct": len({r.get("contributor_name") for r in rs})}[q.get("stat", "sum")]
+        src = "FEC Schedule A (" + (q.get("id") or q.get("rx")) + ")"
+    elif "outside" in cc:
+        q = cc["outside"]; cy = [str(c) for c in q.get("cycles", FEC["cycles"])]
+        actual = sum(x["total"] for x in summ["outside"] if x["cycle"] in cy and (not q.get("side") or x["side"] == q["side"])
+                     and ((q.get("id") and x["id"] == q["id"]) or (q.get("rx") and re.search(q["rx"], x["committee"] or "", re.I))))
+        src = "FEC Schedule E by candidate"
+    else:
+        q = cc["saved"]; idx = json.load(open(os.path.join(ROOT, "data/sources/index.json")))
+        t = re.sub(r"\s+", " ", __import__("html").unescape(re.sub(r"<[^>]+>", " ", open(os.path.join(ROOT, "data/sources", idx[q["url"]]["file"]), encoding="utf-8", errors="replace").read())))
+        actual = sum(float(a.replace(",", "")) for y, a in re.findall(q["rx"], t) if not q.get("years") or y in q["years"])
+        src = "Saved copy of " + q["url"]
+    check(cc["label"], cc["shown"], actual, src, cc.get("tol"))
+
 # ---- Press releases ----
 stm, full = J("data/statements.json"), J("data/statements_full.json")
 site = re.sub(r"^https?://(www\.)?", "", M.get("site", "")).rstrip("/") or "official site"

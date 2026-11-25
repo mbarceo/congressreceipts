@@ -107,3 +107,37 @@ def party_side(r, party="D", by_caucus=False):
     y = sum(1 for k, v in r["votes"].items() if who(k) == party and v == "Yea")
     n = sum(1 for k, v in r["votes"].items() if who(k) == party and v == "Nay")
     return ("Yea" if y > n else "Nay" if n > y else None), y, n
+
+# Wording for curated text about one or more roll calls the member voted the same way on, so card, stance and
+# promise text never types a vote or a tally. vs: rows of data/votes.json. Placeholders:
+#   {vote} Yea/Nay/...   {Vote} "Voted for" / "Voted against" / "Voted “Present” on" / "Did not vote on"
+#   {yea} {nay} {dY} {dN} {rY} {rN} (first roll)   {DemMaj}/{demMaj} "Most Democrats voted no (9–187)" (Democrats' Yea–Nay)
+#   {dcount} "9–187"   {dside} no/yes   {dopposed} opposed/supported/split on   {dall} "opposed by most Democrats" (every roll)
+#   {brk_phrase} "breaking with most Democrats" / "voting with most Democrats"   {dsame} Democrats who voted as the member did
+#   {n} rolls   {yeaCount} {nayCount}
+VOTE_PHRASE = {"Yea": "Voted for", "Nay": "Voted against", "Present": "Voted “Present” on", "Not Voting": "Did not vote on"}
+def breaks_party(v):
+    return v["member"] in ("Yea", "Nay") and v.get("dSide") in ("Yea", "Nay") and v["member"] != v["dSide"]
+def roll_phrases(vs):
+    v0 = vs[0]; vote = v0["member"]
+    word = "no" if v0["dN"] > v0["dY"] else "yes" if v0["dY"] > v0["dN"] else None
+    phrase = f"Most Democrats voted {word}" if word else "Democrats split"
+    ctx = {"vote": vote if len({v["member"] for v in vs}) == 1 else None, "Vote": VOTE_PHRASE.get(vote, f"Recorded as {vote} on"),
+           "yea": v0["yea"], "nay": v0["nay"], "dY": v0["dY"], "dN": v0["dN"], "rY": v0["rY"], "rN": v0["rN"],
+           "cY": v0.get("cY", v0["dY"]), "cN": v0.get("cN", v0["dN"]),
+           "DemMaj": f"{phrase} ({v0['dY']}–{v0['dN']})", "demMaj": f"{phrase[0].lower() + phrase[1:]} ({v0['dY']}–{v0['dN']})", "dcount": f"{v0['dY']}–{v0['dN']}",
+           "dside": word or "evenly", "dopposed": {"no": "opposed", "yes": "supported"}.get(word, "split on"),
+           "brk_phrase": "breaking with most Democrats" if all(breaks_party(v) for v in vs) else "voting with most Democrats",
+           "dsame": v0["dY"] if vote == "Yea" else v0["dN"] if vote == "Nay" else None,
+           "n": len(vs), "yeaCount": sum(v["member"] == "Yea" for v in vs), "nayCount": sum(v["member"] == "Nay" for v in vs)}
+    if all(v.get("dSide") == "Nay" for v in vs): ctx["dall"] = "opposed by most Democrats"
+    elif all(v.get("dSide") == "Yea" for v in vs): ctx["dall"] = "backed by most Democrats"
+    return ctx
+
+def fill_text(t, ctx, where, problems):
+    """Fills {placeholders} in curated text; a placeholder with no value is a build problem, never left in the page."""
+    def rep(m):
+        k = m.group(1)
+        if ctx.get(k) is None: problems.append(f"{where}: no value for {{{k}}}"); return m.group(0)
+        return str(ctx[k])
+    return re.sub(r"\{(\w+)\}", rep, t)

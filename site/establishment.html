@@ -117,7 +117,7 @@ const vp = v => `<span class="pill ${v==="Yea"?"v-yea":"v-nay"}">${esc(v)}</span
 const CAT = [["labor","Labor unions"],["ideological","Advocacy and ideological groups"],["corporate","Corporate PACs"],["trade","Trade and professional associations"],["candidate","Other candidates' campaigns"]];
 
 fetch("data/establishment.json").then(r=>r.json()).then(d=>{
-  $("verdictCard").innerHTML = `<div class="pp-head"><div class="pp-flag"><span class="pp-q">${esc(d.question)}</span><span class="pp-v">${esc(d.headline)}</span></div><p class="pp-sum">${esc(d.summary)}</p></div><p class="muted" style="margin:0;font-size:.82rem">${esc(d.why)}</p>`;
+  $("verdictCard").innerHTML = `<div class="pp-head"><div class="pp-flag"><span class="pp-q">${esc(d.question)}</span><span class="pp-v">${esc(verdict(d.headline))}</span></div><p class="pp-sum">${esc(d.summary)}</p></div><p class="muted" style="margin:0;font-size:.82rem">${esc(d.why)}</p>`;
   $("tiles").innerHTML = d.tiles.map(([n,l])=>`<div class="tile"><span class="n" style="font-size:1.5rem">${esc(n)}</span><span class="l">${esc(l)}</span></div>`).join("");
   const col = (k,title,cls) => `<div class="col"><h3><span class="${cls}">${title}</span>${k==="e"?"Signs of alignment":"Signs of independence"}</h3><ol>${d.signs[k].map(s=>`<li>${esc(s.text)} ${src(s.src.map(([t,u])=>[t.replace("{ndiff}",d.nums.ndiff),u]))}</li>`).join("")}</ol></div>`;
   $("cols").innerHTML = col("e","Establishment","tag-e") + col("i","Independent","tag-i");
@@ -148,11 +148,11 @@ fetch("data/establishment.json").then(r=>r.json()).then(d=>{
   const n = d.nums;
   document.querySelectorAll(".leaderName").forEach(e=>e.textContent=n.leaderName);
   $("breaksNote").textContent = `${M.Subj} and ${n.leaderName} both cast a Yea or Nay on ${n.both} roll calls in this Congress. They split on ${n.ndiff}, listed below with the official wording.`;
-  $("voteTiles").innerHTML = [[n.jeffAgree+"%","Same vote as "+n.leaderName],[n.unity+"%","Votes cast with the Democratic majority (rank "+n.rank+(n.tied?", tied,":"")+" of "+n.dems+")"],[n.jeffC+"%","Agreement with "+n.leaderName+" on the "+n.contested+" votes where Democrats split"],[n.aocC+"%","Agreement with Ocasio-Cortez on those votes"]].filter(([a])=>!/^(null|undefined)%$/.test(a))
+  $("voteTiles").innerHTML = [[n.jeffAgree+"%","Same vote as "+n.leaderName],[n.unity+"%","Votes cast with the Democratic majority (rank "+n.rank+(n.tied?", tied,":"")+" of "+n.dems+")"],[n.jeffC+"%","Agreement with "+n.leaderName+" on the "+n.contested+" votes where Democrats split"],[n.gottC+"%","Agreement with centrist Josh Gottheimer on those votes"],[n.aocC+"%","Agreement with Alexandria Ocasio-Cortez on those votes"]].filter(([a])=>!/^(null|undefined)%$/.test(a))
     .map(([a,b])=>`<div class="tile"><span class="n">${esc(a)}</span><span class="l">${esc(b)}</span></div>`).join("");
   $("breakRows").innerHTML = d.jeffriesDiffs.map(x=>`<tr><td class="mono" style="white-space:nowrap;font-size:.78rem">${esc(x.date)}</td><td><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.bill)}</a> · ${esc(x.title)}<div class="qq">${esc(x.q)}</div></td><td>${vp(x.me)}</td><td>${vp(x.jeffries)}</td></tr>`).join("");
 
-  $("leftList").innerHTML = d.left.map(e=>`<li>${esc(e.text)} <a class="src" href="${esc(e.u)}"${ext(e.u)}>Source</a></li>`).join("");
+  $("leftList").innerHTML = d.left.map(e=>`<li>${esc(e.text)}${e.u?` <a class="src" href="${esc(e.u)}"${ext(e.u)}>Source</a>`:""}</li>`).join("");
 }).catch(()=>{ $("verdictCard").innerHTML = '<p class="muted">The establishment data didn\'t load. Reload the page to try again.</p>'; });
 });
 </script>

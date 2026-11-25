@@ -1,0 +1,287 @@
+{
+ "_note": "Hand-curated, sourced items for establishment.html. Numbers in {braces} are filled by scripts/build_establishment.py from FEC data, House roll calls and data/alignment.json; never type a number the member'se. Tag e = sign of establishment alignment, i = sign of independence. Headline is an editorial call; 'why' states the rule.",
+ "question": "Establishment Democrat?",
+ "headline": "Mostly yes",
+ "summary": "The party's campaign arm recruited and protected him, Hakeem Jeffries campaigned for him, and he helped nominate Jeffries for Speaker. Money from party leaders' committees more than doubled after he took office. His independence shows on immigration enforcement and one Israel aid vote, not on leadership fights. On votes that split Democrats he sides with centrists more than with leadership or progressives.",
+ "why": "\"Mostly yes\" because the party's campaign arm recruited and protects him, he is close to Hakeem Jeffries, and money from party leaders' committees rose after he took office. His breaks with the party come on immigration enforcement and one Israel aid vote, not on leadership fights, and on contested votes he sides with centrists.",
+ "roles": {
+  "Hakeem Jeffries": "House Democratic Leader",
+  "Katherine Clark": "Democratic Whip",
+  "Nancy Pelosi": "Speaker Emerita",
+  "Pete Aguilar": "Caucus Chair",
+  "Steny Hoyer": "Former Majority Leader",
+  "DCCC": "Party campaign committee"
+ },
+ "tiles": [
+  [
+   "{lead26}",
+   "From party leaders' committees in 2025–26, up from {lead24}"
+  ],
+  [
+   "Frontline",
+   "DCCC incumbent-protection program, 2025–26"
+  ],
+  [
+   "{rank} of {dems}",
+   "Rank among House Democrats for party-line voting"
+  ],
+  [
+   "1 of 5",
+   "Democrats who formally nominated Jeffries for Speaker"
+  ]
+ ],
+ "signs": {
+  "e": [
+   {
+    "text": "Recruited into the DCCC's Red to Blue program in 2024 and its Frontline incumbent-protection program in 2025–26, and kept on Frontline after Prop 50 made his seat safer.",
+    "src": [
+     [
+      "Red to Blue",
+      "https://dccc.org/derek-tran-added-to-dcccs-coveted-red-to-blue-program"
+     ],
+     [
+      "Frontline",
+      "https://dccc.org/2026-frontline/"
+     ]
+    ]
+   },
+   {
+    "text": "Jeffries campaigned for him in Anaheim (Oct 2024), held a joint event in Buena Park (Mar 2026) and endorsed him. Tran was one of five Democrats who formally nominated Jeffries for Speaker (Nov 18, 2026).",
+    "src": [
+     [
+      "AP",
+      "https://www.pressdemocrat.com/2024/10/14/democrat-hakeem-jeffries-stumps-in-california-in-a-bid-to-reclaim-house-control/"
+     ],
+     [
+      "Roundtable",
+      "https://tran.house.gov/media/press-releases/icymi-leader-hakeem-jeffries-joins-us-representative-derek-tran-roundtable"
+     ],
+     [
+      "NBC News",
+      "https://www.nbcnews.com/politics/congress/democrats-formally-nominate-rep-hakeem-jeffries-paving-way-first-black-rcna609619"
+     ]
+    ]
+   },
+   {
+    "text": "Money from party leaders' committees rose from {lead24} in 2023–24 to {lead26} in 2025–26. In 2024, four leadership PACs each gave $5,000 on Mar 28–29, the days the DCCC named him a Red to Blue candidate.",
+    "src": [
+     [
+      "FEC totals below",
+      "#leaders"
+     ]
+    ]
+   },
+   {
+    "text": "Member of the centrist New Democrat Coalition, endorsed by its Action Fund, and co-chair of the House Democratic Caucus National Security Task Force.",
+    "src": [
+     [
+      "NDC members",
+      "https://newdemocratcoalition.house.gov/members"
+     ],
+     [
+      "Endorsements",
+      "https://web.archive.org/web/20261103052415/https://www.derektranforcongress.com/endorsements-v"
+     ],
+     [
+      "Task force",
+      "https://tran.house.gov/media/press-releases/representative-derek-tran-announces-leadership-national-security-task-force"
+     ]
+    ]
+   },
+   {
+    "text": "Party-aligned groups spent heavily for him in 2024: House Majority PAC spent $1.89 million supporting him, per FEC records, on top of its spending against Michelle Steel.",
+    "src": [
+     [
+      "FEC data",
+      "money.html#outside"
+     ]
+    ]
+   }
+  ],
+  "i": [
+   {
+    "text": "In his 2024 primary the California Democratic Party endorsed his rival, Kim Nguyen-Penaloza. He won by about 366 votes.",
+    "src": [
+     [
+      "Endorsement",
+      "https://theliberaloc.com/?p=49708"
+     ],
+     [
+      "Primary result",
+      "https://en.wikipedia.org/wiki/2024_California%27s_45th_congressional_district_election"
+     ]
+    ]
+   },
+   {
+    "text": "Voted for the Laken Riley Act and other Republican immigration bills, and for the resolution thanking ICE, against most Democrats.",
+    "src": [
+     [
+      "Laken Riley",
+      "https://clerk.house.gov/Votes/2025023"
+     ],
+     [
+      "H.Res. 488",
+      "https://clerk.house.gov/Votes/2025158"
+     ]
+    ]
+   },
+   {
+    "text": "Voted for the Massie amendment to cut $3.3B in military aid to Israel, which Jeffries opposed (Whip Clark and most Democrats voted yes).",
+    "src": [
+     [
+      "Roll call",
+      "https://clerk.house.gov/Votes/2026243"
+     ],
+     [
+      "CBS News",
+      "https://www.cbsnews.com/news/us-israel-aid-house-democrats-massie-amendment/"
+     ]
+    ]
+   },
+   {
+    "text": "Ranks {rank} of {dems} House Democrats for voting with his party.",
+    "src": [
+     [
+      "Computed from roll calls",
+      "./#alignment"
+     ]
+    ]
+   },
+   {
+    "text": "Not a member of the Blue Dog Coalition or Problem Solvers Caucus. Also not in the Congressional Progressive Caucus.",
+    "src": [
+     [
+      "Blue Dogs",
+      "https://bluedogs-gluesenkampperez.house.gov/members"
+     ],
+     [
+      "Problem Solvers",
+      "https://problemsolverscaucus.house.gov/caucus-members"
+     ],
+     [
+      "CPC",
+      "https://progressives.house.gov/caucus-members"
+     ]
+    ]
+   }
+  ]
+ },
+ "timeline": [
+  {
+   "d": "2024-03-28",
+   "k": "e",
+   "text": "DCCC adds him to Red to Blue, its program for top recruits.",
+   "u": "https://dccc.org/derek-tran-added-to-dcccs-coveted-red-to-blue-program"
+  },
+  {
+   "d": "2024-03-29",
+   "k": "e",
+   "text": "Within two days, the leadership PACs of Jeffries, Clark, Aguilar and Hoyer each give him $5,000, per FEC records.",
+   "u": "money.html#pacs"
+  },
+  {
+   "d": "2023-11-20",
+   "k": "i",
+   "text": "California Democratic Party endorses his primary rival, Kim Nguyen-Penaloza.",
+   "u": "https://theliberaloc.com/?p=49708"
+  },
+  {
+   "d": "2024-05-15",
+   "k": "i",
+   "text": "End Citizens United endorses him for refusing corporate PAC money.",
+   "u": "https://endcitizensunited.org/latest-news/press-releases/end-citizens-united-let-america-vote-endorses-derek-tran-for-congress"
+  },
+  {
+   "d": "2024-09-09",
+   "k": "e",
+   "text": "DMFI PAC (Democratic Majority for Israel) endorses him for the general election.",
+   "u": "https://dmfipac.org/news-updates/press-release/dmfi-pac-announces-new-slate-of-2024-general-election-endorsements/"
+  },
+  {
+   "d": "2024-10-12",
+   "k": "e",
+   "text": "Hakeem Jeffries campaigns for him at Golden Sea Restaurant in Anaheim, near Little Saigon.",
+   "u": "https://www.pressdemocrat.com/2024/10/14/democrat-hakeem-jeffries-stumps-in-california-in-a-bid-to-reclaim-house-control/"
+  },
+  {
+   "d": "2024-11-05",
+   "k": "e",
+   "text": "In the 2024 general election, House Majority PAC spends $1.89 million supporting him, while the Republican Congressional Leadership Fund spends $11.36 million against him, per FEC records.",
+   "u": "money.html#outside"
+  },
+  {
+   "d": "2025-01-03",
+   "k": "e",
+   "text": "Votes for Jeffries for Speaker.",
+   "u": "https://clerk.house.gov/Votes/2025002"
+  },
+  {
+   "d": "2025-03-06",
+   "k": "e",
+   "text": "Named to the DCCC's Frontline program for vulnerable incumbents.",
+   "u": "https://dccc.org/dccc-announces-members-of-2026-frontline-program"
+  },
+  {
+   "d": "2025-03-14",
+   "k": "e",
+   "text": "Leads 66 House Democrats urging Senate leader Chuck Schumer to block the Republican funding bill, the same position as House leadership.",
+   "u": "https://tran.house.gov/media/press-releases/congressman-derek-tran-leads-house-democrats-issuing-urgent-appeal-leader"
+  },
+  {
+   "d": "2025-06-24",
+   "k": "e",
+   "text": "Named co-chair of the House Democratic Caucus National Security Task Force.",
+   "u": "https://tran.house.gov/media/press-releases/representative-derek-tran-announces-leadership-national-security-task-force"
+  },
+  {
+   "d": "2025-11-07",
+   "k": "i",
+   "text": "The Washington Free Beacon reports he took $46,500 from corporate PACs after pledging in his 2024 race not to take “a dime” of it.",
+   "u": "https://freebeacon.com/democrats/california-congressman-who-campaigned-on-no-corporate-pac-money-pledge-takes-tens-of-thousands-of-dollars-from-corporate-pacs/"
+  },
+  {
+   "d": "2026-10-14",
+   "k": "i",
+   "text": "FEC filings through Oct 14, 2026 show {corp26} from {ncorp26} corporate PACs in 2025–26, and {corp24} in 2023–24.",
+   "u": "money.html#pacs"
+  },
+  {
+   "d": "2026-03-12",
+   "k": "e",
+   "text": "Hosts Jeffries in Buena Park for a veterans roundtable.",
+   "u": "https://tran.house.gov/media/press-releases/icymi-leader-hakeem-jeffries-joins-us-representative-derek-tran-roundtable"
+  },
+  {
+   "d": "2026-07-15",
+   "k": "i",
+   "text": "Votes for the Massie amendment to cut Israel military aid, which Jeffries opposed.",
+   "u": "https://www.cbsnews.com/news/us-israel-aid-house-democrats-massie-amendment/"
+  },
+  {
+   "d": "2025-08-18",
+   "k": "e",
+   "text": "Jeffries forms the Jeffries Battleground Protection Fund, which goes on to send Tran $56,942 in 2025–26.",
+   "u": "money.html"
+  },
+  {
+   "d": "2026-11-18",
+   "k": "e",
+   "text": "One of five Democrats who formally nominate Jeffries for Speaker; urges “discipline” and “unity.”",
+   "u": "https://www.nbcnews.com/politics/congress/democrats-formally-nominate-rep-hakeem-jeffries-paving-way-first-black-rcna609619"
+  }
+ ],
+ "left": [
+  {
+   "text": "Not a member of the Congressional Progressive Caucus. Nearby Rep. Dave Min (CA-47) is.",
+   "u": "https://progressives.house.gov/caucus-members"
+  },
+  {
+   "text": "No endorsement, criticism or primary challenge from Justice Democrats, Our Revolution, the Working Families Party, Sunrise or DSA was found. He had no progressive challenger in 2026.",
+   "u": ""
+  },
+  {
+   "text": "MoveOn and J Street endorsed him in 2024.",
+   "u": "https://jstreetpac.org/candidate/tran-victory-fund"
+  }
+ ]
+}

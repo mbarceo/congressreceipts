@@ -151,9 +151,11 @@ print("outside spending rows:", len(ie), "| UDP rows:", udp or "none")
 # Name matching only: a hit means "the name looks like", not a verified classification. The page says so.
 watch = []
 for w in FEC["watch"]:
-    rx = re.compile(w["rx"], re.I)
-    pm = [p for p in out["pacs"] if rx.search(p["name"])]
-    em = [e for e in out.get("employers", []) if rx.search(e["name"])]
+    # optional "not": names that fit the regex but belong elsewhere (a credit union, a nurses' union under health care)
+    rx, nx = re.compile(w["rx"], re.I), re.compile(w["not"], re.I) if w.get("not") else None
+    hit = lambda s: bool(rx.search(s)) and not (nx and nx.search(s))
+    pm = [p for p in out["pacs"] if hit(p["name"])]
+    em = [e for e in out.get("employers", []) if hit(e["name"])]
     watch.append({"id": w["id"], "label": w["label"], "why": w["why"],
                   "pacTotal": round(sum(p["amount"] for p in pm), 2), "empTotal": round(sum(e["total"] for e in em), 2),
                   "pacs": [{"name": p["name"], "id": p["id"], "amount": p["amount"], "byCycle": p["byCycle"]} for p in pm[:12]],

@@ -168,3 +168,6 @@
     onScroll();
   }
 })();
+
+// A verdict that hasn't been decided yet is stored as "TBD"; visitors see "Coming soon" instead.
+window.verdict = h => (!h || h === "TBD") ? "Coming soon" : h;

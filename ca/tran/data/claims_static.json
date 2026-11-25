@@ -1,0 +1,128 @@
+{
+ "_note": "Facts typed into the pages through tracker.config.json (not built from data). Each lists terms that must appear on its source. 'check': 'clerk-committees' verifies committee seats against his own entry in the Clerk's member file.",
+ "claims": [
+  {
+   "page": "overview",
+   "section": "Header",
+   "text": "Committees: Armed Services; Small Business.",
+   "url": "https://clerk.house.gov/xml/lists/MemberData.xml",
+   "check": "clerk-committees",
+   "must": [
+    "Armed Services",
+    "Small Business"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Header",
+   "text": "2026 general (unofficial, all 424 precincts reporting): Tran 151,971 (61.0%), Vo 97,070 (39.0%).",
+   "url": "https://api.sos.ca.gov/returns/us-rep/district/45",
+   "must": [
+    "151,971",
+    "97,070"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Header",
+   "text": "2024 general: Tran 158,264 (50.1%), Steel 157,611 (49.9%), a 653-vote margin.",
+   "url": "https://en.wikipedia.org/wiki/2024_California%27s_45th_congressional_district_election",
+   "must": [
+    "158,264",
+    "157,611"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Committees",
+   "text": "Subcommittees: Readiness; Intelligence and Special Operations; Oversight, Investigations and Regulations (Ranking Member); Contracting and Infrastructure.",
+   "url": "https://tran.house.gov/media/press-releases/congressman-tran-announces-subcommittees-after-prestigious-appointments-house",
+   "must": [
+    "Readiness",
+    "Intelligence and Special Operations",
+    "Oversight, Investigations",
+    "Contracting and Infrastructure",
+    "Ranking Member"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Committees",
+   "text": "Co-founder of the Lowering Costs Caucus.",
+   "url": "https://tran.house.gov/media/press-releases/representatives-tran-landsman-and-scholten-launch-congressional-caucus-lower",
+   "must": [
+    "Lowering Costs Caucus"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Committees",
+   "text": "Member of the New Democrat Coalition.",
+   "url": "https://newdemocratcoalition.house.gov/members",
+   "must": [
+    "Tran"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Committees",
+   "text": "Co-chair of the Democratic Caucus National Security Task Force.",
+   "url": "https://tran.house.gov/media/press-releases/representative-derek-tran-announces-leadership-national-security-task-force",
+   "must": [
+    "National Security Task Force"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Ties to the party leader",
+   "text": "One of five Democrats who formally nominated Jeffries for Speaker in the caucus vote on Nov 18, 2026.",
+   "url": "https://www.nbcnews.com/politics/congress/democrats-formally-nominate-rep-hakeem-jeffries-paving-way-first-black-rcna609619",
+   "must": [
+    "Tran",
+    "nominat"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Ties to the party leader",
+   "text": "Hosted Jeffries in the district for a roundtable with veterans and local leaders (Mar 2026).",
+   "url": "https://tran.house.gov/media/press-releases/icymi-leader-hakeem-jeffries-joins-us-representative-derek-tran-roundtable"
+  },
+  {
+   "page": "overview",
+   "section": "Ties to the party leader",
+   "text": "Pointed to Jeffries' proposal on Israel aid in his statement backing the Massie amendment (Jul 2026).",
+   "url": "https://tran.house.gov/media/press-releases/representative-derek-tran-supports-massie-amendment-block-us-military-funding"
+  },
+  {
+   "page": "overview",
+   "section": "Ties to the party leader",
+   "text": "Issued a statement praising Jeffries' election as the Democratic nominee for Speaker (Nov 18, 2026).",
+   "url": "https://tran.house.gov/media/press-releases/rep-derek-tran-statement-hakeem-jeffries-historic-election-democratic-nominee"
+  },
+  {
+   "page": "money",
+   "section": "United Democracy Project",
+   "text": "2024: UDP's only California House spending was in CA-34 and CA-47. In CA-47 it spent over $4 million, mostly on TV and mailers, against Dave Min before the March primary. Min won anyway.",
+   "url": "https://www.kqed.org/news/12016915/aipac-spent-big-in-the-2024-election-how-did-the-money-show-up-in-californias-congressional-races"
+  },
+  {
+   "page": "money",
+   "section": "United Democracy Project",
+   "text": "2026: FEC independent-expenditure records show no UDP spending for or against Tran. UDP's California money this cycle went to the CA-14 race.",
+   "url": "https://www.fec.gov/data/candidate/H4CA45170/"
+  },
+  {
+   "page": "money",
+   "section": "United Democracy Project",
+   "text": "In 2023–24, AIPAC's PAC gave $19,512 to his Republican opponent, Michelle Steel, and nothing to Tran (total of the itemized gifts dated 2023 and 2024).",
+   "url": "https://projects.propublica.org/itemizer/committee/C00704981/pac-donations/C00797670"
+  },
+  {
+   "page": "money",
+   "section": "United Democracy Project",
+   "text": "Track AIPAC's figure for Tran counts money from pro-Israel donors and PACs; FEC records show most of it came through J Street. It is not UDP spending.",
+   "url": "https://www.trackaipac.com/tracker/people/member-derek-tran-ca-45-d"
+  }
+ ]
+}

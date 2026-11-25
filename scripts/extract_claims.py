@@ -26,11 +26,13 @@ for p in J("data/promises_built.json")["promises"]:
 # Stances: votes, quoted releases, Israel card
 st = J("data/stances.json")
 for i in st["issues"]:
+    for it in i.get("items", []):   # curated record items (quote "q" must be on the source)
+        add("stances", i["name"], it["t"] + (f" “{it['q']}”" if it.get("q") else ""), it["u"], urls=it.get("more", []), date=it["d"], quote=it.get("q"))
     for r in i["rolls"]:
         add("stances", i["name"], f"Voted {r['vote']} on {r['bill']}, {r['title']} ({r['q']}). Result: {r['result']} {r['yea']}–{r['nay']}; Democrats {r['dY']}–{r['dN']}." + (f" {r['note']}" if r.get("note") else ""), r["url"], date=r["date"])
     for s in i["statements"]:
         if s.get("quote"): add("stances", i["name"], f"From her release of {s['date']}: “{s['quote'].strip('…').strip()}”", s["u"], date=s["date"], quote=s["quote"].strip("…").strip())
-for it in st["israel"]["items"]: add("stances", "Israel and Palestine", it["t"], it["u"])
+for it in st["israel"]["items"]: add("stances", "Israel and Palestine", it["t"], it["u"], urls=it.get("more", []))
 
 # Evidence cards
 for c in J("data/cards.json")["cards"]:

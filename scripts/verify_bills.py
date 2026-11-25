@@ -11,10 +11,14 @@ from config import M, ROOT
 OUT = os.path.join(ROOT, "data/billstatus"); os.makedirs(OUT, exist_ok=True)
 ME = M["bioguide"]
 # The bills this tracker's pages make claims about, from data/bills.json:
-#   {"bills": [{"bill": "hr6644", "role": "sponsor"|"cosponsor"|"none", "law": "119-101" or null, "note": "..."}]}
+#   {"bills": [{"bill": "hr6644", "role": "sponsor"|"cosponsor"|"none", "law": "119-101" or null, "housePassed": true (optional:
+#   a House passage action must be in the record), "note": "..."}]}
 # (Luz Rivas example: hr5157 sponsor; s1071 law 119-60, the NDAA that carried it; hr6644 law 119-101.)
 _bp = os.path.join(ROOT, "data/bills.json")
-BILLS = [(b["bill"], b.get("role", "none"), b.get("law")) for b in json.load(open(_bp))["bills"]] if os.path.exists(_bp) else []
+_BL = json.load(open(_bp))["bills"] if os.path.exists(_bp) else []
+BILLS = [(b["bill"], b.get("role", "none"), b.get("law")) for b in _BL]
+PASS = {b["bill"] for b in _BL if b.get("housePassed")}
+PASS_RX = ("Passed/agreed to in House", "On passage Passed", "On motion to suspend the rules and pass the bill", "agreed to in House")
 if not BILLS: print("no data/bills.json entries: nothing to check (list every bill a page makes a claim about)")
 # A bill id may carry its Congress ("118-s4991"); a bare one ("hr6644") is the 119th.
 split = lambda b: (b.split("-")[0], b.split("-")[1]) if "-" in b else ("119", b)
@@ -38,6 +42,7 @@ for b, role, law in BILLS:
     if role == "sponsor" and ME not in sponsors: issues.append(f"{M['short']} is not the sponsor")
     if role == "cosponsor" and ME not in cos: issues.append(f"{M['short']} is not a cosponsor")
     if law and law not in laws: issues.append(f"Public Law {law} not listed")
+    if b in PASS and not any(k in t for _, t in acts for k in PASS_RX): issues.append("no House passage action found")
     res[b] = {"ok": not issues, "title": bill.findtext("title"), "role": role, "introduced": bill.findtext("introducedDate"),
               "laws": laws, "latestAction": acts[-1][0] if acts else None, "latestText": acts[-1][1][:120] if acts else None,
               "url": url_for(b), "issue": "; ".join(issues)}

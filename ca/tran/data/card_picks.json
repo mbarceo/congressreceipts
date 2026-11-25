@@ -1,95 +1,68 @@
 {
- "_note": "Evidence cards for the Stances page's big questions (palestine, ice, police, corporate). Build: python3 -I scripts/build_cards.py -> data/cards.json, which palestine.js, ice.js, corporate.js and scripts/extract_claims.js read. Item order here is the order shown. Curated items: d, s (side key), t, u, optional hi (shown in compact view), unv (Unverified pill), brk. Roll-call items: 'rolls' lists House Clerk roll ids (year + roll number, as in https://clerk.house.gov/Votes/<id>) with 'yea' = the side a Yea vote is on; his vote, the item's side, the 'Breaks with party' pill and the date (single roll) come from data/votes.json. Multi-roll items must share one vote. Placeholders in t: {Vote} = 'Voted for' / 'Voted against' / 'Voted “Present” on' / 'Did not vote on'; {DemMaj}/{demMaj} = 'Most Democrats voted no (187–9)'; {dcount} = Democrats majority–minority; {dopposed} = 'opposed' / 'supported' / 'split on'; {dside} = 'no' / 'yes'; {dall} = 'opposed by most Democrats' (all rolls); {brk_phrase} = 'breaking with most Democrats' / 'voting with most Democrats'; {dsame} = number of Democrats who voted as he did; {env_count} = his record on 2025 Congressional Review Act resolutions on environmental and energy rules. Money placeholders come from data/fec/establishment_calc.json, data/fec/summary.json and data/fec/raw (see build_cards.py). 'check' asserts his vote on a roll a curated item describes without linking to it.",
- "cards": [
-  {
-   "key": "palestine",
-   "q": "Pro-Palestine?",
-   "v": "Mixed",
-   "neutral": "mixed",
-   "sum": "He has moved toward conditioning U.S. military aid to Israel and pressing for Gaza humanitarian access, and opposed sanctions on the International Criminal Court. He also backs Israel's defense, including Iron Dome, and is aligned with J Street, a pro-Israel, pro-two-state group, rather than AIPAC. He has not called for ending all aid to Israel.",
-   "short": "Backs conditions on military aid to Israel and Gaza humanitarian access, and opposed ICC sanctions. Also backs Iron Dome and sides with J Street, not AIPAC.",
-   "items": [
-    {
-     "d": "2026-08",
-     "s": "pal",
-     "t": "Co-led a letter from 65 members urging Secretary Rubio to ease Israeli “dual-use” restrictions blocking humanitarian aid to Gaza.",
-     "u": "https://tran.house.gov/media/press-releases/representatives-tran-bera-and-carbajal-lead-65-members-urging-secretary-rubio"
-    },
-    {
-     "rolls": [
-      {
-       "roll": "2026243",
-       "yea": "pal"
-      }
-     ],
-     "t": "{Vote} the Massie amendment to cut $3.3B in military aid to Israel, saying he wants to “end unconditional funding for Israel.”",
-     "also": [
-      "https://tran.house.gov/media/press-releases/representative-derek-tran-supports-massie-amendment-block-us-military-funding"
-     ]
-    },
-    {
-     "d": "2026-07",
-     "s": "isr",
-     "t": "In the same statement, said he supports continued funding for Israel's defense, including Iron Dome.",
-     "u": "https://tran.house.gov/media/press-releases/representative-derek-tran-supports-massie-amendment-block-us-military-funding"
-    },
-    {
-     "d": "2026-04",
-     "s": "pal",
-     "t": "Hosted CAIR-LA's Hussam Ayloush at his Capitol office during Muslim Advocacy Day; Republicans attacked him for it.",
-     "u": "https://freebeacon.com/democrats/california-democrat-hosts-cair-leader-who-said-israel-should-be-attacked/"
-    },
-    {
-     "d": "2026-02",
-     "s": "mixed",
-     "t": "Took a J Street Education Fund trip to Israel (Feb 13–20, 2026, $19,864) to “explore the current situation in Israel and the Palestinian territories.” J Street backs Israel and a two-state solution.",
-     "u": "https://www.legistorm.com/trip/group/16351.html"
-    },
-    {
-     "d": "2025-12",
-     "s": "pal",
-     "t": "Cosponsors the Block the Bombs Act (H.R. 3565), which would restrict transfers of certain bombs to Israel.",
-     "u": "https://www.congress.gov/bill/119th-congress/house-bill/3565"
-    },
-    {
-     "d": "2025-07",
-     "s": "pal",
-     "unv": 1,
-     "t": "Gave a floor speech saying Israel was killing Palestinians seeking aid, as reported by the Washington Free Beacon. The exact wording is unverified.",
-     "u": "https://freebeacon.com/democrats/california-democrat-hosts-cair-leader-who-said-israel-should-be-attacked/"
-    },
-    {
-     "d": "2025-06",
-     "s": "isr",
-     "t": "Called a nuclear Iran dangerous to the U.S. and Israel, while urging diplomacy over military strikes.",
-     "u": "https://tran.house.gov/media/press-releases/rep-derek-tran-conflict-between-israel-and-iran"
-    },
-    {
-     "rolls": [
-      {
-       "roll": "20257",
-       "yea": "isr"
-      }
-     ],
-     "t": "{Vote} H.R. 23, the bill to sanction the International Criminal Court after it issued warrants for Israeli leaders."
-    },
-    {
-     "d": "2024–26",
-     "s": "mixed",
-     "t": "Took about {proisrael_about} from pro-Israel groups, almost all through J Street, and {aipac} from AIPAC's PAC. Endorsed by J Street, not AIPAC.",
-     "u": "money.html"
-    }
+ "_note": "Evidence cards for the Stances page's big questions (ice, police, corporate); the Israel and Palestine card is in data/stance_picks.json. Build: scripts/build_cards.py -> data/cards.json. Curated items: d, s (pro/con), t, u, optional hi, unv, brk, check ([{roll, expect}] asserts a vote the text describes without linking it), names (companies that must be among the latest cycle's corporate PACs). Roll-call items: 'rolls' [{roll, yea}] with yea = the side a Yea vote is on; the vote, side, date, break pill and tallies come from data/votes.json via placeholders ({Vote}, {DemMaj}, {demMaj}, {dcount}, {dopposed}, {dside}, {dall}, {brk_phrase}, {dsame}; see scripts/votes_common.py). Money placeholders come from data/fec (see 'money'). 'voteSets' picks a set of roll calls by rule ({env_count}); 'guards' stop the build if money wording stops being true. Verdicts come from the rules in build_cards.py; 'sum' and 'short' are curated summaries.",
+ "money": {
+  "ecu24": {
+   "rx": "END CITIZENS UNITED",
+   "cycles": [
+    "2024"
    ]
   },
+  "ecu26": {
+   "rx": "END CITIZENS UNITED",
+   "cycles": [
+    "2026"
+   ]
+  },
+  "aipac": {
+   "id": "C00797670"
+  },
+  "jstreet": {
+   "rx": "J ?STREET"
+  }
+ },
+ "voteSets": {
+  "env": {
+   "year": 2025,
+   "bill": "J RES",
+   "q": "On Passage",
+   "desc": "^(?=.*disapprov)(?=.*(Environmental Protection|\\bEPA\\b|Department of Energy|Energy Efficiency|Ocean Energy|Land Management|National Park Service|Fish and Wildlife))",
+   "rMajority": true,
+   "vote": "Nay",
+   "_why": "2025 Congressional Review Act resolutions on environmental and energy rules (passage votes, Republican-backed)"
+  }
+ },
+ "guards": [
+  {
+   "a": "ecu26",
+   "op": "==",
+   "b": 0,
+   "why": "corporate card says End Citizens United gave nothing in 2025-26"
+  },
+  {
+   "a": "jstreet",
+   "op": ">=",
+   "b": "proIsrael",
+   "times": 0.9,
+   "why": "Israel card says almost all pro-Israel money came through J Street"
+  },
+  {
+   "a": "trade26",
+   "op": ">",
+   "b": "trade24",
+   "why": "corporate card says trade money went up"
+  }
+ ],
+ "cards": [
   {
    "key": "ice",
    "q": "Pro-ICE?",
-   "v": "Mostly no",
-   "neutral": "mix",
-   "sum": "He has voted against funding ICE without reforms, called for agents to stand down after the Minneapolis killings, and opposed most Republican immigration-enforcement bills. But he broke with most Democrats to vote for the Laken Riley Act, a resolution thanking ICE personnel, and two bills deporting immigrants convicted of certain crimes or fraud.",
-   "short": "Votes against ICE funding without reforms and most enforcement bills, but broke with Democrats on the Laken Riley Act and a resolution thanking ICE.",
+   "eb": "Immigration enforcement",
+   "section": "immigration",
    "pro": "Supports ICE / enforcement",
    "con": "Critical of ICE / enforcement",
+   "neutral": "Neither",
+   "sum": "He has voted against funding ICE without reforms, called for agents to stand down after the Minneapolis killings, and opposed most Republican immigration-enforcement bills. But he broke with most Democrats to vote for the Laken Riley Act, a resolution thanking ICE personnel, and two bills deporting immigrants convicted of certain crimes or fraud.",
+   "short": "Votes against ICE funding without reforms and most enforcement bills, but broke with Democrats on the Laken Riley Act and a resolution thanking ICE.",
    "items": [
     {
      "d": "2026-07",
@@ -100,7 +73,7 @@
     {
      "rolls": [
       {
-       "roll": "2026120",
+       "roll": "2026-120",
        "yea": "con"
       }
      ],
@@ -109,7 +82,7 @@
     {
      "rolls": [
       {
-       "roll": "2026102",
+       "roll": "2026-102",
        "yea": "pro"
       }
      ],
@@ -118,7 +91,7 @@
     {
      "rolls": [
       {
-       "roll": "202694",
+       "roll": "2026-094",
        "yea": "pro"
       }
      ],
@@ -127,7 +100,7 @@
     {
      "rolls": [
       {
-       "roll": "202687",
+       "roll": "2026-087",
        "yea": "pro"
       }
      ],
@@ -140,7 +113,7 @@
      "hi": 1,
      "check": [
       {
-       "roll": "202653",
+       "roll": "2026-053",
        "expect": "Nay"
       }
      ],
@@ -163,7 +136,7 @@
     {
      "rolls": [
       {
-       "roll": "2025340",
+       "roll": "2025-340",
        "yea": "pro"
       }
      ],
@@ -172,7 +145,7 @@
     {
      "rolls": [
       {
-       "roll": "2025264",
+       "roll": "2025-264",
        "yea": "pro"
       }
      ],
@@ -184,7 +157,7 @@
     {
      "rolls": [
       {
-       "roll": "2025183",
+       "roll": "2025-183",
        "yea": "pro"
       }
      ],
@@ -199,7 +172,7 @@
     {
      "rolls": [
       {
-       "roll": "2025158",
+       "roll": "2025-158",
        "yea": "pro"
       }
      ],
@@ -218,7 +191,7 @@
     {
      "rolls": [
       {
-       "roll": "202542",
+       "roll": "2025-042",
        "yea": "pro"
       }
      ],
@@ -227,7 +200,7 @@
     {
      "rolls": [
       {
-       "roll": "202517",
+       "roll": "2025-017",
        "yea": "pro"
       }
      ],
@@ -236,7 +209,7 @@
     {
      "rolls": [
       {
-       "roll": "202523",
+       "roll": "2025-023",
        "yea": "pro"
       }
      ],
@@ -248,17 +221,18 @@
   {
    "key": "police",
    "q": "Pro-police?",
-   "v": "Mostly yes",
-   "neutral": "mix",
-   "sum": "He votes for most police-support and crime bills, often breaking with his party on D.C. crime and bail measures. His no votes came on resolutions with partisan language or new gun privileges for federal officers.",
-   "short": "Backs most police and crime bills, often breaking with his party. Voted no on resolutions with partisan language.",
+   "eb": "Policing",
+   "section": "public-safety",
    "pro": "Supports police",
    "con": "Against",
+   "neutral": "Neither",
+   "sum": "He votes for most police-support and crime bills, often breaking with his party on D.C. crime and bail measures. His no votes came on resolutions with partisan language or new gun privileges for federal officers.",
+   "short": "Backs most police and crime bills, often breaking with his party. Voted no on resolutions with partisan language.",
    "items": [
     {
      "rolls": [
       {
-       "roll": "2026171",
+       "roll": "2026-171",
        "yea": "pro"
       }
      ],
@@ -268,7 +242,7 @@
     {
      "rolls": [
       {
-       "roll": "2026162",
+       "roll": "2026-162",
        "yea": "pro"
       }
      ],
@@ -277,7 +251,7 @@
     {
      "rolls": [
       {
-       "roll": "2026165",
+       "roll": "2026-165",
        "yea": "pro"
       }
      ],
@@ -290,7 +264,7 @@
     {
      "rolls": [
       {
-       "roll": "2026157",
+       "roll": "2026-157",
        "yea": "pro"
       }
      ],
@@ -299,7 +273,7 @@
     {
      "rolls": [
       {
-       "roll": "202670",
+       "roll": "2026-070",
        "yea": "pro"
       }
      ],
@@ -308,7 +282,7 @@
     {
      "rolls": [
       {
-       "roll": "2025275",
+       "roll": "2025-275",
        "yea": "pro"
       }
      ],
@@ -317,7 +291,7 @@
     {
      "rolls": [
       {
-       "roll": "2025270",
+       "roll": "2025-270",
        "yea": "pro"
       }
      ],
@@ -327,7 +301,7 @@
     {
      "rolls": [
       {
-       "roll": "2025185",
+       "roll": "2025-185",
        "yea": "pro"
       }
      ],
@@ -343,7 +317,7 @@
     {
      "rolls": [
       {
-       "roll": "2025131",
+       "roll": "2025-131",
        "yea": "pro"
       }
      ],
@@ -352,7 +326,7 @@
     {
      "rolls": [
       {
-       "roll": "2025130",
+       "roll": "2025-130",
        "yea": "pro"
       }
      ],
@@ -361,7 +335,7 @@
     {
      "rolls": [
       {
-       "roll": "2025123",
+       "roll": "2025-123",
        "yea": "pro"
       }
      ],
@@ -372,11 +346,13 @@
   {
    "key": "corporate",
    "q": "Pro-corporate?",
-   "v": "Leaning yes",
-   "sum": "He ran in 2024 pledging to refuse corporate PAC money, kept that pledge through the race, then took {corp26} from {ncorp26} corporate PACs in 2025–26. He often breaks with most Democrats to back business deregulation and crypto bills. But he votes to keep consumer-protection rules, backs labor unions, and has taken on rideshare companies and private prisons.",
-   "short": "Took {corp26} from corporate PACs in 2025–26 after a 2024 pledge to refuse them. Backs crypto and deregulation bills, but sides with consumers and unions on others.",
+   "eb": "Money and business",
+   "section": "cost-of-living",
    "pro": "Pro-corporate",
    "con": "Consumer or labor side",
+   "neutral": "Neither",
+   "sum": "He ran in 2024 pledging to refuse corporate PAC money, kept that pledge through the race, then took {corp26} from {ncorp26} corporate PACs in 2025–26. He often breaks with most Democrats to back business deregulation and crypto bills. But he votes to keep consumer-protection rules, backs labor unions, and has taken on rideshare companies and private prisons.",
+   "short": "Took {corp26} from corporate PACs in 2025–26 after a 2024 pledge to refuse them. Backs crypto and deregulation bills, but sides with consumers and unions on others.",
    "items": [
     {
      "d": "2025–26",
@@ -412,11 +388,11 @@
      "d": "2025-07",
      "rolls": [
       {
-       "roll": "2025199",
+       "roll": "2025-199",
        "yea": "pro"
       },
       {
-       "roll": "2025200",
+       "roll": "2025-200",
        "yea": "pro"
       }
      ],
@@ -426,7 +402,7 @@
     {
      "rolls": [
       {
-       "roll": "202571",
+       "roll": "2025-071",
        "yea": "pro"
       }
      ],
@@ -436,15 +412,15 @@
      "d": "2025-12",
      "rolls": [
       {
-       "roll": "2025328",
+       "roll": "2025-328",
        "yea": "pro"
       },
       {
-       "roll": "2025311",
+       "roll": "2025-311",
        "yea": "pro"
       },
       {
-       "roll": "2025324",
+       "roll": "2025-324",
        "yea": "pro"
       }
      ],
@@ -454,19 +430,19 @@
      "d": "2026",
      "rolls": [
       {
-       "roll": "2026271",
+       "roll": "2026-271",
        "yea": "pro"
       },
       {
-       "roll": "202623",
+       "roll": "2026-023",
        "yea": "pro"
       },
       {
-       "roll": "202612",
+       "roll": "2026-012",
        "yea": "pro"
       },
       {
-       "roll": "2026164",
+       "roll": "2026-164",
        "yea": "pro"
       }
      ],
@@ -475,7 +451,7 @@
     {
      "rolls": [
       {
-       "roll": "2026321",
+       "roll": "2026-321",
        "yea": "pro"
       }
      ],
@@ -485,11 +461,11 @@
      "d": "2025-04",
      "rolls": [
       {
-       "roll": "202595",
+       "roll": "2025-095",
        "yea": "pro"
       },
       {
-       "roll": "202596",
+       "roll": "2025-096",
        "yea": "pro"
       }
      ],
@@ -500,17 +476,17 @@
      "d": "2025",
      "rolls": [
       {
-       "roll": "2025143",
+       "roll": "2025-143",
        "yea": "pro"
       }
      ],
-     "env": 1,
-     "t": "Voted against {env_count} Republican resolutions in 2025 repealing environmental and energy rules."
+     "t": "Voted against {env_count} Republican resolutions in 2025 repealing environmental and energy rules.",
+     "set": "env"
     },
     {
      "rolls": [
       {
-       "roll": "2025332",
+       "roll": "2025-332",
        "yea": "con"
       }
      ],
@@ -539,11 +515,11 @@
      "d": "2025-12",
      "rolls": [
       {
-       "roll": "2025310",
+       "roll": "2025-310",
        "yea": "pro"
       },
       {
-       "roll": "2025358",
+       "roll": "2025-358",
        "yea": "pro"
       }
      ],

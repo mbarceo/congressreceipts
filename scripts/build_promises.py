@@ -7,6 +7,7 @@ The build stops if any reference can't be resolved. Usage: python3 -I scripts/bu
 import json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from config import ROOT
+from votes_common import roll_phrases, fill_text
 
 load = lambda p: json.load(open(os.path.join(ROOT, p)))
 data, votes, stm = load("data/promises.json"), load("data/votes.json"), load("data/statements.json")
@@ -32,7 +33,7 @@ for p in data["promises"]:
         if "roll" in a:
             v = by.get(a["roll"])
             if not v: problems.append(f"{p['issue']}: roll {a['roll']} not found"); continue
-            text = a["text"].format(vote=v["member"], yea=v["yea"], nay=v["nay"])
+            text = fill_text(a["text"], roll_phrases([v]), p["issue"], problems)   # {vote} {yea} {nay} {Vote} {DemMaj} ... (votes_common)
             acts.append({"text": text, "u": v["url"], "vote": v["member"]})
         elif "stmt" in a:
             u = release(a["stmt"])

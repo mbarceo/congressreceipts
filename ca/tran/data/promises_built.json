@@ -1,0 +1,327 @@
+{
+ "noPromise": "",
+ "promises": [
+  {
+   "issue": "District funding",
+   "kind": "paraphrase",
+   "status": "delivered",
+   "promise": "Bring federal dollars home to CA-45 communities.",
+   "quote": false,
+   "why": "Money was secured and delivered. The figures come from his office and were not independently audited.",
+   "src": [
+    {
+     "label": "His office",
+     "u": "https://tran.house.gov/media/press-releases/house-appropriations-committee-advances-over-14-million-representative-trans"
+    }
+   ],
+   "actions": [
+    {
+     "text": "House appropriators advanced more than $14 million for 15 of his community projects (Jul 2025).",
+     "u": "https://tran.house.gov/media/press-releases/house-appropriations-committee-advances-over-14-million-representative-trans"
+    },
+    {
+     "text": "Delivered $3.15 million for the Del Amo Boulevard bridge in Cerritos.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-brings-over-3-million-cerritos-del-amo-bridge-boulevard"
+    },
+    {
+     "text": "Secured $1 million for Garden Grove firefighters.",
+     "u": "https://tran.house.gov/media/press-releases/representative-derek-tran-secures-1-million-garden-grove-firefighters"
+    },
+    {
+     "text": "Delivered $1 million to Cypress for flood prevention.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-delivers-1-million-cypress-flood-prevention-infrastructure"
+    },
+    {
+     "text": "Presented $850,000 to the Buena Park Library District.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-presents-850000-buena-park-library-district-facility-and"
+    },
+    {
+     "text": "Delivered $925,000 for public safety in Artesia.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-delivers-nearly-1-million-public-safety-artesia"
+    },
+    {
+     "text": "GKN Aerospace chemical leak in Garden Grove: demanded answers from GKN with Rep. Robert Garcia (May 2026).",
+     "u": "https://tran.house.gov/media/press-releases/representatives-tran-garcia-demand-answers-gkn-aerospace-garden-grove-chemical"
+    },
+    {
+     "text": "Introduced H.R. 10108, the Hazardous Materials Transparency Act (Aug 2026).",
+     "u": "https://www.congress.gov/bill/119th-congress/house-bill/10108"
+    },
+    {
+     "text": "Issued a statement on GKN's $125 million settlement (Oct 2026).",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-issues-statement-gkns-125-million-settlement"
+    }
+   ]
+  },
+  {
+   "issue": "Small business",
+   "kind": "explicit",
+   "status": "progress",
+   "promise": "small businesses are the backbone of our economy",
+   "quote": true,
+   "why": "His own bill cleared the House. It still needs Senate action.",
+   "src": [
+    {
+     "label": "His 2024 campaign site (archived Nov 1, 2024)",
+     "u": "https://web.archive.org/web/20241101090742/https://www.derektranforcongress.com/"
+    }
+   ],
+   "actions": [
+    {
+     "text": "His bill H.R. 5788 (504 Program Risk Oversight Act) passed the House on Jan 20, 2026, and was sent to the Senate.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-passes-bipartisan-bill-supporting-small-businesses"
+    },
+    {
+     "text": "Cosponsored H.R. 787 (Plain Language in Contracting Act), which passed the House in June 2025.",
+     "u": "https://tran.house.gov/media/press-releases/rep-derek-tran-celebrates-passage-key-legislation-cut-red-tape-small"
+    },
+    {
+     "text": "Ranking Member of the Small Business oversight subcommittee.",
+     "u": "https://tran.house.gov/media/press-releases/congressman-tran-announces-subcommittees-after-prestigious-appointments-house"
+    }
+   ]
+  },
+  {
+   "issue": "Veterans & defense",
+   "kind": "paraphrase",
+   "status": "progress",
+   "promise": "Protect veterans' jobs and benefits and keep a strong national defense.",
+   "quote": false,
+   "why": "The defense and benefits wins are real, but his veteran-jobs bill is stalled.",
+   "src": [
+    {
+     "label": "His office",
+     "u": "https://tran.house.gov/media/press-releases/congressman-tran-announces-subcommittees-after-prestigious-appointments-house"
+    }
+   ],
+   "actions": [
+    {
+     "text": "Cosponsored the Major Richard Star Act (H.R. 2102), which passed the House 392–18 on Nov 12, 2026.",
+     "u": "https://clerk.house.gov/Votes/2026323",
+     "vote": "Yea"
+    },
+    {
+     "text": "Voted yes on the final FY26 NDAA (Dec 10, 2025), citing the 3.8% troop pay raise. He had voted no on the House version in September.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-votes-raise-troop-pay-improve-military-readiness-national"
+    },
+    {
+     "text": "His first bill, H.R. 1637 (Protect Veteran Jobs Act), has had no action since it was introduced on Feb 26, 2025.",
+     "u": "https://www.congress.gov/bill/119th-congress/house-bill/1637"
+    }
+   ]
+  },
+  {
+   "issue": "Social Security & Medicare",
+   "kind": "paraphrase",
+   "status": "progress",
+   "promise": "Oppose cuts to Social Security and Medicare.",
+   "quote": false,
+   "why": "His votes have been defensive and consistent. No bill he leads has become law.",
+   "src": [
+    {
+     "label": "His 2024 campaign site (archived Nov 1, 2024)",
+     "u": "https://web.archive.org/web/20241101090742/https://www.derektranforcongress.com/"
+    }
+   ],
+   "actions": [
+    {
+     "text": "Voted no on H.R. 1 (May 22 and Jul 3, 2025).",
+     "u": "https://clerk.house.gov/Votes/2025190"
+    },
+    {
+     "text": "Voted for H.R. 5348 (Social Security Child Protection Act), which passed 386–0 on Dec 1, 2025.",
+     "u": "https://clerk.house.gov/Votes/2025306",
+     "vote": "Yea"
+    },
+    {
+     "text": "Introduced H.R. 6678 (Senior Legal Hotline Act). Held town halls in Cerritos, Buena Park and Westminster.",
+     "u": "https://tran.house.gov/media/press-releases/representative-derek-tran-holds-town-hall-meeting"
+    }
+   ]
+  },
+  {
+   "issue": "Vietnamese-American community & human rights",
+   "kind": "paraphrase",
+   "status": "progress",
+   "promise": "Stand firm against Chinese Communist rule and push for human rights in Vietnam.",
+   "quote": false,
+   "why": "There is steady activity, but none of the resolutions has been adopted yet.",
+   "src": [
+    {
+     "label": "His 2024 campaign site (archived Nov 1, 2024)",
+     "u": "https://web.archive.org/web/20241101090742/https://www.derektranforcongress.com/"
+    }
+   ],
+   "actions": [
+    {
+     "text": "Introduced Black April resolutions (2025 and 2026), a Vietnamese Heritage Flag resolution and H.R. 7969 (Combating CCP Influence Act).",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-introduces-bipartisan-resolution-recognizing-51st"
+    },
+    {
+     "text": "Got an appropriations amendment passed to fund the U.S.–Vietnam Human Rights Dialogue (Jul 2026).",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-holds-vietnamese-government-accountable-human-rights"
+    },
+    {
+     "text": "Wrote letters about prisoners of conscience, including journalist Le Huu Minh Tuan, and announced a State Department response in Oct 2026.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-secures-state-department-response-vietnams-human-rights"
+    }
+   ]
+  },
+  {
+   "issue": "Cost of living & tariffs",
+   "kind": "paraphrase",
+   "status": "stalled",
+   "promise": "Lower costs for families, with tax cuts for middle-class families and small businesses.",
+   "quote": false,
+   "why": "His central campaign issue, but none of these bills has had committee action.",
+   "src": [
+    {
+     "label": "ABC7 Los Angeles",
+     "u": "https://abc7.com/post/congressman-derek-tran-campaigns-election-californias-45th-congressional-district-crowded-gop-field/18726383/"
+    }
+   ],
+   "actions": [
+    {
+     "text": "Co-founded the Lowering Costs Caucus with Reps. Landsman and Scholten (Jun 2025).",
+     "u": "https://tran.house.gov/media/press-releases/representatives-tran-landsman-and-scholten-launch-congressional-caucus-lower"
+    },
+    {
+     "text": "Introduced H.R. 4746 (Baby Food Tax Relief Act). Cosponsored the Toll of Tariffs Act, Stop Price Gouging in Grocery Stores Act and Stop the Trump Electricity Price Hikes Act.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-helps-introduce-legislation-assess-true-costs-trumps"
+    }
+   ]
+  },
+  {
+   "issue": "Health care",
+   "kind": "explicit",
+   "status": "stalled",
+   "promise": "healthcare should be a right, not a privilege",
+   "quote": true,
+   "why": "His votes match the promise, but the cuts became law and the credit extension hasn't been enacted.",
+   "src": [
+    {
+     "label": "His 2024 campaign site (archived Nov 1, 2024)",
+     "u": "https://web.archive.org/web/20241101090742/https://www.derektranforcongress.com/"
+    }
+   ],
+   "actions": [
+    {
+     "text": "Voted no on both House votes on the One Big Beautiful Bill Act (Medicaid and ACA cuts), which passed anyway.",
+     "u": "https://clerk.house.gov/Votes/2025145"
+    },
+    {
+     "text": "Cosponsored H.R. 4849 to make enhanced ACA credits permanent. He voted Yea when a 3-year extension (H.R. 1834) passed the House 230–196 on Jan 8, 2026.",
+     "u": "https://clerk.house.gov/Votes/2026011",
+     "vote": "Yea"
+    },
+    {
+     "text": "Voted no on funding bills that let ACA credits lapse.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-rejects-spending-proposal-fails-address-health-care-crisis"
+    }
+   ]
+  },
+  {
+   "issue": "Housing",
+   "kind": "explicit",
+   "status": "stalled",
+   "promise": "ensure that all workers can afford housing",
+   "quote": true,
+   "why": "None of the housing bills he leads or cosponsors has advanced.",
+   "src": [
+    {
+     "label": "His 2024 campaign site (archived Nov 1, 2024)",
+     "u": "https://web.archive.org/web/20241101090742/https://www.derektranforcongress.com/"
+    }
+   ],
+   "actions": [
+    {
+     "text": "Introduced H.R. 10613 (Housing COST Act, Sep 2026). Cosponsored the Affordable Housing Credit Improvement Act.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-introduces-legislation-lower-housing-costs-southern"
+    },
+    {
+     "text": "Delivered $250K for affordable housing in Orange. Urged the President to sign the ROAD to Housing Act.",
+     "u": "https://tran.house.gov/media/press-releases/representative-derek-tran-urges-president-sign-21st-century-road-housing-act"
+    }
+   ]
+  },
+  {
+   "issue": "Immigration",
+   "kind": "paraphrase",
+   "status": "stalled",
+   "promise": "Oppose mass deportations, support reform with a path to citizenship, and hold ICE accountable.",
+   "quote": false,
+   "why": "His accountability bills haven't moved, and his Laken Riley yes vote complicates his record on this promise.",
+   "src": [
+    {
+     "label": "Wikipedia",
+     "u": "https://en.wikipedia.org/wiki/Derek_Tran"
+    }
+   ],
+   "actions": [
+    {
+     "text": "Introduced H.R. 9883 (Private Detention Corporate Accountability Act). Cosponsored ICE and CBP accountability bills. All remain in committee.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-introduces-legislation-hold-private-ice-detention-centers"
+    },
+    {
+     "text": "Voted no on DHS funding without ICE reforms (Jan–Mar 2026), per his office.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-opposes-funding-ice-demands-reforms-protect-us-citizens"
+    },
+    {
+     "text": "Voted for the Laken Riley Act (Jan 22, 2025), breaking with most Democrats.",
+     "u": "https://clerk.house.gov/Votes/2025023",
+     "vote": "Yea"
+    }
+   ]
+  },
+  {
+   "issue": "Ethics & anti-corruption",
+   "kind": "explicit",
+   "status": "stalled",
+   "promise": "Derek will fight to end this culture of corruption in our politics.",
+   "quote": true,
+   "why": "The House passed a stock-trading bill with his vote, but it was the Republican version most Democrats opposed. The bans he cosponsored have not advanced.",
+   "src": [
+    {
+     "label": "His 2024 campaign site (archived Nov 1, 2024)",
+     "u": "https://web.archive.org/web/20241101090742/https://www.derektranforcongress.com/"
+    }
+   ],
+   "actions": [
+    {
+     "text": "Cosponsored stock-trading bans H.R. 7852 (No Getting Rich in Congress Act) and STOCK Act 2.0.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-introduces-no-getting-rich-congress-act-combat-corruption"
+    },
+    {
+     "text": "Voted for the Epstein Files Transparency Act (passed 427–1, Nov 18, 2025).",
+     "u": "https://clerk.house.gov/Votes/2025289",
+     "vote": "Yea"
+    },
+    {
+     "text": "Voted for the Republican-led Stop Insider Trading Act (H.R. 7008), which passed 232–198 on Jul 22, 2026. Democrats opposed it 13–198.",
+     "u": "https://clerk.house.gov/Votes/2026280",
+     "vote": "Yea"
+    }
+   ]
+  },
+  {
+   "issue": "Reproductive rights",
+   "kind": "paraphrase",
+   "status": "stalled",
+   "promise": "Codify a national right to abortion care.",
+   "quote": false,
+   "why": "He is on record in support, but all three bills are in committee and have little chance in this House.",
+   "src": [
+    {
+     "label": "His 2024 campaign site (archived Nov 1, 2024)",
+     "u": "https://web.archive.org/web/20241101090742/https://www.derektranforcongress.com/"
+    }
+   ],
+   "actions": [
+    {
+     "text": "Cosponsored H.R. 12 (Women's Health Protection Act), the Right to IVF Act and the Stop Comstock Act.",
+     "u": "https://tran.house.gov/media/press-releases/icymi-representative-tran-votes-protect-womens-choice-health-care"
+    }
+   ]
+  }
+ ]
+}

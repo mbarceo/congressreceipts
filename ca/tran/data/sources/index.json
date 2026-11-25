@@ -478,5 +478,15 @@
   "file": "72f89de693b29e36.html",
   "status": 200,
   "fetched": "2026-11-24"
+ },
+ "https://www.govinfo.gov/link/bills/119/hr/3565?link-type=html": {
+  "file": "08409b048ef8d8f3.html",
+  "status": 200,
+  "fetched": "2026-11-25"
+ },
+ "https://clerk.house.gov/xml/lists/MemberData.xml": {
+  "file": "aec7d4876f5ff317.html",
+  "status": 200,
+  "fetched": "2026-11-25"
  }
 }

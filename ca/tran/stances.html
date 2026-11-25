@@ -1,181 +1,153 @@
 <!doctype html>
+<!-- Built from site/stances.html by scripts/publish.py. Edit site/stances.html, not this copy. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Where Rep. Derek Tran stands on the big issues: the votes cast and the public statements, each linked to its source.">
+<title>Tran Stances</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<title>Tran Public Stances</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="site.css">
 <link rel="stylesheet" href="../../hub.css">
+<script src="site.js"></script>
 <style>
-html{color-scheme:light}
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 body{margin:0}
 [hidden]{display:none!important}
+img{max-width:100%}
+html{color-scheme:light}
+.v-yea{color:var(--ok);background:var(--ok-bg)}
+.v-nay{color:var(--bad);background:var(--bad-bg)}
+.v-other{color:var(--muted);background:var(--line)}
+.vtable{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.vtable table{min-width:720px}
+.vtable td{font-size:.86rem;vertical-align:top}
+.vtable td.num{font-family:var(--f-mono);font-size:.78rem;white-space:nowrap;font-variant-numeric:tabular-nums}
+.vtable tr.brk td:first-child{box-shadow:inset 3px 0 0 var(--flag)}
+.vtable .t{font-weight:600}
+.vtable .qq{color:var(--muted);font-size:.8rem;margin-top:2px}
+.slist{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.slist li{font-size:.9rem}
+.slist .d{font-family:var(--f-mono);font-size:.76rem;color:var(--muted);margin-right:8px;white-space:nowrap}
+.slist .k{font-size:.68rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-family:var(--f-mono);color:var(--accent);margin-left:8px}
+details.all summary{cursor:pointer;font-size:.88rem;margin:10px 0 8px;color:var(--accent)}
+.sub{font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:18px 0 8px;font-family:var(--f-mono)}
+.facts-line{font-size:.9rem;margin:0 0 4px}
+.how{max-width:75ch;font-size:.9rem}
+.sq{font-size:.82rem;color:var(--muted);margin:3px 0 0;max-width:80ch;font-style:italic}
+.pp-dot.pp-neu,.pp-tag.pp-neu{background:#6c7a73}
+#israel-palestine,.ecard{display:flex;flex-direction:column;gap:14px}
+.pp-dot.pp-pro,.pp-tag.pp-pro{background:#2f6fb3} .pp-dot.pp-con,.pp-tag.pp-con{background:#2f8f5b}
+.pp-list.rec li{grid-template-columns:96px 1fr} @media (max-width:620px){.pp-list.rec li{grid-template-columns:1fr}}
+.pp-text .more{color:var(--muted);font-size:.8rem}
+.sbox p{margin:0}
+a.sbox{color:inherit;text-decoration:none}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <nav class="sitenav" aria-label="Pages"><a href="./">Overview</a><a href="money.html">Money</a><a href="establishment.html">Establishment</a><a href="./#townhalls">Town halls</a><a href="stances.html" aria-current="page">Stances</a><a href="votes.html">Every vote</a><a href="statements.html">Statements</a><a href="sources.html">Sources</a></nav>
-  <header>
+  <nav class="sitenav" aria-label="Pages"></nav>
+  <header id="top">
     <div class="ident">
-      <img class="portrait" src="assets/tran.jpg" alt="Official House portrait of Rep. Derek Tran" width="400" height="500">
-      <div class="ident-text">
-        <span class="eyebrow">Hot-button issues · 2025–26</span>
-        <h1>Where Derek Tran stands</h1>
-      </div>
+      <img class="portrait" alt="" width="335" height="410">
+      <div class="ident-text"><span class="eyebrow">Where {{short}} stands</span><h1>{{name}} on the issues</h1></div>
     </div>
-    <p class="lede">His positions on the issues people are arguing about, with his own words where he gave them. Each entry links to the press release, vote record or news story it comes from.</p>
+    <p class="lede">For each issue: how {{subj}} voted on specific roll calls, and what {{poss}} own press releases say. Every row links to its source.</p>
+    <div class="notice how">
+      <b>How to read this.</b> Votes are hand-picked by reading the official roll-call titles, so each list is a sample, not every vote on the subject. {{Poss}} vote comes straight from {{voteSourceLong}}. Verdicts appear only under "The big questions", and each card states the rule that produced its verdict; the issue sections below show evidence and counts and leave the call to you. On a <i>motion to table</i> or <i>refer</i>, a Nay is a vote <i>against</i> killing or sidelining the measure. Statements are matched by keywords in their titles, so a few may be off.
+    </div>
   </header>
   <section id="verdicts">
     <div class="sec-head">
       <span class="eyebrow">Quick verdicts</span>
       <h2>The big questions</h2>
-      <p>Each verdict sums up his record. Click a box for every vote and statement behind it.</p>
+      <p>Each verdict sums up {{poss}} record by a stated rule. Click a box for every vote and statement behind it.</p>
     </div>
-    <div class="boxes" id="flagBoxes"></div>
+    <div class="boxes" id="flagBoxes"><p class="muted">Loading…</p></div>
   </section>
-  <section id="issues">
-    <div class="sec-head">
-      <span class="eyebrow">Issue by issue</span>
-      <h2>Where he stands</h2>
-      <p>His positions from 2025–26 press releases, votes and news coverage. Click a box for the details and his own words. <span class="pill s-break">Breaks with party</span> marks positions where he split from most House Democrats.</p>
-    </div>
-    <div class="boxes" id="issueBoxes"></div>
+  <div id="cards"></div>
+  <section id="issues-nav">
+    <div class="sec-head"><span class="eyebrow">Issue by issue</span><h2>Jump to an issue</h2></div>
+    <div class="filters" id="chips" role="group" aria-label="Issues"></div>
   </section>
-  <dialog class="detail" id="detail" aria-labelledby="detailTitle">
-    <div class="detail-head"><div><span class="eyebrow" id="detailEyebrow"></span><h2 id="detailTitle"></h2></div><button class="detail-close" type="button" id="detailClose" aria-label="Close">✕</button></div>
-    <div class="detail-body" id="detailBody"></div>
-  </dialog>
-  <footer>From tran.house.gov press releases, House Clerk roll calls and news coverage. Social posts were not read directly. This page is a nonpartisan summary, not an endorsement.</footer>
+  <div id="issues"><p class="muted">Loading…</p></div>
+  <footer>Votes: <a href="{{voteSourceUrl}}" target="_blank" rel="noopener">{{voteSource}} roll calls</a>. Statements: <a href="{{pressUrl}}" target="_blank" rel="noopener">{{domain}}</a>. Picks live in <code>data/stance_picks.json</code>.</footer>
 </div>
 <script>
-const H = "https://tran.house.gov/media/press-releases/";
-const CLERK_V = n => "https://clerk.house.gov/Votes/"+n;
-const STANCES = [
-  {t:"Epstein files",d:"2025-11-18",s:"Voted for the Epstein Files Transparency Act (H.R. 4405), requiring the Justice Department to release its Epstein files. It passed 427-1.",u:"https://clerk.house.gov/Votes/2025289"},
-  {t:"Epstein files",d:"2025-11-18",s:"Voted against a Republican resolution to censure Del. Stacey Plaskett over texting with Jeffrey Epstein during a 2019 hearing. It failed 209-214.",u:"https://clerk.house.gov/Votes/2025297"},
-  {t:"Epstein files",d:"2025-09-01",s:"Signed the Massie-Khanna discharge petition that forced the House vote. NBC News reported that all House Democrats signed it; his individual signature was not checked against the Clerk's list.",u:"https://www.nbcnews.com/politics/congress/bipartisan-duo-expects-signatures-wednesday-force-vote-release-epstein-rcna231405",dApprox:1,unv:1},
-  {t:"Epstein files",d:"2026-11-11",s:"Whether he signed the 2026 petition for the Epstein Files Transparency Act II, which reached 218 signatures, is not confirmed. None of his 265 press releases mention Epstein.",u:"https://wjla.com/news/nation-world/massie-announces-he-has-enough-signatures-for-discharge-petition-for-epstein-files-part-2-ro-khanna-california-pramila-jayapal-sex-trafficking-donald-trump-rtt",unv:1},
-  {t:"Epstein files",d:"2026-06-30",s:"Related: voted to make the House Ethics Committee release records of sexual-harassment settlements involving members (H.Res. 1399, passed unanimously).",u:"https://clerk.house.gov/Votes/2026233"},
-  {t:"Epstein files",d:"2026-03-04",s:"Related: voted against sending a resolution to release House sexual-harassment records back to committee, breaking with most Democrats (182-27 to refer).",u:"https://clerk.house.gov/Votes/202683",brk:1},
-  {t:"Immigration",d:"2025-06-09",s:"Opposed the National Guard deployment to LA after visiting the Adelanto ICE facility.",q:"President Trump's unnecessary and premature deployment of the National Guard will create more fear and suppress free speech.",u:H+"rep-derek-tran-demands-oversight-immigration-enforcement-southern-california"},
-  {t:"Immigration",d:"2025-06-17",s:"Criticized ICE raids at a Buena Park press conference.",q:"focus on violent criminals, not law-abiding community members.",u:H+"icymi-representative-derek-tran-addresses-ice-deportation-actions-across"},
-  {t:"Immigration",d:"2025-01-22",s:"Voted yes on the Laken Riley Act, one of 46 House Democrats to do so.",q:"I voted to ensure that those committing crimes, no matter their immigration status, are held to a standard of justice.",u:"https://www.nbclosangeles.com/news/local/california-democrats-voted-laken-riley-act/3618901/",brk:1},
-  {t:"Immigration",d:"2026-01-30",s:"Cosponsored articles of impeachment against DHS Secretary Kristi Noem (H.Res. 996) after federal agents killed two people in Minneapolis.",q:"No one is above the law, especially those who are entrusted with enforcing it.",u:H+"representative-tran-cosponsors-articles-impeachment-against-homeland-security"},
-  {t:"Immigration",d:"2026-02-03",s:"Voted no on H.R. 7148, the package that ended the partial shutdown, over ICE funding without reforms. Also voted no on DHS bills in March 2026.",q:"I will not be complicit in the wrongful targeting and killing of American citizens.",u:H+"representative-tran-opposes-funding-ice-demands-reforms-protect-us-citizens"},
-  {t:"Immigration",d:"2026-03-18",s:"Voted yes on the Deporting Fraudsters Act (H.R. 1958).",q:"Cheating the government and stealing public benefits threatens the stability of the entire system.",u:H+"representative-tran-issues-statement-hr-1958",brk:1},
-  {t:"Cost of living",d:"2025-08-13",s:"Helped introduce the Toll of Tariffs Act to measure what tariffs cost families.",q:"President Trump's reckless trade wars are taking a toll on working families' wallets.",u:H+"representative-tran-helps-introduce-legislation-assess-true-costs-trumps"},
-  {t:"Cost of living",d:"2026-02-24",s:"State of the Union response: said the President offered no plan to lower costs and doubled down on tariffs.",q:"put people over politics.",u:H+"representative-tran-urges-people-over-politics-response-state-union-address"},
-  {t:"Health care",d:"2025-07-03",s:"Voted no on the One Big Beautiful Bill Act, citing Medicaid cuts and his family's past reliance on Medicaid, SNAP and Section 8.",q:"My constituents sent me to Congress to fight for lower costs and safer communities.",u:H+"representative-tran-votes-against-largest-rollback-health-care-coverage"},
-  {t:"Health care",d:"2025-09-01",s:"Cosponsored H.R. 4849 to make enhanced ACA premium tax credits permanent; signed the Hands Off Medicaid and SNAP discharge petition.",u:H+"representative-tran-rejects-spending-proposal-fails-address-health-care-crisis",dApprox:1},
-  {t:"Shutdowns",d:"2025-10-01",s:"Blamed Republicans for the fall 2025 shutdown; original cosponsor of the bipartisan Pay Our Troops Act.",q:"I will never vote for a bill that harms the people of California's 45th district.",u:H+"representative-tran-issues-statement-after-republicans-force-federal"},
-  {t:"Shutdowns",d:"2025-11-12",s:"Voted no on the bill that ended the fall 2025 shutdown (passed 222-209).",u:CLERK_V("2025285")},
-  {t:"Shutdowns",d:"2026-09-01",s:"Voted yes on H.R. 6500, a stopgap funding the government through Dec 11, 2026, calling it a temporary fix.",u:H+"representative-tran-issues-statement-cr-vote-fund-government-through-december"},
-  {t:"Trump administration",d:"2025-12-11",s:"Voted present on tabling a Trump impeachment resolution, with 47 other Democrats, instead of voting to advance it.",q:"It is clear that President Trump must be held accountable for his abuse of power.",u:H+"representative-tran-issues-statement-following-vote-table-articles-impeachment",brk:1},
-  {t:"Trump administration",d:"2025-04-25",s:"At Cerritos and Buena Park town halls, promoted his Protect Veteran Jobs Act to reinstate veterans fired by DOGE.",u:H+"rep-derek-tran-addresses-constituent-concerns-about-social-security-economy"},
-  {t:"Israel & Iran",d:"2026-07-15",s:"Voted for the Massie amendment to end FY2027 military aid to Israel, while backing continued Iron Dome funding. It failed 104-314; House Democrats split 103-98 in favor, so he voted with most of his party.",q:"I supported Representative Massie's amendment to end unconditional funding for Israel.",u:"https://clerk.house.gov/Votes/2026243",also:["https://tran.house.gov/media/press-releases/representative-derek-tran-supports-massie-amendment-block-us-military-funding"]},
-  {t:"Israel & Iran",d:"2026-08-01",s:"Co-led a 65-member letter to Secretary Rubio on Israeli dual-use restrictions blocking aid to Gaza.",u:H+"representatives-tran-bera-and-carbajal-lead-65-members-urging-secretary-rubio",dApprox:1},
-  {t:"Israel & Iran",d:"2026-06-03",s:"Voted for the Iran War Powers Resolution (H.Con.Res. 86), which passed 215-208.",u:CLERK_V("2026199")},
-  {t:"Israel & Iran",d:"2025-06-22",s:"Opposed the U.S. strike on Iran's nuclear sites as carried out without Congress's approval.",q:"We cannot afford another endless war.",u:H+"representative-tran-releases-statement-regarding-us-strike-nuclear-facilities"},
-  {t:"Israel & Iran",d:"2025-01-09",s:"Voted no on H.R. 23, the ICC sanctions bill (passed 243-140).",u:"https://clerk.house.gov/evs/2025/roll007.xml"},
-  {t:"Israel & Iran",d:"2025-12-01",s:"Cosponsors the Block the Bombs Act (H.R. 3565), which would restrict certain munitions transfers to Israel.",u:"https://freebeacon.com/democrats/california-democrat-hosts-cair-leader-who-said-israel-should-be-attacked/",dApprox:1},
-  {t:"Veterans",d:"2026-03-20",s:"Introduced a bicameral bill with Sen. Blumenthal to block future VA cuts to disabled veterans' health care, after a VA rule was reversed.",u:H+"representative-tran-senator-blumenthal-lead-bicameral-bill-protect-veterans"},
-  {t:"Little Saigon",d:"2025-07-02",s:"Criticized the Trump trade deal with Vietnam over human rights; co-leads the Vietnam Human Rights Act (H.R. 3122).",q:"President Trump is ignoring the gross human rights abuses taking place under the leadership of the communist government.",u:H+"representative-tran-responds-president-trumps-trade-deal-vietnam"},
-  {t:"Little Saigon",d:"2026-07-01",s:"Passed an appropriations amendment funding the U.S.–Vietnam Human Rights Dialogue.",u:H+"representative-tran-holds-vietnamese-government-accountable-human-rights",dApprox:1},
-  {t:"Abortion",d:"2026-01-28",s:"Cosponsors the Women's Health Protection Act (H.R. 12) and voted against two GOP reproductive health bills.",u:H+"icymi-representative-tran-votes-protect-womens-choice-health-care"},
-  {t:"Public safety",d:"2026-05-01",s:"Voted for the bipartisan Combating Organized Retail Crime Act (H.R. 2853).",u:H+"representative-tran-votes-protect-local-business-organized-retail-crime",dApprox:1},
-  {t:"Redistricting",d:"2026-11-03",s:"No public statement found on Prop 50, which redrew CA-45 to take in more of Los Angeles County, including parts of Lakewood.",u:"https://www.nbclosangeles.com/news/local/derek-tran-chuong-vo-congressional-district-45/3958653/",none:1},
-];
-const fmtDate = (d,approx) => {
-  const dt = new Date(d+"T12:00:00");
-  return approx ? dt.toLocaleDateString("en-US",{month:"short",year:"numeric"})
-                : dt.toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
-};
-const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const SUMMARY = {
-  "Immigration":"Fights ICE tactics and funding without reforms, but voted for the Laken Riley Act and other enforcement bills.",
-  "Cost of living":"Blames tariffs for higher prices and co-chairs the Lowering Costs Caucus.",
-  "Health care":"Voted against the Medicaid cuts in H.R. 1 and backs permanent ACA premium credits.",
-  "Shutdowns":"Opposed Republican funding bills in 2025, then voted for the September 2026 stopgap.",
-  "Trump administration":"Criticizes Trump, but voted “Present” instead of advancing an impeachment resolution.",
-  "Israel & Iran":"Backs conditions on Israel military aid and opposed strikes on Iran without Congress.",
-  "Veterans":"An Army veteran who fights VA cuts and DOGE firings of veterans.",
-  "Little Saigon":"Presses Vietnam's government on human rights and political prisoners.",
-  "Abortion":"Supports writing abortion rights into federal law.",
-  "Public safety":"Votes for police and retail-crime bills.",
-  "Redistricting":"No public statement found on Prop 50.",
-  "Epstein files":"Voted to release the Epstein files and backed the petition that forced the vote, but has made no public statement about them.",
-};
-const FLAGS = [
-  {key:"palestine", eb:"Israel and Palestine"},
-  {key:"ice", eb:"Immigration enforcement"},
-  {key:"police", eb:"Policing"},
-  {key:"corporate", eb:"Money and business"},
-  {key:"establishment", eb:"Party ties", link:"establishment.html", q:"Establishment Democrat?", v:"Mostly yes", sum:"Recruited and protected by the DCCC, endorsed by Jeffries, and one of five who nominated him for Speaker. Breaks come on immigration and one Israel aid vote.", n:null},
-];
-function stanceRows(topic){
-  return STANCES.filter(x=>x.t===topic).sort((a,b)=>b.d.localeCompare(a.d)).map(x=>`
-    <div class="row">
-      <div><div class="date">${fmtDate(x.d,x.dApprox)}</div></div>
-      <div class="body"><p>${esc(x.s)}</p>${x.q?`<p><q>${esc(x.q)}</q></p>`:""}
-        <div class="tags">${x.brk?'<span class="pill s-break">Breaks with party</span>':""}${x.none?'<span class="pill s-none">No statement found</span>':""}${x.unv?'<span class="pill s-unv">Unverified</span>':""}
-        <a class="src" href="${esc(x.u)}" target="_blank" rel="noopener">Source</a></div></div>
-    </div>`).join("");
+TRACKER.ready.then(M => {
+const esc = s => String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const vpill = t => `<span class="pill ${t==="Yea"?"v-yea":t==="Nay"?"v-nay":"v-other"}">${esc(t)}</span>`;
+const fmtD = d => new Date(d+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
+const stmt = s => `<li><span class="d">${fmtD(s.date)}</span><a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(s.title.replace(/^(Congress(wo)?m[ae]n|Rep\.|Representative|Sen\.|Senator),? /,""))}</a><span class="k">${esc(s.kind)}</span>${s.quote?`<div class="sq">From the release: “${esc(s.quote)}”</div>`:""}</li>`;
+const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const fmtM = d => /^\d{4}-\d{2}$/.test(d) ? `${MON[+d.slice(5)-1]} ${d.slice(0,4)}` : d.replace(/(\d{4})-(\d{2})/g,(m,y,mo)=>`${MON[+mo-1]} ${y}`);
+const DIR = {pal:["Toward Palestinians / conditions on aid","pp-pal"], isr:["Toward Israel","pp-isr"], mixed:["Both","pp-mix"], neutral:["Related, no clear direction","pp-neu"]};
+function israel(x){
+  const n = k => x.items.filter(i=>i.dir===k).length;
+  const li = i => `<li><span class="pp-date mono">${esc(fmtM(i.d))}</span><span class="pp-tag ${DIR[i.dir][1]}">${DIR[i.dir][0]}</span><span class="pp-text">${esc(i.t)}${i.unv?' <span class="pill s-unv">Unverified</span>':""} <a class="src" href="${esc(i.u)}"${i.u.startsWith("http")?' target="_blank" rel="noopener"':""}>Source</a>${(i.more||[]).map((u,k)=>` <a class="src more" href="${esc(u)}" target="_blank" rel="noopener">${k+2}</a>`).join("")}</span></li>`;
+  return `<section id="israel-palestine"><div class="sec-head"><span class="eyebrow">Issue</span><h2>Israel and Palestine</h2><p>${esc(M.Poss)} votes and statements on U.S. aid to Israel, Gaza, and the wars in Iran and Lebanon, tagged by which way each item points.</p></div>
+    <div class="pp-head"><div class="pp-flag" role="img" aria-label="${esc(x.question)} ${esc(verdict(x.headline))}"><span class="pp-q">${esc(x.question)}</span><span class="pp-v">${esc(verdict(x.headline))}</span></div><p class="pp-sum">${esc(x.summary)}</p></div>
+    <div class="pp-count"><span><i class="pp-dot pp-pal"></i>${n("pal")} toward Palestinians or conditions on aid</span><span><i class="pp-dot pp-isr"></i>${n("isr")} toward Israel</span><span><i class="pp-dot pp-mix"></i>${n("mixed")} both</span><span><i class="pp-dot pp-neu"></i>${n("neutral")} related</span></div>
+    <ul class="pp-list">${x.items.map(li).join("")}</ul>
+    <p class="muted" style="margin:0;font-size:.8rem">This summarizes ${esc(M.poss)} record; it is not a judgment. Each tag describes the action itself, not ${esc(M.poss)} motives. ${esc(x.headlineWhy)} Antisemitism resolutions are not counted because they are not about Israeli policy.</p></section>`;
 }
-function boxes(){
-  const T = window.TT || {};
-  document.getElementById("flagBoxes").innerHTML = FLAGS.map(f=>{ const c = T[f.key] || f; return `
-    <article class="sbox flag" data-key="${f.key}">
-      <span class="eyebrow">${esc(f.eb)}</span>
-      <div class="sbox-verdict"><span class="pp-q">${esc(c.q)}</span><span class="pp-v">${esc(c.v)}</span></div>
-      <p>${esc(c.sum)}</p>
-      ${f.link ? `<a class="sbox-more" href="${f.link}">Open the Establishment tab →</a>` : `<button class="sbox-more" type="button" data-open="${f.key}">Click for more info${c.n?` · ${c.n} items`:""} →</button>`}
-    </article>`; }).join("");
-  const topics = [...new Set(STANCES.map(x=>x.t))];
-  document.getElementById("issueBoxes").innerHTML = topics.map(t=>{ const rows = STANCES.filter(x=>x.t===t), brk = rows.some(x=>x.brk); return `
-    <article class="sbox" data-topic="${esc(t)}">
-      <span class="eyebrow">${rows.length} item${rows.length===1?"":"s"}</span>
-      <h3>${esc(t)}</h3>
-      <p>${esc(SUMMARY[t]||"")}</p>
-      ${brk?'<span class="pill s-break" style="align-self:flex-start">Breaks with party</span>':""}
-      <button class="sbox-more" type="button" data-topic-open="${esc(t)}">Click for more info →</button>
-    </article>`; }).join("");
+function voteRow(r){
+  const brk = (r.vote==="Yea"||r.vote==="Nay") && (r.dSide==="Yea"||r.dSide==="Nay") && r.vote!==r.dSide;
+  return `<tr${brk?' class="brk"':""}>
+    <td class="num">${fmtD(r.date)}</td>
+    <td><div class="t"><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.bill)}</a> · ${esc(r.title)}</div>
+      <div class="qq">${esc(r.q)}${brk?' · <span class="pill s-break">Breaks with party</span>':""}</div>
+      ${r.note?`<div class="qq">${esc(r.note)}</div>`:""}</td>
+    <td>${vpill(r.vote)}</td>
+    <td>${r.dSide?vpill(r.dSide):"—"}<div title="${r.cY!=null?'Democratic caucus, including independents who caucus with Democrats':'Democrats'}" class="qq num">${r.cY!=null?r.cY+"–"+r.cN:r.dY+"–"+r.dN}</div></td>
+    <td class="num">${esc(r.result)}<br>${r.yea}–${r.nay}</td></tr>`;
 }
-const dlg = document.getElementById("detail");
-function openDetail(kind, key){
-  const body = document.getElementById("detailBody");
-  if(kind==="flag"){ const c = (window.TT||{})[key]; if(!c) return;
-    document.getElementById("detailEyebrow").textContent = FLAGS.find(f=>f.key===key).eb;
-    document.getElementById("detailTitle").textContent = "Is he " + c.q.replace(/\?$/,"").toLowerCase().replace("pro-ice","pro-ICE") + "?";
-    body.innerHTML = '<div class="pp-card"></div>'; c.render(body.firstChild);
-  } else {
-    document.getElementById("detailEyebrow").textContent = "Issue";
-    document.getElementById("detailTitle").textContent = key;
-    body.innerHTML = `<p class="lede" style="margin:0 0 6px">${esc(SUMMARY[key]||"")}</p><div class="list">${stanceRows(key)}</div>`;
-  }
-  try{ dlg.showModal(); }catch(e){ dlg.setAttribute("open",""); }
-  body.scrollTop = 0;
-  try{ history.replaceState(null,"","#"+(kind==="flag"?key:"")); }catch(e){}
+// Curated record items (stance_picks "items"): date, sentence, quote, pills, sources
+const recRow = x => `<li><span class="pp-date mono">${esc(x.approx ? fmtM(x.d.slice(0,7)) : fmtD(x.d))}</span><span class="pp-text">${esc(x.t)}${x.q?` <q>${esc(x.q)}</q>`:""}${x.brk?' <span class="pill s-break">Breaks with party</span>':""}${x.none?' <span class="pill s-none">No statement found</span>':""}${x.unv?' <span class="pill s-unv">Unverified</span>':""} <a class="src" href="${esc(x.u)}"${x.u.startsWith("http")?' target="_blank" rel="noopener"':""}>Source</a>${(x.more||[]).map((u,k)=>` <a class="src more" href="${esc(u)}" target="_blank" rel="noopener">${k+2}</a>`).join("")}</span></li>`;
+function section(i){
+  const items = i.items || [];
+  const rec = items.length ? `<h3 class="sub">${esc(M.Poss)} record (${items.length})</h3><ul class="pp-list rec">${items.map(recRow).join("")}</ul>` : "";
+  const votes = !i.rolls.length && items.length ? "" : i.rolls.length ? `<h3 class="sub">Votes (${i.rolls.length})</h3>
+    <p class="facts-line">${i.cast?`On ${i.cast} of these ${esc(M.subj)} cast a Yea or Nay, siding with most Democrats on ${i.withDems}.`:""}</p>
+    <div class="vtable"><table><thead><tr><th>Date</th><th>Bill and question</th><th>${esc(M.short)}</th><th>Most Dems</th><th>Result</th></tr></thead><tbody>${i.rolls.map(voteRow).join("")}</tbody></table></div>`
+    : `<h3 class="sub">Votes</h3><p class="muted">No roll calls picked for this issue yet.</p>`;
+  const head = i.statements.slice(0,6), rest = i.statements.slice(6);
+  const sts = !i.statements.length && items.length ? "" : `<h3 class="sub">${esc(M.Poss)} statements (${i.statements.length})</h3>
+    <ul class="slist">${head.map(stmt).join("")}</ul>
+    ${rest.length?`<details class="all"><summary>Show ${rest.length} more</summary><ul class="slist">${rest.map(stmt).join("")}</ul></details>`:""}`;
+  return `<section id="${esc(i.id)}"><div class="sec-head"><span class="eyebrow">Issue</span><h2>${esc(i.name)}</h2><p>${esc(i.intro)}</p></div>${rec}${votes}${sts}</section>`;
 }
-document.addEventListener("click", e=>{
-  const f = e.target.closest("[data-open]"); if(f){ openDetail("flag", f.dataset.open); return; }
-  const t = e.target.closest("[data-topic-open]"); if(t){ openDetail("topic", t.dataset.topicOpen); return; }
-  const box = e.target.closest(".sbox"); if(box && !e.target.closest("a")){ if(box.dataset.key && box.dataset.key!=="establishment") openDetail("flag", box.dataset.key); else if(box.dataset.topic) openDetail("topic", box.dataset.topic); }
+// Evidence card for ICE, police and corporate (data/cards.json); same layout as the Israel and Palestine card
+function ecard(c){
+  const li = i => `<li><span class="pp-date mono">${esc(fmtM(i.d))}</span><span class="pp-tag pp-${i.s}">${esc(i.s==="pro"?c.pro:i.s==="con"?c.con:(c.neutral||"Neither side"))}</span><span class="pp-text">${esc(i.t)}${i.brk?' <span class="pill s-break">Breaks with party</span>':""}${i.unv?' <span class="pill s-unv">Unverified</span>':""} <a class="src" href="${esc(i.u)}"${i.u.startsWith("http")?' target="_blank" rel="noopener"':""}>Source</a>${(i.more||[]).map((u,k)=>` <a class="src more" href="${esc(u)}" target="_blank" rel="noopener">${k+2}</a>`).join("")}</span></li>`;
+  return `<section id="card-${esc(c.key)}" class="ecard"><div class="sec-head"><span class="eyebrow">${esc(c.eb)}</span><h2>${esc(c.q)}</h2></div>
+    <div class="pp-head"><div class="pp-flag" role="img" aria-label="${esc(c.q)} ${esc(verdict(c.v))}"><span class="pp-q">${esc(c.q)}</span><span class="pp-v">${esc(verdict(c.v))}</span></div><p class="pp-sum">${esc(c.sum || c.rule)}</p></div>
+    ${c.sum?`<p class="muted" style="margin:0;font-size:.82rem">${esc(c.rule)}</p>`:""}
+    <div class="pp-count"><span><i class="pp-dot pp-pro"></i>${c.npro} ${esc(c.pro)}</span><span><i class="pp-dot pp-con"></i>${c.ncon} ${esc(c.con)}</span>${c.nmix?`<span><i class="pp-dot pp-mix"></i>${c.nmix} ${esc(c.neutral)}</span>`:""}</div>
+    <ul class="pp-list">${c.items.map(li).join("")}</ul>
+    ${c.section?`<a class="pp-more" href="#${esc(c.section)}">Full vote table and statements for this issue →</a>`:""}
+    <p class="muted" style="margin:0;font-size:.8rem">This summarizes ${esc(M.poss)} record; it is not a judgment. Each tag describes the action, not ${esc(M.poss)} motives. For votes, the side follows from ${esc(M.poss)} recorded vote. Votes are a hand-picked sample, not every vote on the subject.</p></section>`;
+}
+const box = (href, eb, q, v, sum, more) => `<a class="sbox flag" href="${esc(href)}"><span class="eyebrow">${esc(eb)}</span><div class="sbox-verdict"><span class="pp-q">${esc(q)}</span><span class="pp-v">${esc(v)}</span></div><p>${esc(sum)}</p><span class="sbox-more">${esc(more)} →</span></a>`;
+const get = p => fetch(p).then(r=>{ if(!r.ok) throw 0; return r.json(); }).catch(()=>null);
+Promise.all([get("data/stances.json"), get("data/cards.json"), get("data/overview.json"), get("data/establishment.json")]).then(([d,cd,ov,es])=>{
+  if(!d){ document.getElementById("issues").innerHTML = '<p class="muted"><span class="soon">Coming soon</span> Issue-by-issue stances are being researched.</p>'; document.getElementById("flagBoxes").innerHTML = '<p class="muted">Verdicts appear once the stances and cards are built.</p>'; return; }
+  const C = cd ? Object.fromEntries(cd.cards.map(c=>[c.key,c])) : {};
+  const home = ov && ov.tiles.find(t=>/homeless/i.test(t.q));
+  const boxes = [box("#israel-palestine","Israel and Palestine",d.israel.question,verdict(d.israel.headline),d.israel.summary,`See all ${d.israel.items.length} items`)];
+  [["ice","Immigration enforcement"],["police","Policing and crime"],["corporate","Money and business"]].forEach(([k])=>{ const c=C[k]; if(c) boxes.push(box(`#card-${k}`,c.eb,c.q,c.v,c.short||c.rule,`See all ${c.n} items`)); });
+  if(home) boxes.push(box("#homelessness","Homelessness",home.q,home.v,home.rule,"See the homelessness section"));
+  if(es) boxes.push(box("establishment.html","Party ties",es.question,verdict(es.headline),es.why,"Open the Establishment tab"));
+  document.getElementById("flagBoxes").innerHTML = boxes.join("");
+  document.getElementById("cards").innerHTML = israel(d.israel) + ["ice","police","corporate"].filter(k=>C[k]).map(k=>ecard(C[k])).join("");
+  document.getElementById("issues").innerHTML = d.issues.map(section).join("");
+  document.getElementById("chips").innerHTML = d.issues.map(i=>`<a class="chip-btn" href="#${esc(i.id)}">${esc(i.name)}</a>`).join("");
+  if(location.hash){ const t=document.querySelector(location.hash); if(t) t.scrollIntoView(); }
 });
-document.getElementById("detailClose").addEventListener("click", ()=>dlg.close());
-dlg.addEventListener("click", e=>{ if(e.target===dlg) dlg.close(); });
-dlg.addEventListener("close", ()=>{ try{ history.replaceState(null,"",location.pathname); }catch(e){} });
-function slug(s){ return String(s).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,""); }
-window.addEventListener("load", ()=>{ boxes(); const k = location.hash.slice(1); if(!k) return;
-  if((window.TT||{})[k]){ openDetail("flag", k); return; }
-  const topic = [...new Set(STANCES.map(x=>x.t))].find(t=>slug(t)===k); if(topic) openDetail("topic", topic); });
+});
 </script>
-<script src="palestine.js"></script>
-<script src="ice.js"></script>
-<script src="corporate.js"></script>
-<script src="site.js"></script>
 <script src="../../hub.js" data-base="../../"></script>
 </body>
 </html>

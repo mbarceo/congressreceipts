@@ -1,13 +1,16 @@
 <!doctype html>
+<!-- Built from site/statements.html by scripts/publish.py. Edit site/statements.html, not this copy. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Every press release from Rep. Derek Tran, sorted by topic and month, each linked to the original.">
 <title>Tran Statement Timeline</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="site.css">
 <link rel="stylesheet" href="../../hub.css">
+<script src="site.js"></script>
 <style>
 html{color-scheme:light}
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -53,16 +56,16 @@ body{margin:0}
 </head>
 <body>
 <div class="wrap">
-  <nav class="sitenav" aria-label="Pages"><a href="./">Overview</a><a href="money.html">Money</a><a href="establishment.html">Establishment</a><a href="./#townhalls">Town halls</a><a href="stances.html">Stances</a><a href="votes.html">Every vote</a><a href="statements.html" aria-current="page">Statements</a><a href="sources.html">Sources</a></nav>
+  <nav class="sitenav" aria-label="Pages"></nav>
   <header>
     <div class="ident">
-      <img class="portrait" src="assets/tran.jpg" alt="Official House portrait of Rep. Derek Tran" width="400" height="500">
+      <img class="portrait" alt="" width="335" height="410">
       <div class="ident-text">
-        <span class="eyebrow">Public statements · tran.house.gov</span>
-        <h1>What Derek Tran has said</h1>
+        <span class="eyebrow">Public statements · {{domain}}</span>
+        <h1>What {{name}} has said</h1>
       </div>
     </div>
-    <p class="lede">Every press release from his House office since he was sworn in, sorted by topic and month. Use the grid to see what he talks about most and when his focus shifted.</p>
+    <p class="lede">Every press release on {{poss}} official site, sorted by topic and month. Use the grid to see which topics come up most and when the focus shifted.</p>
   </header>
 
   <section><div class="tally" id="tiles"></div></section>
@@ -86,7 +89,7 @@ body{margin:0}
     <div class="filters" id="kindChips" role="group" aria-label="Filter by type"></div>
     <div class="controls">
       <input class="search" id="q" type="search" placeholder="Search statements, e.g. tariffs, ICE, veterans" aria-label="Search statements">
-      <label class="check"><input type="checkbox" id="trans"> Include Vietnamese and Spanish versions</label>
+      <label class="check" id="transBox"><input type="checkbox" id="trans"> Include translated versions</label>
       <span class="count" id="count"></span>
     </div>
     <div class="active" id="active" hidden></div>
@@ -94,14 +97,15 @@ body{margin:0}
     <button class="more" id="more" type="button" hidden>Show more</button>
   </section>
 
-  <footer>Source: press releases listed at <a href="https://tran.house.gov/media/press-releases" target="_blank" rel="noopener">tran.house.gov/media/press-releases</a>. Topics and types are assigned automatically from each title and opening line, so a few may be off. Social media posts are not included.</footer>
+  <footer>Source: press releases listed at <a href="{{pressUrl}}" target="_blank" rel="noopener">{{domain}}</a>. Topics and types are assigned automatically from each title and opening line, so a few may be off. Social media posts are not included.</footer>
 </div>
 
 <script>
+TRACKER.ready.then(M => {
 const esc = s => String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 const mLabel = ym => `${MON[+ym.slice(5)-1]} ${ym.slice(0,4)}`;
-const LANG = {vi:"Tiếng Việt", es:"Español"};
+const LANG = {vi:"Tiếng Việt", es:"Español", zh:"中文", ko:"한국어", tl:"Tagalog"};
 let ALL = [], state = {topic:"All", kind:"All", cell:null, q:"", trans:false}, filtered = [], shown = 0;
 const PAGE = 40;
 
@@ -129,8 +133,9 @@ function tiles(){
     [(en.length/ms.length).toFixed(1),"Per month on average"],
     [mLabel(top[0]),`Busiest month (${top[1]})`],
     [tt[0],"Most common main topic",1],
-    [tr.length,`Also published in Vietnamese (${tr.filter(s=>s.lang==="vi").length}) or Spanish (${tr.filter(s=>s.lang==="es").length})`],
-  ];
+    [tr.length,`Also published in other languages${tr.length?` (${[...new Set(tr.map(s=>s.lang))].map(l=>LANG[l]||l).join(", ")})`:""}`],
+  ].filter(([n],i)=>i<4||n);
+  document.getElementById("transBox").hidden = !tr.length;
   document.getElementById("tiles").innerHTML = t.map(([n,l,small])=>`<div class="tile"><span class="n" ${small?'style="font-size:1.05rem;line-height:1.25;padding-block:6px"':""}>${esc(n)}</span><span class="l">${esc(l)}</span></div>`).join("");
 }
 
@@ -192,7 +197,7 @@ function more(){
     }
     const d = new Date(s.date+"T12:00:00");
     html += `<article class="st"><div class="d">${MON[d.getMonth()]} ${d.getDate()}</div><div>
-      <div><span class="k">${esc(s.kind)}</span>${s.lang!=="en"?` <span class="lang">${LANG[s.lang]}</span>`:""}</div>
+      <div><span class="k">${esc(s.kind)}</span>${s.lang!=="en"?` <span class="lang">${esc(LANG[s.lang]||s.lang)}</span>`:""}</div>
       <div class="t"><a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(s.title)}</a></div>
       ${s.ex?`<p class="ex">${esc(s.ex.length>220?s.ex.slice(0,s.ex.lastIndexOf(" ",220))+"…":s.ex)}</p>`:""}
       <div class="tags" style="display:flex;flex-wrap:wrap;gap:6px">${s.topics.map(t=>`<button class="tag" type="button" data-t="${esc(t)}">${esc(t)}</button>`).join("")}</div>
@@ -224,10 +229,10 @@ document.addEventListener("click", e=>{
 document.getElementById("q").addEventListener("input", e=>{ state.q = e.target.value.trim(); apply(); });
 document.getElementById("trans").addEventListener("change", e=>{ state.trans = e.target.checked; rerender(); });
 
-fetch("data/statements.json").then(r=>r.json()).then(d=>{ ALL = d; tiles(); rerender(); })
-  .catch(()=>{ document.getElementById("list").innerHTML = `<p class="muted">The statements didn't load. Reload the page to try again.</p>`; });
+fetch("data/statements.json").then(r=>r.json()).then(d=>{ if(!d.length) throw 0; ALL = d; tiles(); rerender(); })
+  .catch(()=>{ document.getElementById("list").innerHTML = `<p class="muted"><span class="soon">Coming soon</span> Press releases are being collected.</p>`; });
+});
 </script>
-<script src="site.js"></script>
 <script src="../../hub.js" data-base="../../"></script>
 </body>
 </html>

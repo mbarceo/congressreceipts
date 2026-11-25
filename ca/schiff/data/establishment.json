@@ -1,0 +1,772 @@
+{
+ "question": "Establishment Democrat?",
+ "headline": "TBD",
+ "summary": "",
+ "why": "",
+ "tiles": [],
+ "signs": {
+  "e": [],
+  "i": []
+ },
+ "timeline": [],
+ "left": [],
+ "leaders": [
+  {
+   "name": "Chuck Schumer",
+   "role": "Democratic Leader",
+   "y2024": 0,
+   "y2026": 0,
+   "committees": []
+  },
+  {
+   "name": "Dick Durbin",
+   "role": "Democratic Whip",
+   "y2024": 5000,
+   "y2026": 0,
+   "committees": [
+    "Prairie Political Action Committee"
+   ]
+  },
+  {
+   "name": "Amy Klobuchar",
+   "role": "Chair of Steering & Policy Committee",
+   "y2024": 5000,
+   "y2026": 0,
+   "committees": [
+    "Follow The North Star Fund"
+   ]
+  },
+  {
+   "name": "Cory Booker",
+   "role": "Chair of Strategic Communications Committee",
+   "y2024": 5000,
+   "y2026": 0,
+   "committees": [
+    "Purpose Pac"
+   ]
+  },
+  {
+   "name": "Mark Warner",
+   "role": "Vice Chair of the Conference",
+   "y2024": 10000,
+   "y2026": 0,
+   "committees": [
+    "Forward Together Pac"
+   ]
+  },
+  {
+   "name": "Elizabeth Warren",
+   "role": "Vice Chair of the Conference",
+   "y2024": 0,
+   "y2026": 0,
+   "committees": []
+  },
+  {
+   "name": "Tammy Baldwin",
+   "role": "Democratic Conference Secretary",
+   "y2024": 0,
+   "y2026": 0,
+   "committees": []
+  },
+  {
+   "name": "DSCC",
+   "role": "Senate Democrats' party campaign committee",
+   "y2024": 0,
+   "y2026": 0,
+   "committees": []
+  }
+ ],
+ "categories": {
+  "2024": {
+   "labor": 335000,
+   "corporate": 17500,
+   "ideological": 418353,
+   "trade": 171000,
+   "candidate": 73600
+  },
+  "2026": {
+   "trade": 40000,
+   "corporate": 11500,
+   "ideological": 10401,
+   "labor": 17500
+  }
+ },
+ "corporatePACs": {
+  "2024": [
+   "COMERICA INCORPORATED POLITICAL ACTION COMMITTEE",
+   "FOLEY & LARDNER POLITICAL FUND, INC.",
+   "HOLLAND & KNIGHT COMMITTEE FOR EFFECTIVE GOVERNMENT",
+   "LOCKHEED MARTIN CORPORATION EMPLOYEES' POLITICAL ACTION COMMITTEE",
+   "NELSON MULLINS RILEY & SCARBOROUGH FEDERAL POLITICAL COMMITTEE",
+   "VERIZON COMMUNICATIONS INC. PAC (VERIZON PAC)"
+  ],
+  "2026": [
+   "BHFS-E, PC PAC BROWNSTEIN HYATT & FARBER SCHRECK POLITICAL ACTION COMMITTEE",
+   "EAST WEST BANCORP INC PAC",
+   "FOLEY & LARDNER POLITICAL FUND, INC.",
+   "MORGAN STANLEY PAC",
+   "SANOFI US SERVICES INC. EMPLOYEES' POLITICAL ACTION COMMITTEE"
+  ]
+ },
+ "jeffriesDiffs": [
+  {
+   "id": "2025-028",
+   "date": "2025-01-30",
+   "bill": "PN11-5",
+   "q": "On the Cloture Motion",
+   "title": "Motion to Invoke Cloture: Douglas Collins, of Georgia, to be Secretary of Veterans Affairs",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00028.htm"
+  },
+  {
+   "id": "2025-032",
+   "date": "2025-02-04",
+   "bill": "PN11-5",
+   "q": "On the Nomination",
+   "title": "Confirmation: Douglas Collins, of Georgia, to be Secretary of Veterans Affairs",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00032.htm"
+  },
+  {
+   "id": "2025-053",
+   "date": "2025-02-13",
+   "bill": "PN11-12",
+   "q": "On the Nomination",
+   "title": "Confirmation: Brooke Rollins, of TX, to be Secretary of Agriculture",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00053.htm"
+  },
+  {
+   "id": "2025-109",
+   "date": "2025-03-06",
+   "bill": "PN11-4",
+   "q": "On the Cloture Motion",
+   "title": "Motion to Invoke Cloture: Lori Chavez-DeRemer to be Secretary of Labor",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00109.htm"
+  },
+  {
+   "id": "2025-110",
+   "date": "2025-03-06",
+   "bill": "S. 331",
+   "q": "On Cloture on the Motion to Proceed",
+   "title": "Motion to Invoke Cloture: Motion to Proceed to S. 331: A bill to amend the Controlled Substances Act with respect to the scheduling of fentanyl-related substances, and for other purposes.",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00110.htm"
+  },
+  {
+   "id": "2025-111",
+   "date": "2025-03-10",
+   "bill": "PN11-4",
+   "q": "On the Nomination",
+   "title": "Confirmation: Lori Chavez-DeRemer, of Oregon, to be Secretary of Labor",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00111.htm"
+  },
+  {
+   "id": "2025-114",
+   "date": "2025-03-11",
+   "bill": "PN12-41",
+   "q": "On the Cloture Motion",
+   "title": "Motion to Invoke Cloture: Abigail Slater to be an Assistant Attorney General",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00114.htm"
+  },
+  {
+   "id": "2025-115",
+   "date": "2025-03-11",
+   "bill": "PN12-41",
+   "q": "On the Nomination",
+   "title": "Confirmation: Abigail Slater, of D.C., to be an Assistant Attorney General",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00115.htm"
+  },
+  {
+   "id": "2025-124",
+   "date": "2025-03-13",
+   "bill": "S. 331",
+   "q": "On the Cloture Motion",
+   "title": "Motion to Invoke Cloture: S. 331: A bill to amend the Controlled Substances Act with respect to the scheduling of fentanyl-related substances, and for other purposes.",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00124.htm"
+  },
+  {
+   "id": "2025-127",
+   "date": "2025-03-14",
+   "bill": "S. 331",
+   "q": "On Passage of the Bill",
+   "title": "S. 331, as amended: A bill to amend the Controlled Substances Act with respect to the scheduling of fentanyl-related substances, and for other purposes.",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00127.htm"
+  },
+  {
+   "id": "2025-128",
+   "date": "2025-03-14",
+   "bill": "H.R. 1968",
+   "q": "On the Cloture Motion",
+   "title": "Motion to Invoke Cloture: H.R. 1968: A bill making further continuing appropriations and other extensions for the fiscal year ending September 30, 2025, and for other purposes.",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00128.htm"
+  },
+  {
+   "id": "2025-210",
+   "date": "2025-04-11",
+   "bill": "PN28",
+   "q": "On the Cloture Motion",
+   "title": "Motion to Invoke Cloture: Lt. Gen. John D. Caine (Retired) to be Major General in the Regular Air Force",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00210.htm"
+  },
+  {
+   "id": "2025-211",
+   "date": "2025-04-11",
+   "bill": "PN28",
+   "q": "On the Nomination",
+   "title": "Confirmation: Lt. Gen. John D. Caine (Retired) to be Major General in the Regular Air Force",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00211.htm"
+  },
+  {
+   "id": "2025-212",
+   "date": "2025-04-11",
+   "bill": "PN27",
+   "q": "On the Cloture Motion",
+   "title": "Motion to Invoke Cloture: Lt. Gen. John D. Caine (Retired) to be General and Chairman of the Joint Chiefs of Staff",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00212.htm"
+  },
+  {
+   "id": "2025-213",
+   "date": "2025-04-11",
+   "bill": "PN27",
+   "q": "On the Nomination",
+   "title": "Confirmation: Lt. Gen. John D. Caine (Retired) to be General and Chairman of the Joint Chiefs of Staff",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00213.htm"
+  },
+  {
+   "id": "2025-220",
+   "date": "2025-04-29",
+   "bill": "PN26-18",
+   "q": "On the Cloture Motion",
+   "title": "Motion to Invoke Cloture: Tilman Fertitta to be Ambassador of the United States of America to the Italian Republic and the Republic of San Marino",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00220.htm"
+  },
+  {
+   "id": "2025-221",
+   "date": "2025-04-29",
+   "bill": "PN26-18",
+   "q": "On the Nomination",
+   "title": "Confirmation: Tilman Fertitta, of Texas, to be Ambassador of the United States of America to the Italian Republic and the Republic of San Marino",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00221.htm"
+  },
+  {
+   "id": "2025-245",
+   "date": "2025-05-13",
+   "bill": "PN12-30",
+   "q": "On the Cloture Motion",
+   "title": "Motion to Invoke Cloture: Troy Meink to be Secretary of the Air Force",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00245.htm"
+  },
+  {
+   "id": "2025-246",
+   "date": "2025-05-13",
+   "bill": "PN12-30",
+   "q": "On the Nomination",
+   "title": "Confirmation: Troy Meink, of Virginia, to be Secretary of the Air Force",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00246.htm"
+  },
+  {
+   "id": "2025-262",
+   "date": "2025-05-19",
+   "bill": "S. 1582",
+   "q": "On Cloture on the Motion to Proceed",
+   "title": "Motion to Invoke Cloture on the Motion to Proceed to S. 1582: A bill to provide for the regulation of payment stablecoins, and for other purposes.",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00262.htm"
+  },
+  {
+   "id": "2025-263",
+   "date": "2025-05-21",
+   "bill": "S. 1582",
+   "q": "On the Motion to Proceed",
+   "title": "Motion to Proceed to S. 1582: A bill to provide for the regulation of payment stablecoins, and for other purposes.",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00263.htm"
+  },
+  {
+   "id": "2025-286",
+   "date": "2025-06-03",
+   "bill": "PN22-16",
+   "q": "On the Cloture Motion",
+   "title": "Motion to Invoke Cloture: Dale Marks to be an Assistant Secretary of Defense",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00286.htm"
+  },
+  {
+   "id": "2025-287",
+   "date": "2025-06-03",
+   "bill": "PN22-16",
+   "q": "On the Nomination",
+   "title": "Confirmation: Dale Marks, of Florida, to be an Assistant Secretary of Defense",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00287.htm"
+  },
+  {
+   "id": "2025-305",
+   "date": "2025-06-11",
+   "bill": "S. 1582",
+   "q": "On the Cloture Motion",
+   "title": "Motion to Invoke Cloture: Amdt. No. 2307 to S. 1582: A bill to provide for the regulation of payment stablecoins, and for other purposes.",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00305.htm"
+  },
+  {
+   "id": "2025-310",
+   "date": "2025-06-12",
+   "bill": "S. 1582",
+   "q": "On the Motion",
+   "title": "Motion to Waive All Applicable Budgetary Discipline Re: Amdt. No. 2307: In the nature of a substitute.",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00310.htm"
+  },
+  {
+   "id": "2025-311",
+   "date": "2025-06-12",
+   "bill": "S. 1582",
+   "q": "On the Amendment",
+   "title": "Amdt. No. 2307: In the nature of a substitute.",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00311.htm"
+  },
+  {
+   "id": "2025-312",
+   "date": "2025-06-12",
+   "bill": "S. 1582",
+   "q": "On the Cloture Motion",
+   "title": "Motion to Invoke Cloture: S. 1582: A bill to provide for the regulation of payment stablecoins, and for other purposes.",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00312.htm"
+  },
+  {
+   "id": "2025-318",
+   "date": "2025-06-17",
+   "bill": "S. 1582",
+   "q": "On Passage of the Bill",
+   "title": "S. 1582, As Amended: A bill to provide for the regulation of payment stablecoins, and for other purposes.",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00318.htm"
+  },
+  {
+   "id": "2025-385",
+   "date": "2025-07-14",
+   "bill": "PN25-39",
+   "q": "On the Cloture Motion",
+   "title": "Motion to Invoke Cloture: Luke Pettit to be an Assistant Secretary of the Treasury",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00385.htm"
+  },
+  {
+   "id": "2025-386",
+   "date": "2025-07-15",
+   "bill": "PN25-39",
+   "q": "On the Nomination",
+   "title": "Confirmation: Luke Pettit, of the District of Columbia, to be an Assistant Secretary of the Treasury",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00386.htm"
+  },
+  {
+   "id": "2025-423",
+   "date": "2025-07-22",
+   "bill": "H.R. 3944",
+   "q": "On Cloture on the Motion to Proceed",
+   "title": "Motion to Invoke Cloture: Motion to Proceed to H.R. 3944: A bill making appropriations for military construction, the Department of Veterans Affairs, and related agencies for the fiscal year ending September 30, 2026, and for other purposes.",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00423.htm"
+  },
+  {
+   "id": "2025-428",
+   "date": "2025-07-23",
+   "bill": "H.R. 3944",
+   "q": "On the Motion to Proceed",
+   "title": "Motion to Proceed to H.R. 3944: A bill making appropriations for military construction, the Department of Veterans Affairs, and related agencies for the fiscal year ending September 30, 2026, and for other purposes.",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00428.htm"
+  },
+  {
+   "id": "2025-479",
+   "date": "2025-08-01",
+   "bill": "H.R. 3944",
+   "q": "On the Amendment",
+   "title": "Collins Amdt. No. 3411, as amended: In the nature of a substitute.",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00479.htm"
+  },
+  {
+   "id": "2025-480",
+   "date": "2025-08-01",
+   "bill": "H.R. 3944",
+   "q": "On Passage of the Bill",
+   "title": "H. R. 3944, as amended: A bill making appropriations for military construction, the Department of Veterans Affairs, and related agencies for the fiscal year ending September 30, 2026, and for other purposes.",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00480.htm"
+  },
+  {
+   "id": "2025-481",
+   "date": "2025-08-01",
+   "bill": "H.R. 3944",
+   "q": "On the Amendment",
+   "title": "Mullin Amdt. No. 3412: To improve the bill.",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00481.htm"
+  },
+  {
+   "id": "2025-570",
+   "date": "2025-10-09",
+   "bill": "S. 2296",
+   "q": "On Passage of the Bill",
+   "title": "S. 2296, as amended: An original bill to authorize appropriations for fiscal year 2026 for military activities of the Department of Defense, for military construction, and for defense activities of the Department of Energy, to prescribe military personnel strengths for such fiscal year, and for other purposes.",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00570.htm"
+  },
+  {
+   "id": "2025-574",
+   "date": "2025-10-16",
+   "bill": "PN466-6",
+   "q": "On the Cloture Motion",
+   "title": "Motion to Invoke Cloture: Harold D. Mooty III to be U.S. District Judge for the Northern District of Alabama",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00574.htm"
+  },
+  {
+   "id": "2025-577",
+   "date": "2025-10-21",
+   "bill": "PN466-6",
+   "q": "On the Nomination",
+   "title": "Confirmation: Harold D. Mooty III, of Alabama, to be U.S. District Judge for the Northern District of Alabama",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00577.htm"
+  },
+  {
+   "id": "2025-582",
+   "date": "2025-10-22",
+   "bill": "PN466-3",
+   "q": "On the Cloture Motion",
+   "title": "Motion to Invoke Cloture: Bill Lewis to be U.S. District Judge for the Middle District of Alabama",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00582.htm"
+  },
+  {
+   "id": "2025-589",
+   "date": "2025-10-27",
+   "bill": "PN466-3",
+   "q": "On the Nomination",
+   "title": "Confirmation: Bill Lewis, of Alabama, to be U.S. District Judge for the Middle District of Alabama",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00589.htm"
+  },
+  {
+   "id": "2025-614",
+   "date": "2025-11-10",
+   "bill": "H.R. 5371",
+   "q": "On the Motion to Table",
+   "title": "Motion to Table Paul Amdt. No. 3941: To strike a provision modifying the definition of hemp for purposes of the Agricultural Marketing Act of 1946.",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00614.htm"
+  },
+  {
+   "id": "2025-646",
+   "date": "2025-12-11",
+   "bill": "S. 1071",
+   "q": "On the Motion to Proceed",
+   "title": "Motion to Proceed to the House Message to Accompany S. 1071: A bill to require the Secretary of Veterans Affairs to disinter the remains of Fernando V. Cota from Fort Sam Houston National Cemetery, Texas, and for other purposes.",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00646.htm"
+  },
+  {
+   "id": "2025-648",
+   "date": "2025-12-17",
+   "bill": "S. 1071",
+   "q": "On the Motion",
+   "title": "Motion to Concur in the House Amendment to S. 1071: A bill to require the Secretary of Veterans Affairs to disinter the remains of Fernando V. Cota from Fort Sam Houston National Cemetery, Texas, and for other purposes.",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00648.htm"
+  },
+  {
+   "id": "2025-649",
+   "date": "2025-12-17",
+   "bill": "PN650",
+   "q": "On the Cloture Motion",
+   "title": "Motion to Invoke Cloture: Jared Isaacman to be Administrator of the National Aeronautics and Space Administration",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00649.htm"
+  },
+  {
+   "id": "2025-650",
+   "date": "2025-12-17",
+   "bill": "PN650",
+   "q": "On the Nomination",
+   "title": "Confirmation: Jared Isaacman, of Pennsylvania, to be Administrator of the National Aeronautics and Space Administration",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00650.htm"
+  },
+  {
+   "id": "2025-651",
+   "date": "2025-12-17",
+   "bill": "PN645-2",
+   "q": "On the Cloture Motion",
+   "title": "Motion to Invoke Cloture: Douglas Weaver to be a Member of the Nuclear Regulatory Commission",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00651.htm"
+  },
+  {
+   "id": "2025-652",
+   "date": "2025-12-17",
+   "bill": "PN645-2",
+   "q": "On the Nomination",
+   "title": "Confirmation: Douglas Weaver, of Maryland, to be a Member of the Nuclear Regulatory Commission",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00652.htm"
+  },
+  {
+   "id": "2026-007",
+   "date": "2026-01-12",
+   "bill": "H.R. 6938",
+   "q": "On Cloture on the Motion to Proceed",
+   "title": "Motion to Invoke Cloture: Motion to Proceed to H.R. 6938: A bill making consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes.",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00007.htm"
+  },
+  {
+   "id": "2026-010",
+   "date": "2026-01-15",
+   "bill": "H.R. 6938",
+   "q": "On the Cloture Motion",
+   "title": "Motion to Invoke Cloture: H.R. 6938: A bill making consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes.",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00010.htm"
+  },
+  {
+   "id": "2026-011",
+   "date": "2026-01-15",
+   "bill": "H.R. 6938",
+   "q": "On Passage of the Bill",
+   "title": "H.R. 6938: A bill making consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes.",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00011.htm"
+  },
+  {
+   "id": "2026-020",
+   "date": "2026-01-30",
+   "bill": "H.R. 7148",
+   "q": "On Passage of the Bill",
+   "title": "H.R. 7148, as Amended: A bill making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes.",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00020.htm"
+  },
+  {
+   "id": "2026-048",
+   "date": "2026-03-09",
+   "bill": "PN711",
+   "q": "On the Cloture Motion",
+   "title": "Motion to Invoke Cloture: Lt. Gen. Joshua M. Rudd to be General in the United States Army",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00048.htm"
+  },
+  {
+   "id": "2026-049",
+   "date": "2026-03-10",
+   "bill": "PN711",
+   "q": "On the Nomination",
+   "title": "Confirmation: Lt. Gen. Joshua M. Rudd to be General in the United States Army",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00049.htm"
+  },
+  {
+   "id": "2026-080",
+   "date": "2026-04-15",
+   "bill": "S.J.Res. 32",
+   "q": "On the Motion to Discharge",
+   "title": "Motion to Discharge S. J. Res. 32 from the Committee on Foreign Relations: A joint resolution providing for congressional disapproval of the proposed foreign military sale to the Government of Israel of certain defense articles and services.",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00080.htm"
+  },
+  {
+   "id": "2026-081",
+   "date": "2026-04-15",
+   "bill": "S.J.Res. 138",
+   "q": "On the Motion to Discharge",
+   "title": "Motion to Discharge S. J. Res. 138 from the Committee on Foreign Relations: A joint resolution providing for congressional disapproval of the proposed foreign military sale to the Government of Israel of certain defense articles and services.",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00081.htm"
+  },
+  {
+   "id": "2026-183",
+   "date": "2026-06-23",
+   "bill": "PN859-3",
+   "q": "On the Nomination",
+   "title": "Confirmation: Darrell Owens, of Pennsylvania, to be U.S. Representative to the Organization for Security and Cooperation in Europe",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00183.htm"
+  },
+  {
+   "id": "2026-227",
+   "date": "2026-08-08",
+   "bill": "H.R. 6500",
+   "q": "On the Motion to Table",
+   "title": "Motion to Table Budd Amdt. No. 6747: To strike section 2019.",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00227.htm"
+  },
+  {
+   "id": "2026-235",
+   "date": "2026-09-15",
+   "bill": "S. 4668",
+   "q": "On Cloture on the Motion to Proceed",
+   "title": "Motion to Invoke Cloture: Motion to Proceed to S. 4668: A bill to protect the name, image, and likeness rights of, and provide protections for, student athletes and to promote fair competition among intercollegiate athletics, and for other purposes.",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00235.htm"
+  },
+  {
+   "id": "2026-236",
+   "date": "2026-09-17",
+   "bill": "S. 4668",
+   "q": "On the Motion to Proceed",
+   "title": "Motion to Proceed to S. 4668: A bill to protect the name, image, and likeness rights of, and provide protections for, student athletes and to promote fair competition among intercollegiate athletics, and for other purposes.",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00236.htm"
+  },
+  {
+   "id": "2026-257",
+   "date": "2026-11-09",
+   "bill": "H.R. 2347",
+   "q": "On Cloture on the Motion to Proceed",
+   "title": "Motion to Invoke Cloture: Motion to Proceed to H.R. 2347: A bill to amend the Internal Revenue Code of 1986 to exclude from gross income any damages, other than punitive damages, received on account of any sexual acts or sexual contact.",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00257.htm"
+  },
+  {
+   "id": "2026-264",
+   "date": "2026-11-16",
+   "bill": "H.R. 2347",
+   "q": "On the Cloture Motion",
+   "title": "Motion to Invoke Cloture: Capito Amdt. No. 6883: In the nature of a substitute.",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00264.htm"
+  },
+  {
+   "id": "2026-270",
+   "date": "2026-11-19",
+   "bill": "H.R. 2347",
+   "q": "On Passage of the Bill",
+   "title": "H.R. 2347, as Amended: A bill to amend the Internal Revenue Code of 1986 to exclude from gross income any damages, other than punitive damages, received on account of any sexual acts or sexual contact.",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00270.htm"
+  }
+ ],
+ "nums": {
+  "lead24": "$25,000",
+  "lead26": "$0",
+  "dscc": "$0",
+  "corp24": "$17,500",
+  "corp26": "$11,500",
+  "ncorp24": 6,
+  "ncorp26": 5,
+  "jeffAgree": "93.1",
+  "both": 904,
+  "ndiff": 62,
+  "leaderName": "Chuck Schumer",
+  "unity": 93.4,
+  "rank": 32,
+  "tied": 0,
+  "dems": 47,
+  "contested": 180,
+  "splitYesBills": 10,
+  "splitYesNoms": 30,
+  "splitNoBills": 22,
+  "splitNoNoms": 0,
+  "jeffC": 63.5,
+  "gottC": null,
+  "aocC": null
+ },
+ "cycles": [
+  {
+   "id": "2024",
+   "label": "2023-24 (2024 election)"
+  },
+  {
+   "id": "2026",
+   "label": "2025-26 (in office)"
+  }
+ ],
+ "leaderSection": {
+  "title": "Senate Democratic leadership",
+  "note": "Contributions from each Senate Democratic leader's campaign committee, leadership PAC and joint fundraising committees, and from the DSCC, from FEC filings. Committees are matched by FEC committee ID; roles are from senate.gov's leadership page."
+ }
+}

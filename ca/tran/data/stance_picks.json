@@ -1,0 +1,391 @@
+{
+ "_note": "Hand-curated. Issue sections ('items'): his statements, actions and votes, each with a source; roll-call items get the vote and tallies from data/votes.json ({Vote}, {yea}–{nay} ...; see scripts/votes_common.py roll_phrases), never typed. Quotes ('q') must appear in the cited source. Flags: brk breaks with party (set automatically for roll items), unv unverified, none no statement found. No editorial verdicts except the Israel card's headline ('israel.headline'), whose rule is 'headlineWhy'.",
+ "issues": [
+  {
+   "id": "epstein-files",
+   "name": "Epstein files",
+   "intro": "Voted to release the Epstein files and backed the petition that forced the vote, but has made no public statement about them.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2025-11-18",
+     "roll": "2025-289",
+     "t": "{Vote} the Epstein Files Transparency Act (H.R. 4405), requiring the Justice Department to release its Epstein files. It passed {yea}–{nay}."
+    },
+    {
+     "d": "2025-11-18",
+     "roll": "2025-297",
+     "t": "{Vote} a Republican resolution to censure Del. Stacey Plaskett over texting with Jeffrey Epstein during a 2019 hearing. It failed {yea}–{nay}."
+    },
+    {
+     "d": "2025-09-01",
+     "t": "Signed the Massie-Khanna discharge petition that forced the House vote. NBC News reported that all House Democrats signed it; his individual signature was not checked against the Clerk's list.",
+     "u": "https://www.nbcnews.com/politics/congress/bipartisan-duo-expects-signatures-wednesday-force-vote-release-epstein-rcna231405",
+     "approx": 1,
+     "unv": 1
+    },
+    {
+     "d": "2026-11-11",
+     "t": "Whether he signed the 2026 petition for the Epstein Files Transparency Act II, which reached 218 signatures, is not confirmed. None of his 265 press releases mention Epstein.",
+     "u": "https://wjla.com/news/nation-world/massie-announces-he-has-enough-signatures-for-discharge-petition-for-epstein-files-part-2-ro-khanna-california-pramila-jayapal-sex-trafficking-donald-trump-rtt",
+     "unv": 1
+    },
+    {
+     "d": "2026-06-30",
+     "roll": "2026-233",
+     "t": "Related: voted to make the House Ethics Committee release records of sexual-harassment settlements involving members (H.Res. 1399, passed unanimously)."
+    },
+    {
+     "d": "2026-03-04",
+     "roll": "2026-083",
+     "t": "Related: voted against sending a resolution to release House sexual-harassment records back to committee, {brk_phrase} ({dY}–{dN} to refer)."
+    }
+   ]
+  },
+  {
+   "id": "immigration",
+   "name": "Immigration",
+   "intro": "Fights ICE tactics and funding without reforms, but voted for the Laken Riley Act and other enforcement bills.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2025-06-09",
+     "t": "Opposed the National Guard deployment to LA after visiting the Adelanto ICE facility.",
+     "u": "https://tran.house.gov/media/press-releases/rep-derek-tran-demands-oversight-immigration-enforcement-southern-california",
+     "q": "President Trump's unnecessary and premature deployment of the National Guard will create more fear and suppress free speech."
+    },
+    {
+     "d": "2025-06-17",
+     "t": "Criticized ICE raids at a Buena Park press conference.",
+     "u": "https://tran.house.gov/media/press-releases/icymi-representative-derek-tran-addresses-ice-deportation-actions-across",
+     "q": "focus on violent criminals, not law-abiding community members."
+    },
+    {
+     "d": "2025-01-22",
+     "t": "Voted yes on the Laken Riley Act, one of 46 House Democrats to do so.",
+     "u": "https://www.nbclosangeles.com/news/local/california-democrats-voted-laken-riley-act/3618901/",
+     "q": "I voted to ensure that those committing crimes, no matter their immigration status, are held to a standard of justice.",
+     "brk": 1
+    },
+    {
+     "d": "2026-01-30",
+     "t": "Cosponsored articles of impeachment against DHS Secretary Kristi Noem (H.Res. 996) after federal agents killed two people in Minneapolis.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-cosponsors-articles-impeachment-against-homeland-security",
+     "q": "No one is above the law, especially those who are entrusted with enforcing it."
+    },
+    {
+     "d": "2026-02-03",
+     "t": "Voted no on H.R. 7148, the package that ended the partial shutdown, over ICE funding without reforms. Also voted no on DHS bills in March 2026.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-opposes-funding-ice-demands-reforms-protect-us-citizens",
+     "q": "I will not be complicit in the wrongful targeting and killing of American citizens."
+    },
+    {
+     "d": "2026-03-18",
+     "t": "Voted yes on the Deporting Fraudsters Act (H.R. 1958).",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-issues-statement-hr-1958",
+     "q": "Cheating the government and stealing public benefits threatens the stability of the entire system.",
+     "brk": 1
+    }
+   ]
+  },
+  {
+   "id": "cost-of-living",
+   "name": "Cost of living",
+   "intro": "Blames tariffs for higher prices and co-chairs the Lowering Costs Caucus.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2025-08-13",
+     "t": "Helped introduce the Toll of Tariffs Act to measure what tariffs cost families.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-helps-introduce-legislation-assess-true-costs-trumps",
+     "q": "President Trump's reckless trade wars are taking a toll on working families' wallets."
+    },
+    {
+     "d": "2026-02-24",
+     "t": "State of the Union response: said the President offered no plan to lower costs and doubled down on tariffs.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-urges-people-over-politics-response-state-union-address",
+     "q": "put people over politics."
+    }
+   ]
+  },
+  {
+   "id": "health-care",
+   "name": "Health care",
+   "intro": "Voted against the Medicaid cuts in H.R. 1 and backs permanent ACA premium credits.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2025-07-03",
+     "t": "Voted no on the One Big Beautiful Bill Act, citing Medicaid cuts and his family's past reliance on Medicaid, SNAP and Section 8.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-votes-against-largest-rollback-health-care-coverage",
+     "q": "My constituents sent me to Congress to fight for lower costs and safer communities."
+    },
+    {
+     "d": "2025-09-01",
+     "t": "Cosponsored H.R. 4849 to make enhanced ACA premium tax credits permanent; signed the Hands Off Medicaid and SNAP discharge petition.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-rejects-spending-proposal-fails-address-health-care-crisis",
+     "approx": 1
+    }
+   ]
+  },
+  {
+   "id": "shutdowns",
+   "name": "Shutdowns",
+   "intro": "Opposed Republican funding bills in 2025, then voted for the September 2026 stopgap.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2025-10-01",
+     "t": "Blamed Republicans for the fall 2025 shutdown; original cosponsor of the bipartisan Pay Our Troops Act.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-issues-statement-after-republicans-force-federal",
+     "q": "I will never vote for a bill that harms the people of California's 45th district."
+    },
+    {
+     "d": "2025-11-12",
+     "roll": "2025-285",
+     "t": "{Vote} the bill that ended the fall 2025 shutdown (passed {yea}–{nay})."
+    },
+    {
+     "d": "2026-09-01",
+     "t": "Voted yes on H.R. 6500, a stopgap funding the government through Dec 11, 2026, calling it a temporary fix.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-issues-statement-cr-vote-fund-government-through-december"
+    }
+   ]
+  },
+  {
+   "id": "trump-administration",
+   "name": "Trump administration",
+   "intro": "Criticizes Trump, but voted “Present” instead of advancing an impeachment resolution.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2025-12-11",
+     "t": "Voted present on tabling a Trump impeachment resolution, with 47 other Democrats, instead of voting to advance it.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-issues-statement-following-vote-table-articles-impeachment",
+     "q": "It is clear that President Trump must be held accountable for his abuse of power.",
+     "brk": 1
+    },
+    {
+     "d": "2025-04-25",
+     "t": "At Cerritos and Buena Park town halls, promoted his Protect Veteran Jobs Act to reinstate veterans fired by DOGE.",
+     "u": "https://tran.house.gov/media/press-releases/rep-derek-tran-addresses-constituent-concerns-about-social-security-economy"
+    }
+   ]
+  },
+  {
+   "id": "israel-iran",
+   "name": "Israel & Iran",
+   "intro": "Backs conditions on Israel military aid and opposed strikes on Iran without Congress.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2026-07-15",
+     "roll": "2026-243",
+     "t": "{Vote} the Massie amendment to end FY2027 military aid to Israel, while backing continued Iron Dome funding. It failed {yea}–{nay}; House Democrats split {dY}–{dN} in favor.",
+     "q": "I supported Representative Massie's amendment to end unconditional funding for Israel.",
+     "also": [
+      "https://tran.house.gov/media/press-releases/representative-derek-tran-supports-massie-amendment-block-us-military-funding"
+     ]
+    },
+    {
+     "d": "2026-08-01",
+     "t": "Co-led a 65-member letter to Secretary Rubio on Israeli dual-use restrictions blocking aid to Gaza.",
+     "u": "https://tran.house.gov/media/press-releases/representatives-tran-bera-and-carbajal-lead-65-members-urging-secretary-rubio",
+     "approx": 1
+    },
+    {
+     "d": "2026-06-03",
+     "roll": "2026-199",
+     "t": "{Vote} the Iran War Powers Resolution (H.Con.Res. 86), which passed {yea}–{nay}."
+    },
+    {
+     "d": "2025-06-22",
+     "t": "Opposed the U.S. strike on Iran's nuclear sites as carried out without Congress's approval.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-releases-statement-regarding-us-strike-nuclear-facilities",
+     "q": "We cannot afford another endless war."
+    },
+    {
+     "d": "2025-01-09",
+     "roll": "2025-007",
+     "t": "{Vote} H.R. 23, the ICC sanctions bill (passed {yea}–{nay})."
+    },
+    {
+     "d": "2025-12-01",
+     "t": "Cosponsors the Block the Bombs Act (H.R. 3565), which would restrict certain munitions transfers to Israel.",
+     "u": "https://freebeacon.com/democrats/california-democrat-hosts-cair-leader-who-said-israel-should-be-attacked/",
+     "approx": 1
+    }
+   ]
+  },
+  {
+   "id": "veterans",
+   "name": "Veterans",
+   "intro": "An Army veteran who fights VA cuts and DOGE firings of veterans.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2026-03-20",
+     "t": "Introduced a bicameral bill with Sen. Blumenthal to block future VA cuts to disabled veterans' health care, after a VA rule was reversed.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-senator-blumenthal-lead-bicameral-bill-protect-veterans"
+    }
+   ]
+  },
+  {
+   "id": "little-saigon",
+   "name": "Little Saigon",
+   "intro": "Presses Vietnam's government on human rights and political prisoners.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2025-07-02",
+     "t": "Criticized the Trump trade deal with Vietnam over human rights; co-leads the Vietnam Human Rights Act (H.R. 3122).",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-responds-president-trumps-trade-deal-vietnam",
+     "q": "President Trump is ignoring the gross human rights abuses taking place under the leadership of the communist government."
+    },
+    {
+     "d": "2026-07-01",
+     "t": "Passed an appropriations amendment funding the U.S.–Vietnam Human Rights Dialogue.",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-holds-vietnamese-government-accountable-human-rights",
+     "approx": 1
+    }
+   ]
+  },
+  {
+   "id": "abortion",
+   "name": "Abortion",
+   "intro": "Supports writing abortion rights into federal law.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2026-01-28",
+     "t": "Cosponsors the Women's Health Protection Act (H.R. 12) and voted against two GOP reproductive health bills.",
+     "u": "https://tran.house.gov/media/press-releases/icymi-representative-tran-votes-protect-womens-choice-health-care"
+    }
+   ]
+  },
+  {
+   "id": "public-safety",
+   "name": "Public safety",
+   "intro": "Votes for police and retail-crime bills.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2026-05-01",
+     "t": "Voted for the bipartisan Combating Organized Retail Crime Act (H.R. 2853).",
+     "u": "https://tran.house.gov/media/press-releases/representative-tran-votes-protect-local-business-organized-retail-crime",
+     "approx": 1
+    }
+   ]
+  },
+  {
+   "id": "redistricting",
+   "name": "Redistricting",
+   "intro": "No public statement found on Prop 50.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2026-11-03",
+     "t": "No public statement found on Prop 50, which redrew CA-45 to take in more of Los Angeles County, including parts of Lakewood.",
+     "u": "https://www.nbclosangeles.com/news/local/derek-tran-chuong-vo-congressional-district-45/3958653/",
+     "none": 1
+    }
+   ]
+  }
+ ],
+ "israel": {
+  "question": "Pro-Palestine?",
+  "headline": "Mixed",
+  "summary": "He has moved toward conditioning U.S. military aid to Israel and pressing for Gaza humanitarian access, and opposed sanctions on the International Criminal Court. He also backs Israel's defense, including Iron Dome, and is aligned with J Street, a pro-Israel, pro-two-state group, rather than AIPAC. He has not called for ending all aid to Israel.",
+  "headlineWhy": "\"Mixed\" because items point both ways: {npal} toward Palestinians or conditions on aid, {nisr} toward Israel and {nmixed} both. He has not called for ending all aid to Israel.",
+  "items": [
+   {
+    "d": "2026-08",
+    "dir": "pal",
+    "text": "Co-led a letter from 65 members urging Secretary Rubio to ease Israeli “dual-use” restrictions blocking humanitarian aid to Gaza.",
+    "u": "https://tran.house.gov/media/press-releases/representatives-tran-bera-and-carbajal-lead-65-members-urging-secretary-rubio"
+   },
+   {
+    "d": "2026-07",
+    "roll": "2026-243",
+    "yea": "pal",
+    "text": "{Vote} the Massie amendment to cut $3.3B in military aid to Israel, saying he wants to “end unconditional funding for Israel.”",
+    "also": [
+     "https://tran.house.gov/media/press-releases/representative-derek-tran-supports-massie-amendment-block-us-military-funding"
+    ]
+   },
+   {
+    "d": "2026-07",
+    "dir": "isr",
+    "text": "In the same statement, said he supports continued funding for Israel's defense, including Iron Dome.",
+    "u": "https://tran.house.gov/media/press-releases/representative-derek-tran-supports-massie-amendment-block-us-military-funding"
+   },
+   {
+    "d": "2026-04",
+    "dir": "pal",
+    "text": "Hosted CAIR-LA's Hussam Ayloush at his Capitol office during Muslim Advocacy Day; Republicans attacked him for it.",
+    "u": "https://freebeacon.com/democrats/california-democrat-hosts-cair-leader-who-said-israel-should-be-attacked/"
+   },
+   {
+    "d": "2026-02",
+    "dir": "mixed",
+    "text": "Took a J Street Education Fund trip to Israel (Feb 13–20, 2026, $19,864) to “explore the current situation in Israel” and the Palestinian territories. J Street backs Israel and a two-state solution.",
+    "u": "https://www.legistorm.com/trip/group/16351.html"
+   },
+   {
+    "d": "2025-12",
+    "dir": "pal",
+    "text": "Cosponsors H.R. 3565, which would restrict transfers of certain bombs to Israel.",
+    "u": "https://www.congress.gov/bill/119th-congress/house-bill/3565"
+   },
+   {
+    "d": "2025-07",
+    "dir": "pal",
+    "text": "Gave a floor speech saying Israel was killing Palestinians seeking aid, as reported by the Washington Free Beacon. The exact wording is unverified.",
+    "u": "https://freebeacon.com/democrats/california-democrat-hosts-cair-leader-who-said-israel-should-be-attacked/",
+    "unv": 1
+   },
+   {
+    "d": "2025-06",
+    "dir": "isr",
+    "text": "Called a nuclear Iran dangerous to the U.S. and Israel, while urging diplomacy over military strikes.",
+    "u": "https://tran.house.gov/media/press-releases/rep-derek-tran-conflict-between-israel-and-iran"
+   },
+   {
+    "d": "2025-01",
+    "roll": "2025-007",
+    "yea": "isr",
+    "text": "{Vote} H.R. 23, the bill to sanction the International Criminal Court after it issued warrants for Israeli leaders."
+   },
+   {
+    "d": "2024–26",
+    "dir": "mixed",
+    "text": "Took about {proAbout} from pro-Israel groups, almost all through J Street, and {aipacTotal} from AIPAC's PAC. Endorsed by J Street, not AIPAC.",
+    "u": "money.html"
+   }
+  ]
+ }
+}

@@ -38,6 +38,7 @@ details.all summary{cursor:pointer;font-size:.88rem;margin:10px 0 8px;color:var(
 .pp-dot.pp-neu,.pp-tag.pp-neu{background:#6c7a73}
 #israel-palestine,.ecard{display:flex;flex-direction:column;gap:14px}
 .pp-dot.pp-pro,.pp-tag.pp-pro{background:#2f6fb3} .pp-dot.pp-con,.pp-tag.pp-con{background:#2f8f5b}
+.pp-list.rec li{grid-template-columns:96px 1fr} @media (max-width:620px){.pp-list.rec li{grid-template-columns:1fr}}
 .pp-text .more{color:var(--muted);font-size:.8rem}
 .sbox p{margin:0}
 a.sbox{color:inherit;text-decoration:none}
@@ -83,9 +84,9 @@ const fmtM = d => /^\d{4}-\d{2}$/.test(d) ? `${MON[+d.slice(5)-1]} ${d.slice(0,4
 const DIR = {pal:["Toward Palestinians / conditions on aid","pp-pal"], isr:["Toward Israel","pp-isr"], mixed:["Both","pp-mix"], neutral:["Related, no clear direction","pp-neu"]};
 function israel(x){
   const n = k => x.items.filter(i=>i.dir===k).length;
-  const li = i => `<li><span class="pp-date mono">${esc(fmtM(i.d))}</span><span class="pp-tag ${DIR[i.dir][1]}">${DIR[i.dir][0]}</span><span class="pp-text">${esc(i.t)} <a class="src" href="${esc(i.u)}"${i.u.startsWith("http")?' target="_blank" rel="noopener"':""}>Source</a></span></li>`;
+  const li = i => `<li><span class="pp-date mono">${esc(fmtM(i.d))}</span><span class="pp-tag ${DIR[i.dir][1]}">${DIR[i.dir][0]}</span><span class="pp-text">${esc(i.t)}${i.unv?' <span class="pill s-unv">Unverified</span>':""} <a class="src" href="${esc(i.u)}"${i.u.startsWith("http")?' target="_blank" rel="noopener"':""}>Source</a>${(i.more||[]).map((u,k)=>` <a class="src more" href="${esc(u)}" target="_blank" rel="noopener">${k+2}</a>`).join("")}</span></li>`;
   return `<section id="israel-palestine"><div class="sec-head"><span class="eyebrow">Issue</span><h2>Israel and Palestine</h2><p>${esc(M.Poss)} votes and statements on U.S. aid to Israel, Gaza, and the wars in Iran and Lebanon, tagged by which way each item points.</p></div>
-    <div class="pp-head"><div class="pp-flag" role="img" aria-label="${esc(x.question)} ${esc(x.headline)}"><span class="pp-q">${esc(x.question)}</span><span class="pp-v">${esc(x.headline)}</span></div><p class="pp-sum">${esc(x.summary)}</p></div>
+    <div class="pp-head"><div class="pp-flag" role="img" aria-label="${esc(x.question)} ${esc(verdict(x.headline))}"><span class="pp-q">${esc(x.question)}</span><span class="pp-v">${esc(verdict(x.headline))}</span></div><p class="pp-sum">${esc(x.summary)}</p></div>
     <div class="pp-count"><span><i class="pp-dot pp-pal"></i>${n("pal")} toward Palestinians or conditions on aid</span><span><i class="pp-dot pp-isr"></i>${n("isr")} toward Israel</span><span><i class="pp-dot pp-mix"></i>${n("mixed")} both</span><span><i class="pp-dot pp-neu"></i>${n("neutral")} related</span></div>
     <ul class="pp-list">${x.items.map(li).join("")}</ul>
     <p class="muted" style="margin:0;font-size:.8rem">This summarizes ${esc(M.poss)} record; it is not a judgment. Each tag describes the action itself, not ${esc(M.poss)} motives. ${esc(x.headlineWhy)} Antisemitism resolutions are not counted because they are not about Israeli policy.</p></section>`;
@@ -101,23 +102,28 @@ function voteRow(r){
     <td>${r.dSide?vpill(r.dSide):"—"}<div title="${r.cY!=null?'Democratic caucus, including independents who caucus with Democrats':'Democrats'}" class="qq num">${r.cY!=null?r.cY+"–"+r.cN:r.dY+"–"+r.dN}</div></td>
     <td class="num">${esc(r.result)}<br>${r.yea}–${r.nay}</td></tr>`;
 }
+// Curated record items (stance_picks "items"): date, sentence, quote, pills, sources
+const recRow = x => `<li><span class="pp-date mono">${esc(x.approx ? fmtM(x.d.slice(0,7)) : fmtD(x.d))}</span><span class="pp-text">${esc(x.t)}${x.q?` <q>${esc(x.q)}</q>`:""}${x.brk?' <span class="pill s-break">Breaks with party</span>':""}${x.none?' <span class="pill s-none">No statement found</span>':""}${x.unv?' <span class="pill s-unv">Unverified</span>':""} <a class="src" href="${esc(x.u)}"${x.u.startsWith("http")?' target="_blank" rel="noopener"':""}>Source</a>${(x.more||[]).map((u,k)=>` <a class="src more" href="${esc(u)}" target="_blank" rel="noopener">${k+2}</a>`).join("")}</span></li>`;
 function section(i){
-  const votes = i.rolls.length ? `<h3 class="sub">Votes (${i.rolls.length})</h3>
+  const items = i.items || [];
+  const rec = items.length ? `<h3 class="sub">${esc(M.Poss)} record (${items.length})</h3><ul class="pp-list rec">${items.map(recRow).join("")}</ul>` : "";
+  const votes = !i.rolls.length && items.length ? "" : i.rolls.length ? `<h3 class="sub">Votes (${i.rolls.length})</h3>
     <p class="facts-line">${i.cast?`On ${i.cast} of these ${esc(M.subj)} cast a Yea or Nay, siding with most Democrats on ${i.withDems}.`:""}</p>
     <div class="vtable"><table><thead><tr><th>Date</th><th>Bill and question</th><th>${esc(M.short)}</th><th>Most Dems</th><th>Result</th></tr></thead><tbody>${i.rolls.map(voteRow).join("")}</tbody></table></div>`
     : `<h3 class="sub">Votes</h3><p class="muted">No roll calls picked for this issue yet.</p>`;
   const head = i.statements.slice(0,6), rest = i.statements.slice(6);
-  const sts = `<h3 class="sub">${esc(M.Poss)} statements (${i.statements.length})</h3>
+  const sts = !i.statements.length && items.length ? "" : `<h3 class="sub">${esc(M.Poss)} statements (${i.statements.length})</h3>
     <ul class="slist">${head.map(stmt).join("")}</ul>
     ${rest.length?`<details class="all"><summary>Show ${rest.length} more</summary><ul class="slist">${rest.map(stmt).join("")}</ul></details>`:""}`;
-  return `<section id="${esc(i.id)}"><div class="sec-head"><span class="eyebrow">Issue</span><h2>${esc(i.name)}</h2><p>${esc(i.intro)}</p></div>${votes}${sts}</section>`;
+  return `<section id="${esc(i.id)}"><div class="sec-head"><span class="eyebrow">Issue</span><h2>${esc(i.name)}</h2><p>${esc(i.intro)}</p></div>${rec}${votes}${sts}</section>`;
 }
 // Evidence card for ICE, police and corporate (data/cards.json); same layout as the Israel and Palestine card
 function ecard(c){
-  const li = i => `<li><span class="pp-date mono">${esc(fmtM(i.d))}</span><span class="pp-tag pp-${i.s}">${esc(i.s==="pro"?c.pro:c.con)}</span><span class="pp-text">${esc(i.t)}${i.brk?' <span class="pill s-break">Breaks with party</span>':""} <a class="src" href="${esc(i.u)}"${i.u.startsWith("http")?' target="_blank" rel="noopener"':""}>Source</a>${(i.more||[]).map((u,k)=>` <a class="src more" href="${esc(u)}" target="_blank" rel="noopener">${k+2}</a>`).join("")}</span></li>`;
+  const li = i => `<li><span class="pp-date mono">${esc(fmtM(i.d))}</span><span class="pp-tag pp-${i.s}">${esc(i.s==="pro"?c.pro:i.s==="con"?c.con:(c.neutral||"Neither side"))}</span><span class="pp-text">${esc(i.t)}${i.brk?' <span class="pill s-break">Breaks with party</span>':""}${i.unv?' <span class="pill s-unv">Unverified</span>':""} <a class="src" href="${esc(i.u)}"${i.u.startsWith("http")?' target="_blank" rel="noopener"':""}>Source</a>${(i.more||[]).map((u,k)=>` <a class="src more" href="${esc(u)}" target="_blank" rel="noopener">${k+2}</a>`).join("")}</span></li>`;
   return `<section id="card-${esc(c.key)}" class="ecard"><div class="sec-head"><span class="eyebrow">${esc(c.eb)}</span><h2>${esc(c.q)}</h2></div>
-    <div class="pp-head"><div class="pp-flag" role="img" aria-label="${esc(c.q)} ${esc(c.v)}"><span class="pp-q">${esc(c.q)}</span><span class="pp-v">${esc(c.v)}</span></div><p class="pp-sum">${esc(c.rule)}</p></div>
-    <div class="pp-count"><span><i class="pp-dot pp-pro"></i>${c.npro} ${esc(c.pro)}</span><span><i class="pp-dot pp-con"></i>${c.ncon} ${esc(c.con)}</span></div>
+    <div class="pp-head"><div class="pp-flag" role="img" aria-label="${esc(c.q)} ${esc(verdict(c.v))}"><span class="pp-q">${esc(c.q)}</span><span class="pp-v">${esc(verdict(c.v))}</span></div><p class="pp-sum">${esc(c.sum || c.rule)}</p></div>
+    ${c.sum?`<p class="muted" style="margin:0;font-size:.82rem">${esc(c.rule)}</p>`:""}
+    <div class="pp-count"><span><i class="pp-dot pp-pro"></i>${c.npro} ${esc(c.pro)}</span><span><i class="pp-dot pp-con"></i>${c.ncon} ${esc(c.con)}</span>${c.nmix?`<span><i class="pp-dot pp-mix"></i>${c.nmix} ${esc(c.neutral)}</span>`:""}</div>
     <ul class="pp-list">${c.items.map(li).join("")}</ul>
     ${c.section?`<a class="pp-more" href="#${esc(c.section)}">Full vote table and statements for this issue →</a>`:""}
     <p class="muted" style="margin:0;font-size:.8rem">This summarizes ${esc(M.poss)} record; it is not a judgment. Each tag describes the action, not ${esc(M.poss)} motives. For votes, the side follows from ${esc(M.poss)} recorded vote. Votes are a hand-picked sample, not every vote on the subject.</p></section>`;
@@ -125,13 +131,13 @@ function ecard(c){
 const box = (href, eb, q, v, sum, more) => `<a class="sbox flag" href="${esc(href)}"><span class="eyebrow">${esc(eb)}</span><div class="sbox-verdict"><span class="pp-q">${esc(q)}</span><span class="pp-v">${esc(v)}</span></div><p>${esc(sum)}</p><span class="sbox-more">${esc(more)} →</span></a>`;
 const get = p => fetch(p).then(r=>{ if(!r.ok) throw 0; return r.json(); }).catch(()=>null);
 Promise.all([get("data/stances.json"), get("data/cards.json"), get("data/overview.json"), get("data/establishment.json")]).then(([d,cd,ov,es])=>{
-  if(!d){ document.getElementById("issues").innerHTML = '<p class="muted">The stances data isn\'t built yet: curate data/stance_picks.json, then run <code>scripts/build_stances.py</code> (see SCAFFOLD.md).</p>'; document.getElementById("flagBoxes").innerHTML = '<p class="muted">Verdicts appear once the stances and cards are built.</p>'; return; }
+  if(!d){ document.getElementById("issues").innerHTML = '<p class="muted"><span class="soon">Coming soon</span> Issue-by-issue stances are being researched.</p>'; document.getElementById("flagBoxes").innerHTML = '<p class="muted">Verdicts appear once the stances and cards are built.</p>'; return; }
   const C = cd ? Object.fromEntries(cd.cards.map(c=>[c.key,c])) : {};
   const home = ov && ov.tiles.find(t=>/homeless/i.test(t.q));
-  const boxes = [box("#israel-palestine","Israel and Palestine",d.israel.question,d.israel.headline,d.israel.summary,`See all ${d.israel.items.length} items`)];
-  [["ice","Immigration enforcement"],["police","Policing and crime"],["corporate","Money and business"]].forEach(([k])=>{ const c=C[k]; if(c) boxes.push(box(`#card-${k}`,c.eb,c.q,c.v,c.rule,`See all ${c.n} items`)); });
+  const boxes = [box("#israel-palestine","Israel and Palestine",d.israel.question,verdict(d.israel.headline),d.israel.summary,`See all ${d.israel.items.length} items`)];
+  [["ice","Immigration enforcement"],["police","Policing and crime"],["corporate","Money and business"]].forEach(([k])=>{ const c=C[k]; if(c) boxes.push(box(`#card-${k}`,c.eb,c.q,c.v,c.short||c.rule,`See all ${c.n} items`)); });
   if(home) boxes.push(box("#homelessness","Homelessness",home.q,home.v,home.rule,"See the homelessness section"));
-  if(es) boxes.push(box("establishment.html","Party ties",es.question,es.headline,es.why,"Open the Establishment tab"));
+  if(es) boxes.push(box("establishment.html","Party ties",es.question,verdict(es.headline),es.why,"Open the Establishment tab"));
   document.getElementById("flagBoxes").innerHTML = boxes.join("");
   document.getElementById("cards").innerHTML = israel(d.israel) + ["ice","police","corporate"].filter(k=>C[k]).map(k=>ecard(C[k])).join("");
   document.getElementById("issues").innerHTML = d.issues.map(section).join("");
