@@ -42,7 +42,7 @@ Government sites (senate.gov offices, house.gov, clerk.house.gov, govinfo, congr
 6. **Promises come from the member's own words** (campaign site via a pre-election Wayback snapshot), not endorsers or interviews.
 7. **Never publish donor names, cities or addresses**; only employer, occupation, totals. Official portrait only. Neutral wording. Pronouns: use how the member's official bio refers to them, else they/them.
 8. **No secrets in the repo, in files or in chat.** API keys come from the macOS Keychain (`security …`) or env vars `FEC_API_KEY` / `CONGRESS_API_KEY` via `./tr`. Never print, log, commit or ask the user to paste a key.
-9. **Raw data is not committed** (`data/raw`, `data/fec/raw`, `data/statements_raw`, `data/billstatus`, `data/geo/raw`, `data/site_raw`, `data/sources/*.html`). Never `git add -f` them.
+9. **Official roll-call XML IS committed**, once per chamber and Congress, in `data/rollcalls/<house|senate>/<congress>/` (every member reads the same files; never copy them into a member folder). Other raw data is not committed (`data/raw`, `data/fec/raw`, `data/statements_raw`, `data/billstatus`, `data/geo/raw`, `data/site_raw`, `data/sources/*.html`). Never `git add -f` them. `fetch_votes` / `fetch_votes_senate` only add missing files to the shared folder.
 10. **Never edit generated files** (pages inside a member folder). Edit `site/`, then run `publish.py`.
 11. **Do not bypass bot protection** (senate.gov returns 403 to scripts). Stop at the first 403/429 and follow "Go slow" above; use another route or tell the user.
 

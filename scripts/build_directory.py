@@ -3,7 +3,7 @@ districts each ZIP code area falls in.
 
 Sources (official, downloaded into data/directory_raw/, which stays out of git):
   House:  the House Clerk's member list, clerk.house.gov/xml/lists/MemberData.xml (name, party, state, district, bioguide)
-  Senate: the newest senate.gov roll-call XML in a senator's data/raw (all 100 senators with name, party, state);
+  Senate: the newest senate.gov roll-call XML in data/rollcalls/senate (all 100 senators with name, party, state);
           senate.gov's own contact list refuses automated downloads
   ZIPs:   Census Bureau ZCTA-to-119th-district relationship file. A ZIP code area that crosses a district line maps
           to every district it touches, and the page says so.
@@ -41,9 +41,9 @@ for m in ET.parse(os.path.join(RAW, "house.xml")).getroot().iter("member"):
     members.append({"name": name or "Vacant", "party": (i.findtext("party") or "").strip(), "state": st, "seat": seat,
                     "chamber": "house", "id": bid, "vacant": not name, "path": tracked.get(bid)})
 
-# Senate: the newest roll-call file in any senator's folder lists all 100 senators
-sen = sorted(glob.glob(os.path.join(REPO, "ca/*/data/raw/senate-*.xml")), key=os.path.basename)
-if not sen: raise SystemExit("No Senate roll-call XML under ca/*/data/raw; fetch a senator's votes first.")
+# Senate: the newest roll-call file lists all 100 senators
+sen = sorted(glob.glob(os.path.join(REPO, "data/rollcalls/senate/*/senate-*.xml")), key=os.path.basename)
+if not sen: raise SystemExit("No Senate roll-call XML under data/rollcalls/senate; run fetch_votes_senate first.")
 for m in ET.parse(sen[-1]).getroot().iter("member"):
     lis = m.findtext("lis_member_id")
     members.append({"name": f"{m.findtext('first_name')} {m.findtext('last_name')}", "party": m.findtext("party"), "state": m.findtext("state"),

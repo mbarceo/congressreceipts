@@ -35,7 +35,7 @@ You are working inside the Congress Receipts repository. The project's rules are
 - Promises are the member's own words from a pre-election Wayback snapshot, with a `why` for every status. "Stalled" means introduced or cosponsored but only referred to committee.
 - Verdicts only where a rule is stated on the page. Issue sections show evidence, not conclusions.
 - No donor names; official portrait only; neutral wording; leave out anything you cannot source.
-- Go slow on government sites: one request at a time, a few seconds apart, stop at the first 403/429 (see `CLAUDE.md`). If a site blocks scripts (senate.gov 403), do not bypass it: copy Senate roll-call XML from another senator's `data/raw`, or build without statements and say so.
+- Go slow on government sites: one request at a time, a few seconds apart, stop at the first 403/429 (see `CLAUDE.md`). If a site blocks scripts (senate.gov 403), do not bypass it: use the Senate roll-call XML already committed in `data/rollcalls/senate/<congress>/` (a new member needs no download), or build without statements and say so.
 - A member-elect has no votes: build money, promises and campaign statements only, keep `"live": false` in `members.json` and leave the queue alone.
 
 ## Finish
