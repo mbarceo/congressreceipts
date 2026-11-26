@@ -201,19 +201,19 @@
       {
         "id": "tech",
         "label": "Technology and AI companies",
-        "why": "TODO: why this category matters for Calvert's district.",
+        "why": "Large technology and AI companies; the defense spending bill written by the Appropriations subcommittee he chairs funds Pentagon technology and AI work.",
         "rx": "GOOGLE|ALPHABET|MICROSOFT|AMAZON|\\bMETA\\b|FACEBOOK|APPLE INC|OPENAI|ANTHROPIC|NVIDIA|AUTODESK|INTEL\\b|QUALCOMM|ORACLE|SALESFORCE"
       },
       {
         "id": "health",
         "label": "Health care, insurers and pharma",
-        "why": "TODO: why this category matters for Calvert's district.",
+        "why": "Hospitals, insurers and drug makers, on the health-care side of the cost-of-living fight.",
         "rx": "HEALTH|MEDICAL|HOSPITAL|PHARMA|INSURANCE|KAISER|AMERICAN MEDICAL|DENTAL"
       },
       {
         "id": "civil",
         "label": "Latino, immigrant and civil-rights groups",
-        "why": "TODO: why this category matters for Calvert's district.",
+        "why": "Latino, immigrant and civil-rights groups, on immigration and equal rights.",
         "rx": "LATINO|HISPANIC|MEXICAN AMERICAN|UNIDOSUS|IMMIGRA|\\bACLU\\b|NAACP|CHCI|BOLD PAC|LA RAZA"
       }
     ],

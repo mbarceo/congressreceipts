@@ -1,4 +1,4 @@
 {
- "_note": "Constituent events from her own releases or local press. 'stmt' must match exactly one release in data/statements.json; 'u' is any other source. role: hosted = her office ran it; participated = someone else hosted. Build: python3 -I scripts/build_overview.py",
+ "_note": "Constituent events from his own releases or local press. 'stmt' must match exactly one release in data/statements.json; 'u' is any other source. role: hosted = his office ran it; participated = someone else hosted. Build: python3 -I scripts/build_overview.py",
  "events": []
 }
