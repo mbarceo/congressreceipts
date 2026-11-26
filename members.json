@@ -45,6 +45,28 @@
    "portrait": "assets/portrait.jpg",
    "oldRepo": "ca-sen-schiff-tracker",
    "eventsResearched": false
+  },
+  {
+   "path": "ca/garcia",
+   "name": "Robert Garcia",
+   "party": "D",
+   "seat": "CA-42",
+   "chamber": "house",
+   "voteId": "G000598",
+   "format": "shared",
+   "portrait": "assets/portrait.jpg",
+   "eventsResearched": false
+  },
+  {
+   "path": "md/van-hollen",
+   "name": "Chris Van Hollen",
+   "party": "D",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S390",
+   "format": "shared",
+   "portrait": "assets/portrait.jpg",
+   "eventsResearched": false
   }
  ]
 }

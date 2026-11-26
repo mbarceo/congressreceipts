@@ -1,0 +1,360 @@
+{
+ "_note": "Hand-curated. Roll ids are chosen by reading the Clerk's titles; his vote is pulled from data/votes.json, never typed here. statementRx matches titles; statementPicks adds specific releases with a verbatim snippet found by 'rx' in the release's full text (data/statements_full.json). No editorial verdicts except the Israel card's headline, set in 'israel.headline'.",
+ "issues": [
+  {
+   "id": "epstein-files",
+   "name": "Epstein files",
+   "intro": "Voted for the Epstein Files Transparency Act and, as the House Oversight Committee's ranking member, has pressed the Justice Department to release the full files.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2025-11-18",
+     "roll": "2025-289",
+     "t": "{Vote} the Epstein Files Transparency Act (H.R. 4405), requiring the Justice Department to release its Epstein files. It passed {yea}–{nay}."
+    },
+    {
+     "d": "2026-03-31",
+     "t": "Hosted a Long Beach roundtable with Epstein survivor Annie Farmer and said the Justice Department must release the files.",
+     "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-statement-following-roundtable-discussion-epstein",
+     "q": "President Trump and Attorney General Pam Bondi need to finally follow the law, release the files, and end this White House cover-up."
+    },
+    {
+     "d": "2025-11-18",
+     "roll": "2025-297",
+     "t": "Related: {Vote} a Republican resolution to censure Del. Stacey Plaskett over texting with Jeffrey Epstein during a 2019 hearing. It failed {yea}–{nay}."
+    },
+    {
+     "d": "2026-06-30",
+     "roll": "2026-233",
+     "t": "Related: {Vote} H.Res. 1399, directing the House Ethics Committee to preserve and publicly release records relating to sexual-harassment settlements involving members. It passed {yea}–{nay}."
+    }
+   ]
+  },
+  {
+   "id": "immigration",
+   "name": "Immigration and ICE",
+   "intro": "Opposes the Trump administration's deportation tactics and has proposed restructuring ICE, but voted against the Laken Riley Act and the 2026 Homeland Security appropriations bill.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2025-01-24",
+     "t": "Reintroduced the ICE Security Reform Act, which would make Homeland Security Investigations an independent agency apart from ICE.",
+     "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-reintroduces-ice-security-reform-act-establish",
+     "q": "The Department of Homeland Security should focus on their mission to protect public safety, rather than attacking long term residents who contribute to our communities."
+    },
+    {
+     "d": "2025-03-28",
+     "t": "Condemned the arrests of students Rumeysa Ozturk and Mahmoud Khalil by ICE.",
+     "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-statement-politically-motivated-arrests-toward",
+     "q": "Using ICE agents to arrest students without evidence of any crime is unacceptable."
+    },
+    {
+     "d": "2025-04-21",
+     "t": "Travelled to El Salvador with three House colleagues to press the administration to return Kilmar Abrego Garcia.",
+     "u": "https://robertgarcia.house.gov/media/press-releases/us-reps-garcia-frost-ansari-and-dexter-arrive-el-salvador-pressure-trump",
+     "q": "While Donald Trump continues to defy the Supreme Court, Kilmar Abrego Garcia is being held illegally in El Salvador after being wrongfully deported"
+    },
+    {
+     "d": "2025-04-30",
+     "t": "Reintroduced the SHIELD Act, a grant program for legal representation of immigrants in immigration court.",
+     "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-reintroduces-shield-act-strengthen-access-legal",
+     "q": "have reminded us of the immediate need to protect the right to due process"
+    },
+    {
+     "d": "2025-10-16",
+     "t": "Applauded Long Beach Airport for rejecting Homeland Security Secretary Kristi Noem's request to play a video in the terminal.",
+     "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-applauds-long-beach-airports-decision-reject",
+     "q": "The video message violates federal and state laws"
+    },
+    {
+     "d": "2025-01-22",
+     "roll": "2025-023",
+     "t": "{Vote} the Laken Riley Act (S. 5). It passed {yea}–{nay}."
+    },
+    {
+     "d": "2026-03-05",
+     "roll": "2026-087",
+     "t": "{Vote} the Department of Homeland Security Appropriations Act, 2026 (H.R. 7744). It passed {yea}–{nay}."
+    },
+    {
+     "d": "2026-03-18",
+     "roll": "2026-094",
+     "t": "{Vote} the Deporting Fraudsters Act (H.R. 1958). It passed {yea}–{nay}."
+    },
+    {
+     "d": "2026-04-16",
+     "roll": "2026-120",
+     "t": "{Vote} H.R. 1689, requiring the Department of Homeland Security to designate Haiti for temporary protected status. It passed {yea}–{nay}."
+    }
+   ]
+  },
+  {
+   "id": "trump-oversight",
+   "name": "Oversight of the Trump administration",
+   "intro": "Elected ranking member of the House Oversight Committee in June 2025 and has led Democratic criticism of the administration there. Voted against tabling the impeachment resolutions below that he voted on.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2025-06-24",
+     "t": "Elected ranking member of the House Oversight Committee by his Democratic colleagues, 150–63.",
+     "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-statement-election-ranking-member-house-oversight",
+     "q": "We will hold Donald Trump and his Administration accountable for their corruption and abuses of power"
+    },
+    {
+     "d": "2025-02-03",
+     "t": "Condemned Elon Musk's access to the Treasury payments system as a member of the Oversight DOGE subcommittee.",
+     "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-statement-doge-elon-musk-treasury-payments-system",
+     "q": "Elon Musk was not elected by the American people and should be nowhere near our treasury payments system"
+    },
+    {
+     "d": "2025-02-20",
+     "t": "Responded to a Justice Department letter about his criticism of Musk.",
+     "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-statement-threats-department-justice-over-criticism",
+     "q": "elected members of Congress must have the right to forcefully oppose the Trump Administration"
+    },
+    {
+     "d": "2025-06-24",
+     "roll": "2025-175",
+     "t": "{Vote} the motion to table H.Res. 537, articles of impeachment against President Trump. (A no vote opposes tabling.) The motion passed {yea}–{nay}."
+    },
+    {
+     "d": "2025-12-11",
+     "roll": "2025-322",
+     "t": "{Vote} the motion to table H.Res. 939, articles of impeachment against President Trump. (A no vote opposes tabling.) The motion passed {yea}–{nay}."
+    },
+    {
+     "d": "2026-09-15",
+     "roll": "2026-298",
+     "t": "{Vote} the motion to table H.Res. 1486, articles of impeachment against President Trump. (A no vote opposes tabling.) The motion passed {yea}–{nay}."
+    }
+   ]
+  },
+  {
+   "id": "cost-of-living",
+   "name": "Cost of living, housing and tariffs",
+   "intro": "Voted against the One Big Beautiful Bill Act, opposes the Trump tariffs, and has launched a House caucus and bills aimed at building more housing.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2024-11-21",
+     "t": "Launched the Congressional YIMBY Caucus to promote building more housing.",
+     "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-announces-launch-pro-housing-yimby-caucus-tackle",
+     "q": "The cost of rent is far too high."
+    },
+    {
+     "d": "2025-04-08",
+     "t": "Reintroduced the People Over Parking Act, which would end mandatory local parking minimums.",
+     "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-reintroduces-people-over-parking-act-alongside-re",
+     "q": "mandatory parking minimums have driven up the cost of housing"
+    },
+    {
+     "d": "2026-02-20",
+     "t": "Welcomed the Supreme Court decision striking down President Trump's global tariffs.",
+     "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-statement-following-supreme-court-decision-striking",
+     "q": "Donald Trump has caused chaos globally with his reckless tariff policies that have raised prices"
+    },
+    {
+     "d": "2025-07-03",
+     "roll": "2025-190",
+     "t": "{Vote} H.R. 1, the One Big Beautiful Bill Act, in its final House vote. It passed {yea}–{nay}."
+    },
+    {
+     "d": "2026-06-23",
+     "roll": "2026-224",
+     "t": "{Vote} H.R. 6644, the Housing for the 21st Century Act (enacted as the 21st Century ROAD to Housing Act, Public Law 119-101). It passed {yea}–{nay}."
+    }
+   ]
+  },
+  {
+   "id": "health-care",
+   "name": "Health care",
+   "intro": "Voted against the health-care bills below.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2025-12-17",
+     "roll": "2025-349",
+     "t": "{Vote} the Lower Health Care Premiums for All Americans Act (H.R. 6703). It passed {yea}–{nay}."
+    },
+    {
+     "d": "2025-12-18",
+     "roll": "2025-362",
+     "t": "{Vote} the Do No Harm in Medicaid Act (H.R. 498). It passed {yea}–{nay}."
+    },
+    {
+     "d": "2025-07-03",
+     "roll": "2025-190",
+     "t": "{Vote} H.R. 1, the One Big Beautiful Bill Act. It passed {yea}–{nay}."
+    }
+   ]
+  },
+  {
+   "id": "funding-shutdowns",
+   "name": "Government funding and shutdowns",
+   "intro": "Voted no on every funding bill below, including two in January 2026 (H.R. 7006 and H.R. 7148) that most Democrats supported.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2025-09-19",
+     "roll": "2025-281",
+     "t": "{Vote} the stopgap Continuing Appropriations and Extensions Act, 2026 (H.R. 5371). It passed {yea}–{nay}."
+    },
+    {
+     "d": "2025-11-12",
+     "roll": "2025-285",
+     "t": "{Vote} the Senate amendment to H.R. 5371, the bill that ended the fall 2025 shutdown. It passed {yea}–{nay}."
+    },
+    {
+     "d": "2026-01-14",
+     "roll": "2026-028",
+     "t": "{Vote} H.R. 7006, the Financial Services and General Government and National Security, Department of State appropriations bill. It passed {yea}–{nay}."
+    },
+    {
+     "d": "2026-01-22",
+     "roll": "2026-045",
+     "t": "{Vote} the Consolidated Appropriations Act, 2026 (H.R. 7148). It passed {yea}–{nay}."
+    },
+    {
+     "d": "2026-02-03",
+     "roll": "2026-053",
+     "t": "{Vote} the Senate amendments to H.R. 7148, the Consolidated Appropriations Act, 2026. It passed {yea}–{nay}."
+    },
+    {
+     "d": "2026-07-21",
+     "roll": "2026-272",
+     "t": "{Vote} H.R. 9770, continuing appropriations for fiscal year 2027. It passed {yea}–{nay}."
+    }
+   ]
+  },
+  {
+   "id": "port-environment",
+   "name": "Ports, environment and Long Beach",
+   "intro": "Has pushed port projects and cleaner shipping for Long Beach.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2025-07-10",
+     "t": "Reintroduced the Clean Shipping Act with Sen. Alex Padilla, to phase out greenhouse-gas emissions from large ships calling at U.S. ports.",
+     "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-and-senator-alex-padilla-reintroduce-clean-shipping",
+     "q": "Ship pollution is harmful for the health of people living near ports"
+    },
+    {
+     "d": "2026-07-14",
+     "t": "Announced committee approval of the Water Resources Development Act, which would support a $255 million Port of Long Beach channel-deepening project.",
+     "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-secures-committee-approval-255-million-port-long",
+     "q": "This is a huge win for Long Beach, for our workers"
+    },
+    {
+     "d": "2024-09-04",
+     "t": "Welcomed the EPA's proposal to list the former Exide battery site in Vernon on the Superfund National Priorities List.",
+     "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-welcomes-addition-exide-technologies-site-superfund",
+     "q": "The federal government must bring justice to a community which has been overlooked time after time"
+    }
+   ]
+  },
+  {
+   "id": "guns",
+   "name": "Guns and public safety",
+   "intro": "Backs background checks on ammunition sales and voted against the Veterans 2nd Amendment Protection Act.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2025-06-27",
+     "t": "Reintroduced the AMMO Act with Sen. Elizabeth Warren, requiring background checks and licensing for ammunition sellers.",
+     "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-and-senator-elizabeth-warren-reintroduce-ammo-act",
+     "q": "It makes absolutely no sense that anyone in this country can walk into a business and buy as much ammunition as they want, with no background check and no questions asked"
+    },
+    {
+     "d": "2026-05-21",
+     "roll": "2026-190",
+     "t": "{Vote} the Veterans 2nd Amendment Protection Act (H.R. 1041). It passed {yea}–{nay}."
+    }
+   ]
+  },
+  {
+   "id": "lgbtq-rights",
+   "name": "LGBTQ+ rights",
+   "intro": "Has introduced a bill on LGBTQ+ rights abroad and voted against the House's 2025 sports bill.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2025-11-17",
+     "t": "Reintroduced the International Human Rights Defense Act with Sen. Ed Markey, on LGBTQ+ rights abroad.",
+     "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-and-senator-ed-markey-reintroduce-international",
+     "q": "equality is never something we can take for granted"
+    },
+    {
+     "d": "2025-01-14",
+     "roll": "2025-012",
+     "t": "{Vote} the Protection of Women and Girls in Sports Act (H.R. 28). It passed {yea}–{nay}."
+    }
+   ]
+  }
+ ],
+ "israel": {
+  "question": "Pro-Palestine?",
+  "headline": "Mixed",
+  "summary": "He backs a ceasefire, more aid into Gaza and limits on U.S. military aid to Israel's government, and has called Prime Minister Netanyahu a corrupt authoritarian. He also supports a secure Israeli state, the return of the hostages and a Palestinian state free of Hamas.",
+  "headlineWhy": "\"Mixed\" because items point both ways: {npal} toward Palestinians or conditions on aid, {nisr} toward Israel and {nmixed} both.",
+  "items": [
+   {
+    "d": "2026-07",
+    "dir": "pal",
+    "roll": "2026-243",
+    "yea": "pal",
+    "text": "{Vote} the Massie amendment to block $3.3 billion in annual military financing for Israel. His statement said the money would go “for Benjamin Netanyahu and the Israeli military.”",
+    "also": [
+     "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-statement-massie-amendment"
+    ]
+   },
+   {
+    "d": "2025-09",
+    "dir": "pal",
+    "text": "Supported H.R. 3565, which would limit transfers of certain offensive weapons to Israel, saying it would “pressure Netanyahu to end this war.”",
+    "u": "https://robertgarcia.house.gov/media/press-releases/congressman-garcia-statement-hr-3565"
+   },
+   {
+    "d": "2025-09",
+    "dir": "isr",
+    "text": "In the same statement: “I believe in a secure Israeli and Jewish state, free from terror.”",
+    "u": "https://robertgarcia.house.gov/media/press-releases/congressman-garcia-statement-hr-3565"
+   },
+   {
+    "d": "2025-08",
+    "dir": "mixed",
+    "text": "Said “Palestinian and Israeli lives have the same value” and called for a ceasefire, the release of all hostages and a Palestinian state free of Hamas.",
+    "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-statement-israel-palestine"
+   },
+   {
+    "d": "2025-07",
+    "dir": "pal",
+    "text": "Called for “a full flow of aid and a ceasefire immediately” in Gaza.",
+    "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-statement-ongoing-situation-gaza"
+   },
+   {
+    "d": "2025-10",
+    "dir": "mixed",
+    "text": "Welcomed news of a ceasefire and peace negotiations, saying “All the hostages must come home safely.”",
+    "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-statement-news-ceasefire-and-peace-negotiations"
+   }
+  ]
+ }
+}
