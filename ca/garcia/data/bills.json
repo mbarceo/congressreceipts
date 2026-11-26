@@ -1,0 +1,105 @@
+{
+ "_note": "Every bill a page makes a claim about: role this member is said to have (sponsor, cosponsor or none), the public law claimed, if any, and housePassed when a page says it passed the House. Checked by scripts/verify_bills.py against govinfo BILLSTATUS.",
+ "bills": [
+  {
+   "bill": "hr2743",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "hr3069",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "hr14",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "118-hr11",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "hr18",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "hr3115",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "hr4227",
+   "role": "sponsor",
+   "law": null
+  },
+  {
+   "bill": "hr10063",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "hr4325",
+   "role": "sponsor",
+   "law": null
+  },
+  {
+   "bill": "hr20",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "hr4418",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "hr5658",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "hr1589",
+   "role": "cosponsor",
+   "law": null
+  },
+  {
+   "bill": "hr3101",
+   "role": "sponsor",
+   "law": null
+  },
+  {
+   "bill": "118-hr82",
+   "role": "cosponsor",
+   "law": "118-273"
+  },
+  {
+   "bill": "hr767",
+   "role": "sponsor",
+   "law": null
+  },
+  {
+   "bill": "hr766",
+   "role": "sponsor",
+   "law": null
+  },
+  {
+   "bill": "hr2710",
+   "role": "sponsor",
+   "law": null
+  },
+  {
+   "bill": "hr498",
+   "role": "none",
+   "law": null
+  },
+  {
+   "bill": "hr6644",
+   "role": "none",
+   "law": "119-101"
+  }
+ ]
+}

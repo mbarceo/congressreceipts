@@ -1,0 +1,11 @@
+# Raw downloads: re-created by the scripts in scripts/ (large; raw FEC files include donor street addresses)
+data/raw/
+data/fec/raw/
+data/statements_raw/
+data/geo/raw/
+# Saved copies of source pages (other outlets' articles): kept locally as evidence, not republished
+data/sources/*.html
+# Local tooling
+.DS_Store
+.claude/
+__pycache__/

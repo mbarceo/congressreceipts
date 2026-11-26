@@ -12,3 +12,11 @@
 .claude/
 __pycache__/
 **/data/directory_raw/
+
+# Raw dirs may be symlinks to a scratch cache (a trailing-slash pattern would not match a symlink)
+**/data/raw
+**/data/fec/raw
+**/data/statements_raw
+**/data/geo/raw
+**/data/billstatus
+**/data/site_raw
