@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Where Senate and House Democrats stand in the leadership races: the December 1 Senate leader vote and the January 3 House Speaker vote, counted only from public statements, with a link to the source for every name.">
+<title>Leadership races · Congress Receipts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="site.css?v=86652562">
+<link rel="stylesheet" href="hub.css?v=91a2553f">
+<style>
+:root{--sc:#f0a65c;--vh:#6ea6e6;--ag:#c99ae6}
+/* Jump-to-section bar (styles from site.css), placed under the sticky site header */
+.topbar{justify-content:space-between;top:var(--crh,60px)}
+.tabs{display:flex;gap:4px}
+.tabs button{font:inherit;font-size:.88rem;font-weight:600;color:var(--muted);background:none;border:0;border-radius:999px;padding:7px 16px;cursor:pointer}
+.tabs button:hover{color:var(--ink)}
+.tabs button[aria-selected="true"]{background:var(--accent);color:var(--on-accent)}
+.panel{display:flex;flex-direction:column;gap:56px;scroll-margin-top:calc(var(--crh,60px) + 56px)}
+.cand.hj{--c:var(--accent)}
+.sen.tonly{border-left-style:dashed}
+.seg.tonly{opacity:.45}
+.tag{font-family:var(--f-mono);font-size:.66rem;color:var(--muted)}
+.vip{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;margin:4px 0 2px;font-size:.7rem;font-weight:600;color:var(--prog);background:var(--prog-bg);border-radius:999px;padding:1px 9px}
+.vip::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.hnums{display:flex;flex-direction:column;gap:6px}
+.cr-head{z-index:40} /* keep the site menu (opened on phones) above the section bar */
+section,#race{scroll-margin-top:calc(var(--crh,60px) + 56px)}
+/* Tally: the count itself is the picture */
+.race{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cand{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:8px;padding:16px 18px 14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.cand.sc{--c:var(--sc)} .cand.vh{--c:var(--vh)}
+.cand .top{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.cand h2{font-size:1.25rem}
+.cand .num{font-family:var(--f-display);font-weight:800;font-size:clamp(2.4rem,7vw,3.6rem);line-height:1;font-variant-numeric:tabular-nums;color:var(--c)}
+.cand .sub{font-size:.84rem;color:var(--muted);margin:0}
+.marks{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:flex-end;min-height:76px}
+.marks svg{display:block;overflow:visible}
+.marks line{stroke:var(--c);stroke-width:5;stroke-linecap:round}
+@media (max-width:640px){.race{grid-template-columns:1fr}}
+/* The 55 voters, one segment each, with the 28-vote line */
+.voters{display:flex;flex-direction:column;gap:8px}
+.bar-wrap{position:relative;padding-top:26px}
+.bar{display:flex;gap:2px}
+.seg{flex:1 1 0;min-width:0;height:28px;border:0;border-radius:3px;padding:0;cursor:pointer;background:var(--c)}
+.seg.none{background:transparent;border:1px dashed var(--muted)}
+.seg.und{background:color-mix(in srgb,var(--stall) 80%,transparent)}
+.seg:hover,.seg:focus-visible{outline:2px solid var(--ink);outline-offset:1px}
+.win{position:absolute;top:0;bottom:-4px;width:0;border-left:2px solid var(--ink);pointer-events:none}
+.win span{position:absolute;top:0;left:6px;white-space:nowrap;font-family:var(--f-mono);font-size:.74rem;color:var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.84rem}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:2px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+.legend i.none{background:transparent;border:1px dashed var(--muted)}
+/* Position pills */
+.pos{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;border-radius:999px;padding:2px 10px;white-space:nowrap;color:var(--c);background:color-mix(in srgb,var(--c) 16%,transparent)}
+.pos::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.pos.none{background:none;border:1px dashed var(--muted);color:var(--muted)}
+/* Polls */
+.polls{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+@media (max-width:760px){.polls{grid-template-columns:1fr}}
+.poll{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 18px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.poll h3{font-size:1.05rem}
+.poll .meta{font-size:.8rem;color:var(--muted);margin:0}
+.pr{display:flex;flex-direction:column;gap:5px}
+.pr .lab{font-size:.84rem;font-weight:600}
+.pb{display:flex;gap:2px;height:28px}
+.pb span{display:flex;align-items:center;justify-content:center;min-width:0;overflow:hidden;border-radius:3px;font-size:.78rem;font-weight:700;color:#10150f;background:var(--c)}
+.pb span.rest{background:transparent;border:1px dashed var(--muted);color:var(--muted);font-weight:500}
+.pk{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.78rem;color:var(--muted)}
+.pk i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px;background:var(--c)}
+.pk i.rest{background:transparent;border:1px dashed var(--muted)}
+.lead{display:grid;grid-template-columns:minmax(120px,170px) 1fr auto;gap:4px 10px;align-items:center;font-size:.84rem}
+.lead .tr{height:10px;background:var(--line);border-radius:5px;overflow:hidden}
+.lead .tr i{display:block;height:100%;background:var(--vh)}
+.lead b{font-family:var(--f-mono);font-size:.8rem}
+.poll .pn{margin:0;font-size:.76rem;color:var(--muted)}
+/* Where sources disagree */
+.dis{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.dis li{display:grid;grid-template-columns:minmax(150px,200px) 1fr;gap:4px 18px;padding:14px 0;border-top:1px solid var(--line)}
+.dis li:first-child{border-top:0}
+.dis b{font-family:var(--f-display);font-size:1rem}
+.dis .p{margin-top:4px}
+.dis p{margin:0;max-width:70ch}
+@media (max-width:640px){.dis li{grid-template-columns:1fr}}
+/* Senator tiles */
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(225px,1fr));gap:10px}
+.sen{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--c);border-radius:8px;padding:10px 12px 11px;display:flex;flex-direction:column;gap:6px;min-width:0;font-size:.84rem;line-height:1.45}
+.sen[hidden]{display:none}
+.sen.hit{outline:2px solid var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--surface));transition:background .3s}
+.sen .h{display:flex;flex-direction:column;gap:5px}
+.sen .nm{font-family:var(--f-display);font-weight:700;font-size:.98rem;line-height:1.2}
+.sen .nm small{font-family:var(--f-body);font-weight:400;color:var(--muted);font-size:.74rem;margin-left:6px;white-space:nowrap}
+.sen .h .pos{align-self:flex-start;font-size:.72rem;padding:1px 9px}
+.sen p{margin:0}
+.sen .rc{margin-top:auto;padding-top:6px;border-top:1px solid var(--line)}
+.sen .rc a{font-weight:600}
+.sen .rc small{display:block;color:var(--muted);font-size:.72rem;line-height:1.4}
+.sen .kind{font-family:var(--f-mono);font-size:.68rem}
+.flag{margin-top:2px;font-size:.76rem;background:var(--prog-bg);color:var(--ink);border-left:3px solid var(--prog);border-radius:0 6px 6px 0;padding:6px 9px}
+.flag b{color:var(--prog)}
+.note{font-size:.74rem;color:var(--muted)}
+.defs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.defs div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:.86rem}
+.defs b{display:block;font-family:var(--f-display);margin-bottom:4px}
+</style>
+</head>
+<body data-page="leadership">
+<div class="wrap hub">
+  <div class="topbar" id="jumpbar"><div class="tabs" role="tablist" aria-label="Choose a race"><button type="button" role="tab" id="tab-senate" aria-controls="panel-senate" aria-selected="true">Senate</button><button type="button" role="tab" id="tab-house" aria-controls="panel-house" aria-selected="false" tabindex="-1">House</button></div><details class="jump" id="jump"><summary>Jump to section</summary><div class="jump-list" id="jumplist" role="list"></div></details></div>
+  <header>
+    <span class="eyebrow">Leadership races · 120th Congress</span>
+    <h1>Who will lead Democrats in Congress?</h1>
+    <p class="lede">Senate Democrats choose a leader on December 1, and the House votes for Speaker on January 3. Both are counted only from what members have said in public, with a link to where they said it.</p>
+    <p class="notice" id="draft"><b>Draft.</b> Counts reflect what members have said in public as of November 26. Source links are still being confirmed; tiles tagged Verification in progress haven't been checked yet.</p>
+  </header>
+
+  <div id="panel-senate" class="panel" role="tabpanel" aria-labelledby="tab-senate">
+  <div class="facts"><span>Vote: <b>December 1, 2026</b></span><span>Needed to win: <b>28 of 55 votes</b></span><span>Updated: <b>November 26, 2026</b></span></div>
+  <div class="race" id="race" aria-live="polite"></div>
+
+  <div class="voters">
+    <div class="bar-wrap"><div class="win" id="win"><span id="winlab">28 votes win</span></div><div class="bar" id="bar" role="group" aria-label="The 55 senators who can vote, one segment each"></div></div>
+    <div class="legend" id="legend"></div>
+    <p class="muted" style="font-size:.8rem;margin:0">Each segment is one senator. Select one to jump to their row. Amy Klobuchar (MN) is left out because she was elected governor and can't vote in this election.</p>
+  </div>
+
+  <section id="people">
+    <div class="sec-head"><span class="eyebrow">Polling</span><h2>What the people want</h2>
+      <p>Voters don't choose the leader. Senate Democrats do, in a secret ballot. These polls ask voters which candidate they would prefer. Wording and samples differ, so read each poll on its own.</p></div>
+    <div class="polls" id="polls"></div>
+    <p class="muted" style="font-size:.8rem;margin:0" id="pollnote"></p>
+  </section>
+
+  <section id="disputes" hidden>
+    <div class="sec-head"><span class="eyebrow">Where sources disagree</span><h2>Senators the sources don't agree on</h2>
+      <p>The Democratic Whip Tracker was last checked on November 20. Newer reports and Wikipedia's whip count changed several positions since. We list the position the newest source supports and show the disagreement.</p></div>
+    <ul class="dis" id="dis"></ul>
+  </section>
+
+  <section id="ledger">
+    <div class="sec-head"><span class="eyebrow">Every senator</span><h2>Where each one stands, and the proof</h2></div>
+    <div class="filters" id="filters" role="group" aria-label="Filter by position"></div>
+    <div class="tiles" id="rows"></div>
+  </section>
+
+  <section id="method">
+    <div class="sec-head"><span class="eyebrow">How this page counts</span><h2>The rules behind the numbers</h2></div>
+    <div class="defs">
+      <div><b>Only public statements</b>A senator counts for a candidate only if they said so in public, or put out a statement. A report that someone is "leaning" does not count.</div>
+      <div><b>The candidates</b>Schumer and Van Hollen each have one vote, and each is counted for themselves. The totals show senators plus the candidate.</div>
+      <div><b>Undecided or no statement</b>"Undecided" means the senator said they haven't chosen. "No position stated" means the senator declined to say, or we found nothing on the race. Neither one is a guess about how they will vote.</div>
+      <div><b>28 votes</b>Fifty-five Democratic senators can vote, so 28 is a majority. Some outlets count 29 of 56 because they include Klobuchar.</div>
+      <div><b>Receipts</b>Each name links to the best source we found. "Own statement" is the senator's office or post. "News report" is a published story. "Secondhand list" is a news outlet's list. "Older than the race" is from before the election.</div>
+      <div id="checkcard"><b>How links were checked</b><span id="checknote">Each source link is being checked.</span></div>
+      <div><b>Cross-checks</b>Each row is compared with the Democratic Whip Tracker and Wikipedia's whip count. Where they differ, the newest dated report decides and the row says so.</div>
+    </div>
+  </section>
+
+    </div>
+
+  <div id="panel-house" class="panel" role="tabpanel" aria-labelledby="tab-house" hidden>
+    <div class="facts"><span>Caucus vote: <b>November 18, 2026</b> (done)</span><span>Floor vote: <b>January 3, 2027</b></span><span>Needed to win: <b>a majority of those voting</b> (218 if all 435 vote)</span><span>Updated: <b>November 26, 2026</b></span></div>
+    <div class="race" id="hrace"></div>
+    <div class="voters">
+      <div class="bar-wrap" style="padding-top:0"><div class="bar" id="hbar" role="group" aria-label="The 107 House Democrats named on this page, one segment each"></div></div>
+      <div class="legend" id="hlegend"></div>
+      <p class="muted" style="font-size:.8rem;margin:0" id="hbarnote"></p>
+    </div>
+
+    <section id="hdisputes" hidden>
+      <div class="sec-head"><span class="eyebrow">Where sources disagree</span><h2>Members the sources don't agree on</h2>
+        <p>The Democratic Whip Tracker was last checked on November 20. Newer reports changed several positions since, and some members who voted no now say they hope to support Jeffries. We list the position the newest source supports and show the disagreement.</p></div>
+      <ul class="dis" id="hdis"></ul>
+    </section>
+
+    <section id="hledger">
+      <div class="sec-head"><span class="eyebrow">Every member named</span><h2>Where each one stands, and the proof</h2></div>
+      <div class="filters" id="hfilters" role="group" aria-label="Filter by position"></div>
+      <div class="tiles" id="hrows"></div>
+    </section>
+
+    <section id="hmethod">
+      <div class="sec-head"><span class="eyebrow">How this tab counts</span><h2>The rules behind the numbers</h2></div>
+      <div class="defs">
+        <div><b>Only public statements</b>A member counts for a position only if a source shows they said it or voted that way. Members the whip tracker lists, but where we found no statement of their own, are counted separately and shown with a dashed edge.</div>
+        <div><b>Caucus and floor votes</b>The November 18 caucus vote was a secret ballot, 251 to 11. Individual votes are known only when members say so. The January 3 floor vote is a public roll call.</div>
+        <div><b>218 votes</b>Jeffries needs a majority of those voting. If all 435 members vote, that is 218.</div>
+        <div><b>No public position</b>The tracker counts 162 more House Democrats with no public position. They are counted but not named here.</div>
+        <div><b>Receipts</b>Each name links to the best source we found. "Own statement" is the member's office or post. "News report" is a published story. "Older than the race" is from before the election.</div>
+        <div><b>How links were checked</b><span id="hchecknote">Each source link is being checked.</span></div>
+        <div><b>Cross-checks</b>Each position starts from the Democratic Whip Tracker (last checked November 20) and is compared with news reports. Where newer reports differ, they decide and the tile says so.</div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="cr-foot muted" style="font-size:.82rem"><span>Compiled from news reports, the Democratic Whip Tracker (democraticwhiptracker.com) and, for the Senate, Wikipedia's 2026 Senate Democratic Caucus leadership election page.</span></footer>
+</div>
+<script src="hub.js?v=e1b5e319"></script>
+<script>
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const $ = id => document.getElementById(id);
+const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const dshort = iso => { const [y, m, d] = iso.split("-").map(Number); return `${MON[m - 1]} ${d}`; };
+const dlong = iso => { const [y, m, d] = iso.split("-").map(Number); return `${["January","February","March","April","May","June","July","August","September","October","November","December"][m - 1]} ${d}, ${y}`; };
+const slug = n => n.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+const G = {
+  schumer: {label: "Backs Schumer", c: "var(--sc)"},
+  van_hollen: {label: "Backs Van Hollen", c: "var(--vh)"},
+  against_schumer: {label: "Won't back Schumer", c: "var(--ag)"},
+  undecided: {label: "Undecided", c: "var(--stall)"},
+  no_statement: {label: "No position stated", c: "var(--muted)", none: true},
+  ineligible: {label: "Can't vote", c: "var(--muted)", none: true}
+};
+const ORDER = ["schumer", "van_hollen", "against_schumer", "undecided", "no_statement", "ineligible"];
+const RC = {primary: "Own statement", news: "News report", list: "Secondhand list", stale: "Older than the race", none: "No source"};
+// Links the checker could not open (site blocks scripts, or can't be read by one) stay tagged until they are confirmed
+const UNCHECKED = new Set(["skipped_host_blocked", "blocked", "skipped_unreadable_site", "fetch_failed"]);
+const vipTag = c => UNCHECKED.has(c) ? '<span class="vip">Verification in progress</span>' : "";
+const CK = {
+  quote_verified: "Quote found word for word",
+  name_near_race: "Page covers this senator and the race",
+  name_found_only: "Senator named on page, race not nearby",
+  name_not_on_page: "Senator not found on page",
+  skipped_host_blocked: "Site blocked our checker; not checked",
+  blocked: "Site blocked our checker; not checked",
+  skipped_unreadable_site: "Can't be read by a script; not checked",
+  fetch_failed: "Page didn't load; not checked",
+  no_url: "", not_run: "Not checked"
+};
+const SPECIAL = {"Catherine Cortez Masto": "Cortez Masto", "Lisa Blunt Rochester": "Blunt Rochester"};
+const last = n => SPECIAL[n] || n.split(" ").slice(-1)[0];
+const role = m => m.role === "senator_elect" ? "senator-elect" : m.role === "ineligible" ? "senator" : "senator";
+
+// One tally gate is four strokes crossed by a fifth; leftovers are single strokes.
+const gate = () => `<svg width="64" height="72" viewBox="0 0 64 72" aria-hidden="true"><line x1="9" y1="8" x2="9" y2="64"/><line x1="23" y1="8" x2="23" y2="64"/><line x1="37" y1="8" x2="37" y2="64"/><line x1="51" y1="8" x2="51" y2="64"/><line x1="2" y1="54" x2="58" y2="18"/></svg>`;
+const strokes = n => `<svg width="${14 * n + 4}" height="72" viewBox="0 0 ${14 * n + 4} 72" aria-hidden="true">${Array.from({length: n}, (_, i) => `<line x1="${9 + 14 * i}" y1="8" x2="${9 + 14 * i}" y2="64"/>`).join("")}</svg>`;
+const marks = n => gate().repeat(Math.floor(n / 5)) + (n % 5 ? strokes(n % 5) : "");
+
+// Polls: only numbers read on the cited page; a dashed segment is the part of the sample not given a label.
+const range = d => { const [a, b] = d.map(x => { const [y, m, dd] = x.split("-").map(Number); return {m: MON[m - 1], d: dd, y}; });
+  return a.m === b.m ? `${a.m} ${a.d}-${b.d}, ${b.y}` : `${a.m} ${a.d} - ${b.m} ${b.d}, ${b.y}`; };
+const seg = (v, c, cls = "", txt) => `<span class="${cls}" style="flex:${v} 1 0;--c:${c}" title="${esc(txt ?? v + "%")}">${esc(txt ?? v + "%")}</span>`;
+fetch("data/leadership_senate_polls.json").then(r => r.json()).then(P => {
+  $("polls").innerHTML = P.polls.map(p => {
+    let body = "";
+    if (p.id === "economist_yougov") {
+      body = p.rows.map(r => { const tot = r.schumer + r.van_hollen + r.not_sure;
+        return `<div class="pr"><span class="lab">${esc(r.group)}</span><div class="pb" role="img" aria-label="${esc(r.group)}: Schumer ${r.schumer}%, Van Hollen ${r.van_hollen}%, not sure ${r.not_sure}%${r.not_sure_is_remainder ? " (remainder)" : ""}">
+          ${seg(r.schumer / tot * 100, "var(--sc)", "", r.schumer + "%")}${seg(r.van_hollen / tot * 100, "var(--vh)", "", r.van_hollen + "%")}${seg(r.not_sure / tot * 100, "var(--stall)", "", r.not_sure + "%" + (r.not_sure_is_remainder ? "*" : ""))}</div></div>`; }).join("") +
+        `<div class="pk"><span><i style="--c:var(--sc)"></i>Schumer</span><span><i style="--c:var(--vh)"></i>Van Hollen</span><span><i style="--c:var(--stall)"></i>Not sure</span></div>`;
+    } else {
+      body = p.rows.map(r => { const rest = Math.max(0, 100 - r.value - r.versus);
+        return `<div class="pr"><span class="lab">${esc(r.label)} vs. ${esc(r.versus_label)}</span><div class="pb" role="img" aria-label="${r.value}% ${esc(r.label)}, ${r.versus}% ${esc(r.versus_label)}">
+          ${seg(r.value, "var(--accent)")}${seg(r.versus, "var(--stall)")}${rest ? seg(rest, "var(--muted)", "rest", "") : ""}</div></div>`; }).join("") +
+        `<div class="pk"><span><i style="--c:var(--accent)"></i>Wants a new leader</span><span><i style="--c:var(--stall)"></i>Keep current</span><span><i class="rest"></i>Rest of sample</span></div>
+        <div class="pr"><span class="lab">Van Hollen over Schumer, head to head (points ahead)</span>${p.head_to_head.van_hollen_lead_points.map(h => `<div class="lead"><span>${esc(h.group)}</span><span class="tr"><i style="width:${h.points / 30 * 100}%"></i></span><b>+${h.points}</b></div>`).join("")}</div>`;
+    }
+    return `<div class="poll"><h3>${esc(p.pollster)}</h3>
+      <p class="meta">${range(p.field_dates)} · ${esc(p.population)} · ${p.sample.toLocaleString("en-US")} people${p.moe ? ` · margin of error ±${p.moe} points` : ""}</p>
+      ${body}
+      ${p.notes.map(n => `<p class="pn">${esc(n)}</p>`).join("")}
+      <a href="${esc(p.source_url)}" target="_blank" rel="noopener">${esc(p.source_outlet)}: the poll</a></div>`; }).join("");
+  $("pollnote").textContent = "Only numbers printed on each poll's own page are shown. " + P.left_out;
+}).catch(() => { $("polls").innerHTML = '<p class="muted">The polls didn\'t load. Reload the page to try again.</p>'; });
+
+fetch("data/leadership_senate.json").then(r => r.json()).then(D => {
+  const M = D.members;
+  const by = g => M.filter(m => m.group === g);
+  const voters = M.filter(m => m.group !== "ineligible");
+
+  // Hero: the two tallies
+  $("race").innerHTML = [["sc", "Chuck Schumer", D.schumer_total, D.schumer_senators, "schumer"], ["vh", "Chris Van Hollen", D.van_hollen_total, D.van_hollen_senators, "van_hollen"]]
+    .map(([k, name, tot, sen, g]) => `<div class="cand ${k}"><div class="top"><h2>${name}</h2><span class="num">${tot}</span></div>
+      <div class="marks" role="img" aria-label="${tot} tally marks">${marks(tot)}</div>
+      <p class="sub">${sen} other senators have said they will vote for ${k === "sc" ? "Schumer" : "Van Hollen"}, plus the candidate's own vote.</p></div>`).join("");
+
+  // The 55 voters as segments, with the line where 28 falls
+  const seq = ORDER.slice(0, 5).flatMap(g => by(g));
+  $("bar").innerHTML = seq.map(m => { const g = G[m.group];
+    return `<button class="seg${m.group === "no_statement" ? " none" : ""}${m.group === "undecided" ? " und" : ""}" style="--c:${g.c}" data-s="${slug(m.name)}" title="${esc(m.name)}: ${g.label}" aria-label="${esc(m.name)}: ${g.label}"></button>`; }).join("");
+  $("win").style.left = `calc(${D.votes_to_win / D.eligible_voters * 100}% - 1px)`;
+  $("winlab").textContent = `${D.votes_to_win} votes win`;
+  $("legend").innerHTML = ORDER.slice(0, 5).map(g => `<span style="--c:${G[g].c}"><i${G[g].none ? ' class="none"' : ""}></i>${G[g].label} <b>${D.counts[g]}</b></span>`).join("");
+
+  // Where sources disagree
+  const dis = M.filter(m => m.disputed);
+  if (dis.length) { $("disputes").hidden = false;
+    $("dis").innerHTML = dis.map(m => `<li style="--c:${G[m.group].c}"><div><b>${esc(m.name)}</b><div class="p"><span class="pos">${G[m.group].label}</span></div></div>
+      <p>${esc(m.summary)} ${esc(m.note)} ${m.source_url ? `<a href="${esc(m.source_url)}" target="_blank" rel="noopener">${esc(m.source_outlet)}, ${dshort(m.source_date)}</a>` : ""}</p></li>`).join(""); }
+
+  // The ledger
+  const rows = ORDER.flatMap(g => by(g).sort((a, b) => (b.is_candidate - a.is_candidate) || last(a.name).localeCompare(last(b.name))));
+  const agree = a => { if (a.tracker === "candidate") return "";
+    const t = a.tracker === "agrees" ? "agrees" : "differs", w = a.wikipedia;
+    if (w == null) return `Whip tracker ${t}`;
+    return t === (w === "agrees" ? "agrees" : "differs") ? `Whip tracker and Wikipedia ${t.replace(/s$/, "")}` : `Whip tracker ${t}; Wikipedia ${w === "agrees" ? "agrees" : "differs"}`; };
+  $("rows").innerHTML = rows.map(m => { const g = G[m.group];
+    const rc = m.source_url ? `<a href="${esc(m.source_url)}" target="_blank" rel="noopener">${esc(m.source_outlet)}, ${dshort(m.source_date)}</a>` : `<span class="muted">No source</span>`;
+    const meta = [RC[m.receipt], CK[m.check]].filter(Boolean).join(" · ");
+    return `<article class="sen" id="r-${slug(m.name)}" data-g="${m.group}" style="--c:${g.c}">
+      <div class="h"><span class="nm">${esc(m.name)}<small>${esc(m.state)} · ${role(m)}${m.is_candidate ? " · candidate" : ""}</small></span><span class="pos${g.none ? " none" : ""}">${g.label}</span></div>
+      <p>${esc(m.summary)}</p>
+      ${m.disputed ? `<div class="flag"><b>Sources disagree.</b> ${esc(m.note)}</div>` : m.note ? `<div class="note">${esc(m.note)}</div>` : ""}
+      <div class="rc">${rc}${vipTag(m.check)}<small><span class="kind">${esc(meta)}</span></small>${agree(m.agreement) ? `<small>${esc(agree(m.agreement))}</small>` : ""}</div></article>`; }).join("");
+  if (D.checks_run) { const c = D.check_counts, n = k => c[k] || 0;
+    const notChecked = n("skipped_host_blocked") + n("blocked") + n("skipped_unreadable_site") + n("fetch_failed");
+    $("checknote").textContent = `On ${dlong(D.checks_run)} each link was opened by script. ${n("quote_verified")} quotes matched word for word and ${n("name_near_race")} pages cover the senator and the race. ${notChecked} links couldn't be read by script, and ${n("no_url")} senators have no source. A page that mentions a senator doesn't prove the position, so read the quote.`; }
+
+  // Filters
+  const chips = [["all", "All"]].concat(ORDER.slice(0, 5).map(g => [g, `${G[g].label} ${D.counts[g]}`]));
+  $("filters").innerHTML = chips.map(([k, l], i) => `<button class="chip-btn" data-f="${k}" aria-pressed="${i === 0}">${l}</button>`).join("");
+  const apply = f => { document.querySelectorAll("#filters .chip-btn").forEach(b => b.setAttribute("aria-pressed", b.dataset.f === f));
+    document.querySelectorAll("#rows .sen").forEach(t => t.hidden = !(f === "all" || t.dataset.g === f)); };
+  $("filters").addEventListener("click", e => { const b = e.target.closest(".chip-btn"); if (b) apply(b.dataset.f); });
+
+  // Segment -> row
+  $("bar").addEventListener("click", e => { const s = e.target.closest(".seg"); if (!s) return;
+    apply("all"); const tr = $("r-" + s.dataset.s); if (!tr) return;
+    tr.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center"});
+    tr.classList.add("hit"); setTimeout(() => tr.classList.remove("hit"), 1600); });
+  window.buildJump && buildJump();
+}).catch(() => { $("rows").innerHTML = '<p class="muted">The count didn\'t load. Reload the page to try again.</p>'; });
+
+// Jump to section: same menu as the member pages (styles in site.css)
+(() => {
+  const menu = $("jump"), list = $("jumplist"), reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const head = document.querySelector(".cr-head");
+  const off = () => document.documentElement.style.setProperty("--crh", (head ? head.offsetHeight : 60) + "px");
+  off(); addEventListener("resize", off);
+  window.buildJump = () => {
+    const panel = document.querySelector(".panel:not([hidden])");
+    const items = [{el: panel.querySelector(".race"), e: "Tally", t: "The count"}].concat([...panel.querySelectorAll("section")]
+      .filter(x => x.offsetParent !== null && x.querySelector("h2"))
+      .map(x => ({el: x, e: (x.querySelector(".eyebrow") || {}).textContent, t: x.querySelector("h2").textContent})));
+    list.innerHTML = "";
+    items.forEach(({el, e, t}) => { const b = document.createElement("button");
+      b.type = "button"; b.setAttribute("role", "listitem");
+      b.innerHTML = (e ? '<span class="jl-e"></span>' : "") + '<span class="jl-t"></span>';
+      if (e) b.querySelector(".jl-e").textContent = e;
+      b.querySelector(".jl-t").textContent = t;
+      b.addEventListener("click", () => { menu.open = false; el.scrollIntoView({behavior: reduce ? "auto" : "smooth", block: "start"}); });
+      list.appendChild(b); });
+  };
+  document.addEventListener("click", e => { if (menu.open && !menu.contains(e.target)) menu.open = false; });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") menu.open = false; });
+  buildJump();
+})();
+
+// House tab: same tile design, positions toward Jeffries
+const HG = {
+  backs: {label: "Backs Jeffries", c: "var(--accent)"},
+  leaning: {label: "Leaning Jeffries", c: "var(--prog)"},
+  undecided: {label: "Undecided", c: "var(--stall)"},
+  opposed: {label: "Opposed", c: "var(--ag)"}
+};
+const HORDER = ["backs", "leaning", "undecided", "opposed"];
+const CKH = {quote_verified: "Quote found word for word", name_near_jeffries: "Page covers this member and Jeffries", name_found_only: "Member named on page, not near Jeffries",
+  name_not_on_page: "Member not found on page", quote_not_on_page: "Page opened; our wording differs", skipped_host_blocked: "Site blocked our checker; not checked",
+  blocked: "Site blocked our checker; not checked", skipped_unreadable_site: "Can't be read by a script; not checked", fetch_failed: "Page didn't load; not checked",
+  none_to_check: "", no_url: "", not_run: "Not checked"};
+const dsrc = iso => !iso ? "" : iso.length === 7 ? `${MON[+iso.slice(5) - 1]} ${iso.slice(0, 4)}` : dshort(iso);
+fetch("data/leadership_house.json").then(r => r.json()).then(H => {
+  const M = H.members, C = H.counts;
+  $("hrace").innerHTML = `
+    <div class="cand hj"><div class="top"><h2>Hakeem Jeffries</h2><span class="num">${H.caucus.yes}\u2013${H.caucus.no}</span></div>
+      <div class="hnums"><div class="pb" role="img" aria-label="${H.caucus.yes} yes, ${H.caucus.no} no">${seg(H.caucus.yes, "var(--accent)", "", H.caucus.yes + " yes")}${seg(Math.max(H.caucus.no * 3, 14), "var(--ag)", "", H.caucus.no + " no")}</div></div>
+      <p class="sub">House Democrats nominated Jeffries for Speaker by secret ballot on ${dlong(H.caucus.date)}, with no declared challenger. <a href="${esc(H.caucus.source_url)}" target="_blank" rel="noopener">${esc(H.caucus.source_outlet)}</a></p></div>
+    <div class="cand hj"><div class="top"><h2>Members who back Jeffries in public</h2><span class="num">${C.backs.sourced}</span></div>
+      <div class="marks" role="img" aria-label="${C.backs.sourced} tally marks">${marks(C.backs.sourced)}</div>
+      <p class="sub">${C.backs.tracker_only} more are listed by the whip tracker without a statement we could find. Names not shown here have no public position.</p></div>`;
+
+  $("hbar").innerHTML = M.map(m => `<button class="seg${m.tracker_only ? " tonly" : ""}" style="--c:${HG[m.group].c}" data-s="${slug(m.name)}" title="${esc(m.name)}: ${HG[m.group].label}${m.tracker_only ? " (tracker only)" : ""}" aria-label="${esc(m.name)}: ${HG[m.group].label}${m.tracker_only ? " (tracker only)" : ""}"></button>`).join("");
+  $("hlegend").innerHTML = HORDER.map(g => `<span style="--c:${HG[g].c}"><i></i>${HG[g].label} <b>${C[g].sourced}</b>${C[g].tracker_only ? ` <span class="tag">+${C[g].tracker_only} tracker only</span>` : ""}</span>`).join("")
+    + `<span><i class="none"></i>No public position <b>${H.no_public_position}</b> <span class="tag">not named</span></span>`;
+  $("hbarnote").textContent = `Each segment is one named House Democrat; faded segments are tracker only. Select one to jump to the tile. The bar leaves out the candidate and the ${H.no_public_position} Democrats with no public position.`;
+
+  const dis = M.filter(m => m.disputed);
+  if (dis.length) { $("hdisputes").hidden = false;
+    $("hdis").innerHTML = dis.map(m => `<li style="--c:${HG[m.group].c}"><div><b>${esc(m.name)}</b><div class="p"><span class="pos">${HG[m.group].label}</span></div></div>
+      <p>${esc(m.dispute_note)} ${m.source_url ? `<a href="${esc(m.source_url)}" target="_blank" rel="noopener">${esc(m.source_outlet)}${m.source_date ? ", " + dsrc(m.source_date) : ""}</a>` : ""}</p></li>`).join(""); }
+
+  $("hrows").innerHTML = M.map(m => { const g = HG[m.group];
+    const rc = m.source_url ? `<a href="${esc(m.source_url)}" target="_blank" rel="noopener">${esc(m.source_outlet)}${m.source_date ? ", " + dsrc(m.source_date) : ""}</a>` : `<span class="muted">No statement found</span>`;
+    const kind = m.tracker_only ? "Listed by the whip tracker" : [RC[m.receipt], CKH[m.check]].filter(Boolean).join(" \u00b7 ");
+    return `<article class="sen${m.tracker_only ? " tonly" : ""}" id="hr-${slug(m.name)}" data-g="${m.group}" style="--c:${g.c}">
+      <div class="h"><span class="nm">${esc(m.name)}<small>${esc(m.district)}</small></span><span class="pos">${g.label}</span></div>
+      <p>${esc(m.summary)}</p>
+      ${m.differs_from_tracker ? `<div class="note">Newer reports differ from the whip tracker.</div>` : ""}
+      <div class="rc">${rc}${vipTag(m.check)}<small><span class="kind">${esc(kind)}</span></small></div></article>`; }).join("");
+
+  const chips = [["all", "All"]].concat(HORDER.map(g => [g, `${HG[g].label} ${C[g].sourced + C[g].tracker_only}`]));
+  $("hfilters").innerHTML = chips.map(([k, l], i) => `<button class="chip-btn" data-f="${k}" aria-pressed="${i === 0}">${l}</button>`).join("");
+  const happly = f => { document.querySelectorAll("#hfilters .chip-btn").forEach(b => b.setAttribute("aria-pressed", b.dataset.f === f));
+    document.querySelectorAll("#hrows .sen").forEach(t => t.hidden = !(f === "all" || t.dataset.g === f)); };
+  $("hfilters").addEventListener("click", e => { const b = e.target.closest(".chip-btn"); if (b) happly(b.dataset.f); });
+  $("hbar").addEventListener("click", e => { const x = e.target.closest(".seg"); if (!x) return;
+    happly("all"); const t = $("hr-" + x.dataset.s); if (!t) return;
+    t.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center"});
+    t.classList.add("hit"); setTimeout(() => t.classList.remove("hit"), 1600); });
+  if (H.checks_run) { const c = H.check_counts, n = k => c[k] || 0;
+    const ok = n("name_near_jeffries") + n("quote_verified") + n("quote_not_on_page") + n("name_found_only");
+    const notChecked = n("skipped_host_blocked") + n("blocked") + n("skipped_unreadable_site") + n("fetch_failed");
+    $("hchecknote").textContent = `On ${dlong(H.checks_run)} each link was opened by script. ${ok} pages opened and name the member; ${n("quote_verified") + n("name_near_jeffries")} of those cover the member and Jeffries. ${notChecked} links couldn't be read by script, and ${H.counts.backs.tracker_only + H.counts.leaning.tracker_only + H.counts.undecided.tracker_only} members are listed by the tracker with no source. A page that mentions a member doesn't prove the position.`; }
+  window.buildJump && buildJump();
+}).catch(() => { $("hrows").innerHTML = '<p class="muted">The House count didn\'t load. Reload the page to try again.</p>'; });
+
+// Tabs: Senate and House on one page; the hash (#senate, #house) picks the tab so other pages can link straight to a race
+const TABS = {senate: "panel-senate", house: "panel-house"};
+function showTab(k, user) {
+  for (const [key, id] of Object.entries(TABS)) { $(id).hidden = key !== k; const t = $("tab-" + key); t.setAttribute("aria-selected", key === k); t.tabIndex = key === k ? 0 : -1; }
+  document.title = (k === "house" ? "House Speaker race" : "Senate leader race") + " · Leadership races · Congress Receipts";
+  if (user) { history.replaceState(null, "", "#" + k);
+    const top = $(TABS[k]).getBoundingClientRect().top + scrollY - (parseInt(getComputedStyle(document.documentElement).getPropertyValue("--crh")) || 60) - 60;
+    if (scrollY > top) scrollTo(0, Math.max(0, top)); }
+  window.buildJump && buildJump();
+}
+document.querySelector(".tabs").addEventListener("click", e => { const b = e.target.closest("[role=tab]"); if (b) showTab(b.id.replace("tab-", ""), true); });
+document.querySelector(".tabs").addEventListener("keydown", e => { if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+  const k = e.key === "ArrowRight" ? "house" : "senate"; showTab(k, true); $("tab-" + k).focus(); });
+addEventListener("hashchange", () => showTab(location.hash === "#house" ? "house" : "senate", false));
+showTab(location.hash === "#house" ? "house" : "senate", false);
+
+// Back-to-top button: same as the member pages
+(() => { const top = document.createElement("button");
+  top.type = "button"; top.className = "totop"; top.hidden = true; top.setAttribute("aria-label", "Back to top");
+  top.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 5l-7 7m7-7l7 7M12 5v14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Top</span>';
+  top.addEventListener("click", () => scrollTo({top: 0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}));
+  document.body.appendChild(top);
+  const on = () => { top.hidden = scrollY < 500; }; addEventListener("scroll", on, {passive: true}); on(); })();
+</script>
+</body>
+</html>
