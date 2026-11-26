@@ -5,6 +5,10 @@ folder (ca/padilla/ ...) and bakes that member's name into each page's <title> a
 search engines see "Who Funds Alex Padilla" rather than {{name}}; site.js fills the rest at runtime from the
 member's tracker.config.json. Every member page, legacy ones included, also gets the shared Congress Receipts header (add_header).
 The copied files are build output: edit site/, never a member's copy. Each copy starts with a comment saying so.
+A member with "pages": "stub" in members.json gets thin stub pages instead of copies: each holds only the member's own
+<title> and description plus a script tag for site/shell.js, which loads the shared page from site/ at view time. Stubs only
+change when a member's name or a page's title/description changes, because the ?v= cache keys live in site/manifest.json
+(written here, fetched fresh by shell.js). Copies of site.js and site.css are removed from a stub member's folder.
 Usage: python3 -I scripts/publish.py            (all members)
        python3 -I scripts/publish.py ca/padilla (one member)
 """
@@ -35,6 +39,24 @@ def stamp(html):
         html = re.sub(r'(src|href)="((?:\.\./)*)' + re.escape(f) + r'(?:\?v=\w+)?"', lambda m: f'{m.group(1)}="{m.group(2)}{f}?v={v}"', html)
     return html
 
+# Cache keys for stub pages: shell.js reads this, so stubs never need rewriting when a shared file changes
+json.dump(VER, open(os.path.join(SITE, "manifest.json"), "w"), indent=1, sort_keys=True); open(os.path.join(SITE, "manifest.json"), "a").write("\n")
+
+STUB = """<!doctype html>
+<!-- Stub built by scripts/publish.py. The page itself is site/{f}, loaded by site/shell.js. Edit site/{f}, not this file. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{head}
+<script src="{base}site/shell.js" data-page="{page}"></script>
+</head>
+<body>
+<noscript>This page needs JavaScript. Sources and data are linked from <a href="{base}">the home page</a>.</noscript>
+</body>
+</html>
+"""
+
 members = json.load(open(os.path.join(REPO, "members.json")))["members"]
 only = sys.argv[1:] or None
 for mem in members:
@@ -52,16 +74,23 @@ for mem in members:
     m = json.load(open(os.path.join(dst, "tracker.config.json")))["member"]
     t = tokens(m, m.get("chamber", "house"))
     n = 0
+    stub = mem.get("pages") == "stub"
+    if stub:
+        for f in ("site.js", "site.css"):   # no longer used by this member's pages
+            if os.path.exists(os.path.join(dst, f)): os.remove(os.path.join(dst, f))
     for f in sorted(os.listdir(SITE)):
         src = os.path.join(SITE, f)
-        if f.endswith(".html"):
+        if stub and f.endswith(".html"):
+            head = "\n".join(fill(x, t) for x in HEAD.findall(open(src, encoding="utf-8").read()))   # description, then title
+            open(os.path.join(dst, f), "w", encoding="utf-8").write(STUB.format(f=f, head=head, base=base, page=f[:-5])); n += 1
+        elif f.endswith(".html"):
             s = open(src, encoding="utf-8").read()
             s = HEAD.sub(lambda x: fill(x.group(0), t), s)
             s = add_header(s, base)
             s = stamp(s)
             s = s.replace("<!doctype html>\n", "<!doctype html>\n" + MARK.format(f=f), 1)
             open(os.path.join(dst, f), "w", encoding="utf-8").write(s); n += 1
-        elif f in ("site.js", "site.css"):
+        elif f in ("site.js", "site.css") and not stub:
             shutil.copyfile(src, os.path.join(dst, f)); n += 1
     left = [x for x in re.findall(r"\{\{\w+\}\}", "".join(HEAD.findall(open(os.path.join(dst, "index.html")).read())))]
     print(f"{mem['path']}: {n} files" + (f"; unfilled head tokens {left}" if left else ""))

@@ -10,10 +10,10 @@ python3 -I scripts/build_directory.py      # Find your rep            → data/d
 
 ## What each needs
 
-- **`build_attendance.py`** reads `members.json`, each member's `data/votes.json`, `data/events.json`, portrait, **and each member's raw roll-call XML in `data/raw/`**, which it recounts as an independent check. Raw files are not in git, so on a fresh clone download them first for **every** registered member:
+- **`build_attendance.py`** reads `members.json`, each member's `data/votes.json`, `data/events.json`, portrait, **and the shared roll-call XML in `data/rollcalls/<chamber>/<congress>/`**, which it recounts as an independent check. Those files are committed, so a fresh clone needs no download. Only when new votes have happened, add them (the scripts skip files already present):
   ```bash
-  ./tr ca/rivas fetch_votes && ./tr ca/tran fetch_votes && ./tr ca/garcia fetch_votes
-  ./tr ca/padilla fetch_votes_senate        # or copy senate-*.xml from another senator's data/raw/
+  ./tr ca/rivas fetch_votes                 # House: every House member's tracker shares data/rollcalls/house/
+  ./tr ca/padilla fetch_votes_senate        # Senate: shared data/rollcalls/senate/
   ```
   It refuses to build ("Not built: …") if a member's `votes.json` disagrees with the official XML, if two members of one chamber cover different roll-call ranges (refetch the older tracker's votes and `build_votes`), if an event has no source, or if a portrait is missing.
 - **`build_leaders.py`** reads only each member's committed data (alignment, establishment, FEC leadership, verification). No raw files.

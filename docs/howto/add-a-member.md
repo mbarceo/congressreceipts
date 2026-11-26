@@ -38,7 +38,7 @@ Folder = `<state>/<last-name>`, lowercase, hyphenated. The script writes `tracke
 
 Then open `tracker.config.json` and check `member.site`, `pressPath` (both are guesses), `inOfficeSince`, `leader`, `peers`. Set `profile` as you research (committees, facts, offices); every fact typed there also needs a `claims_static.json` entry.
 
-**Add the member to `members.json` now, with `"live": false`** (`format: "shared"`, `chamber`, `voteId`, `portrait: "assets/portrait.jpg"`, `eventsResearched: false`). While `live` is `false`, `publish.py` and the attendance, leaders and directory builds skip the member, so nothing unfinished goes public. Everything below runs through `./tr` and works either way.
+**Add the member to `members.json` now, with `"live": false`** . The easy way is to add `--register` to the scaffold command above: it appends the entry and refreshes the queue. By hand, use `format: "shared"`, `pages: "stub"`, `chamber`, `voteId`, `portrait: "assets/portrait.jpg"`, `eventsResearched: false`. While `live` is `false`, `publish.py` and the attendance, leaders and directory builds skip the member, so nothing unfinished goes public. Everything below runs through `./tr` and works either way.
 
 ## 3. Portrait (always)
 
@@ -107,7 +107,7 @@ Fix the data until every check passes. Never edit a checker to make a claim pass
 2. `python3 -I scripts/publish.py ca/garcia` generates the member's pages.
 3. Preview: `python3 -m http.server 8000`, open `http://localhost:8000/ca/garcia/`. Read every page.
 4. Rebuild the hub if you want the member on it ([rebuild-the-hub.md](rebuild-the-hub.md)).
-5. Set the member to `done` in `data/queue.json` with their URL ([update-the-queue.md](update-the-queue.md)).
+5. Run `python3 -I scripts/build_queue.py` so `data/queue.json` shows the member as `done` with their URL ([update-the-queue.md](update-the-queue.md)).
 6. Commit and open a pull request: **one member per pull request**, and do not include raw data. See [CONTRIBUTING.md](../../CONTRIBUTING.md).
 
 ## Special case: a member-elect with no votes yet

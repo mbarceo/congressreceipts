@@ -4,7 +4,7 @@
 
 **`HTTP Error 403: Forbidden` from senate.gov (votes or press releases)**
 senate.gov sits behind bot protection that blocks scripted requests, and sometimes browser panes driven by automation as well. **Stop at the first 403: do not retry in a loop, rotate headers or look for a way around it** (a burst of requests once got both the scripts and the maintainer's own Chrome blocked for hours). Wait, then resume slowly.
-- *Votes*: Senate roll-call files are identical for every senator. Copy `senate-*.xml` from another senator's `data/raw/` folder into yours.
+- *Votes*: Senate roll-call files are identical for every senator and committed once in `data/rollcalls/senate/<congress>/`; nothing to copy. If a recent vote is missing, a maintainer adds the file there.
 - *Press releases*: there is no supported workaround in the scripts (page 0 is always re-fetched from the site; only pages 1 and up are cached). Do not try to defeat the protection. Tell a maintainer, or build the tracker without statements for now and say so in the pull request.
 
 **`FEC rate limit hit. Wait an hour or set FEC_API_KEY`**
@@ -25,7 +25,7 @@ It downloads one file per roll call (about 690 for a Congress) and stops after t
 ## Building and checking
 
 **`Not built: …` from `build_attendance.py`**
-Its message names the cause: a member's `votes.json` disagrees with the official XML (re-run `fetch_votes` and `build_votes`), two members of a chamber cover different roll-call ranges (refetch the older tracker's votes), an event has no source, or a portrait file is missing. It needs every registered member's `data/raw/`; see [rebuild-the-hub](howto/rebuild-the-hub.md).
+Its message names the cause: a member's `votes.json` disagrees with the official XML (re-run `fetch_votes` and `build_votes`), two members of a chamber cover different roll-call ranges (refetch the older tracker's votes), an event has no source, or a portrait file is missing. It reads the shared `data/rollcalls/` folders; see [rebuild-the-hub](howto/rebuild-the-hub.md).
 
 **`release '<slug>' matched 0 entries` / `matched N entries`** (`build_promises`, `build_stances`)
 A `stmt` value must be a substring of exactly one release URL in `statements.json`. Use the slug as it appears after `/press-releases/` (run `grep slug data/statements.json`).
