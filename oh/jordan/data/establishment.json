@@ -1,0 +1,293 @@
+{
+ "question": "Establishment Democrat?",
+ "headline": "TBD",
+ "summary": "",
+ "why": "",
+ "tiles": [],
+ "signs": {
+  "e": [],
+  "i": []
+ },
+ "timeline": [],
+ "left": [],
+ "leaders": [
+  {
+   "name": "Mike Johnson",
+   "role": "Speaker of the House",
+   "y2024": 0,
+   "y2026": 2000,
+   "committees": [
+    "Mike Johnson For Louisiana, Michael"
+   ]
+  },
+  {
+   "name": "Steve Scalise",
+   "role": "House Majority Leader",
+   "y2024": 0,
+   "y2026": 0,
+   "committees": []
+  },
+  {
+   "name": "Tom Emmer",
+   "role": "House Majority Whip",
+   "y2024": 0,
+   "y2026": 0,
+   "committees": []
+  },
+  {
+   "name": "NRCC",
+   "role": "Party campaign committee",
+   "y2024": 0,
+   "y2026": 0,
+   "committees": []
+  },
+  {
+   "name": "Donald Trump",
+   "role": "President; his committees and leadership PACs",
+   "y2024": 0,
+   "y2026": 0,
+   "committees": []
+  }
+ ],
+ "categories": {
+  "2024": {
+   "ideological": 98798,
+   "corporate": 159250,
+   "candidate": 16000,
+   "trade": 160500,
+   "labor": 13500
+  },
+  "2026": {
+   "corporate": 261500,
+   "ideological": 72314,
+   "trade": 155500,
+   "candidate": 19901,
+   "labor": 20600
+  }
+ },
+ "corporatePACs": {
+  "2024": [
+   "ABBOTT LABORATORIES EMPLOYEE POLITICAL ACTION COMMITTEE",
+   "ALTRIA GROUP INC. POLITICAL ACTION COMMITTEE",
+   "AMERICAN ELECTRIC POWER COMMITTEE FOR RESPONSIBLE GOVERNMENT, THE",
+   "ANHEUSER-BUSCH COMPANIES INC. POLITICAL ACTION COMMITTEE",
+   "AT&T INC. EMPLOYEE FEDERAL PAC (AT&T EMPLOYEE FEDERAL PAC)",
+   "AT&T INC. FEDERAL POLITICAL ACTION COMMITTEE (AT&T FEDERAL PAC)",
+   "BACARDI U S A INC PAC",
+   "BHFS-E, PC PAC (BROWNSTEIN HYATT FARBER SCHRECK POLITICAL ACTION COMMITTEE)",
+   "BLACKROCK FUNDS SERVICES GROUP LLC PAC (BLACKROCK PAC)",
+   "COMCAST CORP. POLITICAL ACTION COMMITTEE",
+   "COMMUNITY BANCSHARES OF MISSISSIPPI INC. POLITICAL ACTION COMMITTEE",
+   "CONSUMER TECHNOLOGY ASSOCIATION PAC",
+   "CONTINENTAL AUTOMOTIVE, INC PAC",
+   "GENERAL ELECTRIC COMPANY POLITICAL ACTION COMMITTEE",
+   "GIBSON DUNN & CRUTCHER LLP PAC",
+   "HOLLAND & KNIGHT COMMITTEE FOR EFFECTIVE GOVERNMENT",
+   "HOME DEPOT INC. POLITICAL ACTION COMMITTEE, THE",
+   "IHEARTMEDIA, INC. PAC",
+   "INTEL CORPORATION POLITICAL ACTION COMMITTEE",
+   "JPMORGAN CHASE & CO. FEDERAL PAC",
+   "K&L GATES LLP POLITICAL ACTION COMMITTEE (DC)",
+   "KOCH INDUSTRIES INC POLITICAL ACTION COMMITTEE (KOCHPAC)",
+   "LIVE NATION ENTERTAINMENT, INC., PAC (LIVE NATION PAC)",
+   "LOCKE LORD LLP PAC",
+   "MASTERCARD INTERNATIONAL INC. EMPLOYEE PAC (MASTERCARD PAC) OR (MASTERCARD EMPLOYEE PAC)",
+   "MASTERCARD INTERNATIONAL INC. EMPLOYEES' PAC",
+   "MORROW CO. REPUBLICAN EXECUTIVE COMMITTEE",
+   "NEWS CORPORATION POLITICAL ACTION COMMITTEE (NEWS CORP PAC)",
+   "NEXSTAR BROADCASTING GROUP INC. POLITICAL ACTION COMMITTEE",
+   "RELX INC. PAC",
+   "SALEM MEDIA GROUP PAC, INC.",
+   "SCHWAN'S COMPANY PAC",
+   "SQUIRE PATTON BOGGS POLITICAL ACTION COMMITTEE (SQUIRE PATTON BOGGS PAC)",
+   "TAFT STETTINIUS & HOLLISTER LLP PAC",
+   "THE GEO GROUP, INC. PAC",
+   "THE HOME DEPOT INC. PAC",
+   "TRANSCANADA USA SERVICES, INC. PAC (TC PAC)",
+   "TRANSDIGM GROUP INC. EMPLOYEE PAC",
+   "UPSPAC",
+   "VERIZON COMMUNICATION INC GOOD GOVT CLUB",
+   "VIACOM INTERNATIONAL, INC. POLITICAL ACTION COMMITTEE",
+   "VIATRIS INC. POLITICAL ACTION COMMITTEE",
+   "VISA, INC. PAC"
+  ],
+  "2026": [
+   "ABBOTT LABORATORIES EMPLOYEE POLITICAL ACTION COMMITTEE",
+   "ALTRIA GROUP INC. POLITICAL ACTION COMMITTEE",
+   "AMENTUM HOLDINGS, INC. PAC (AMENTUM PAC)",
+   "ANHEUSER-BUSCH COMPANIES INC. POLITICAL ACTION COMMITTEE",
+   "ARNOLD & PORTER KAYE SCHOLER LLP (APKS) PARTNERS PAC",
+   "AT&T INC. EMPLOYEE FEDERAL PAC (AT&T EMPLOYEE FEDERAL PAC)",
+   "AXON ENTERPRISE INC PAC",
+   "BHFS-E, PC PAC (BROWNSTEIN HYATT FARBER SCHRECK POLITICAL ACTION COMMITTEE)",
+   "BLACKROCK FUNDS SERVICES GROUP LLC PAC (BLACKROCK PAC)",
+   "BLESSEY MARINE SERVICE, INC. PAC",
+   "BNSF RAILWAY COMPANY RAILPAC (BNSF RAILPAC)",
+   "BROADCOM INC. PAC (BROADCOM PAC)",
+   "CHARTER COMMUNICATIONS INC. PAC",
+   "CNG HOLDINGS, INC. PAC",
+   "COMCAST CORPORATION & NBCUNIVERSAL PAC - FEDERAL",
+   "CORECIVIC, INC. PAC (CORECIVIC PAC)",
+   "COX ENTERPRISES PAC (COXPAC) INC.",
+   "COZEN O'CONNOR PAC",
+   "CSX CORPORATION GOOD GOVERNMENT FUND",
+   "CVS HEALTH PAC",
+   "DELOITTE & TOUCHE FEDERAL POLITICAL ACTION COMMITTEE",
+   "EBAY INC-COMMITTEE FOR RESPONSIBLE INTERNET COMMERCE",
+   "EDWARD JONES PAC",
+   "ELEVANCE HEALTH, INC. PAC (ELEVANCE HEALTH PAC)",
+   "EXXON MOBIL CORPORATION-MOBIL POLITICAL ACTION COMMITTEE",
+   "FEDEX CORPORATION PAC",
+   "GENERAL DYNAMICS CORPORATION PAC (GENERAL DYNAMICS EMPLOYEE PAC)",
+   "GENERAL MOTORS CORPORATION POLITICAL ACTION COMMITTEE (GM PAC)",
+   "GILEAD SCIENCES INC HEALTHCARE POLICY PAC",
+   "HOLLAND & KNIGHT COMMITTEE FOR EFFECTIVE GOVERNMENT",
+   "IHEARTMEDIA, INC. PAC",
+   "JOHNSON & JOHNSON PAC",
+   "K&L GATES LLP POLITICAL ACTION COMMITTEE (DC)",
+   "KOCH INDUSTRIES INC POLITICAL ACTION COMMITTEE (KOCHPAC)",
+   "LIBERTY MUTUAL INSURANCE COMPANY-PAC",
+   "LIVE NATION ENTERTAINMENT, INC., PAC (LIVE NATION PAC)",
+   "LKQ CORPORATION EMPLOYEE GOOD GOVERNMENT FUND",
+   "LOCKE LORD LLP PAC",
+   "MICROSOFT CORPORATION POLITICAL ACTION COMMITTEE",
+   "NELSON MULLINS RILEY & SCARBOROUGH, LLP FEDERAL POLITICAL COMMITTEE",
+   "NORFOLK SOUTHERN CORPORATION GOOD GOVERNMENT FUND",
+   "NUCOR CORPORATION POLITICAL ACTION COMMITTEE",
+   "PPG INDUSTRIES INC. PAC",
+   "QC HOLDINGS, INC. PAC",
+   "QUALCOMM INCORPORATED POLITICAL ACTION COMMITTEE (QPAC)",
+   "RELX INC. PAC",
+   "SAP AMERICA INC PAO",
+   "SCHWAN'S COMPANY PAC",
+   "THE BALDWIN GROUP INSURANCE INC FED PAC",
+   "THE CIGNA GROUP EMPLOYEE PAC",
+   "THE HOME DEPOT INC. PAC",
+   "TRANSDIGM GROUP INC. EMPLOYEE PAC",
+   "TRAVELERS COMPANIES INC. POLITICAL ACTION COMMITTEE (TPAC), THE",
+   "TROUTMAN PEPPER LOCKE LLP PAC, INC.",
+   "TWDC ENTERPRISES 18 CORP. EMPLOYEES PAC AKA 'THE WALT DISNEY COMPANY EMPLOYEES PAC' OR 'DISNEY PA...",
+   "TYSON FOODS INC PAC (TYPAC)",
+   "UNITEDHEALTH GROUP INCORPORATED PAC (UNITED FOR HEALTH)",
+   "UPSPAC",
+   "VALERO ENERGY CORPORATION POLITICAL ACTION COMMITTEE",
+   "VERIZON COMMUNICATION INC GOOD GOVT CLUB",
+   "VISA, INC. PAC",
+   "WALMART INC. PAC FOR RESPONSIBLE GOVERNMENT",
+   "ZILLOW GROUP, INC. PAC (ZG PAC)",
+   "ZURICH HOLDING COMPANY OF AMERICA, INC. COMMITTEE FOR GOOD GOVERNMENT (Z-PAC, ZURICH PAC)"
+  ]
+ },
+ "jeffriesDiffs": [
+  {
+   "id": "2025-029",
+   "date": "2025-02-04",
+   "bill": "H R 776",
+   "q": "On Motion to Suspend the Rules and Pass",
+   "title": "Nutria Eradication and Control Reauthorization Act",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://clerk.house.gov/Votes/2025029"
+  },
+  {
+   "id": "2025-073",
+   "date": "2025-03-24",
+   "bill": "H R 1326",
+   "q": "On Motion to Suspend the Rules and Pass",
+   "title": "DOE and USDA Interagency Research Act",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://clerk.house.gov/Votes/2025073"
+  },
+  {
+   "id": "2025-244",
+   "date": "2025-09-10",
+   "bill": "H R 3838",
+   "q": "On Agreeing to the Amendment",
+   "title": "Meeks of New York Part A Amendment No. 34",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://clerk.house.gov/Votes/2025244"
+  },
+  {
+   "id": "2025-300",
+   "date": "2025-11-19",
+   "bill": "H R 4058",
+   "q": "On Motion to Suspend the Rules and Pass",
+   "title": "Enhancing Stakeholder Support and Outreach for Preparedness Grants Act",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://clerk.house.gov/Votes/2025300"
+  },
+  {
+   "id": "2026-014",
+   "date": "2026-01-12",
+   "bill": "H R 6500",
+   "q": "On Motion to Suspend the Rules and Pass, as Amended",
+   "title": "AGOA Extension Act",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://clerk.house.gov/Votes/2026014"
+  },
+  {
+   "id": "2026-015",
+   "date": "2026-01-12",
+   "bill": "H R 6504",
+   "q": "On Motion to Suspend the Rules and Pass, as Amended",
+   "title": "Haiti Economic Lift Program Extension Act",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://clerk.house.gov/Votes/2026015"
+  },
+  {
+   "id": "2026-164",
+   "date": "2026-05-13",
+   "bill": "H R 1346",
+   "q": "On Passage",
+   "title": "Nationwide Consumer and Fuel Retailer Choice Act",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://clerk.house.gov/Votes/2026164"
+  }
+ ],
+ "nums": {
+  "lead24": "$0",
+  "lead26": "$2,000",
+  "nrcc": "$0",
+  "trump": "$0",
+  "corp24": "$159,250",
+  "corp26": "$261,500",
+  "ncorp24": 43,
+  "ncorp26": 64,
+  "jeffAgree": "98.7",
+  "both": 519,
+  "ndiff": 7,
+  "leaderName": "Mike Johnson",
+  "unity": 96.4,
+  "rank": 134,
+  "tied": 0,
+  "dems": 221,
+  "contested": 94,
+  "splitYesBills": 2,
+  "splitYesNoms": 0,
+  "splitNoBills": 5,
+  "splitNoNoms": 0,
+  "jeffC": 80.6,
+  "gottC": null,
+  "aocC": null
+ },
+ "cycles": [
+  {
+   "id": "2024",
+   "label": "2023-24"
+  },
+  {
+   "id": "2026",
+   "label": "2025-26"
+  }
+ ],
+ "leaderSection": {
+  "title": "House Republican leadership and Trump",
+  "note": "Contributions from each leader's campaign committee, leadership PAC and joint fundraising committees, from the NRCC, and from President Trump's committees, from FEC filings. Committees are matched by FEC committee ID. Roles are from house.gov and the Clerk. Super PACs such as the Congressional Leadership Fund cannot give to candidates; their independent spending is not counted here."
+ }
+}

@@ -1,0 +1,177 @@
+[
+ {
+  "label": "Votes where the member and Mike Johnson both cast Yea or Nay",
+  "shown": 519,
+  "actual": 519,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Votes where the member split from Mike Johnson",
+  "shown": 7,
+  "actual": 7,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Mike Johnson (%)",
+  "shown": 98.7,
+  "actual": 98.7,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Party-unity score (%)",
+  "shown": 96.4,
+  "actual": 96.4,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Party-unity rank among Democrats",
+  "shown": 134,
+  "actual": 134,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Mike Johnson on contested votes (%)",
+  "shown": 80.6,
+  "actual": 80.6,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Steve Scalise on contested votes (%)",
+  "shown": 72.8,
+  "actual": 72.8,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Andy Harris on contested votes (%)",
+  "shown": 55.4,
+  "actual": 55.4,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Thomas Massie on contested votes (%)",
+  "shown": 57.1,
+  "actual": 57.1,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Brian Fitzpatrick on contested votes (%)",
+  "shown": 42.5,
+  "actual": 42.5,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Don Bacon on contested votes (%)",
+  "shown": 52.9,
+  "actual": 52.9,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Contested votes (Democrats split at least 90-10)",
+  "shown": 94,
+  "actual": 94,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "AIPAC PAC, direct contributions",
+  "shown": 20000.0,
+  "actual": 20000.0,
+  "ok": true,
+  "source": "FEC Schedule A, committee C00797670"
+ },
+ {
+  "label": "AIPAC PAC, earmarked donations",
+  "shown": 0,
+  "actual": 0,
+  "ok": true,
+  "source": "FEC Schedule A memo entries, committee C00797670"
+ },
+ {
+  "label": "AIPAC PAC, total (direct + earmarked)",
+  "shown": 20000.0,
+  "actual": 20000.0,
+  "ok": true,
+  "source": "FEC Schedule A, committee C00797670"
+ },
+ {
+  "label": "DMFI PAC",
+  "shown": 0,
+  "actual": 0,
+  "ok": true,
+  "source": "FEC Schedule A, committee C00710848"
+ },
+ {
+  "label": "Pro-Israel money in the FEC filings, all cycles",
+  "shown": 20000.0,
+  "actual": 20000.0,
+  "ok": true,
+  "source": "FEC Schedule A"
+ },
+ {
+  "label": "Party leaders' committees, 2023-24",
+  "shown": 0,
+  "actual": 0,
+  "ok": true,
+  "source": "FEC Schedule A, matched to each party leader's committees by FEC committee ID"
+ },
+ {
+  "label": "Party leaders' committees, 2025-26",
+  "shown": 2000,
+  "actual": 2000.0,
+  "ok": true,
+  "source": "FEC Schedule A, matched to each party leader's committees by FEC committee ID"
+ },
+ {
+  "label": "Corporate PAC money, 2023-24",
+  "shown": 159250.0,
+  "actual": 159250,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by the FEC's organization type, then by committee name"
+ },
+ {
+  "label": "Labor PAC money, 2023-24",
+  "shown": 13500,
+  "actual": 13500,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by the FEC's organization type, then by committee name"
+ },
+ {
+  "label": "Trade PAC money, 2023-24",
+  "shown": 160500,
+  "actual": 160500,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by the FEC's organization type, then by committee name"
+ },
+ {
+  "label": "Corporate PAC money, 2025-26",
+  "shown": 261500.0,
+  "actual": 261500,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by the FEC's organization type, then by committee name"
+ },
+ {
+  "label": "Labor PAC money, 2025-26",
+  "shown": 20600,
+  "actual": 20600,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by the FEC's organization type, then by committee name"
+ },
+ {
+  "label": "Trade PAC money, 2025-26",
+  "shown": 155500,
+  "actual": 155500,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by the FEC's organization type, then by committee name"
+ }
+]

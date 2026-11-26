@@ -1,0 +1,37 @@
+{
+ "_note": "Facts typed directly into the pages (not built from data). Each lists the exact terms that must appear on its source. 'check': 'clerk-committees' verifies committee seats against her own entry in the Clerk's member file instead of a text search.",
+ "claims": [
+  {
+   "page": "overview",
+   "section": "Header",
+   "text": "Chair of the House Judiciary Committee.",
+   "url": "https://judiciary.house.gov/media/press-releases/chairman-jordan-applauds-president-trump-signing-laken-riley-act-law",
+   "must": [
+    "Chairman Jordan"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Header",
+   "text": "Committees: Judiciary; Oversight and Government Reform.",
+   "url": "https://clerk.house.gov/xml/lists/MemberData.xml",
+   "check": "clerk-committees",
+   "must": [
+    "Judiciary",
+    "Oversight and Government Reform"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Offices",
+   "text": "Washington office: 2056 Rayburn House Office Building, (202) 225-2676.",
+   "url": "https://clerk.house.gov/xml/lists/MemberData.xml",
+   "must": [
+    "Jim Jordan",
+    "(202) 225-2676",
+    "RHOB",
+    "2056"
+   ]
+  }
+ ]
+}
