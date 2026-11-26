@@ -1,21 +1,60 @@
 {
  "_note": "Hand-curated, sourced items for establishment.html. Numbers in {braces} are filled by scripts/build_establishment.py from FEC data, House roll calls and data/alignment.json; never type a number here. Tag e = sign of establishment alignment, i = sign of independence. Headline is an editorial call; 'why' states the rule.",
  "question": "Establishment Democrat?",
- "headline": "TBD",
- "summary": "",
- "why": "",
+ "headline": "Mostly yes",
+ "summary": "He votes with {leaderName} {jeffAgree}% of the time on votes where both voted Yea or Nay. Of his {ndiff} splits, {splitNoBills} are No votes on legislation {leaderName} backed, {splitYesBills} are Yes votes on legislation {leaderName} opposed, {splitYesNoms} are Yes votes on nominees {leaderName} opposed and {splitNoNoms} are No votes on nominees {leaderName} backed. He votes with a majority of Senate Democrats {unity}% of the time, rank {rank} of {dems}.",
+ "why": "“Mostly yes” because he votes with the Democratic leader at least 90% of the time, the rule used here, and with a majority of Senate Democrats {unity}% of the time. His independence shows in the {ndiff} votes where he split from {leaderName}. This card uses votes and campaign money only; it does not weigh appointments, party roles or endorsements.",
  "roles": {
-  "Hakeem Jeffries": "House Democratic Leader",
-  "Katherine Clark": "Democratic Whip",
-  "Nancy Pelosi": "Speaker Emerita",
-  "Pete Aguilar": "Caucus Chair",
-  "Steny Hoyer": "Former Majority Leader",
-  "DCCC": "Party campaign committee"
+  "Chuck Schumer": "Democratic Leader",
+  "Dick Durbin": "Democratic Whip",
+  "Amy Klobuchar": "Chair of Steering & Policy Committee",
+  "Cory Booker": "Chair of Strategic Communications Committee",
+  "Mark Warner": "Vice Chair of the Conference",
+  "Elizabeth Warren": "Vice Chair of the Conference",
+  "Tammy Baldwin": "Democratic Conference Secretary",
+  "DSCC": "Party campaign committee"
  },
- "tiles": [],
+ "tiles": [
+  [
+   "{jeffAgree}%",
+   "Votes cast the same way as {leaderName} ({both} votes where both voted Yea or Nay)"
+  ],
+  [
+   "{unity}%",
+   "Party unity: votes with a majority of Senate Democrats (rank {rank} of {dems})"
+  ],
+  [
+   "{ndiff}",
+   "Votes where he split from {leaderName}"
+  ],
+  [
+   "{dscc}",
+   "Contributions from the DSCC, all cycles shown"
+  ]
+ ],
  "signs": {
-  "e": [],
-  "i": []
+  "e": [
+   {
+    "text": "He voted the same way as {leaderName} on {jeffAgree}% of the {both} votes where both voted Yea or Nay.",
+    "src": [
+     [
+      "Senate roll-call votes, 119th Congress",
+      "https://www.senate.gov/legislative/LIS/roll_call_lists/vote_menu_119_1.htm"
+     ]
+    ]
+   }
+  ],
+  "i": [
+   {
+    "text": "He split from {leaderName} on {ndiff} votes, including {splitNoBills} No votes on legislation {leaderName} backed.",
+    "src": [
+     [
+      "Senate roll-call votes, 119th Congress",
+      "https://www.senate.gov/legislative/LIS/roll_call_lists/vote_menu_119_1.htm"
+     ]
+    ]
+   }
+  ]
  },
  "timeline": [],
  "left": []

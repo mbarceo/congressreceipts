@@ -1,12 +1,49 @@
 {
  "question": "Establishment Democrat?",
- "headline": "TBD",
- "summary": "",
- "why": "",
- "tiles": [],
+ "headline": "Mostly yes",
+ "summary": "He votes with Chuck Schumer 95.9% of the time on votes where both voted Yea or Nay. Of his 38 splits, 26 are No votes on legislation Chuck Schumer backed, 9 are Yes votes on legislation Chuck Schumer opposed, 0 are Yes votes on nominees Chuck Schumer opposed and 3 are No votes on nominees Chuck Schumer backed. He votes with a majority of Senate Democrats 96.5% of the time, rank 12 of 47.",
+ "why": "“Mostly yes” because he votes with the Democratic leader at least 90% of the time, the rule used here, and with a majority of Senate Democrats 96.5% of the time. His independence shows in the 38 votes where he split from Chuck Schumer. This card uses votes and campaign money only; it does not weigh appointments, party roles or endorsements.",
+ "tiles": [
+  [
+   "95.9%",
+   "Votes cast the same way as Chuck Schumer (920 votes where both voted Yea or Nay)"
+  ],
+  [
+   "96.5%",
+   "Party unity: votes with a majority of Senate Democrats (rank 12 of 47)"
+  ],
+  [
+   "38",
+   "Votes where he split from Chuck Schumer"
+  ],
+  [
+   "$0",
+   "Contributions from the DSCC, all cycles shown"
+  ]
+ ],
  "signs": {
-  "e": [],
-  "i": []
+  "e": [
+   {
+    "text": "He voted the same way as Chuck Schumer on 95.9% of the 920 votes where both voted Yea or Nay.",
+    "src": [
+     [
+      "Senate roll-call votes, 119th Congress",
+      "https://www.senate.gov/legislative/LIS/roll_call_lists/vote_menu_119_1.htm"
+     ]
+    ]
+   }
+  ],
+  "i": [
+   {
+    "text": "He split from Chuck Schumer on 38 votes, including 26 No votes on legislation Chuck Schumer backed.",
+    "src": [
+     [
+      "Senate roll-call votes, 119th Congress",
+      "https://www.senate.gov/legislative/LIS/roll_call_lists/vote_menu_119_1.htm"
+     ]
+    ]
+   }
+  ]
  },
  "timeline": [],
  "left": [],
@@ -79,7 +116,7 @@
   },
   {
    "name": "DSCC",
-   "role": "Senate Democrats' party campaign committee",
+   "role": "Party campaign committee",
    "y2022": 0,
    "y2024": 0,
    "y2026": 0,

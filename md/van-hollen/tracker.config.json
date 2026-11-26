@@ -29,7 +29,12 @@
     "pressLayout": "auto",
     "campaignSite": "",
     "portrait": "assets/portrait.jpg",
-    "committees": [],
+    "committees": [
+      "Appropriations",
+      "Banking, Housing, and Urban Affairs",
+      "Budget",
+      "Foreign Relations"
+    ],
     "portraitSource": "https://bioguide.congress.gov/photo/V000128.jpg",
     "portraitSize": [
       178,
@@ -331,8 +336,72 @@
     "lede": "",
     "facts": [],
     "factSources": [],
-    "committees": [],
-    "committeesNote": "",
+    "committees": [
+      {
+        "name": "Appropriations Committee",
+        "subs": [
+          {
+            "name": "Commerce, Justice, Science, and Related Agencies Subcommittee",
+            "role": "Ranking member"
+          },
+          {
+            "name": "Department of Homeland Security Subcommittee",
+            "role": "Member"
+          },
+          {
+            "name": "Department of Interior, Environment, and Related Agencies Subcommittee",
+            "role": "Member"
+          },
+          {
+            "name": "Financial Services and General Government Subcommittee",
+            "role": "Member"
+          },
+          {
+            "name": "Transportation, Housing and Urban Development, and Related Agencies Subcommittee",
+            "role": "Member"
+          }
+        ]
+      },
+      {
+        "name": "Banking, Housing, and Urban Affairs Committee",
+        "subs": [
+          {
+            "name": "Digital Assets Subcommittee",
+            "role": "Member"
+          },
+          {
+            "name": "Housing, Transportation, and Community Development Subcommittee",
+            "role": "Member"
+          },
+          {
+            "name": "National Security and International Trade and Finance Subcommittee",
+            "role": "Member"
+          }
+        ]
+      },
+      {
+        "name": "Budget Committee",
+        "subs": []
+      },
+      {
+        "name": "Foreign Relations Committee",
+        "subs": [
+          {
+            "name": "Africa and Global Health Policy Subcommittee",
+            "role": "Member"
+          },
+          {
+            "name": "East Asia, the Pacific, and International Cybersecurity Policy Subcommittee",
+            "role": "Member"
+          },
+          {
+            "name": "State Department and USAID Management, International Operations, and Bilateral International Development Subcommittee",
+            "role": "Ranking member"
+          }
+        ]
+      }
+    ],
+    "committeesNote": "Source: [senate.gov committee assignments](https://www.senate.gov/general/committee_assignments/assignments.htm), read Nov 26, 2026.",
     "caucuses": [],
     "promiseYear": "",
     "promisesIntro": "",
