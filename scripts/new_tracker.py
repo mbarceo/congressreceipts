@@ -95,7 +95,8 @@ def tokens(m, chamber):
             "siteName": f"{m['short']} Senate Tracker" if senate else f"{m['districtLabel']} {m['short']} Tracker", "seatLabel": m["seatLabel"], "stateName": m["stateName"],
             "districtLabel": m["districtLabel"], "chamberName": "Senate" if senate else "House", "domain": m["domain"],
             "subj": m["pronouns"]["subj"], "poss": m["pronouns"]["poss"], "obj": m["pronouns"]["obj"],
-            "voteId": m["voteId"], "bioguide": m["bioguide"]}
+            "voteId": m["voteId"], "bioguide": m["bioguide"],
+            "ownPartyPl": "Republicans" if str(m.get("party", "")).lower().startswith("r") else "Democrats"}   # baked into meta descriptions
 
 
 def fill(s, t):

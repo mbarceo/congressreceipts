@@ -9,9 +9,9 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="site.css?v=4836746f">
+<link rel="stylesheet" href="site.css?v=86652562">
 <link rel="stylesheet" href="../../hub.css?v=91a2553f">
-<script src="site.js?v=9d18080b"></script>
+<script src="site.js?v=ca9b1b27"></script>
 <style>
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 body{margin:0}
@@ -106,7 +106,7 @@ img{max-width:100%}
     <div class="sec-head">
       <span class="eyebrow">Who {{short}} votes with</span>
       <h2>How {{short}} lines up with party leaders and factions</h2>
-      <p id="glanceNote">Computed from every {{chamberName}} roll call this Congress. Most votes split along party lines, so members agree with nearly every Democrat most of the time. The telling column is <b>contested votes</b>: roll calls where at least 10% of Democrats broke from the rest of their party.</p>
+      <p id="glanceNote">Computed from every {{chamberName}} roll call this Congress. Most votes split along party lines, so members agree with nearly every {{ownPartyNoun}} most of the time. The telling column is <b>contested votes</b>: roll calls where at least 10% of {{ownPartyPl}} broke from the rest of their party.</p>
     </div>
     <div class="tally" id="alignTiles"></div>
     <div class="handles"><table class="align-t">
@@ -118,7 +118,7 @@ img{max-width:100%}
       <h3 style="font-size:1rem;margin-bottom:8px">Ties to {{leaderTitle}} {{leaderName}}</h3>
       <ul class="plain" id="leaderTies"></ul>
     </div>
-    <p class="muted" style="margin:0;font-size:.8rem">Vote data: <a href="{{voteSourceUrl}}" target="_blank" rel="noopener">{{voteSource}} roll calls</a>, counting only votes where both members voted Yea or Nay. Israel-related votes are the roll calls whose titles mention Israel, Iran, Gaza, Hamas, antisemitism or the International Criminal Court. Track AIPAC totals: see the <a href="money.html#compare">Money tab</a>. <a href="votes.html">See every vote →</a> · <a href="establishment.html">Establishment check →</a></p>
+    <p class="muted" style="margin:0;font-size:.8rem">Vote data: <a href="{{voteSourceUrl}}" target="_blank" rel="noopener">{{voteSource}} roll calls</a>, counting only votes where both members voted Yea or Nay. Israel-related votes are the roll calls whose titles mention Israel, Iran, Gaza, Hamas, antisemitism or the International Criminal Court. Track AIPAC totals: see the <a href="money.html#compare">Money tab</a>. <a href="votes.html">See every vote →</a> · <a href="establishment.html" data-party="D">Establishment check →</a><a href="allegiance.html" data-party="R">Allegiance check →</a></p>
   </section>
 
   <section id="recent">
@@ -179,13 +179,14 @@ getJSON("data/fec/summary.json").then(f => { $("fecThrough").textContent = f.cyc
 function renderVerdicts(ov, est){
   const tiles = ov.tiles.map(t => ({...t, go:"See the evidence →"}));
   tiles.push(est && est.headline
-    ? {q: est.question || "Establishment Democrat?", v: verdict(est.headline), href: "establishment.html", go: "Open the Establishment tab →", rule: est.rule || est.why || ""}
-    : {q: "Establishment Democrat?", v: "See the Establishment page", href: "establishment.html", go: "Open the Establishment tab →", rule: "", pending: true});
+    ? {q: est.question || (M.isRep ? "Loyal to Trump and the party?" : "Establishment Democrat?"), v: verdict(est.headline), href: PARTYPAGE, go: M.isRep ? "Open the Allegiance tab →" : "Open the Establishment tab →", rule: est.rule || est.why || ""}
+    : {q: M.isRep ? "Loyal to Trump and the party?" : "Establishment Democrat?", v: M.isRep ? "See the Allegiance page" : "See the Establishment page", href: PARTYPAGE, go: M.isRep ? "Open the Allegiance tab →" : "Open the Establishment tab →", rule: "", pending: true});
   $("vbtns").innerHTML = tiles.map(t => `<a class="vbtn${t.pending?" pending":""}" href="${esc(t.href)}">
     <span class="pp-q">${esc(t.q)}</span><span class="pp-v">${esc(verdict(t.v))}</span>
     ${t.rule?`<span class="vrule">${esc(t.rule)}</span>`:""}<span class="vgo">${esc(t.go)}</span></a>`).join("");
 }
-Promise.all([getJSON("data/overview.json"), getJSON("data/establishment.json").catch(() => null)])
+const PARTYPAGE = M.isRep ? "allegiance.html" : "establishment.html";   // Republican members: Allegiance replaces Establishment
+Promise.all([getJSON("data/overview.json"), getJSON(M.isRep ? "data/allegiance.json" : "data/establishment.json").catch(() => null)])
   .then(([ov, est]) => renderVerdicts(ov, est))
   .catch(() => { $("vbtns").innerHTML = NOT_BUILT("The quick verdicts"); });
 
@@ -266,7 +267,8 @@ if(M.house){
   });
   renderMap(MODES[0].key);
   getJSON("data/geo/map.json").then(d => { GEO = d; renderMap(document.querySelector('#mapToggle [aria-pressed="true"]').dataset.m); })
-    .catch(() => { $("map").innerHTML = `<text x="450" y="300" text-anchor="middle" class="lbl">District map coming soon.</text>`; });
+    .catch(() => { if (M.isRep && $("district")) { $("district").hidden = true; return; }   // no map built: hide the section
+      $("map").innerHTML = `<text x="450" y="300" text-anchor="middle" class="lbl">District map coming soon.</text>`; });
 }
 
 // ---------- Statewide context (Senate only; profile.state: {heading, intro, facts: [{label, value}], note}) ----------
@@ -297,6 +299,7 @@ if(P.promisesIntro) $("promiseIntro").innerHTML = md(P.promisesIntro);
 const STATUS = {delivered:["Delivered","s-delivered"], progress:["In progress","s-progress"], stalled:["Stalled","s-stalled"], contradicted:["Contradicted","s-contradicted"], none:["No action found","s-none"]};
 const KIND = {explicit: `${M.Poss} words${P.promiseYear ? ", " + P.promiseYear : ""}`, record: `Ran on ${M.poss} record, not a stated pledge`, paraphrase: "Promise, paraphrased"};
 getJSON("data/promises_built.json").then(d => {
+  if (!d.promises.length) { $("scorecard").hidden = true; return; }   // nothing researched yet: hide the empty scorecard
   const counts = {}; d.promises.forEach(p => counts[p.status] = (counts[p.status] || 0) + 1);
   $("tally").innerHTML = Object.entries(STATUS).map(([k,[l]]) => `<div class="tile"><span class="n">${counts[k] || 0}</span><span class="l">${l}</span></div>`).join("");
   const link = (u, t) => `<a class="src" href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>`;
@@ -315,12 +318,12 @@ function renderAlignment(a, ta, votes, fec){
   const TA = Object.fromEntries((ta?.members || []).map(m => [m.name.replace(/\s*\([A-Z]\)$/, ""), m]));   // "Young Kim (R)" -> "Young Kim"
   const me = (ta?.members || []).find(m => m.group === "me");
   const years = [...new Set(votes.map(v => v.y))].sort();
-  if(years.length) $("glanceNote").innerHTML = `Computed from every ${M.chamberName} roll call in ${years.join(" and ")}. Most votes split along party lines, so ${esc(M.short)} agrees with nearly every Democrat most of the time. The telling column is <b>contested votes</b>: roll calls where at least 10% of Democrats broke from the rest of their party.`;
+  if(years.length) $("glanceNote").innerHTML = `Computed from every ${M.chamberName} roll call in ${years.join(" and ")}. Most votes split along party lines, so ${esc(M.short)} agrees with nearly every ${M.ownPartyNoun} most of the time. The telling column is <b>contested votes</b>: roll calls where at least 10% of ${M.ownPartyPl} broke from the rest of their party.`;
   $("alignTiles").innerHTML = [
-    [a.memberUnity+"%",`${M.Poss} Yea and Nay votes cast with the Democratic majority`],
-    [`${a.memberRank}${a.memberTied?" (tied)":""} of ${a.dems}`,`Rank among ${M.chamberName} Democrats for party-line voting (1 = most)`],
-    [a.medianUnity+"%",`The typical ${M.chamberName} Democrat`],
-    [a.contested,"Contested votes, where Democrats split"],
+    [a.memberUnity+"%",`${M.Poss} Yea and Nay votes cast with the ${M.ownParty} majority`],
+    [`${a.memberRank}${a.memberTied?" (tied)":""} of ${a.dems}`,`Rank among ${M.chamberName} ${M.ownPartyPl} for party-line voting (1 = most)`],
+    [a.medianUnity+"%",`The typical ${M.chamberName} ${M.ownPartyNoun}`],
+    [a.contested,`Contested votes, where ${M.ownPartyPl} split`],
   ].map(([n,l]) => `<div class="tile"><span class="n">${n}</span><span class="l">${esc(l)}</span></div>`).join("");
   const groups = [...new Set(a.peers.map(p => p.group))];   // config order
   const rows = [...a.peers].sort((x,y) => groups.indexOf(x.group)-groups.indexOf(y.group) || y.contested-x.contested);
@@ -339,7 +342,7 @@ function renderAlignment(a, ta, votes, fec){
   const cmp = me && lead.length ? (me.total < lo ? "below" : me.total > hi ? "above" : "within the range of") : "";
   $("alignTake").textContent =
     (sides.length ? `On contested votes ${M.short} sided with ${sides.length > 1 ? sides.slice(0,-1).join(", ") + ", and " + sides[sides.length-1] : sides[0]} of the time. ` : "") +
-    `${M.Subj} voted with the party more often than ${a.dems - a.memberRank - (a.memberTied||0)} of ${a.dems-1} other ${M.chamberName} Democrats${a.memberTied?` and exactly as often as ${a.memberTied} more`:""}.` +
+    `${M.Subj} voted with the party more often than ${a.dems - a.memberRank - (a.memberTied||0)} of ${a.dems-1} other ${M.chamberName} ${M.ownPartyPl}${a.memberTied?` and exactly as often as ${a.memberTied} more`:""}.` +
     (cmp ? ` ${M.Poss} Track AIPAC total (${usd(me.total)}) is ${cmp} the leaders' and centrists' (${usd(lo)}–${usd(hi)}).` : "");
   const items = [];
   if(M.house){   // senators don't elect a Speaker
@@ -350,7 +353,7 @@ function renderAlignment(a, ta, votes, fec){
   const lc = `${M.leaderPoss} committees`;
   if(j) items.push(j.total ? `Received ${usd(j.total)} from ${esc(lc)}: ${j.items.map(p => `${esc(p.name.replace(/\s+/g," ").trim())} ${usd(p.amount)} (${Object.keys(p.byCycle).join(", ")})`).join("; ")}, per FEC filings. <a class="src" href="money.html#pacs">Money tab</a>` : `No contributions from ${esc(lc)} in ${M.poss} FEC filings. <a class="src" href="money.html#pacs">Money tab</a>`);
   const jp = a.peers.find(p => p.name === M.leaderName);
-  if(jp) items.push(`Agrees with ${esc(M.leaderLast)} on ${jp.all}% of votes and ${jp.contested}% of contested votes. <a class="src" href="establishment.html">Establishment tab</a>`);
+  if(jp) items.push(`Agrees with ${esc(M.leaderLast)} on ${jp.all}% of votes and ${jp.contested}% of contested votes. <a class="src" href="${PARTYPAGE}">${M.isRep ? "Allegiance" : "Establishment"} tab</a>`);
   (P.leaderTies || []).forEach(x => items.push(md(x)));   // curated, sourced ties (also in data/claims_static.json)
   $("leaderTies").innerHTML = items.length ? items.map(x => `<li>${x}</li>`).join("") : `<li class="muted">Appears once votes and FEC data are built.</li>`;
 }
@@ -365,7 +368,7 @@ getJSON("data/statements.json").then(list => {
     const a = el("a", {href: s.u, target: "_blank", rel: "noopener", textContent: s.title});
     ul.append(el("li", {}, [el("span", {className: "muted", textContent: s.date + " · "}), a]));
   });
-}).catch(() => { $("recentList").innerHTML = `<li class="muted">Statements aren't fetched yet (scripts/fetch_statements.py).</li>`; });
+}).catch(() => { $("recentList").innerHTML = `<li class="muted">Press releases haven't been collected yet.</li>`; });
 
 // ---------- Offices and channels (profile.offices, profile.online, profile.handles) ----------
 const OFFICES = P.offices || [];

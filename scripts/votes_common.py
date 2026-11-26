@@ -17,6 +17,9 @@ from config import CFG, M, ROOT
 CHAMBER = M.get("chamber", "house").lower()
 CONGRESS = int(M.get("congress", 119))
 MY_ID = M.get("voteId") or M["bioguide"]          # bioguide for the House, LIS id for the Senate
+# The member's own party ("R" or "D"): party unity, "most of the party" tallies and break-with-party checks use it.
+OWN = "R" if str(M.get("party", "Democrat")).upper().startswith("R") else "D"
+OWN_NAME = "Republicans" if OWN == "R" else "Democrats"
 LEADER = CFG.get("leader") or ({"name": "Chuck Schumer", "voteId": "S270"} if CHAMBER == "senate"
                                else {"name": "Hakeem Jeffries", "voteId": "J000294"})
 
@@ -116,22 +119,33 @@ def party_side(r, party="D", by_caucus=False):
 #   {brk_phrase} "breaking with most Democrats" / "voting with most Democrats"   {dsame} Democrats who voted as the member did
 #   {n} rolls   {yeaCount} {nayCount}
 VOTE_PHRASE = {"Yea": "Voted for", "Nay": "Voted against", "Present": "Voted “Present” on", "Not Voting": "Did not vote on"}
+def own_side(v):
+    """Majority side of the member's own party on a votes.json row (pSide; older files only have dSide)."""
+    return v.get("pSide", v.get("dSide"))
 def breaks_party(v):
-    return v["member"] in ("Yea", "Nay") and v.get("dSide") in ("Yea", "Nay") and v["member"] != v["dSide"]
+    return v["member"] in ("Yea", "Nay") and own_side(v) in ("Yea", "Nay") and v["member"] != own_side(v)
 def roll_phrases(vs):
     v0 = vs[0]; vote = v0["member"]
+    pY, pN = v0.get("pY", v0["dY"]), v0.get("pN", v0["dN"])      # own party's Yea-Nay (Democrats for older files)
+    pword = "no" if pN > pY else "yes" if pY > pN else None
     word = "no" if v0["dN"] > v0["dY"] else "yes" if v0["dY"] > v0["dN"] else None
     phrase = f"Most Democrats voted {word}" if word else "Democrats split"
+    pphrase = f"Most {OWN_NAME} voted {pword}" if pword else f"{OWN_NAME} split"
     ctx = {"vote": vote if len({v["member"] for v in vs}) == 1 else None, "Vote": VOTE_PHRASE.get(vote, f"Recorded as {vote} on"),
            "yea": v0["yea"], "nay": v0["nay"], "dY": v0["dY"], "dN": v0["dN"], "rY": v0["rY"], "rN": v0["rN"],
            "cY": v0.get("cY", v0["dY"]), "cN": v0.get("cN", v0["dN"]),
            "DemMaj": f"{phrase} ({v0['dY']}–{v0['dN']})", "demMaj": f"{phrase[0].lower() + phrase[1:]} ({v0['dY']}–{v0['dN']})", "dcount": f"{v0['dY']}–{v0['dN']}",
+           "pY": pY, "pN": pN, "OwnMaj": f"{pphrase} ({pY}–{pN})", "ownMaj": f"{pphrase[0].lower() + pphrase[1:]} ({pY}–{pN})", "owncount": f"{pY}–{pN}",
+           "ownside": pword or "evenly", "ownopposed": {"no": "opposed", "yes": "supported"}.get(pword, "split on"),
+           "ownsame": pY if vote == "Yea" else pN if vote == "Nay" else None, "party": OWN_NAME,
            "dside": word or "evenly", "dopposed": {"no": "opposed", "yes": "supported"}.get(word, "split on"),
-           "brk_phrase": "breaking with most Democrats" if all(breaks_party(v) for v in vs) else "voting with most Democrats",
+           "brk_phrase": f"breaking with most {OWN_NAME}" if all(breaks_party(v) for v in vs) else f"voting with most {OWN_NAME}",
            "dsame": v0["dY"] if vote == "Yea" else v0["dN"] if vote == "Nay" else None,
            "n": len(vs), "yeaCount": sum(v["member"] == "Yea" for v in vs), "nayCount": sum(v["member"] == "Nay" for v in vs)}
     if all(v.get("dSide") == "Nay" for v in vs): ctx["dall"] = "opposed by most Democrats"
     elif all(v.get("dSide") == "Yea" for v in vs): ctx["dall"] = "backed by most Democrats"
+    if all(own_side(v) == "Nay" for v in vs): ctx["ownall"] = f"opposed by most {OWN_NAME}"
+    elif all(own_side(v) == "Yea" for v in vs): ctx["ownall"] = f"backed by most {OWN_NAME}"
     return ctx
 
 def fill_text(t, ctx, where, problems):

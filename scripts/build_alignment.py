@@ -9,7 +9,7 @@ Usage: python3 -I scripts/build_alignment.py
 import json, os, re
 import sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from config import CFG, M, FEC, need
-from votes_common import load_rolls, MY_ID, caucus, party_side, unity_min_votes
+from votes_common import load_rolls, MY_ID, caucus, party_side, unity_min_votes, OWN, OWN_NAME
 
 ROOT = os.environ.get("TRACKER_DIR") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")   # member folder; set by ./tr
 TRAN = MY_ID   # bioguide (House) or LIS id (Senate)
@@ -29,12 +29,12 @@ def agree(a, b, subset=None):
     return same, tot
 
 def dem_side(r):
-    side, y, n = party_side(r, "D", by_caucus=True)
+    side, y, n = party_side(r, OWN, by_caucus=True)
     return side, min(y, n) / max(1, y + n)
 
 # Party unity for every member of the Democratic caucus: share of Yea/Nay votes cast with the caucus majority
 sides = [dem_side(r) for r in rolls]
-dems = {k for r in rolls for k in r["party"] if caucus(r, k) == "D"}
+dems = {k for r in rolls for k in r["party"] if caucus(r, k) == OWN}   # members of the member's own caucus (key name "dems" kept for the pages)
 MIN_VOTES = unity_min_votes(sum(1 for s, _ in sides if s))
 unity = {}
 for d in dems:
@@ -47,7 +47,7 @@ for d in dems:
 ranked = sorted(unity, key=lambda k: -unity[k])
 contested = lambda r, s=dict(zip([x["id"] for x in rolls], sides)): s[r["id"]][1] >= 0.10
 
-out = {"memberUnity": round(unity[TRAN] * 100, 1), "memberRank": 1 + sum(1 for k in ranked if unity[k] > unity[TRAN]),  # ties share a rank
+out = {"party": OWN, "partyName": OWN_NAME, "memberUnity": round(unity[TRAN] * 100, 1), "memberRank": 1 + sum(1 for k in ranked if unity[k] > unity[TRAN]),  # ties share a rank
        "memberTied": sum(1 for k in ranked if unity[k] == unity[TRAN]) - 1, "dems": len(ranked),
        "medianUnity": round(sorted(unity.values())[len(unity) // 2] * 100, 1),
        "rolls": len(rolls), "contested": sum(1 for r in rolls if contested(r)),

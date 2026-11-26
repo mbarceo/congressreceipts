@@ -10,7 +10,7 @@ Usage: python3 -I scripts/build_votes.py
 import json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from config import ROOT
-from votes_common import load_rolls, party_side, MY_ID, CHAMBER
+from votes_common import load_rolls, party_side, MY_ID, CHAMBER, OWN
 
 def side(r, party):
     s, y, n = party_side(r, party, by_caucus=True)
@@ -27,7 +27,8 @@ for r in load_rolls():
     if CHAMBER == "senate":   # independents, and the Democratic caucus tally that dSide is computed from
         _, row["iY"], row["iN"] = party_side(r, "I")
         _, row["cY"], row["cN"] = party_side(r, "D", by_caucus=True)
-    row.update({"dSide": side(r, "D"), "rSide": side(r, "R"), "member": r["votes"].get(MY_ID) or "Not in record", "url": r["url"]})
+    _, row["pY"], row["pN"] = party_side(r, OWN)     # the member's own party (official party letter), same as dY/dN for Democrats
+    row.update({"pSide": side(r, OWN), "dSide": side(r, "D"), "rSide": side(r, "R"), "member": r["votes"].get(MY_ID) or "Not in record", "url": r["url"]})
     out.append(row)
 with open(os.path.join(ROOT, "data/votes.json"), "w") as f:
     f.write("[\n" + ",\n".join(json.dumps(v, ensure_ascii=False) for v in out) + "\n]\n")

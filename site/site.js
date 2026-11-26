@@ -36,7 +36,8 @@
     const districtLabel = senate ? (m.state || stateName) : (m.districtLabel || `${m.state}-${atLarge ? "AL" : d}`);
     const seatLabel = m.seatLabel || (senate ? stateName : atLarge ? `${stateName}'s at-large district` : `${stateName}'s ${ord(d)} District`);
     const site = (m.site || "").replace(/\/$/, ""), domain = m.domain || host(site);
-    const leaderName = L.name || (senate ? "Chuck Schumer" : "Hakeem Jeffries");
+    const isRep = /^r/i.test(m.party || "");   // Republican members: own-party wording and the Allegiance page replace the Democratic defaults
+    const leaderName = L.name || (isRep ? (senate ? "John Thune" : "Mike Johnson") : senate ? "Chuck Schumer" : "Hakeem Jeffries");
     const leaderLast = leaderName.split(/\s+/).pop();
     const since = /^\d{4}-\d{2}/.test(m.inOfficeSince || "") ? `${MON[+m.inOfficeSince.slice(5,7)-1]} ${m.inOfficeSince.slice(0,4)}` : (m.inOfficeSince || "");
     const congress = +(m.congress || 119);
@@ -45,7 +46,10 @@
       cfg, profile: P, chamber: senate ? "senate" : "house", senate, house: !senate,
       name, first, last, short, honorific, title, shortPoss: poss(short), namePoss: poss(name),
       subj, obj, poss: ps, Subj: cap(subj), Obj: cap(obj), Poss: cap(ps),
-      party: m.party || "",
+      status: cfg.status || null,
+      party: m.party || "", isRep, partyLetter: isRep ? "R" : "D", ownParty: isRep ? "Republican" : "Democratic", ownPartyNoun: isRep ? "Republican" : "Democrat",
+      ownPartyPl: isRep ? "Republicans" : "Democrats", ownCaucus: isRep ? "Republican conference" : "Democratic caucus",
+      otherPartyPl: isRep ? "Democrats" : "Republicans", ownPartyShort: isRep ? "GOP" : "Dems",
       state: m.state || "", stateName, district: d, districtLabel, seatLabel,
       seatShort: senate ? stateName : districtLabel,
       siteName: senate ? `${short} Senate Tracker` : `${districtLabel} ${short} Tracker`,
@@ -60,7 +64,7 @@
       voteSourceLong: senate ? "the Senate's official roll-call votes (senate.gov)" : "the House Clerk's official roll-call records",
       voteSourceUrl: senate ? "https://www.senate.gov/legislative/votes_new.htm" : "https://clerk.house.gov/Votes",
       voteXml: senate ? "senate.gov/legislative/LIS/roll_call_votes" : "clerk.house.gov/evs",
-      leaderName, leaderLast, leaderPoss: poss(leaderLast), leaderTitle: L.title || `${chamberName} Democratic leader`,
+      leaderName, leaderLast, leaderPoss: poss(leaderLast), leaderTitle: L.title || `${chamberName} ${isRep ? "Republican" : "Democratic"} leader`,
       congress, congressOrd: ord(congress), since, inOfficeSince: m.inOfficeSince || "",
       committees: m.committees || [],
     };
@@ -83,6 +87,7 @@
     root.querySelectorAll("*").forEach(el => ATTRS.forEach(a => { const v = el.getAttribute(a); if(v && v.includes("{{")) el.setAttribute(a, fill(v, M)); }));
     document.title = fill(document.title, M);
     root.querySelectorAll("[data-only]").forEach(el => { if(el.dataset.only !== M.chamber) el.hidden = true; });
+    root.querySelectorAll("[data-party]").forEach(el => { if(el.dataset.party !== M.partyLetter) el.hidden = true; });
     root.querySelectorAll("[data-if]").forEach(el => { const v = M[el.dataset.if]; if(!v || (Array.isArray(v) && !v.length)) el.hidden = true; });
     root.querySelectorAll("img.portrait").forEach(img => {
       img.addEventListener("error", () => { img.hidden = true; }, {once: true});
@@ -104,6 +109,12 @@
   const ready = Promise.all([cfgP, domReady]).then(([cfg]) => {
     const M = build(cfg || {});
     try { apply(M); } catch(e) { console.error(e); }
+    // Trackers that are published before they are finished carry "status" in tracker.config.json: {label, note}. Remove it when done.
+    if(M.status && M.status.note){
+      const b = document.createElement("div"); b.className = "inprogress"; b.setAttribute("role", "note");
+      b.innerHTML = "<b>" + esc(M.status.label || "In progress") + ".</b> " + esc(fill(M.status.note, M));
+      const w = document.querySelector(".wrap"); if(w) w.insertBefore(b, w.firstChild);
+    }
     window.TRACKER.M = M; reveal();
     return M;
   });
@@ -122,6 +133,8 @@
         return `<a href="${h}"${file === here ? ' aria-current="page"' : ""}>${t}</a>`;
       }).join("");
     }
+    // Republican members have an Allegiance page (Trump, MAGA, Project 2025, party leadership) in place of Establishment.
+    ready.then(M => { if(M.isRep) nav.querySelectorAll('a[href="establishment.html"]').forEach(a => { a.href = "allegiance.html"; a.textContent = "Allegiance"; if(/allegiance\.html$/.test(location.pathname)) a.setAttribute("aria-current", "page"); }); });
     const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
     const go = el => el.scrollIntoView({behavior: reduce ? "auto" : "smooth", block: "start"});
 

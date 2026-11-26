@@ -27,7 +27,7 @@ J = lambda p: json.load(open(os.path.join(ROOT, p)))
 claims, votes, stm, full = J("data/claims.json"), J("data/votes.json"), J("data/statements.json"), J("data/statements_full.json")
 bills, computed = J("data/bill_checks.json"), J("data/computed_checks.json")
 by = {f'{v["y"]}-{v["n"]:03d}': v for v in votes}
-from votes_common import url_to_id, is_vote_url
+from votes_common import url_to_id, is_vote_url, OWN_NAME
 stm_u = {s["u"]: s for s in stm}
 SRC = os.path.join(ROOT, "data/sources"); os.makedirs(SRC, exist_ok=True)
 idx_path = os.path.join(SRC, "index.json"); idx = json.load(open(idx_path)) if os.path.exists(idx_path) else {}
@@ -91,10 +91,10 @@ def check_votes(c, ids):
         said = m.group(1) or m.group(2)
         if rolls[0]["member"] != said: issues.append(f"claim says {said}, Clerk record shows {rolls[0]['member']}")
     pairs = set()
-    for r in rolls: pairs |= {(r["yea"], r["nay"]), (r["dY"], r["dN"]), (r["rY"], r["rN"])} | ({(r["cY"], r["cN"])} if "cY" in r else set())   # cY–cN: Senate Democratic caucus
+    for r in rolls: pairs |= {(r["yea"], r["nay"]), (r["dY"], r["dN"]), (r["rY"], r["rN"]), (r.get("pY", r["dY"]), r.get("pN", r["dN"]))} | ({(r["cY"], r["cN"])} if "cY" in r else set())   # cY–cN: Senate Democratic caucus
     for a, b in re.findall(r"\b(\d{1,3})–(\d{1,3})\b", c["text"]):
         if (int(a), int(b)) not in pairs and not ("." in c["text"] and PCT.search(c["text"])): issues.append(f"tally {a}–{b} not in the roll call")
-    for r in rolls: ev.append(f"Roll {r['y']}-{r['n']} ({r['bill']}, {r['date']}): {M['short']} {r['member']}; total {r['yea']}–{r['nay']}; Democrats {r['dY']}–{r['dN']}; {r['result']}")
+    for r in rolls: ev.append(f"Roll {r['y']}-{r['n']} ({r['bill']}, {r['date']}): {M['short']} {r['member']}; total {r['yea']}–{r['nay']}; {OWN_NAME} {r.get('pY', r['dY'])}–{r.get('pN', r['dN'])}; {r['result']}")
     return issues, " | ".join(ev)
 
 def committees_ok(must):

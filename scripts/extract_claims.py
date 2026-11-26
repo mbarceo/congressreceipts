@@ -6,7 +6,8 @@ quote, url, urls, plus optional must/check/manual for static facts. Usage: pytho
 """
 import json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from config import ROOT
+from config import ROOT, M
+from votes_common import OWN_NAME
 
 J = lambda p: json.load(open(os.path.join(ROOT, p)))
 claims, seen = [], {}
@@ -29,7 +30,7 @@ for i in st["issues"]:
     for it in i.get("items", []):   # curated record items (quote "q" must be on the source)
         add("stances", i["name"], it["t"] + (f" “{it['q']}”" if it.get("q") else ""), it["u"], urls=it.get("more", []), date=it["d"], quote=it.get("q"))
     for r in i["rolls"]:
-        add("stances", i["name"], f"Voted {r['vote']} on {r['bill']}, {r['title']} ({r['q']}). Result: {r['result']} {r['yea']}–{r['nay']}; Democrats {r['dY']}–{r['dN']}." + (f" {r['note']}" if r.get("note") else ""), r["url"], date=r["date"])
+        add("stances", i["name"], f"Voted {r['vote']} on {r['bill']}, {r['title']} ({r['q']}). Result: {r['result']} {r['yea']}–{r['nay']}; {OWN_NAME} {r.get('pY', r['dY'])}–{r.get('pN', r['dN'])}." + (f" {r['note']}" if r.get("note") else ""), r["url"], date=r["date"])
     for s in i["statements"]:
         if s.get("quote"): add("stances", i["name"], f"From her release of {s['date']}: “{s['quote'].strip('…').strip()}”", s["u"], date=s["date"], quote=s["quote"].strip("…").strip())
 for it in st["israel"]["items"]: add("stances", "Israel and Palestine", it["t"], it["u"], urls=it.get("more", []))
@@ -53,6 +54,31 @@ for e in J("data/overview.json")["events"]: add("townhalls", "Events", f"{e['dat
 for s in J("data/claims_static.json")["claims"]:
     add(s["page"], s["section"], s["text"], s["url"], **{k: s[k] for k in ("must", "check", "manual") if k in s})
 
+# Allegiance page (Republican members): each Trump-position row is two claims: the member's recorded vote with the
+# roll's tallies (checked against the Clerk record) and the quoted White House position (the saved source text).
+if os.path.exists(os.path.join(ROOT, "data/allegiance.json")):
+    for r in J("data/allegiance.json")["trump"]["rows"]:
+        add("allegiance", "trump", f"Voted {r['vote']} on {r['bill']}, {r['title']} ({r['q']}). Result: {r['result']} {r['yea']}–{r['nay']}; {OWN_NAME} {r['pY']}–{r['pN']}.", r["url"], date=r["date"])
+        if r.get("quote"):
+            su = r["source"]["url"]
+            extra = {"manual": "The statement's text was extracted from the PDF and the quoted sentence matched it exactly (checked 2026-11-25)."} if su.lower().endswith(".pdf") else {}
+            add("allegiance", "trump", f"Trump's position on {r['bill']}: “{r['quote']}”", su, date=r["date"], quote=r["quote"], **extra)
+        elif r.get("must"):
+            add("allegiance", "trump", f"Trump's position on {r['bill']}: he told House Republicans to vote for it (secondary source: {r['source']['label']}).", r["source"]["url"], date=r["date"], must=r["must"])
+    # Project 2025 axis: the Mandate quote (PDF, text matched by program), the bill's own text, the member's vote, the Heritage Action score
+    A = J("data/allegiance.json")["mandate"]
+    for r in A["rows"]:
+        add("allegiance", "mandate", f"The Mandate for Leadership, {r['page']}: “{r['quote']}”", r["source"]["url"], quote=r["quote"],
+            manual="The Mandate's text was extracted from Heritage's PDF and the quoted words matched it exactly, ignoring line-break hyphens (checked 2026-11-25).")
+        if r.get("billUrl") and r.get("billMust"):
+            add("allegiance", "mandate", f"{r['bill']}: {r['match']}", r["billUrl"], must=r["billMust"])
+        if r.get("roll"):
+            add("allegiance", "mandate", f"Voted {r['vote']} on {r['bill']} ({r['q']}). Result: {r['result']} {r['yea']}–{r['nay']}.", r["url"], date=r["date"])
+    ha = A.get("heritageAction") or {}
+    if ha.get("score") is not None:
+        add("allegiance", "mandate", f"Heritage Action's scorecard for the {ha.get('label', '119th Congress')} gives {M['name']} {ha['score']}%.", ha["url"], must=[f"{ha['score']}%", M["name"].split()[-1]])
+    if (A.get("disavowal") or {}).get("must"):
+        add("allegiance", "mandate", A["disavowal"]["text"], A["disavowal"]["url"], must=A["disavowal"]["must"])
 json.dump(claims, open(os.path.join(ROOT, "data/claims.json"), "w"), indent=1, ensure_ascii=False)
 from collections import Counter
 print(len(claims), "claims:", dict(Counter(c["page"] for c in claims)))

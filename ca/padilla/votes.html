@@ -8,9 +8,9 @@
 <meta name="description" content="Every recorded Senate vote by Sen. Alex Padilla, from the official roll-call record, next to how most Democrats voted.">
 <title>Padilla Vote Record</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="site.css?v=4836746f">
+<link rel="stylesheet" href="site.css?v=86652562">
 <link rel="stylesheet" href="../../hub.css?v=91a2553f">
-<script src="site.js?v=9d18080b"></script>
+<script src="site.js?v=ca9b1b27"></script>
 <style>
 html{color-scheme:light}
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -45,7 +45,7 @@ body{margin:0}
         <h1>How {{name}} votes</h1>
       </div>
     </div>
-    <p class="lede">Every recorded {{chamberName}} vote, straight from {{voteSourceLong}}. Each row shows how {{short}} voted next to how most Democrats voted, so you can spot party splits.</p>
+    <p class="lede">Every recorded {{chamberName}} vote, straight from {{voteSourceLong}}. Each row shows how {{short}} voted next to how most {{ownPartyPl}} voted, so you can spot party splits.</p>
     <p class="status" id="status"></p>
   </header>
 
@@ -57,7 +57,7 @@ body{margin:0}
     <div class="sec-head">
       <span class="eyebrow">Roll calls</span>
       <h2>Vote by vote</h2>
-      <p>Rows marked <span class="pill s-break">Breaks with party</span> are votes where {{short}} voted Yea or Nay against the Democratic majority. Procedural votes (rules, motions to table, quorum calls) are hidden unless you include them.</p>
+      <p>Rows marked <span class="pill s-break">Breaks with party</span> are votes where {{short}} voted Yea or Nay against the {{ownParty}} majority. Procedural votes (rules, motions to table, quorum calls) are hidden unless you include them.</p>
     </div>
     <div class="controls">
       <input class="search" id="q" type="search" placeholder="Search bill name or number, e.g. Laken Riley or H R 1" aria-label="Search votes">
@@ -66,13 +66,13 @@ body{margin:0}
       <span class="count" id="count"></span>
     </div>
     <div class="vtable"><table>
-      <thead><tr><th>Date</th><th>Bill and question</th><th>{{short}}</th><th>Most Dems</th><th>Result</th><th>Roll</th></tr></thead>
+      <thead><tr><th>Date</th><th>Bill and question</th><th>{{short}}</th><th>Most {{ownPartyShort}}</th><th>Result</th><th>Roll</th></tr></thead>
       <tbody id="rows"></tbody>
     </table></div>
     <button class="more" id="more" type="button" hidden>Show more</button>
   </section>
 
-  <footer>Source: {{voteSource}} roll-call XML (<span class="mono">{{voteXml}}</span>), member ID <span class="mono">{{voteId}}</span>. "Most Dems" is how the majority of {{chamberName}} Democrats voted on that roll call<span data-only="senate"> (counting independents who caucus with them, such as Sanders and King)</span>. Bill links go to congress.gov.</footer>
+  <footer>Source: {{voteSource}} roll-call XML (<span class="mono">{{voteXml}}</span>), member ID <span class="mono">{{voteId}}</span>. "Most {{ownPartyShort}}" is how the majority of {{chamberName}} {{ownPartyPl}} voted on that roll call<span data-only="senate"> (counting independents who caucus with them, such as Sanders and King)</span>. Bill links go to congress.gov.</footer>
 </div>
 
 <script>
@@ -83,7 +83,8 @@ const BILLTYPE = {"H R":"house-bill","S":"senate-bill","H RES":"house-resolution
 const billUrl = b => { const m = /^([A-Z ]+?)\s*(\d+)$/.exec(String(b||"").toUpperCase().replace(/\./g," ").replace(/\s+/g," ").trim()); return m && BILLTYPE[m[1].trim()] ? `https://www.congress.gov/bill/${M.congressOrd}-congress/${BILLTYPE[m[1].trim()]}/${m[2]}` : null; };
 const PROC = /previous question|motion to table|motion to commit|motion to adjourn|call of the house|call by states|election of the speaker|motion to refer|motion to reconsider|motion to recommit|motion to discharge/i;
 const isProc = v => PROC.test(v.q) || /^H RES \d+$/.test(v.bill) && /agreeing to the resolution/i.test(v.q) && !v.desc.match(/^(Denouncing|Condemning|Recognizing|Honoring|Supporting|Expressing|Impeaching|Providing for congressional)/i) && /providing for consideration/i.test(v.desc);
-const isBreak = v => (v.member==="Yea"||v.member==="Nay") && (v.dSide==="Yea"||v.dSide==="Nay") && v.member!==v.dSide;
+const pSide = v => v.pSide ?? v.dSide;   // the member's own party (older data files only have dSide)
+const isBreak = v => (v.member==="Yea"||v.member==="Nay") && (pSide(v)==="Yea"||pSide(v)==="Nay") && v.member!==pSide(v);
 const vpill = t => `<span class="pill ${t==="Yea"?"v-yea":t==="Nay"?"v-nay":"v-other"}">${esc(t)}</span>`;
 const fmtD = d => new Date(d+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
 let ALL = [], shown = 0, filtered = [];
@@ -91,14 +92,14 @@ const PAGE = 60;
 
 function tiles(){
   const cast = ALL.filter(v=>v.member==="Yea"||v.member==="Nay");
-  const withParty = cast.filter(v=>v.dSide==="Yea"||v.dSide==="Nay");
-  const same = withParty.filter(v=>v.member===v.dSide).length;
+  const withParty = cast.filter(v=>pSide(v)==="Yea"||pSide(v)==="Nay");
+  const same = withParty.filter(v=>v.member===pSide(v)).length;
   const missed = ALL.filter(v=>v.member==="Not Voting").length;
   const breaks = ALL.filter(isBreak);
   const t = [
     [ALL.length.toLocaleString(),"Roll calls recorded"],
     [`${(100*(ALL.length-missed)/ALL.length).toFixed(1)}%`,`Attendance (${missed} missed)`],
-    [`${(100*same/withParty.length).toFixed(1)}%`,"Voted with most Democrats"],
+    [`${(100*same/withParty.length).toFixed(1)}%`,"Voted with most "+M.ownPartyPl],
     [breaks.length,"Party breaks (all votes)"],
     [breaks.filter(v=>!isProc(v)).length,"Party breaks on bills"],
   ];
@@ -122,7 +123,7 @@ function more(){
       <td class="num">${fmtD(v.date)}</td>
       <td><div class="t">${u?`<a href="${u}" target="_blank" rel="noopener">${esc(v.bill)}</a>`:esc(v.bill||"—")} · ${esc(name)}</div><div class="qq">${esc(v.q)}${brk?' · <span class="pill s-break">Breaks with party</span>':""}</div></td>
       <td>${vpill(v.member)}</td>
-      <td>${v.dSide?vpill(v.dSide):"—"}<div title="${v.cY!=null?'Democratic caucus, including independents who caucus with Democrats':'Democrats'}" class="qq mono">${v.cY!=null?v.cY+"–"+v.cN:v.dY+"–"+v.dN}</div></td>
+      <td>${pSide(v)?vpill(pSide(v)):"—"}<div title="${(v.cY!=null&&!M.isRep)?'Democratic caucus, including independents who caucus with Democrats':M.ownPartyPl}" class="qq mono">${(v.cY!=null&&!M.isRep)?v.cY+"–"+v.cN:(v.pY??v.dY)+"–"+(v.pN??v.dN)}</div></td>
       <td><span class="qq">${esc(v.result)}</span><div class="qq mono">${v.yea}–${v.nay}</div></td>
       <td class="num"><a href="${esc(v.url||M.voteSourceUrl)}" target="_blank" rel="noopener">${v.y} #${v.n}</a></td>
     </tr>`;}).join(""));

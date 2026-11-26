@@ -25,13 +25,15 @@ def release(sub):
 tiles = []
 # 1. Israel / Palestine: the Stances card's own headline
 isr = st["israel"]
-tiles.append({"q": isr["question"], "v": isr["headline"], "href": "stances.html#israel-palestine",
-              "rule": "The headline of the Israel and Palestine card, which tags each of its items by direction.",
-              "n": len(isr["items"])})
+if isr["items"] or not str(M.get("party", "")).lower().startswith("r"):   # Republican trackers start without the Democratic-template Israel tile
+    tiles.append({"q": isr["question"], "v": isr["headline"], "href": "stances.html#israel-palestine",
+                  "rule": "The headline of the Israel and Palestine card, which tags each of its items by direction.",
+                  "n": len(isr["items"])})
 
 # 2-3a. ICE, police and corporate: read from the Stances evidence cards (data/cards.json) so the two pages agree
 cards = {c["key"]: c for c in load("data/cards.json")["cards"]}
 for key in ("ice", "police", "corporate"):
+    if key not in cards: continue   # Republican trackers define their own cards
     c = cards[key]
     tiles.append({"q": c["q"], "v": c["v"], "href": f"stances.html#card-{key}", "rule": c["rule"], "n": c["n"]})
 

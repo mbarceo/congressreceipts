@@ -292,7 +292,7 @@ function renderIsrael(){
     pros.forEach(p=>cells.push({f:usd(p.amount), w:p.name+(p.kind==="Earmarked via conduit"?"" :" (direct contribution)"), c:Object.keys(p.byCycle).map(k=>FEC.cycles[k]?FEC.cycles[k].label.split(" ")[0]:k).join(" & "), u:p.id?"https://www.fec.gov/data/committee/"+p.id+"/":CMTE_URL()}));
     if(!pros.some(p=>p.id===IDS.aipacPac)) cells.push({f:"$0", w:`AIPAC PAC. No itemized contributions to ${M.poss} campaign in the filings downloaded.`, c:SPAN(), u:"https://www.fec.gov/data/committee/"+IDS.aipacPac+"/"});
   }
-  if(!cells.length){ $("israelBody").innerHTML = WAIT("Track AIPAC data is not loaded yet", "Run <code>fetch_trackaipac.py</code>."); return; }
+  if(!cells.length){ $("israelBody").innerHTML = WAIT("Track AIPAC data is not available yet", " Check back soon."); return; }
   $("israelBody").innerHTML = `<div class="handles"><table><thead><tr><th>Amount</th><th>What it counts</th><th>Source</th></tr></thead><tbody>${cells.map(r=>`<tr><td class="mono" style="white-space:nowrap;font-variant-numeric:tabular-nums">${esc(r.f)}</td><td>${esc(r.w)}</td><td class="mono"><a class="src" href="${esc(r.u)}" target="_blank" rel="noopener">${esc(r.c)}</a></td></tr>`).join("")}</tbody></table></div>
     ${NOTES(MON_.israelNotes)}
     ${FEC?"":`<p class="muted" style="margin:0;font-size:.8rem">${esc(M.Poss)} FEC-itemized figures appear here once ${esc(M.poss)} filings are loaded. ${HOWTO}</p>`}
@@ -315,7 +315,7 @@ function renderOutside(){
     <p class="muted" style="margin:0;font-size:.8rem">UDP money for or against ${esc(M.poss)} opponents is not in this data. Check <a href="https://www.fec.gov/data/committee/${IDS.udp}/" target="_blank" rel="noopener">UDP's FEC page</a> for race-by-race spending.</p>${NOTES(MON_.udpNotes)}`;
 }
 function renderBars(){
-  if(!TA){ $("bars").innerHTML = WAIT("Track AIPAC comparison is not loaded yet", "Run <code>fetch_trackaipac.py</code>."); return; }
+  if(!TA){ $("bars").innerHTML = WAIT("Track AIPAC comparison is not available yet", " Check back soon."); return; }
   const P = [...TA.members].sort((a,b)=>b.total-a.total), max = Math.max(...P.map(p=>p.total),1);
   $("compareNote").textContent = `Track AIPAC's "Israel Lobby Total" for ${M.short} and the members ${M.subj} is most often compared with, read ${fmtD(TA.read)}. Members marked "rejects AIPAC" are labeled that way by Track AIPAC.`;
   $("bars").innerHTML = P.map(p=>`<div class="brow ${p.group==="me"?"me":""}"><span class="nm" title="${esc(p.name)} (${esc(p.dist)})">${esc(p.name)} <small>${esc(p.dist)}${p.rejects?" · rejects AIPAC":""}</small></span>
