@@ -22,6 +22,7 @@ files, a bill's text) is NOT fetched again when its "key" (hash of the claim's t
 plus CHECKER_VERSION) is unchanged, its last status was "verified" and its last check is under recheckDays old; the
 earlier result is kept with its original "checked" date. Failed, partial and changed claims are always re-checked, and
 claims checked against local data (roll calls, releases already held, recomputed figures) are re-checked every run.
+An older result with no key (written before this rule) is always due; under --max-fetch the ones beyond the limit keep their old result unchanged.
 Bump CHECKER_VERSION whenever a check is tightened so no old result survives it.
 Usage: python3 -I scripts/verify_all.py [--fresh] [--max-fetch N]
   --fresh        ignore previous results and re-check everything
@@ -191,12 +192,19 @@ def needs_net(c):
     return bool(url)
 
 def reusable(c):
-    """The earlier result for this claim, if it can stand in for a fresh check: same key, verified, and inside the window."""
+    """The earlier result for this claim, if it can stand in for a fresh check: verified, needs a live page, and either the same
+    key or (an older result with no key yet) the same text and links. Only a result with a matching key counts as current."""
     r = prev.get(c["id"])
-    return r if r and r.get("key") == claim_key(c) and r.get("status") == "verified" and needs_net(c) else None
+    if not r or r.get("status") != "verified" or not needs_net(c): return None
+    if r.get("key") == claim_key(c) or (not r.get("key") and r.get("text") == c["text"] and r.get("urls") == c["urls"]): return r
+    return None
 
-# Claims whose earlier result is reusable but older than the window are "due"; with --max-fetch only the oldest N are re-fetched.
-_due = sorted((c for c in claims if reusable(c) and age_days(prev[c["id"]]) >= RECHECK_DAYS), key=lambda c: prev[c["id"]]["checked"])
+def is_due(c):
+    r = prev[c["id"]]
+    return not r.get("key") or age_days(r) >= RECHECK_DAYS      # no key yet: never counted as freshly checked
+
+# Claims whose earlier result is reusable but due (past the window, or no key yet) are re-fetched; with --max-fetch only the oldest N.
+_due = sorted((c for c in claims if reusable(c) and is_due(c)), key=lambda c: prev[c["id"]]["checked"])
 _refetch = {c["id"] for c in (_due if MAX_FETCH is None else _due[:MAX_FETCH])}
 reused = 0
 
