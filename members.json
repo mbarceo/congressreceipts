@@ -108,6 +108,19 @@
    "portrait": "assets/portrait.jpg",
    "eventsResearched": false,
    "hub": false
+  },
+  {
+   "path": "ca/kim",
+   "name": "Young Kim",
+   "party": "R",
+   "seat": "CA-40",
+   "chamber": "house",
+   "voteId": "K000397",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
