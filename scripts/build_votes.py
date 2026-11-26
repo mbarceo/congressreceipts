@@ -1,4 +1,4 @@
-"""Builds data/votes.json: the member's vote on every roll call in data/raw (House or Senate, from votes_common).
+"""Builds data/votes.json: the member's vote on every roll call in data/rollcalls/<chamber>/<congress> (House or Senate, from votes_common).
 
 Party tallies are counted from individual members' votes, so House and Senate files give the same fields.
 dY/dN/rY/rN follow the party letter in the official file. Senate rows add iY/iN (independents) and cY/cN (the

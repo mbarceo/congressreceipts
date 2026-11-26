@@ -5,7 +5,7 @@ Nonpartisan, fully sourced accountability trackers for members of Congress, publ
 ## Map
 - `members.json` registry of tracked members · `tr` runner · `scripts/` ONE copy of every script (stdlib-only Python 3 + a few zsh) · `template/` skeletons for a new member
 - `site/` SOURCE of the member pages (`index/money/stances/votes/statements/establishment/townhalls/sources.html`, `site.js`, `site.css`)
-- `<state>/<member>/` one tracker: `tracker.config.json`, `data/`, `assets/portrait.jpg`; the `.html/.js/.css` inside are **generated copies** of `site/`
+- `<state>/<member>/` one tracker: `tracker.config.json`, `data/`, `assets/portrait.jpg`; the `.html` pages inside are **generated**: thin stubs that load `site/` through `site/shell.js` (`"pages": "stub"` in `members.json`, every new member), or for older members full copies of `site/` plus `site.js`/`site.css`
 - Root `index/find/attendance/leaders/leadership/backlog/about.html` + `hub.js` + `hub.css` = hub pages and shared header/footer; root `data/` = hub data
 - Leadership races (Senate leader vote, House Speaker vote): `leadership.html`, `data/leadership_*.json`, curated inputs in `data/leadership/`, scripts `scripts/build_leadership_*.py` and `scripts/verify_leadership_*.py`. Read `docs/leadership.md` before touching them. `AGENTS.md` is the entry point for non-Claude agents.
 - `docs/` full documentation (architecture, pipeline, config reference, verification, how-tos, troubleshooting)
@@ -15,6 +15,9 @@ Nonpartisan, fully sourced accountability trackers for members of Congress, publ
 ./tr <state>/<member> <script>          # run a shared script for one member, e.g. ./tr ca/padilla build_votes
 ./tr <state>/<member> run_checks        # verification: must pass before any PR
 python3 -I scripts/new_tracker.py --name "…" --chamber house|senate --state XX [--district N] --bioguide X000000 [--vote-id S###] --pronouns he|she|they --out <state>/<last>
+python3 -I scripts/status.py [--strict]           # read-only health table (stale builds, vote counts, claims, pages, queue)
+python3 -I scripts/rebuild.py <member>|--all      # offline build stage in order, skips unchanged steps (never fetches)
+python3 -I scripts/build_queue.py [--check]       # keep data/queue.json in step with members.json (status is derived, not typed)
 python3 -I scripts/publish.py [<member path> …]    # copy site/ into member folders; stamp cache keys
 python3 -m http.server 8000             # preview (pages need HTTP, not file://)
 ```
@@ -42,7 +45,7 @@ Government sites (senate.gov offices, house.gov, clerk.house.gov, govinfo, congr
 6. **Promises come from the member's own words** (campaign site via a pre-election Wayback snapshot), not endorsers or interviews.
 7. **Never publish donor names, cities or addresses**; only employer, occupation, totals. Official portrait only. Neutral wording. Pronouns: use how the member's official bio refers to them, else they/them.
 8. **No secrets in the repo, in files or in chat.** API keys come from the macOS Keychain (`security …`) or env vars `FEC_API_KEY` / `CONGRESS_API_KEY` via `./tr`. Never print, log, commit or ask the user to paste a key.
-9. **Raw data is not committed** (`data/raw`, `data/fec/raw`, `data/statements_raw`, `data/billstatus`, `data/geo/raw`, `data/site_raw`, `data/sources/*.html`). Never `git add -f` them.
+9. **Official roll-call XML IS committed**, once per chamber and Congress, in `data/rollcalls/<house|senate>/<congress>/` (every member reads the same files; never copy them into a member folder). Other raw data is not committed (`data/raw`, `data/fec/raw`, `data/statements_raw`, `data/billstatus`, `data/geo/raw`, `data/site_raw`, `data/sources/*.html`). Never `git add -f` them. `fetch_votes` / `fetch_votes_senate` only add missing files to the shared folder.
 10. **Never edit generated files** (pages inside a member folder). Edit `site/`, then run `publish.py`.
 11. **Do not bypass bot protection** (senate.gov returns 403 to scripts). Stop at the first 403/429 and follow "Go slow" above; use another route or tell the user.
 

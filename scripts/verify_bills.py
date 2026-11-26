@@ -1,9 +1,12 @@
 """Checks bill claims against govinfo's official BILLSTATUS records (data/billstatus/), writes data/bill_checks.json.
 
 Each entry: bill, the role claimed (sponsor, cosponsor or none), and an optional public law that must be listed.
-Usage: python3 -I scripts/verify_bills.py
+A bill that checked out OK is not fetched again while its key (bill, role, law, House-passage flag, CHECKER_VERSION)
+is unchanged and the check is under recheckDays old (data/verify_policy.json, 15); see verify_all.py.
+Usage: python3 -I scripts/verify_bills.py [--fresh]
 """
-import json, os, sys, time, urllib.request
+import hashlib, json, os, sys, time, urllib.request
+from datetime import date
 import xml.etree.ElementTree as ET
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from config import M, ROOT
@@ -23,8 +26,20 @@ if not BILLS: print("no data/bills.json entries: nothing to check (list every bi
 # A bill id may carry its Congress ("118-s4991"); a bare one ("hr6644") is the 119th.
 split = lambda b: (b.split("-")[0], b.split("-")[1]) if "-" in b else ("119", b)
 url_for = lambda b: (lambda c, n: f"https://www.govinfo.gov/bulkdata/BILLSTATUS/{c}/{''.join(ch for ch in n if ch.isalpha())}/BILLSTATUS-{c}{n}.xml")(*split(b))
+CHECKER_VERSION = 1   # bump when this check is tightened, so earlier results are not reused
+_pol = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "verify_policy.json")
+RECHECK_DAYS = json.load(open(_pol)).get("recheckDays", 15) if os.path.exists(_pol) else 15
+_bc = os.path.join(ROOT, "data/bill_checks.json")
+prev = json.load(open(_bc)) if os.path.exists(_bc) and "--fresh" not in sys.argv else {}
+def fresh_enough(r, key):
+    try: age = (date.today() - date.fromisoformat(r.get("checked", ""))).days
+    except ValueError: return False
+    return r.get("key") == key and r.get("ok") and age < RECHECK_DAYS
 res = {}
 for b, role, law in BILLS:
+    key = hashlib.sha1(f"{CHECKER_VERSION}|{b}|{role}|{law}|{b in PASS}".encode()).hexdigest()[:16]
+    if b in prev and fresh_enough(prev[b], key):
+        res[b] = prev[b]; print("KEEP", b, "| checked", prev[b]["checked"]); continue
     p = os.path.join(OUT, b + ".xml")
     if not os.path.exists(p) or os.path.getsize(p) < 1000:
         try:
@@ -45,6 +60,6 @@ for b, role, law in BILLS:
     if b in PASS and not any(k in t for _, t in acts for k in PASS_RX): issues.append("no House passage action found")
     res[b] = {"ok": not issues, "title": bill.findtext("title"), "role": role, "introduced": bill.findtext("introducedDate"),
               "laws": laws, "latestAction": acts[-1][0] if acts else None, "latestText": acts[-1][1][:120] if acts else None,
-              "url": url_for(b), "issue": "; ".join(issues)}
+              "url": url_for(b), "issue": "; ".join(issues), "key": key, "checked": date.today().isoformat()}
     print("OK  " if not issues else "FAIL", b, "|", (res[b]["title"] or "")[:55], "| laws", laws, "| latest", res[b]["latestAction"], res[b]["issue"])
 json.dump(res, open(os.path.join(ROOT, "data/bill_checks.json"), "w"), indent=1)

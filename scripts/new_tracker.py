@@ -160,6 +160,23 @@ def build_config(tmpl, a, m):
     return cfg
 
 
+def register(a, m, rel):
+    """Append this member to members.json as live: false with stub pages, then refresh data/queue.json.
+    Text insertion keeps the file's layout, so the diff is the new entry only (members.json is append-only)."""
+    path = os.path.join(REPO, "members.json")
+    text = open(path, encoding="utf-8").read()
+    if any(x["path"] == rel for x in json.loads(text)["members"]): print(f"{rel} is already in members.json; left it alone."); return False
+    seat = "Senate" if a.chamber == "senate" else f"{a.state}-{a.district}"
+    entry = {"path": rel, "name": a.name, "party": "R" if a.party.upper().startswith("R") else "D", "seat": seat, "chamber": a.chamber,
+             "voteId": m["voteId"], "format": "shared", "pages": "stub", "portrait": "assets/portrait.jpg", "live": False, "eventsResearched": False}
+    body = "  {\n" + ",\n".join(f"   {json.dumps(k)}: {json.dumps(v)}" for k, v in entry.items()) + "\n  }"
+    end = text.rindex("}", 0, text.rindex("]"))              # closing brace of the last member
+    open(path, "w", encoding="utf-8").write(text[:end + 1] + ",\n" + body + text[end + 1:])
+    json.loads(open(path, encoding="utf-8").read())          # still valid JSON
+    subprocess.run([sys.executable, "-I", os.path.join(REPO, "scripts", "build_queue.py")], check=False)
+    return True
+
+
 def main():
     ap = argparse.ArgumentParser(description="Scaffold a new legislator tracker from the template.")
     ap.add_argument("--name", required=True, help='Full name as displayed, e.g. "Alex Padilla"')
@@ -178,6 +195,7 @@ def main():
     ap.add_argument("--press-path", help="Press-release list path on the official site")
     ap.add_argument("--campaign-site")
     ap.add_argument("--since", help="Sworn in for current service, YYYY-MM-DD")
+    ap.add_argument("--register", action="store_true", help="Also append the member to members.json (live: false, pages: stub) and refresh data/queue.json; only for a folder inside this repo")
     ap.add_argument("--congress", type=int, default=119)
     ap.add_argument("--cycles", help="FEC cycles, comma-separated even years (resolve_fec.py can rewrite them), default 2024,2026")
     a = ap.parse_args()
@@ -222,12 +240,18 @@ def main():
         except (OSError, subprocess.CalledProcessError) as e:
             git = f"git init failed ({e}); run `git init -b main` yourself"
 
+    registered = False
+    if a.register:
+        if not in_repo: sys.exit("--register needs --out inside this repo")
+        registered = register(a, m, os.path.relpath(out, REPO))
+
     senate = a.chamber == "senate"
     q = lambda s: f'"{s}"' if " " in s else s
     rel = os.path.relpath(out, REPO)
     run = (lambda s: f"./tr {rel} {s}") if in_repo else (lambda s: f"python3 -I scripts/{s}.py")
     steps = [
-        *([f"Add {rel} to members.json (format \"shared\", chamber, voteId, portrait \"assets/portrait.jpg\") with \"live\": false, so nothing publishes; remove the flag once run_checks passes."] if in_repo else [f"cd {q(out)}"]),
+        *([("Registered in members.json with \"live\": false and \"pages\": \"stub\" (nothing publishes); remove live: false once run_checks passes, then run build_queue.py."
+            if registered else f"Add {rel} to members.json (format \"shared\", \"pages\": \"stub\", chamber, voteId, portrait \"assets/portrait.jpg\") with \"live\": false, so nothing publishes (or re-run with --register); remove the flag once run_checks passes.")] if in_repo else [f"cd {q(out)}"]),
         "Check tracker.config.json: member.site/pressPath (guessed), inOfficeSince, committees, peers; fill the profile block as you research.",
         "Portrait (always): " + run("fetch_portrait") + ", then open assets/portrait.jpg to confirm it is the current official photo.",
         ("Votes: " + (run("fetch_votes_senate") if senate else (f"./tr {rel} fetch_votes" if in_repo else "./scripts/fetch_votes.sh"))
