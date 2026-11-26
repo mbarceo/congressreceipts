@@ -108,6 +108,34 @@
    "moneyTotal": 25000,
    "verdict": null,
    "checks": null
+  },
+  {
+   "name": "Robert Garcia",
+   "party": "D",
+   "seat": "CA-42",
+   "chamber": "house",
+   "path": "ca/garcia/",
+   "portrait": "ca/garcia/assets/portrait.jpg",
+   "leader": "Hakeem Jeffries",
+   "agree": 97.8,
+   "agreeN": 642,
+   "agreeSplit": 80.6,
+   "splitVotes": 76,
+   "splits": 14,
+   "unity": 98.5,
+   "rank": 31,
+   "dems": 215,
+   "money": {
+    "2024": 15000,
+    "2026": 4000
+   },
+   "moneyTotal": 19000,
+   "verdict": "Mixed",
+   "checks": {
+    "verified": 137,
+    "total": 137,
+    "checked": "2026-11-25"
+   }
   }
  ]
 }
