@@ -17,10 +17,10 @@
   "van_hollen_senators": 6,
   "checks_run": "2026-11-26",
   "check_counts": {
-    "name_near_race": 36,
-    "quote_verified": 5,
+    "name_near_race": 37,
+    "quote_verified": 6,
     "skipped_unreadable_site": 4,
-    "skipped_host_blocked": 5,
+    "skipped_host_blocked": 3,
     "name_found_only": 2,
     "no_url": 4
   },
@@ -441,9 +441,9 @@
         "tracker": "agrees",
         "wikipedia": "agrees"
       },
-      "check": "skipped_host_blocked",
-      "quotes_found": 0,
-      "quotes_total": 0
+      "check": "quote_verified",
+      "quotes_found": 1,
+      "quotes_total": 1
     },
     {
       "name": "Elissa Slotkin",
@@ -546,7 +546,7 @@
         "tracker": "agrees",
         "wikipedia": "agrees"
       },
-      "check": "skipped_host_blocked",
+      "check": "name_near_race",
       "quotes_found": 0,
       "quotes_total": 0
     },

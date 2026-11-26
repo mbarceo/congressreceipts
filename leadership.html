@@ -22,6 +22,8 @@
 .sen.tonly{border-left-style:dashed}
 .seg.tonly{opacity:.45}
 .tag{font-family:var(--f-mono);font-size:.66rem;color:var(--muted)}
+.vip{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;margin:4px 0 2px;font-size:.7rem;font-weight:600;color:var(--prog);background:var(--prog-bg);border-radius:999px;padding:1px 9px}
+.vip::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
 .hnums{display:flex;flex-direction:column;gap:6px}
 .cr-head{z-index:40} /* keep the site menu (opened on phones) above the section bar */
 section,#race{scroll-margin-top:calc(var(--crh,60px) + 56px)}
@@ -110,7 +112,7 @@ section,#race{scroll-margin-top:calc(var(--crh,60px) + 56px)}
     <span class="eyebrow">Leadership races · 120th Congress</span>
     <h1>Who will lead Democrats in Congress?</h1>
     <p class="lede">Senate Democrats choose a leader on December 1, and the House votes for Speaker on January 3. Both are counted only from what members have said in public, with a link to where they said it.</p>
-    <p class="notice" id="draft"><b>Draft.</b> Counts reflect what members have said in public as of November 26. Source links are still being confirmed; each tile shows how far.</p>
+    <p class="notice" id="draft"><b>Draft.</b> Counts reflect what members have said in public as of November 26. Source links are still being confirmed; tiles tagged Verification in progress haven't been checked yet.</p>
   </header>
 
   <div id="panel-senate" class="panel" role="tabpanel" aria-labelledby="tab-senate">
@@ -212,6 +214,9 @@ const G = {
 };
 const ORDER = ["schumer", "van_hollen", "against_schumer", "undecided", "no_statement", "ineligible"];
 const RC = {primary: "Own statement", news: "News report", list: "Secondhand list", stale: "Older than the race", none: "No source"};
+// Links the checker could not open (site blocks scripts, or can't be read by one) stay tagged until they are confirmed
+const UNCHECKED = new Set(["skipped_host_blocked", "blocked", "skipped_unreadable_site", "fetch_failed"]);
+const vipTag = c => UNCHECKED.has(c) ? '<span class="vip">Verification in progress</span>' : "";
 const CK = {
   quote_verified: "Quote found word for word",
   name_near_race: "Page covers this senator and the race",
@@ -297,7 +302,7 @@ fetch("data/leadership_senate.json").then(r => r.json()).then(D => {
       <div class="h"><span class="nm">${esc(m.name)}<small>${esc(m.state)} · ${role(m)}${m.is_candidate ? " · candidate" : ""}</small></span><span class="pos${g.none ? " none" : ""}">${g.label}</span></div>
       <p>${esc(m.summary)}</p>
       ${m.disputed ? `<div class="flag"><b>Sources disagree.</b> ${esc(m.note)}</div>` : m.note ? `<div class="note">${esc(m.note)}</div>` : ""}
-      <div class="rc">${rc}<small><span class="kind">${esc(meta)}</span></small>${agree(m.agreement) ? `<small>${esc(agree(m.agreement))}</small>` : ""}</div></article>`; }).join("");
+      <div class="rc">${rc}${vipTag(m.check)}<small><span class="kind">${esc(meta)}</span></small>${agree(m.agreement) ? `<small>${esc(agree(m.agreement))}</small>` : ""}</div></article>`; }).join("");
   if (D.checks_run) { const c = D.check_counts, n = k => c[k] || 0;
     const notChecked = n("skipped_host_blocked") + n("blocked") + n("skipped_unreadable_site") + n("fetch_failed");
     $("checknote").textContent = `On ${dlong(D.checks_run)} each link was opened by script. ${n("quote_verified")} quotes matched word for word and ${n("name_near_race")} pages cover the senator and the race. ${notChecked} links couldn't be read by script, and ${n("no_url")} senators have no source. A page that mentions a senator doesn't prove the position, so read the quote.`; }
@@ -382,7 +387,7 @@ fetch("data/leadership_house.json").then(r => r.json()).then(H => {
       <div class="h"><span class="nm">${esc(m.name)}<small>${esc(m.district)}</small></span><span class="pos">${g.label}</span></div>
       <p>${esc(m.summary)}</p>
       ${m.differs_from_tracker ? `<div class="note">Newer reports differ from the whip tracker.</div>` : ""}
-      <div class="rc">${rc}<small><span class="kind">${esc(kind)}</span></small></div></article>`; }).join("");
+      <div class="rc">${rc}${vipTag(m.check)}<small><span class="kind">${esc(kind)}</span></small></div></article>`; }).join("");
 
   const chips = [["all", "All"]].concat(HORDER.map(g => [g, `${HG[g].label} ${C[g].sourced + C[g].tracker_only}`]));
   $("hfilters").innerHTML = chips.map(([k, l], i) => `<button class="chip-btn" data-f="${k}" aria-pressed="${i === 0}">${l}</button>`).join("");
