@@ -13,6 +13,7 @@
 :root{--sc:#f0a65c;--vh:#6ea6e6;--ag:#c99ae6}
 /* Jump-to-section bar (styles from site.css), placed under the sticky site header */
 .topbar{justify-content:flex-end;top:var(--crh,60px)}
+.cr-head{z-index:40} /* keep the site menu (opened on phones) above the section bar */
 section,#race{scroll-margin-top:calc(var(--crh,60px) + 56px)}
 /* Tally: the count itself is the picture */
 .race{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -101,7 +102,7 @@ section,#race{scroll-margin-top:calc(var(--crh,60px) + 56px)}
     <h1>Who will lead Senate Democrats?</h1>
     <p class="lede">Chuck Schumer is asking for another term as leader, and Chris Van Hollen is challenging Schumer for the job. Senate Democrats choose by secret ballot, so this page counts only what senators have said in public and links to where they said it.</p>
     <div class="facts"><span>Vote: <b>December 1, 2026</b></span><span>Needed to win: <b>28 of 55 votes</b></span><span id="asof">Updated: <b>November 26, 2026</b></span></div>
-    <p class="notice" id="draft"><b>Draft.</b> The links come from news reports, the Democratic Whip Tracker and Wikipedia. This page is not listed in the site menu.</p>
+    <p class="notice" id="draft"><b>Draft.</b> Counts reflect what senators have said in public as of November 26. Source links are still being confirmed; each senator's tile shows how far.</p>
   </header>
 
   <div class="race" id="race" aria-live="polite"></div>
@@ -139,6 +140,7 @@ section,#race{scroll-margin-top:calc(var(--crh,60px) + 56px)}
       <div><b>Undecided or no statement</b>"Undecided" means the senator said they haven't chosen. "No statement found" means we found nothing on the race. Neither one is a guess about how they will vote.</div>
       <div><b>28 votes</b>Fifty-five Democratic senators can vote, so 28 is a majority. Some outlets count 29 of 56 because they include Klobuchar.</div>
       <div><b>Receipts</b>Each name links to the best source we found. "Own statement" is the senator's office or post. "News report" is a published story. "Secondhand list" is a news outlet's list. "Older than the race" is from before the election.</div>
+      <div id="checkcard"><b>How links were checked</b><span id="checknote">Each source link is being checked.</span></div>
       <div><b>Cross-checks</b>Each row is compared with the Democratic Whip Tracker and Wikipedia's whip count. Where they differ, the newest dated report decides and the row says so.</div>
     </div>
     <div class="dl"><a href="data/leadership_senate.json">Download the data (JSON)</a></div>
@@ -253,7 +255,7 @@ fetch("data/leadership_senate.json").then(r => r.json()).then(D => {
       <div class="rc">${rc}<small><span class="kind">${esc(meta)}</span></small>${agree(m.agreement) ? `<small>${esc(agree(m.agreement))}</small>` : ""}</div></article>`; }).join("");
   if (D.checks_run) { const c = D.check_counts, n = k => c[k] || 0;
     const notChecked = n("skipped_host_blocked") + n("blocked") + n("skipped_unreadable_site") + n("fetch_failed");
-    $("draft").innerHTML = `<b>Draft.</b> A script opened each source page on ${dlong(D.checks_run)}, one at a time. It found ${n("quote_verified")} quotes word for word and ${n("name_near_race")} pages that cover the senator and the race. ${notChecked} links could not be checked because the site blocks scripts or can't be read by one, and ${n("no_url")} senators have no source. A page that mentions a senator does not prove the position, so read the quote before relying on a row. This page is not listed in the site menu.`; }
+    $("checknote").textContent = `On ${dlong(D.checks_run)} each link was opened by script. ${n("quote_verified")} quotes matched word for word and ${n("name_near_race")} pages cover the senator and the race. ${notChecked} links couldn't be read by script, and ${n("no_url")} senators have no source. A page that mentions a senator doesn't prove the position, so read the quote.`; }
 
   // Filters
   const chips = [["all", "All"]].concat(ORDER.slice(0, 5).map(g => [g, `${G[g].label} ${D.counts[g]}`]));
