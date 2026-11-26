@@ -3,7 +3,7 @@
 The Backlog Queue page (`backlog.html`) lists every sitting member of Congress by state and chamber with the status of their tracker. It joins two files:
 
 - `data/congress.json`: the roster, built by `scripts/build_roster.py` from the `unitedstates/congress-legislators` current-members file.
-- `data/queue.json`: the status. Entries for tracked members are generated from `members.json` by `scripts/build_queue.py`; only entries for people with no tracker (`next`, `skip`) are edited by hand.
+- `data/queue.json`: the status. Entries for tracked members are generated from `members.json` by `scripts/build_queue.py`; only entries for people with no tracker (`skip`) are edited by hand.
 
 ## Tracked members: nothing to type
 
@@ -11,7 +11,7 @@ Run `python3 -I scripts/build_queue.py` after you add a member or change `live` 
 
 ## Change a status by hand (people with no tracker)
 
-Edit `data/queue.json` for `next` and `skip` only. Keys are **bioguide ids**.
+Edit `data/queue.json` for `skip` only. Keys are **bioguide ids**.
 
 ```json
 {
@@ -24,7 +24,6 @@ Edit `data/queue.json` for `next` and `skip` only. Keys are **bioguide ids**.
 |---|---|
 | `done` | Live (links to `url`) |
 | `progress` | In progress |
-| `next` | Next up |
 | `skip` | Skipped |
 | *(not listed)* | Not started |
 
