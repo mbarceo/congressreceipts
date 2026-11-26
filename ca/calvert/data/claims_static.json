@@ -1,0 +1,48 @@
+{
+ "_note": "Facts typed directly into the pages (not built from data). Each lists the exact terms that must appear on its source. 'check': 'clerk-committees' verifies committee seats against her own entry in the Clerk's member file instead of a text search.",
+ "claims": [
+  {
+   "page": "overview",
+   "section": "Header",
+   "text": "Committees: Appropriations; subcommittees Defense (chair) and Energy and Water Development and Related Agencies.",
+   "url": "https://clerk.house.gov/xml/lists/MemberData.xml",
+   "check": "clerk-committees",
+   "must": [
+    "Appropriations",
+    "Defense",
+    "Energy and Water Development and Related Agencies"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Header",
+   "text": "2024 general: Calvert 183,216 (51.7%), Rollins 171,229 (48.3%).",
+   "url": "https://elections.cdn.sos.ca.gov/sov/2024-general/sov/25-us-rep-congress.pdf",
+   "manual": "Read from the Statement of Vote PDF: 41st Congressional District, Will Rollins DEM 171,229 (48.3%), Ken Calvert REP 183,216 (51.7%)."
+  },
+  {
+   "page": "overview",
+   "section": "Offices",
+   "text": "Washington office: 2205 Rayburn House Office Building, (202) 225-1986.",
+   "url": "https://clerk.house.gov/xml/lists/MemberData.xml",
+   "must": [
+    "Ken Calvert",
+    "(202) 225-1986",
+    "RHOB",
+    "2205"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Header",
+   "text": "2026 general (unofficial, all 558 precincts): Calvert 132,518 (52.5%), Kim 120,098 (47.5%) in CA-40.",
+   "url": "https://api.sos.ca.gov/returns/us-rep/district/40",
+   "must": [
+    "Ken Calvert",
+    "132,518",
+    "Young Kim",
+    "120,098"
+   ]
+  }
+ ]
+}
