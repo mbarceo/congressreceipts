@@ -1,0 +1,140 @@
+{
+ "_note": "Hand-curated. Roll ids are chosen by reading the Clerk's titles; her vote is pulled from data/votes.json, never typed here. statementRx matches titles; statementPicks adds specific releases with a verbatim snippet found by 'rx' in the release's full text (data/statements_full.json). No editorial verdicts except the Israel card's headline, set in 'israel.headline'.",
+ "issues": [
+  {
+   "id": "tariffs",
+   "name": "Tariffs and emergency powers",
+   "intro": "Votes on whether Congress should end national emergencies the President declared to impose tariffs. On H.J.Res. 117 the question was a motion to table (set aside) the motion to discharge, so a Yea kept the House from voting on the resolution itself. H.J.Res. 72 would end the February 1, 2025 emergency behind the Canada tariffs.",
+   "since": "2025-01-03",
+   "statementRx": "tariff|trade",
+   "statementPicks": [],
+   "rolls": [
+    "2025-265",
+    "2026-065"
+   ]
+  },
+  {
+   "id": "health",
+   "name": "Health care and Medicaid",
+   "intro": "The 2025 reconciliation law, H.R. 1 (Public Law 119-21), which includes Medicaid changes, and two Republican health bills.",
+   "since": "2025-01-03",
+   "statementRx": "Medicaid|health|Obamacare|SNAP|Affordable Care",
+   "statementPicks": [],
+   "rolls": [
+    "2025-145",
+    "2025-190",
+    "2025-349",
+    "2025-362"
+   ]
+  },
+  {
+   "id": "spending",
+   "name": "Spending, rescissions and funding deadlines",
+   "intro": "Votes on the 2025 rescissions package, continuing resolutions and full-year appropriations.",
+   "since": "2025-01-03",
+   "statementRx": "budget|appropriation|shutdown|rescission|reconciliation|spending",
+   "statementPicks": [],
+   "rolls": [
+    "2025-070",
+    "2025-168",
+    "2025-281",
+    "2025-285",
+    "2026-045",
+    "2026-053",
+    "2026-272"
+   ]
+  },
+  {
+   "id": "immigration",
+   "name": "Immigration and the border",
+   "intro": "Final votes on immigration enforcement bills and on a bill to require Temporary Protected Status for Haiti.",
+   "since": "2025-01-03",
+   "statementRx": "border|immigra|illegal alien|ICE\\b|sanctuary|Laken",
+   "statementPicks": [],
+   "rolls": [
+    "2025-023",
+    "2025-264",
+    "2025-340",
+    "2026-094",
+    "2026-120"
+   ]
+  },
+  {
+   "id": "elections",
+   "name": "Elections and voting",
+   "intro": "Votes on proof-of-citizenship and noncitizen-voting bills. The Jan. 6, 2021 votes on the 2020 electoral count are on the Allegiance page.",
+   "since": "2025-01-03",
+   "statementRx": "SAVE Act|election|voter|ballot",
+   "statementPicks": [],
+   "rolls": [
+    "2025-102",
+    "2025-163"
+   ]
+  },
+  {
+   "id": "war-powers",
+   "name": "War powers, Ukraine and foreign policy",
+   "intro": "Every war powers resolution the House voted on this Congress, plus the Ukraine Support Act. A Yea on a war powers resolution directs the President to remove U.S. forces from the hostilities it names.",
+   "since": "2025-01-03",
+   "statementRx": "Ukraine|Iran|Venezuela|Russia|war powers|NATO|Israel",
+   "statementPicks": [],
+   "rolls": [
+    "2025-345",
+    "2025-346",
+    "2026-048",
+    "2026-085",
+    "2026-114",
+    "2026-170",
+    "2026-199",
+    "2026-232",
+    "2026-282",
+    "2026-307",
+    "2026-207"
+   ]
+  },
+  {
+   "id": "executive-power",
+   "name": "Executive power, courts and the federal workforce",
+   "intro": "Votes on limiting court orders, packaging disapproval of late-term regulations, and restoring collective bargaining for federal employees.",
+   "since": "2025-01-03",
+   "statementRx": "injunction|executive order|Schedule F|federal workforce|federal employee",
+   "statementPicks": [],
+   "rolls": [
+    "2025-041",
+    "2025-098",
+    "2025-332"
+   ]
+  },
+  {
+   "id": "life",
+   "name": "Abortion and family policy",
+   "intro": "Final votes on the Born-Alive Abortion Survivors Protection Act and two bills on pregnant and parenting women and students.",
+   "since": "2025-01-03",
+   "statementRx": "life|abortion|pro-life|Planned Parenthood|pregnan",
+   "statementPicks": [],
+   "rolls": [
+    "2025-027",
+    "2026-037",
+    "2026-047"
+   ]
+  },
+  {
+   "id": "epstein",
+   "name": "The Epstein files",
+   "intro": "The vote on the Epstein Files Transparency Act, which required release of the Justice Department's Epstein files after a discharge petition forced the vote.",
+   "since": "2025-01-03",
+   "statementRx": "Epstein",
+   "statementPicks": [],
+   "rolls": [
+    "2025-289"
+   ]
+  }
+ ],
+ "israel": {
+  "question": "Israel or Palestine?",
+  "headline": "TBD",
+  "headlineWhy": "Not used for this tracker until Republican-specific Israel items are researched.",
+  "summary": "",
+  "items": []
+ }
+}

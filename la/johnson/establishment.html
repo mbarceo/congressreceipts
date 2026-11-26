@@ -1,0 +1,166 @@
+<!doctype html>
+<!-- Built from site/establishment.html by scripts/publish.py. Edit site/establishment.html, not this copy. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="How closely Rep. Mike Johnson is tied to House Democratic leadership and the party machine, and where he acts on his own, from FEC filings, roll calls and party records.">
+<title>Johnson and the Establishment</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="site.css?v=86652562">
+<link rel="stylesheet" href="../../hub.css?v=91a2553f">
+<script src="site.js?v=06c10c5b"></script>
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+[hidden]{display:none!important}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.col{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.col h3{display:flex;align-items:center;gap:8px;margin:0}
+.col ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;font-size:.9rem}
+.lead-t td{font-size:.88rem;vertical-align:middle}
+.lead-t .num{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.pair{display:flex;align-items:center;gap:6px}
+.pair .b{height:10px;border-radius:0 3px 3px 0;min-width:2px}
+.pair .b.y24,.pair .b.old{background:var(--muted);opacity:.6} .pair .b.y26,.pair .b.cur{background:var(--accent)}
+.legend-inline{display:flex;gap:16px;font-size:.8rem;color:var(--muted);flex-wrap:wrap}
+.legend-inline i{display:inline-block;width:12px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.tl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.tl li{display:grid;grid-template-columns:96px 1fr;gap:4px 16px;padding:11px 0;border-top:1px solid var(--line);font-size:.9rem}
+.tl li>*{min-width:0}
+.tl .d{font-family:var(--f-mono);font-size:.75rem;color:var(--muted);padding-top:2px}
+.tag-e{font-size:.68rem;font-weight:700;border-radius:4px;padding:1px 7px;color:#fff;background:#2f6fb3;margin-right:6px}
+.tag-i{font-size:.68rem;font-weight:700;border-radius:4px;padding:1px 7px;color:#fff;background:#2f8f5b;margin-right:6px}
+.v-yea{color:var(--ok);background:var(--ok-bg)} .v-nay{color:var(--bad);background:var(--bad-bg)}
+.brk-t td{font-size:.85rem;vertical-align:top} .brk-t .qq{color:var(--muted);font-size:.8rem}
+.cat-t td{font-size:.86rem} .cat-t .num{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+@media (max-width:520px){.tl li{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="sitenav" aria-label="Pages"></nav>
+  <header id="top">
+    <div class="ident">
+      <img class="portrait" alt="" width="335" height="410">
+      <div class="ident-text">
+        <span class="eyebrow">Party ties · {{congressOrd}} Congress</span>
+        <h1>Allegiance to establishment Democrats</h1>
+      </div>
+    </div>
+    <p class="lede">How closely {{short}} is tied to {{chamberName}} Democratic leadership and the party machine, and where {{subj}} acts on {{poss}} own. Every item links to its source.</p>
+  </header>
+
+  <section id="verdict">
+    <div class="sec-head"><span class="eyebrow">The short answer</span><h2>Is {{short}} an establishment Democrat?</h2></div>
+    <div class="pp-card" id="verdictCard"><p class="muted">Loading…</p></div>
+    <div class="tally" id="tiles"></div>
+  </section>
+
+  <div id="trumpMount"></div>
+
+  <section id="indicators">
+    <div class="sec-head"><span class="eyebrow">Evidence</span><h2>The strongest signs each way</h2></div>
+    <div class="cols" id="cols"></div>
+  </section>
+
+  <section id="leaders">
+    <div class="sec-head">
+      <span class="eyebrow" id="leadEyebrow">Money from leadership</span>
+      <h2>What party leaders' committees gave {{obj}}</h2>
+      <p id="leadNote">Contributions from each leader's campaign committee, leadership PAC and joint fundraising committees, from FEC filings.</p>
+    </div>
+    <div class="legend-inline" id="leadLegend"><span><i style="background:var(--muted);opacity:.6"></i>2023–24 (first race)</span><span><i style="background:var(--accent)"></i>2025–26 (as an incumbent)</span></div>
+    <div class="handles"><table class="lead-t"><thead id="leadHead"><tr><th>Leader</th><th>Committees</th><th style="min-width:180px"></th><th style="text-align:right">2023–24</th><th style="text-align:right">2025–26</th></tr></thead><tbody id="leadRows"></tbody></table></div>
+  </section>
+
+  <section id="money">
+    <div class="sec-head">
+      <span class="eyebrow">PAC money by type</span>
+      <h2>Who {{poss}} PAC money comes from</h2>
+      <p>Direct contributions from PACs, sorted into types by name. Earmarked donations (individual gifts passed through a PAC, such as AIPAC's) are not included; see the <a href="money.html#pacs">Money page</a>.</p>
+    </div>
+    <div class="handles"><table class="cat-t"><thead id="catHead"><tr><th>Type</th><th style="text-align:right">2023–24</th><th style="text-align:right">2025–26</th></tr></thead><tbody id="catRows"></tbody></table></div>
+    <details><summary>List the corporate PACs</summary><p class="muted" id="corpList" style="font-size:.82rem"></p></details>
+  </section>
+
+  <section id="programs">
+    <div class="sec-head"><span class="eyebrow">The party machine</span><h2>Endorsements, leadership and key votes</h2></div>
+    <ul class="tl" id="timeline"></ul>
+  </section>
+
+  <section id="breaks">
+    <div class="sec-head">
+      <span class="eyebrow">Votes</span>
+      <h2>Every vote where {{subj}} split from <span class="leaderName">the party leader</span></h2>
+      <p id="breaksNote">From official roll calls, counting only votes where both cast Yea or Nay.</p>
+    </div>
+    <div class="tally" id="voteTiles"></div>
+    <div class="handles"><table class="brk-t"><thead><tr><th>Date</th><th>Bill and question</th><th>{{short}}</th><th class="leaderName">Leader</th></tr></thead><tbody id="breakRows"></tbody></table></div>
+  </section>
+
+  <section id="left">
+    <div class="sec-head"><span class="eyebrow">The progressive left</span><h2>Where {{subj}} sits on the left</h2></div>
+    <ul class="plain" id="leftList"></ul>
+  </section>
+
+  <footer>Sources: FEC filings, official roll-call records ({{voteSource}}), the {{stateName}} Democratic Party, the {{stateName}} Secretary of State, caucus membership pages, and {{poss}} campaign and official websites. PAC types are matched on committee names, so a few may be misclassified. This page is a nonpartisan summary, not an endorsement.</footer>
+</div>
+
+<script>
+TRACKER.ready.then(M => {
+const esc = s => String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const usd = n => "$" + Math.round(n).toLocaleString("en-US");
+const $ = id => document.getElementById(id);
+const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const ext = u => u.startsWith("http") ? ' target="_blank" rel="noopener"' : "";
+const src = list => list.map(([t,u])=>`<a class="src" href="${esc(u)}"${ext(u)}>${esc(t)}</a>`).join(" ");
+const vp = v => `<span class="pill ${v==="Yea"?"v-yea":"v-nay"}">${esc(v)}</span>`;
+const CAT = [["labor","Labor unions"],["ideological","Advocacy and ideological groups"],["corporate","Corporate PACs"],["trade","Trade and professional associations"],["candidate","Other candidates' campaigns"]];
+
+fetch("data/trump.json").then(r => r.ok ? r.json() : null).then(t => TRACKER.renderTrump(M, t)).catch(() => {});
+fetch("data/establishment.json").then(r=>r.json()).then(d=>{
+  $("verdictCard").innerHTML = `<div class="pp-head"><div class="pp-flag"><span class="pp-q">${esc(d.question)}</span><span class="pp-v">${esc(verdict(d.headline))}</span></div><p class="pp-sum">${esc(d.summary)}</p></div><p class="muted" style="margin:0;font-size:.82rem">${esc(d.why)}</p>`;
+  $("tiles").innerHTML = d.tiles.map(([n,l])=>`<div class="tile"><span class="n" style="font-size:1.5rem">${esc(n)}</span><span class="l">${esc(l)}</span></div>`).join("");
+  const col = (k,title,cls) => `<div class="col"><h3><span class="${cls}">${title}</span>${k==="e"?"Signs of alignment":"Signs of independence"}</h3><ol>${d.signs[k].map(s=>`<li>${esc(s.text)} ${src(s.src.map(([t,u])=>[t.replace("{ndiff}",d.nums.ndiff),u]))}</li>`).join("")}</ol></div>`;
+  $("cols").innerHTML = col("e","Establishment","tag-e") + col("i","Independent","tag-i");
+
+  // Cycles and leader labels come from data/establishment.json (built from tracker.config.json), so the page works
+  // for any chamber and any number of two-year cycles. Older builds without them fall back to the House 2024/2026 layout.
+  const CY = d.cycles || [{id:"2024",label:"2023–24 (first race)"},{id:"2026",label:"2025–26 (as an incumbent)"}];
+  const span = c => `${+c.id-1}–${c.id.slice(2)}`, cur = CY[CY.length-1];
+  if (d.leaderSection) { $("leadEyebrow").textContent = d.leaderSection.title; if (d.leaderSection.note) $("leadNote").textContent = d.leaderSection.note; }
+  if (d.cycles) {
+    $("leadLegend").innerHTML = `<span><i style="background:var(--muted);opacity:.6"></i>${CY.length===2?esc(CY[0].label):"Earlier cycles ("+CY.slice(0,-1).map(span).join(", ")+")"}</span><span><i style="background:var(--accent)"></i>${esc(cur.label)}</span>`;
+    $("leadHead").innerHTML = `<tr><th>Leader</th><th>Committees</th><th style="min-width:180px"></th>${CY.map(c=>`<th style="text-align:right" title="${esc(c.label)}">${span(c)}</th>`).join("")}</tr>`;
+    $("catHead").innerHTML = `<tr><th>Type</th>${CY.map(c=>`<th style="text-align:right" title="${esc(c.label)}">${span(c)}</th>`).join("")}</tr>`;
+  }
+  const L = d.leaders, yv = (l,c) => l["y"+c.id] || 0, tot = c => L.reduce((s,l)=>s+yv(l,c),0), max = Math.max(...L.flatMap(l=>CY.map(c=>yv(l,c))),1);
+  $("leadRows").innerHTML = L.map(l=>`<tr><td><b>${esc(l.name)}</b><br><span class="muted" style="font-size:.78rem">${esc(l.role)}</span></td>
+    <td class="muted" style="font-size:.78rem">${esc(l.committees.join("; ")||"None found")}</td>
+    <td>${CY.map((c,i)=>`<div class="pair"${i?' style="margin-top:3px"':""}><span class="b ${c===cur?"cur":"old"}" style="width:${(yv(l,c)/max*160).toFixed(0)}px" title="${span(c)}: ${usd(yv(l,c))}"></span></div>`).join("")}</td>
+    ${CY.map(c=>c===cur?`<td class="num"><b>${usd(yv(l,c))}</b></td>`:`<td class="num">${usd(yv(l,c))}</td>`).join("")}</tr>`).join("") +
+    `<tr><td><b>Total</b></td><td></td><td></td>${CY.map(c=>c===cur?`<td class="num"><b>${usd(tot(c))}</b></td>`:`<td class="num">${usd(tot(c))}</td>`).join("")}</tr>`;
+
+  $("catRows").innerHTML = CAT.map(([k,l])=>`<tr><td>${l}</td>${CY.map(c=>`<td class="num">${usd((d.categories[c.id]||{})[k]||0)}</td>`).join("")}</tr>`).join("");
+  $("corpList").textContent = span(cur) + ": " + (d.corporatePACs[cur.id]||[]).map(n=>n.replace(/\s*(POLITICAL ACTION COMMITTEE|PAC)\b.*$/i,"").trim()).join(" · ");
+
+  $("timeline").innerHTML = d.timeline.map(e=>{ const dt = new Date(e.d+"T12:00:00");
+    return `<li><span class="d">${MON[dt.getMonth()]} ${dt.getFullYear()}</span><span><span class="${e.k==="e"?"tag-e":"tag-i"}">${e.k==="e"?"Establishment":"Independent"}</span>${esc(e.text)} <a class="src" href="${esc(e.u)}"${ext(e.u)}>Source</a></span></li>`; }).join("");
+
+  const n = d.nums;
+  document.querySelectorAll(".leaderName").forEach(e=>e.textContent=n.leaderName);
+  $("breaksNote").textContent = `${M.Subj} and ${n.leaderName} both cast a Yea or Nay on ${n.both} roll calls in this Congress. They split on ${n.ndiff}, listed below with the official wording.`;
+  $("voteTiles").innerHTML = [[n.jeffAgree+"%","Same vote as "+n.leaderName],[n.unity+"%","Votes cast with the Democratic majority (rank "+n.rank+(n.tied?", tied,":"")+" of "+n.dems+")"],[n.jeffC+"%","Agreement with "+n.leaderName+" on the "+n.contested+" votes where Democrats split"],[n.gottC+"%","Agreement with centrist Josh Gottheimer on those votes"],[n.aocC+"%","Agreement with Alexandria Ocasio-Cortez on those votes"]].filter(([a])=>!/^(null|undefined)%$/.test(a))
+    .map(([a,b])=>`<div class="tile"><span class="n">${esc(a)}</span><span class="l">${esc(b)}</span></div>`).join("");
+  $("breakRows").innerHTML = d.jeffriesDiffs.map(x=>`<tr><td class="mono" style="white-space:nowrap;font-size:.78rem">${esc(x.date)}</td><td><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.bill)}</a> · ${esc(x.title)}<div class="qq">${esc(x.q)}</div></td><td>${vp(x.me)}</td><td>${vp(x.jeffries)}</td></tr>`).join("");
+
+  $("leftList").innerHTML = d.left.map(e=>`<li>${esc(e.text)}${e.u?` <a class="src" href="${esc(e.u)}"${ext(e.u)}>Source</a>`:""}</li>`).join("");
+}).catch(()=>{ $("verdictCard").innerHTML = '<p class="muted">The establishment data didn\'t load. Reload the page to try again.</p>'; });
+});
+</script>
+<script src="../../hub.js?v=e1b5e319" data-base="../../"></script>
+</body>
+</html>

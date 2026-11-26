@@ -1,0 +1,92 @@
+{
+ "party": "R",
+ "partyName": "Republicans",
+ "memberUnity": 99.8,
+ "memberRank": 1,
+ "memberTied": 0,
+ "dems": 221,
+ "medianUnity": 97.1,
+ "rolls": 689,
+ "contested": 94,
+ "israelRolls": 12,
+ "peers": [
+  {
+   "id": "S001176",
+   "name": "Steve Scalise",
+   "dist": "LA-1",
+   "group": "Party leadership",
+   "all": 99.6,
+   "n": 527,
+   "contested": 100.0,
+   "nc": 37,
+   "israel": 100.0,
+   "ni": 12,
+   "unity": 98.7
+  },
+  {
+   "id": "J000289",
+   "name": "Jim Jordan",
+   "dist": "OH-4",
+   "group": "Freedom Caucus and hardliners",
+   "all": 98.7,
+   "n": 519,
+   "contested": 80.6,
+   "nc": 36,
+   "israel": 100.0,
+   "ni": 12,
+   "unity": 96.4
+  },
+  {
+   "id": "H001052",
+   "name": "Andy Harris",
+   "dist": "MD-1",
+   "group": "Freedom Caucus and hardliners",
+   "all": 90.3,
+   "n": 516,
+   "contested": 38.9,
+   "nc": 36,
+   "israel": 100.0,
+   "ni": 11,
+   "unity": 86.8
+  },
+  {
+   "id": "M001184",
+   "name": "Thomas Massie",
+   "dist": "KY-4",
+   "group": "Often breaks with leadership",
+   "all": 77.8,
+   "n": 496,
+   "contested": 21.6,
+   "nc": 37,
+   "israel": 36.4,
+   "ni": 11,
+   "unity": 74.2
+  },
+  {
+   "id": "F000466",
+   "name": "Brian Fitzpatrick",
+   "dist": "PA-1",
+   "group": "Often breaks with leadership",
+   "all": 85.4,
+   "n": 526,
+   "contested": 78.9,
+   "nc": 38,
+   "israel": 66.7,
+   "ni": 12,
+   "unity": 83.8
+  },
+  {
+   "id": "B001298",
+   "name": "Don Bacon",
+   "dist": "NE-2",
+   "group": "Often breaks with leadership",
+   "all": 95.1,
+   "n": 530,
+   "contested": 86.8,
+   "nc": 38,
+   "israel": 100.0,
+   "ni": 12,
+   "unity": 93.6
+  }
+ ]
+}
