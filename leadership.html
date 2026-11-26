@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Where each Senate Democrat stands on the December 1 vote for leader, Schumer or Van Hollen, counted only from public statements, with a link to the source for every name.">
+<title>Senate Democratic leader vote · Congress Receipts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="site.css?v=86652562">
+<link rel="stylesheet" href="hub.css?v=91a2553f">
+<style>
+:root{--sc:#f0a65c;--vh:#6ea6e6;--ag:#c99ae6}
+/* Tally: the count itself is the picture */
+.race{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cand{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:8px;padding:16px 18px 14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.cand.sc{--c:var(--sc)} .cand.vh{--c:var(--vh)}
+.cand .top{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.cand h2{font-size:1.25rem}
+.cand .num{font-family:var(--f-display);font-weight:800;font-size:clamp(2.4rem,7vw,3.6rem);line-height:1;font-variant-numeric:tabular-nums;color:var(--c)}
+.cand .sub{font-size:.84rem;color:var(--muted);margin:0}
+.marks{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:flex-end;min-height:76px}
+.marks svg{display:block;overflow:visible}
+.marks line{stroke:var(--c);stroke-width:5;stroke-linecap:round}
+@media (max-width:640px){.race{grid-template-columns:1fr}}
+/* The 55 voters, one segment each, with the 28-vote line */
+.voters{display:flex;flex-direction:column;gap:8px}
+.bar-wrap{position:relative;padding-top:26px}
+.bar{display:flex;gap:2px}
+.seg{flex:1 1 0;min-width:0;height:28px;border:0;border-radius:3px;padding:0;cursor:pointer;background:var(--c)}
+.seg.none{background:transparent;border:1px dashed var(--muted)}
+.seg.und{background:color-mix(in srgb,var(--stall) 80%,transparent)}
+.seg:hover,.seg:focus-visible{outline:2px solid var(--ink);outline-offset:1px}
+.win{position:absolute;top:0;bottom:-4px;width:0;border-left:2px solid var(--ink);pointer-events:none}
+.win span{position:absolute;top:0;left:6px;white-space:nowrap;font-family:var(--f-mono);font-size:.74rem;color:var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.84rem}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:2px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+.legend i.none{background:transparent;border:1px dashed var(--muted)}
+/* Position pills */
+.pos{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;border-radius:999px;padding:2px 10px;white-space:nowrap;color:var(--c);background:color-mix(in srgb,var(--c) 16%,transparent)}
+.pos::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.pos.none{background:none;border:1px dashed var(--muted);color:var(--muted)}
+/* Where sources disagree */
+.dis{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.dis li{display:grid;grid-template-columns:minmax(150px,200px) 1fr;gap:4px 18px;padding:14px 0;border-top:1px solid var(--line)}
+.dis li:first-child{border-top:0}
+.dis b{font-family:var(--f-display);font-size:1rem}
+.dis .p{margin-top:4px}
+.dis p{margin:0;max-width:70ch}
+@media (max-width:640px){.dis li{grid-template-columns:1fr}}
+/* Ledger */
+.tbl{overflow-x:auto}
+table.t{width:100%;border-collapse:collapse;font-size:.88rem}
+table.t th{text-align:left;font-weight:600;color:var(--muted);font-size:.76rem;border-bottom:1px solid var(--line);padding:6px 10px 6px 0;vertical-align:bottom}
+table.t td{border-bottom:1px solid var(--line);padding:11px 10px 11px 0;vertical-align:top}
+table.t td.who b{display:block;font-family:var(--f-display);font-size:.98rem}
+table.t td.who small{color:var(--muted);font-size:.76rem}
+table.t td.say{max-width:46ch}
+table.t td.rc{min-width:190px}
+.rc a{font-weight:600}
+.rc small{display:block;color:var(--muted);font-size:.74rem;line-height:1.45}
+.rc .kind{font-family:var(--f-mono);font-size:.7rem}
+.flag{margin-top:8px;font-size:.8rem;background:var(--prog-bg);color:var(--ink);border-left:3px solid var(--prog);border-radius:0 6px 6px 0;padding:7px 10px}
+.flag b{color:var(--prog)}
+.note{margin-top:6px;font-size:.78rem;color:var(--muted)}
+tr.hit td{background:color-mix(in srgb,var(--accent) 14%,transparent);transition:background .3s}
+tr[hidden]{display:none}
+@media (max-width:700px){
+  table.t thead{display:none}
+  table.t,table.t tbody,table.t tr,table.t td{display:block;width:100%}
+  table.t tr{border-bottom:1px solid var(--line);padding:12px 0}
+  table.t td{border:0;padding:3px 0}
+  table.t td.say,table.t td.rc{max-width:none;min-width:0}
+}
+.defs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.defs div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:.86rem}
+.defs b{display:block;font-family:var(--f-display);margin-bottom:4px}
+.dl{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.88rem}
+</style>
+</head>
+<body data-page="leadership">
+<div class="wrap hub">
+  <header>
+    <span class="eyebrow">Leadership races · 120th Congress</span>
+    <h1>Who will lead Senate Democrats?</h1>
+    <p class="lede">Chuck Schumer is asking for another term as leader, and Chris Van Hollen is challenging Schumer for the job. Senate Democrats choose by secret ballot, so this page counts only what senators have said in public and links to where they said it.</p>
+    <div class="facts"><span>Vote: <b>December 1, 2026</b></span><span>Needed to win: <b>28 of 55 votes</b></span><span id="asof">Updated: <b>November 26, 2026</b></span></div>
+    <p class="notice" id="draft"><b>Draft.</b> The links come from news reports, the Democratic Whip Tracker and Wikipedia. This page is not listed in the site menu.</p>
+  </header>
+
+  <div class="race" id="race" aria-live="polite"></div>
+
+  <div class="voters">
+    <div class="bar-wrap"><div class="win" id="win"><span id="winlab">28 votes win</span></div><div class="bar" id="bar" role="group" aria-label="The 55 senators who can vote, one segment each"></div></div>
+    <div class="legend" id="legend"></div>
+    <p class="muted" style="font-size:.8rem;margin:0">Each segment is one senator. Select one to jump to their row. Amy Klobuchar (MN) is left out because she was elected governor and can't vote in this election.</p>
+  </div>
+
+  <section id="disputes" hidden>
+    <div class="sec-head"><span class="eyebrow">Where sources disagree</span><h2>Senators the sources don't agree on</h2>
+      <p>The Democratic Whip Tracker was last checked on November 20. Newer reports and Wikipedia's whip count changed several positions since. We list the position the newest source supports and show the disagreement.</p></div>
+    <ul class="dis" id="dis"></ul>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="eyebrow">Every senator</span><h2>Where each one stands, and the proof</h2></div>
+    <div class="filters" id="filters" role="group" aria-label="Filter by position"></div>
+    <div class="tbl"><table class="t"><thead><tr><th>Senator</th><th>Position</th><th>What they said</th><th>Receipt</th></tr></thead><tbody id="rows"></tbody></table></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="eyebrow">How this page counts</span><h2>The rules behind the numbers</h2></div>
+    <div class="defs">
+      <div><b>Only public statements</b>A senator counts for a candidate only if they said so in public, or put out a statement. A report that someone is "leaning" does not count.</div>
+      <div><b>The candidates</b>Schumer and Van Hollen each have one vote, and each is counted for themselves. The totals show senators plus the candidate.</div>
+      <div><b>Undecided or no statement</b>"Undecided" means the senator said they haven't chosen. "No statement found" means we found nothing on the race. Neither one is a guess about how they will vote.</div>
+      <div><b>28 votes</b>Fifty-five Democratic senators can vote, so 28 is a majority. Some outlets count 29 of 56 because they include Klobuchar.</div>
+      <div><b>Receipts</b>Each name links to the best source we found. "Own statement" is the senator's office or post. "News report" is a published story. "Secondhand list" is a news outlet's list. "Older than the race" is from before the election.</div>
+      <div><b>Cross-checks</b>Each row is compared with the Democratic Whip Tracker and Wikipedia's whip count. Where they differ, the newest dated report decides and the row says so.</div>
+    </div>
+    <div class="dl"><a href="data/leadership_senate.json">Download the data (JSON)</a></div>
+  </section>
+
+  <footer class="cr-foot muted" style="font-size:.82rem"><span>Compiled from news reports, the Democratic Whip Tracker (democraticwhiptracker.com) and Wikipedia's 2026 Senate Democratic Caucus leadership election page. The House Speaker vote on January 3, 2027 is next.</span></footer>
+</div>
+<script src="hub.js?v=e1b5e319"></script>
+<script>
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const $ = id => document.getElementById(id);
+const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const dshort = iso => { const [y, m, d] = iso.split("-").map(Number); return `${MON[m - 1]} ${d}`; };
+const dlong = iso => { const [y, m, d] = iso.split("-").map(Number); return `${["January","February","March","April","May","June","July","August","September","October","November","December"][m - 1]} ${d}, ${y}`; };
+const slug = n => n.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+const G = {
+  schumer: {label: "Backs Schumer", c: "var(--sc)"},
+  van_hollen: {label: "Backs Van Hollen", c: "var(--vh)"},
+  against_schumer: {label: "Won't back Schumer", c: "var(--ag)"},
+  undecided: {label: "Undecided", c: "var(--stall)"},
+  no_statement: {label: "No statement found", c: "var(--muted)", none: true},
+  ineligible: {label: "Can't vote", c: "var(--muted)", none: true}
+};
+const ORDER = ["schumer", "van_hollen", "against_schumer", "undecided", "no_statement", "ineligible"];
+const RC = {primary: "Own statement", news: "News report", list: "Secondhand list", stale: "Older than the race", none: "No source"};
+const CK = {
+  quote_verified: "Quote found word for word",
+  name_near_race: "Page covers this senator and the race",
+  name_found_only: "Senator named on page, race not nearby",
+  name_not_on_page: "Senator not found on page",
+  skipped_host_blocked: "Site blocked our checker; not checked",
+  blocked: "Site blocked our checker; not checked",
+  skipped_unreadable_site: "Can't be read by a script; not checked",
+  fetch_failed: "Page didn't load; not checked",
+  no_url: "", not_run: "Not checked"
+};
+const SPECIAL = {"Catherine Cortez Masto": "Cortez Masto", "Lisa Blunt Rochester": "Blunt Rochester"};
+const last = n => SPECIAL[n] || n.split(" ").slice(-1)[0];
+const role = m => m.role === "senator_elect" ? "senator-elect" : m.role === "ineligible" ? "senator" : "senator";
+
+// One tally gate is four strokes crossed by a fifth; leftovers are single strokes.
+const gate = () => `<svg width="64" height="72" viewBox="0 0 64 72" aria-hidden="true"><line x1="9" y1="8" x2="9" y2="64"/><line x1="23" y1="8" x2="23" y2="64"/><line x1="37" y1="8" x2="37" y2="64"/><line x1="51" y1="8" x2="51" y2="64"/><line x1="2" y1="54" x2="58" y2="18"/></svg>`;
+const strokes = n => `<svg width="${14 * n + 4}" height="72" viewBox="0 0 ${14 * n + 4} 72" aria-hidden="true">${Array.from({length: n}, (_, i) => `<line x1="${9 + 14 * i}" y1="8" x2="${9 + 14 * i}" y2="64"/>`).join("")}</svg>`;
+const marks = n => gate().repeat(Math.floor(n / 5)) + (n % 5 ? strokes(n % 5) : "");
+
+fetch("data/leadership_senate.json").then(r => r.json()).then(D => {
+  const M = D.members;
+  $("asof").innerHTML = `Updated: <b>${dlong(D.as_of)}</b>`;
+  const by = g => M.filter(m => m.group === g);
+  const voters = M.filter(m => m.group !== "ineligible");
+
+  // Hero: the two tallies
+  $("race").innerHTML = [["sc", "Chuck Schumer", D.schumer_total, D.schumer_senators, "schumer"], ["vh", "Chris Van Hollen", D.van_hollen_total, D.van_hollen_senators, "van_hollen"]]
+    .map(([k, name, tot, sen, g]) => `<div class="cand ${k}"><div class="top"><h2>${name}</h2><span class="num">${tot}</span></div>
+      <div class="marks" role="img" aria-label="${tot} tally marks">${marks(tot)}</div>
+      <p class="sub">${sen} other senators have said they will vote for ${k === "sc" ? "Schumer" : "Van Hollen"}, plus the candidate's own vote.</p></div>`).join("");
+
+  // The 55 voters as segments, with the line where 28 falls
+  const seq = ORDER.slice(0, 5).flatMap(g => by(g));
+  $("bar").innerHTML = seq.map(m => { const g = G[m.group];
+    return `<button class="seg${m.group === "no_statement" ? " none" : ""}${m.group === "undecided" ? " und" : ""}" style="--c:${g.c}" data-s="${slug(m.name)}" title="${esc(m.name)}: ${g.label}" aria-label="${esc(m.name)}: ${g.label}"></button>`; }).join("");
+  $("win").style.left = `calc(${D.votes_to_win / D.eligible_voters * 100}% - 1px)`;
+  $("winlab").textContent = `${D.votes_to_win} votes win`;
+  $("legend").innerHTML = ORDER.slice(0, 5).map(g => `<span style="--c:${G[g].c}"><i${G[g].none ? ' class="none"' : ""}></i>${G[g].label} <b>${D.counts[g]}</b></span>`).join("");
+
+  // Where sources disagree
+  const dis = M.filter(m => m.disputed);
+  if (dis.length) { $("disputes").hidden = false;
+    $("dis").innerHTML = dis.map(m => `<li style="--c:${G[m.group].c}"><div><b>${esc(m.name)}</b><div class="p"><span class="pos">${G[m.group].label}</span></div></div>
+      <p>${esc(m.summary)} ${esc(m.note)} ${m.source_url ? `<a href="${esc(m.source_url)}" target="_blank" rel="noopener">${esc(m.source_outlet)}, ${dshort(m.source_date)}</a>` : ""}</p></li>`).join(""); }
+
+  // The ledger
+  const rows = ORDER.flatMap(g => by(g).sort((a, b) => (b.is_candidate - a.is_candidate) || last(a.name).localeCompare(last(b.name))));
+  const agree = a => { if (a.tracker === "candidate") return "";
+    const t = a.tracker === "agrees" ? "agrees" : "differs", w = a.wikipedia;
+    if (w == null) return `Whip tracker ${t}`;
+    return t === (w === "agrees" ? "agrees" : "differs") ? `Whip tracker and Wikipedia ${t.replace(/s$/, "")}` : `Whip tracker ${t}; Wikipedia ${w === "agrees" ? "agrees" : "differs"}`; };
+  $("rows").innerHTML = rows.map(m => { const g = G[m.group];
+    const rc = m.source_url ? `<a href="${esc(m.source_url)}" target="_blank" rel="noopener">${esc(m.source_outlet)}, ${dshort(m.source_date)}</a>` : `<span class="muted">No source</span>`;
+    return `<tr id="r-${slug(m.name)}" data-g="${m.group}" style="--c:${g.c}">
+      <td class="who"><b>${esc(m.name)}</b><small>${esc(m.state)} · ${role(m)}${m.is_candidate ? " · candidate" : ""}</small></td>
+      <td><span class="pos${g.none ? " none" : ""}">${g.label}</span></td>
+      <td class="say">${esc(m.summary)}${m.disputed ? `<div class="flag"><b>Sources disagree.</b> ${esc(m.note)}</div>` : m.note ? `<div class="note">${esc(m.note)}</div>` : ""}</td>
+      <td class="rc">${rc}<small><span class="kind">${RC[m.receipt]}</span></small>${CK[m.check] ? `<small>${CK[m.check]}</small>` : ""}<small>${esc(agree(m.agreement))}</small></td></tr>`; }).join("");
+  if (D.checks_run) { const c = D.check_counts, n = k => c[k] || 0;
+    const notChecked = n("skipped_host_blocked") + n("blocked") + n("skipped_unreadable_site") + n("fetch_failed");
+    $("draft").innerHTML = `<b>Draft.</b> A script opened each source page on ${dlong(D.checks_run)}, one at a time. It found ${n("quote_verified")} quotes word for word and ${n("name_near_race")} pages that cover the senator and the race. ${notChecked} links could not be checked because the site blocks scripts or can't be read by one, and ${n("no_url")} senators have no source. A page that mentions a senator does not prove the position, so read the quote before relying on a row. This page is not listed in the site menu.`; }
+
+  // Filters
+  const chips = [["all", "All"]].concat(ORDER.slice(0, 5).map(g => [g, `${G[g].label} ${D.counts[g]}`]));
+  $("filters").innerHTML = chips.map(([k, l], i) => `<button class="chip-btn" data-f="${k}" aria-pressed="${i === 0}">${l}</button>`).join("");
+  const apply = f => { document.querySelectorAll("#filters .chip-btn").forEach(b => b.setAttribute("aria-pressed", b.dataset.f === f));
+    document.querySelectorAll("#rows tr").forEach(tr => tr.hidden = !(f === "all" || tr.dataset.g === f)); };
+  $("filters").addEventListener("click", e => { const b = e.target.closest(".chip-btn"); if (b) apply(b.dataset.f); });
+
+  // Segment -> row
+  $("bar").addEventListener("click", e => { const s = e.target.closest(".seg"); if (!s) return;
+    apply("all"); const tr = $("r-" + s.dataset.s); if (!tr) return;
+    tr.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center"});
+    tr.classList.add("hit"); setTimeout(() => tr.classList.remove("hit"), 1600); });
+}).catch(() => { $("rows").innerHTML = '<tr><td colspan="4" class="muted">The count didn\'t load. Reload the page to try again.</td></tr>'; });
+</script>
+</body>
+</html>
