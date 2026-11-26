@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Where each Senate Democrat stands on the December 1 vote for leader, Schumer or Van Hollen, counted only from public statements, with a link to the source for every name.">
-<title>Senate Democratic leader vote · Congress Receipts</title>
+<meta name="description" content="Where Senate and House Democrats stand in the leadership races: the December 1 Senate leader vote and the January 3 House Speaker vote, counted only from public statements, with a link to the source for every name.">
+<title>Leadership races · Congress Receipts</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="site.css?v=86652562">
@@ -12,7 +12,17 @@
 <style>
 :root{--sc:#f0a65c;--vh:#6ea6e6;--ag:#c99ae6}
 /* Jump-to-section bar (styles from site.css), placed under the sticky site header */
-.topbar{justify-content:flex-end;top:var(--crh,60px)}
+.topbar{justify-content:space-between;top:var(--crh,60px)}
+.tabs{display:flex;gap:4px}
+.tabs button{font:inherit;font-size:.88rem;font-weight:600;color:var(--muted);background:none;border:0;border-radius:999px;padding:7px 16px;cursor:pointer}
+.tabs button:hover{color:var(--ink)}
+.tabs button[aria-selected="true"]{background:var(--accent);color:var(--on-accent)}
+.panel{display:flex;flex-direction:column;gap:56px;scroll-margin-top:calc(var(--crh,60px) + 56px)}
+.cand.hj{--c:var(--accent)}
+.sen.tonly{border-left-style:dashed}
+.seg.tonly{opacity:.45}
+.tag{font-family:var(--f-mono);font-size:.66rem;color:var(--muted)}
+.hnums{display:flex;flex-direction:column;gap:6px}
 .cr-head{z-index:40} /* keep the site menu (opened on phones) above the section bar */
 section,#race{scroll-margin-top:calc(var(--crh,60px) + 56px)}
 /* Tally: the count itself is the picture */
@@ -96,15 +106,16 @@ section,#race{scroll-margin-top:calc(var(--crh,60px) + 56px)}
 </head>
 <body data-page="leadership">
 <div class="wrap hub">
-  <div class="topbar" id="jumpbar"><details class="jump" id="jump"><summary>Jump to section</summary><div class="jump-list" id="jumplist" role="list"></div></details></div>
+  <div class="topbar" id="jumpbar"><div class="tabs" role="tablist" aria-label="Choose a race"><button type="button" role="tab" id="tab-senate" aria-controls="panel-senate" aria-selected="true">Senate</button><button type="button" role="tab" id="tab-house" aria-controls="panel-house" aria-selected="false" tabindex="-1">House</button></div><details class="jump" id="jump"><summary>Jump to section</summary><div class="jump-list" id="jumplist" role="list"></div></details></div>
   <header>
     <span class="eyebrow">Leadership races · 120th Congress</span>
-    <h1>Who will lead Senate Democrats?</h1>
-    <p class="lede">Chuck Schumer is asking for another term as leader, and Chris Van Hollen is challenging Schumer for the job. Senate Democrats choose by secret ballot, so this page counts only what senators have said in public and links to where they said it.</p>
-    <div class="facts"><span>Vote: <b>December 1, 2026</b></span><span>Needed to win: <b>28 of 55 votes</b></span><span id="asof">Updated: <b>November 26, 2026</b></span></div>
-    <p class="notice" id="draft"><b>Draft.</b> Counts reflect what senators have said in public as of November 26. Source links are still being confirmed; each senator's tile shows how far.</p>
+    <h1>Who will lead Democrats in Congress?</h1>
+    <p class="lede">Senate Democrats choose a leader on December 1, and the House votes for Speaker on January 3. Both are counted only from what members have said in public, with a link to where they said it.</p>
+    <p class="notice" id="draft"><b>Draft.</b> Counts reflect what members have said in public as of November 26. Source links are still being confirmed; each tile shows how far.</p>
   </header>
 
+  <div id="panel-senate" class="panel" role="tabpanel" aria-labelledby="tab-senate">
+  <div class="facts"><span>Vote: <b>December 1, 2026</b></span><span>Needed to win: <b>28 of 55 votes</b></span><span>Updated: <b>November 26, 2026</b></span></div>
   <div class="race" id="race" aria-live="polite"></div>
 
   <div class="voters">
@@ -146,7 +157,45 @@ section,#race{scroll-margin-top:calc(var(--crh,60px) + 56px)}
     <div class="dl"><a href="data/leadership_senate.json">Download the data (JSON)</a></div>
   </section>
 
-  <footer class="cr-foot muted" style="font-size:.82rem"><span>Compiled from news reports, the Democratic Whip Tracker (democraticwhiptracker.com) and Wikipedia's 2026 Senate Democratic Caucus leadership election page. The House Speaker vote on January 3, 2027 is next.</span></footer>
+    </div>
+
+  <div id="panel-house" class="panel" role="tabpanel" aria-labelledby="tab-house" hidden>
+    <div class="facts"><span>Caucus vote: <b>November 18, 2026</b> (done)</span><span>Floor vote: <b>January 3, 2027</b></span><span>Needed to win: <b>a majority of those voting</b> (218 if all 435 vote)</span><span>Updated: <b>November 26, 2026</b></span></div>
+    <div class="race" id="hrace"></div>
+    <div class="voters">
+      <div class="bar-wrap" style="padding-top:0"><div class="bar" id="hbar" role="group" aria-label="The 107 House Democrats named on this page, one segment each"></div></div>
+      <div class="legend" id="hlegend"></div>
+      <p class="muted" style="font-size:.8rem;margin:0" id="hbarnote"></p>
+    </div>
+
+    <section id="hdisputes" hidden>
+      <div class="sec-head"><span class="eyebrow">Where sources disagree</span><h2>Members the sources don't agree on</h2>
+        <p>The Democratic Whip Tracker was last checked on November 20. Newer reports changed several positions since, and some members who voted no now say they hope to support Jeffries. We list the position the newest source supports and show the disagreement.</p></div>
+      <ul class="dis" id="hdis"></ul>
+    </section>
+
+    <section id="hledger">
+      <div class="sec-head"><span class="eyebrow">Every member named</span><h2>Where each one stands, and the proof</h2></div>
+      <div class="filters" id="hfilters" role="group" aria-label="Filter by position"></div>
+      <div class="tiles" id="hrows"></div>
+    </section>
+
+    <section id="hmethod">
+      <div class="sec-head"><span class="eyebrow">How this tab counts</span><h2>The rules behind the numbers</h2></div>
+      <div class="defs">
+        <div><b>Only public statements</b>A member counts for a position only if a source shows they said it or voted that way. Members the whip tracker lists, but where we found no statement of their own, are counted separately and shown with a dashed edge.</div>
+        <div><b>Caucus and floor votes</b>The November 18 caucus vote was a secret ballot, 251 to 11. Individual votes are known only when members say so. The January 3 floor vote is a public roll call.</div>
+        <div><b>218 votes</b>Jeffries needs a majority of those voting. If all 435 members vote, that is 218.</div>
+        <div><b>No public position</b>The tracker counts 162 more House Democrats with no public position. They are counted but not named here.</div>
+        <div><b>Receipts</b>Each name links to the best source we found. "Own statement" is the member's office or post. "News report" is a published story. "Older than the race" is from before the election.</div>
+        <div><b>How links were checked</b>The links on this tab have not been opened by script yet, so quotes and dates still need a final check.</div>
+        <div><b>Cross-checks</b>Each position starts from the Democratic Whip Tracker (last checked November 20) and is compared with news reports. Where newer reports differ, they decide and the tile says so.</div>
+      </div>
+      <div class="dl"><a href="data/leadership_house.json">Download the data (JSON)</a></div>
+    </section>
+  </div>
+
+  <footer class="cr-foot muted" style="font-size:.82rem"><span>Compiled from news reports, the Democratic Whip Tracker (democraticwhiptracker.com) and, for the Senate, Wikipedia's 2026 Senate Democratic Caucus leadership election page.</span></footer>
 </div>
 <script src="hub.js?v=e1b5e319"></script>
 <script>
@@ -215,7 +264,6 @@ fetch("data/leadership_senate_polls.json").then(r => r.json()).then(P => {
 
 fetch("data/leadership_senate.json").then(r => r.json()).then(D => {
   const M = D.members;
-  $("asof").innerHTML = `Updated: <b>${dlong(D.as_of)}</b>`;
   const by = g => M.filter(m => m.group === g);
   const voters = M.filter(m => m.group !== "ineligible");
 
@@ -279,7 +327,8 @@ fetch("data/leadership_senate.json").then(r => r.json()).then(D => {
   const off = () => document.documentElement.style.setProperty("--crh", (head ? head.offsetHeight : 60) + "px");
   off(); addEventListener("resize", off);
   window.buildJump = () => {
-    const items = [{el: $("race"), e: "Tally", t: "The count"}].concat([...document.querySelectorAll("section")]
+    const panel = document.querySelector(".panel:not([hidden])");
+    const items = [{el: panel.querySelector(".race"), e: "Tally", t: "The count"}].concat([...panel.querySelectorAll("section")]
       .filter(x => x.offsetParent !== null && x.querySelector("h2"))
       .map(x => ({el: x, e: (x.querySelector(".eyebrow") || {}).textContent, t: x.querySelector("h2").textContent})));
     list.innerHTML = "";
@@ -295,6 +344,72 @@ fetch("data/leadership_senate.json").then(r => r.json()).then(D => {
   document.addEventListener("keydown", e => { if (e.key === "Escape") menu.open = false; });
   buildJump();
 })();
+
+// House tab: same tile design, positions toward Jeffries
+const HG = {
+  backs: {label: "Backs Jeffries", c: "var(--accent)"},
+  leaning: {label: "Leaning Jeffries", c: "var(--prog)"},
+  undecided: {label: "Undecided", c: "var(--stall)"},
+  opposed: {label: "Opposed", c: "var(--ag)"}
+};
+const HORDER = ["backs", "leaning", "undecided", "opposed"];
+const dsrc = iso => !iso ? "" : iso.length === 7 ? `${MON[+iso.slice(5) - 1]} ${iso.slice(0, 4)}` : dshort(iso);
+fetch("data/leadership_house.json").then(r => r.json()).then(H => {
+  const M = H.members, C = H.counts;
+  $("hrace").innerHTML = `
+    <div class="cand hj"><div class="top"><h2>Hakeem Jeffries</h2><span class="num">${H.caucus.yes}\u2013${H.caucus.no}</span></div>
+      <div class="hnums"><div class="pb" role="img" aria-label="${H.caucus.yes} yes, ${H.caucus.no} no">${seg(H.caucus.yes, "var(--accent)", "", H.caucus.yes + " yes")}${seg(Math.max(H.caucus.no * 3, 14), "var(--ag)", "", H.caucus.no + " no")}</div></div>
+      <p class="sub">House Democrats nominated Jeffries for Speaker by secret ballot on ${dlong(H.caucus.date)}, with no declared challenger. <a href="${esc(H.caucus.source_url)}" target="_blank" rel="noopener">${esc(H.caucus.source_outlet)}</a></p></div>
+    <div class="cand hj"><div class="top"><h2>Members who back Jeffries in public</h2><span class="num">${C.backs.sourced}</span></div>
+      <div class="marks" role="img" aria-label="${C.backs.sourced} tally marks">${marks(C.backs.sourced)}</div>
+      <p class="sub">${C.backs.tracker_only} more are listed by the whip tracker without a statement we could find. Names not shown here have no public position.</p></div>`;
+
+  $("hbar").innerHTML = M.map(m => `<button class="seg${m.tracker_only ? " tonly" : ""}" style="--c:${HG[m.group].c}" data-s="${slug(m.name)}" title="${esc(m.name)}: ${HG[m.group].label}${m.tracker_only ? " (tracker only)" : ""}" aria-label="${esc(m.name)}: ${HG[m.group].label}${m.tracker_only ? " (tracker only)" : ""}"></button>`).join("");
+  $("hlegend").innerHTML = HORDER.map(g => `<span style="--c:${HG[g].c}"><i></i>${HG[g].label} <b>${C[g].sourced}</b>${C[g].tracker_only ? ` <span class="tag">+${C[g].tracker_only} tracker only</span>` : ""}</span>`).join("")
+    + `<span><i class="none"></i>No public position <b>${H.no_public_position}</b> <span class="tag">not named</span></span>`;
+  $("hbarnote").textContent = `Each segment is one named House Democrat; faded segments are tracker only. Select one to jump to the tile. The bar leaves out the candidate and the ${H.no_public_position} Democrats with no public position.`;
+
+  const dis = M.filter(m => m.disputed);
+  if (dis.length) { $("hdisputes").hidden = false;
+    $("hdis").innerHTML = dis.map(m => `<li style="--c:${HG[m.group].c}"><div><b>${esc(m.name)}</b><div class="p"><span class="pos">${HG[m.group].label}</span></div></div>
+      <p>${esc(m.dispute_note)} ${m.source_url ? `<a href="${esc(m.source_url)}" target="_blank" rel="noopener">${esc(m.source_outlet)}${m.source_date ? ", " + dsrc(m.source_date) : ""}</a>` : ""}</p></li>`).join(""); }
+
+  $("hrows").innerHTML = M.map(m => { const g = HG[m.group];
+    const rc = m.source_url ? `<a href="${esc(m.source_url)}" target="_blank" rel="noopener">${esc(m.source_outlet)}${m.source_date ? ", " + dsrc(m.source_date) : ""}</a>` : `<span class="muted">No statement found</span>`;
+    const kind = m.tracker_only ? "Listed by the whip tracker" : RC[m.receipt];
+    return `<article class="sen${m.tracker_only ? " tonly" : ""}" id="hr-${slug(m.name)}" data-g="${m.group}" style="--c:${g.c}">
+      <div class="h"><span class="nm">${esc(m.name)}<small>${esc(m.district)}</small></span><span class="pos">${g.label}</span></div>
+      <p>${esc(m.summary)}</p>
+      ${m.differs_from_tracker ? `<div class="note">Newer reports differ from the whip tracker.</div>` : ""}
+      <div class="rc">${rc}<small><span class="kind">${esc(kind)}</span></small></div></article>`; }).join("");
+
+  const chips = [["all", "All"]].concat(HORDER.map(g => [g, `${HG[g].label} ${C[g].sourced + C[g].tracker_only}`]));
+  $("hfilters").innerHTML = chips.map(([k, l], i) => `<button class="chip-btn" data-f="${k}" aria-pressed="${i === 0}">${l}</button>`).join("");
+  const happly = f => { document.querySelectorAll("#hfilters .chip-btn").forEach(b => b.setAttribute("aria-pressed", b.dataset.f === f));
+    document.querySelectorAll("#hrows .sen").forEach(t => t.hidden = !(f === "all" || t.dataset.g === f)); };
+  $("hfilters").addEventListener("click", e => { const b = e.target.closest(".chip-btn"); if (b) happly(b.dataset.f); });
+  $("hbar").addEventListener("click", e => { const x = e.target.closest(".seg"); if (!x) return;
+    happly("all"); const t = $("hr-" + x.dataset.s); if (!t) return;
+    t.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center"});
+    t.classList.add("hit"); setTimeout(() => t.classList.remove("hit"), 1600); });
+  window.buildJump && buildJump();
+}).catch(() => { $("hrows").innerHTML = '<p class="muted">The House count didn\'t load. Reload the page to try again.</p>'; });
+
+// Tabs: Senate and House on one page; the hash (#senate, #house) picks the tab so other pages can link straight to a race
+const TABS = {senate: "panel-senate", house: "panel-house"};
+function showTab(k, user) {
+  for (const [key, id] of Object.entries(TABS)) { $(id).hidden = key !== k; const t = $("tab-" + key); t.setAttribute("aria-selected", key === k); t.tabIndex = key === k ? 0 : -1; }
+  document.title = (k === "house" ? "House Speaker race" : "Senate leader race") + " · Leadership races · Congress Receipts";
+  if (user) { history.replaceState(null, "", "#" + k);
+    const top = $(TABS[k]).getBoundingClientRect().top + scrollY - (parseInt(getComputedStyle(document.documentElement).getPropertyValue("--crh")) || 60) - 60;
+    if (scrollY > top) scrollTo(0, Math.max(0, top)); }
+  window.buildJump && buildJump();
+}
+document.querySelector(".tabs").addEventListener("click", e => { const b = e.target.closest("[role=tab]"); if (b) showTab(b.id.replace("tab-", ""), true); });
+document.querySelector(".tabs").addEventListener("keydown", e => { if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+  const k = e.key === "ArrowRight" ? "house" : "senate"; showTab(k, true); $("tab-" + k).focus(); });
+addEventListener("hashchange", () => showTab(location.hash === "#house" ? "house" : "senate", false));
+showTab(location.hash === "#house" ? "house" : "senate", false);
 
 // Back-to-top button: same as the member pages
 (() => { const top = document.createElement("button");
