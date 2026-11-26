@@ -1,5 +1,5 @@
 {
- "_note": "Public status for the Tracker Queue page (roster.html), keyed by bioguide ID. status: done | progress | next | skip. Anyone not listed is 'todo'. Add a url once a tracker is live.",
+ "_note": "Public status for the Tracker Queue page (backlog.html), keyed by bioguide ID. status: done | progress | skip. Anyone not listed is 'Not started'. Add a url once a tracker is live.",
  "T000491": {"status": "done", "url": "https://congressreceipts.org/ca/tran/"},
  "R000620": {"status": "done", "url": "https://congressreceipts.org/ca/rivas/"},
  "P000145": {"status": "done", "url": "https://congressreceipts.org/ca/padilla/"},
