@@ -2,14 +2,14 @@
 """Scaffolds a new tracker folder from this template for one member of Congress.
 
 Copies the template, writes tracker.config.json with the member's identity and display fields (the pages read
-them at runtime through site.js), fills README.md / SCAFFOLD.md and each page's <title> and description, runs
-`git init -b main`, and prints the next steps. Refuses to write into an existing non-empty folder.
+them at runtime through site.js), bakes the member into the data skeletons, and prints the next steps (runs `git init` only outside this repo). Refuses to write into an existing non-empty folder.
 
-Usage (run from anywhere; the template is this script's parent folder):
+Usage (from the repo root; the skeletons come from template/, the pages from site/ via scripts/publish.py):
   python3 -I scripts/new_tracker.py --name "Alex Padilla" --chamber senate --state CA --bioguide P000145 \
-      --vote-id S413 --pronouns he --out ~/"alex padilla tracker"
+      --vote-id S413 --pronouns he --out ca/padilla
   python3 -I scripts/new_tracker.py --name "Luz Rivas" --chamber house --state CA --district 29 --bioguide R000620 \
-      --pronouns she --area "San Fernando Valley" --out ~/"luz rivas tracker"
+      --pronouns she --area "San Fernando Valley" --out ca/rivas
+(--out outside the repo also works and runs `git init` there.)
 
 Display fields written to member (site.js derives anything missing): name, first, last, short, honorific, title,
 pronouns {subj, obj, poss}, chamber, voteId, state, stateName, district, districtLabel, seatLabel, area, portrait,
@@ -18,7 +18,8 @@ offices, handles, district map labels, Money-page notes, events text) goes in th
 """
 import argparse, copy, json, os, re, shutil, subprocess, sys
 
-TEMPLATE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+TEMPLATE = os.path.join(REPO, "template")   # tracker.config.json and the data/ skeletons; the pages come from site/ via publish.py
 STATES = {"AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas", "CA": "California", "CO": "Colorado", "CT": "Connecticut",
           "DE": "Delaware", "FL": "Florida", "GA": "Georgia", "HI": "Hawaii", "ID": "Idaho", "IL": "Illinois", "IN": "Indiana", "IA": "Iowa",
           "KS": "Kansas", "KY": "Kentucky", "LA": "Louisiana", "ME": "Maine", "MD": "Maryland", "MA": "Massachusetts", "MI": "Michigan",
@@ -190,6 +191,7 @@ def main():
         sys.exit(f"Refusing to write into {out}: it exists and is not empty.")
 
     shutil.copytree(TEMPLATE, out, ignore=SKIP, dirs_exist_ok=True)
+    os.makedirs(os.path.join(out, "data", "fec"), exist_ok=True)
     m = member_fields(a)
     tmpl = json.load(open(os.path.join(TEMPLATE, "tracker.config.json")))
     cfg = build_config(tmpl, a, m)
@@ -209,27 +211,34 @@ def main():
             open(p, "w", encoding="utf-8").write(fill(s, t))
     os.makedirs(os.path.join(out, "assets"), exist_ok=True)
 
-    try:
-        subprocess.run(["git", "init", "-q", "-b", "main"], cwd=out, check=True)
-        git = "git init -b main done"
-    except (OSError, subprocess.CalledProcessError) as e:
-        git = f"git init failed ({e}); run `git init -b main` yourself"
+    in_repo = os.path.commonpath([out, REPO]) == REPO       # a member folder inside this repo must not get its own .git
+    if in_repo:
+        git = "inside this repo: no git init (commit it with the rest of the repo)"
+    else:
+        try:
+            subprocess.run(["git", "init", "-q", "-b", "main"], cwd=out, check=True)
+            git = "git init -b main done"
+        except (OSError, subprocess.CalledProcessError) as e:
+            git = f"git init failed ({e}); run `git init -b main` yourself"
 
     senate = a.chamber == "senate"
     q = lambda s: f'"{s}"' if " " in s else s
+    rel = os.path.relpath(out, REPO)
+    run = (lambda s: f"./tr {rel} {s}") if in_repo else (lambda s: f"python3 -I scripts/{s}.py")
     steps = [
-        f"cd {q(out)}",
+        *([f"Add {rel} to members.json (format \"shared\", chamber, voteId, portrait \"assets/portrait.jpg\") with \"live\": false, so nothing publishes; remove the flag once run_checks passes."] if in_repo else [f"cd {q(out)}"]),
         "Check tracker.config.json: member.site/pressPath (guessed), inOfficeSince, committees, peers; fill the profile block as you research.",
-        "Portrait (always): python3 -I scripts/fetch_portrait.py, then open assets/portrait.jpg to confirm it is the current official photo.",
-        ("Votes: python3 -I scripts/fetch_votes_senate.py && python3 -I scripts/build_votes.py && python3 -I scripts/build_alignment.py"
-         if senate else "Votes: ./scripts/fetch_votes.sh && python3 -I scripts/build_votes.py && python3 -I scripts/build_alignment.py"),
-        "Statements: python3 -I scripts/fetch_statements.py (add a row parser if the press page layout is new), then fetch_statement_bodies.py",
-        "Money: ./scripts/with_fec_key.sh python3 -I scripts/resolve_fec.py, then the same wrapper for fetch_fec.py and build_fec.py; then fetch_trackaipac.py"
+        "Portrait (always): " + run("fetch_portrait") + ", then open assets/portrait.jpg to confirm it is the current official photo.",
+        ("Votes: " + (run("fetch_votes_senate") if senate else (f"./tr {rel} fetch_votes" if in_repo else "./scripts/fetch_votes.sh"))
+         + " && " + run("build_votes") + " && " + run("build_alignment")),
+        "Statements: " + run("fetch_statements") + " (add a row parser if the press page layout is new), then " + run("fetch_statement_bodies"),
+        "Money: " + run("resolve_fec") + ", then " + run("fetch_fec") + " and " + run("build_fec") + "; then " + run("fetch_trackaipac")
         + (" (six-year term: resolve_fec writes every cycle of the current term)" if senate else ""),
-        *([] if senate else ["District map: set geo.countyFips/counties, then python3 -I scripts/fetch_geo.py && python3 -I scripts/build_map.py"]),
+        *([] if senate else ["District map: set geo.countyFips/counties, then " + run("fetch_geo") + " && " + run("build_map")]),
         "Curate data/stance_picks.json, card_picks.json, promises.json, establishment_items.json, events.json, claims_static.json",
-        "Rebuild: build_stances -> build_promises -> build_establishment -> build_cards -> build_overview; then ./scripts/run_checks.sh",
-        "Preview: python3 -m http.server 8000, open http://localhost:8000",
+        "Rebuild: build_stances -> build_promises -> build_establishment -> build_cards -> build_overview; then " + run("run_checks"),
+        ("Publish the pages: python3 -I scripts/publish.py " + rel + " (one member only), then preview with python3 -m http.server 8000"
+         if in_repo else "Preview: python3 -m http.server 8000, open http://localhost:8000"),
     ]
     print(f"Created {out} for {m['title']} ({t['seatShort']}). {git}.")
     if senate and m["voteId"].startswith("TODO"): print("Warning: --vote-id not given; set member.voteId (Senate LIS id) before fetching votes.")
