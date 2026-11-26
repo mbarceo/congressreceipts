@@ -1,0 +1,300 @@
+{
+ "_note": "Hand-curated, sourced items for allegiance.html (Republican members). Numbers in {braces} are filled by scripts/build_allegiance.py from roll calls, FEC data and data/alignment.json; never type a number here. trump.picks: {roll:'2025-123', trump:'Yea'|'Nay' (the vote Trump wanted on that question), topic, source:{label,url} (a White House statement of administration policy or Trump's own post), note}. mandate.items: {proposal, page:'Ch. 3, p. 123', source:{url}, match, roll or bill+billUrl}. mandate.heritageAction: {score, label, url}. mandate.disavowal: {text, url} (Trump's own words, sourced). maga.items: {d:'YYYY-MM-DD', text, u}. Headline is an editorial call under 'rule'; 'TBD' shows as Coming soon.",
+ "question": "Votes with Trump?",
+ "headline": "TBD",
+ "why": "",
+ "summary": "Cast the White House position on {trumpWith} of {trumpN} counted votes and the opposite on {trumpAgainst}. The headline stays Coming soon until the rule is approved.",
+ "tiles": [
+  [
+   "{trumpPct}%",
+   "of {trumpN} counted votes cast with the White House position"
+  ],
+  [
+   "{trumpAgainst}",
+   "votes against the White House position"
+  ],
+  [
+   "{jan6obj} of {jan6n}",
+   "Jan. 6, 2021 objections to the 2020 electoral count voted for (Arizona and Pennsylvania)"
+  ],
+  [
+   "{jeffAgree}%",
+   "Same vote as {leaderName} on votes where both voted Yea or Nay"
+  ],
+  [
+   "{unity}%",
+   "Votes cast with the Republican majority (rank {rank} of {dems})"
+  ],
+  [
+   "{haScore}%",
+   "Heritage Action scorecard, 119th Congress (Heritage Action is the Heritage Foundation's advocacy arm)"
+  ],
+  [
+   "{mandateYea} of {mandateN}",
+   "votes on measures matching a Mandate proposal cast Yea"
+  ]
+ ],
+ "trump": {
+  "note": "Trump-position votes are now computed for every member from data/trump_positions.json (scripts/build_trump_positions.py); nothing is picked by hand."
+ },
+ "jan6": {
+  "intro": ""
+ },
+ "mandate": {
+  "intro": "Heritage Foundation's Mandate for Leadership (2023) is the Project 2025 policy book. Each row quotes a Mandate proposal with its page, then the bill or vote it matches. “Direct” means the Mandate names the bill or the same action; “same target” means the bill acts on the same subject in the Mandate's direction; “partial” says exactly where the bill differs. A match shows alignment of policy, not intent or coordination.",
+  "items": [
+   {
+    "proposal": "Enact the Midnight Rules Relief Act, so several late-term regulations can be disapproved together",
+    "page": "Printed p. 50 (PDF p. 83)",
+    "quote": "Congress and the President should enact the Midnight Rules Relief Act",
+    "kind": "direct",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=83"
+    },
+    "match": "The Mandate names this bill. H.R. 77 provides for en bloc consideration of resolutions disapproving “midnight rules.”",
+    "roll": "2025-041",
+    "bill": "H.R. 77, Midnight Rules Relief Act",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hr77eh/html/BILLS-119hr77eh.htm",
+    "billMust": [
+     "Midnight Rules Relief Act",
+     "en bloc"
+    ]
+   },
+   {
+    "proposal": "Prevent a central bank digital currency",
+    "page": "Printed p. 741 (PDF p. 774)",
+    "quote": "Prevent the institution of a central bank digital currency (CBDC).",
+    "kind": "direct",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=774"
+    },
+    "match": "H.R. 1919 prohibits the use of a central bank digital currency for monetary policy and bars Federal Reserve banks from offering certain products directly to individuals.",
+    "roll": "2025-201",
+    "bill": "H.R. 1919, Anti-CBDC Surveillance State Act",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hr1919eh/html/BILLS-119hr1919eh.htm",
+    "billMust": [
+     "central bank digital currency",
+     "Anti-CBDC Surveillance State Act"
+    ]
+   },
+   {
+    "proposal": "Limit California's Clean Air Act waiver",
+    "page": "Printed p. 426 (PDF p. 459)",
+    "quote": "Restore the position that California’s waiver applies only to California-specific issues like ground-level ozone, not global climate issues.",
+    "kind": "same target",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=459"
+    },
+    "match": "The Mandate calls for narrowing California's waiver. H.J.Res. 87 uses the Congressional Review Act to nullify EPA's waiver decision on Advanced Clean Trucks and related rules.",
+    "roll": "2025-111",
+    "bill": "H.J.Res. 87",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hjres87eh/html/BILLS-119hjres87eh.htm",
+    "billMust": [
+     "California",
+     "Waiver of Preemption"
+    ]
+   },
+   {
+    "proposal": "Limit California's Clean Air Act waiver",
+    "page": "Printed p. 426 (PDF p. 459)",
+    "quote": "Restore the position that California’s waiver applies only to California-specific issues like ground-level ozone, not global climate issues.",
+    "kind": "same target",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=459"
+    },
+    "match": "H.J.Res. 88 nullifies EPA's waiver decision on California's Advanced Clean Cars II rule.",
+    "roll": "2025-114",
+    "bill": "H.J.Res. 88",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hjres88eh/html/BILLS-119hjres88eh.htm",
+    "billMust": [
+     "Advanced Clean Cars II",
+     "Waiver of Preemption"
+    ]
+   },
+   {
+    "proposal": "Limit California's Clean Air Act waiver",
+    "page": "Printed p. 426 (PDF p. 459)",
+    "quote": "Restore the position that California’s waiver applies only to California-specific issues like ground-level ozone, not global climate issues.",
+    "kind": "same target",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=459"
+    },
+    "match": "H.J.Res. 89 nullifies EPA's waiver decision on California's “Omnibus” low-NOx regulation.",
+    "roll": "2025-112",
+    "bill": "H.J.Res. 89",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hjres89eh/html/BILLS-119hjres89eh.htm",
+    "billMust": [
+     "Omnibus",
+     "Waiver of Preemption"
+    ]
+   },
+   {
+    "proposal": "Add work requirements to Medicaid",
+    "page": "Printed p. 468 (PDF p. 501)",
+    "quote": "Add work requirements and match Medicaid benefits to beneficiary needs.",
+    "kind": "same target",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=501"
+    },
+    "match": "Section 71119 requires states to set Medicaid community engagement requirements for certain adults. This is the House vote on passing the bill.",
+    "roll": "2025-145",
+    "bill": "H.R. 1, One Big Beautiful Bill Act (as enrolled, Public Law 119-21)",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hr1enr/html/BILLS-119hr1enr.htm",
+    "billMust": [
+     "community engagement requirements",
+     "Sec. 71119"
+    ]
+   },
+   {
+    "proposal": "Add work requirements to Medicaid",
+    "page": "Printed p. 468 (PDF p. 501)",
+    "quote": "Add work requirements and match Medicaid benefits to beneficiary needs.",
+    "kind": "same target",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=501"
+    },
+    "match": "The same Section 71119 stayed in the version the House voted to send to the President.",
+    "roll": "2025-190",
+    "bill": "H.R. 1, One Big Beautiful Bill Act (as enrolled, Public Law 119-21)",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hr1enr/html/BILLS-119hr1enr.htm",
+    "billMust": [
+     "community engagement requirements",
+     "Sec. 71119"
+    ]
+   },
+   {
+    "proposal": "End federal funding for the Corporation for Public Broadcasting through the budget process",
+    "page": "Printed p. 247 (PDF p. 280)",
+    "quote": "Cutting off the CPB is logistically easy. The solution lies in the budgetary process.",
+    "kind": "same target",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=280"
+    },
+    "match": "H.R. 4 rescinds the Corporation for Public Broadcasting's fiscal 2026 and 2027 funds.",
+    "roll": "2025-168",
+    "bill": "H.R. 4, Rescissions Act of 2025 (as enrolled)",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hr4enr/html/BILLS-119hr4enr.htm",
+    "billMust": [
+     "Corporation for Public Broadcasting",
+     "are rescinded"
+    ]
+   },
+   {
+    "proposal": "Mandatory detention of aliens",
+    "page": "Printed p. 150 (PDF p. 183)",
+    "quote": "Congress should eliminate ambiguous discretionary language in Title 8 that aliens “may” be detained and clarify that aliens “shall” be detained.",
+    "kind": "partial",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=183"
+    },
+    "match": "Same mechanism, narrower scope: S. 5 requires detention of certain aliens charged with or arrested for burglary, theft, larceny, shoplifting or assault of a law enforcement officer.",
+    "roll": "2025-023",
+    "bill": "S. 5, Laken Riley Act (as enrolled)",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119s5enr/html/BILLS-119s5enr.htm",
+    "billMust": [
+     "burglary",
+     "theft",
+     "larceny"
+    ]
+   },
+   {
+    "proposal": "Enforce and strengthen Section 117 reporting of foreign gifts to universities",
+    "page": "Printed p. 355 (PDF p. 388)",
+    "quote": "Reverse the Biden Administration’s refusal to enforce Section 117 of the HEA",
+    "kind": "partial",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=388"
+    },
+    "match": "Same provision, different remedy: H.R. 1048 rewrites Section 117 with a $50,000 reporting threshold and fines. The Mandate's further proposal, tying reporting to federal aid, is not in the bill.",
+    "roll": "2025-083",
+    "bill": "H.R. 1048, DETERRENT Act",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hr1048eh/html/BILLS-119hr1048eh.htm",
+    "billMust": [
+     "Section 117",
+     "DETERRENT Act"
+    ]
+   }
+  ],
+  "heritageAction": {
+   "score": 92,
+   "label": "119th Congress",
+   "url": "https://heritageaction.com/scorecard/members/J000299"
+  },
+  "disavowal": {},
+  "method": {
+   "text": "This is not an exhaustive review. The Mandate has no index of bills, so the matches come from searching its text for subjects that bills in this Congress address. 130 measures had a White House statement (the set on the Trump section above). The 11 subjects below were searched; 7 had a Mandate proposal that the measures voted on follow, listed in the table, covering 9 measures and 10 votes. 3 were read and rejected and 1 had no Mandate text. The other measures were not individually checked against the Mandate, so more matches may exist. Two matches are marked partial and say exactly how the bill differs from the Mandate. Mandate matches apply to Republican members only; they are one signal among several, not a symmetrical measure like the Trump votes.",
+   "topics": [
+    [
+     "Midnight Rules Relief Act",
+     "matched",
+     "Mandate names the bill (p. 50)."
+    ],
+    [
+     "Central bank digital currency",
+     "matched",
+     "Mandate: prevent a CBDC (p. 741)."
+    ],
+    [
+     "California's Clean Air Act waiver",
+     "matched",
+     "Mandate: limit or revoke the waiver (pp. 426, 629)."
+    ],
+    [
+     "Medicaid work requirements",
+     "matched",
+     "Mandate: add work requirements (p. 468)."
+    ],
+    [
+     "Defunding the Corporation for Public Broadcasting",
+     "matched",
+     "Mandate chapter on CPB (pp. 246-247)."
+    ],
+    [
+     "Mandatory detention of aliens",
+     "matched, partial",
+     "Same mechanism as the Laken Riley Act, narrower scope (p. 150)."
+    ],
+    [
+     "Section 117 foreign-gift reporting",
+     "matched, partial",
+     "Same section of the Higher Education Act, different remedy (pp. 355-356)."
+    ],
+    [
+     "Proof of citizenship and noncitizen voting",
+     "rejected",
+     "The only mention found is a footnote on p. 574 about an Arizona law; no proposal that matches H.R. 22 or H.R. 884."
+    ],
+    [
+     "Born-alive abortion survivors",
+     "rejected",
+     "The Mandate (pp. 455, 474) asks for monitoring, reporting and use of EMTALA, which is not what H.R. 21 does."
+    ],
+    [
+     "Sanctuary jurisdictions",
+     "rejected",
+     "p. 566 is about conditions on Justice Department grants; H.R. 2931 is about Small Business Administration funding."
+    ],
+    [
+     "Universal or nationwide injunctions",
+     "none found",
+     "No Mandate page uses those terms, so H.R. 1526 is not matched."
+    ]
+   ]
+  }
+ },
+ "maga": {
+  "items": []
+ },
+ "signs": {},
+ "timeline": []
+}
