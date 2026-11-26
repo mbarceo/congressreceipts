@@ -1,9 +1,9 @@
 {
  "_note": "Public status for the Tracker Queue page (roster.html), keyed by bioguide ID. status: done | progress | next | skip. Anyone not listed is 'todo'. Add a url once a tracker is live.",
- "T000491": {"status": "done", "url": "https://congressreceipts.org/ca-rep-45-tracker/"},
- "R000620": {"status": "done", "url": "https://congressreceipts.org/ca-rep-29-tracker/"},
- "P000145": {"status": "done", "url": "https://congressreceipts.org/ca-sen-padilla-tracker/"},
- "S001150": {"status": "done", "url": "https://congressreceipts.org/ca-sen-schiff-tracker/"},
+ "T000491": {"status": "done", "url": "https://congressreceipts.org/ca/tran/"},
+ "R000620": {"status": "done", "url": "https://congressreceipts.org/ca/rivas/"},
+ "P000145": {"status": "done", "url": "https://congressreceipts.org/ca/padilla/"},
+ "S001150": {"status": "done", "url": "https://congressreceipts.org/ca/schiff/"},
  "G000598": {"status": "done", "url": "https://congressreceipts.org/ca/garcia/"},
  "V000128": {"status": "progress"},
  "C000059": {"status": "progress"},

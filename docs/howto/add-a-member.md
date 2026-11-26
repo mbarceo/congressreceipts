@@ -107,7 +107,7 @@ Fix the data until every check passes. Never edit a checker to make a claim pass
 2. `python3 -I scripts/publish.py ca/garcia` generates the member's pages.
 3. Preview: `python3 -m http.server 8000`, open `http://localhost:8000/ca/garcia/`. Read every page.
 4. Rebuild the hub if you want the member on it ([rebuild-the-hub.md](rebuild-the-hub.md)).
-5. Set the member to `done` in `data/queue.json` with their URL ([update-the-queue.md](update-the-queue.md)).
+5. Run `python3 -I scripts/build_queue.py` so `data/queue.json` shows the member as `done` with their URL ([update-the-queue.md](update-the-queue.md)).
 6. Commit and open a pull request: **one member per pull request**, and do not include raw data. See [CONTRIBUTING.md](../../CONTRIBUTING.md).
 
 ## Special case: a member-elect with no votes yet

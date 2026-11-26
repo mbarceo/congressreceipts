@@ -17,6 +17,7 @@ Nonpartisan, fully sourced accountability trackers for members of Congress, publ
 python3 -I scripts/new_tracker.py --name "…" --chamber house|senate --state XX [--district N] --bioguide X000000 [--vote-id S###] --pronouns he|she|they --out <state>/<last>
 python3 -I scripts/status.py [--strict]           # read-only health table (stale builds, vote counts, claims, pages, queue)
 python3 -I scripts/rebuild.py <member>|--all      # offline build stage in order, skips unchanged steps (never fetches)
+python3 -I scripts/build_queue.py [--check]       # keep data/queue.json in step with members.json (status is derived, not typed)
 python3 -I scripts/publish.py [<member path> …]    # copy site/ into member folders; stamp cache keys
 python3 -m http.server 8000             # preview (pages need HTTP, not file://)
 ```
