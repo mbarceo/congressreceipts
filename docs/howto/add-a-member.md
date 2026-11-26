@@ -38,7 +38,7 @@ Folder = `<state>/<last-name>`, lowercase, hyphenated. The script writes `tracke
 
 Then open `tracker.config.json` and check `member.site`, `pressPath` (both are guesses), `inOfficeSince`, `leader`, `peers`. Set `profile` as you research (committees, facts, offices); every fact typed there also needs a `claims_static.json` entry.
 
-**Add the member to `members.json` now, with `"live": false`** (`format: "shared"`, `pages: "stub"`, `chamber`, `voteId`, `portrait: "assets/portrait.jpg"`, `eventsResearched: false`). While `live` is `false`, `publish.py` and the attendance, leaders and directory builds skip the member, so nothing unfinished goes public. Everything below runs through `./tr` and works either way.
+**Add the member to `members.json` now, with `"live": false`** . The easy way is to add `--register` to the scaffold command above: it appends the entry and refreshes the queue. By hand, use `format: "shared"`, `pages: "stub"`, `chamber`, `voteId`, `portrait: "assets/portrait.jpg"`, `eventsResearched: false`. While `live` is `false`, `publish.py` and the attendance, leaders and directory builds skip the member, so nothing unfinished goes public. Everything below runs through `./tr` and works either way.
 
 ## 3. Portrait (always)
 
