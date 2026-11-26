@@ -1,0 +1,154 @@
+<!doctype html>
+<!-- Built from site/stances.html by scripts/publish.py. Edit site/stances.html, not this copy. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Where Rep. Jim Jordan stands on the big issues: the votes cast and the public statements, each linked to its source.">
+<title>Jordan Stances</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="site.css?v=86652562">
+<link rel="stylesheet" href="../../hub.css?v=91a2553f">
+<script src="site.js?v=06c10c5b"></script>
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+[hidden]{display:none!important}
+img{max-width:100%}
+html{color-scheme:light}
+.v-yea{color:var(--ok);background:var(--ok-bg)}
+.v-nay{color:var(--bad);background:var(--bad-bg)}
+.v-other{color:var(--muted);background:var(--line)}
+.vtable{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.vtable table{min-width:720px}
+.vtable td{font-size:.86rem;vertical-align:top}
+.vtable td.num{font-family:var(--f-mono);font-size:.78rem;white-space:nowrap;font-variant-numeric:tabular-nums}
+.vtable tr.brk td:first-child{box-shadow:inset 3px 0 0 var(--flag)}
+.vtable .t{font-weight:600}
+.vtable .qq{color:var(--muted);font-size:.8rem;margin-top:2px}
+.slist{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.slist li{font-size:.9rem}
+.slist .d{font-family:var(--f-mono);font-size:.76rem;color:var(--muted);margin-right:8px;white-space:nowrap}
+.slist .k{font-size:.68rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-family:var(--f-mono);color:var(--accent);margin-left:8px}
+details.all summary{cursor:pointer;font-size:.88rem;margin:10px 0 8px;color:var(--accent)}
+.sub{font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:18px 0 8px;font-family:var(--f-mono)}
+.facts-line{font-size:.9rem;margin:0 0 4px}
+.how{max-width:75ch;font-size:.9rem}
+.sq{font-size:.82rem;color:var(--muted);margin:3px 0 0;max-width:80ch;font-style:italic}
+.pp-dot.pp-neu,.pp-tag.pp-neu{background:#6c7a73}
+#israel-palestine,.ecard{display:flex;flex-direction:column;gap:14px}
+.pp-dot.pp-pro,.pp-tag.pp-pro{background:#2f6fb3} .pp-dot.pp-con,.pp-tag.pp-con{background:#2f8f5b}
+.pp-list.rec li{grid-template-columns:96px 1fr} @media (max-width:620px){.pp-list.rec li{grid-template-columns:1fr}}
+.pp-text .more{color:var(--muted);font-size:.8rem}
+.sbox p{margin:0}
+a.sbox{color:inherit;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="sitenav" aria-label="Pages"></nav>
+  <header id="top">
+    <div class="ident">
+      <img class="portrait" alt="" width="335" height="410">
+      <div class="ident-text"><span class="eyebrow">Where {{short}} stands</span><h1>{{name}} on the issues</h1></div>
+    </div>
+    <p class="lede">For each issue: how {{subj}} voted on specific roll calls, and what {{poss}} own press releases say. Every row links to its source.</p>
+    <div class="notice how">
+      <b>How to read this.</b> Votes are hand-picked by reading the official roll-call titles, so each list is a sample, not every vote on the subject. {{Poss}} vote comes straight from {{voteSourceLong}}. Verdicts appear only under "The big questions", and each card states the rule that produced its verdict; the issue sections below show evidence and counts and leave the call to you. On a <i>motion to table</i> or <i>refer</i>, a Nay is a vote <i>against</i> killing or sidelining the measure. Statements are matched by keywords in their titles, so a few may be off.
+    </div>
+  </header>
+  <section id="verdicts">
+    <div class="sec-head">
+      <span class="eyebrow">Quick verdicts</span>
+      <h2>The big questions</h2>
+      <p>Each verdict sums up {{poss}} record by a stated rule. Click a box for every vote and statement behind it.</p>
+    </div>
+    <div class="boxes" id="flagBoxes"><p class="muted">Loading…</p></div>
+  </section>
+  <div id="cards"></div>
+  <section id="issues-nav">
+    <div class="sec-head"><span class="eyebrow">Issue by issue</span><h2>Jump to an issue</h2></div>
+    <div class="filters" id="chips" role="group" aria-label="Issues"></div>
+  </section>
+  <div id="issues"><p class="muted">Loading…</p></div>
+  <footer>Votes: <a href="{{voteSourceUrl}}" target="_blank" rel="noopener">{{voteSource}} roll calls</a>. Statements: <a href="{{pressUrl}}" target="_blank" rel="noopener">{{domain}}</a>.</footer>
+</div>
+<script>
+TRACKER.ready.then(M => {
+const esc = s => String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const vpill = t => `<span class="pill ${t==="Yea"?"v-yea":t==="Nay"?"v-nay":"v-other"}">${esc(t)}</span>`;
+const fmtD = d => new Date(d+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
+const stmt = s => `<li><span class="d">${fmtD(s.date)}</span><a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(s.title.replace(/^(Congress(wo)?m[ae]n|Rep\.|Representative|Sen\.|Senator),? /,""))}</a><span class="k">${esc(s.kind)}</span>${s.quote?`<div class="sq">From the release: “${esc(s.quote)}”</div>`:""}</li>`;
+const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const fmtM = d => /^\d{4}-\d{2}$/.test(d) ? `${MON[+d.slice(5)-1]} ${d.slice(0,4)}` : d.replace(/(\d{4})-(\d{2})/g,(m,y,mo)=>`${MON[+mo-1]} ${y}`);
+const DIR = {pal:["Toward Palestinians / conditions on aid","pp-pal"], isr:["Toward Israel","pp-isr"], mixed:["Both","pp-mix"], neutral:["Related, no clear direction","pp-neu"]};
+function israel(x){
+  const n = k => x.items.filter(i=>i.dir===k).length;
+  const li = i => `<li><span class="pp-date mono">${esc(fmtM(i.d))}</span><span class="pp-tag ${DIR[i.dir][1]}">${DIR[i.dir][0]}</span><span class="pp-text">${esc(i.t)}${i.unv?' <span class="pill s-unv">Unverified</span>':""} <a class="src" href="${esc(i.u)}"${i.u.startsWith("http")?' target="_blank" rel="noopener"':""}>Source</a>${(i.more||[]).map((u,k)=>` <a class="src more" href="${esc(u)}" target="_blank" rel="noopener">${k+2}</a>`).join("")}</span></li>`;
+  return `<section id="israel-palestine"><div class="sec-head"><span class="eyebrow">Issue</span><h2>Israel and Palestine</h2><p>${esc(M.Poss)} votes and statements on U.S. aid to Israel, Gaza, and the wars in Iran and Lebanon, tagged by which way each item points.</p></div>
+    <div class="pp-head"><div class="pp-flag" role="img" aria-label="${esc(x.question)} ${esc(verdict(x.headline))}"><span class="pp-q">${esc(x.question)}</span><span class="pp-v">${esc(verdict(x.headline))}</span></div><p class="pp-sum">${esc(x.summary)}</p></div>
+    <div class="pp-count"><span><i class="pp-dot pp-pal"></i>${n("pal")} toward Palestinians or conditions on aid</span><span><i class="pp-dot pp-isr"></i>${n("isr")} toward Israel</span><span><i class="pp-dot pp-mix"></i>${n("mixed")} both</span><span><i class="pp-dot pp-neu"></i>${n("neutral")} related</span></div>
+    <ul class="pp-list">${x.items.map(li).join("")}</ul>
+    <p class="muted" style="margin:0;font-size:.8rem">This summarizes ${esc(M.poss)} record; it is not a judgment. Each tag describes the action itself, not ${esc(M.poss)} motives. ${esc(x.headlineWhy)} Antisemitism resolutions are not counted because they are not about Israeli policy.</p></section>`;
+}
+function voteRow(r){
+  const brk = (r.vote==="Yea"||r.vote==="Nay") && ((r.pSide??r.dSide)==="Yea"||(r.pSide??r.dSide)==="Nay") && r.vote!==(r.pSide??r.dSide);
+  return `<tr${brk?' class="brk"':""}>
+    <td class="num">${fmtD(r.date)}</td>
+    <td><div class="t"><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.bill)}</a> · ${esc(r.title)}</div>
+      <div class="qq">${esc(r.q)}${brk?' · <span class="pill s-break">Breaks with party</span>':""}</div>
+      ${r.note?`<div class="qq">${esc(r.note)}</div>`:""}</td>
+    <td>${vpill(r.vote)}</td>
+    <td>${(r.pSide??r.dSide)?vpill(r.pSide??r.dSide):"—"}<div title="${(r.cY!=null&&!M.isRep)?'Democratic caucus, including independents who caucus with Democrats':M.ownPartyPl}" class="qq num">${(r.cY!=null&&!M.isRep)?r.cY+"–"+r.cN:(r.pY??r.dY)+"–"+(r.pN??r.dN)}</div></td>
+    <td class="num">${esc(r.result)}<br>${r.yea}–${r.nay}</td></tr>`;
+}
+// Curated record items (stance_picks "items"): date, sentence, quote, pills, sources
+const recRow = x => `<li><span class="pp-date mono">${esc(x.approx ? fmtM(x.d.slice(0,7)) : fmtD(x.d))}</span><span class="pp-text">${esc(x.t)}${x.q?` <q>${esc(x.q)}</q>`:""}${x.brk?' <span class="pill s-break">Breaks with party</span>':""}${x.none?' <span class="pill s-none">No statement found</span>':""}${x.unv?' <span class="pill s-unv">Unverified</span>':""} <a class="src" href="${esc(x.u)}"${x.u.startsWith("http")?' target="_blank" rel="noopener"':""}>Source</a>${(x.more||[]).map((u,k)=>` <a class="src more" href="${esc(u)}" target="_blank" rel="noopener">${k+2}</a>`).join("")}</span></li>`;
+function section(i){
+  const items = i.items || [];
+  const rec = items.length ? `<h3 class="sub">${esc(M.Poss)} record (${items.length})</h3><ul class="pp-list rec">${items.map(recRow).join("")}</ul>` : "";
+  const votes = !i.rolls.length && items.length ? "" : i.rolls.length ? `<h3 class="sub">Votes (${i.rolls.length})</h3>
+    <p class="facts-line">${i.cast?`On ${i.cast} of these ${esc(M.subj)} cast a Yea or Nay, siding with most ${M.ownPartyPl} on ${i.withDems}.`:""}</p>
+    <div class="vtable"><table><thead><tr><th>Date</th><th>Bill and question</th><th>${esc(M.short)}</th><th>Most ${esc(M.ownPartyShort)}</th><th>Result</th></tr></thead><tbody>${i.rolls.map(voteRow).join("")}</tbody></table></div>`
+    : `<h3 class="sub">Votes</h3><p class="muted">No roll calls picked for this issue yet.</p>`;
+  const head = i.statements.slice(0,6), rest = i.statements.slice(6);
+  const sts = !i.statements.length && items.length ? "" : `<h3 class="sub">${esc(M.Poss)} statements (${i.statements.length})</h3>
+    <ul class="slist">${head.map(stmt).join("")}</ul>
+    ${rest.length?`<details class="all"><summary>Show ${rest.length} more</summary><ul class="slist">${rest.map(stmt).join("")}</ul></details>`:""}`;
+  return `<section id="${esc(i.id)}"><div class="sec-head"><span class="eyebrow">Issue</span><h2>${esc(i.name)}</h2><p>${esc(i.intro)}</p></div>${rec}${votes}${sts}</section>`;
+}
+// Evidence card for ICE, police and corporate (data/cards.json); same layout as the Israel and Palestine card
+function ecard(c){
+  const li = i => `<li><span class="pp-date mono">${esc(fmtM(i.d))}</span><span class="pp-tag pp-${i.s}">${esc(i.s==="pro"?c.pro:i.s==="con"?c.con:(c.neutral||"Neither side"))}</span><span class="pp-text">${esc(i.t)}${i.brk?' <span class="pill s-break">Breaks with party</span>':""}${i.unv?' <span class="pill s-unv">Unverified</span>':""} <a class="src" href="${esc(i.u)}"${i.u.startsWith("http")?' target="_blank" rel="noopener"':""}>Source</a>${(i.more||[]).map((u,k)=>` <a class="src more" href="${esc(u)}" target="_blank" rel="noopener">${k+2}</a>`).join("")}</span></li>`;
+  return `<section id="card-${esc(c.key)}" class="ecard"><div class="sec-head"><span class="eyebrow">${esc(c.eb)}</span><h2>${esc(c.q)}</h2></div>
+    <div class="pp-head"><div class="pp-flag" role="img" aria-label="${esc(c.q)} ${esc(verdict(c.v))}"><span class="pp-q">${esc(c.q)}</span><span class="pp-v">${esc(verdict(c.v))}</span></div><p class="pp-sum">${esc(c.sum || c.rule)}</p></div>
+    ${c.sum?`<p class="muted" style="margin:0;font-size:.82rem">${esc(c.rule)}</p>`:""}
+    <div class="pp-count"><span><i class="pp-dot pp-pro"></i>${c.npro} ${esc(c.pro)}</span><span><i class="pp-dot pp-con"></i>${c.ncon} ${esc(c.con)}</span>${c.nmix?`<span><i class="pp-dot pp-mix"></i>${c.nmix} ${esc(c.neutral)}</span>`:""}</div>
+    <ul class="pp-list">${c.items.map(li).join("")}</ul>
+    ${c.section?`<a class="pp-more" href="#${esc(c.section)}">Full vote table and statements for this issue →</a>`:""}
+    <p class="muted" style="margin:0;font-size:.8rem">This summarizes ${esc(M.poss)} record; it is not a judgment. Each tag describes the action, not ${esc(M.poss)} motives. For votes, the side follows from ${esc(M.poss)} recorded vote. Votes are a hand-picked sample, not every vote on the subject.</p></section>`;
+}
+const box = (href, eb, q, v, sum, more) => `<a class="sbox flag" href="${esc(href)}"><span class="eyebrow">${esc(eb)}</span><div class="sbox-verdict"><span class="pp-q">${esc(q)}</span><span class="pp-v">${esc(v)}</span></div><p>${esc(sum)}</p><span class="sbox-more">${esc(more)} →</span></a>`;
+const get = p => fetch(p).then(r=>{ if(!r.ok) throw 0; return r.json(); }).catch(()=>null);
+Promise.all([get("data/stances.json"), get("data/cards.json"), get("data/overview.json"), get(M.isRep ? "data/allegiance.json" : "data/establishment.json")]).then(([d,cd,ov,es])=>{
+  if(!d){ document.getElementById("issues").innerHTML = '<p class="muted"><span class="soon">Coming soon</span> Issue-by-issue stances are being researched.</p>'; document.getElementById("flagBoxes").innerHTML = '<p class="muted">Verdicts appear once the stances and cards are built.</p>'; return; }
+  const C = cd ? Object.fromEntries(cd.cards.map(c=>[c.key,c])) : {};
+  const home = ov && ov.tiles.find(t=>/homeless/i.test(t.q));
+  const showIsrael = d.israel && (d.israel.items.length || !M.isRep);   // Republican trackers show it only once it has items
+  const boxes = showIsrael ? [box("#israel-palestine","Israel and Palestine",d.israel.question,verdict(d.israel.headline),d.israel.summary,`See all ${d.israel.items.length} items`)] : [];
+  [["ice","Immigration enforcement"],["police","Policing and crime"],["corporate","Money and business"]].forEach(([k])=>{ const c=C[k]; if(c) boxes.push(box(`#card-${k}`,c.eb,c.q,c.v,c.short||c.rule,`See all ${c.n} items`)); });
+  if(home) boxes.push(box("#homelessness","Homelessness",home.q,home.v,home.rule,"See the homelessness section"));
+  if(es) boxes.push(M.isRep ? box("allegiance.html","Allegiance",es.question,verdict(es.headline),es.why,"Open the Allegiance tab") : box("establishment.html","Party ties",es.question,verdict(es.headline),es.why,"Open the Establishment tab"));
+  document.getElementById("flagBoxes").innerHTML = boxes.join("");
+  document.getElementById("cards").innerHTML = (showIsrael ? israel(d.israel) : "") + ["ice","police","corporate"].filter(k=>C[k]).map(k=>ecard(C[k])).join("");
+  document.getElementById("issues").innerHTML = d.issues.map(section).join("");
+  document.getElementById("chips").innerHTML = d.issues.map(i=>`<a class="chip-btn" href="#${esc(i.id)}">${esc(i.name)}</a>`).join("");
+  if(location.hash){ const t=document.querySelector(location.hash); if(t) t.scrollIntoView(); }
+});
+});
+</script>
+<script src="../../hub.js?v=e1b5e319" data-base="../../"></script>
+</body>
+</html>

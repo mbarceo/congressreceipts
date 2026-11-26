@@ -68,6 +68,18 @@
    "portrait": "assets/portrait.jpg",
    "eventsResearched": false,
    "live": false
+  },
+  {
+   "path": "oh/jordan",
+   "name": "Jim Jordan",
+   "party": "R",
+   "seat": "OH-4",
+   "chamber": "house",
+   "voteId": "J000289",
+   "format": "shared",
+   "portrait": "assets/portrait.jpg",
+   "eventsResearched": false,
+   "hub": false
   }
  ]
 }
