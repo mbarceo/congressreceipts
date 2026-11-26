@@ -67,30 +67,23 @@
 .dis .p{margin-top:4px}
 .dis p{margin:0;max-width:70ch}
 @media (max-width:640px){.dis li{grid-template-columns:1fr}}
-/* Ledger */
-.tbl{overflow-x:auto}
-table.t{width:100%;border-collapse:collapse;font-size:.88rem}
-table.t th{text-align:left;font-weight:600;color:var(--muted);font-size:.76rem;border-bottom:1px solid var(--line);padding:6px 10px 6px 0;vertical-align:bottom}
-table.t td{border-bottom:1px solid var(--line);padding:11px 10px 11px 0;vertical-align:top}
-table.t td.who b{display:block;font-family:var(--f-display);font-size:.98rem}
-table.t td.who small{color:var(--muted);font-size:.76rem}
-table.t td.say{max-width:46ch}
-table.t td.rc{min-width:190px}
-.rc a{font-weight:600}
-.rc small{display:block;color:var(--muted);font-size:.74rem;line-height:1.45}
-.rc .kind{font-family:var(--f-mono);font-size:.7rem}
-.flag{margin-top:8px;font-size:.8rem;background:var(--prog-bg);color:var(--ink);border-left:3px solid var(--prog);border-radius:0 6px 6px 0;padding:7px 10px}
+/* Senator tiles */
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(225px,1fr));gap:10px}
+.sen{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--c);border-radius:8px;padding:10px 12px 11px;display:flex;flex-direction:column;gap:6px;min-width:0;font-size:.84rem;line-height:1.45}
+.sen[hidden]{display:none}
+.sen.hit{outline:2px solid var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--surface));transition:background .3s}
+.sen .h{display:flex;flex-direction:column;gap:5px}
+.sen .nm{font-family:var(--f-display);font-weight:700;font-size:.98rem;line-height:1.2}
+.sen .nm small{font-family:var(--f-body);font-weight:400;color:var(--muted);font-size:.74rem;margin-left:6px;white-space:nowrap}
+.sen .h .pos{align-self:flex-start;font-size:.72rem;padding:1px 9px}
+.sen p{margin:0}
+.sen .rc{margin-top:auto;padding-top:6px;border-top:1px solid var(--line)}
+.sen .rc a{font-weight:600}
+.sen .rc small{display:block;color:var(--muted);font-size:.72rem;line-height:1.4}
+.sen .kind{font-family:var(--f-mono);font-size:.68rem}
+.flag{margin-top:2px;font-size:.76rem;background:var(--prog-bg);color:var(--ink);border-left:3px solid var(--prog);border-radius:0 6px 6px 0;padding:6px 9px}
 .flag b{color:var(--prog)}
-.note{margin-top:6px;font-size:.78rem;color:var(--muted)}
-tr.hit td{background:color-mix(in srgb,var(--accent) 14%,transparent);transition:background .3s}
-tr[hidden]{display:none}
-@media (max-width:700px){
-  table.t thead{display:none}
-  table.t,table.t tbody,table.t tr,table.t td{display:block;width:100%}
-  table.t tr{border-bottom:1px solid var(--line);padding:12px 0}
-  table.t td{border:0;padding:3px 0}
-  table.t td.say,table.t td.rc{max-width:none;min-width:0}
-}
+.note{font-size:.74rem;color:var(--muted)}
 .defs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
 .defs div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:.86rem}
 .defs b{display:block;font-family:var(--f-display);margin-bottom:4px}
@@ -131,7 +124,7 @@ tr[hidden]{display:none}
   <section>
     <div class="sec-head"><span class="eyebrow">Every senator</span><h2>Where each one stands, and the proof</h2></div>
     <div class="filters" id="filters" role="group" aria-label="Filter by position"></div>
-    <div class="tbl"><table class="t"><thead><tr><th>Senator</th><th>Position</th><th>What they said</th><th>Receipt</th></tr></thead><tbody id="rows"></tbody></table></div>
+    <div class="tiles" id="rows"></div>
   </section>
 
   <section>
@@ -248,11 +241,12 @@ fetch("data/leadership_senate.json").then(r => r.json()).then(D => {
     return t === (w === "agrees" ? "agrees" : "differs") ? `Whip tracker and Wikipedia ${t.replace(/s$/, "")}` : `Whip tracker ${t}; Wikipedia ${w === "agrees" ? "agrees" : "differs"}`; };
   $("rows").innerHTML = rows.map(m => { const g = G[m.group];
     const rc = m.source_url ? `<a href="${esc(m.source_url)}" target="_blank" rel="noopener">${esc(m.source_outlet)}, ${dshort(m.source_date)}</a>` : `<span class="muted">No source</span>`;
-    return `<tr id="r-${slug(m.name)}" data-g="${m.group}" style="--c:${g.c}">
-      <td class="who"><b>${esc(m.name)}</b><small>${esc(m.state)} · ${role(m)}${m.is_candidate ? " · candidate" : ""}</small></td>
-      <td><span class="pos${g.none ? " none" : ""}">${g.label}</span></td>
-      <td class="say">${esc(m.summary)}${m.disputed ? `<div class="flag"><b>Sources disagree.</b> ${esc(m.note)}</div>` : m.note ? `<div class="note">${esc(m.note)}</div>` : ""}</td>
-      <td class="rc">${rc}<small><span class="kind">${RC[m.receipt]}</span></small>${CK[m.check] ? `<small>${CK[m.check]}</small>` : ""}<small>${esc(agree(m.agreement))}</small></td></tr>`; }).join("");
+    const meta = [RC[m.receipt], CK[m.check]].filter(Boolean).join(" · ");
+    return `<article class="sen" id="r-${slug(m.name)}" data-g="${m.group}" style="--c:${g.c}">
+      <div class="h"><span class="nm">${esc(m.name)}<small>${esc(m.state)} · ${role(m)}${m.is_candidate ? " · candidate" : ""}</small></span><span class="pos${g.none ? " none" : ""}">${g.label}</span></div>
+      <p>${esc(m.summary)}</p>
+      ${m.disputed ? `<div class="flag"><b>Sources disagree.</b> ${esc(m.note)}</div>` : m.note ? `<div class="note">${esc(m.note)}</div>` : ""}
+      <div class="rc">${rc}<small><span class="kind">${esc(meta)}</span></small>${agree(m.agreement) ? `<small>${esc(agree(m.agreement))}</small>` : ""}</div></article>`; }).join("");
   if (D.checks_run) { const c = D.check_counts, n = k => c[k] || 0;
     const notChecked = n("skipped_host_blocked") + n("blocked") + n("skipped_unreadable_site") + n("fetch_failed");
     $("draft").innerHTML = `<b>Draft.</b> A script opened each source page on ${dlong(D.checks_run)}, one at a time. It found ${n("quote_verified")} quotes word for word and ${n("name_near_race")} pages that cover the senator and the race. ${notChecked} links could not be checked because the site blocks scripts or can't be read by one, and ${n("no_url")} senators have no source. A page that mentions a senator does not prove the position, so read the quote before relying on a row. This page is not listed in the site menu.`; }
@@ -261,7 +255,7 @@ fetch("data/leadership_senate.json").then(r => r.json()).then(D => {
   const chips = [["all", "All"]].concat(ORDER.slice(0, 5).map(g => [g, `${G[g].label} ${D.counts[g]}`]));
   $("filters").innerHTML = chips.map(([k, l], i) => `<button class="chip-btn" data-f="${k}" aria-pressed="${i === 0}">${l}</button>`).join("");
   const apply = f => { document.querySelectorAll("#filters .chip-btn").forEach(b => b.setAttribute("aria-pressed", b.dataset.f === f));
-    document.querySelectorAll("#rows tr").forEach(tr => tr.hidden = !(f === "all" || tr.dataset.g === f)); };
+    document.querySelectorAll("#rows .sen").forEach(t => t.hidden = !(f === "all" || t.dataset.g === f)); };
   $("filters").addEventListener("click", e => { const b = e.target.closest(".chip-btn"); if (b) apply(b.dataset.f); });
 
   // Segment -> row
@@ -269,7 +263,15 @@ fetch("data/leadership_senate.json").then(r => r.json()).then(D => {
     apply("all"); const tr = $("r-" + s.dataset.s); if (!tr) return;
     tr.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center"});
     tr.classList.add("hit"); setTimeout(() => tr.classList.remove("hit"), 1600); });
-}).catch(() => { $("rows").innerHTML = '<tr><td colspan="4" class="muted">The count didn\'t load. Reload the page to try again.</td></tr>'; });
+}).catch(() => { $("rows").innerHTML = '<p class="muted">The count didn\'t load. Reload the page to try again.</p>'; });
+
+// Back-to-top button: same as the member pages
+(() => { const top = document.createElement("button");
+  top.type = "button"; top.className = "totop"; top.hidden = true; top.setAttribute("aria-label", "Back to top");
+  top.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 5l-7 7m7-7l7 7M12 5v14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Top</span>';
+  top.addEventListener("click", () => scrollTo({top: 0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}));
+  document.body.appendChild(top);
+  const on = () => { top.hidden = scrollY < 500; }; addEventListener("scroll", on, {passive: true}); on(); })();
 </script>
 </body>
 </html>
