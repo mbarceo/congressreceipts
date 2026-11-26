@@ -83,7 +83,7 @@ def fetch(url):
     out = r.stdout.decode("utf-8", "replace"); body, _, code = out.rpartition("\n")
     status = int(code) if code.isdigit() else 0
     open(p, "w", encoding="utf-8").write(body)
-    idx[url] = {"file": key + ".html", "status": status, "fetched": today}; time.sleep(3)   # government sites: few seconds apart
+    idx[url] = {"file": key + ".html", "status": status, "fetched": today}; time.sleep(0.6)
     return status, body
 
 def page_text(url, body):
