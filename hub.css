@@ -28,8 +28,8 @@
   font:inherit;font-weight:600;text-decoration:none;cursor:pointer}
 .btn-ghost{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--divider);color:var(--ink);border-radius:999px;padding:9px 16px;text-decoration:none;font-weight:600;font-size:.9rem}
 /* Site-wide footer: flat, no card or columns, same background as the page */
-.cr-site-foot{margin-top:40px;padding:0 0 calc(80px + env(safe-area-inset-bottom,0px))}
-.cr-site-foot .in{max-width:960px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.cr-site-foot{width:100%;max-width:960px;margin:40px auto 0;padding:0 0 calc(80px + env(safe-area-inset-bottom,0px))}
+.cr-site-foot .in{display:flex;flex-direction:column;gap:10px}
 .cr-site-foot .in.top{flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px;padding:20px 0 14px;border-top:1px solid var(--line)}
 .cr-site-foot .cr-brand b{font-size:1rem}
 .cr-site-foot nav{display:flex;flex-wrap:wrap;gap:2px 16px}
