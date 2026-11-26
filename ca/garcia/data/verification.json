@@ -1637,26 +1637,66 @@
   "evidence": "votes.html"
  },
  "establishment:Signs of independence:1": {
-  "text": "Member of the Congressional Progressive Caucus, and cosponsor of Medicare for All, the Raise the Wage Act and the Protecting the Right to Organize Act.",
+  "text": "Member of the Congressional Progressive Caucus.",
   "page": "establishment",
   "section": "Signs of independence",
   "url": "https://robertgarcia.house.gov/about/committees-and-caucuses",
   "urls": [
-   "https://robertgarcia.house.gov/about/committees-and-caucuses",
-   "https://www.congress.gov/bill/119th-congress/house-bill/3069",
-   "https://www.congress.gov/bill/119th-congress/house-bill/20"
+   "https://robertgarcia.house.gov/about/committees-and-caucuses"
   ],
   "checked": "2026-11-25",
-  "issues": [
-   "source did not load (HTTP 403): https://www.congress.gov/bill/119th-congress/house-bill/3069",
-   "source did not load (HTTP 403): https://www.congress.gov/bill/119th-congress/house-bill/20"
-  ],
+  "issues": [],
   "tier": "primary",
-  "status": "partial",
+  "status": "verified",
   "method": "Fetched source page; matched quotes, figures and required terms",
   "evidence": "https://robertgarcia.house.gov/about/committees-and-caucuses"
  },
  "establishment:Signs of independence:2": {
+  "text": "Cosponsor of Medicare for All (H.R. 3069).",
+  "page": "establishment",
+  "section": "Signs of independence",
+  "url": "https://www.congress.gov/bill/119th-congress/house-bill/3069",
+  "urls": [
+   "https://www.congress.gov/bill/119th-congress/house-bill/3069"
+  ],
+  "checked": "2026-11-25",
+  "issues": [],
+  "tier": "primary",
+  "status": "verified",
+  "method": "govinfo BILLSTATUS for each congress.gov bill link (role and title)",
+  "evidence": "hr3069: Medicare for All Act (cosponsor)"
+ },
+ "establishment:Signs of independence:3": {
+  "text": "Cosponsor of the Raise the Wage Act of 2025 (H.R. 2743).",
+  "page": "establishment",
+  "section": "Signs of independence",
+  "url": "https://www.congress.gov/bill/119th-congress/house-bill/2743",
+  "urls": [
+   "https://www.congress.gov/bill/119th-congress/house-bill/2743"
+  ],
+  "checked": "2026-11-25",
+  "issues": [],
+  "tier": "primary",
+  "status": "verified",
+  "method": "govinfo BILLSTATUS for each congress.gov bill link (role and title)",
+  "evidence": "hr2743: Raise the Wage Act of 2025 (cosponsor)"
+ },
+ "establishment:Signs of independence:4": {
+  "text": "Cosponsor of the Richard L. Trumka Protecting the Right to Organize Act of 2025 (H.R. 20).",
+  "page": "establishment",
+  "section": "Signs of independence",
+  "url": "https://www.congress.gov/bill/119th-congress/house-bill/20",
+  "urls": [
+   "https://www.congress.gov/bill/119th-congress/house-bill/20"
+  ],
+  "checked": "2026-11-25",
+  "issues": [],
+  "tier": "primary",
+  "status": "verified",
+  "method": "govinfo BILLSTATUS for each congress.gov bill link (role and title)",
+  "evidence": "hr20: Richard L. Trumka Protecting the Right to Organize Act of 2025 (cosponsor)"
+ },
+ "establishment:Signs of independence:5": {
   "text": "Party leaders' committees gave $15,000 in 2023–24 and $4,000 in 2025–26; Jeffries' committees and the DCCC gave nothing, per FEC records.",
   "page": "establishment",
   "section": "Signs of independence",
