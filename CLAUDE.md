@@ -6,7 +6,8 @@ Nonpartisan, fully sourced accountability trackers for members of Congress, publ
 - `members.json` registry of tracked members · `tr` runner · `scripts/` ONE copy of every script (stdlib-only Python 3 + a few zsh) · `template/` skeletons for a new member
 - `site/` SOURCE of the member pages (`index/money/stances/votes/statements/establishment/townhalls/sources.html`, `site.js`, `site.css`)
 - `<state>/<member>/` one tracker: `tracker.config.json`, `data/`, `assets/portrait.jpg`; the `.html/.js/.css` inside are **generated copies** of `site/`
-- Root `index/find/attendance/leaders/backlog/about.html` + `hub.js` + `hub.css` = hub pages and shared header/footer; root `data/` = hub data
+- Root `index/find/attendance/leaders/leadership/backlog/about.html` + `hub.js` + `hub.css` = hub pages and shared header/footer; root `data/` = hub data
+- Leadership races (Senate leader vote, House Speaker vote): `leadership.html`, `data/leadership_*.json`, curated inputs in `data/leadership/`, scripts `scripts/build_leadership_*.py` and `scripts/verify_leadership_*.py`. Read `docs/leadership.md` before touching them. `AGENTS.md` is the entry point for non-Claude agents.
 - `docs/` full documentation (architecture, pipeline, config reference, verification, how-tos, troubleshooting)
 
 ## Commands
