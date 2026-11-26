@@ -42,7 +42,9 @@ others = [f["geometry"] for f in allc if f["properties"]["NAME"] not in CMAP]
 # Base layer: LA County Countywide Statistical Areas when fetched (they split the City of LA into communities),
 # else Census places + CDPs (whole cities only).
 USE_CSA = os.path.exists(os.path.join(RAW, "csa.geojson"))
-places = load("csa") if USE_CSA else load("places") + load("cdps")
+# Each base-layer shape is tagged with its source. The CSAs cover Los Angeles County only, so a district that also
+# reaches into another county (Orange County) takes that county's cities and CDPs from the Census layers.
+places = ([(f, "csa") for f in load("csa")] if USE_CSA else []) + [(f, "census") for f in load("places") + load("cdps")]
 
 def csa_name(props):
     lab = (props.get("LABEL") or "").strip()
@@ -92,10 +94,10 @@ def overlaps(a, b):
 
 feat = []
 cdb = {k: bbox(g) for k, g in cd.items()}
-for f in places:
+for f, src in places:
     g = f["geometry"]
     if not g: continue
-    if USE_CSA:
+    if src == "csa":
         name, kind = csa_name(f["properties"])
         cdp = kind == "uninc"
     else:
@@ -107,6 +109,7 @@ for f in places:
     if c is None: continue
     lonlat = ((c[0] / KX) + x0, y1 - c[1] / KY)
     county = next((k for k, cg in counties.items() if contains(cg, *lonlat)), "") or next(iter(counties), "")
+    if USE_CSA and src == "census" and county == "LA": continue   # LA County comes from the CSAs
     item = {"n": name, "kind": kind, "cdp": cdp, "c": county, "d": path(g), "ctr": c}
     for k, dg in cd.items():
         if not overlaps(gb, cdb[k]): continue
