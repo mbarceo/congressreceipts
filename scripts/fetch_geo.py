@@ -2,7 +2,7 @@
 
 Saves GeoJSON to data/geo/raw/. Usage: python3 -I scripts/fetch_geo.py
 """
-import json, os, sys, time, urllib.parse, urllib.request
+import json, math, os, sys, time, urllib.parse, urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from config import CFG, M
 
@@ -10,25 +10,32 @@ ROOT = os.environ.get("TRACKER_DIR") or os.path.join(os.path.dirname(os.path.abs
 OUT = os.path.join(ROOT, "data/geo/raw")
 os.makedirs(OUT, exist_ok=True)
 BASE = "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/"
+TILE = 0.4   # degrees per query tile
 
 def get(name, service, layer, where="1=1", bbox=None, offset="0.0003"):
     q = {"where": where, "outFields": "GEOID,NAME,BASENAME", "returnGeometry": "true",
          "outSR": "4326", "f": "geojson", "maxAllowableOffset": offset, "geometryPrecision": "5"}
+    # TIGERweb silently returns only part of the matches for a large bbox (no exceededTransferLimit flag, and
+    # resultOffset returns nothing more), so a wide frame such as a district with islands or two distant areas
+    # lost whole cities. Query the frame in tiles of at most TILE degrees and merge by GEOID. Two seconds between requests.
+    tiles = [bbox]
     if bbox:
-        q.update({"geometry": bbox, "geometryType": "esriGeometryEnvelope", "inSR": "4326",
-                  "spatialRel": "esriSpatialRelIntersects"})
-    # TIGERweb caps each response (exceededTransferLimit); page through with resultOffset so a large map frame
-    # (e.g. a district with islands or two distant areas) does not silently lose cities. Two seconds between pages.
-    feats, offset = [], 0
-    while True:
-        url = f"{BASE}{service}/MapServer/{layer}/query?" + urllib.parse.urlencode({**q, "resultOffset": offset})
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        data = json.load(urllib.request.urlopen(req, timeout=60))
+        x0, y0, x1, y1 = (float(v) for v in bbox.split(","))
+        nx, ny = max(1, math.ceil((x1 - x0) / TILE)), max(1, math.ceil((y1 - y0) / TILE))
+        tiles = [f"{x0 + (x1 - x0) * i / nx:.4f},{y0 + (y1 - y0) * j / ny:.4f},{x0 + (x1 - x0) * (i + 1) / nx:.4f},{y0 + (y1 - y0) * (j + 1) / ny:.4f}"
+                 for i in range(nx) for j in range(ny)]
+    feats, seen = [], set()
+    for n, tile in enumerate(tiles):
+        if n: time.sleep(2)
+        tq = dict(q)
+        if tile: tq.update({"geometry": tile, "geometryType": "esriGeometryEnvelope", "inSR": "4326", "spatialRel": "esriSpatialRelIntersects"})
+        url = f"{BASE}{service}/MapServer/{layer}/query?" + urllib.parse.urlencode(tq)
+        data = json.load(urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"}), timeout=60))
         if "features" not in data: raise SystemExit(f"{name}: TIGERweb error {data.get('error')}")
-        feats += data["features"]
-        if not data.get("exceededTransferLimit") or not data["features"]: break
-        offset += len(data["features"]); time.sleep(2)
-    data["features"] = feats
+        for f in data["features"]:
+            k = (f.get("properties") or {}).get("GEOID") or id(f)
+            if k not in seen: seen.add(k); feats.append(f)
+    data = {"type": "FeatureCollection", "features": feats}
     with open(os.path.join(OUT, name + ".geojson"), "w") as f:
         json.dump(data, f)
     print(name, len(data.get("features", [])), "features", data.get("error", ""))
