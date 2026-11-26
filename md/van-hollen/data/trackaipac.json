@@ -1,0 +1,24 @@
+{
+ "read": "2026-11-26",
+ "source": "Track AIPAC (trackaipac.com), Israel Lobby Total",
+ "members": [
+  {
+   "name": "Chris Van Hollen",
+   "dist": "MD",
+   "group": "me",
+   "party": "d",
+   "total": 230366,
+   "url": "https://www.trackaipac.com/tracker/people/member-chris-van-hollen-md-sen-d",
+   "rejects": true
+  },
+  {
+   "name": "Chuck Schumer",
+   "dist": "NY",
+   "group": "Party leadership",
+   "party": "d",
+   "total": 428480,
+   "url": "https://www.trackaipac.com/tracker/people/member-chuck-schumer-ny-sen-d",
+   "rejects": false
+  }
+ ]
+}
