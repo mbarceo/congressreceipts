@@ -9,7 +9,11 @@
 **/data/sources/*.html
 # Local tooling
 .DS_Store
-.claude/
+# Local Claude Code state stays private; the project skills and shared settings are committed
+.claude/*
+!.claude/skills/
+!.claude/skills/**
+!.claude/settings.json
 __pycache__/
 **/data/directory_raw/
 
