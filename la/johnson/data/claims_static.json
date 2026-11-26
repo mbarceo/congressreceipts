@@ -1,0 +1,37 @@
+{
+ "_note": "Facts typed directly into the pages (not built from data). Each lists the exact terms that must appear on its source. 'check': 'clerk-committees' verifies committee seats against her own entry in the Clerk's member file instead of a text search.",
+ "claims": [
+  {
+   "page": "overview",
+   "section": "Header",
+   "text": "Speaker of the House.",
+   "url": "https://www.speaker.gov/",
+   "must": [
+    "Speaker of the House Mike Johnson"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Header",
+   "text": "2024 general: Johnson 262,821 (85.8%), Morott 43,427 (14.2%), both Republicans.",
+   "url": "https://en.wikipedia.org/wiki/2024_United_States_House_of_Representatives_elections_in_Louisiana",
+   "must": [
+    "262,821",
+    "43,427",
+    "Joshua Morott"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Offices",
+   "text": "Washington office: 521 Cannon House Office Building, (202) 225-2777.",
+   "url": "https://clerk.house.gov/xml/lists/MemberData.xml",
+   "must": [
+    "Mike Johnson",
+    "(202) 225-2777",
+    "CHOB",
+    "521"
+   ]
+  }
+ ]
+}

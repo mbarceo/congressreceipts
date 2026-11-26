@@ -1,0 +1,5 @@
+{
+ "_note": "Evidence cards for the Stances page's 'big questions'. Each item points one way: 'pro' or 'con' (labels per card). Roll items: 'yea' says which side a Yea vote is on; her vote, and therefore the item's side, comes from data/votes.json. Release items: 'stmt' must match one release. Headlines are computed in scripts/build_cards.py by the rule stated on each card. Build: python3 -I scripts/build_cards.py (after build_stances.py and build_establishment.py).",
+ "cards": [],
+ "_republican_note": "The template's ICE, police and corporate cards are written from a Democratic framing and were removed for this Republican member. Add evidence cards for Republican big questions (tariffs, the 2020 election, Medicaid and SNAP cuts, Epstein files, federal workforce, Ukraine and NATO), each with a stated rule."
+}

@@ -1,0 +1,1415 @@
+{
+ "_note": "Hand-curated, sourced items for allegiance.html (Republican members). Numbers in {braces} are filled by scripts/build_allegiance.py from roll calls, FEC data and data/alignment.json; never type a number here. trump.picks: {roll:'2025-123', trump:'Yea'|'Nay' (the vote Trump wanted on that question), topic, source:{label,url} (a White House statement of administration policy or Trump's own post), note}. mandate.items: {proposal, page:'Ch. 3, p. 123', source:{url}, match, roll or bill+billUrl}. mandate.heritageAction: {score, label, url}. mandate.disavowal: {text, url} (Trump's own words, sourced). maga.items: {d:'YYYY-MM-DD', text, u}. Headline is an editorial call under 'rule'; 'TBD' shows as Coming soon.",
+ "question": "Votes with Trump?",
+ "headline": "AUTO",
+ "rule": "Counts every House roll call on final disposition of a measure (passage, agreeing to a resolution, concurring in a Senate amendment, or suspending the rules and passing it) for which the White House issued a statement of administration policy that states a clear position, plus two votes whose sources are noted. Trump's position is that statement's position: support means he wanted a Yea, opposition a Nay. Headline: 'Reliably with Trump' if the member cast the White House position on at least 95% of these votes and on every one where 10 or more Republicans voted the other way; 'Mostly with Trump' at 80% to 94%; 'Often against Trump' below 80%. The same rule applies to every Republican.",
+ "why": "",
+ "summary": "Cast the White House position on {trumpWith} of {trumpN} votes with a documented Trump position; against it on {trumpAgainst}.",
+ "tiles": [
+  [
+   "{trumpPct}%",
+   "of {trumpN} votes with a documented Trump position cast with it"
+  ],
+  [
+   "{trumpAgainst}",
+   "votes against the White House position"
+  ],
+  [
+   "{jan6obj} of {jan6n}",
+   "Jan. 6, 2021 objections to the 2020 electoral count voted for (Arizona and Pennsylvania)"
+  ],
+  [
+   "{jeffAgree}%",
+   "Same vote as {leaderName} on votes where both voted Yea or Nay"
+  ],
+  [
+   "{unity}%",
+   "Votes cast with the Republican majority (rank {rank} of {dems})"
+  ],
+  [
+   "{haScore}%",
+   "Heritage Action scorecard, 119th Congress (Heritage Action is the Heritage Foundation's advocacy arm)"
+  ],
+  [
+   "{mandateYea} of {mandateN}",
+   "votes on measures matching a Mandate proposal cast Yea"
+  ]
+ ],
+ "trump": {
+  "intro": "Each row is a final vote on a measure where the White House stated a position, shown with the exact words from that statement. A match means the member cast the vote Trump's side wanted.",
+  "picks": [
+   {
+    "roll": "2025-023",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-Laken-Riley-1.22.25.pdf"
+    },
+    "quote": "The Administration strongly supports enactment of the Laken Riley Act."
+   },
+   {
+    "roll": "2025-027",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HR21.pdf"
+    },
+    "quote": "The Administration strongly supports H.R. 21 the Born-Alive Abortion Survivors Protection Act, and applauds the House for its efforts to protect the most vulnerable and prevent infanticide."
+   },
+   {
+    "roll": "2025-033",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HR27.pdf"
+    },
+    "quote": "The Administration strongly supports enactment of the HALT Fentanyl Act."
+   },
+   {
+    "roll": "2025-035",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HR26.pdf"
+    },
+    "quote": "The Administration strongly supports House passage of H.R. 26, the Protecting American Energy Production Act, which would prohibit any Federal moratorium on the use of hydraulic fracturing (fracking) unless Congress authorizes the moratorium."
+   },
+   {
+    "roll": "2025-041",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HR77.pdf"
+    },
+    "quote": "The Administration supports H.R. 77, the Midnight Rules Relief Act."
+   },
+   {
+    "roll": "2025-042",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/09/SAP-HR35.pdf"
+    },
+    "quote": "The Administration strongly supports enactment of the Agent Raul Gonzalez Officer Safety Act."
+   },
+   {
+    "roll": "2025-052",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HJRes-35.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.J."
+   },
+   {
+    "roll": "2025-053",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HJRes-20-1.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.J."
+   },
+   {
+    "roll": "2025-058",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HJR61.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.J."
+   },
+   {
+    "roll": "2025-059",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HJR42.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.J."
+   },
+   {
+    "roll": "2025-061",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-SJR11.pdf"
+    },
+    "quote": "The Administration strongly supports passage of S.J."
+   },
+   {
+    "roll": "2025-068",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HR1156.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 1156, the Pandemic Unemployment Fraud Enforcement Act."
+   },
+   {
+    "roll": "2025-077",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/09/SAP-HJR24-1.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.J."
+   },
+   {
+    "roll": "2025-078",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/09/SAP-HJR75.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.J."
+   },
+   {
+    "roll": "2025-083",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/09/SAP-HR1048.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 1048, the DETERRENT Act."
+   },
+   {
+    "roll": "2025-095",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-SJR28.pdf"
+    },
+    "quote": "The Administration supports passage of S.J."
+   },
+   {
+    "roll": "2025-096",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-SJR18.pdf"
+    },
+    "quote": "The Administration supports passage of S.J."
+   },
+   {
+    "roll": "2025-098",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HR1526.pdf"
+    },
+    "quote": "The Administration supports passage of H.R. 1526, the No Rogue Rulings Act of 2025."
+   },
+   {
+    "roll": "2025-102",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HR22.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 22, the Safeguard American Voter Eligibility (SAVE) Act."
+   },
+   {
+    "roll": "2025-110",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HJR60.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.J."
+   },
+   {
+    "roll": "2025-111",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HJR-87-88-89.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.J."
+   },
+   {
+    "roll": "2025-112",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HJR-87-88-89.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.J."
+   },
+   {
+    "roll": "2025-113",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HJR78.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.J."
+   },
+   {
+    "roll": "2025-114",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HJR-87-88-89.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.J."
+   },
+   {
+    "roll": "2025-122",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HR276.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 276, which codifies President Trump’s January 20, 2025, Executive Order 14172, officially renaming as the “Gulf of America” the U.S."
+   },
+   {
+    "roll": "2025-128",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HR2243.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 2243, which would update certain provisions of the Law Enforcement Officer Safety Act of 2004."
+   },
+   {
+    "roll": "2025-130",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HR2255.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 2255, the Federal Law Enforcement Officer Service Weapon Purchase Act of 2025."
+   },
+   {
+    "roll": "2025-131",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HR2240.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 2240, the Improving Law Enforcement Officer Safety and Wellness Through Data Act."
+   },
+   {
+    "roll": "2025-137",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-SJR13.pdf"
+    },
+    "quote": "The Administration strongly supports passage of S.J."
+   },
+   {
+    "roll": "2025-143",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-SJR31.pdf"
+    },
+    "quote": "The Administration strongly supports passage of S.J."
+   },
+   {
+    "roll": "2025-145",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HR1.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 1, the One Big Beautiful Bill Act."
+   },
+   {
+    "roll": "2025-153",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HR2931-HR2966.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 2931, the Save SBA from Sanctuary Cities Act of 2025, and H.R. 2966, the American Entrepreneurs First Act of 2025."
+   },
+   {
+    "roll": "2025-156",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HR2931-HR2966.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 2931, the Save SBA from Sanctuary Cities Act of 2025, and H.R. 2966, the American Entrepreneurs First Act of 2025."
+   },
+   {
+    "roll": "2025-162",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HR2096.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 2096, the Protecting Our Nation’s Capital Emergency Act of 2025 Act."
+   },
+   {
+    "roll": "2025-163",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HR884.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 884, which would prohibit individuals who are not citizens of the United States from voting in elections in the District of Columbia (D.C.) and repeal the D.C."
+   },
+   {
+    "roll": "2025-168",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-on-H.R.-4.pdf"
+    },
+    "quote": "The Administration strongly supports H.R. 4, the Rescissions Act of 2025."
+   },
+   {
+    "roll": "2025-171",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HR2056.pdf"
+    },
+    "quote": "The Administration strongly supports the passage of H.R. 2056, the District of Columbia Federal Immigration Compliance Act."
+   },
+   {
+    "roll": "2025-183",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HR875.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 875, the Jeremy and Angel Seay and Sergeant Brandon Mendoza Protect Our Communities from DUIs Act."
+   },
+   {
+    "roll": "2025-184",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HR275.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 275, the Special Interest Alien Reporting Act of 2025."
+   },
+   {
+    "roll": "2025-190",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-HR1.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 1, the One Big Beautiful Bill Act."
+   },
+   {
+    "roll": "2025-200",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/03/SAP-S1582.pdf"
+    },
+    "quote": "The Administration strongly supports passage of S. 1582, the Guiding and Establishing National Innovation for U.S."
+   },
+   {
+    "roll": "2025-201",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/07/SAP-HR1919.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 1919, the Anti-CBDC Surveillance State Act."
+   },
+   {
+    "roll": "2025-224",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/09/SAP-HJRES104-HJRES105-HJRES106.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.J."
+   },
+   {
+    "roll": "2025-264",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/09/SAP-HR3486-Final.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 3486, the Stop Illegal Entry Act of 2025."
+   },
+   {
+    "roll": "2025-270",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/09/SAP-DC-Bills-9.16.25.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 4922, the D.C."
+   },
+   {
+    "roll": "2025-294",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/11/SAP-HJRES-130.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.J."
+   },
+   {
+    "roll": "2025-295",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/11/SAP-HJRES-131.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.J."
+   },
+   {
+    "roll": "2025-296",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/10/SAP-SJRES80.pdf"
+    },
+    "quote": "The Administration strongly supports passage of S.J."
+   },
+   {
+    "roll": "2025-298",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/11/SAP-HR5107-HR5214.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 5214, the District of Columbia Cash Bail Reform Act of 2025 and H.R. 5107, the Common-Sense Law Enforcement and Accountability Now in DC (CLEAN DC) Act of 2025. H.R. 5214 would amend the Code of the District of Columbia (D.C."
+   },
+   {
+    "roll": "2025-324",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/12/SAP-HR3668-HR3638.pdf"
+    },
+    "quote": "The Administration supports passage of H.R. 3668, the Improving Interagency Coordination for Pipeline Reviews Act, and H.R. 3638, the Electric Supply Chain Act."
+   },
+   {
+    "roll": "2025-330",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/12/SAP-HR3898.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 3898, the Promoting Efficient Review for Modern Infrastructure Today (PERMIT) Act, which would streamline Clean Water Act permitting processes and reduce bureaucratic delays for infrastructure projects."
+   },
+   {
+    "roll": "2025-334",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/12/SAP-HR3668-HR3638.pdf"
+    },
+    "quote": "The Administration supports passage of H.R. 3668, the Improving Interagency Coordination for Pipeline Reviews Act, and H.R. 3638, the Electric Supply Chain Act."
+   },
+   {
+    "roll": "2025-340",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/01/SAP-HR4371.pdf"
+    },
+    "quote": "The Administration supports passage of H.R. 4371, the Kayla Hamilton Act, which would improve the process for determining the appropriate placement of unaccompanied alien children (UACs)."
+   },
+   {
+    "roll": "2025-342",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/01/SAP-HR3616HR3632.pdf"
+    },
+    "quote": "The Administration supports passage of H.R. 3616, the Reliable Power Act, and H.R. 3632, the Power Plant Reliability Act."
+   },
+   {
+    "roll": "2025-345",
+    "trump": "Nay",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/01/SAP-HConRes-61.pdf"
+    },
+    "quote": "The Administration strongly opposes passage of H.Con.Res. 61, a concurrent resolution that would direct the removal United States Armed Forces from hostilities with presidentially designated terrorist organizations in the Western Hemisphere."
+   },
+   {
+    "roll": "2025-346",
+    "trump": "Nay",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/01/SAP-HConRes-64.pdf"
+    },
+    "quote": "The Administration strongly opposes passage of H.Con.Res. 64, a concurrent resolution that would direct the removal of United States Armed Forces from hostilities within or against Venezuela."
+   },
+   {
+    "roll": "2025-347",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/01/SAP-HR3616HR3632.pdf"
+    },
+    "quote": "The Administration supports passage of H.R. 3616, the Reliable Power Act, and H.R. 3632, the Power Plant Reliability Act."
+   },
+   {
+    "roll": "2025-358",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/01/SAP-HR1366.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 1366, the Mining Regulatory Clarity Act."
+   },
+   {
+    "roll": "2025-360",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/01/SAP-HR845.pdf"
+    },
+    "quote": "The Administration supports passage of H.R. 845, the Pet and Livestock Protection Act."
+   },
+   {
+    "roll": "2026-007",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/01/SAP-HR6938.pdf"
+    },
+    "quote": "The Administration supports H.R. 6938, which makes appropriations for Commerce, Justice, and Science and Related Agencies, Energy and Water Development and Related Agencies, Interior, Environment and Related Agencies for the fiscal year (FY) ending September 30, 2026."
+   },
+   {
+    "roll": "2026-012",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/01/SAP-HR5184.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 5184, the Affordable Housing Over Mandating Efficiency Standards (HOMES) Act."
+   },
+   {
+    "roll": "2026-028",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/01/SAP-HR7006.pdf"
+    },
+    "quote": "The Administration supports H.R. 7006, which makes appropriations for Financial Services and General Government, National Security, Department of State, and Related Programs for the fiscal year (FY) ending September 30, 2026."
+   },
+   {
+    "roll": "2026-037",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/01/SAP-HR6359-HR6945.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 6359, the Pregnant Students’ Rights Act, and H.R. 6945, the Supporting Pregnant and Parenting Women and Families Act."
+   },
+   {
+    "roll": "2026-038",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/01/SAP-HJR140.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.J."
+   },
+   {
+    "roll": "2026-045",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/01/SAP-HR-7147-HR-7148.pdf"
+    },
+    "quote": "The Administration supports the passage of H.R. 7147, which makes appropriations for the Department of Homeland Security for the fiscal year (FY) ending September 30, 2026, and H.R. 7148, which makes appropriations for Defense; Labor, Health and Human Services, and Education; and Transportation and Housing and Urban Development for the FY ending September 30, 2026."
+   },
+   {
+    "roll": "2026-047",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/01/SAP-HR6359-HR6945.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 6359, the Pregnant Students’ Rights Act, and H.R. 6945, the Supporting Pregnant and Parenting Women and Families Act."
+   },
+   {
+    "roll": "2026-048",
+    "trump": "Nay",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/01/SAP-H.Con_.Res-68.pdf"
+    },
+    "quote": "The Administration strongly opposes passage of H.Con.Res. 68, a concurrent resolution that would direct the removal of United States Armed Forces from Venezuela."
+   },
+   {
+    "roll": "2026-053",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/01/SAP-HR-7147-HR-7148.pdf"
+    },
+    "quote": "The Administration supports the passage of H.R. 7147, which makes appropriations for the Department of Homeland Security for the fiscal year (FY) ending September 30, 2026, and H.R. 7148, which makes appropriations for Defense; Labor, Health and Human Services, and Education; and Transportation and Housing and Urban Development for the FY ending September 30, 2026."
+   },
+   {
+    "roll": "2026-055",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/02/SAP-H.R.-4090.pdf"
+    },
+    "quote": "The Administration supports passage of H.R. 4090, which would codify provisions of President Trump’s Executive Order 14154, Unleashing American Energy, and Executive Order 14241, Immediate Measures to Increase American Mineral Production."
+   },
+   {
+    "roll": "2026-056",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/02/SAP-HJRes142.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.J."
+   },
+   {
+    "roll": "2026-064",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/05/SAP-H.R.-3617.pdf"
+    },
+    "quote": "The Administration supports passage of H.R. 3617, the Securing America’s Critical Minerals Supply Act."
+   },
+   {
+    "roll": "2026-067",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/05/SAP-H.R.-261.pdf"
+    },
+    "quote": "The Administration supports passage of H.R. 261, the Undersea Cable Protection Act of 2025, which would eliminate duplicative permitting laws and strengthen national security and global connectivity by safeguarding the United States’ submarine cable infrastructure."
+   },
+   {
+    "roll": "2026-070",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/05/SAP-H.R.-2189.pdf"
+    },
+    "quote": "The Administration supports passage of H.R. 2189, the Law-Enforcement Innovate to De- Escalate Act."
+   },
+   {
+    "roll": "2026-085",
+    "trump": "Nay",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/03/SAP-HConRes38.pdf"
+    },
+    "quote": "The Administration strongly opposes passage of H."
+   },
+   {
+    "roll": "2026-087",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/03/SAP-H.R.-7744.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 7744, which makes appropriations for the Department of Homeland Security (DHS) for the fiscal year (FY) ending September 30, 2026, enacting this legislation would end the nearly three-week shutdown of DHS and provide funding that is critical to ensuring the safety and security of the American people during a time of heightened threats."
+   },
+   {
+    "roll": "2026-094",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/SAP-HR1958.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 1958, the Deporting Fraudsters Act of 2026."
+   },
+   {
+    "roll": "2026-096",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/SAP-HR4638.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 4638, the BOWOW Act of 2025. H.R. 4638 amends the Immigration and Nationality Act to make it a deportable offense for being convicted of harming law enforcement animals, ensuring that protections for law enforcement personnel extends to the animals putting their lives on the line to keep the United States and the American people safe from criminal aliens."
+   },
+   {
+    "roll": "2026-105",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/SAP-H.R.-7084.pdf"
+    },
+    "quote": "The Administration supports H.R. 7084, the Defending American Property Abroad Act of 2026."
+   },
+   {
+    "roll": "2026-114",
+    "trump": "Nay",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/SAP-HCR40.pdf"
+    },
+    "quote": "The Administration strongly opposes passage of H."
+   },
+   {
+    "roll": "2026-116",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/SAP-HR6409.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 6409, the Foreign Emissions and Nonattainment Clarification for Economic Stability (FENCES) Act."
+   },
+   {
+    "roll": "2026-118",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/SAP-HR6398.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 6398, the Reducing and Eliminating Duplicative Environmental Regulations (RED Tape) Act."
+   },
+   {
+    "roll": "2026-120",
+    "trump": "Nay",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/SAP-HR1689.pdf"
+    },
+    "quote": "The Administration strongly opposes passage of H.R. 1689."
+   },
+   {
+    "roll": "2026-134",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/05/SAP-H.R.-4690.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 4690, the Reliable Federal Infrastructure Act."
+   },
+   {
+    "roll": "2026-136",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/SAP-HR6387.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 6387, the Fire Improvement and Reforming Exceptional Events (FIRE) Act."
+   },
+   {
+    "roll": "2026-137",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/05/SAP-H.R.-5587.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 5587, the Harnessing Energy At Thermal Sources (HEATS) Act of 2026. H.R. 5587 advances responsible domestic energy development by streamlining permitting for geothermal projects in cases where the Federal interest is limited."
+   },
+   {
+    "roll": "2026-143",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/S-Con-Res-33-SAP.pdf"
+    },
+    "quote": "The Administration strongly supports S."
+   },
+   {
+    "roll": "2026-169",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/05/SAP-HR6260.pdf"
+    },
+    "quote": "The Administration strongly supports H.R. 6260, the Keeping Violent Offenders Off Our Streets Act."
+   },
+   {
+    "roll": "2026-170",
+    "trump": "Nay",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/05/SAP-HCR75.pdf"
+    },
+    "quote": "The Administration strongly opposes passage of H."
+   },
+   {
+    "roll": "2026-171",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/05/SAP-HR5625.pdf"
+    },
+    "quote": "The Administration strongly supports H.R. 5625, the Cashless Bail Reporting Act."
+   },
+   {
+    "roll": "2026-173",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/05/SAP-HR8365.pdf"
+    },
+    "quote": "The Administration supports H.R. 8365, the Monitor Accountability Act."
+   },
+   {
+    "roll": "2026-184",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/05/SAP-HR2616.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 2616, the Stopping Indoctrination and Protecting Kids Act."
+   },
+   {
+    "roll": "2026-188",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/05/SAP-HR1329.pdf"
+    },
+    "quote": "The Administration supports passage of H.R. 1329, which would authorize the President to select a site for, and the construction to begin on, a national museum dedicated to American women’s history in Washington, D.C."
+   },
+   {
+    "roll": "2026-190",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/06/SAP-HR1041.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 1041, which would ensure that Veterans are not prohibited from purchasing firearms merely due to having a fiduciary appointed to handle their finances."
+   },
+   {
+    "roll": "2026-198",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/10/SAP-HR7726.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 7726, the Stop Child Care Scams Act of 2026."
+   },
+   {
+    "roll": "2026-199",
+    "trump": "Nay",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/06/SAP-Senate-HCR86.pdf"
+    },
+    "quote": "The Administration strongly opposes passage of H."
+   },
+   {
+    "roll": "2026-205",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/06/H.R.-8646-SAP_Updated.pdf"
+    },
+    "quote": "The Administration supports advancement of this legislation, but looks forward to addressing its concerns prior to enactment."
+   },
+   {
+    "roll": "2026-217",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/10/SAP-HR7892.pdf"
+    },
+    "quote": "The Administration supports passage of H.R. 7892, the No Aid for Ghost Students Act of 2026, to protect taxpayer-funded Federal student aid."
+   },
+   {
+    "roll": "2026-220",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/10/SAP-HR8464.pdf"
+    },
+    "quote": "The Administration supports the passage of H.R. 8464, the Stopping Fraudulent Payments Act."
+   },
+   {
+    "roll": "2026-232",
+    "trump": "Nay",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/06/SAP-HCR108.pdf"
+    },
+    "quote": "The Administration strongly opposes passage of H."
+   },
+   {
+    "roll": "2026-238",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/07/SAP-HR139.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 139, the Sunshine Protection Act of 2025."
+   },
+   {
+    "roll": "2026-240",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/07/SAP-HR1181.pdf"
+    },
+    "quote": "The Administration strongly supports H.R. 1181, the Protecting Privacy in Purchases Act."
+   },
+   {
+    "roll": "2026-247",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/07/SAP-HR8595.pdf"
+    },
+    "quote": "The Administration supports advancement of this legislation, but looks forward to addressing its concerns prior to enactment."
+   },
+   {
+    "roll": "2026-271",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/07/SAP-HR6955.pdf"
+    },
+    "quote": "The Administration supports House passage of H.R. 6955."
+   },
+   {
+    "roll": "2026-280",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/07/SAP-HR7008.pdf"
+    },
+    "quote": "The Administration strongly supports the passage of H.R. 7008, the Stop Insider Trading Act."
+   },
+   {
+    "roll": "2026-282",
+    "trump": "Nay",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/09/SAP-H.Con_.Res_.-89-Sen.pdf"
+    },
+    "quote": "The Administration strongly opposes passage of H."
+   },
+   {
+    "roll": "2026-283",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/07/SAP-HR8884.pdf"
+    },
+    "quote": "The Administration supports passage of H.R. 8884, the Removing Barriers to Work for Disabled Americans Act."
+   },
+   {
+    "roll": "2026-291",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/09/SAP-HR9436.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 9436, which would extend the time period, from 2028 until 2035, for which the Department of Commerce’s National Marine Fisheries Service (NMFS) Final Rule amending the regulations implementing the Atlantic Large Whale Take Reduction Plan (86 Fed."
+   },
+   {
+    "roll": "2026-294",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/09/SAP-HR1501.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 1501, a bill that would add a new “mining, mineral processing” category to the list of Fixing America’s Surface Transportation (FAST) Act covered projects eligible for accelerated Federal environmental reviews and authorizations coordinated by the Federal Permitting Improvement Steering Council (FPISC)."
+   },
+   {
+    "roll": "2026-306",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/09/SAP-HJR210.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.J."
+   },
+   {
+    "roll": "2026-307",
+    "trump": "Nay",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/11/SAP-H.-Con.-Res.-93-Senate.pdf"
+    },
+    "quote": "The Administration strongly opposes passage of H."
+   },
+   {
+    "roll": "2026-309",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/09/SAP-HR9576.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 9576, which would codify in Federal law the creation of the National Fraud Enforcement Division as a stand-alone division within the U.S."
+   },
+   {
+    "roll": "2026-310",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/09/SAP-HR10326.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 10326, which would strengthen Federal statutory requirements for state governments that administer Federal benefits programs using Federal taxpayer dollars to share data with the U.S."
+   },
+   {
+    "roll": "2026-311",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/09/SAP-HJR213.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.J."
+   },
+   {
+    "roll": "2026-312",
+    "trump": "Yea",
+    "topic": "",
+    "source": {
+     "label": "White House statement of administration policy",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2026/09/SAP-HR9340.pdf"
+    },
+    "quote": "The Administration strongly supports passage of H.R. 9340, the Ratepayer Protection Act."
+   },
+   {
+    "roll": "2026-065",
+    "trump": "Nay",
+    "topic": "Ending the Canada tariff emergency",
+    "source": {
+     "label": "White House statement of administration policy on the Senate companion, S.J.Res. 77, which would end the same February 1, 2025 emergency",
+     "url": "https://www.whitehouse.gov/wp-content/uploads/2025/10/SAP-SJR77.pdf"
+    },
+    "quote": "The Administration strongly opposes S.J. Res. 77.",
+    "note": "No statement was issued for H.J.Res. 72 itself; this is the administration's statement on the Senate measure to end the same emergency."
+   },
+   {
+    "roll": "2025-289",
+    "trump": "Yea",
+    "topic": "Epstein Files Transparency Act",
+    "source": {
+     "label": "NPR report of Trump's Nov. 16, 2025 Truth Social post telling House Republicans to vote to release the files (secondary source)",
+     "url": "https://www.npr.org/2025/11/16/nx-s1-5610552/trump-house-republicans-epstein-files"
+    },
+    "note": "Trump had opposed the discharge effort until this post.",
+    "must": [
+     "Epstein",
+     "Truth Social",
+     "Republicans should vote"
+    ]
+   }
+  ]
+ },
+ "jan6": {
+  "intro": ""
+ },
+ "mandate": {
+  "intro": "Heritage Foundation's Mandate for Leadership (2023) is the Project 2025 policy book. Each row quotes a Mandate proposal with its page, then the bill or vote it matches. “Direct” means the Mandate names the bill or the same action; “same target” means the bill acts on the same subject in the Mandate's direction; “partial” says exactly where the bill differs. A match shows alignment of policy, not intent or coordination.",
+  "items": [
+   {
+    "proposal": "Enact the Midnight Rules Relief Act, so several late-term regulations can be disapproved together",
+    "page": "Printed p. 50 (PDF p. 83)",
+    "quote": "Congress and the President should enact the Midnight Rules Relief Act",
+    "kind": "direct",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=83"
+    },
+    "match": "The Mandate names this bill. H.R. 77 provides for en bloc consideration of resolutions disapproving “midnight rules.”",
+    "roll": "2025-041",
+    "bill": "H.R. 77, Midnight Rules Relief Act",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hr77eh/html/BILLS-119hr77eh.htm",
+    "billMust": [
+     "Midnight Rules Relief Act",
+     "en bloc"
+    ]
+   },
+   {
+    "proposal": "Prevent a central bank digital currency",
+    "page": "Printed p. 741 (PDF p. 774)",
+    "quote": "Prevent the institution of a central bank digital currency (CBDC).",
+    "kind": "direct",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=774"
+    },
+    "match": "H.R. 1919 prohibits the use of a central bank digital currency for monetary policy and bars Federal Reserve banks from offering certain products directly to individuals.",
+    "roll": "2025-201",
+    "bill": "H.R. 1919, Anti-CBDC Surveillance State Act",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hr1919eh/html/BILLS-119hr1919eh.htm",
+    "billMust": [
+     "central bank digital currency",
+     "Anti-CBDC Surveillance State Act"
+    ]
+   },
+   {
+    "proposal": "Limit California's Clean Air Act waiver",
+    "page": "Printed p. 426 (PDF p. 459)",
+    "quote": "Restore the position that California’s waiver applies only to California-specific issues like ground-level ozone, not global climate issues.",
+    "kind": "same target",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=459"
+    },
+    "match": "The Mandate calls for narrowing California's waiver. H.J.Res. 87 uses the Congressional Review Act to nullify EPA's waiver decision on Advanced Clean Trucks and related rules.",
+    "roll": "2025-111",
+    "bill": "H.J.Res. 87",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hjres87eh/html/BILLS-119hjres87eh.htm",
+    "billMust": [
+     "California",
+     "Waiver of Preemption"
+    ]
+   },
+   {
+    "proposal": "Limit California's Clean Air Act waiver",
+    "page": "Printed p. 426 (PDF p. 459)",
+    "quote": "Restore the position that California’s waiver applies only to California-specific issues like ground-level ozone, not global climate issues.",
+    "kind": "same target",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=459"
+    },
+    "match": "H.J.Res. 88 nullifies EPA's waiver decision on California's Advanced Clean Cars II rule.",
+    "roll": "2025-114",
+    "bill": "H.J.Res. 88",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hjres88eh/html/BILLS-119hjres88eh.htm",
+    "billMust": [
+     "Advanced Clean Cars II",
+     "Waiver of Preemption"
+    ]
+   },
+   {
+    "proposal": "Limit California's Clean Air Act waiver",
+    "page": "Printed p. 426 (PDF p. 459)",
+    "quote": "Restore the position that California’s waiver applies only to California-specific issues like ground-level ozone, not global climate issues.",
+    "kind": "same target",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=459"
+    },
+    "match": "H.J.Res. 89 nullifies EPA's waiver decision on California's “Omnibus” low-NOx regulation.",
+    "roll": "2025-112",
+    "bill": "H.J.Res. 89",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hjres89eh/html/BILLS-119hjres89eh.htm",
+    "billMust": [
+     "Omnibus",
+     "Waiver of Preemption"
+    ]
+   },
+   {
+    "proposal": "Add work requirements to Medicaid",
+    "page": "Printed p. 468 (PDF p. 501)",
+    "quote": "Add work requirements and match Medicaid benefits to beneficiary needs.",
+    "kind": "same target",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=501"
+    },
+    "match": "Section 71119 requires states to set Medicaid community engagement requirements for certain adults. This is the House vote on passing the bill.",
+    "roll": "2025-145",
+    "bill": "H.R. 1, One Big Beautiful Bill Act (as enrolled, Public Law 119-21)",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hr1enr/html/BILLS-119hr1enr.htm",
+    "billMust": [
+     "community engagement requirements",
+     "Sec. 71119"
+    ]
+   },
+   {
+    "proposal": "Add work requirements to Medicaid",
+    "page": "Printed p. 468 (PDF p. 501)",
+    "quote": "Add work requirements and match Medicaid benefits to beneficiary needs.",
+    "kind": "same target",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=501"
+    },
+    "match": "The same Section 71119 stayed in the version the House voted to send to the President.",
+    "roll": "2025-190",
+    "bill": "H.R. 1, One Big Beautiful Bill Act (as enrolled, Public Law 119-21)",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hr1enr/html/BILLS-119hr1enr.htm",
+    "billMust": [
+     "community engagement requirements",
+     "Sec. 71119"
+    ]
+   },
+   {
+    "proposal": "End federal funding for the Corporation for Public Broadcasting through the budget process",
+    "page": "Printed p. 247 (PDF p. 280)",
+    "quote": "Cutting off the CPB is logistically easy. The solution lies in the budgetary process.",
+    "kind": "same target",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=280"
+    },
+    "match": "H.R. 4 rescinds the Corporation for Public Broadcasting's fiscal 2026 and 2027 funds.",
+    "roll": "2025-168",
+    "bill": "H.R. 4, Rescissions Act of 2025 (as enrolled)",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hr4enr/html/BILLS-119hr4enr.htm",
+    "billMust": [
+     "Corporation for Public Broadcasting",
+     "are rescinded"
+    ]
+   },
+   {
+    "proposal": "Mandatory detention of aliens",
+    "page": "Printed p. 150 (PDF p. 183)",
+    "quote": "Congress should eliminate ambiguous discretionary language in Title 8 that aliens “may” be detained and clarify that aliens “shall” be detained.",
+    "kind": "partial",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=183"
+    },
+    "match": "Same mechanism, narrower scope: S. 5 requires detention of certain aliens charged with or arrested for burglary, theft, larceny, shoplifting or assault of a law enforcement officer.",
+    "roll": "2025-023",
+    "bill": "S. 5, Laken Riley Act (as enrolled)",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119s5enr/html/BILLS-119s5enr.htm",
+    "billMust": [
+     "burglary",
+     "theft",
+     "larceny"
+    ]
+   },
+   {
+    "proposal": "Enforce and strengthen Section 117 reporting of foreign gifts to universities",
+    "page": "Printed p. 355 (PDF p. 388)",
+    "quote": "Reverse the Biden Administration’s refusal to enforce Section 117 of the HEA",
+    "kind": "partial",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=388"
+    },
+    "match": "Same provision, different remedy: H.R. 1048 rewrites Section 117 with a $50,000 reporting threshold and fines. The Mandate's further proposal, tying reporting to federal aid, is not in the bill.",
+    "roll": "2025-083",
+    "bill": "H.R. 1048, DETERRENT Act",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hr1048eh/html/BILLS-119hr1048eh.htm",
+    "billMust": [
+     "Section 117",
+     "DETERRENT Act"
+    ]
+   }
+  ],
+  "heritageAction": {
+   "score": 81,
+   "label": "119th Congress",
+   "url": "https://heritageaction.com/scorecard/members/C000059"
+  },
+  "disavowal": {
+   "text": "Trump said on July 5, 2024, “I know nothing about Project 2025,” as reported by National Review (secondary source).",
+   "url": "https://www.nationalreview.com/news/trump-disavows-the-heritage-foundations-high-profile-plan-for-a-second-term/",
+   "must": [
+    "I know nothing about Project 2025"
+   ]
+  }
+ },
+ "maga": {
+  "items": []
+ },
+ "signs": {},
+ "timeline": []
+}
