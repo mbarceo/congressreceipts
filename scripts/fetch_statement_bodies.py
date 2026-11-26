@@ -5,10 +5,11 @@ so issue searches should use the full text. Cached: re-runs only fetch new relea
 Release bodies are found by layout: house.gov "evo-press-release__body"; WordPress/Elementor (senate.gov sites
 such as Padilla's and Schiff's) "theme-post-content" widget; other WordPress themes "entry-content". A page with
 none of these is reported as missing rather than saved as a whole page of navigation text.
-Usage: python3 -I scripts/fetch_statement_bodies.py
+Senate "js-press-release" layout (vanhollen.senate.gov): the RawHTML block up to the share buttons.
+Requests go one at a time, 3 s apart (senate.gov bot protection). --limit N fetches at most N new releases.
+Usage: python3 -I scripts/fetch_statement_bodies.py [--limit N]
 """
-import html, json, os, re, sys, time, urllib.request
-from concurrent.futures import ThreadPoolExecutor
+import html, json, os, re, sys, time, urllib.error, urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from config import ROOT
 
@@ -22,6 +23,9 @@ def extract(h):
         seg = re.split(r"### Media|Back to top|Contact Us|\bIssues :|-?\d{2,3}\.\d{6,} -?\d{2,3}\.\d{6,}", html.unescape(re.sub(r"<[^>]+>", " ", h[i:])))[0]
         return re.sub(r"\s+", " ", seg.replace("evo-press-release__body\">", "")).strip()
     h = re.sub(r"<script.*?</script>|<style.*?</style>|<noscript.*?</noscript>", " ", h, flags=re.S)
+    m = re.search(r'class="js-press-release[^"]*"[^>]*>(.*?)(?=ShareButtons|<!--stopindex-->|<footer)', h, re.S)
+    if m:        # senate.gov "ArticleBlock" sites: release text sits in one RawHTML block
+        return text(re.sub(r"<[^>]*$", "", m.group(1)))
     m = re.search(r'data-widget_type="theme-post-content\.default"\s*>(.*?)(?=data-widget_type="|<footer|data-elementor-type="footer")', h, re.S)
     if m:        # Elementor post-content widget: everything up to the next widget (share buttons, related posts)
         return text(re.sub(r"<[^>]*$", "", m.group(1)))   # drop the next widget's unfinished opening tag
@@ -34,18 +38,23 @@ def body(u):
     for attempt in range(3):
         try:
             h = urllib.request.urlopen(urllib.request.Request(u, headers={"User-Agent": "Mozilla/5.0"}), timeout=40).read().decode("utf-8", "replace")
-            time.sleep(1)
             t = extract(h)
+            time.sleep(3)
             return u, t if t and len(t) > 40 else None
+        except urllib.error.HTTPError as e:
+            if e.code in (403, 429): sys.exit(f"HTTP {e.code} from {u}: stopping (bot protection). Wait a few hours, then re-run; finished texts are kept.")
+            time.sleep(3)
         except Exception:
             time.sleep(3)
     return u, None
 
-todo = [s["u"] for s in json.load(open(SRC)) if s["u"] not in have]
-with ThreadPoolExecutor(2) as ex:   # two workers, 1 s pause each: about two requests a second
-    for n, (u, t) in enumerate(ex.map(body, todo), 1):
-        if t: have[u] = t
-        if n % 100 == 0: json.dump(have, open(OUT, "w"), ensure_ascii=False); print(n, "of", len(todo))
+LIMIT = int(sys.argv[sys.argv.index("--limit") + 1]) if "--limit" in sys.argv else None
+todo = [s["u"] for s in json.load(open(SRC)) if s["u"] not in have][:LIMIT]
+for n, u in enumerate(todo, 1):   # one request at a time; saves after every release so an interrupted run resumes
+    u, t = body(u)
+    if t: have[u] = t
+    json.dump(have, open(OUT, "w"), ensure_ascii=False)
+    print(n, "of", len(todo), "ok" if t else "MISSING", u, flush=True)
 json.dump(have, open(OUT, "w"), ensure_ascii=False)
 missing = [s["u"] for s in json.load(open(SRC)) if s["u"] not in have]
 print(len(have), "full texts;", len(todo), "fetched this run;", len(missing), "missing")
