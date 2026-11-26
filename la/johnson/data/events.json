@@ -1,4 +1,14 @@
 {
- "_note": "Constituent events from her own releases or local press. 'stmt' must match exactly one release in data/statements.json; 'u' is any other source. role: hosted = her office ran it; participated = someone else hosted. Build: python3 -I scripts/build_overview.py",
- "events": []
+ "_note": "Constituent events from his own releases or local press. 'stmt' must match exactly one release in data/statements.json; 'u' is any other source. role: hosted = his office ran it; participated = someone else hosted. Build: python3 -I scripts/build_overview.py",
+ "events": [
+  {
+   "date": "2025-07-30",
+   "type": "Town hall",
+   "role": "participated",
+   "title": "Town hall meeting with the Louisiana Farm Bureau in north Louisiana, one stop on a day of constituent events",
+   "city": "Ruston, LA",
+   "notes": "Hosted by the Louisiana Farm Bureau. Same day: breakfast in Ruston, lunch with the Monroe Chamber, and a discussion in Bossier City.",
+   "u": "https://www.wafb.com/2025/07/30/speaker-mike-johnson-meeting-with-constituents-business-leaders-north-la-today/"
+  }
+ ]
 }
