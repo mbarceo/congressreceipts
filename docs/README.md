@@ -8,6 +8,7 @@
 | [config-reference.md](config-reference.md) | You are editing `members.json`, `tracker.config.json` or a curated data file |
 | [verification.md](verification.md) | You are curating content or a check failed (the sourcing rules live here) |
 | [senate-differences.md](senate-differences.md) | The member is a senator |
+| [leadership.md](leadership.md) | You are working on the Senate and House leadership-race page (`leadership.html`) |
 | [troubleshooting.md](troubleshooting.md) | Something broke |
 
 ## How-to guides
@@ -22,7 +23,9 @@
 | Update the Backlog Queue | [howto/update-the-queue.md](howto/update-the-queue.md) |
 | Rebuild the home, attendance, leaders and Find pages | [howto/rebuild-the-hub.md](howto/rebuild-the-hub.md) |
 
-## For Claude Code
+## For Claude Code and other AI agents
+
+Any agent, not just Claude, should start at [`../AGENTS.md`](../AGENTS.md), which points to `CLAUDE.md` and the guides below.
 
 The repository includes `CLAUDE.md` (project rules and a map, loaded automatically) and the `add-member` skill in `.claude/skills/add-member/`. See [CONTRIBUTING.md](../CONTRIBUTING.md#4-claude-code-with-your-own-account).
 

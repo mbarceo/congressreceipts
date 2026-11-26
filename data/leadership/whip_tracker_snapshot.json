@@ -1,0 +1,37 @@
+{
+  "source": "https://democraticwhiptracker.com/ (homepage list view; /house/ renders with no member rows)",
+  "captured_on": "2026-11-25",
+  "tracker_last_checked": "2026-11-20",
+  "note": "Captured as text from the rendered page. Names and stances only; the tracker shows no per-member permalink for House members. Senate detail rows carry their own source line on the page; they are not captured here.",
+  "house_speaker": {
+    "declared_for": [
+      "Alma Adams (NC-12)", "Pete Aguilar (CA-33)", "Wesley Bell (MO-1)", "Rebecca Bennett (NJ-7)", "Mitchell Berman (WI-1)", "Don Beyer (VA-8)", "Adrian Boafo (MD-5)", "Luke Bronin (CT-1)", "Bob Brooks (PA-7)", "Nikki Budzinski (IL-13)", "Troy Carter (LA-2)", "Greg Casar (TX-37)", "Jasmine Clark (GA-13)", "Katherine Clark (MA-5)", "Yvette Clarke (NY-9)", "Jim Clyburn (SC-6)", "Paige Cognetti (PA-8)", "Cait Conley (NY-17)", "Rebecca Cooke (WI-3)", "Debbie Dingell (MI-6)", "Shomari Figures (AL-2)", "Johnny Garcia (TX-35)", "Sarah Trone Garriott (IA-3)", "Josh Gottheimer (NJ-5)", "Adam Gray (CA-13)", "Jacqui Irwin (CA-26)", "Glenn Ivey (MD-4)", "Hakeem Jeffries (NY-8)", "Marcy Kaptur (OH-9)", "Bill Keating (MA-9)", "Tim Kennedy (NY-26)", "Ro Khanna (CA-17)", "Jessica Killin (CO-5)", "Dan Koh (MA-6)", "Nancy Lacore (SC-1)", "Brad Lander (NY-10)", "Rick Larsen (WA-2)", "Micah Lasher (NY-12)", "William Lawrence (MI-7)", "Sam Liccardo (CA-16)", "Ted Lieu (CA-36)", "Matt Little (MN-2)", "Elaine Luria (VA-2)", "Stephen Lynch (MA-8)", "Jennifer McClellan (VA-4)", "Betty McCollum (MN-4)", "Jim McGovern (MA-2)", "Mike McGuire (CA-1)", "Gregory Meeks (NY-5)", "Grace Meng (NY-6)", "Joseph Morelle (NY-25)", "Zack Mullock (NJ-2)", "Joe Neguse (CO-2)", "Alexandria Ocasio-Cortez (NY-14)", "Chellie Pingree (ME-1)", "Denise Powell (NE-2)", "Ayanna Pressley (MA-7)", "Emily Randall (WA-6)", "Jamie Raskin (MD-8)", "Josh Riley (NY-19)", "Manny Rutinel (CO-8)", "Pat Ryan (NY-18)", "Hillary Scholten (MI-3)", "Stefany Shaheen (NH-1)", "Greg Stanton (AZ-4)", "Marilyn Strickland (WA-10)", "Tom Suozzi (NY-3)", "Emilia Sykes (OH-13)", "Shannon Taylor (VA-1)", "Bennie Thompson (MS-2)", "Paul Tonko (NY-20)", "Ritchie Torres (NY-15)", "Scott Wiener (CA-11)", "Marni von Wilpert (CA-48)"
+    ],
+    "leaning_for": ["Jim Himes (CT-4)", "Pramila Jayapal (WA-7)", "Brad Schneider (IL-10)"],
+    "undecided": ["Jamie Ager (NC-11)", "Paul Barringer (NC-13)", "Teresa Benitez-Thompson (NV-2)", "Daniel Biss (IL-9)", "Christina Bohannan (IA-1)", "Victoria Broderick (TN-4)", "Zach Dembo (KY-6)", "Sam Forstag (MT-1)", "Patty Garcia (IL-4)", "Adelita Grijalva (AZ-7)", "Chuck Hubbard (NC-5)", "Lindsay James (IA-2)", "Cyril Jefferson (NC-6)", "Jake Johnson (MN-1)", "Eileen Laubacher (CO-4)", "Analilia Mejia (NJ-11)", "Richard Ojeda (NC-9)", "Delia Ramirez (IL-3)", "Katy Padilla Stout (TX-23)", "Randy Villegas (CA-22)", "Fred Wellman (MO-2)", "LaKesha Womack (NC-14)"],
+    "opposed": ["Darializa Avila Chevalier (NY-13)", "Angela Gonzales-Torres (CA-34)", "Adam Hamawy (NJ-12)", "Frederick Haynes III (TX-30)", "Melat Kiros (CO-1)", "Don Leonard (OH-15)", "Donavan McKinney (MI-13)", "Chris Rabb (PA-3)", "Claire Valdez (NY-7)"],
+    "no_public_position_count": 162,
+    "tracker_counts_stated": {"declared_for": 74, "leaning_for": 3, "opposed_or_leaning_against": 9, "undecided": 22, "no_public_position": 162}
+  },
+  "senate_dem_leader": {
+    "declared_for_schumer": ["Angela Alsobrooks", "Tammy Baldwin", "Richard Blumenthal", "Sherrod Brown", "John Fetterman", "Ruben Gallego", "Kirsten Gillibrand", "Mazie Hirono", "Mark Kelly", "Angus King", "Catherine Cortez Masto", "Jack Reed", "Jacky Rosen", "Brian Schatz", "Chuck Schumer", "Sheldon Whitehouse"],
+    "leaning_schumer": ["Tim Kaine"],
+    "undecided": ["Michael Bennet", "Cory Booker", "Maria Cantwell", "Scott Colom", "Chris Coons", "Roy Cooper", "Martin Heinrich", "John Hickenlooper", "Andy Kim", "Ben Ray Luján", "Ed Markey", "Chris Murphy", "Patty Murray", "Jon Ossoff", "Alex Padilla", "Chris Pappas", "Mary Peltola", "James Talarico", "Josh Turek", "Mark Warner", "Raphael Warnock", "Elizabeth Warren", "Peter Welch", "Ron Wyden"],
+    "leaning_against_schumer": ["Juliana Stratton"],
+    "opposed_to_schumer": ["Annie Andrews", "Abdul El-Sayed", "Peggy Flanagan", "Adam Hamilton", "Chris Van Hollen", "Troy Jackson", "Jeff Merkley", "Bernie Sanders", "Elissa Slotkin"],
+    "backing": {
+      "Chris Van Hollen": "Van Hollen",
+      "Abdul El-Sayed": "Van Hollen",
+      "Bernie Sanders": "Van Hollen",
+      "Elissa Slotkin": "Van Hollen",
+      "Peggy Flanagan": "Van Hollen",
+      "Jeff Merkley": "Van Hollen",
+      "Adam Hamilton": "No pick",
+      "Annie Andrews": "No pick",
+      "Troy Jackson": "No pick",
+      "Juliana Stratton": "No pick"
+    },
+    "no_public_position": ["Adam Schiff", "Amy Klobuchar", "Lisa Blunt Rochester", "Maggie Hassan", "Tammy Duckworth"],
+    "tracker_counts_stated": {"declared_for_schumer": 16, "leaning_schumer": 1, "undecided": 24, "leaning_against_or_opposed": 10, "no_public_position": 5}
+  }
+}
