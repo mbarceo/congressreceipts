@@ -5,7 +5,7 @@ Nonpartisan, fully sourced accountability trackers for members of Congress, publ
 ## Map
 - `members.json` registry of tracked members · `tr` runner · `scripts/` ONE copy of every script (stdlib-only Python 3 + a few zsh) · `template/` skeletons for a new member
 - `site/` SOURCE of the member pages (`index/money/stances/votes/statements/establishment/townhalls/sources.html`, `site.js`, `site.css`)
-- `<state>/<member>/` one tracker: `tracker.config.json`, `data/`, `assets/portrait.jpg`; the `.html/.js/.css` inside are **generated copies** of `site/`
+- `<state>/<member>/` one tracker: `tracker.config.json`, `data/`, `assets/portrait.jpg`; the `.html` pages inside are **generated**: thin stubs that load `site/` through `site/shell.js` (`"pages": "stub"` in `members.json`, every new member), or for older members full copies of `site/` plus `site.js`/`site.css`
 - Root `index/find/attendance/leaders/leadership/backlog/about.html` + `hub.js` + `hub.css` = hub pages and shared header/footer; root `data/` = hub data
 - Leadership races (Senate leader vote, House Speaker vote): `leadership.html`, `data/leadership_*.json`, curated inputs in `data/leadership/`, scripts `scripts/build_leadership_*.py` and `scripts/verify_leadership_*.py`. Read `docs/leadership.md` before touching them. `AGENTS.md` is the entry point for non-Claude agents.
 - `docs/` full documentation (architecture, pipeline, config reference, verification, how-tos, troubleshooting)
@@ -15,6 +15,9 @@ Nonpartisan, fully sourced accountability trackers for members of Congress, publ
 ./tr <state>/<member> <script>          # run a shared script for one member, e.g. ./tr ca/padilla build_votes
 ./tr <state>/<member> run_checks        # verification: must pass before any PR
 python3 -I scripts/new_tracker.py --name "…" --chamber house|senate --state XX [--district N] --bioguide X000000 [--vote-id S###] --pronouns he|she|they --out <state>/<last>
+python3 -I scripts/status.py [--strict]           # read-only health table (stale builds, vote counts, claims, pages, queue)
+python3 -I scripts/rebuild.py <member>|--all      # offline build stage in order, skips unchanged steps (never fetches)
+python3 -I scripts/build_queue.py [--check]       # keep data/queue.json in step with members.json (status is derived, not typed)
 python3 -I scripts/publish.py [<member path> …]    # copy site/ into member folders; stamp cache keys
 python3 -m http.server 8000             # preview (pages need HTTP, not file://)
 ```

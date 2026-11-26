@@ -1,0 +1,4 @@
+{
+ "_note": "How often a verified claim that needs a live page is re-fetched. A claim is reused (no fetch) when its key is unchanged, its last status was verified and its last check is under recheckDays old. verify_all.py --fresh ignores this; --max-fetch N rechecks only the N oldest due claims per run.",
+ "recheckDays": 15
+}
