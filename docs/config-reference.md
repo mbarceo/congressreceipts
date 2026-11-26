@@ -18,6 +18,7 @@ Every file below is JSON. Skeletons for a new member are in `template/`; each cu
 | `chamber` | `house` or `senate` |
 | `voteId` | The id roll-call files use: **bioguide id for the House** (`R000620`), **LIS member id for the Senate** (`S413`). Find a LIS id in any senate.gov vote XML (`<lis_member_id>`) |
 | `format` | `shared` (all new members) or `legacy` |
+| `pages` | `stub` (use for every new member): the member's pages are thin stubs that load the shared pages in `site/` through `site/shell.js`, so a site change never touches the member folder. Omit for the older layout where `publish.py` copies `site/` pages, `site.js` and `site.css` into the folder |
 | `portrait` | Path inside the member folder |
 | `eventsResearched` | `false` until town halls and events have been collected; the hub shows it as such |
 | `live` | `false` keeps the member out of every build and publish (pages, attendance, leaders, directory) until `run_checks` passes. Omit it, or use `true`, for a finished tracker |
