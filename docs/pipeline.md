@@ -9,6 +9,19 @@ Every script lives once in `scripts/`. Run it for one member with the runner:
 
 `./tr` sets `TRACKER_DIR`, supplies the API key to the scripts that need one (FEC or congress.gov), and `cd`s into the member's folder. Scripts read `tracker.config.json` through `scripts/config.py`. The `-I` flag (isolated mode) is used everywhere so a stray file in the current folder can never shadow a Python module.
 
+## Rebuilding without typing 15 commands
+
+`./tr` is plain `sh` plus Python (`scripts/runner.py`), so it works without zsh (Linux, cloud sessions, WSL, CI). It also runs `run_checks` itself.
+
+```bash
+python3 -I scripts/status.py                 # health table for every member: stale builds, roll-call counts, claim results, pages, queue
+python3 -I scripts/rebuild.py ca/rivas       # the offline BUILD stage in order, skipping steps whose inputs did not change
+python3 -I scripts/rebuild.py --all          # every live member
+python3 -I scripts/rebuild.py ca/rivas --dry-run | --force | --adopt | --checks
+```
+
+`rebuild.py` never touches the network: the `fetch_*` scripts stay manual so the pacing rules in CLAUDE.md still apply. Steps whose raw input is not in git (FEC raw, Census shapes) are skipped when that folder is absent. It remembers input and output hashes in `<member>/data/.rebuild_state.json` (git-ignored, per checkout); use `--adopt` once on a tracker you know is good. `status.py` is read-only; `--strict` exits 1 when a live member has a problem.
+
 ## Stages
 
 ```
