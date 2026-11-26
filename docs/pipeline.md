@@ -9,6 +9,19 @@ Every script lives once in `scripts/`. Run it for one member with the runner:
 
 `./tr` sets `TRACKER_DIR`, supplies the API key to the scripts that need one (FEC or congress.gov), and `cd`s into the member's folder. Scripts read `tracker.config.json` through `scripts/config.py`. The `-I` flag (isolated mode) is used everywhere so a stray file in the current folder can never shadow a Python module.
 
+## Rebuilding without typing 15 commands
+
+`./tr` is plain `sh` plus Python (`scripts/runner.py`), so it works without zsh (Linux, cloud sessions, WSL, CI). It also runs `run_checks` itself.
+
+```bash
+python3 -I scripts/status.py                 # health table for every member: stale builds, roll-call counts, claim results, pages, queue
+python3 -I scripts/rebuild.py ca/rivas       # the offline BUILD stage in order, skipping steps whose inputs did not change
+python3 -I scripts/rebuild.py --all          # every live member
+python3 -I scripts/rebuild.py ca/rivas --dry-run | --force | --adopt | --checks
+```
+
+`rebuild.py` never touches the network: the `fetch_*` scripts stay manual so the pacing rules in CLAUDE.md still apply. Steps whose raw input is not in git (FEC raw, Census shapes) are skipped when that folder is absent. It remembers input and output hashes in `<member>/data/.rebuild_state.json` (git-ignored, per checkout); use `--adopt` once on a tracker you know is good. `status.py` is read-only; `--strict` exits 1 when a live member has a problem.
+
 ## Stages
 
 ```
@@ -38,8 +51,8 @@ Every script lives once in `scripts/`. Run it for one member with the runner:
 ### Fetch
 | Script | Needs | Writes | Notes |
 |---|---|---|---|
-| `fetch_votes.sh` | none | `data/raw/<year>-roll<NNN>.xml` | House Clerk. About 690 files per Congress; takes several minutes; skips files it already has |
-| `fetch_votes_senate.py` | none | `data/raw/senate-<year>-<NNNNN>.xml` | senate.gov. May answer scripts with HTTP 403; see [troubleshooting](troubleshooting.md) |
+| `fetch_votes.sh` | none | `data/rollcalls/house/<congress>/<year>-roll<NNN>.xml` (shared, committed) | House Clerk. About 690 files per Congress; takes several minutes; skips files it already has |
+| `fetch_votes_senate.py` | none | `data/rollcalls/senate/<congress>/senate-<year>-<NNNNN>.xml` (shared, committed) | senate.gov. May answer scripts with HTTP 403; see [troubleshooting](troubleshooting.md). Only needed for votes not yet in git |
 | `fetch_statements.py` | none | `data/statements.json`, `data/statements_raw/` | Press-release lists. Layouts: `house-evo`, `wp-jetengine`, `wp-elementor`. A new site layout needs a parser ([how-to](howto/add-a-press-layout.md)) |
 | `fetch_statement_bodies.py` | none | `data/statements_full.json` | Full text of every release, used to verify quotes. Cached |
 | `resolve_fec.py` | FEC key | `fec.candidateId`, `committeeId`, `cycles` in the config | Run once per member. If several candidates match it writes nothing; set the ids by hand |
@@ -71,6 +84,8 @@ Every script lives once in `scripts/`. Run it for one member with the runner:
 | `verify_all.py` | Verifies each claim against its source: roll call, press release (quotes and dollar figures), FEC, congress.gov, archived page. Writes `data/verification.json` for the Sources page |
 | `run_checks.sh` | Runs all four in order |
 
+**Re-check window.** `data/verify_policy.json` sets `recheckDays` (15). A claim that needs a live page is not re-fetched while its `key` is unchanged, its last status was `verified` and its last check is under that many days old; the earlier result keeps its original `checked` date. Failed, partial or edited claims, and claims checked against local data, are always re-checked. `verify_all.py --fresh` ignores earlier results, `--max-fetch N` re-fetches only the N oldest due claims (spread a pass over several days), and `verify_bills.py` follows the same rule. Bump `CHECKER_VERSION` in a script when you tighten a check. `status.py` shows how many claims are past the window.
+
 ### Shared code and tooling
 | File | Role |
 |---|---|
@@ -98,7 +113,7 @@ Committed. Curated files are written by hand (or with Claude Code); built files 
 | `votes.json`, `alignment.json`, `statements.json`, `statements_full.json`, `stances.json`, `promises_built.json`, `cards.json`, `establishment.json`, `overview.json`, `fec/summary.json`, `trackaipac.json`, `member_bills.json`, `geo/map.json` | built | the pages |
 | `claims.json`, `verification.json`, `computed_checks.json`, `bill_checks.json`, `sources/index.json` | built | the Sources page |
 
-Not committed (listed in `.gitignore`): `data/raw/`, `data/fec/raw/`, `data/statements_raw/`, `data/billstatus/`, `data/geo/raw/`, `data/site_raw/`, `data/sources/*.html`.
+Committed once for everyone: `data/rollcalls/` (official roll-call XML). Not committed (listed in `.gitignore`): `data/raw/`, `data/fec/raw/`, `data/statements_raw/`, `data/billstatus/`, `data/geo/raw/`, `data/site_raw/`, `data/sources/*.html`.
 
 Formats of the curated files are in [config-reference.md](config-reference.md). Each skeleton in `template/data/` carries a `_note` explaining its format.
 
@@ -108,9 +123,9 @@ The hub pages read JSON from the repository's `data/` folder:
 
 | File | Page | Built by | Reads |
 |---|---|---|---|
-| `attendance.json` | home, Who's showing up | `build_attendance.py` | `members.json`, each member's `votes.json`, `events.json` and **raw roll-call XML** |
+| `attendance.json` | home, Who's showing up | `build_attendance.py` | `members.json`, each member's `votes.json`, `events.json` and `data/rollcalls/` roll-call XML |
 | `leaders.json` | Leaders tracker | `build_leaders.py` | each member's committed `data/` |
-| `directory.json`, `zips.json` | Find your rep | `build_directory.py` | House Clerk member list, Census ZIP-to-district file, a senator's raw votes (download cache in `data/directory_raw/`, ignored) |
+| `directory.json`, `zips.json` | Find your rep | `build_directory.py` | House Clerk member list, Census ZIP-to-district file, the newest Senate roll-call file in `data/rollcalls/senate` (download cache in `data/directory_raw/`, ignored) |
 | `congress.json` | Backlog Queue | `build_roster.py` | the `unitedstates/congress-legislators` current-members file |
 | `queue.json` | Backlog Queue | edited by hand | n/a |
 

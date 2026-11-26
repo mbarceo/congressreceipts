@@ -27,7 +27,7 @@ You are working inside the Congress Receipts repository. The project's rules are
 4. Curate: read the member's real record first (`data/votes.json`, `data/statements.json`, `data/member_bills.json`), then write `stance_picks.json`, `promises.json`, `card_picks.json`, `establishment_items.json`, `events.json`, `claims_static.json`, `bills.json`, and the `profile` block in the config. Generate these with a small script that **asserts every quote is a verbatim substring of its source's full text** before writing, and resolves release slugs to exactly one URL.
 5. Rebuild in order (`build_stances` → `build_promises` → `build_establishment` → `build_cards` → `build_overview`), then `./tr <member> run_checks`. Fix data until it passes; never edit a checker.
 6. Preview (`python3 -m http.server 8000`) and read every page: portrait, names, pronouns, tallies, links. Check for leftovers from other members.
-7. Register the member in `members.json` with `"live": false` from the start. Only when checks pass, remove the flag, run `python3 -I scripts/publish.py <member path>` (one member), and open a pull request containing just this member's folder and `members.json`.
+7. Register the member in `members.json` (or scaffold with `new_tracker.py --register`, which does it and refreshes `data/queue.json`) with `"live": false` and `"pages": "stub"` from the start (stub pages load the shared `site/` pages, so the member folder holds no copies). Only when checks pass, remove the flag, run `python3 -I scripts/publish.py <member path>` (one member), and open a pull request containing just this member's folder and `members.json`.
 
 ## Judgment calls (what to hold to)
 
@@ -35,7 +35,7 @@ You are working inside the Congress Receipts repository. The project's rules are
 - Promises are the member's own words from a pre-election Wayback snapshot, with a `why` for every status. "Stalled" means introduced or cosponsored but only referred to committee.
 - Verdicts only where a rule is stated on the page. Issue sections show evidence, not conclusions.
 - No donor names; official portrait only; neutral wording; leave out anything you cannot source.
-- Go slow on government sites: one request at a time, a few seconds apart, stop at the first 403/429 (see `CLAUDE.md`). If a site blocks scripts (senate.gov 403), do not bypass it: copy Senate roll-call XML from another senator's `data/raw`, or build without statements and say so.
+- Go slow on government sites: one request at a time, a few seconds apart, stop at the first 403/429 (see `CLAUDE.md`). If a site blocks scripts (senate.gov 403), do not bypass it: use the Senate roll-call XML already committed in `data/rollcalls/senate/<congress>/` (a new member needs no download), or build without statements and say so.
 - A member-elect has no votes: build money, promises and campaign statements only, keep `"live": false` in `members.json` and leave the queue alone.
 
 ## Finish

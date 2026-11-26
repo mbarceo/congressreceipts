@@ -25,7 +25,7 @@ You can push branches directly. **Never push to `main`**; everything goes throug
 ### 2. Requirements
 - macOS or Linux (on Windows use WSL). `zsh`, `git`, and Python 3 (developed on 3.14; standard library only, nothing to `pip install`).
 - The GitHub CLI (`gh`) is optional but handy: `gh auth login`.
-- About 1 GB of free disk per few trackers while building (raw downloads; they are never committed).
+- About 1 GB of free disk per few trackers while building (raw downloads other than roll-call XML, which is committed in `data/rollcalls/`).
 
 ### 3. API keys
 Two free keys. **Each person uses their own.** Do not share keys, and never put one in a file, a commit, an issue or a chat with an AI assistant.

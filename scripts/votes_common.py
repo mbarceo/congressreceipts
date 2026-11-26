@@ -1,7 +1,7 @@
 """Chamber-agnostic roll-call loader shared by every vote-related script.
 
-House: House Clerk XML in data/raw/<year>-roll<NNN>.xml, members keyed by bioguide ID (name-id).
-Senate: senate.gov XML in data/raw/senate-<year>-<NNNNN>.xml, members keyed by LIS member ID (e.g. S413).
+House: House Clerk XML in data/rollcalls/house/<congress>/<year>-roll<NNN>.xml, members keyed by bioguide ID (name-id).
+Senate: senate.gov XML in data/rollcalls/senate/<congress>/senate-<year>-<NNNNN>.xml, members keyed by LIS member ID (e.g. S413).
 
 Each roll comes back in one shape, so the build and verify scripts never need to know the chamber:
   {"id": "2025-006", "y": 2025, "n": 6, "date": "2025-01-07", "bill": "H R 29", "q": "On Passage",
@@ -12,7 +12,7 @@ Roll ids are "<year>-<3-digit number>" in both chambers (Senate numbers restart 
 import glob, os, re
 import xml.etree.ElementTree as ET
 from datetime import datetime
-from config import CFG, M, ROOT
+from config import CFG, M, ROOT, rollcalls_dir
 
 CHAMBER = M.get("chamber", "house").lower()
 CONGRESS = int(M.get("congress", 119))
@@ -97,9 +97,9 @@ def _senate(path):
             "desc": desc, "amend": amend, "type": g("majority_requirement"), "result": g("vote_result"), "votes": votes, "party": party, "url": vote_url(y, n)}
 
 def load_rolls():
-    pat = "data/raw/senate-*.xml" if CHAMBER == "senate" else "data/raw/*-roll*.xml"
+    pat = "senate-*.xml" if CHAMBER == "senate" else "*-roll*.xml"
     parse = _senate if CHAMBER == "senate" else _house
-    rolls = [parse(p) for p in sorted(glob.glob(os.path.join(ROOT, pat)))]
+    rolls = [parse(p) for p in sorted(glob.glob(os.path.join(rollcalls_dir(CHAMBER), pat)))]
     rolls.sort(key=lambda r: (r["y"], r["n"]))
     return rolls
 

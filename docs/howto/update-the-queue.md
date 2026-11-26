@@ -3,11 +3,15 @@
 The Backlog Queue page (`backlog.html`) lists every sitting member of Congress by state and chamber with the status of their tracker. It joins two files:
 
 - `data/congress.json`: the roster, built by `scripts/build_roster.py` from the `unitedstates/congress-legislators` current-members file.
-- `data/queue.json`: the status you edit by hand.
+- `data/queue.json`: the status. Entries for tracked members are generated from `members.json` by `scripts/build_queue.py`; only entries for people with no tracker (`next`, `skip`) are edited by hand.
 
-## Change a status
+## Tracked members: nothing to type
 
-Edit `data/queue.json`. Keys are **bioguide ids**.
+Run `python3 -I scripts/build_queue.py` after you add a member or change `live` / `hub` in `members.json`. A member that is live and on the hub becomes `done` with its URL (`https://congressreceipts.org/<path>/`); anything else in `members.json` (`"live": false` or `"hub": false`) is `progress`. `python3 -I scripts/status.py` (and `build_queue.py --check`) flag a queue that is out of date. Entries for people with no tracker are left alone.
+
+## Change a status by hand (people with no tracker)
+
+Edit `data/queue.json` for `next` and `skip` only. Keys are **bioguide ids**.
 
 ```json
 {
@@ -25,7 +29,7 @@ Edit `data/queue.json`. Keys are **bioguide ids**.
 | *(not listed)* | Not started |
 
 Rules
-- Mark `progress` when you start a tracker, so two people do not build the same member. Mark `done` with the live URL (`https://congressreceipts.org/<state>/<last>/`) when it is merged and published.
+- Registering a member in `members.json` (even with `"live": false`) marks them `progress` once you run `build_queue.py`, so two people do not build the same member. They become `done` when the flags come off.
 - Keep the file's one-line-per-member layout so diffs stay small.
 - Do this in **its own small pull request** (queue changes only). That keeps it fast to merge and out of the way of data work.
 - A member-elect has no bioguide id and is not on the roster, so cannot be listed until sworn in.

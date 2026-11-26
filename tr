@@ -1,21 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 # Runs one shared script for one member:   ./tr ca/padilla build_votes      ./tr ca/padilla run_checks
-# Scripts live once in scripts/; the member folder (its config, data and assets) is passed as TRACKER_DIR.
-# FEC and congress.gov scripts get their API key from the macOS Keychain through the matching wrapper.
-# Legacy members (format "legacy" in members.json) keep their own scripts/ and are run from their own folder.
-set -e
-ROOT="$(cd "$(dirname "$0")" && pwd)"
-[[ $# -ge 2 ]] || { echo "Usage: ./tr <state/member> <script> [args]   e.g. ./tr ca/padilla build_votes" >&2; exit 1; }
-DIR="$ROOT/$1"; NAME="${2%.py}"; NAME="${NAME%.sh}"; shift 2
-[[ -f "$DIR/tracker.config.json" || -d "$DIR/scripts" ]] || { echo "No tracker.config.json in $DIR" >&2; exit 1; }
-if [[ -d "$DIR/scripts" ]]; then S="$DIR/scripts"; echo "(legacy member: using $1/scripts)" >&2; else S="$ROOT/scripts"; fi
-case "$NAME" in
-  resolve_fec|fetch_fec|build_fec) WRAP=("$ROOT/scripts/with_fec_key.sh") ;;
-  fetch_bills)                     WRAP=("$ROOT/scripts/with_congress_key.sh") ;;
-  *)                               WRAP=() ;;
-esac
-export TRACKER_DIR="$DIR"
-if [[ -f "$S/$NAME.sh" ]]; then exec "${WRAP[@]}" "$S/$NAME.sh" "$@"; fi
-[[ -f "$S/$NAME.py" ]] || { echo "No script $NAME in $S" >&2; exit 1; }
-cd "$DIR"
-exec "${WRAP[@]}" python3 -I "$S/$NAME.py" "$@"
+# Plain POSIX sh + Python 3, so it also works where zsh is missing (Linux, cloud sessions, WSL, CI). Logic: scripts/runner.py
+exec python3 -I "$(dirname "$0")/scripts/runner.py" "$@"

@@ -34,7 +34,7 @@ template/                       skeleton tracker.config.json + data/*.json for a
 site/                           SOURCE of the member pages (index, money, stances, votes, ...), site.js, site.css
 <state>/<member>/               one tracker, e.g. ca/padilla/, md/van-hollen/
     tracker.config.json           identity, FEC ids, peers, curated page text (committed, hand-edited)
-    data/                         built JSON (committed) + curated inputs (committed) + raw downloads (NOT committed)
+    data/                         built JSON (committed) + curated inputs (committed) + raw downloads (NOT committed, except data/rollcalls/ at the repo root)
     assets/portrait.jpg           official portrait
     *.html, site.js, site.css     BUILD OUTPUT copied from site/ by publish.py (never edit)
 index.html find.html attendance.html leaders.html backlog.html about.html     the hub pages (edited by hand)
@@ -54,7 +54,7 @@ A member's URL is its folder: `congressreceipts.org/ca/padilla/`.
 3. **Scripts take no member arguments.** `./tr ca/padilla build_votes` sets `TRACKER_DIR`, and `scripts/config.py` loads that folder's `tracker.config.json`. No script hardcodes a member, district or ID.
 4. **Nothing is typed that a source can supply.** Votes, tallies, dollar figures and ranks come from official records through the scripts. Curated text uses placeholders (`{Vote}`, `{yea}`, `{nay}`) that the scripts fill from the roll call.
 5. **Every claim is checked.** `scripts/run_checks.sh` extracts every sourced claim the pages show and verifies it against the source. A misquote, wrong vote or wrong tally fails the build. See [verification.md](verification.md).
-6. **Raw data stays out of git.** Raw FEC files include donor names and street addresses, and raw roll-call XML is large and re-downloadable. They live under `data/raw/`, `data/fec/raw/` and similar folders, all in `.gitignore`. Only built JSON is committed, and donor names are never published (only employer, occupation and totals).
+6. **Raw FEC data stays out of git; official roll-call XML is committed.** Raw FEC files include donor names and street addresses, so they live under `data/fec/raw/` and similar folders, all in `.gitignore`. Roll-call XML is public and identical for every member of a chamber, so it is committed once in `data/rollcalls/<house|senate>/<congress>/` (about 94 MB uncompressed, 7 MB in git for the 119th Congress) and every member reads from there, which means senate.gov (which blocks scripts) is only needed to add new votes. Only built JSON is committed, and donor names are never published (only employer, occupation and totals).
 7. **Static and cache-safe.** Pages link `site.js?v=<hash>` and `hub.js?v=<hash>`; `publish.py` rewrites the hash whenever those files change, so a visitor never runs an old script against new data. `hub.js` also forces data files to revalidate (`cache: "no-cache"`).
 
 ## Runtime behavior
@@ -97,7 +97,7 @@ data/queue.json ─┐
 data/congress.json ┴▶ backlog.html     (queue status per member, keyed by bioguide id)
 ```
 
-Because `build_attendance.py` recounts missed votes from the official XML as a cross-check, **rebuilding the attendance page needs every tracked member's `data/raw/`** on your machine. Re-download with `fetch_votes` (see [how-to: rebuild the hub](howto/rebuild-the-hub.md)).
+Because `build_attendance.py` recounts missed votes from the official XML as a cross-check, rebuilding the attendance page reads the shared `data/rollcalls/` folders, which are in git, so a fresh clone needs no download. Add new votes with `fetch_votes` / `fetch_votes_senate` (see [how-to: rebuild the hub](howto/rebuild-the-hub.md)).
 
 ## Stack and requirements
 

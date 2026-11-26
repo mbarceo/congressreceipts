@@ -2,14 +2,14 @@
 
 For each member it reads two independent sources and refuses to build if they disagree:
   1. the tracker's own data/votes.json (what the tracker shows), and
-  2. the official roll-call XML in the tracker's data/raw (House Clerk or senate.gov), counted fresh here.
+  2. the official roll-call XML in data/rollcalls/<chamber>/119 (House Clerk or senate.gov), counted fresh here.
 Chamber context (median missed rate, how many members missed fewer) is computed from the same official XML over
 every member who was eligible for at least 80% of the roll calls, so partial-term members don't skew it. Ties count:
 "missed fewer" is a strict comparison. Events come from the tracker's data/events.json (or data/townhalls.json in
 older trackers) and keep their source links. Portraits and links point into each member's folder.
 Usage: python3 -I scripts/build_attendance.py
 """
-import collections, glob, json, os, re, shutil, statistics, sys
+import collections, functools, glob, json, os, re, shutil, statistics, sys
 import xml.etree.ElementTree as ET
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))   # the repo; the hub is its home page
@@ -23,6 +23,7 @@ def vote_url(chamber, y, n):
         return f"https://www.senate.gov/legislative/LIS/roll_call_votes/vote119{session}/vote_119_{session}_{n:05d}.htm"
     return f"https://clerk.house.gov/Votes/{y}{n:03d}"
 
+@functools.lru_cache(maxsize=None)   # the files are shared by every member, so count each chamber once
 def official_counts(chamber, raw):
     """Votes cast and missed per member id, from the official XML files."""
     cast, missed, files = collections.Counter(), collections.Counter(), 0
@@ -82,7 +83,7 @@ for m in (x for x in CFG["members"] if x.get("live", True) and x.get("hub", True
     key = "member" if "member" in votes[0] else next(k for k in votes[0] if k not in
           {"y", "n", "date", "bill", "q", "desc", "type", "result", "yea", "nay", "dY", "dN", "rY", "rN", "iY", "iN", "cY", "cN", "dSide", "rSide", "pSide", "pY", "pN", "url", "title"})
     mine = [v for v in votes if v[key] == "Not Voting"]
-    cast, missed, nfiles = official_counts(m["chamber"], os.path.join(path, "data/raw"))
+    cast, missed, nfiles = official_counts(m["chamber"], os.path.join(ROOT, "data/rollcalls", m["chamber"], "119"))
     if cast[m["voteId"]] != len(votes) or missed[m["voteId"]] != len(mine):
         problems.append(f"{m['name']}: tracker shows {len(mine)} missed of {len(votes)}, official XML has {missed[m['voteId']]} of {cast[m['voteId']]}")
     full = max(cast.values())
