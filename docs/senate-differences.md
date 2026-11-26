@@ -17,7 +17,7 @@ python3 -I scripts/new_tracker.py --name "Alex Padilla" --chamber senate --state
 ## Votes
 - Menus: `https://www.senate.gov/legislative/LIS/roll_call_lists/vote_menu_<congress>_<session>.xml` (session 1 = first year of the Congress; 119th: 2025 = 1, 2026 = 2).
 - Each vote: `.../roll_call_votes/vote<congress><session>/vote_<congress>_<session>_<NNNNN>.xml`; the citable page is the same path ending `.htm` (`votes_common.vote_url`).
-- `scripts/fetch_votes_senate.py` downloads into `data/raw/senate-<year>-<NNNNN>.xml` (if senate.gov answers 403, copy the identical files from another senator's `data/raw/`); `votes_common._senate` parses them into the same shape as House rolls, so `build_votes`, `build_alignment` and the verifiers don't branch on chamber. Roll numbers restart every session.
+- `scripts/fetch_votes_senate.py` downloads into the shared `data/rollcalls/senate/<congress>/senate-<year>-<NNNNN>.xml` (committed, one copy for every senator; if senate.gov answers 403, stop and ask a maintainer to add the missing files); `votes_common._senate` parses them into the same shape as House rolls, so `build_votes`, `build_alignment` and the verifiers don't branch on chamber. Roll numbers restart every session.
 - Senate XML writes bills as `H.R. 29` / `S.J.Res. 12`; `votes.html` normalizes both forms for congress.gov links.
 - There is no Speaker election; `index.html` skips the Speaker item for senators. Cloture votes matter in the Senate; read the question before calling a vote procedural.
 - Party unity rank and "typical Democrat" figures are computed among Senate Democrats. Independents who caucus with Democrats (Sanders, King) carry party `I` in the XML; check how `votes_common.party_side` treats them before quoting a rank.

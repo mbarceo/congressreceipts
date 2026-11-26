@@ -1,4 +1,4 @@
-"""Downloads every Senate roll call of the configured Congress from senate.gov into data/raw/senate-<year>-<NNNNN>.xml.
+"""Downloads every Senate roll call of the configured Congress from senate.gov into data/rollcalls/senate/<congress>/senate-<year>-<NNNNN>.xml.
 
 Reads the per-session vote menus (roll_call_lists/vote_menu_<congress>_<session>.xml) to learn how many votes
 exist, then fetches each vote's XML. Files already downloaded are skipped, so reruns only pick up new votes.
@@ -7,11 +7,11 @@ Usage: python3 -I scripts/fetch_votes_senate.py
 import os, sys, time, urllib.request
 import xml.etree.ElementTree as ET
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from config import M, ROOT
+from config import M, ROOT, rollcalls_dir
 
 CONGRESS = int(M.get("congress", 119))
 FIRST_YEAR = 2023 + 2 * (CONGRESS - 118)       # 119th Congress: sessions 1 and 2 are 2025 and 2026
-OUT = os.path.join(ROOT, "data/raw"); os.makedirs(OUT, exist_ok=True)
+OUT = rollcalls_dir("senate", CONGRESS); os.makedirs(OUT, exist_ok=True)   # shared, committed
 UA = {"User-Agent": "Mozilla/5.0 (civic-research)"}
 
 def get(url):
