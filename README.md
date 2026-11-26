@@ -16,6 +16,10 @@ ca/<member>/                       one member: tracker.config.json, data/, asset
 
 A member's URL is its folder: `congressreceipts.org/ca/padilla/`.
 
+## Go slow on other people's websites
+
+Blocks from government sites and the FEC key's hourly cap cost hours for everyone. Space requests a few seconds apart, never crawl in bursts, stop at the first 403 or 429, and run one FEC download at a time. Full rules are in [CLAUDE.md](CLAUDE.md), which Claude Code reads automatically.
+
 ## Common tasks
 
 - Rebuild one member: `./tr ca/padilla build_votes` (then build_alignment, build_stances, build_promises,
