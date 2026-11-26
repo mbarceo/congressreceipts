@@ -2,19 +2,193 @@
  "_note": "Hand-curated. Roll ids are chosen by reading the Clerk's titles; her vote is pulled from data/votes.json, never typed here. statementRx matches titles; statementPicks adds specific releases with a verbatim snippet found by 'rx' in the release's full text (data/statements_full.json). No editorial verdicts except the Israel card's headline, set in 'israel.headline'.",
  "issues": [
   {
-   "id": "example-issue",
-   "name": "Example issue (replace)",
-   "intro": "One or two neutral sentences on what this section covers.",
-   "statementRx": "keyword|another keyword",
-   "statementPicks": [],
-   "rolls": []
+   "id": "immigration",
+   "name": "Immigration and ICE",
+   "intro": "Votes on the Laken Riley Act, Homeland Security nominees and amendments on ICE funding and DACA, plus his statements on individual detention cases.",
+   "statementRx": "\\bice\\b|immigra|detention|deport|asylum|homeland security",
+   "rolls": [
+    "2025-003",
+    "2025-007",
+    "2025-017",
+    "2025-321",
+    "2026-063",
+    "2026-018",
+    "2026-149",
+    "2026-156",
+    "2026-111",
+    "2026-092"
+   ],
+   "statementPicks": [
+    {
+     "u": "11/25/2026/van-hollen-statement-on-kilmar-abrego-garcia",
+     "rx": "vindictive prosecution"
+    },
+    {
+     "u": "deportation-hearing",
+     "rx": "vindictive prosecution"
+    },
+    {
+     "u": "death-of-marylander-in-ice-custody",
+     "rx": "His death is unacceptable"
+    },
+    {
+     "u": "ice-detaining-university-of-maryland-student",
+     "rx": "worst of the worst"
+    }
+   ]
+  },
+  {
+   "id": "cost-of-living",
+   "name": "Economy, housing and cost of living",
+   "intro": "The 2025 and 2026 reconciliation bills, tariffs, rescissions and funding bills, housing, and his Banking Committee work on lenders and markets.",
+   "statementRx": "housing|afford|cost of living|predatory|\\bsec\\b|banking",
+   "rolls": [
+    "2025-372",
+    "2025-225",
+    "2025-600",
+    "2025-644",
+    "2025-411",
+    "2025-618",
+    "2026-011",
+    "2026-020",
+    "2026-053",
+    "2026-163",
+    "2025-160"
+   ],
+   "statementPicks": [
+    {
+     "u": "van-hollen-warren-call-on-sec-to-abandon",
+     "rx": "Make IPOs Great Again"
+    },
+    {
+     "u": "van-hollen-young-reintroduce-bipartisan-bill-to-boost-housing",
+     "rx": "Ensuring children grow up"
+    },
+    {
+     "u": "van-hollen-warren-joint-statement-on-predatory-lender",
+     "rx": "triple-digit interest rates"
+    }
+   ]
+  },
+  {
+   "id": "public-safety",
+   "name": "Public safety and the military at home",
+   "intro": "Police funding, fentanyl penalties, and limits on using the National Guard and the military in law enforcement, including his own amendment.",
+   "statementRx": "police|law enforcement|public safety|crime|fentany",
+   "rolls": [
+    "2025-081",
+    "2025-127",
+    "2025-566",
+    "2025-567",
+    "2025-569",
+    "2026-160"
+   ],
+   "statementPicks": []
+  },
+  {
+   "id": "technology",
+   "name": "Technology, AI and crypto",
+   "intro": "His calls for AI safety rules and his vote on the stablecoin bill.",
+   "statementRx": "\\bai\\b|artificial intelligence|openai|crypto",
+   "rolls": [
+    "2025-318"
+   ],
+   "statementPicks": [
+    {
+     "u": "van-hollen-calls-on-senate-to-act-on-ai",
+     "rx": "mandatory and independent"
+    }
+   ]
+  },
+  {
+   "id": "war-powers",
+   "name": "War powers and foreign policy",
+   "intro": "Votes to remove U.S. forces from hostilities not authorized by Congress (Iran, Venezuela), and his statement on the funding fight over the Iran war.",
+   "statementRx": "war powers|\\biran\\b|venezuela",
+   "rolls": [
+    "2025-328",
+    "2025-555",
+    "2025-608",
+    "2026-005",
+    "2026-184",
+    "2026-207",
+    "2026-244",
+    "2026-269"
+   ],
+   "statementPicks": [
+    {
+     "u": "van-hollen-bennet-sanders-duckworth",
+     "rx": "illegal and disastrous war"
+    }
+   ]
+  },
+  {
+   "id": "democracy",
+   "name": "Money in politics and democracy",
+   "intro": "His bill on political giving by federal contractors.",
+   "statementRx": "campaign|contractor|billionaire|election",
+   "rolls": [],
+   "statementPicks": [
+    {
+     "u": "van-hollen-garcia-announce-new-bill",
+     "rx": "Musk loophole"
+    }
+   ]
   }
  ],
  "israel": {
   "question": "Israel or Palestine?",
-  "headline": "TBD",
-  "headlineWhy": "State the rule behind the headline once the items are in.",
-  "summary": "",
-  "items": []
+  "headline": "Leans Palestine",
+  "headlineWhy": "The headline names the side that most items on this card point to, and says “leans” when some items point elsewhere. Here {npal} items point toward Palestine, {nisr} toward Israel and {nmixed} are mixed.",
+  "summary": "He voted for every resolution on this card that would block arms sales to Israel or require reports on its human rights record. He led the NDAA push to drop provisions on U.S.-Israel defense cooperation, and in statements he mourned the October 7 victims and called for accountability for violence in the West Bank.",
+  "items": [
+   {
+    "d": "2025-04",
+    "rolls": [
+     "2025-165",
+     "2025-166"
+    ],
+    "text": "Voted {vote} on both of Sen. Sanders's April 2025 resolutions to block arms sales to Israel. Both failed.",
+    "yea": "pal"
+   },
+   {
+    "d": "2025-07",
+    "rolls": [
+     "2025-454",
+     "2025-455"
+    ],
+    "text": "Voted {vote} on both July 2025 resolutions to block weapons sales and exports to Israel. Both failed.",
+    "yea": "pal"
+   },
+   {
+    "d": "2026-04",
+    "rolls": [
+     "2026-080",
+     "2026-081"
+    ],
+    "text": "Voted {vote} on both April 2026 resolutions to block arms sales to Israel. Both failed.",
+    "yea": "pal"
+   },
+   {
+    "d": "2026-09",
+    "roll": "2026-252",
+    "text": "Voted {vote} to force a State Department report on Israel's human rights practices (S.Res. 852). It failed {yea}–{nay}; the Democratic caucus voted {cY}–{cN}.",
+    "yea": "pal"
+   },
+   {
+    "d": "2026-09",
+    "dir": "pal",
+    "u": "van-hollen-statement-on-senate-vote-on-privileged",
+    "rx": "nine American citizens have been killed",
+    "text": "After the vote on his privileged resolution on West Bank violence, said nine American citizens have been killed in recent years without accountability."
+   },
+   {
+    "d": "2026-10",
+    "dir": "mixed",
+    "u": "marking-three-years",
+    "rx": "hundreds of lives lost",
+    "text": "On the third anniversary of the October 7 attacks, remembered the hundreds of lives lost and the hostages, and said civilians in Gaza bear a staggering daily toll."
+   }
+  ]
  }
 }

@@ -1,0 +1,33 @@
+{
+ "tiles": [
+  {
+   "q": "Israel or Palestine?",
+   "v": "Leans Palestine",
+   "href": "stances.html#israel-palestine",
+   "rule": "The headline of the Israel and Palestine card, which tags each of its items by direction.",
+   "n": 6
+  },
+  {
+   "q": "Pro-ICE?",
+   "v": "Mostly no",
+   "href": "stances.html#card-ice",
+   "rule": "\"No\" when nothing found in his record points toward ICE; \"Mostly no\" when at least three times as many items point the other way. Toward enforcement: 1 vote and 0 statements or actions. Against: 9 votes and 0 statements or actions.",
+   "n": 10
+  },
+  {
+   "q": "Pro-police?",
+   "v": "Mostly no",
+   "href": "stances.html#card-police",
+   "rule": "\"Mixed\" when at least 3 picked votes point each way. He cast 2 on the police or tough-on-crime side and 4 against.",
+   "n": 6
+  },
+  {
+   "q": "Pro-corporate?",
+   "v": "Mostly no",
+   "href": "stances.html#card-corporate",
+   "rule": "His votes decide the headline: 0 of the 7 business, finance and labor votes picked went the business way (a third or fewer is \"Mostly no\", two thirds or more \"Mostly yes\"). With none, it is \"Mostly no\" rather than \"No\" because other items, such as corporate PAC money, point the business way.",
+   "n": 10
+  }
+ ],
+ "events": []
+}
