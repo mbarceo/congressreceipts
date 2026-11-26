@@ -24,18 +24,21 @@
     "geoid": "0642",
     "area": "CA-42",
     "congress": 119,
-    "inOfficeSince": "TODO: YYYY-MM-DD sworn in (current service)",
+    "inOfficeSince": "2023-01-07",
     "site": "https://robertgarcia.house.gov",
     "domain": "robertgarcia.house.gov",
     "pressPath": "/media/press-releases",
     "pressLayout": "auto",
-    "campaignSite": "",
+    "campaignSite": "https://robertgarcia.com",
     "portrait": "assets/portrait.jpg",
-    "committees": [],
-    "portraitSource": "https://bioguide.congress.gov/photo/G000598.jpg",
+    "committees": [
+      "Oversight and Government Reform",
+      "Transportation and Infrastructure"
+    ],
+    "portraitSource": "https://clerk.house.gov/images/members/G000598.jpg",
     "portraitSize": [
-      175,
-      219
+      335,
+      410
     ]
   },
   "leader": {
@@ -281,19 +284,19 @@
       {
         "id": "tech",
         "label": "Technology and AI companies",
-        "why": "TODO: why this category matters for Garcia's district.",
+        "why": "Large technology and AI companies whose federal contracts and data practices fall within the Oversight Committee's reach.",
         "rx": "GOOGLE|ALPHABET|MICROSOFT|AMAZON|\\bMETA\\b|FACEBOOK|APPLE INC|OPENAI|ANTHROPIC|NVIDIA|AUTODESK|INTEL\\b|QUALCOMM|ORACLE|SALESFORCE"
       },
       {
         "id": "health",
         "label": "Health care, insurers and pharma",
-        "why": "TODO: why this category matters for Garcia's district.",
+        "why": "Hospitals, insurers and drug makers, on the health-care side of the cost-of-living fight; he cosponsors Medicare for All.",
         "rx": "HEALTH|MEDICAL|HOSPITAL|PHARMA|INSURANCE|KAISER|AMERICAN MEDICAL|DENTAL"
       },
       {
         "id": "civil",
         "label": "Latino, immigrant and civil-rights groups",
-        "why": "TODO: why this category matters for Garcia's district.",
+        "why": "Latino, immigrant and civil-rights groups, tied to his record on immigration and equal rights.",
         "rx": "LATINO|HISPANIC|MEXICAN AMERICAN|UNIDOSUS|IMMIGRA|\\bACLU\\b|NAACP|CHCI|BOLD PAC|LA RAZA"
       }
     ],
@@ -322,34 +325,194 @@
   ],
   "overview": {
     "_note": "Member-specific Overview tiles (scripts/build_overview.py). costPromise: start of the promise 'issue' in data/promises.json whose status answers 'Delivering on cost of living?'. themes: [{q, rx, section, noun}] counts press releases mentioning a topic (e.g. Luz Rivas: Focused on homelessness?). votes: [{q, roll, section, what}] shows one recorded vote (e.g. the Epstein Files Transparency Act, House roll 2025-289).",
-    "costPromise": "Economic opportunity",
-    "themes": [],
-    "votes": []
+    "costPromise": "Housing",
+    "themes": [
+      {
+        "q": "Focused on the Port of Long Beach?",
+        "rx": "port of long beach|\\bports?\\b|harbor",
+        "section": "port-environment",
+        "noun": "the Port of Long Beach or other ports"
+      }
+    ],
+    "votes": [
+      {
+        "q": "Release the Epstein files?",
+        "roll": "2025-289",
+        "section": "epstein-files",
+        "what": "the Epstein Files Transparency Act"
+      }
+    ]
   },
   "_peersNote": "Members to compare with on the Overview and Money pages: {id, name, dist, group}. id is the vote id (bioguide for the House, LIS id for the Senate). Groups appear in config order; the build counts 'Party leadership', 'Centrist' and 'Progressive' in its summary.",
   "profile": {
     "_note": "Curated page text, rendered by the pages at runtime. Strings allow [label](url), **bold** and {{tokens}} (e.g. {{short}}, {{poss}}). Every fact typed here also goes in data/claims_static.json with its source.",
-    "lede": "",
-    "facts": [],
-    "factSources": [],
-    "committees": [],
-    "committeesNote": "",
-    "caucuses": [],
-    "promiseYear": "",
-    "promisesIntro": "",
-    "offices": [],
-    "online": [],
+    "lede": "A running check of what Garcia promised voters in CA-42, what he has done in office, and what he says on the issues people are fighting about. Every entry links to its source.",
+    "facts": [
+      {
+        "label": "2026 general",
+        "value": "Re-elected 62.0% to 38.0% over Brian Burley (R), unofficial, all precincts reporting"
+      },
+      {
+        "label": "House Oversight",
+        "value": "Ranking Member (top Democrat) since June 2025"
+      },
+      {
+        "label": "Background",
+        "value": "Former mayor of Long Beach; first LGBTQ+ immigrant to serve in Congress"
+      }
+    ],
+    "factSources": [
+      "2026 general (unofficial, all 402 precincts reporting, read Nov 25, 2026): Garcia 175,590 (62.0%), Burley 107,781 (38.0%). [CA Secretary of State](https://api.sos.ca.gov/returns/us-rep/district/42)",
+      "Ranking Member: elected by House Democrats 150-63 on Jun 24, 2025. [His office](https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-statement-election-ranking-member-house-oversight)",
+      "Background: [his 2024 campaign site, archived Oct 31, 2024](https://web.archive.org/web/20241031202426/https://robertgarcia.com/about/) (mayor); [his office](https://robertgarcia.house.gov/media/press-releases/historic-first-congressman-robert-garcia-finally-sworn-us-house) (first LGBTQ+ immigrant to serve in Congress)."
+    ],
+    "committees": [
+      {
+        "name": "Oversight and Government Reform Committee",
+        "subs": [
+          {
+            "name": "Full committee",
+            "role": "Ranking Member",
+            "pill": true,
+            "src": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-statement-election-ranking-member-house-oversight"
+          }
+        ],
+        "blurb": "The House's main investigative committee, with authority to examine any matter within the jurisdiction of the other committees. As Ranking Member he is the top Democrat on it."
+      },
+      {
+        "name": "Transportation and Infrastructure Committee",
+        "subs": [
+          {
+            "name": "Aviation Subcommittee",
+            "role": "member",
+            "src": "https://clerk.house.gov/xml/lists/MemberData.xml"
+          },
+          {
+            "name": "Highways and Transit Subcommittee",
+            "role": "member",
+            "src": "https://clerk.house.gov/xml/lists/MemberData.xml"
+          }
+        ],
+        "blurb": "Oversees aviation, highways and transit, ports and waterways, and the Coast Guard, all central to Long Beach."
+      }
+    ],
+    "committeesNote": "Committee seats: [Clerk of the House member file](https://clerk.house.gov/xml/lists/MemberData.xml) and [his office](https://robertgarcia.house.gov/about/committees-and-caucuses). Caucuses: [his office](https://robertgarcia.house.gov/about/committees-and-caucuses).",
+    "caucuses": [
+      {
+        "name": "Congressional Progressive Caucus",
+        "role": "Member",
+        "src": "https://robertgarcia.house.gov/about/committees-and-caucuses",
+        "what": "The House's largest bloc of progressive Democrats."
+      },
+      {
+        "name": "Congressional Hispanic Caucus",
+        "role": "Member",
+        "src": "https://robertgarcia.house.gov/about/committees-and-caucuses",
+        "what": "Latino members and Latino policy issues."
+      },
+      {
+        "name": "Congressional Asian Pacific American Caucus",
+        "role": "Member",
+        "src": "https://robertgarcia.house.gov/about/committees-and-caucuses",
+        "what": "Asian American and Pacific Islander members."
+      },
+      {
+        "name": "Congressional PORTS Caucus",
+        "role": "Co-chair",
+        "src": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-statement-following-supreme-court-decision-striking",
+        "what": "Ports, trade and supply-chain issues."
+      },
+      {
+        "name": "Congressional Caucus on Peru",
+        "role": "Co-chair (named Sep 2023)",
+        "src": "https://robertgarcia.house.gov/media/press-releases/congressional-caucus-peru-announces-representatives-robert-garcia-and-carlos",
+        "what": "U.S.-Peru relations."
+      },
+      {
+        "name": "Congressional YIMBY Caucus",
+        "role": "Launched it",
+        "src": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-announces-launch-pro-housing-yimby-caucus-tackle",
+        "what": "Pro-housing group focused on building more homes."
+      }
+    ],
+    "promiseYear": "2024",
+    "promisesIntro": "What Garcia's 2024 campaign site said he would fight for, and what the record shows. A promise is \"stalled\" when the bill he backs has only been referred to committee.",
+    "offices": [
+      {
+        "name": "Washington, D.C. office",
+        "lines": [
+          "109 Cannon House Office Building",
+          "Washington, DC 20515"
+        ],
+        "phone": "(202) 225-7924",
+        "note": "Capitol Hill. Best for votes and legislation."
+      },
+      {
+        "name": "Long Beach district office",
+        "lines": [
+          "415 West Ocean Blvd., Suite 2803",
+          "Long Beach, CA 90802"
+        ],
+        "phone": "(562) 512-8489",
+        "note": "In the district. Best for casework and meeting requests."
+      }
+    ],
+    "online": [
+      "[Request a meeting with him](https://robertgarcia.house.gov/contact/invitation-meeting-request)",
+      "[Get help with a federal agency](https://robertgarcia.house.gov/services)"
+    ],
     "onlineNote": "",
-    "handles": [],
+    "handles": [
+      {
+        "platform": "Website",
+        "office": {
+          "text": "robertgarcia.house.gov",
+          "url": "https://robertgarcia.house.gov"
+        },
+        "campaign": {
+          "text": "robertgarcia.com",
+          "url": "https://robertgarcia.com"
+        }
+      },
+      {
+        "platform": "X",
+        "office": {
+          "text": "@RepRobertGarcia",
+          "url": "https://twitter.com/RepRobertGarcia"
+        },
+        "campaign": {
+          "text": "@RobertGarcia",
+          "url": "https://twitter.com/RobertGarcia"
+        }
+      },
+      {
+        "platform": "Instagram",
+        "office": {
+          "text": "@RepRobertGarcia",
+          "url": "https://instagram.com/RepRobertGarcia"
+        }
+      },
+      {
+        "platform": "Facebook",
+        "office": {
+          "text": "reprobertgarcia",
+          "url": "https://facebook.com/reprobertgarcia/"
+        },
+        "campaign": {
+          "text": "robertgarcialb",
+          "url": "https://www.facebook.com/robertgarcialb"
+        }
+      }
+    ],
     "channelsNote": "",
     "money": {
-      "watchIntro": "",
+      "watchIntro": "Industries tied to his record and committees (Oversight and Transportation and Infrastructure) and to Long Beach issues: ports and aviation, immigration enforcement, public safety, housing costs, labor and health care. Each card totals the PACs and donor employers whose names fit the category.",
       "trackaipacNote": ""
     },
     "events": {
-      "intro": "",
+      "intro": "Public events where Garcia appears in Long Beach and beyond, from his press releases. His office does not list town halls on its site.",
       "help": "",
-      "ask": ""
+      "ask": "His website and press releases list no upcoming town halls. Call the Long Beach district office at (562) 512-8489 to ask when the next one will be, or see every way to reach him on the [Overview](./#channels)."
     },
     "_examples": {
       "facts": [

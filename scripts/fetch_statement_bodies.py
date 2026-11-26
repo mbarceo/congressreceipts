@@ -19,7 +19,7 @@ text = lambda s: re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", s)).r
 def extract(h):
     i = h.find("evo-press-release__body")
     if i >= 0:   # house.gov (unchanged from the House trackers)
-        seg = re.split(r"### Media|Back to top|Contact Us", html.unescape(re.sub(r"<[^>]+>", " ", h[i:])))[0]
+        seg = re.split(r"### Media|Back to top|Contact Us|\bIssues :|-?\d{2,3}\.\d{6,} -?\d{2,3}\.\d{6,}", html.unescape(re.sub(r"<[^>]+>", " ", h[i:])))[0]
         return re.sub(r"\s+", " ", seg.replace("evo-press-release__body\">", "")).strip()
     h = re.sub(r"<script.*?</script>|<style.*?</style>|<noscript.*?</noscript>", " ", h, flags=re.S)
     m = re.search(r'data-widget_type="theme-post-content\.default"\s*>(.*?)(?=data-widget_type="|<footer|data-elementor-type="footer")', h, re.S)

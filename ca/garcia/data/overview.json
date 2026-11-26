@@ -1,0 +1,88 @@
+{
+ "tiles": [
+  {
+   "q": "Pro-Palestine?",
+   "v": "Mixed",
+   "href": "stances.html#israel-palestine",
+   "rule": "The headline of the Israel and Palestine card, which tags each of its items by direction.",
+   "n": 6
+  },
+  {
+   "q": "Pro-ICE?",
+   "v": "No",
+   "href": "stances.html#card-ice",
+   "rule": "\"No\" when nothing found in his record points toward ICE; \"Mostly no\" when at least three times as many items point the other way. Toward enforcement: 0 votes and 0 statements or actions. Against: 6 votes and 4 statements or actions.",
+   "n": 10
+  },
+  {
+   "q": "Pro-police?",
+   "v": "Mostly no",
+   "href": "stances.html#card-police",
+   "rule": "\"Mixed\" when at least 3 picked votes point each way. He cast 0 on the police or tough-on-crime side and 3 against.",
+   "n": 6
+  },
+  {
+   "q": "Pro-corporate?",
+   "v": "Mostly no",
+   "href": "stances.html#card-corporate",
+   "rule": "His votes decide the headline: 2 of the 6 business, finance and labor votes picked went the business way (a third or fewer is \"Mostly no\", two thirds or more \"Mostly yes\").",
+   "n": 11
+  },
+  {
+   "q": "Delivering on cost of living?",
+   "v": "In progress",
+   "href": "#scorecard",
+   "rule": "The promise scorecard's status for his cost-of-living pledge. He launched the YIMBY Caucus and voted for a bipartisan housing bill, but his own People Over Parking Act has had no committee action.",
+   "n": 3
+  },
+  {
+   "q": "Focused on the Port of Long Beach?",
+   "v": "A recurring theme",
+   "href": "stances.html#port-environment",
+   "rule": "18 of his 164 press releases (11%) mention the Port of Long Beach or other ports at all; under 10% counts as not a major theme.",
+   "n": 18
+  },
+  {
+   "q": "Release the Epstein files?",
+   "v": "Voted yes",
+   "href": "stances.html#epstein-files",
+   "rule": "His vote on the Epstein Files Transparency Act, which passed 427–1 (roll 2025-289).",
+   "n": 1
+  }
+ ],
+ "events": [
+  {
+   "date": "2026-04-24",
+   "type": "Groundbreaking",
+   "title": "Long Beach Airport terminal improvements groundbreaking",
+   "city": "Long Beach, CA",
+   "notes": "Joined city officials and airport leaders to mark the start of work funded by over $24 million from the FAA.",
+   "source": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-joins-long-beach-airport-groundbreaking-ceremony"
+  },
+  {
+   "date": "2026-03-31",
+   "type": "Roundtable",
+   "role": "hosted",
+   "title": "Roundtable with Epstein survivor Annie Farmer",
+   "city": "Long Beach, CA",
+   "notes": "Discussed the Oversight Committee's work to release the Epstein files.",
+   "source": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-statement-following-roundtable-discussion-epstein"
+  },
+  {
+   "date": "2025-09-23",
+   "type": "Groundbreaking",
+   "title": "Studebaker Road Transformation Project groundbreaking",
+   "city": "Long Beach, CA",
+   "notes": "Joined local leaders at the start of a road project backed in part by over $1 million in Community Project Funding he secured.",
+   "source": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-long-beach-leaders-break-ground-studebaker-road"
+  },
+  {
+   "date": "2025-08-20",
+   "type": "Ceremony",
+   "title": "Ceremonial swearing-in as Oversight Committee Ranking Member",
+   "city": "Long Beach, CA",
+   "notes": "Sworn in by Vice President Kamala Harris and outlined his priorities.",
+   "source": "https://robertgarcia.house.gov/media/press-releases/vice-president-kamala-harris-swears-congressman-robert-garcia-ranking-member"
+  }
+ ]
+}

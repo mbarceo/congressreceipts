@@ -1,4 +1,38 @@
 {
- "_note": "Constituent events from her own releases or local press. 'stmt' must match exactly one release in data/statements.json; 'u' is any other source. role: hosted = her office ran it; participated = someone else hosted. Build: python3 -I scripts/build_overview.py",
- "events": []
+ "_note": "Constituent events from his own releases or local press. 'stmt' must match exactly one release in data/statements.json; 'u' is any other source. role: hosted = his office ran it; participated = someone else hosted. Build: python3 -I scripts/build_overview.py",
+ "events": [
+  {
+   "date": "2026-04-24",
+   "type": "Groundbreaking",
+   "title": "Long Beach Airport terminal improvements groundbreaking",
+   "city": "Long Beach, CA",
+   "notes": "Joined city officials and airport leaders to mark the start of work funded by over $24 million from the FAA.",
+   "stmt": "congressman-robert-garcia-joins-long-beach-airport-groundbre"
+  },
+  {
+   "date": "2026-03-31",
+   "type": "Roundtable",
+   "title": "Roundtable with Epstein survivor Annie Farmer",
+   "city": "Long Beach, CA",
+   "notes": "Discussed the Oversight Committee's work to release the Epstein files.",
+   "stmt": "congressman-robert-garcia-statement-following-roundtable-dis",
+   "role": "hosted"
+  },
+  {
+   "date": "2025-09-23",
+   "type": "Groundbreaking",
+   "title": "Studebaker Road Transformation Project groundbreaking",
+   "city": "Long Beach, CA",
+   "notes": "Joined local leaders at the start of a road project backed in part by over $1 million in Community Project Funding he secured.",
+   "stmt": "congressman-robert-garcia-long-beach-leaders-break-ground-st"
+  },
+  {
+   "date": "2025-08-20",
+   "type": "Ceremony",
+   "title": "Ceremonial swearing-in as Oversight Committee Ranking Member",
+   "city": "Long Beach, CA",
+   "notes": "Sworn in by Vice President Kamala Harris and outlined his priorities.",
+   "stmt": "vice-president-kamala-harris-swears-congressman-robert-garci"
+  }
+ ]
 }

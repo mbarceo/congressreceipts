@@ -8,9 +8,88 @@
    "pro": "Pro-enforcement",
    "con": "Against ICE or for immigrants",
    "section": "immigration",
-   "rollsFromIssue": "immigration",
-   "issueYea": "pro",
-   "items": []
+   "items": [
+    {
+     "d": "2025-01",
+     "s": "con",
+     "t": "Reintroduced the ICE Security Reform Act (H.R. 673), which would make Homeland Security Investigations an independent agency apart from ICE.",
+     "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-reintroduces-ice-security-reform-act-establish"
+    },
+    {
+     "d": "2025-04",
+     "s": "con",
+     "t": "Travelled to El Salvador with three House colleagues to press the administration to return Kilmar Abrego Garcia, wrongfully deported.",
+     "u": "https://robertgarcia.house.gov/media/press-releases/us-reps-garcia-frost-ansari-and-dexter-arrive-el-salvador-pressure-trump"
+    },
+    {
+     "d": "2025-03",
+     "s": "con",
+     "t": "Condemned ICE arrests of students Rumeysa Ozturk and Mahmoud Khalil as detentions without due process.",
+     "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-statement-politically-motivated-arrests-toward"
+    },
+    {
+     "d": "2025-10",
+     "s": "con",
+     "t": "Applauded Long Beach Airport for rejecting Secretary Noem's request to play a video in the terminal; the Oversight Committee opened an investigation.",
+     "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-applauds-long-beach-airports-decision-reject"
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2025-023",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} the Laken Riley Act (S. 5). {DemMaj}."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2025-171",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} the District of Columbia Federal Immigration Compliance Act (H.R. 2056). {DemMaj}."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2026-087",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} the Department of Homeland Security Appropriations Act, 2026 (H.R. 7744). {DemMaj}."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2026-094",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} the Deporting Fraudsters Act (H.R. 1958). {DemMaj}."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2026-102",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} H.Res. 1128, expressing the House's support for the Department of Homeland Security. {DemMaj}."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2026-120",
+       "yea": "con"
+      }
+     ],
+     "t": "{Vote} H.R. 1689, requiring DHS to designate Haiti for temporary protected status. {DemMaj}."
+    }
+   ],
+   "sum": "He voted against the enforcement bills below, each time with most Democrats, and for a bill granting Haitians temporary protected status. He has introduced a bill to restructure ICE and has pressed the administration over deportations and arrests.",
+   "short": "Votes against enforcement bills and for TPS, with most Democrats. Has proposed restructuring ICE and pressed the administration over deportations."
   },
   {
    "key": "police",
@@ -18,10 +97,56 @@
    "eb": "Policing and crime",
    "pro": "Police or tough-on-crime side",
    "con": "Against",
-   "section": "public-safety",
-   "rollsFromIssue": "public-safety",
-   "issueYea": "pro",
-   "items": []
+   "section": "guns",
+   "items": [
+    {
+     "rolls": [
+      {
+       "roll": "2026-165",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} H.Con.Res. 96, expressing support for law enforcement officers. {DemMaj}."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2026-171",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} the Cashless Bail Reporting Act (H.R. 5625). {DemMaj}."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2025-166",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} the HALT Fentanyl Act (S. 331). {DemMaj}."
+    },
+    {
+     "d": "2026-03",
+     "s": "con",
+     "t": "Introduced H.R. 7827, the Stop Militarizing Our Streets Act of 2026.",
+     "u": "https://www.congress.gov/bill/119th-congress/house-bill/7827"
+    },
+    {
+     "d": "2024-11",
+     "s": "pro",
+     "t": "Announced federal grants for Long Beach law enforcement to enhance transparency and support substance-abuse services.",
+     "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-announces-federal-grants-city-long-beach-law"
+    },
+    {
+     "d": "2024-11",
+     "s": "pro",
+     "t": "With the Long Beach city prosecutor, announced a federal grant to improve law-enforcement communication systems.",
+     "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-and-long-beach-city-prosecutor-doug-haubert-announce"
+    }
+   ],
+   "sum": "He voted against the police-support and crime bills below, most with most Democrats, and introduced a bill to curb the militarization of local policing. As mayor and in Congress he has also announced federal grants to Long Beach law enforcement.",
+   "short": "Voted against the police-support and crime bills below, mostly with Democrats. Has announced federal grants for Long Beach police programs."
   },
   {
    "key": "corporate",
@@ -29,9 +154,108 @@
    "eb": "Money and business",
    "pro": "Business side",
    "con": "Consumer or labor side",
-   "section": null,
-   "rolls": [],
-   "items": []
+   "section": "cost-of-living",
+   "items": [
+    {
+     "d": "2025–26",
+     "s": "pro",
+     "hi": 1,
+     "names": [
+      "AMAZON",
+      "BOEING",
+      "GOOGLE",
+      "META",
+      "UNITEDHEALTH",
+      "WALMART",
+      "VERIZON",
+      "DELOITTE",
+      "AKIN GUMP"
+     ],
+     "t": "Took {corp26} from {ncorp26} corporate PACs in 2025–26, such as Amazon, Boeing, Google, Meta, UnitedHealth, Walmart and Verizon, plus accounting and law firms such as Deloitte and Akin Gump. In 2023–24 it was {corp24} from {ncorp24}. Counts use each committee's FEC type, then its name.",
+     "u": "money.html"
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2025-071",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} H.J.Res. 25, overturning an IRS rule on gross proceeds reporting by brokers. {DemMaj}.",
+     "hi": 1
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2025-200",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} the GENIUS Act (S. 1582), the stablecoin law. {DemMaj}."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2025-199",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} the CLARITY Act (H.R. 3633), the crypto market-structure bill. {DemMaj}."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2025-096",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} S.J.Res. 18, overturning the Consumer Financial Protection Bureau's overdraft rule. {DemMaj}."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2025-095",
+       "yea": "pro"
+      }
+     ],
+     "t": "{Vote} S.J.Res. 28, overturning a Consumer Financial Protection Bureau rule. {DemMaj}."
+    },
+    {
+     "rolls": [
+      {
+       "roll": "2026-216",
+       "yea": "con"
+      }
+     ],
+     "t": "{Vote} the Faster Labor Contracts Act (H.R. 5408). {DemMaj}."
+    },
+    {
+     "d": "2025-04",
+     "s": "con",
+     "t": "Cosponsored the Raise the Wage Act of 2025 (H.R. 2743).",
+     "u": "https://www.congress.gov/bill/119th-congress/house-bill/2743"
+    },
+    {
+     "d": "2025-03",
+     "s": "con",
+     "t": "Cosponsored the Protecting the Right to Organize Act (H.R. 20), to make it easier to form a union.",
+     "u": "https://www.congress.gov/bill/119th-congress/house-bill/20"
+    },
+    {
+     "d": "2024-03",
+     "s": "con",
+     "t": "Demanded a response from luxury retailer Loro Piana over reports of inequity for Indigenous workers.",
+     "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-demands-response-luxury-retailer-loro-piana"
+    },
+    {
+     "d": "2023-05",
+     "s": "con",
+     "t": "Pressed rental car companies on overbooking.",
+     "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-holds-rental-car-companies-accountable-overbooking"
+    }
+   ],
+   "sum": "He took {corp26} from {ncorp26} corporate PACs in 2025–26, up from {corp24} in 2023–24, and broke with most Democrats to vote for a crypto-friendly IRS rule rollback and the GENIUS Act. He voted against the CLARITY Act and against overturning two consumer-finance rules, and cosponsors labor and minimum-wage bills.",
+   "short": "Took {corp26} from corporate PACs in 2025–26, up from {corp24}. Broke with most Democrats on two crypto-related votes, but sided with consumers and labor on others."
   }
  ]
 }
