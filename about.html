@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="What Congress Receipts is, how every claim is checked, where the data comes from, and what the project is not.">
+<title>About · Congress Receipts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="site.css?v=4836746f">
+<link rel="stylesheet" href="hub.css?v=a7332aad">
+<style>
+.page{display:flex;flex-direction:column;gap:14px;max-width:68ch}
+.page h2{margin-top:18px}
+.page p{margin:0}
+.page ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;counter-reset:s;max-width:none}
+.steps div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:.88rem}
+.steps div::before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;
+  background:var(--accent-soft);color:var(--accent);font-family:var(--f-mono);font-size:.78rem;margin-bottom:8px}
+.steps b{display:block;font-family:var(--f-display);margin-bottom:4px}
+</style>
+</head>
+<body data-page="about">
+<div class="wrap hub">
+  <header>
+    <span class="eyebrow">About</span>
+    <h1>Receipts, not opinions.</h1>
+    <p class="lede">Congress Receipts is a set of nonpartisan trackers for members of Congress: how they vote, who funds them, whether they show up, and whether they keep their promises. Every number links to the official record it came from.</p>
+  </header>
+
+  <section class="page">
+    <h2>What this is</h2>
+    <p>Each member gets a tracker with the same sections: votes, money, party alignment, stances with evidence, a promises scorecard, ties to the political establishment, town halls and statements, plus a Sources page that lists every claim and how it was checked. Because every tracker is built the same way, members can be compared fairly.</p>
+    <p>The <a href="backlog.html">Backlog Queue</a> shows every current member of Congress and which ones have a tracker so far.</p>
+
+    <h2>Who makes it</h2>
+    <p>An independent project researched, built and maintained by one person. It is not affiliated with any party, campaign, member of Congress or advocacy group, and nothing here is an endorsement of anyone. It has no ads and no tracking cookies.</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="eyebrow">How we check</span><h2>Every claim has a receipt</h2></div>
+    <div class="steps">
+      <div><b>Official records first</b>Votes come from the House Clerk and senate.gov, money from FEC filings, bills from govinfo, and words from members' own press releases and archived campaign sites.</div>
+      <div><b>Built, not typed</b>Vote tallies, percentages and dollar figures are computed from the raw records by scripts, so they can't be mistyped.</div>
+      <div><b>Checked against the source</b>Every quote, vote and figure is re-checked against its source. A misquote, a wrong vote or a wrong tally fails the check, and the data is fixed, never the checker.</div>
+      <div><b>Verdicts state their rule</b>Where a page sums up a record ("Mostly no", "Mixed"), it says the rule that produced it, and shows every item behind it.</div>
+    </div>
+  </section>
+
+  <section class="page">
+    <h2>Where the data comes from</h2>
+    <ul>
+      <li><a href="https://clerk.house.gov/Votes">House Clerk roll calls</a> and <a href="https://www.senate.gov/legislative/votes_new.htm">Senate roll calls</a> for votes and attendance</li>
+      <li><a href="https://www.fec.gov/data/">Federal Election Commission filings</a> for money</li>
+      <li><a href="https://www.govinfo.gov/">govinfo</a> and congress.gov for bill records</li>
+      <li><a href="https://www.census.gov/">Census Bureau</a> for districts</li>
+      <li>Members' own public statements, websites and archived campaign sites, and published news reports</li>
+    </ul>
+    <p>It uses no private, leaked or purchased data. Donor names and addresses are never published, only employer and occupation.</p>
+
+    <h2>What it is not</h2>
+    <p>Summaries and verdicts are this project's reading of public records, each with its stated rule; the linked source is always the official record. Information is provided as-is for public education and may lag the latest filings. If you find a mistake, the fix goes into the data, with the source.</p>
+  </section>
+</div>
+<script src="hub.js?v=51719bfd"></script>
+</body>
+</html>

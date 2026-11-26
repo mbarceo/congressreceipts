@@ -65,9 +65,9 @@ for mem in members:
     left = [x for x in re.findall(r"\{\{\w+\}\}", "".join(HEAD.findall(open(os.path.join(dst, "index.html")).read())))]
     print(f"{mem['path']}: {n} files" + (f"; unfilled head tokens {left}" if left else ""))
 
-# The hub pages (home, find, attendance, leaders, backlog) use the same stylesheet as the trackers and the shared header files
+# The hub pages (home, find, attendance, leaders, backlog, about) use the same stylesheet as the trackers and the shared header files
 shutil.copyfile(os.path.join(SITE, "site.css"), os.path.join(REPO, "site.css"))
-for f in ("index.html", "find.html", "attendance.html", "leaders.html", "backlog.html"):
+for f in ("index.html", "find.html", "attendance.html", "leaders.html", "backlog.html", "about.html"):
     p = os.path.join(REPO, f); s0 = open(p, encoding="utf-8").read(); s1 = stamp(s0)
     if s1 != s0: open(p, "w", encoding="utf-8").write(s1)
 print("hub pages stamped")
