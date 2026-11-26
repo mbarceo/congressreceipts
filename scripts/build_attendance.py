@@ -75,12 +75,12 @@ vote_url_from_id = lambda i: f"https://clerk.house.gov/Votes/{i[:4]}{int(i[5:]):
 
 chambers = {}
 out = []
-for m in (x for x in CFG["members"] if x.get("live", True)):
+for m in (x for x in CFG["members"] if x.get("live", True) and x.get("hub", True)):
     path = os.path.join(ROOT, m["path"])
     m["url"] = m["path"] + "/"   # relative, so it works on congressreceipts.org and in a local preview
     votes = json.load(open(os.path.join(path, "data/votes.json")))
     key = "member" if "member" in votes[0] else next(k for k in votes[0] if k not in
-          {"y", "n", "date", "bill", "q", "desc", "type", "result", "yea", "nay", "dY", "dN", "rY", "rN", "iY", "iN", "cY", "cN", "dSide", "rSide", "url", "title"})
+          {"y", "n", "date", "bill", "q", "desc", "type", "result", "yea", "nay", "dY", "dN", "rY", "rN", "iY", "iN", "cY", "cN", "dSide", "rSide", "pSide", "pY", "pN", "url", "title"})
     mine = [v for v in votes if v[key] == "Not Voting"]
     cast, missed, nfiles = official_counts(m["chamber"], os.path.join(path, "data/raw"))
     if cast[m["voteId"]] != len(votes) or missed[m["voteId"]] != len(mine):
@@ -119,7 +119,7 @@ for m in (x for x in CFG["members"] if x.get("live", True)):
     for rid, topic in critical_rolls(path).items():
         v = by.get(rid)
         if not v: problems.append(f"{m['name']}: critical roll {rid} not in votes.json"); continue
-        me, side = v[key], v.get("dSide", "")
+        me, side = v[key], v.get("pSide", v.get("dSide", ""))
         status = ("missed" if me == "Not Voting" else "present" if me == "Present"
                   else "broke" if side in ("Yea", "Nay") and me != side else "with")
         crit.append({"id": rid, "date": v["date"], "topic": topic, "bill": v.get("bill", ""), "desc": (v.get("desc") or v.get("title") or "")[:200],

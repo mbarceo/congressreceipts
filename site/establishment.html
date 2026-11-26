@@ -57,6 +57,8 @@ body{margin:0}
     <div class="tally" id="tiles"></div>
   </section>
 
+  <div id="trumpMount"></div>
+
   <section id="indicators">
     <div class="sec-head"><span class="eyebrow">Evidence</span><h2>The strongest signs each way</h2></div>
     <div class="cols" id="cols"></div>
@@ -116,6 +118,7 @@ const src = list => list.map(([t,u])=>`<a class="src" href="${esc(u)}"${ext(u)}>
 const vp = v => `<span class="pill ${v==="Yea"?"v-yea":"v-nay"}">${esc(v)}</span>`;
 const CAT = [["labor","Labor unions"],["ideological","Advocacy and ideological groups"],["corporate","Corporate PACs"],["trade","Trade and professional associations"],["candidate","Other candidates' campaigns"]];
 
+fetch("data/trump.json").then(r => r.ok ? r.json() : null).then(t => TRACKER.renderTrump(M, t)).catch(() => {});
 fetch("data/establishment.json").then(r=>r.json()).then(d=>{
   $("verdictCard").innerHTML = `<div class="pp-head"><div class="pp-flag"><span class="pp-q">${esc(d.question)}</span><span class="pp-v">${esc(verdict(d.headline))}</span></div><p class="pp-sum">${esc(d.summary)}</p></div><p class="muted" style="margin:0;font-size:.82rem">${esc(d.why)}</p>`;
   $("tiles").innerHTML = d.tiles.map(([n,l])=>`<div class="tile"><span class="n" style="font-size:1.5rem">${esc(n)}</span><span class="l">${esc(l)}</span></div>`).join("");

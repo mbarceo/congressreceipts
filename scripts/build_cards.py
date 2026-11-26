@@ -8,7 +8,7 @@ Usage: python3 -I scripts/build_cards.py   (after build_stances.py and build_est
 import json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from config import ROOT, M
-from votes_common import is_vote_url, roll_phrases, breaks_party, fill_text
+from votes_common import is_vote_url, roll_phrases, breaks_party, fill_text, own_side, OWN_NAME
 import re
 PR = M.get("pronouns") or {"subj": "they", "obj": "them", "poss": "their"}
 SUBJ, POSS = PR["subj"].capitalize(), PR["poss"]
@@ -75,8 +75,8 @@ def roll_item(rid, yea_side, what, title=None):
     if not v: problems.append(f"roll {rid} not found"); return None
     if v["member"] not in ("Yea", "Nay"): return None             # no stance taken
     side = yea_side if v["member"] == "Yea" else ("con" if yea_side == "pro" else "pro")
-    brk = v["dSide"] in ("Yea", "Nay") and v["member"] != v["dSide"]
-    text = f"Voted {v['member']} on {what or title}. It {'passed' if v['result'].startswith('Pass') else 'failed'} {v['yea']}–{v['nay']}; Democrats {v['dY']}–{v['dN']}."
+    brk = own_side(v) in ("Yea", "Nay") and v["member"] != own_side(v)
+    text = f"Voted {v['member']} on {what or title}. It {'passed' if v['result'].startswith('Pass') else 'failed'} {v['yea']}–{v['nay']}; {OWN_NAME} {v.get('pY', v['dY'])}–{v.get('pN', v['dN'])}."
     return {"d": v["date"][:7], "s": side, "t": text, "u": v["url"], "brk": brk}
 
 cards = []

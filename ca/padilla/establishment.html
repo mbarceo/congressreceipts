@@ -9,9 +9,9 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="site.css?v=4836746f">
+<link rel="stylesheet" href="site.css?v=86652562">
 <link rel="stylesheet" href="../../hub.css?v=91a2553f">
-<script src="site.js?v=9d18080b"></script>
+<script src="site.js?v=06c10c5b"></script>
 <style>
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 body{margin:0}
@@ -58,6 +58,8 @@ body{margin:0}
     <div class="pp-card" id="verdictCard"><p class="muted">Loading…</p></div>
     <div class="tally" id="tiles"></div>
   </section>
+
+  <div id="trumpMount"></div>
 
   <section id="indicators">
     <div class="sec-head"><span class="eyebrow">Evidence</span><h2>The strongest signs each way</h2></div>
@@ -118,6 +120,7 @@ const src = list => list.map(([t,u])=>`<a class="src" href="${esc(u)}"${ext(u)}>
 const vp = v => `<span class="pill ${v==="Yea"?"v-yea":"v-nay"}">${esc(v)}</span>`;
 const CAT = [["labor","Labor unions"],["ideological","Advocacy and ideological groups"],["corporate","Corporate PACs"],["trade","Trade and professional associations"],["candidate","Other candidates' campaigns"]];
 
+fetch("data/trump.json").then(r => r.ok ? r.json() : null).then(t => TRACKER.renderTrump(M, t)).catch(() => {});
 fetch("data/establishment.json").then(r=>r.json()).then(d=>{
   $("verdictCard").innerHTML = `<div class="pp-head"><div class="pp-flag"><span class="pp-q">${esc(d.question)}</span><span class="pp-v">${esc(verdict(d.headline))}</span></div><p class="pp-sum">${esc(d.summary)}</p></div><p class="muted" style="margin:0;font-size:.82rem">${esc(d.why)}</p>`;
   $("tiles").innerHTML = d.tiles.map(([n,l])=>`<div class="tile"><span class="n" style="font-size:1.5rem">${esc(n)}</span><span class="l">${esc(l)}</span></div>`).join("");

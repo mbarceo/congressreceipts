@@ -9,9 +9,9 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="site.css?v=4836746f">
+<link rel="stylesheet" href="site.css?v=86652562">
 <link rel="stylesheet" href="../../hub.css?v=91a2553f">
-<script src="site.js?v=9d18080b"></script>
+<script src="site.js?v=06c10c5b"></script>
 <style>
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 body{margin:0}
@@ -95,7 +95,7 @@ getJSON("data/overview.json").then(ov => {
     <div><div><span class="k">${esc(e.type)}</span>${e.role ? `<span class="evrole">${e.role === "hosted" ? "Hosted" : "Took part"}</span>` : ""}</div><div class="t">${esc(e.title)}</div>
     ${e.city?`<div class="muted">${esc(e.city)}</div>`:""}${e.notes?`<p class="ex">${esc(e.notes)}</p>`:""}
     <div class="ev-links"><a class="src" href="${esc(e.source)}" target="_blank" rel="noopener">Source</a></div></div></article>`).join("")
-    || `<p class="muted">No events listed yet: add sourced events to data/events.json, then run <code>scripts/build_overview.py</code>.</p>`;
+    || `<p class="muted">No public events have been listed yet. Events appear here once they are found in the office's press releases or local news.</p>`;
 }).catch(() => { document.getElementById("thList").innerHTML = `<p class="muted"><span class="soon">Coming soon</span> Town halls and public events are being researched.</p>`; });
 });
 </script>

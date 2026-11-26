@@ -15,7 +15,7 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 J = lambda *p: (lambda f: json.load(open(f)) if os.path.exists(f) else None)(os.path.join(REPO, *p))
 LEADER = {"house": "Hakeem Jeffries", "senate": "Chuck Schumer"}
 out = []
-for m in (x for x in J("members.json")["members"] if x.get("live", True)):
+for m in (x for x in J("members.json")["members"] if x.get("live", True) and x.get("hub", True)):
     p = m["path"]; al = J(p, "data/alignment.json") or {}
     cfg = J(p, "tracker.config.json") or {}
     leader = (cfg.get("leader") or {}).get("name") or LEADER[m["chamber"]]
