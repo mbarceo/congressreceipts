@@ -22,7 +22,7 @@
     "seatLabel": "Maryland",
     "area": "Maryland",
     "congress": 119,
-    "inOfficeSince": "TODO: YYYY-MM-DD sworn in (current service)",
+    "inOfficeSince": "2017-01-03",
     "site": "https://www.vanhollen.senate.gov",
     "domain": "vanhollen.senate.gov",
     "pressPath": "/news/press-releases",
@@ -281,19 +281,19 @@
       {
         "id": "tech",
         "label": "Technology and AI companies",
-        "why": "TODO: why this category matters for Van Hollen's state.",
+        "why": "Technology and AI companies and their PACs: shown so readers can see how much this sector gives.",
         "rx": "GOOGLE|ALPHABET|MICROSOFT|AMAZON|\\bMETA\\b|FACEBOOK|APPLE INC|OPENAI|ANTHROPIC|NVIDIA|AUTODESK|INTEL\\b|QUALCOMM|ORACLE|SALESFORCE"
       },
       {
         "id": "health",
         "label": "Health care, insurers and pharma",
-        "why": "TODO: why this category matters for Van Hollen's state.",
+        "why": "Hospitals, insurers, drug makers and medical groups: shown so readers can see how much this sector gives.",
         "rx": "HEALTH|MEDICAL|HOSPITAL|PHARMA|INSURANCE|KAISER|AMERICAN MEDICAL|DENTAL"
       },
       {
         "id": "civil",
         "label": "Latino, immigrant and civil-rights groups",
-        "why": "TODO: why this category matters for Van Hollen's state.",
+        "why": "Immigrant-rights, civil-rights and Latino advocacy groups: shown so readers can see how much they give.",
         "rx": "LATINO|HISPANIC|MEXICAN AMERICAN|UNIDOSUS|IMMIGRA|\\bACLU\\b|NAACP|CHCI|BOLD PAC|LA RAZA"
       }
     ],
