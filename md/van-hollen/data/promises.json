@@ -1,6 +1,138 @@
 {
- "_note": "Hand-curated campaign promises and the record against them. kind 'explicit' = her own words in 2024; 'record' = implied by the record her 2024 site ran on, not a stated pledge. Actions: 'roll' fills her vote and the tally from data/votes.json; 'stmt' must match exactly one release in data/statements.json; 'u' is any other source. Status is an editorial call: 'why' must say what it rests on. Build: python3 -I scripts/build_promises.py",
- "sources": {},
- "noPromise": "",
- "promises": []
+ "_note": "Hand-curated campaign promises and the record against them. kind 'explicit' = his own words in 2022; 'record' = implied by the record his 2022 site ran on, not a stated pledge. Actions: 'roll' fills his vote and the tally from data/votes.json; 'stmt' must match exactly one release in data/statements.json; 'u' is any other source. Status is an editorial call: 'why' must say what it rests on. Build: python3 -I scripts/build_promises.py",
+ "sources": {
+  "site2022": {
+   "label": "His 2022 campaign site, issues page (archived Nov 3, 2022)",
+   "u": "https://web.archive.org/web/20221103173859/https://vanhollen.org/issues/"
+  }
+ },
+ "noPromise": "The 2022 issues page makes no specific pledge on housing costs, public safety funding, or foreign policy beyond general statements of belief.",
+ "promises": [
+  {
+   "issue": "Economic opportunity",
+   "kind": "record",
+   "status": "progress",
+   "promise": "That’s why he has led the charge to increase paychecks and benefits for working families and cut the costs of everything from prescription drugs to child care.",
+   "quote": true,
+   "src": [
+    "site2022"
+   ],
+   "why": "He voted for the housing-supply bill, which passed, and reintroduced a bipartisan housing-voucher bill, but both address housing, not child care or drug prices, and the voucher bill has not passed. He voted against the 2025 and 2026 reconciliation bills.",
+   "actions": [
+    {
+     "roll": "2026-053",
+     "text": "{Vote} H.R. 6644, a bill to increase the supply of housing. It passed {yea}–{nay}."
+    },
+    {
+     "stmt": "van-hollen-young-reintroduce-bipartisan-bill-to-boost-housing",
+     "text": "Reintroduced the Family Stability and Opportunity Vouchers Act with Sen. Todd Young (Sep 2026)."
+    },
+    {
+     "roll": "2025-372",
+     "text": "{Vote} H.R. 1, the 2025 reconciliation bill. It passed {yea}–{nay}."
+    }
+   ]
+  },
+  {
+   "issue": "Gun violence",
+   "kind": "explicit",
+   "status": "none",
+   "promise": "He will not rest until we end the epidemic of gun violence.",
+   "quote": true,
+   "src": [
+    "site2022"
+   ],
+   "why": "This tracker holds his 2025 and 2026 Senate roll calls and 60 releases from Sep to Nov 2026. The gun-related roll calls in them are a report amendment on veterans' firearm suicides and the confirmation of the ATF director, and no release on gun legislation turned up.",
+   "actions": [
+    {
+     "roll": "2025-473",
+     "text": "{Vote} the Murphy amendment to require a report on veterans who would have been reported to the national instant criminal background check system and who die by suicide with a firearm. It failed {yea}–{nay}."
+    },
+    {
+     "roll": "2026-109",
+     "text": "{Vote} confirming Robert Cekada as Director of the Bureau of Alcohol, Tobacco, Firearms, and Explosives. He was confirmed {yea}–{nay}."
+    }
+   ]
+  },
+  {
+   "issue": "Health care",
+   "kind": "record",
+   "status": "progress",
+   "promise": "Chris has worked tirelessly to defend the Affordable Care Act against Republican attacks and increase access to mental health and other services.",
+   "quote": true,
+   "src": [
+    "site2022"
+   ],
+   "why": "He voted to take up the extension of the enhanced premium tax credit, which fell short of the 60 votes needed, and reintroduced two bills on access to care for people with sickle cell disease. Neither has become law.",
+   "actions": [
+    {
+     "roll": "2025-644",
+     "text": "{Vote} cloture on taking up S. 3385, a bill to extend the enhanced health care premium tax credit. Cloture needed 60 votes and failed {yea}–{nay}."
+    },
+    {
+     "stmt": "van-hollen-booker-davis-adams-introduce-bicameral-bills",
+     "text": "Reintroduced two bills with Sen. Booker and Reps. Davis and Adams to improve access to care for people with sickle cell disease (Sep 2026)."
+    }
+   ]
+  },
+  {
+   "issue": "Chesapeake Bay and environment",
+   "kind": "record",
+   "status": "progress",
+   "promise": "A longtime champion of the Chesapeake Bay, Chris has secured record federal funds to protect the Bay, and worked to include the clean water and key climate provisions in the recent BBB package.",
+   "quote": true,
+   "src": [
+    "site2022"
+   ],
+   "why": "In 2026 he co-led a letter urging stronger menhaden protections and opposed moving ahead on the permitting bill partly over its effect on Bay protections. These are efforts, not results: neither release says the outcome changed.",
+   "actions": [
+    {
+     "stmt": "van-hollen-elfreth-lead-lawmakers-in-urging-fisheries-commission",
+     "text": "With Rep. Sarah Elfreth and eight colleagues, urged the Atlantic States Marine Fisheries Commission to move forward with the strongest proposed menhaden protections (Oct 2026)."
+    },
+    {
+     "stmt": "van-hollen-statement-on-current-opposition-to-moving-forward-with-permitting",
+     "text": "Voted against moving forward on the permitting reform bill, saying it undermines provisions that protect the Chesapeake Bay and its tributaries (Nov 2026)."
+    }
+   ]
+  },
+  {
+   "issue": "Campaign finance and secret money",
+   "kind": "record",
+   "status": "progress",
+   "promise": "A leading proponent of campaign finance reform, Chris is the original author of the DISCLOSE Act, which would end the torrents of secret money poisoning our politics.",
+   "quote": true,
+   "src": [
+    "site2022"
+   ],
+   "why": "In Oct 2026 he announced a new bill with Rep. Robert Garcia on campaign giving by federal contractors. It has not passed; this tracker has no record of the DISCLOSE Act itself moving.",
+   "actions": [
+    {
+     "stmt": "van-hollen-garcia-announce-new-bill",
+     "text": "Announced a bill with Rep. Robert Garcia to expand the ban on campaign donations by federal contractors to executives and major shareholders (Oct 2026)."
+    }
+   ]
+  },
+  {
+   "issue": "Immigration",
+   "kind": "record",
+   "status": "none",
+   "promise": "Chris is an original co-sponsor of comprehensive immigration reform initiatives, which would combine a path to citizenship for Dreamers, TPS recipients and others with effective border security.",
+   "quote": true,
+   "src": [
+    "site2022"
+   ],
+   "why": "No comprehensive immigration reform bill with a path to citizenship came to a vote in the roll calls this tracker holds. He voted for the amendment on DACA renewal processing, which failed, and against the Laken Riley Act.",
+   "actions": [
+    {
+     "roll": "2026-156",
+     "text": "{Vote} the Gallego amendment to fund timely adjudication of DACA renewal applications. It failed {yea}–{nay}."
+    },
+    {
+     "roll": "2025-007",
+     "text": "{Vote} passage of S. 5, the Laken Riley Act. It passed {yea}–{nay}."
+    }
+   ]
+  }
+ ]
 }
