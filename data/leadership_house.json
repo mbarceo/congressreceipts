@@ -12,8 +12,8 @@
   "no_public_position": 162,
   "counts": {
     "backs": {
-      "sourced": 69,
-      "tracker_only": 11
+      "sourced": 67,
+      "tracker_only": 13
     },
     "leaning": {
       "sourced": 1,
@@ -28,6 +28,17 @@
       "tracker_only": 0
     }
   },
+  "check_counts": {
+    "skipped_host_blocked": 15,
+    "quote_verified": 9,
+    "name_near_jeffries": 56,
+    "quote_not_on_page": 2,
+    "no_url": 3,
+    "fetch_failed": 1,
+    "skipped_unreadable_site": 4,
+    "none_to_check": 17
+  },
+  "checks_run": "2026-11-26",
   "members": [
     {
       "name": "Pete Aguilar",
@@ -42,7 +53,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "skipped_host_blocked"
     },
     {
       "name": "Wesley Bell",
@@ -57,7 +69,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "quote_verified"
     },
     {
       "name": "Rebecca Bennett",
@@ -72,7 +85,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "quote_verified"
     },
     {
       "name": "Mitchell Berman",
@@ -87,7 +101,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "quote_verified"
     },
     {
       "name": "Don Beyer",
@@ -102,7 +117,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Daniel Biss",
@@ -117,7 +133,8 @@
       "receipt": "news",
       "disputed": true,
       "dispute_note": "The whip tracker lists Biss undecided. A Nov 18 post says Biss supported Jeffries at the caucus vote.",
-      "differs_from_tracker": true
+      "differs_from_tracker": true,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Adrian Boafo",
@@ -132,7 +149,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "quote_verified"
     },
     {
       "name": "Christina Bohannan",
@@ -147,7 +165,8 @@
       "receipt": "news",
       "disputed": true,
       "dispute_note": "The whip tracker lists Bohannan undecided. CBS2 Iowa reports Bohannan backs Jeffries.",
-      "differs_from_tracker": true
+      "differs_from_tracker": true,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Luke Bronin",
@@ -162,7 +181,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Nikki Budzinski",
@@ -177,7 +197,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Troy Carter",
@@ -186,13 +207,14 @@
       "tracker_group": "backs",
       "tracker_only": false,
       "summary": "Backs Jeffries for Speaker.",
-      "source_url": "https://wgno.com/news/rep-troy-carter-backs-hakeem-jeffries-for-house-speaker/",
-      "source_outlet": "WGNO",
+      "source_url": "https://www.yahoo.com/news/politics/articles/orleans-congressman-casts-historic-vote-180640870.html",
+      "source_outlet": "Yahoo News",
       "source_date": "2026-11",
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Greg Casar",
@@ -207,7 +229,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "quote_not_on_page"
     },
     {
       "name": "Jasmine Clark",
@@ -222,7 +245,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "no_url"
     },
     {
       "name": "Katherine Clark",
@@ -237,7 +261,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Yvette Clarke",
@@ -252,7 +277,8 @@
       "receipt": "primary",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Jim Clyburn",
@@ -267,7 +293,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Paige Cognetti",
@@ -282,7 +309,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Cait Conley",
@@ -297,7 +325,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Rebecca Cooke",
@@ -312,7 +341,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "quote_verified"
     },
     {
       "name": "Debbie Dingell",
@@ -327,7 +357,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Shomari Figures",
@@ -336,13 +367,14 @@
       "tracker_group": "backs",
       "tracker_only": false,
       "summary": "Backs Jeffries for Speaker.",
-      "source_url": "https://aldailynews.com/sewell-figures-strongly-back-jeffries-for-house-speaker/",
-      "source_outlet": "Alabama Daily News",
+      "source_url": "https://yellowhammernews.com/i-dont-know-where-the-backlash-is-coming-from-shomari-figures-says-hakeem-jeffries-should-absolutely-be-speaker/",
+      "source_outlet": "Yellowhammer News",
       "source_date": "2026-11",
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "quote_verified"
     },
     {
       "name": "Sarah Trone Garriott",
@@ -357,7 +389,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Josh Gottheimer",
@@ -372,7 +405,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "no_url"
     },
     {
       "name": "Adam Gray",
@@ -387,7 +421,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Adelita Grijalva",
@@ -396,13 +431,14 @@
       "tracker_group": "undecided",
       "tracker_only": false,
       "summary": "Reported as having voted for Jeffries; says Jeffries is the only candidate.",
-      "source_url": "https://www.axios.com/2026/11/13/jeffries-speaker-house-democrats-pressley-raskin",
-      "source_outlet": "Axios",
-      "source_date": "2026-11-13",
+      "source_url": "http://www.washingtonexaminer.com/news/house/4807739/jeffries-allies-laugh-off-speaker-dissents/",
+      "source_outlet": "Washington Examiner",
+      "source_date": "2026-11-18",
       "receipt": "news",
       "disputed": true,
       "dispute_note": "The whip tracker lists Grijalva undecided. Reports describe Grijalva as having voted for Jeffries.",
-      "differs_from_tracker": true
+      "differs_from_tracker": true,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Glenn Ivey",
@@ -417,7 +453,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "skipped_host_blocked"
     },
     {
       "name": "Lindsay James",
@@ -432,7 +469,8 @@
       "receipt": "news",
       "disputed": true,
       "dispute_note": "The whip tracker lists James undecided. CBS2 Iowa reports James backs Jeffries.",
-      "differs_from_tracker": true
+      "differs_from_tracker": true,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Pramila Jayapal",
@@ -447,7 +485,8 @@
       "receipt": "news",
       "disputed": true,
       "dispute_note": "The whip tracker lists Jayapal as leaning. Reports say Jayapal voted for Jeffries, with conditions.",
-      "differs_from_tracker": true
+      "differs_from_tracker": true,
+      "check": "skipped_host_blocked"
     },
     {
       "name": "Jake Johnson",
@@ -455,14 +494,15 @@
       "group": "backs",
       "tracker_group": "undecided",
       "tracker_only": false,
-      "summary": "Said after meeting Jeffries that Johnson will vote for Jeffries.",
-      "source_url": "https://www.axios.com/2026/11/18/house-democrats-speaker-vote-jeffries-pressley",
-      "source_outlet": "Axios",
-      "source_date": "2026-11-17",
+      "summary": "Said after meeting Jeffries that Johnson will vote for Jeffries. Johnson's own race is in a recount after a 324-vote margin.",
+      "source_url": "https://www.washingtoninformer.com/jeffries-nominated-house-speaker/",
+      "source_outlet": "Washington Informer",
+      "source_date": "2026-11",
       "receipt": "news",
       "disputed": true,
       "dispute_note": "The whip tracker lists Johnson undecided. Axios reports Johnson said Johnson will vote for Jeffries after meeting Jeffries.",
-      "differs_from_tracker": true
+      "differs_from_tracker": true,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Marcy Kaptur",
@@ -477,7 +517,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "fetch_failed"
     },
     {
       "name": "Bill Keating",
@@ -492,7 +533,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Tim Kennedy",
@@ -507,7 +549,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Ro Khanna",
@@ -522,7 +565,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "skipped_unreadable_site"
     },
     {
       "name": "Jessica Killin",
@@ -531,13 +575,14 @@
       "tracker_group": "backs",
       "tracker_only": false,
       "summary": "Backs Jeffries for Speaker.",
-      "source_url": "https://kdvr.com/news/politics/colorado-politics-news/how-each-of-colorados-representatives-voted-for-speaker-of-the-house/",
-      "source_outlet": "KDVR",
+      "source_url": "https://www.yahoo.com/news/politics/articles/colorado-representatives-voted-speaker-house-220404328.html",
+      "source_outlet": "Colorado Politics (via Yahoo)",
       "source_date": "2026-11-18",
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Dan Koh",
@@ -552,7 +597,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Brad Lander",
@@ -567,7 +613,8 @@
       "receipt": "primary",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "skipped_unreadable_site"
     },
     {
       "name": "Rick Larsen",
@@ -582,7 +629,8 @@
       "receipt": "primary",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Micah Lasher",
@@ -597,7 +645,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Eileen Laubacher",
@@ -606,13 +655,14 @@
       "tracker_group": "undecided",
       "tracker_only": false,
       "summary": "Voted yes at the caucus vote, per the Colorado roll call; earlier declined to say.",
-      "source_url": "https://kdvr.com/news/politics/colorado-politics-news/how-each-of-colorados-representatives-voted-for-speaker-of-the-house/",
-      "source_outlet": "KDVR",
+      "source_url": "https://www.yahoo.com/news/politics/articles/colorado-representatives-voted-speaker-house-220404328.html",
+      "source_outlet": "Colorado Politics (via Yahoo)",
       "source_date": "2026-11-18",
       "receipt": "news",
       "disputed": true,
       "dispute_note": "The whip tracker lists Laubacher undecided. KDVR's roll call shows a yes vote at the caucus.",
-      "differs_from_tracker": true
+      "differs_from_tracker": true,
+      "check": "name_near_jeffries"
     },
     {
       "name": "William Lawrence",
@@ -627,7 +677,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Ted Lieu",
@@ -642,7 +693,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Matt Little",
@@ -657,7 +709,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "skipped_host_blocked"
     },
     {
       "name": "Elaine Luria",
@@ -672,7 +725,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Jennifer McClellan",
@@ -687,22 +741,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
-    },
-    {
-      "name": "Betty McCollum",
-      "district": "MN-4",
-      "group": "backs",
-      "tracker_group": "backs",
-      "tracker_only": false,
-      "summary": "Backs Jeffries for Speaker.",
-      "source_url": "https://dfl.org/betty-mccollum-wins-reelection-for-fourth-congressional-district/",
-      "source_outlet": "Minnesota DFL",
-      "source_date": "2026-11",
-      "receipt": "news",
-      "disputed": false,
-      "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Jim McGovern",
@@ -717,7 +757,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Mike McGuire",
@@ -732,22 +773,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
-    },
-    {
-      "name": "Gregory Meeks",
-      "district": "NY-5",
-      "group": "backs",
-      "tracker_group": "backs",
-      "tracker_only": false,
-      "summary": "Backs Jeffries for Speaker.",
-      "source_url": "https://www.cityandstateny.com/politics/2026/11/whos-hakeem-jeffries-inner-circle/417392/",
-      "source_outlet": "City & State New York",
-      "source_date": "2026-11",
-      "receipt": "news",
-      "disputed": false,
-      "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "skipped_unreadable_site"
     },
     {
       "name": "Grace Meng",
@@ -762,7 +789,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "skipped_host_blocked"
     },
     {
       "name": "Joseph Morelle",
@@ -777,7 +805,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Zack Mullock",
@@ -792,7 +821,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Joe Neguse",
@@ -807,7 +837,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "skipped_host_blocked"
     },
     {
       "name": "Alexandria Ocasio-Cortez",
@@ -822,7 +853,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "quote_not_on_page"
     },
     {
       "name": "Denise Powell",
@@ -837,7 +869,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Ayanna Pressley",
@@ -852,7 +885,8 @@
       "receipt": "primary",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Emily Randall",
@@ -867,7 +901,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Jamie Raskin",
@@ -882,7 +917,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "skipped_host_blocked"
     },
     {
       "name": "Josh Riley",
@@ -897,7 +933,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Manny Rutinel",
@@ -906,13 +943,14 @@
       "tracker_group": "backs",
       "tracker_only": false,
       "summary": "Backs Jeffries for Speaker.",
-      "source_url": "https://kdvr.com/news/politics/colorado-politics-news/how-each-of-colorados-representatives-voted-for-speaker-of-the-house/",
-      "source_outlet": "KDVR",
+      "source_url": "https://www.yahoo.com/news/politics/articles/colorado-representatives-voted-speaker-house-220404328.html",
+      "source_outlet": "Colorado Politics (via Yahoo)",
       "source_date": "2026-11-18",
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Hillary Scholten",
@@ -927,7 +965,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "quote_verified"
     },
     {
       "name": "Stefany Shaheen",
@@ -942,7 +981,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Greg Stanton",
@@ -957,7 +997,8 @@
       "receipt": "primary",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Tom Suozzi",
@@ -972,7 +1013,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Emilia Sykes",
@@ -987,7 +1029,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Shannon Taylor",
@@ -1002,7 +1045,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Paul Tonko",
@@ -1017,7 +1061,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "skipped_host_blocked"
     },
     {
       "name": "Ritchie Torres",
@@ -1032,7 +1077,8 @@
       "receipt": "primary",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "skipped_unreadable_site"
     },
     {
       "name": "Scott Wiener",
@@ -1047,7 +1093,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "quote_verified"
     },
     {
       "name": "Marni von Wilpert",
@@ -1062,7 +1109,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Alma Adams",
@@ -1077,7 +1125,8 @@
       "receipt": "none",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "none_to_check"
     },
     {
       "name": "Bob Brooks",
@@ -1092,7 +1141,8 @@
       "receipt": "none",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "none_to_check"
     },
     {
       "name": "Johnny Garcia",
@@ -1107,7 +1157,8 @@
       "receipt": "none",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "none_to_check"
     },
     {
       "name": "Jacqui Irwin",
@@ -1122,7 +1173,8 @@
       "receipt": "none",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "none_to_check"
     },
     {
       "name": "Nancy Lacore",
@@ -1137,7 +1189,8 @@
       "receipt": "none",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "none_to_check"
     },
     {
       "name": "Sam Liccardo",
@@ -1152,7 +1205,8 @@
       "receipt": "none",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "none_to_check"
     },
     {
       "name": "Stephen Lynch",
@@ -1167,7 +1221,40 @@
       "receipt": "none",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "none_to_check"
+    },
+    {
+      "name": "Betty McCollum",
+      "district": "MN-4",
+      "group": "backs",
+      "tracker_group": "backs",
+      "tracker_only": true,
+      "summary": "Listed by the whip tracker as backing Jeffries; no statement of their own found.",
+      "source_url": "",
+      "source_outlet": "",
+      "source_date": "",
+      "receipt": "none",
+      "disputed": false,
+      "dispute_note": "",
+      "differs_from_tracker": false,
+      "check": "none_to_check"
+    },
+    {
+      "name": "Gregory Meeks",
+      "district": "NY-5",
+      "group": "backs",
+      "tracker_group": "backs",
+      "tracker_only": true,
+      "summary": "Listed by the whip tracker as backing Jeffries; no statement of their own found.",
+      "source_url": "",
+      "source_outlet": "",
+      "source_date": "",
+      "receipt": "none",
+      "disputed": false,
+      "dispute_note": "",
+      "differs_from_tracker": false,
+      "check": "none_to_check"
     },
     {
       "name": "Chellie Pingree",
@@ -1182,7 +1269,8 @@
       "receipt": "none",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "none_to_check"
     },
     {
       "name": "Pat Ryan",
@@ -1197,7 +1285,8 @@
       "receipt": "none",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "none_to_check"
     },
     {
       "name": "Marilyn Strickland",
@@ -1212,7 +1301,8 @@
       "receipt": "none",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "none_to_check"
     },
     {
       "name": "Bennie Thompson",
@@ -1227,7 +1317,8 @@
       "receipt": "none",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "none_to_check"
     },
     {
       "name": "Jim Himes",
@@ -1236,13 +1327,14 @@
       "tracker_group": "leaning",
       "tracker_only": false,
       "summary": "Publicly says Jeffries will win the gavel; no pledge found.",
-      "source_url": "https://www.axios.com/2026/11/06/jeffries-speaker-democrats-house-calls-petition",
-      "source_outlet": "Axios",
-      "source_date": "2026-11-06",
+      "source_url": "https://www.ctpublic.org/news/2026-11-18/hakeem-jeffries-speaker-vote-democrats-ct",
+      "source_outlet": "Connecticut Public",
+      "source_date": "2026-11-18",
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Brad Schneider",
@@ -1257,7 +1349,8 @@
       "receipt": "none",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "none_to_check"
     },
     {
       "name": "Paul Barringer",
@@ -1272,7 +1365,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "skipped_host_blocked"
     },
     {
       "name": "Victoria Broderick",
@@ -1287,7 +1381,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Zach Dembo",
@@ -1302,7 +1397,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Sam Forstag",
@@ -1317,7 +1413,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "no_url"
     },
     {
       "name": "Patty Garcia",
@@ -1332,7 +1429,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Chuck Hubbard",
@@ -1347,7 +1445,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "skipped_host_blocked"
     },
     {
       "name": "Cyril Jefferson",
@@ -1362,7 +1461,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "skipped_host_blocked"
     },
     {
       "name": "Analilia Mejia",
@@ -1377,7 +1477,8 @@
       "receipt": "stale",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "skipped_host_blocked"
     },
     {
       "name": "Richard Ojeda",
@@ -1392,7 +1493,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "skipped_host_blocked"
     },
     {
       "name": "Delia Ramirez",
@@ -1407,7 +1509,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "skipped_host_blocked"
     },
     {
       "name": "Randy Villegas",
@@ -1422,7 +1525,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Fred Wellman",
@@ -1437,7 +1541,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "LaKesha Womack",
@@ -1452,7 +1557,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "skipped_host_blocked"
     },
     {
       "name": "Jamie Ager",
@@ -1467,7 +1573,8 @@
       "receipt": "none",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "none_to_check"
     },
     {
       "name": "Teresa Benitez-Thompson",
@@ -1482,7 +1589,8 @@
       "receipt": "none",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "none_to_check"
     },
     {
       "name": "Katy Padilla Stout",
@@ -1497,7 +1605,8 @@
       "receipt": "none",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "none_to_check"
     },
     {
       "name": "Darializa Avila Chevalier",
@@ -1506,13 +1615,14 @@
       "tracker_group": "opposed",
       "tracker_only": false,
       "summary": "Voted no at the Nov 18 caucus vote and signed a joint statement citing Medicare for All and Gaza.",
-      "source_url": "https://thehill.com/the-120/6228189-house-progressives-oppose-jeffries-leadership/",
-      "source_outlet": "The Hill",
+      "source_url": "https://www.newsweek.com/hakeem-jeffries-speaker-nomination-list-of-democrats-voting-against-12734468",
+      "source_outlet": "Newsweek (list)",
       "source_date": "2026-11-18",
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Angela Gonzales-Torres",
@@ -1527,7 +1637,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "quote_verified"
     },
     {
       "name": "Adam Hamawy",
@@ -1536,13 +1647,14 @@
       "tracker_group": "opposed",
       "tracker_only": false,
       "summary": "Voted no at the Nov 18 caucus vote and signed the joint statement.",
-      "source_url": "https://thehill.com/the-120/6228189-house-progressives-oppose-jeffries-leadership/",
-      "source_outlet": "The Hill",
+      "source_url": "https://www.newsweek.com/hakeem-jeffries-speaker-nomination-list-of-democrats-voting-against-12734468",
+      "source_outlet": "Newsweek (list)",
       "source_date": "2026-11-18",
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Frederick Haynes III",
@@ -1557,7 +1669,8 @@
       "receipt": "news",
       "disputed": true,
       "dispute_note": "Not among the 11 no votes because of an illness, but signed the joint statement of opposition.",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Melat Kiros",
@@ -1572,7 +1685,8 @@
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Don Leonard",
@@ -1587,7 +1701,8 @@
       "receipt": "news",
       "disputed": true,
       "dispute_note": "Leonard alleges threats from unnamed senior Democrats; the claim is unverified. Reports differ on whether Leonard voted no at the caucus vote.",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Donavan McKinney",
@@ -1596,13 +1711,14 @@
       "tracker_group": "opposed",
       "tracker_only": false,
       "summary": "Voted no at the caucus vote; says talks with Jeffries are encouraging and hopes to support in January.",
-      "source_url": "https://michiganchronicle.com/detroits-donavan-mckinney-explains-no-vote-on-hakeem-jeffries-house-speaker-nomination/",
-      "source_outlet": "Michigan Chronicle",
-      "source_date": "2026-11",
+      "source_url": "https://www.newsweek.com/hakeem-jeffries-speaker-nomination-list-of-democrats-voting-against-12734468",
+      "source_outlet": "Newsweek (list)",
+      "source_date": "2026-11-18",
       "receipt": "news",
       "disputed": true,
       "dispute_note": "Voted no at the caucus vote but says talks with Jeffries are encouraging and hopes to support in January.",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Chris Rabb",
@@ -1617,7 +1733,8 @@
       "receipt": "news",
       "disputed": true,
       "dispute_note": "Voted no at the caucus vote but reportedly hopes to support Jeffries in January.",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     },
     {
       "name": "Claire Valdez",
@@ -1626,13 +1743,14 @@
       "tracker_group": "opposed",
       "tracker_only": false,
       "summary": "Voted no at the caucus vote to force an open debate; praised Jeffries' Medicare push.",
-      "source_url": "https://thehill.com/the-120/6228189-house-progressives-oppose-jeffries-leadership/",
-      "source_outlet": "The Hill",
+      "source_url": "https://www.newsweek.com/hakeem-jeffries-speaker-nomination-list-of-democrats-voting-against-12734468",
+      "source_outlet": "Newsweek (list)",
       "source_date": "2026-11-18",
       "receipt": "news",
       "disputed": false,
       "dispute_note": "",
-      "differs_from_tracker": false
+      "differs_from_tracker": false,
+      "check": "name_near_jeffries"
     }
   ]
 }

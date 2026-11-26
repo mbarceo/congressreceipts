@@ -101,7 +101,6 @@ section,#race{scroll-margin-top:calc(var(--crh,60px) + 56px)}
 .defs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
 .defs div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:.86rem}
 .defs b{display:block;font-family:var(--f-display);margin-bottom:4px}
-.dl{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.88rem}
 </style>
 </head>
 <body data-page="leadership">
@@ -148,13 +147,12 @@ section,#race{scroll-margin-top:calc(var(--crh,60px) + 56px)}
     <div class="defs">
       <div><b>Only public statements</b>A senator counts for a candidate only if they said so in public, or put out a statement. A report that someone is "leaning" does not count.</div>
       <div><b>The candidates</b>Schumer and Van Hollen each have one vote, and each is counted for themselves. The totals show senators plus the candidate.</div>
-      <div><b>Undecided or no statement</b>"Undecided" means the senator said they haven't chosen. "No statement found" means we found nothing on the race. Neither one is a guess about how they will vote.</div>
+      <div><b>Undecided or no statement</b>"Undecided" means the senator said they haven't chosen. "No position stated" means the senator declined to say, or we found nothing on the race. Neither one is a guess about how they will vote.</div>
       <div><b>28 votes</b>Fifty-five Democratic senators can vote, so 28 is a majority. Some outlets count 29 of 56 because they include Klobuchar.</div>
       <div><b>Receipts</b>Each name links to the best source we found. "Own statement" is the senator's office or post. "News report" is a published story. "Secondhand list" is a news outlet's list. "Older than the race" is from before the election.</div>
       <div id="checkcard"><b>How links were checked</b><span id="checknote">Each source link is being checked.</span></div>
       <div><b>Cross-checks</b>Each row is compared with the Democratic Whip Tracker and Wikipedia's whip count. Where they differ, the newest dated report decides and the row says so.</div>
     </div>
-    <div class="dl"><a href="data/leadership_senate.json">Download the data (JSON)</a></div>
   </section>
 
     </div>
@@ -188,10 +186,9 @@ section,#race{scroll-margin-top:calc(var(--crh,60px) + 56px)}
         <div><b>218 votes</b>Jeffries needs a majority of those voting. If all 435 members vote, that is 218.</div>
         <div><b>No public position</b>The tracker counts 162 more House Democrats with no public position. They are counted but not named here.</div>
         <div><b>Receipts</b>Each name links to the best source we found. "Own statement" is the member's office or post. "News report" is a published story. "Older than the race" is from before the election.</div>
-        <div><b>How links were checked</b>The links on this tab have not been opened by script yet, so quotes and dates still need a final check.</div>
+        <div><b>How links were checked</b><span id="hchecknote">Each source link is being checked.</span></div>
         <div><b>Cross-checks</b>Each position starts from the Democratic Whip Tracker (last checked November 20) and is compared with news reports. Where newer reports differ, they decide and the tile says so.</div>
       </div>
-      <div class="dl"><a href="data/leadership_house.json">Download the data (JSON)</a></div>
     </section>
   </div>
 
@@ -210,7 +207,7 @@ const G = {
   van_hollen: {label: "Backs Van Hollen", c: "var(--vh)"},
   against_schumer: {label: "Won't back Schumer", c: "var(--ag)"},
   undecided: {label: "Undecided", c: "var(--stall)"},
-  no_statement: {label: "No statement found", c: "var(--muted)", none: true},
+  no_statement: {label: "No position stated", c: "var(--muted)", none: true},
   ineligible: {label: "Can't vote", c: "var(--muted)", none: true}
 };
 const ORDER = ["schumer", "van_hollen", "against_schumer", "undecided", "no_statement", "ineligible"];
@@ -353,6 +350,10 @@ const HG = {
   opposed: {label: "Opposed", c: "var(--ag)"}
 };
 const HORDER = ["backs", "leaning", "undecided", "opposed"];
+const CKH = {quote_verified: "Quote found word for word", name_near_jeffries: "Page covers this member and Jeffries", name_found_only: "Member named on page, not near Jeffries",
+  name_not_on_page: "Member not found on page", quote_not_on_page: "Page opened; our wording differs", skipped_host_blocked: "Site blocked our checker; not checked",
+  blocked: "Site blocked our checker; not checked", skipped_unreadable_site: "Can't be read by a script; not checked", fetch_failed: "Page didn't load; not checked",
+  none_to_check: "", no_url: "", not_run: "Not checked"};
 const dsrc = iso => !iso ? "" : iso.length === 7 ? `${MON[+iso.slice(5) - 1]} ${iso.slice(0, 4)}` : dshort(iso);
 fetch("data/leadership_house.json").then(r => r.json()).then(H => {
   const M = H.members, C = H.counts;
@@ -376,7 +377,7 @@ fetch("data/leadership_house.json").then(r => r.json()).then(H => {
 
   $("hrows").innerHTML = M.map(m => { const g = HG[m.group];
     const rc = m.source_url ? `<a href="${esc(m.source_url)}" target="_blank" rel="noopener">${esc(m.source_outlet)}${m.source_date ? ", " + dsrc(m.source_date) : ""}</a>` : `<span class="muted">No statement found</span>`;
-    const kind = m.tracker_only ? "Listed by the whip tracker" : RC[m.receipt];
+    const kind = m.tracker_only ? "Listed by the whip tracker" : [RC[m.receipt], CKH[m.check]].filter(Boolean).join(" \u00b7 ");
     return `<article class="sen${m.tracker_only ? " tonly" : ""}" id="hr-${slug(m.name)}" data-g="${m.group}" style="--c:${g.c}">
       <div class="h"><span class="nm">${esc(m.name)}<small>${esc(m.district)}</small></span><span class="pos">${g.label}</span></div>
       <p>${esc(m.summary)}</p>
@@ -392,6 +393,10 @@ fetch("data/leadership_house.json").then(r => r.json()).then(H => {
     happly("all"); const t = $("hr-" + x.dataset.s); if (!t) return;
     t.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center"});
     t.classList.add("hit"); setTimeout(() => t.classList.remove("hit"), 1600); });
+  if (H.checks_run) { const c = H.check_counts, n = k => c[k] || 0;
+    const ok = n("name_near_jeffries") + n("quote_verified") + n("quote_not_on_page") + n("name_found_only");
+    const notChecked = n("skipped_host_blocked") + n("blocked") + n("skipped_unreadable_site") + n("fetch_failed");
+    $("hchecknote").textContent = `On ${dlong(H.checks_run)} each link was opened by script. ${ok} pages opened and name the member; ${n("quote_verified") + n("name_near_jeffries")} of those cover the member and Jeffries. ${notChecked} links couldn't be read by script, and ${H.counts.backs.tracker_only + H.counts.leaning.tracker_only + H.counts.undecided.tracker_only} members are listed by the tracker with no source. A page that mentions a member doesn't prove the position.`; }
   window.buildJump && buildJump();
 }).catch(() => { $("hrows").innerHTML = '<p class="muted">The House count didn\'t load. Reload the page to try again.</p>'; });
 
