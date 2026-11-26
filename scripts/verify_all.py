@@ -15,7 +15,17 @@ Methods, by source:
                          named in "must" must list the senator, matched by last name and state); PDFs read by hand
                          are recorded with what was read
 Statuses: verified | partial | failed | negative-finding. Run after extract_claims.py, verify_bills.py and
-verify_computed.py. Usage: python3 -I scripts/verify_all.py
+verify_computed.py.
+
+Re-check window (data/verify_policy.json, "recheckDays", 15): a claim that needs a live page (a source page, committee
+files, a bill's text) is NOT fetched again when its "key" (hash of the claim's text, links, quote and required terms,
+plus CHECKER_VERSION) is unchanged, its last status was "verified" and its last check is under recheckDays old; the
+earlier result is kept with its original "checked" date. Failed, partial and changed claims are always re-checked, and
+claims checked against local data (roll calls, releases already held, recomputed figures) are re-checked every run.
+Bump CHECKER_VERSION whenever a check is tightened so no old result survives it.
+Usage: python3 -I scripts/verify_all.py [--fresh] [--max-fetch N]
+  --fresh        ignore previous results and re-check everything
+  --max-fetch N  of the claims due for a re-check, re-fetch only the N oldest this run (the rest keep their earlier result)
 """
 import hashlib, html, json, os, re, subprocess, sys, time, urllib.request
 import xml.etree.ElementTree as ET
@@ -40,6 +50,23 @@ SITE = M["site"].rstrip("/")
 REL_PREFIXES = tuple({SITE + M["pressPath"].rstrip("/") + "/"} | {s["u"].rstrip("/").rsplit("/", 1)[0] + "/" for s in stm if s["u"].startswith(SITE)})
 is_release = lambda u: u.startswith(REL_PREFIXES)
 today = date.today().isoformat()
+
+CHECKER_VERSION = 1   # bump when any check below is tightened or changed, so earlier "verified" results are not reused
+_pol = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "verify_policy.json")
+RECHECK_DAYS = (json.load(open(_pol)).get("recheckDays", 15) if os.path.exists(_pol) else 15)
+FRESH = "--fresh" in sys.argv
+MAX_FETCH = int(sys.argv[sys.argv.index("--max-fetch") + 1]) if "--max-fetch" in sys.argv else None
+_vp = os.path.join(ROOT, "data/verification.json")
+prev = json.load(open(_vp)) if os.path.exists(_vp) and not FRESH else {}
+
+def claim_key(c):
+    """Hash of everything a result depends on in the claim itself (not on local data), plus the checker version."""
+    body = json.dumps({k: c.get(k) for k in ("text", "url", "urls", "quote", "must", "check", "manual")}, sort_keys=True, ensure_ascii=False)
+    return hashlib.sha1(f"{CHECKER_VERSION}|{body}".encode()).hexdigest()[:16]
+
+def age_days(rec):
+    try: return (date.today() - date.fromisoformat(rec.get("checked", ""))).days
+    except ValueError: return 10**6
 
 def norm(s):
     s = html.unescape(s or "")
@@ -151,8 +178,34 @@ def cg_key(u):
     c, t, n = CG_BILL.search(u).groups(); k = CG_TYPE.get(t, t) + n
     return k if c == "119" else f"{c}-{k}"
 
+def needs_net(c):
+    """True when checking this claim may fetch a live page. Mirrors the branch order in the loop below."""
+    urls, url = c["urls"], c["url"]
+    if c.get("manual"): return False
+    if c.get("check") in ("clerk-committees", "senate-committees"): return True
+    if clerk_ids(urls) and all(is_vote_url(u) for u in urls): return False
+    if url in stm_u or is_release(url): return False
+    if urls and all(CG_BILL.search(u) for u in urls): return True      # may read the bill text on govinfo
+    if re.search(r"govinfo\.gov/bulkdata/BILLSTATUS/119/[a-z]+/BILLSTATUS-119([a-z]+\d+)", url): return False
+    if url and not url.startswith("http"): return False
+    return bool(url)
+
+def reusable(c):
+    """The earlier result for this claim, if it can stand in for a fresh check: same key, verified, and inside the window."""
+    r = prev.get(c["id"])
+    return r if r and r.get("key") == claim_key(c) and r.get("status") == "verified" and needs_net(c) else None
+
+# Claims whose earlier result is reusable but older than the window are "due"; with --max-fetch only the oldest N are re-fetched.
+_due = sorted((c for c in claims if reusable(c) and age_days(prev[c["id"]]) >= RECHECK_DAYS), key=lambda c: prev[c["id"]]["checked"])
+_refetch = {c["id"] for c in (_due if MAX_FETCH is None else _due[:MAX_FETCH])}
+reused = 0
+
 for c in claims:
     urls, url = c["urls"], c["url"]
+    old = reusable(c)
+    if old and c["id"] not in _refetch:
+        out[c["id"]] = old; reused += 1   # same claim, verified, inside the window (or beyond --max-fetch): keep the earlier result and its date
+        continue
     host = re.sub(r"^https?://([^/]+).*", r"\1", url) if url.startswith("http") else "this site"
     rec = {"text": c["text"], "page": c["page"], "section": c["section"], "url": url, "urls": urls, "checked": today, "issues": [],
            "tier": "primary" if (not url.startswith("http") or any(p in url for p in PRIMARY)) else "secondary"}
@@ -244,11 +297,13 @@ for c in claims:
             loaded = bool(texts)
         rec.update(status="failed" if not loaded or any(i.startswith(("claim says", "quote not found", "tally")) for i in iss) else ("partial" if iss else "verified"),
                    method="Fetched source page; matched quotes, figures and required terms" + (" and House Clerk roll call" if ids else ""), evidence=url, issues=iss)
+    rec["key"] = claim_key(c)
     out[c["id"]] = rec
 
 json.dump(idx, open(idx_path, "w"), indent=1)
 json.dump(out, open(os.path.join(ROOT, "data/verification.json"), "w"), indent=1, ensure_ascii=False)
 from collections import Counter
+print(f"reused {reused} earlier results (recheck window {RECHECK_DAYS} days); re-checked {len(out) - reused}")
 print(dict(Counter(r["status"] for r in out.values())), "| primary:", sum(r["tier"] == "primary" for r in out.values()), "secondary:", sum(r["tier"] == "secondary" for r in out.values()))
 for k, r in out.items():
     if r["status"] in ("failed", "partial"): print(r["status"].upper(), "|", k, "|", r["text"][:90], "|", "; ".join(r["issues"])[:200])

@@ -9,6 +9,7 @@ committed XML, claim verification counts (data/verification.json), whether the c
 public queue (data/queue.json) matches what scripts/build_queue.py derives from members.json. "stale" means a build step would run if you ran rebuild.py.
 """
 import collections, glob, hashlib, json, os, re, sys
+from datetime import date
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import build_queue, rebuild, runner
 
@@ -56,6 +57,12 @@ def check_member(mem, queue, expected_queue):
     cnt = collections.Counter(v.get("status") for v in ver.values() if isinstance(v, dict))
     bad = cnt.get("failed", 0) + cnt.get("partial", 0)
     row["claims"] = f"{cnt.get('verified', 0)}ok" + (f" {cnt.get('partial', 0)}partial" if cnt.get("partial") else "") + (f" {cnt.get('failed', 0)}FAIL" if cnt.get("failed") else "") if ver else "none"
+    days = jload(os.path.join(ROOT, "data", "verify_policy.json"), {}).get("recheckDays", 15)
+    old = 0
+    for v in ver.values():
+        try: old += (date.today() - date.fromisoformat(v.get("checked", ""))).days >= days
+        except (ValueError, AttributeError): old += 1
+    if old: notes.append(f"{old} of {len(ver)} claims were last checked {days}+ days ago (run_checks re-fetches the ones that need a live page; verify_all.py --max-fetch N spreads it out)")
     if not ver: problems.append("no verification.json (run_checks never ran)")
     if bad: problems.append(f"{bad} claims partial/failed")
     # pages: copies must match site/; stubs (members.json "pages": "stub") only need a stub for every shared page

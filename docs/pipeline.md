@@ -84,6 +84,8 @@ python3 -I scripts/rebuild.py ca/rivas --dry-run | --force | --adopt | --checks
 | `verify_all.py` | Verifies each claim against its source: roll call, press release (quotes and dollar figures), FEC, congress.gov, archived page. Writes `data/verification.json` for the Sources page |
 | `run_checks.sh` | Runs all four in order |
 
+**Re-check window.** `data/verify_policy.json` sets `recheckDays` (15). A claim that needs a live page is not re-fetched while its `key` is unchanged, its last status was `verified` and its last check is under that many days old; the earlier result keeps its original `checked` date. Failed, partial or edited claims, and claims checked against local data, are always re-checked. `verify_all.py --fresh` ignores earlier results, `--max-fetch N` re-fetches only the N oldest due claims (spread a pass over several days), and `verify_bills.py` follows the same rule. Bump `CHECKER_VERSION` in a script when you tighten a check. `status.py` shows how many claims are past the window.
+
 ### Shared code and tooling
 | File | Role |
 |---|---|
