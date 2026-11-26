@@ -11,9 +11,10 @@
   const NAV = [["home", "index.html", "Home"], ["find", "find.html", "Find your rep"],
                ["attendance", "attendance.html", "Who's showing up"], ["leaders", "leaders.html", "Leaders tracker"], ["backlog", "backlog.html", "Backlog Queue"]];
   const here = document.body.dataset.page;
+  if (!document.querySelector('link[rel~="icon"]')) { const ic = document.createElement("link"); ic.rel = "icon"; ic.type = "image/png"; ic.href = base + "assets/favicon.png"; document.head.appendChild(ic); }
   const head = document.createElement("header"); head.className = "cr-head" + (base ? " cr-static" : "");
   head.innerHTML = `<div class="in"><a class="cr-brand" href="${base}index.html" aria-label="Congress Receipts home">
-      <img src="${base}assets/logo.svg" alt="" width="34" height="34"><b>Congress Receipts</b></a>
+      <img class="cr-logo" src="${base}assets/logo.png" alt="Congress Receipts" width="114" height="44"></a>
     <button class="cr-menu" aria-expanded="false" aria-controls="cr-nav">Menu</button>
     <nav class="cr-nav" id="cr-nav" aria-label="Main">${NAV.map(([k, h, l]) => `<a href="${base}${h}"${k === here ? ' aria-current="page"' : ""}>${l}</a>`).join("")}</nav></div>`;
   document.body.prepend(head);
@@ -23,7 +24,7 @@
   const year = new Date().getFullYear();
   const sf = document.createElement("footer"); sf.className = "cr-site-foot";
   const links = NAV.concat([["about", "about.html", "About"]]).map(([k, h, l]) => `<a href="${base}${h}">${l}</a>`).join("") + `<a href="${base}index.html#how">How we check</a>`;
-  sf.innerHTML = `<div class="in top"><a class="cr-brand" href="${base}index.html"><img src="${base}assets/logo.svg" alt="" width="26" height="26"><b>Congress Receipts</b></a>
+  sf.innerHTML = `<div class="in top"><a class="cr-brand" href="${base}index.html"><img class="cr-logo sm" src="${base}assets/logo.png" alt="Congress Receipts" width="88" height="34"></a>
     <nav aria-label="Footer">${links}</nav></div>
   <div class="in"><p class="src"><b>Sources</b> <a href="https://clerk.house.gov/Votes">House Clerk roll calls</a> <a href="https://www.senate.gov/legislative/votes_new.htm">Senate roll calls</a> <a href="https://www.fec.gov/data/">FEC filings</a> <a href="https://www.govinfo.gov/">govinfo bill records</a> <a href="https://www.census.gov/">Census Bureau</a></p>
   <p>An independent, nonpartisan project researched, built and maintained by one person. Not affiliated with any party, campaign, member of Congress or advocacy group, and not an endorsement of anyone. Every claim links to its source.</p>
