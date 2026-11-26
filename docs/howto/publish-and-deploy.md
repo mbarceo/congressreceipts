@@ -2,7 +2,7 @@
 
 ## Publishing = copying shared pages into member folders
 
-`scripts/publish.py` is the "build step". It reads `members.json` and, for every member with `format: "shared"`:
+`scripts/publish.py` is the "build step". It reads `members.json` and, for every live member with `format: "shared"`:
 
 1. Copies `site/*.html`, `site/site.js` and `site/site.css` into the member's folder.
 2. Fills the member's name into each page's `<title>` and meta description (so link previews say "Who Funds Alex Padilla").
@@ -12,16 +12,12 @@
 It also copies `site/site.css` to the root `site.css`, stamps the cache keys on the hub pages, and, for `legacy` members, only adds the header.
 
 ```bash
-python3 -I scripts/publish.py                  # every member in members.json
+python3 -I scripts/publish.py                  # every live member in members.json
 python3 -I scripts/publish.py ca/padilla       # one member
 python3 -I scripts/publish.py ca/padilla ca/rivas
 ```
 
-**It writes pages for every member in `members.json`, including trackers that are not finished.** Until the project has a per-member "draft" switch, either run it per member, or run it for everyone and delete the new pages of unfinished members before committing:
-```bash
-git status --short            # find the new, untracked folders' pages
-git clean -fdq ca/garcia      # remove generated pages for a member that is not ready
-```
+**Unfinished members are skipped.** A member with `"live": false` in `members.json` is skipped by `publish.py` ("skipped (live: false in members.json)") and by the attendance, leaders and directory builds. Set the flag when you scaffold a member and remove it once `./tr <member> run_checks` passes. Members without the flag (or with `"live": true`) are published.
 
 ## Deployment
 

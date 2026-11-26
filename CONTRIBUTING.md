@@ -75,11 +75,12 @@ Tips
    Two sessions in the same folder overwrite each other's files and mix their uncommitted changes.
 3. **Shared files are small, separate pull requests.** Anything in `site/`, `scripts/`, `hub.js`, `hub.css`, the root hub pages, `template/` or `members.json` affects everyone. Do not bundle it with a member's data.
 4. **`members.json` is append-only** and a frequent conflict. Rebase on `main` right before you open the pull request.
-5. **Do not run `python3 -I scripts/publish.py` with no arguments** unless you are changing shared files, and then delete the pages it generates for unfinished members (see [publish-and-deploy](docs/howto/publish-and-deploy.md)). Publish your own member with `publish.py <path>`.
+5. **Unfinished members stay `"live": false`** in `members.json`, so the publisher and the hub skip them. Remove the flag only when `./tr <member> run_checks` passes. Publish your own member with `publish.py <path>`; run it with no arguments only when you change shared files.
 6. **Never commit raw data or secrets.** `git status` must not show `data/raw`, `data/fec/raw`, `data/statements_raw`, `data/billstatus`, `data/site_raw`, `data/geo/raw`, any `.env` file or a key. Donor names, cities and addresses are never published.
 7. **Do not edit generated files.** Pages inside a member folder are copies of `site/`; edit `site/`.
 8. **Follow the sourcing rules** in [docs/verification.md](docs/verification.md). They are why this site is trusted.
-9. **Ask before going outside the plan.** Anything that publishes (merging, running the full publisher) or changes who sees what is for the maintainer.
+9. **Go slow on government websites.** One request at a time, a few seconds apart; stop at the first 403 or 429 and wait; one FEC download at a time (the key allows about 1,000 calls an hour). Never run a crawling loop in a browser console. Full rules: [CLAUDE.md](CLAUDE.md#go-slow-on-other-peoples-websites). Blocks cost everyone hours.
+10. **Ask before going outside the plan.** Anything that publishes (merging, running the full publisher) or changes who sees what is for the maintainer.
 
 ## Your first pull request, step by step
 

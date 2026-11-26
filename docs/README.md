@@ -28,7 +28,6 @@ The repository includes `CLAUDE.md` (project rules and a map, loaded automatical
 
 ## Known gaps (good first improvements)
 
-- **No per-member "draft" switch.** `publish.py` and the hub read every entry in `members.json`; an unfinished tracker should be skippable.
 - **`fetch_statements` cannot read pages you saved by hand** when a site blocks scripts (page 0 is always re-fetched). A `--from-cache` option would help.
 - **No automated checks on pull requests.** A GitHub Action could run `run_checks` for changed members, fail on staged raw data or API keys, and check JSON validity.
 - **`build_attendance` needs every member's raw XML locally.** Caching a per-Congress roll-call archive, or recording official per-member counts in committed files, would remove that.

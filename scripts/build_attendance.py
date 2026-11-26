@@ -75,7 +75,7 @@ vote_url_from_id = lambda i: f"https://clerk.house.gov/Votes/{i[:4]}{int(i[5:]):
 
 chambers = {}
 out = []
-for m in CFG["members"]:
+for m in (x for x in CFG["members"] if x.get("live", True)):
     path = os.path.join(ROOT, m["path"])
     m["url"] = m["path"] + "/"   # relative, so it works on congressreceipts.org and in a local preview
     votes = json.load(open(os.path.join(path, "data/votes.json")))

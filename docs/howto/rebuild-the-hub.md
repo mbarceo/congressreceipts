@@ -22,8 +22,8 @@ python3 -I scripts/build_directory.py      # Find your rep            → data/d
 ## Adding a member to the hub
 
 1. Finish the member's tracker and pass `run_checks`.
-2. Add them to `members.json` (and set `eventsResearched` honestly; `false` shows that town halls have not been researched).
+2. Remove `"live": false` from their `members.json` entry (and set `eventsResearched` honestly; `false` shows that town halls have not been researched).
 3. Make sure every entry in their `data/events.json` has a source.
 4. Rebuild the three hub files above, commit them, and publish the member's pages ([publish-and-deploy.md](publish-and-deploy.md)).
 
-Registering a member in `members.json` before their data is complete will make `build_attendance.py` fail or show incomplete numbers. Add them last.
+A member with `"live": false` in `members.json` is skipped by all three builds, so you can register a member early without breaking the hub. Remove the flag only after `run_checks` passes.

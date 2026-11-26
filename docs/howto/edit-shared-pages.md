@@ -18,7 +18,7 @@ Two kinds of pages, edited in different places.
    ```bash
    python3 -I scripts/publish.py
    ```
-5. Look at what changed with `git status`. If trackers that are not finished yet are registered in `members.json`, `publish.py` will also create pages for them; delete those new files (`git clean -fd <member folder>`) or run the publisher per member (`python3 -I scripts/publish.py ca/padilla ca/rivas …`) so unfinished trackers do not go public.
+5. Look at what changed with `git status`. Members marked `"live": false` in `members.json` are skipped, so unfinished trackers get no pages. Anything else that changed should be your edit, the regenerated copies, and the new `?v=` keys.
 6. Commit the source change **and** the regenerated copies together, and open a pull request. A change to `site.js`, `site.css`, `hub.js` or `hub.css` rewrites the `?v=` cache key in every page of every member, so such pull requests touch many files. That is expected; the only differences in the copies should be the new key and your change.
 
 ## Rules for page code

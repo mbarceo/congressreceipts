@@ -38,7 +38,7 @@ Folder = `<state>/<last-name>`, lowercase, hyphenated. The script writes `tracke
 
 Then open `tracker.config.json` and check `member.site`, `pressPath` (both are guesses), `inOfficeSince`, `leader`, `peers`. Set `profile` as you research (committees, facts, offices); every fact typed there also needs a `claims_static.json` entry.
 
-**Do not add the member to `members.json` yet.** Adding it makes `publish.py` generate public pages and the hub include them. Add it when the tracker passes `run_checks`. (Everything below runs through `./tr` and does not need that entry.)
+**Add the member to `members.json` now, with `"live": false`** (`format: "shared"`, `chamber`, `voteId`, `portrait: "assets/portrait.jpg"`, `eventsResearched: false`). While `live` is `false`, `publish.py` and the attendance, leaders and directory builds skip the member, so nothing unfinished goes public. Everything below runs through `./tr` and works either way.
 
 ## 3. Portrait (always)
 
@@ -103,7 +103,7 @@ Fix the data until every check passes. Never edit a checker to make a claim pass
 
 ## 9. Publish for this member only
 
-1. Add the member to `members.json` (`format: "shared"`, `portrait: "assets/portrait.jpg"`, `eventsResearched: false` until events are researched). Keep entries append-only to avoid merge conflicts.
+1. When `./tr ca/garcia run_checks` passes, **remove `"live": false`** from the member in `members.json` (keep entries append-only to avoid merge conflicts).
 2. `python3 -I scripts/publish.py ca/garcia` generates the member's pages.
 3. Preview: `python3 -m http.server 8000`, open `http://localhost:8000/ca/garcia/`. Read every page.
 4. Rebuild the hub if you want the member on it ([rebuild-the-hub.md](rebuild-the-hub.md)).
@@ -112,4 +112,4 @@ Fix the data until every check passes. Never edit a checker to make a claim pass
 
 ## Special case: a member-elect with no votes yet
 
-A senator- or representative-elect has no roll calls, no bioguide id and no press page on an official site. Scaffold with a placeholder bioguide (`X000000`) and `--vote-id TODO`, build only what exists (money, campaign promises from an archived site, campaign statements), and do not register the member in `members.json` or the queue until they are sworn in.
+A senator- or representative-elect has no roll calls, no bioguide id and no press page on an official site. Scaffold with a placeholder bioguide (`X000000`) and `--vote-id TODO`, build only what exists (money, campaign promises from an archived site, campaign statements), keep `"live": false` on the `members.json` entry and leave the queue alone until they are sworn in.

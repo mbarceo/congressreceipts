@@ -3,7 +3,7 @@
 ## Downloads
 
 **`HTTP Error 403: Forbidden` from senate.gov (votes or press releases)**
-senate.gov sits behind bot protection that blocks scripted requests, and sometimes browser panes driven by automation as well. Do not try to defeat it.
+senate.gov sits behind bot protection that blocks scripted requests, and sometimes browser panes driven by automation as well. **Stop at the first 403: do not retry in a loop, rotate headers or look for a way around it** (a burst of requests once got both the scripts and the maintainer's own Chrome blocked for hours). Wait, then resume slowly.
 - *Votes*: Senate roll-call files are identical for every senator. Copy `senate-*.xml` from another senator's `data/raw/` folder into yours.
 - *Press releases*: there is no supported workaround in the scripts (page 0 is always re-fetched from the site; only pages 1 and up are cached). Do not try to defeat the protection. Tell a maintainer, or build the tracker without statements for now and say so in the pull request.
 
@@ -48,7 +48,7 @@ Serve over HTTP (`python3 -m http.server 8000`); opening the file directly break
 Merged to `main`? Pages updates in about a minute. Did you run `publish.py` after editing `site/`, `hub.js` or the CSS (so copies and `?v=` keys updated)? Hard-refresh the browser.
 
 **`publish.py` created pages for a member who is not ready**
-It writes pages for every member in `members.json`. Delete the unwanted output (`git clean -fdq <member folder>`) before committing, or publish per member. See [publish-and-deploy](howto/publish-and-deploy.md).
+Set `"live": false` on that member in `members.json`; `publish.py` and the attendance, leaders and directory builds then skip them. Delete the pages already generated (`git clean -fd <member folder>`). See [publish-and-deploy](howto/publish-and-deploy.md).
 
 **`git status` lists `data/raw` (or other raw folders)**
 They should be ignored. If a raw folder is a symlink (for example into a scratch cache), the `.gitignore` entries without a trailing slash (`**/data/raw`) cover it. Never `git add -f` raw data.

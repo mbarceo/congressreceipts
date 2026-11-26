@@ -20,9 +20,10 @@ Every file below is JSON. Skeletons for a new member are in `template/`; each cu
 | `format` | `shared` (all new members) or `legacy` |
 | `portrait` | Path inside the member folder |
 | `eventsResearched` | `false` until town halls and events have been collected; the hub shows it as such |
+| `live` | `false` keeps the member out of every build and publish (pages, attendance, leaders, directory) until `run_checks` passes. Omit it, or use `true`, for a finished tracker |
 | `oldRepo` | Old per-member repo that now only redirects (optional) |
 
-`publish.py`, `build_attendance.py`, `build_leaders.py` and `build_directory.py` all read this file. **Adding a member here is what makes the hub and publisher include them**, so add the entry only when you want pages generated (see [publish-and-deploy](howto/publish-and-deploy.md)).
+`publish.py`, `build_attendance.py`, `build_leaders.py` and `build_directory.py` all read this file. Entries with `"live": false` are skipped by all of them, so register a member early with the flag set and remove it when the tracker is finished (see [publish-and-deploy](howto/publish-and-deploy.md)).
 
 ## `data/queue.json` (Backlog Queue page)
 

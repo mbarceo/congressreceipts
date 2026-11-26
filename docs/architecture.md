@@ -89,7 +89,7 @@ The old per-member repositories (`ca-rep-29-tracker`, `ca-rep-45-tracker`, …) 
 ## What reads what (the dependency map)
 
 ```
-members.json ──▶ publish.py            (which folders get pages)
+members.json ──▶ publish.py            (which folders get pages; entries with "live": false are skipped by every reader below)
              ──▶ build_attendance.py   (needs each member's votes.json AND raw roll-call XML)
              ──▶ build_leaders.py      (reads each member's committed data/ only)
              ──▶ build_directory.py    (matches tracked members into the Find-your-rep directory)

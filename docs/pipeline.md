@@ -31,6 +31,8 @@ Every script lives once in `scripts/`. Run it for one member with the runner:
 3. **Verify:** `./tr <member> run_checks`.
 4. **Publish:** `python3 -I scripts/publish.py <member path>`.
 
+**Be gentle with the source websites.** Government sites and the FEC API use bot protection and rate limits. Run one fetch at a time, keep the built-in delays, stop at the first 403 or 429 and wait hours, and never run two `fetch_fec` jobs together. The verification scripts also fetch live pages: run them once per change, not in a loop. Details in [CLAUDE.md](../CLAUDE.md#go-slow-on-other-peoples-websites).
+
 ## Script reference
 
 ### Fetch

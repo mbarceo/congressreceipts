@@ -22,6 +22,10 @@ Start at [docs/README.md](docs/README.md). New collaborator? Read [CONTRIBUTING.
 
 - [Architecture](docs/architecture.md) · [Data pipeline](docs/pipeline.md) · [Config and file formats](docs/config-reference.md) · [Sourcing standards and checks](docs/verification.md) · [Troubleshooting](docs/troubleshooting.md)
 
+## Go slow on other people's websites
+
+Blocks from government sites and the FEC key's hourly cap cost hours for everyone. Space requests a few seconds apart, never crawl in bursts, stop at the first 403 or 429, and run one FEC download at a time. Full rules are in [CLAUDE.md](CLAUDE.md), which Claude Code reads automatically.
+
 ## Common tasks
 
 - Rebuild one member: `./tr ca/padilla build_votes` (then build_alignment, build_stances, build_promises,
@@ -30,6 +34,8 @@ Start at [docs/README.md](docs/README.md). New collaborator? Read [CONTRIBUTING.
 - Rebuild the home page after any member changes: `python3 -I scripts/build_attendance.py`.
 - Add a member: scaffold with `python3 -I scripts/new_tracker.py --out ca/<last> ...` (it copies the skeletons from `template/`; the
   pages come from `site/` when you publish), then follow [docs/howto/add-a-member.md](docs/howto/add-a-member.md).
+
+Unfinished members: set `"live": false` on a member in `members.json` and `publish.py`, the attendance, leaders and directory builds all skip them. Remove the flag once `./tr <member> run_checks` passes.
 
 API keys (FEC, congress.gov) are read from the macOS Keychain or the `FEC_API_KEY` / `CONGRESS_API_KEY` environment variables by `./tr`; they are never stored in this repo.
 
