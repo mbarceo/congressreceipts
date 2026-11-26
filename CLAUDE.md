@@ -15,6 +15,8 @@ Nonpartisan, fully sourced accountability trackers for members of Congress, publ
 ./tr <state>/<member> <script>          # run a shared script for one member, e.g. ./tr ca/padilla build_votes
 ./tr <state>/<member> run_checks        # verification: must pass before any PR
 python3 -I scripts/new_tracker.py --name "…" --chamber house|senate --state XX [--district N] --bioguide X000000 [--vote-id S###] --pronouns he|she|they --out <state>/<last>
+python3 -I scripts/status.py [--strict]           # read-only health table (stale builds, vote counts, claims, pages, queue)
+python3 -I scripts/rebuild.py <member>|--all      # offline build stage in order, skips unchanged steps (never fetches)
 python3 -I scripts/publish.py [<member path> …]    # copy site/ into member folders; stamp cache keys
 python3 -m http.server 8000             # preview (pages need HTTP, not file://)
 ```

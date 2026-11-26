@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env bash
 # Downloads House roll-call XML for the 119th Congress (2025 and 2026) from the House Clerk.
 # Skips files already downloaded; stops a year after 3 missing roll numbers in a row.
 # Files go to the shared, committed folder data/rollcalls/house/119 (same for every member), not a member folder.
