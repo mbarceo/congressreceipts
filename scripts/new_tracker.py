@@ -226,7 +226,7 @@ def main():
     rel = os.path.relpath(out, REPO)
     run = (lambda s: f"./tr {rel} {s}") if in_repo else (lambda s: f"python3 -I scripts/{s}.py")
     steps = [
-        *([f"Add {rel} to members.json (format \"shared\", chamber, voteId, portrait \"assets/portrait.jpg\"). Keep the member out of the hub until the tracker passes run_checks."] if in_repo else [f"cd {q(out)}"]),
+        *([f"Add {rel} to members.json (format \"shared\", chamber, voteId, portrait \"assets/portrait.jpg\") with \"live\": false, so nothing publishes; remove the flag once run_checks passes."] if in_repo else [f"cd {q(out)}"]),
         "Check tracker.config.json: member.site/pressPath (guessed), inOfficeSince, committees, peers; fill the profile block as you research.",
         "Portrait (always): " + run("fetch_portrait") + ", then open assets/portrait.jpg to confirm it is the current official photo.",
         ("Votes: " + (run("fetch_votes_senate") if senate else (f"./tr {rel} fetch_votes" if in_repo else "./scripts/fetch_votes.sh"))
