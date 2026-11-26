@@ -305,8 +305,14 @@
   },
   "geo": {
     "_note": "County FIPS codes the district touches and a short code for each county (build_map.py colors by these).",
-    "countyFips": [],
-    "counties": {},
+    "countyFips": [
+      "06037",
+      "06059"
+    ],
+    "counties": {
+      "Los Angeles County": "LA",
+      "Orange County": "OC"
+    },
     "padLon": 0.035,
     "padLat": 0.03
   },
@@ -575,24 +581,111 @@
       ]
     },
     "map": {
-      "heading": "",
-      "intro": "",
-      "note": "",
+      "heading": "CA-42 is moving to Long Beach and coastal Orange County",
+      "intro": "Prop 50 redrew the lines for the 2026 election, and Garcia was re-elected under the new map. The new map takes effect Jan 3, 2027; until then he represents the 2023 lines, which include Long Beach, Downey and Huntington Park.",
+      "note": "Shaded areas are the parts of each city inside the district; the dark line is the district boundary. Boundaries: U.S. Census Bureau TIGERweb (119th and 120th Congressional Districts). Population figures: 2020 Census, from the [California Senate Office of Demographics](https://sdmg.senate.ca.gov/committeehome/2025-congressional-districts/congressional-district-42-2025). Current lines: [Wikipedia](https://en.wikipedia.org/wiki/California%27s_42nd_congressional_district). [Official boundary map](https://sdmg.senate.ca.gov/sites/sdmg.senate.ca.gov/files/2026-02/cd42_2025.png).",
       "modes": [
         {
           "key": "new",
-          "label": "New lines"
+          "label": "2027 lines (Prop 50)"
         },
         {
           "key": "old",
-          "label": "Current lines"
+          "label": "Current lines (2023–26)"
         }
       ],
-      "population": null,
+      "population": {
+        "mode": "new",
+        "total": 760067,
+        "parts": [
+          [
+            "LA",
+            "Los Angeles County",
+            335486,
+            ""
+          ],
+          [
+            "OC",
+            "Orange County",
+            424577,
+            ""
+          ]
+        ],
+        "source": "2020 Census"
+      },
       "kinds": {},
-      "neighbors": [],
+      "neighbors": [
+        "Downey",
+        "Paramount",
+        "Garden Grove",
+        "Westminster",
+        "Fountain Valley",
+        "Los Alamitos"
+      ],
       "smallLabels": [],
-      "_note": "modes: build_map.py writes 'new' (cd120) and 'old' (cd119). population: {mode, total, parts: [[kind, label, residents, note]], source}."
+      "_note": "modes: build_map.py writes 'new' (cd120) and 'old' (cd119). population: {mode, total, parts: [[kind, label, residents, note]], source}.",
+      "colorBy": "county",
+      "groups": {
+        "LA": "Los Angeles County",
+        "OC": "Orange County"
+      },
+      "leavingNote": "Leaving the district under Prop 50 (cities of 10,000 or more): Downey, Lakewood, Bellflower, Florence-Graham, Huntington Park, Bell Gardens, Bell, Maywood, Cudahy, Walnut Park and Commerce. Long Beach shrinks to part of the city.",
+      "placeStats": {
+        "mode": "new",
+        "_note": "Residents of each city inside the 2027 district and the share of the city's population, from the California Senate Office of Demographics (2020 Census). 'old' is w (whole) or p (part) when the city was in the 2023-26 district, empty when new.",
+        "places": {
+          "Avalon": {
+            "pop": 3467,
+            "pct": 100,
+            "old": ""
+          },
+          "Long Beach": {
+            "pop": 319693,
+            "pct": 68.18,
+            "old": "w"
+          },
+          "Signal Hill": {
+            "pop": 11911,
+            "pct": 100,
+            "old": "w"
+          },
+          "Costa Mesa": {
+            "pop": 112137,
+            "pct": 100,
+            "old": ""
+          },
+          "Huntington Beach": {
+            "pop": 199030,
+            "pct": 100,
+            "old": ""
+          },
+          "Newport Beach": {
+            "pop": 63229,
+            "pct": 74.09,
+            "old": ""
+          },
+          "Santa Ana": {
+            "pop": 30643,
+            "pct": 9.84,
+            "old": ""
+          },
+          "Seal Beach": {
+            "pop": 18578,
+            "pct": 73.48,
+            "old": ""
+          }
+        }
+      },
+      "nudge": {
+        "Signal Hill": [
+          30,
+          -16
+        ],
+        "Long Beach": [
+          -14,
+          14
+        ]
+      }
     }
   }
 }
