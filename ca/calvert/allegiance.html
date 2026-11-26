@@ -1,0 +1,174 @@
+<!doctype html>
+<!-- Built from site/allegiance.html by scripts/publish.py. Edit site/allegiance.html, not this copy. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="How closely Rep. Ken Calvert follows Donald Trump, the MAGA movement, Project 2025's Mandate for Leadership and House Republican leadership, from roll calls, FEC filings and cited documents.">
+<title>Calvert and Trump</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="site.css?v=86652562">
+<link rel="stylesheet" href="../../hub.css?v=91a2553f">
+<script src="site.js?v=06c10c5b"></script>
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+[hidden]{display:none!important}
+.lead-t td{font-size:.88rem;vertical-align:middle}
+.lead-t .num{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.pair{display:flex;align-items:center;gap:6px}
+.pair .b{height:10px;border-radius:0 3px 3px 0;min-width:2px}
+.pair .b.old{background:var(--muted);opacity:.6} .pair .b.cur{background:var(--accent)}
+.legend-inline{display:flex;gap:16px;font-size:.8rem;color:var(--muted);flex-wrap:wrap}
+.legend-inline i{display:inline-block;width:12px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.tl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.tl li{display:grid;grid-template-columns:96px 1fr;gap:4px 16px;padding:11px 0;border-top:1px solid var(--line);font-size:.9rem}
+.tl li>*{min-width:0}
+.tl .d{font-family:var(--f-mono);font-size:.75rem;color:var(--muted);padding-top:2px}
+.v-yea{color:var(--ok);background:var(--ok-bg)} .v-nay{color:var(--bad);background:var(--bad-bg)}
+.v-other{color:var(--muted);background:var(--line)}
+.brk-t td{font-size:.85rem;vertical-align:top} .brk-t .qq{color:var(--muted);font-size:.8rem}
+.cat-t td{font-size:.86rem} .cat-t .num{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.pending-note{border:1px dashed var(--line);border-radius:10px;padding:14px 16px;font-size:.9rem;color:var(--muted)}
+.axis-note{font-size:.84rem;color:var(--muted);margin:0}
+@media (max-width:520px){.tl li{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="sitenav" aria-label="Pages"></nav>
+  <header id="top">
+    <div class="ident">
+      <img class="portrait" alt="" width="335" height="410">
+      <div class="ident-text">
+        <span class="eyebrow">Allegiance · {{congressOrd}} Congress</span>
+        <h1>Trump, MAGA, Project 2025 and the party</h1>
+      </div>
+    </div>
+    <p class="lede">How closely {{short}} follows President Trump, the MAGA movement, the Mandate for Leadership and {{chamberName}} Republican leadership, and where {{short}} has gone another way. Every item links to its source, and the same rules would apply to any member.</p>
+  </header>
+
+  <section id="verdict">
+    <div class="sec-head"><span class="eyebrow">The short answer</span><h2>Does {{short}} vote with Trump?</h2></div>
+    <div class="pp-card" id="verdictCard"><p class="muted">Loading…</p></div>
+    <div class="tally" id="tiles"></div>
+    <p class="axis-note">The verdict counts only final votes where the White House stated a position. Most of those are routine bills that nearly every Republican backs, so the notable votes are listed first below. The rule is the same for every Republican.</p>
+  </section>
+
+  <div id="trumpMount"></div>
+
+  <section id="jan6">
+    <div class="sec-head">
+      <span class="eyebrow">The 2020 election</span>
+      <h2>Jan. 6, 2021: objecting to the electoral count</h2>
+      <p id="jan6Intro" class="axis-note"></p>
+    </div>
+    <div id="jan6Body"></div>
+  </section>
+
+  <section id="mandate">
+    <div class="sec-head">
+      <span class="eyebrow">Project 2025</span>
+      <h2>Votes and bills that match the Mandate for Leadership</h2>
+      <p id="mandateIntro" class="axis-note"></p>
+    </div>
+    <div id="mandateBody"></div>
+  </section>
+
+  <section id="maga" hidden>
+    <div class="sec-head"><span class="eyebrow">The movement</span><h2>Endorsements, caucuses and other ties</h2></div>
+    <ul class="tl" id="magaList"></ul>
+  </section>
+
+  <section id="leaders">
+    <div class="sec-head">
+      <span class="eyebrow" id="leadEyebrow">Money from leadership</span>
+      <h2>What party leaders' and Trump's committees gave {{obj}}</h2>
+      <p id="leadNote" class="axis-note"></p>
+    </div>
+    <div class="legend-inline" id="leadLegend"></div>
+    <div class="handles"><table class="lead-t"><thead id="leadHead"></thead><tbody id="leadRows"></tbody></table></div>
+  </section>
+
+  <section id="breaks">
+    <div class="sec-head">
+      <span class="eyebrow">Party leadership</span>
+      <h2>Every vote where {{short}} split from <span class="leaderName">the party leader</span></h2>
+      <p id="breaksNote" class="axis-note"></p>
+    </div>
+    <div class="tally" id="voteTiles"></div>
+    <div class="handles"><table class="brk-t"><thead><tr><th>Date</th><th>Bill and question</th><th>{{short}}</th><th class="leaderName">Leader</th></tr></thead><tbody id="breakRows"></tbody></table></div>
+  </section>
+
+  <footer>Sources: official roll-call records ({{voteSource}}), FEC filings, White House statements of administration policy and Donald Trump's own posts for his positions, Heritage Foundation's <i>Mandate for Leadership</i> (2023) and Heritage Action's scorecard, and {{poss}} official site. A match to the Mandate is stated only where a bill or vote follows a cited page, and says nothing about intent. Verdict labels follow the rule printed on each card.</footer>
+</div>
+
+<script>
+TRACKER.ready.then(M => {
+const esc = s => String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const usd = n => "$" + Math.round(n).toLocaleString("en-US");
+const $ = id => document.getElementById(id);
+const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const ext = u => String(u||"").startsWith("http") ? ' target="_blank" rel="noopener"' : "";
+const link = (t,u) => u ? `<a class="src" href="${esc(u)}"${ext(u)}>${esc(t)}</a>` : "";
+const vp = v => `<span class="pill ${v==="Yea"?"v-yea":v==="Nay"?"v-nay":"v-other"}">${esc(v)}</span>`;
+const SOON = t => `<div class="pending-note"><b>Coming soon.</b> ${esc(t)}</div>`;
+const tiles = list => list.map(([n,l])=>`<div class="tile"><span class="n" style="font-size:1.5rem">${esc(n)}</span><span class="l">${esc(l)}</span></div>`).join("");
+
+fetch("data/allegiance.json").then(r=>{ if(!r.ok) throw 0; return r.json(); }).then(d=>{
+  $("verdictCard").innerHTML = `<div class="pp-head"><div class="pp-flag"><span class="pp-q">${esc(d.question)}</span><span class="pp-v">${esc(verdict(d.headline))}</span></div><p class="pp-sum">${esc(d.summary||"")}</p></div>${d.rule?`<p class="axis-note"><b>Rule:</b> ${esc(d.rule)}</p>`:""}${d.why?`<p class="axis-note">${esc(d.why)}</p>`:""}`;
+  $("tiles").innerHTML = tiles(d.tiles||[]);
+
+  fetch("data/trump.json").then(r => r.ok ? r.json() : null).then(t => TRACKER.renderTrump(M, t)).catch(() => {});
+
+  // Jan. 6, 2021 objections
+  const J = d.jan6;
+  $("jan6Intro").textContent = J.intro || "The House voted twice on objections to the 2020 electoral count: one to Arizona's electors, one to Pennsylvania's. A Yea supported the objection. Read from the House Clerk's roll calls.";
+  if(!J.served){ $("jan6Body").innerHTML = `<p class="muted">${esc(M.Subj)} was not in the House on Jan. 6, 2021, so there is no vote to show.</p>`; }
+  else $("jan6Body").innerHTML = `<div class="handles"><table class="brk-t"><thead><tr><th>Date</th><th>Question</th><th>${esc(M.short)}</th><th>Result</th></tr></thead><tbody>${J.rows.map(r=>`<tr><td class="mono" style="white-space:nowrap;font-size:.78rem">${esc(r.date)}</td><td><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.state)}</a> · ${esc(r.question)}</td><td>${vp(r.vote)}</td><td class="qq">${esc(r.result)} ${r.yea}–${r.nay}</td></tr>`).join("")}</tbody></table></div><p class="axis-note">A Yea backed the objection to that state's electors; a Nay rejected it.</p>`;
+
+  // Project 2025
+  const P = d.mandate, ha = P.heritageAction||{};
+  $("mandateIntro").textContent = P.intro || "Heritage Foundation's Mandate for Leadership (2023) lists policy proposals by chapter and page. A vote or bill appears here only when it follows a cited page.";
+  const hs = ha.score!=null ? `<div class="tally">${tiles([[ha.score+"%","Heritage Action scorecard, "+(ha.label||"119th Congress")]])}</div><p class="axis-note">${link("Heritage Action scorecard",ha.url)} Heritage Action is the advocacy arm of the Heritage Foundation, which published the Mandate.</p>` : "";
+  const MT = P.method||{}; const methodHtml = MT.text ? `<details><summary>How these matches were found</summary><p class="axis-note">${esc(MT.text)}</p><div class="handles"><table class="brk-t"><thead><tr><th>Subject searched</th><th>Result</th><th>Note</th></tr></thead><tbody>${(MT.topics||[]).map(t=>`<tr><td>${esc(t[0])}</td><td><span class="pill v-other">${esc(t[1])}</span></td><td class="qq">${esc(t[2])}</td></tr>`).join("")}</tbody></table></div></details>` : "";
+  $("mandateBody").innerHTML = hs + methodHtml + (P.rows.length ? `<div class="handles"><table class="brk-t"><thead><tr><th>Mandate proposal</th><th>Matching bill and how it matches</th><th>${esc(M.short)}</th></tr></thead><tbody>${P.rows.map(r=>`<tr><td>${esc(r.proposal)}<div class="qq">“${esc(r.quote||"")}”</div><div class="qq">${esc(r.page||"")} ${link("Mandate",r.source&&r.source.url)}</div></td><td><span class="pill v-other">${esc(r.kind||"")}</span> ${r.billUrl?`<a href="${esc(r.billUrl)}" target="_blank" rel="noopener">${esc(r.bill)}</a>`:esc(r.bill||"")}<div class="qq">${esc(r.match||"")}</div>${r.roll?`<div class="qq"><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.q)}</a> · ${esc(r.result)} ${r.yea}–${r.nay}</div>`:""}</td><td>${r.vote?vp(r.vote):"—"}</td></tr>`).join("")}</tbody></table></div>` : SOON("Matches between the Mandate and this member's votes and bills are being checked page by page."))
+    + (P.disavowal&&P.disavowal.text?`<p class="axis-note">${esc(P.disavowal.text)} ${link("Source",P.disavowal.url)}</p>`:"");
+
+  // Endorsements, caucuses and other ties
+  if(d.maga.length){ $("maga").hidden = false;
+    $("magaList").innerHTML = d.maga.map(e=>{ const dt = e.d ? new Date(e.d+"T12:00:00") : null;
+      return `<li><span class="d">${dt?MON[dt.getMonth()]+" "+dt.getFullYear():""}</span><span>${esc(e.text)} ${link("Source",e.u)}</span></li>`; }).join("");
+  } else $("maga").hidden = true;
+
+  // Money from leaders, the NRCC and Trump's committees
+  const m = d.money, CY = m.cycles.length ? m.cycles : [{id:"2024",label:"2023–24"},{id:"2026",label:"2025–26"}];
+  const span = c => `${+c.id-1}–${c.id.slice(2)}`, cur = CY[CY.length-1];
+  $("leadEyebrow").textContent = (m.section||{}).title || "Money from leadership";
+  $("leadNote").textContent = (m.section||{}).note || "";
+  $("leadLegend").innerHTML = `<span><i class="old" style="background:var(--muted);opacity:.6"></i>${CY.length===2?esc(CY[0].label):"Earlier cycles"}</span><span><i style="background:var(--accent)"></i>${esc(cur.label)}</span>`;
+  $("leadHead").innerHTML = `<tr><th>Source</th><th>Committees</th><th style="min-width:180px"></th>${CY.map(c=>`<th style="text-align:right" title="${esc(c.label)}">${span(c)}</th>`).join("")}</tr>`;
+  const L = m.leaders, yv = (l,c) => l["y"+c.id] || 0, tot = c => L.reduce((s,l)=>s+yv(l,c),0), max = Math.max(...L.flatMap(l=>CY.map(c=>yv(l,c))),1);
+  $("leadRows").innerHTML = L.length ? L.map(l=>`<tr><td><b>${esc(l.name)}</b><br><span class="muted" style="font-size:.78rem">${esc(l.role)}</span></td>
+    <td class="muted" style="font-size:.78rem">${esc((l.committees||[]).join("; ")||"None found")}</td>
+    <td>${CY.map((c,i)=>`<div class="pair"${i?' style="margin-top:3px"':""}><span class="b ${c===cur?"cur":"old"}" style="width:${(yv(l,c)/max*160).toFixed(0)}px" title="${span(c)}: ${usd(yv(l,c))}"></span></div>`).join("")}</td>
+    ${CY.map(c=>c===cur?`<td class="num"><b>${usd(yv(l,c))}</b></td>`:`<td class="num">${usd(yv(l,c))}</td>`).join("")}</tr>`).join("") +
+    `<tr><td><b>Total</b></td><td></td><td></td>${CY.map(c=>c===cur?`<td class="num"><b>${usd(tot(c))}</b></td>`:`<td class="num">${usd(tot(c))}</td>`).join("")}</tr>`
+    : `<tr><td colspan="${3+CY.length}" class="muted">Campaign finance data isn't available yet.</td></tr>`;
+
+  // Party leadership votes
+  const Ld = d.leader;
+  document.querySelectorAll(".leaderName").forEach(e=>e.textContent=Ld.name);
+  if(Ld.both){
+    $("breaksNote").textContent = `${M.Subj} and ${Ld.name} both cast a Yea or Nay on ${Ld.both} roll calls in this Congress. They split on ${Ld.splits}, listed below with the official wording.`;
+    $("voteTiles").innerHTML = tiles([[Ld.agree+"%","Same vote as "+Ld.name],[Ld.unity+"%",`Votes cast with the ${M.ownParty} majority (rank ${Ld.rank}${Ld.tied?", tied,":""} of ${Ld.ofParty})`],[Ld.medianUnity+"%",`The typical ${M.chamberName} ${M.ownPartyNoun}`]].filter(([a])=>!/^(null|undefined)%$/.test(a)));
+    $("breakRows").innerHTML = Ld.diffs.map(x=>`<tr><td class="mono" style="white-space:nowrap;font-size:.78rem">${esc(x.date)}</td><td><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.bill)}</a> · ${esc(x.title)}<div class="qq">${esc(x.q)}</div></td><td>${vp(x.me)}</td><td>${vp(x.jeffries)}</td></tr>`).join("");
+  } else $("breaksNote").textContent = "Vote data isn't available yet.";
+}).catch(()=>{ $("verdictCard").innerHTML = '<p class="muted">The allegiance data isn\'t available yet, or didn\'t load. Reload the page to try again.</p>'; });
+});
+</script>
+<script src="../../hub.js?v=e1b5e319" data-base="../../"></script>
+</body>
+</html>

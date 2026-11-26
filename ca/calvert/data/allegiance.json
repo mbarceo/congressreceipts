@@ -1,0 +1,627 @@
+{
+ "question": "Votes with Trump?",
+ "headline": "TBD",
+ "rule": "Counts every House roll call on final disposition of a measure (passage, adopting a resolution, concurring in a Senate amendment, or suspending the rules and passing it) for which the White House issued a statement of administration policy that states a position on passage. Support means Trump wanted a Yea; opposition means a Nay. The rule applies to every member of either party; the votes that were examined but not counted, and why, are listed below.",
+ "why": "Proposed headline thresholds, not yet approved: \"Reliably with Trump\" at 95% or more of counted votes cast with his position and with it on every vote where 10 or more of the member's own party voted the other way; \"Mostly with Trump\" at 80% to 94%; \"Often against Trump\" below 80%. The headline stays \"Coming soon\" until these are approved.",
+ "summary": "Cast the White House position on 123 of 123 counted votes and the opposite on 0. The headline stays Coming soon until the rule is approved.",
+ "tiles": [
+  [
+   "100%",
+   "of 123 counted votes cast with the White House position"
+  ],
+  [
+   "0",
+   "votes against the White House position"
+  ],
+  [
+   "2 of 2",
+   "Jan. 6, 2021 objections to the 2020 electoral count voted for (Arizona and Pennsylvania)"
+  ],
+  [
+   "99.6%",
+   "Same vote as Mike Johnson on votes where both voted Yea or Nay"
+  ],
+  [
+   "97.5%",
+   "Votes cast with the Republican majority (rank 92 of 221)"
+  ],
+  [
+   "81%",
+   "Heritage Action scorecard, 119th Congress (Heritage Action is the Heritage Foundation's advocacy arm)"
+  ],
+  [
+   "10 of 10",
+   "votes on measures matching a Mandate proposal cast Yea"
+  ]
+ ],
+ "leader": {
+  "name": "Mike Johnson",
+  "title": "Speaker of the House",
+  "agree": "99.6",
+  "both": 530,
+  "splits": 2,
+  "unity": 97.5,
+  "rank": 92,
+  "tied": 1,
+  "ofParty": 221,
+  "medianUnity": 97.1,
+  "contested": 94,
+  "peers": [
+   {
+    "id": "J000299",
+    "name": "Mike Johnson",
+    "dist": "LA-4",
+    "group": "Party leadership",
+    "all": 99.6,
+    "n": 530,
+    "contested": 94.7,
+    "nc": 38,
+    "israel": 100.0,
+    "ni": 12,
+    "unity": 99.8
+   },
+   {
+    "id": "S001176",
+    "name": "Steve Scalise",
+    "dist": "LA-1",
+    "group": "Party leadership",
+    "all": 96.7,
+    "n": 667,
+    "contested": 77.3,
+    "nc": 88,
+    "israel": 100.0,
+    "ni": 12,
+    "unity": 98.7
+   },
+   {
+    "id": "J000289",
+    "name": "Jim Jordan",
+    "dist": "OH-4",
+    "group": "Freedom Caucus and hardliners",
+    "all": 94.0,
+    "n": 662,
+    "contested": 54.0,
+    "nc": 87,
+    "israel": 100.0,
+    "ni": 12,
+    "unity": 96.4
+   },
+   {
+    "id": "H001052",
+    "name": "Andy Harris",
+    "dist": "MD-1",
+    "group": "Freedom Caucus and hardliners",
+    "all": 84.8,
+    "n": 666,
+    "contested": 30.0,
+    "nc": 90,
+    "israel": 100.0,
+    "ni": 11,
+    "unity": 86.8
+   },
+   {
+    "id": "M001184",
+    "name": "Thomas Massie",
+    "dist": "KY-4",
+    "group": "Often breaks with leadership",
+    "all": 71.5,
+    "n": 641,
+    "contested": 11.0,
+    "nc": 91,
+    "israel": 36.4,
+    "ni": 11,
+    "unity": 74.2
+   },
+   {
+    "id": "F000466",
+    "name": "Brian Fitzpatrick",
+    "dist": "PA-1",
+    "group": "Often breaks with leadership",
+    "all": 86.3,
+    "n": 678,
+    "contested": 87.2,
+    "nc": 94,
+    "israel": 66.7,
+    "ni": 12,
+    "unity": 83.8
+   },
+   {
+    "id": "B001298",
+    "name": "Don Bacon",
+    "dist": "NE-2",
+    "group": "Often breaks with leadership",
+    "all": 95.2,
+    "n": 682,
+    "contested": 91.5,
+    "nc": 94,
+    "israel": 100.0,
+    "ni": 12,
+    "unity": 93.6
+   }
+  ],
+  "diffs": [
+   {
+    "id": "2026-026",
+    "date": "2026-01-14",
+    "bill": "H R 7006",
+    "q": "On Agreeing to the Amendment",
+    "title": "Roy of Texas Amendment No. 1",
+    "me": "Nay",
+    "jeffries": "Yea",
+    "url": "https://clerk.house.gov/Votes/2026026"
+   },
+   {
+    "id": "2026-149",
+    "date": "2026-04-30",
+    "bill": "H R 7567",
+    "q": "On Agreeing to the Amendment",
+    "title": "Moore of West Virginia Part B Amendment No. 36",
+    "me": "Nay",
+    "jeffries": "Yea",
+    "url": "https://clerk.house.gov/Votes/2026149"
+   }
+  ]
+ },
+ "money": {
+  "leaders": [
+   {
+    "name": "Mike Johnson",
+    "role": "Speaker of the House",
+    "y2024": 2000,
+    "y2026": 2000,
+    "committees": [
+     "Mike Johnson For Louisiana"
+    ]
+   },
+   {
+    "name": "Steve Scalise",
+    "role": "House Majority Leader",
+    "y2024": 123061,
+    "y2026": 14000,
+    "committees": [
+     "Eye Of The Tiger Pac",
+     "Scalise For Congress",
+     "Scalise Leadership Fund 2024"
+    ]
+   },
+   {
+    "name": "Tom Emmer",
+    "role": "House Majority Whip",
+    "y2024": 88166,
+    "y2026": 174829,
+    "committees": [
+     "Emmer For Congress",
+     "Emmer Majority Builders Pac",
+     "Emmer Pac - Electing Majority Making Effective Republicans"
+    ]
+   },
+   {
+    "name": "NRCC",
+    "role": "Party campaign committee",
+    "y2024": 10000,
+    "y2026": 5000,
+    "committees": [
+     "National Republican Congressional Committee"
+    ]
+   },
+   {
+    "name": "Donald Trump",
+    "role": "President; his committees and leadership PACs",
+    "y2024": 0,
+    "y2026": 0,
+    "committees": []
+   }
+  ],
+  "cycles": [
+   {
+    "id": "2024",
+    "label": "2023-24"
+   },
+   {
+    "id": "2026",
+    "label": "2025-26"
+   }
+  ],
+  "section": {
+   "title": "House Republican leadership and Trump",
+   "note": "Contributions from each leader's campaign committee, leadership PAC and joint fundraising committees, from the NRCC, and from President Trump's committees, from FEC filings. Committees are matched by FEC committee ID. Roles are from house.gov and the Clerk. Super PACs such as the Congressional Leadership Fund cannot give to candidates; their independent spending is not counted here."
+  },
+  "categories": {
+   "2024": {
+    "corporate": 811300,
+    "ideological": 773799,
+    "candidate": 208330,
+    "trade": 325600,
+    "labor": 35500
+   },
+   "2026": {
+    "corporate": 653050,
+    "ideological": 488500,
+    "trade": 89000,
+    "candidate": 129277,
+    "labor": 19500
+   }
+  }
+ },
+ "jan6": {
+  "intro": "",
+  "rows": [
+   {
+    "id": "2021-010",
+    "state": "Arizona",
+    "question": "On Agreeing to the Objection",
+    "date": "6-Jan-2021",
+    "result": "Failed",
+    "yea": 121,
+    "nay": 303,
+    "vote": "Yea",
+    "url": "https://clerk.house.gov/Votes/202110",
+    "xml": "https://clerk.house.gov/evs/2021/roll010.xml"
+   },
+   {
+    "id": "2021-011",
+    "state": "Pennsylvania",
+    "question": "On Agreeing to the Objection",
+    "date": "7-Jan-2021",
+    "result": "Failed",
+    "yea": 138,
+    "nay": 282,
+    "vote": "Yea",
+    "url": "https://clerk.house.gov/Votes/202111",
+    "xml": "https://clerk.house.gov/evs/2021/roll011.xml"
+   }
+  ],
+  "served": 2,
+  "objected": 2
+ },
+ "mandate": {
+  "intro": "Heritage Foundation's Mandate for Leadership (2023) is the Project 2025 policy book. Each row quotes a Mandate proposal with its page, then the bill or vote it matches. “Direct” means the Mandate names the bill or the same action; “same target” means the bill acts on the same subject in the Mandate's direction; “partial” says exactly where the bill differs. A match shows alignment of policy, not intent or coordination.",
+  "method": {
+   "text": "This is not an exhaustive review. The Mandate has no index of bills, so the matches come from searching its text for subjects that bills in this Congress address. 130 measures had a White House statement (the set on the Trump section above). The 11 subjects below were searched; 7 had a Mandate proposal that the measures voted on follow, listed in the table, covering 9 measures and 10 votes. 3 were read and rejected and 1 had no Mandate text. The other measures were not individually checked against the Mandate, so more matches may exist. Two matches are marked partial and say exactly how the bill differs from the Mandate. Mandate matches apply to Republican members only; they are one signal among several, not a symmetrical measure like the Trump votes.",
+   "topics": [
+    [
+     "Midnight Rules Relief Act",
+     "matched",
+     "Mandate names the bill (p. 50)."
+    ],
+    [
+     "Central bank digital currency",
+     "matched",
+     "Mandate: prevent a CBDC (p. 741)."
+    ],
+    [
+     "California's Clean Air Act waiver",
+     "matched",
+     "Mandate: limit or revoke the waiver (pp. 426, 629)."
+    ],
+    [
+     "Medicaid work requirements",
+     "matched",
+     "Mandate: add work requirements (p. 468)."
+    ],
+    [
+     "Defunding the Corporation for Public Broadcasting",
+     "matched",
+     "Mandate chapter on CPB (pp. 246-247)."
+    ],
+    [
+     "Mandatory detention of aliens",
+     "matched, partial",
+     "Same mechanism as the Laken Riley Act, narrower scope (p. 150)."
+    ],
+    [
+     "Section 117 foreign-gift reporting",
+     "matched, partial",
+     "Same section of the Higher Education Act, different remedy (pp. 355-356)."
+    ],
+    [
+     "Proof of citizenship and noncitizen voting",
+     "rejected",
+     "The only mention found is a footnote on p. 574 about an Arizona law; no proposal that matches H.R. 22 or H.R. 884."
+    ],
+    [
+     "Born-alive abortion survivors",
+     "rejected",
+     "The Mandate (pp. 455, 474) asks for monitoring, reporting and use of EMTALA, which is not what H.R. 21 does."
+    ],
+    [
+     "Sanctuary jurisdictions",
+     "rejected",
+     "p. 566 is about conditions on Justice Department grants; H.R. 2931 is about Small Business Administration funding."
+    ],
+    [
+     "Universal or nationwide injunctions",
+     "none found",
+     "No Mandate page uses those terms, so H.R. 1526 is not matched."
+    ]
+   ]
+  },
+  "rows": [
+   {
+    "proposal": "Enact the Midnight Rules Relief Act, so several late-term regulations can be disapproved together",
+    "page": "Printed p. 50 (PDF p. 83)",
+    "quote": "Congress and the President should enact the Midnight Rules Relief Act",
+    "kind": "direct",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=83"
+    },
+    "match": "The Mandate names this bill. H.R. 77 provides for en bloc consideration of resolutions disapproving “midnight rules.”",
+    "bill": "H.R. 77, Midnight Rules Relief Act",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hr77eh/html/BILLS-119hr77eh.htm",
+    "billMust": [
+     "Midnight Rules Relief Act",
+     "en bloc"
+    ],
+    "roll": "2025-041",
+    "vote": "Yea",
+    "result": "Passed",
+    "yea": 212,
+    "nay": 208,
+    "date": "2025-02-12",
+    "url": "https://clerk.house.gov/Votes/2025041",
+    "q": "On Passage"
+   },
+   {
+    "proposal": "Prevent a central bank digital currency",
+    "page": "Printed p. 741 (PDF p. 774)",
+    "quote": "Prevent the institution of a central bank digital currency (CBDC).",
+    "kind": "direct",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=774"
+    },
+    "match": "H.R. 1919 prohibits the use of a central bank digital currency for monetary policy and bars Federal Reserve banks from offering certain products directly to individuals.",
+    "bill": "H.R. 1919, Anti-CBDC Surveillance State Act",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hr1919eh/html/BILLS-119hr1919eh.htm",
+    "billMust": [
+     "central bank digital currency",
+     "Anti-CBDC Surveillance State Act"
+    ],
+    "roll": "2025-201",
+    "vote": "Yea",
+    "result": "Passed",
+    "yea": 219,
+    "nay": 210,
+    "date": "2025-07-17",
+    "url": "https://clerk.house.gov/Votes/2025201",
+    "q": "On Passage"
+   },
+   {
+    "proposal": "Limit California's Clean Air Act waiver",
+    "page": "Printed p. 426 (PDF p. 459)",
+    "quote": "Restore the position that California’s waiver applies only to California-specific issues like ground-level ozone, not global climate issues.",
+    "kind": "same target",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=459"
+    },
+    "match": "The Mandate calls for narrowing California's waiver. H.J.Res. 87 uses the Congressional Review Act to nullify EPA's waiver decision on Advanced Clean Trucks and related rules.",
+    "bill": "H.J.Res. 87",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hjres87eh/html/BILLS-119hjres87eh.htm",
+    "billMust": [
+     "California",
+     "Waiver of Preemption"
+    ],
+    "roll": "2025-111",
+    "vote": "Yea",
+    "result": "Passed",
+    "yea": 231,
+    "nay": 191,
+    "date": "2025-04-30",
+    "url": "https://clerk.house.gov/Votes/2025111",
+    "q": "On Passage"
+   },
+   {
+    "proposal": "Limit California's Clean Air Act waiver",
+    "page": "Printed p. 426 (PDF p. 459)",
+    "quote": "Restore the position that California’s waiver applies only to California-specific issues like ground-level ozone, not global climate issues.",
+    "kind": "same target",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=459"
+    },
+    "match": "H.J.Res. 88 nullifies EPA's waiver decision on California's Advanced Clean Cars II rule.",
+    "bill": "H.J.Res. 88",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hjres88eh/html/BILLS-119hjres88eh.htm",
+    "billMust": [
+     "Advanced Clean Cars II",
+     "Waiver of Preemption"
+    ],
+    "roll": "2025-114",
+    "vote": "Yea",
+    "result": "Passed",
+    "yea": 246,
+    "nay": 164,
+    "date": "2025-05-01",
+    "url": "https://clerk.house.gov/Votes/2025114",
+    "q": "On Passage"
+   },
+   {
+    "proposal": "Limit California's Clean Air Act waiver",
+    "page": "Printed p. 426 (PDF p. 459)",
+    "quote": "Restore the position that California’s waiver applies only to California-specific issues like ground-level ozone, not global climate issues.",
+    "kind": "same target",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=459"
+    },
+    "match": "H.J.Res. 89 nullifies EPA's waiver decision on California's “Omnibus” low-NOx regulation.",
+    "bill": "H.J.Res. 89",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hjres89eh/html/BILLS-119hjres89eh.htm",
+    "billMust": [
+     "Omnibus",
+     "Waiver of Preemption"
+    ],
+    "roll": "2025-112",
+    "vote": "Yea",
+    "result": "Passed",
+    "yea": 225,
+    "nay": 196,
+    "date": "2025-04-30",
+    "url": "https://clerk.house.gov/Votes/2025112",
+    "q": "On Passage"
+   },
+   {
+    "proposal": "Add work requirements to Medicaid",
+    "page": "Printed p. 468 (PDF p. 501)",
+    "quote": "Add work requirements and match Medicaid benefits to beneficiary needs.",
+    "kind": "same target",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=501"
+    },
+    "match": "Section 71119 requires states to set Medicaid community engagement requirements for certain adults. This is the House vote on passing the bill.",
+    "bill": "H.R. 1, One Big Beautiful Bill Act (as enrolled, Public Law 119-21)",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hr1enr/html/BILLS-119hr1enr.htm",
+    "billMust": [
+     "community engagement requirements",
+     "Sec. 71119"
+    ],
+    "roll": "2025-145",
+    "vote": "Yea",
+    "result": "Passed",
+    "yea": 215,
+    "nay": 214,
+    "date": "2025-05-22",
+    "url": "https://clerk.house.gov/Votes/2025145",
+    "q": "On Passage"
+   },
+   {
+    "proposal": "Add work requirements to Medicaid",
+    "page": "Printed p. 468 (PDF p. 501)",
+    "quote": "Add work requirements and match Medicaid benefits to beneficiary needs.",
+    "kind": "same target",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=501"
+    },
+    "match": "The same Section 71119 stayed in the version the House voted to send to the President.",
+    "bill": "H.R. 1, One Big Beautiful Bill Act (as enrolled, Public Law 119-21)",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hr1enr/html/BILLS-119hr1enr.htm",
+    "billMust": [
+     "community engagement requirements",
+     "Sec. 71119"
+    ],
+    "roll": "2025-190",
+    "vote": "Yea",
+    "result": "Passed",
+    "yea": 218,
+    "nay": 214,
+    "date": "2025-07-03",
+    "url": "https://clerk.house.gov/Votes/2025190",
+    "q": "On Motion to Concur in the Senate Amendment"
+   },
+   {
+    "proposal": "End federal funding for the Corporation for Public Broadcasting through the budget process",
+    "page": "Printed p. 247 (PDF p. 280)",
+    "quote": "Cutting off the CPB is logistically easy. The solution lies in the budgetary process.",
+    "kind": "same target",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=280"
+    },
+    "match": "H.R. 4 rescinds the Corporation for Public Broadcasting's fiscal 2026 and 2027 funds.",
+    "bill": "H.R. 4, Rescissions Act of 2025 (as enrolled)",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hr4enr/html/BILLS-119hr4enr.htm",
+    "billMust": [
+     "Corporation for Public Broadcasting",
+     "are rescinded"
+    ],
+    "roll": "2025-168",
+    "vote": "Yea",
+    "result": "Passed",
+    "yea": 214,
+    "nay": 212,
+    "date": "2025-06-12",
+    "url": "https://clerk.house.gov/Votes/2025168",
+    "q": "On Passage"
+   },
+   {
+    "proposal": "Mandatory detention of aliens",
+    "page": "Printed p. 150 (PDF p. 183)",
+    "quote": "Congress should eliminate ambiguous discretionary language in Title 8 that aliens “may” be detained and clarify that aliens “shall” be detained.",
+    "kind": "partial",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=183"
+    },
+    "match": "Same mechanism, narrower scope: S. 5 requires detention of certain aliens charged with or arrested for burglary, theft, larceny, shoplifting or assault of a law enforcement officer.",
+    "bill": "S. 5, Laken Riley Act (as enrolled)",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119s5enr/html/BILLS-119s5enr.htm",
+    "billMust": [
+     "burglary",
+     "theft",
+     "larceny"
+    ],
+    "roll": "2025-023",
+    "vote": "Yea",
+    "result": "Passed",
+    "yea": 263,
+    "nay": 156,
+    "date": "2025-01-22",
+    "url": "https://clerk.house.gov/Votes/2025023",
+    "q": "On Passage"
+   },
+   {
+    "proposal": "Enforce and strengthen Section 117 reporting of foreign gifts to universities",
+    "page": "Printed p. 355 (PDF p. 388)",
+    "quote": "Reverse the Biden Administration’s refusal to enforce Section 117 of the HEA",
+    "kind": "partial",
+    "source": {
+     "label": "Mandate for Leadership (Heritage Foundation, 2023)",
+     "url": "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf#page=388"
+    },
+    "match": "Same provision, different remedy: H.R. 1048 rewrites Section 117 with a $50,000 reporting threshold and fines. The Mandate's further proposal, tying reporting to federal aid, is not in the bill.",
+    "bill": "H.R. 1048, DETERRENT Act",
+    "billUrl": "https://www.govinfo.gov/content/pkg/BILLS-119hr1048eh/html/BILLS-119hr1048eh.htm",
+    "billMust": [
+     "Section 117",
+     "DETERRENT Act"
+    ],
+    "roll": "2025-083",
+    "vote": "Yea",
+    "result": "Passed",
+    "yea": 241,
+    "nay": 169,
+    "date": "2025-03-27",
+    "url": "https://clerk.house.gov/Votes/2025083",
+    "q": "On Passage"
+   }
+  ],
+  "heritageAction": {
+   "score": 81,
+   "label": "119th Congress",
+   "url": "https://heritageaction.com/scorecard/members/C000059"
+  },
+  "disavowal": {}
+ },
+ "maga": [],
+ "signs": {},
+ "timeline": [],
+ "nums": {
+  "jan6n": 2,
+  "jan6obj": 2,
+  "trumpN": 123,
+  "trumpWith": 123,
+  "trumpAgainst": 0,
+  "trumpPct": "100",
+  "trumpMissed": 0,
+  "mandateN": 10,
+  "mandateYea": 10,
+  "haScore": 81,
+  "jeffAgree": "99.6",
+  "both": 530,
+  "ndiff": 2,
+  "leaderName": "Mike Johnson",
+  "unity": 97.5,
+  "rank": 92,
+  "dems": 221,
+  "contested": 94,
+  "jeffC": 94.7,
+  "lead24": "$223,227",
+  "lead26": "$195,829",
+  "nrcc": "$15,000",
+  "trump": "$0"
+ }
+}
