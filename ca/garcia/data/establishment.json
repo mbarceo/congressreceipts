@@ -1,0 +1,492 @@
+{
+ "question": "Establishment Democrat?",
+ "headline": "Mixed",
+ "summary": "House Democrats chose him as top Democrat on Oversight, 150–63, and he votes with most Democrats on nearly every roll call. But he is a Progressive Caucus member who took little money from party leaders' committees, none from Jeffries' or the DCCC, and broke with most Democrats on the January 2026 funding bills and a crypto-friendly IRS vote.",
+ "why": "\"Mixed\" because the signs point both ways: party-line voting (rank 31 of 215 among House Democrats) and a leadership post voted by the caucus count as establishment; progressive-caucus membership, $4,000 from party leaders' committees in 2025–26 and breaks on funding bills count as independent.",
+ "tiles": [
+  [
+   "$4,000",
+   "From party leaders' committees in 2025–26, down from $15,000"
+  ],
+  [
+   "31 of 215",
+   "Rank among House Democrats for party-line voting"
+  ],
+  [
+   "150–63",
+   "House Democrats' vote making him Oversight Ranking Member"
+  ],
+  [
+   "CPC",
+   "Member of the Congressional Progressive Caucus"
+  ]
+ ],
+ "signs": {
+  "e": [
+   {
+    "text": "Elected Democratic Caucus Leadership Representative (Nov 2024) and then Ranking Member of Oversight (Jun 2025), chosen by his colleagues 150-63.",
+    "src": [
+     [
+      "Caucus post",
+      "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-elected-democratic-caucus-leadership-representative"
+     ],
+     [
+      "Ranking Member",
+      "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-statement-election-ranking-member-house-oversight"
+     ]
+    ]
+   },
+   {
+    "text": "Ranks 31 of 215 House Democrats for party-line voting on all roll calls.",
+    "src": [
+     [
+      "Every vote",
+      "votes.html"
+     ]
+    ]
+   }
+  ],
+  "i": [
+   {
+    "text": "Member of the Congressional Progressive Caucus, and cosponsor of Medicare for All, the Raise the Wage Act and the Protecting the Right to Organize Act.",
+    "src": [
+     [
+      "His office",
+      "https://robertgarcia.house.gov/about/committees-and-caucuses"
+     ],
+     [
+      "Medicare for All",
+      "https://www.congress.gov/bill/119th-congress/house-bill/3069"
+     ],
+     [
+      "Protecting the Right to Organize Act",
+      "https://www.congress.gov/bill/119th-congress/house-bill/20"
+     ]
+    ]
+   },
+   {
+    "text": "Party leaders' committees gave $15,000 in 2023–24 and $4,000 in 2025–26; Jeffries' committees and the DCCC gave nothing, per FEC records.",
+    "src": [
+     [
+      "Money page",
+      "money.html#pacs"
+     ]
+    ]
+   }
+  ]
+ },
+ "timeline": [
+  {
+   "d": "2026-07-15",
+   "k": "i",
+   "text": "Votes for the Massie amendment to block $3.3 billion in military aid to Israel; Democrats split.",
+   "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-statement-massie-amendment"
+  },
+  {
+   "d": "2026-01-22",
+   "k": "i",
+   "text": "Votes no on the Consolidated Appropriations Act, 2026, which most Democrats supported.",
+   "u": "https://clerk.house.gov/Votes/202645"
+  },
+  {
+   "d": "2026-01-14",
+   "k": "i",
+   "text": "Votes no on H.R. 7006, a funding bill most Democrats supported.",
+   "u": "https://clerk.house.gov/Votes/202628"
+  },
+  {
+   "d": "2025-08-20",
+   "k": "e",
+   "text": "Ceremonially sworn in as Ranking Member by Vice President Kamala Harris.",
+   "u": "https://robertgarcia.house.gov/media/press-releases/vice-president-kamala-harris-swears-congressman-robert-garcia-ranking-member"
+  },
+  {
+   "d": "2025-06-24",
+   "k": "e",
+   "text": "House Democrats elect him Ranking Member of the Oversight Committee, 150-63.",
+   "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-statement-election-ranking-member-house-oversight"
+  },
+  {
+   "d": "2024-11-19",
+   "k": "e",
+   "text": "Elected Democratic Caucus Leadership Representative.",
+   "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-elected-democratic-caucus-leadership-representative"
+  }
+ ],
+ "left": [
+  {
+   "text": "Member of the Congressional Progressive Caucus.",
+   "u": "https://robertgarcia.house.gov/about/committees-and-caucuses"
+  },
+  {
+   "text": "Cosponsor of Medicare for All (H.R. 3069).",
+   "u": "https://www.congress.gov/bill/119th-congress/house-bill/3069"
+  }
+ ],
+ "leaders": [
+  {
+   "name": "Hakeem Jeffries",
+   "role": "House Democratic Leader",
+   "y2024": 0,
+   "y2026": 0,
+   "committees": []
+  },
+  {
+   "name": "Nancy Pelosi",
+   "role": "Speaker Emerita",
+   "y2024": 14000,
+   "y2026": 0,
+   "committees": [
+    "Nancy Pelosi For Congress",
+    "Pac To The Future"
+   ]
+  },
+  {
+   "name": "Katherine Clark",
+   "role": "Democratic Whip",
+   "y2024": 1000,
+   "y2026": 0,
+   "committees": [
+    "Fair Shot Pac"
+   ]
+  },
+  {
+   "name": "Pete Aguilar",
+   "role": "Caucus Chair",
+   "y2024": 0,
+   "y2026": 4000,
+   "committees": [
+    "Pete Aguilar For Congress"
+   ]
+  },
+  {
+   "name": "Steny Hoyer",
+   "role": "Former Majority Leader",
+   "y2024": 0,
+   "y2026": 0,
+   "committees": []
+  },
+  {
+   "name": "DCCC",
+   "role": "Party campaign committee",
+   "y2024": 0,
+   "y2026": 0,
+   "committees": []
+  }
+ ],
+ "categories": {
+  "2024": {
+   "labor": 167800,
+   "corporate": 26500,
+   "ideological": 75300,
+   "trade": 119500,
+   "candidate": 10500
+  },
+  "2026": {
+   "ideological": 140200,
+   "corporate": 290250,
+   "trade": 162000,
+   "labor": 168233,
+   "candidate": 4000
+  }
+ },
+ "corporatePACs": {
+  "2024": [
+   "ALTRIA GROUP, INC. POLITICAL ACTION COMMITTEE (ALTRIAPAC)",
+   "CHARTER COMMUNICATIONS INC. POLITICAL ACTION COMMITTEE",
+   "COOPERATIVE OF AMERICAN PHYSICIANS FEDERAL POLITICAL ACTION COMMITTEE",
+   "COZEN O'CONNOR POLITICAL ACTION COMMITTEE",
+   "DELTA AIR LINES PAC",
+   "FGS GLOBAL (US) LLC POLITICAL ACTION COMMITTEE",
+   "HOLLAND & KNIGHT COMMITTEE FOR EFFECTIVE GOVERNMENT",
+   "MATSON, INC. FEDERAL ELECTION COMMITTEE",
+   "PFIZER INC. PAC",
+   "ROCKET LAB USA, INC. POLITICAL ACTION COMMITTEE (ROCKET LAB PAC)",
+   "SQUIRE PATTON BOGGS POLITICAL ACTION COMMITTEE (SQUIRE PATTON BOGGS PAC)",
+   "STEPTOE LLP POLITICAL ACTION COMMITTEE",
+   "TRANSDIGM GROUP INC. EMPLOYEE POLITICAL ACTION COMMITTEE"
+  ],
+  "2026": [
+   "ABBVIE PAC",
+   "ACI PAC",
+   "AFLAC POLITICAL ACTION COMMITTEE (AFLAC PAC)",
+   "AKIN GUMP STRAUSS HAUER & FELD LLP CIVIC ACTION COMMITTEE (AKA AKIN GUMP PAC)",
+   "ALASKA AIR GROUP INC. POLITICAL ACTION COMMITTEE",
+   "ALTRIA GROUP, INC. POLITICAL ACTION COMMITTEE (ALTRIAPAC)",
+   "AMAZON.COM SERVICES LLC SEPARATE SEGREGATED FUND (AMAZON PAC)",
+   "AMERICAN AIRLINES PAC",
+   "ANDURIL INDUSTRIES, INC. POLITICAL ACTION COMMITTEE (ANDURIL PAC)",
+   "AT&T INC. EMPLOYEE FEDERAL POLITICAL ACTION COMMITTEE (AT&T EMPLOYEE FEDERAL PAC)",
+   "AVANTUS LLC PAC",
+   "BHFS-E, PC PAC (BROWNSTEIN HYATT FARBER SCHRECK POLITICAL ACTION COMMITTEE)",
+   "BLACKROCK FUNDS SERVICES GROUP PAC",
+   "BMO FINANCIAL CORP GOOD GOVERNANCE FUND: FEDERAL (BMO PAC)",
+   "BNSF RAILWAY COMPANY RAILPAC",
+   "BOEING PAC",
+   "CAREFIRST BLUECROSS BLUESHIELD ASSOCIATES FEDERAL PAC",
+   "CARNIVAL/PRINCESS HOLLAND AMERICA LINE INC. PAC (HALPAC)",
+   "CENTENE CORPORATION PAC",
+   "CHARTER COMMUNICATIONS INC. POLITICAL ACTION COMMITTEE",
+   "CISCO SYSTEMS, INC. FEDERAL PAC, AKA CISCO SYSTEMS EPAC",
+   "COMCAST CORPORATION & NBCUNIVERSAL POLITICAL ACTION COMMITTEE - FEDERAL",
+   "CSX GOOD GOVERNMENT FUND",
+   "CVS HEALTH PAC",
+   "DELL TECHNOLOGIES, INC. POLITICAL ACTION COMMITTEE",
+   "DELOITTE POLITICAL ACTION COMMITTEE",
+   "DELTA AIR LINES PAC",
+   "DOMTAR PAC",
+   "EDISON INTERNATIONAL PAC",
+   "ELEVANCE HEALTH, INC. POLITICAL ACTION COMMITTEE (ELEVANCE HEALTH PAC)",
+   "ERNST & YOUNG PAC",
+   "FANDUEL GROUP INC. PAC",
+   "FEDEX CORPORATION POLITICAL ACTION COMMITTEE",
+   "FGS GLOBAL (US) LLC POLITICAL ACTION COMMITTEE",
+   "FRESENIUS MEDICAL CARE HOLDINGS, INC. POLITICAL ACTION COMMITTEE",
+   "GE AEROSPACE PAC",
+   "GENERAL DYNAMICS CORP PAC",
+   "GENERAL MOTORS COMPANY PAC",
+   "GILEAD SCIENCES INC HEALTHCARE POLICY PAC",
+   "GLAXOSMITHKLINE LLC PAC (GSK PAC)",
+   "GOOGLE LLC NETPAC",
+   "HALLPAC",
+   "HOLLAND & KNIGHT COMMITTEE FOR EFFECTIVE GOVERNMENT",
+   "INTEL CORPORATION POLITICAL ACTION COMMITTEE (IPAC)",
+   "INVENERGY LLC PAC",
+   "JACOBS SOLUTIONS, INC. POLITICAL ACTION COMMITTEE (JACOBS PAC)",
+   "JOHNSON & JOHNSON PAC",
+   "KPMG PARTNERS/PRINCIPALS AND EMPLOYEES PAC",
+   "LITTLE TECH PAC",
+   "LOWE'S COMPANIES INC. POLITICAL ACTION COMMITTEE",
+   "MASTERCARD INTERNATIONAL INC. EMPLOYEE PAC",
+   "MASTERCARD INTERNATIONAL INC. EMPLOYEE PAC (MASTERCARD PAC) OR (MASTERCARD EMPLOYEE PAC)",
+   "MATSON, INC. FEDERAL ELECTION COMMITTEE",
+   "MCKINSEY & COMPANY, INC. UNITED STATES POLITICAL ACTION COMMITTEE (MCKINSEY PAC)",
+   "META PLATFORMS, INC. PAC",
+   "MICROSOFT CORPORATION STAKEHOLDERS VOLUNTARY PAC - MSVPAC",
+   "MOLINA HEALTHCARE, INC. PAC",
+   "MORGAN STANLEY PAC",
+   "MORGAN STANLEY POLITICAL ACTION COMMITTEE",
+   "NELSON MULLINS RILEY & SCARBOROUGH",
+   "NEXTERA INC PAC",
+   "NIKE INC FEDERAL POLITICAL ACTION COMMITTEE (NIKE FEDERAL PAC)",
+   "NORFOLK SOUTHERN CORP GOOD GOVERNMENT FUND",
+   "OWENS & MINOR INC POLITICAL ACTION COMMITTEE",
+   "PERATON CORP. POLITICAL ACTION COMMITTEE (A.K.A. 'PERATON PAC')",
+   "PFIZER INC. PAC",
+   "PITNEY BOWES INC. POLITICAL ACTION COMMITTEE",
+   "PNC BANK POLITICAL ACTION COMMITTEE",
+   "PRICEWATERHOUSECOOPERS PAC",
+   "RELATIVITY SPACE POLITICAL ACTION COMMITTEE (RELATIVITY PAC)",
+   "ROCKET LAB USA, INC. POLITICAL ACTION COMMITTEE (ROCKET LAB PAC)",
+   "ROYAL CARIBBEAN GROUP USA PAC",
+   "SEMPRA ENERGY EMPLOYEES POLITICAL ACTION COMMITTEE- FEDERAL",
+   "SSA MARINE INC. GOOD GOVERNMENT FUND",
+   "ST SHARED SERVICES LLC D/B/A KEENOVA THERAPEUTICS PAC",
+   "SYLVAMO CORPORATION PAC",
+   "SYNOPSYS, INC. POLITICAL ACTION COMMITTEE (SYNOPSYS PAC)",
+   "T-MOBILE PAC",
+   "TARGET CORPORATION CITIZENS POLITICAL FORUM",
+   "TELEVISUA UNIVISION EMPLOYEE PAC",
+   "TEXTRON INC. POLITICAL ACTION COMMITTEE",
+   "THE CIGNA GROUP EMPLOYEE PAC",
+   "THE GUIDEHOUSE INC. POLITICAL ACTION COMMITTEE (GUIDEHOUSE PAC)",
+   "THE HARTFORD INSURANCE GROUP, INC. FEDERAL PAC (AKA HARTFORD ADVOCATES FEDERAL FUND)",
+   "THE J.M. SMUCKER COMPANY PAC (SMUCKER PAC)",
+   "THE SCOTTS MIRACLE-GRO STEWARDSHIP PAC",
+   "TOYOTA MOTOR NORTH AMERICA, INC POLITICAL ACTION COMMITTEE (TOYOTA/LEXUS PAC)",
+   "TRANSDIGM GROUP INC. EMPLOYEE POLITICAL ACTION COMMITTEE",
+   "TWDC ENTERPRISES 18 CORP. EMPLOYEES PAC AKA 'THE WALT DISNEY COMPANY EMPLOYEES PAC' OR 'DISNEY PAC'",
+   "UNITED AIRLINES INC PAC",
+   "UNITED AIRLINES INC POLITICAL ACTION COMMITTEE",
+   "UNITEDHEALTH GROUP INCORPORATED PAC (UNITEDHEALTH GROUP PAC)",
+   "UPSPAC",
+   "VERIZON COMMUNICATIONS, INC. POLITICAL ACTION COMMITTEE (VERIZON PAC)",
+   "WALGREEN CO PAC (WALGREENSPAC)",
+   "WALMART INC. PAC FOR RESPONSIBLE GOVERNMENT",
+   "WASHINGTON GAS LIGHT COMPANY PAC",
+   "ZENECA INC. POLITICAL ACTION COMMITTEE (AZPAC)",
+   "ZURICH HOLDING COMPANY OF AMERICA, INC. COMMITTEE FOR GOOD GOVERNMENT (Z-PAC, ZURICH PAC)"
+  ]
+ },
+ "jeffriesDiffs": [
+  {
+   "id": "2025-071",
+   "date": "2025-03-11",
+   "bill": "H J RES 25",
+   "q": "On Passage",
+   "title": "Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Internal Revenue Service relating to “Gross Proceeds Reporting by Brokers That Regularly Provide Services Effectuating Digital Asset Sales”",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://clerk.house.gov/Votes/2025071"
+  },
+  {
+   "id": "2025-302",
+   "date": "2025-11-19",
+   "bill": "H RES 893",
+   "q": "On Motion to Refer",
+   "title": "Censuring Representative Cory Mills and Removing Him From the Committee on Armed Services and the Committee on Foreign Affairs",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://clerk.house.gov/Votes/2025302"
+  },
+  {
+   "id": "2025-320",
+   "date": "2025-12-10",
+   "bill": "S 1071",
+   "q": "On Passage",
+   "title": "To require the Secretary of Veterans Affairs to disinter the remains of Fernando V. Cota from Fort Sam Houston National Cemetery, Texas, and for other purposes",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://clerk.house.gov/Votes/2025320"
+  },
+  {
+   "id": "2026-028",
+   "date": "2026-01-14",
+   "bill": "H R 7006",
+   "q": "On Passage",
+   "title": "Financial Services and General Government and National Security, Department of State, and Related Programs Appropriations Act, 2026",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://clerk.house.gov/Votes/2026028"
+  },
+  {
+   "id": "2026-045",
+   "date": "2026-01-22",
+   "bill": "H R 7148",
+   "q": "On Passage",
+   "title": "Consolidated Appropriations Act, 2026",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://clerk.house.gov/Votes/2026045"
+  },
+  {
+   "id": "2026-084",
+   "date": "2026-03-05",
+   "bill": "H RES 1099",
+   "q": "On Motion to Suspend the Rules and Agree",
+   "title": "Reaffirming Iran remains the largest state sponsor of terrorism",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://clerk.house.gov/Votes/2026084"
+  },
+  {
+   "id": "2026-145",
+   "date": "2026-04-30",
+   "bill": "H R 7567",
+   "q": "On Agreeing to the Amendment",
+   "title": "Crawford of Arkansas Part B Amendment No. 8",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://clerk.house.gov/Votes/2026145"
+  },
+  {
+   "id": "2026-163",
+   "date": "2026-05-13",
+   "bill": "H R 1346",
+   "q": "On Motion to Recommit",
+   "title": "Nationwide Consumer and Fuel Retailer Choice Act",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://clerk.house.gov/Votes/2026163"
+  },
+  {
+   "id": "2026-164",
+   "date": "2026-05-13",
+   "bill": "H R 1346",
+   "q": "On Passage",
+   "title": "Nationwide Consumer and Fuel Retailer Choice Act",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://clerk.house.gov/Votes/2026164"
+  },
+  {
+   "id": "2026-171",
+   "date": "2026-05-14",
+   "bill": "H R 5625",
+   "q": "On Passage",
+   "title": "Cashless Bail Reporting Act",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://clerk.house.gov/Votes/2026171"
+  },
+  {
+   "id": "2026-201",
+   "date": "2026-06-04",
+   "bill": "H CON RES 84",
+   "q": "On Agreeing to the Resolution",
+   "title": "Directing the President pursuant to section 5(c) of the War Powers Resolution to remove United States Armed Forces from Lebanon",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://clerk.house.gov/Votes/2026201"
+  },
+  {
+   "id": "2026-238",
+   "date": "2026-07-14",
+   "bill": "H R 139",
+   "q": "On Passage",
+   "title": "Sunshine Protection Act",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://clerk.house.gov/Votes/2026238"
+  },
+  {
+   "id": "2026-243",
+   "date": "2026-07-15",
+   "bill": "H R 8595",
+   "q": "On Agreeing to the Amendment",
+   "title": "Massie of Kentucky Part A Amendment No. 8",
+   "me": "Yea",
+   "jeffries": "Nay",
+   "url": "https://clerk.house.gov/Votes/2026243"
+  },
+  {
+   "id": "2026-286",
+   "date": "2026-09-01",
+   "bill": "H R 6500",
+   "q": "On Motion to Suspend the Rules and Concur in the Senate Amendments",
+   "title": "AGOA Extension Act",
+   "me": "Nay",
+   "jeffries": "Yea",
+   "url": "https://clerk.house.gov/Votes/2026286"
+  }
+ ],
+ "nums": {
+  "lead24": "$15,000",
+  "lead26": "$4,000",
+  "dccc": "$0",
+  "corp24": "$26,500",
+  "corp26": "$290,250",
+  "ncorp24": 13,
+  "ncorp26": 99,
+  "jeffAgree": "97.8",
+  "both": 642,
+  "ndiff": 14,
+  "leaderName": "Hakeem Jeffries",
+  "unity": 98.5,
+  "rank": 31,
+  "tied": 1,
+  "dems": 215,
+  "contested": 76,
+  "splitYesBills": 7,
+  "splitYesNoms": 0,
+  "splitNoBills": 7,
+  "splitNoNoms": 0,
+  "jeffC": 80.6,
+  "gottC": null,
+  "aocC": null
+ },
+ "cycles": [
+  {
+   "id": "2024",
+   "label": "2023-24"
+  },
+  {
+   "id": "2026",
+   "label": "2025-26"
+  }
+ ],
+ "leaderSection": {
+  "title": "House Democratic leadership",
+  "note": ""
+ }
+}

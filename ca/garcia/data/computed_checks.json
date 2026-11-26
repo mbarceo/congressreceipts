@@ -1,0 +1,142 @@
+[
+ {
+  "label": "Votes where the member and Hakeem Jeffries both cast Yea or Nay",
+  "shown": 642,
+  "actual": 642,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Votes where the member split from Hakeem Jeffries",
+  "shown": 14,
+  "actual": 14,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Hakeem Jeffries (%)",
+  "shown": 97.8,
+  "actual": 97.8,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Party-unity score (%)",
+  "shown": 98.5,
+  "actual": 98.5,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Party-unity rank among Democrats",
+  "shown": 31,
+  "actual": 31,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Agreement with Hakeem Jeffries on contested votes (%)",
+  "shown": 80.6,
+  "actual": 80.6,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "Contested votes (Democrats split at least 90-10)",
+  "shown": 76,
+  "actual": 76,
+  "ok": true,
+  "source": "House Clerk roll-call XML"
+ },
+ {
+  "label": "AIPAC PAC, direct contributions",
+  "shown": 0,
+  "actual": 0,
+  "ok": true,
+  "source": "FEC Schedule A, committee C00797670"
+ },
+ {
+  "label": "AIPAC PAC, earmarked donations",
+  "shown": 10500.0,
+  "actual": 10500.0,
+  "ok": true,
+  "source": "FEC Schedule A memo entries, committee C00797670"
+ },
+ {
+  "label": "AIPAC PAC, total (direct + earmarked)",
+  "shown": 10500.0,
+  "actual": 10500.0,
+  "ok": true,
+  "source": "FEC Schedule A, committee C00797670"
+ },
+ {
+  "label": "DMFI PAC",
+  "shown": 0,
+  "actual": 0,
+  "ok": true,
+  "source": "FEC Schedule A, committee C00710848"
+ },
+ {
+  "label": "Pro-Israel money in the FEC filings, all cycles",
+  "shown": 31249.72,
+  "actual": 31249.72,
+  "ok": true,
+  "source": "FEC Schedule A"
+ },
+ {
+  "label": "Party leaders' committees, 2023-24",
+  "shown": 15000,
+  "actual": 15000.0,
+  "ok": true,
+  "source": "FEC Schedule A, by leader committee ID or name (fec.leaders in tracker.config.json)"
+ },
+ {
+  "label": "Party leaders' committees, 2025-26",
+  "shown": 4000,
+  "actual": 4000.0,
+  "ok": true,
+  "source": "FEC Schedule A, by leader committee ID or name (fec.leaders in tracker.config.json)"
+ },
+ {
+  "label": "Corporate PAC money, 2023-24",
+  "shown": 26500.0,
+  "actual": 26500,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
+ },
+ {
+  "label": "Labor PAC money, 2023-24",
+  "shown": 167800,
+  "actual": 167800,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
+ },
+ {
+  "label": "Trade PAC money, 2023-24",
+  "shown": 119500,
+  "actual": 119500,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
+ },
+ {
+  "label": "Corporate PAC money, 2025-26",
+  "shown": 290250.0,
+  "actual": 290250,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
+ },
+ {
+  "label": "Labor PAC money, 2025-26",
+  "shown": 168233,
+  "actual": 168233,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
+ },
+ {
+  "label": "Trade PAC money, 2025-26",
+  "shown": 162000,
+  "actual": 162000,
+  "ok": true,
+  "source": "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)"
+ }
+]

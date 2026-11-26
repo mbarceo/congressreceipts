@@ -1,4 +1,117 @@
 {
- "_note": "Facts typed directly into the pages (not built from data). Each lists the exact terms that must appear on its source. 'check': 'clerk-committees' verifies committee seats against her own entry in the Clerk's member file instead of a text search.",
- "claims": []
+ "_note": "Facts typed directly into the pages (not built from data). Each lists the exact terms that must appear on its source. 'check': 'clerk-committees' verifies committee seats against his own entry in the Clerk's member file instead of a text search.",
+ "claims": [
+  {
+   "page": "overview",
+   "section": "Header",
+   "text": "Committees: Oversight and Government Reform; Transportation and Infrastructure.",
+   "url": "https://clerk.house.gov/xml/lists/MemberData.xml",
+   "must": [
+    "Oversight and Government Reform",
+    "Transportation and Infrastructure"
+   ],
+   "check": "clerk-committees"
+  },
+  {
+   "page": "overview",
+   "section": "Header",
+   "text": "2026 general (unofficial, all 402 precincts reporting): Garcia 175,590 (62.0%), Burley 107,781 (38.0%).",
+   "url": "https://api.sos.ca.gov/returns/us-rep/district/42",
+   "must": [
+    "175,590",
+    "107,781"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Header",
+   "text": "Ranking Member of the House Oversight Committee; elected by House Democrats 150-63 on Jun 24, 2025.",
+   "url": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-statement-election-ranking-member-house-oversight",
+   "must": [
+    "150-63",
+    "Ranking Member"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Header",
+   "text": "First LGBTQ+ immigrant to serve in Congress.",
+   "url": "https://robertgarcia.house.gov/media/press-releases/historic-first-congressman-robert-garcia-finally-sworn-us-house",
+   "must": [
+    "First LGBTQ+ Immigrant to Serve in Congress"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Header",
+   "text": "Former mayor of Long Beach.",
+   "url": "https://web.archive.org/web/20241031202426/https://robertgarcia.com/about/",
+   "must": [
+    "Long Beach mayor"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Committees",
+   "text": "Subcommittees: Aviation; Highways and Transit.",
+   "url": "https://clerk.house.gov/xml/lists/MemberData.xml",
+   "must": [
+    "Aviation",
+    "Highways and Transit"
+   ],
+   "check": "clerk-committees"
+  },
+  {
+   "page": "overview",
+   "section": "Committees",
+   "text": "Caucuses: Progressive; Hispanic; Asian Pacific American.",
+   "url": "https://robertgarcia.house.gov/about/committees-and-caucuses",
+   "must": [
+    "Congressional Progressive Caucus",
+    "Congressional Hispanic Caucus",
+    "Congressional Asian Pacific American Caucus"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Committees",
+   "text": "Co-chair of the Congressional PORTS Caucus.",
+   "url": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-statement-following-supreme-court-decision-striking",
+   "must": [
+    "co-chair",
+    "(PORTS) Caucus"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Committees",
+   "text": "Named co-chair of the Congressional Caucus on Peru in Sep 2023.",
+   "url": "https://robertgarcia.house.gov/media/press-releases/congressional-caucus-peru-announces-representatives-robert-garcia-and-carlos",
+   "must": [
+    "co-chairs",
+    "Garcia"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Committees",
+   "text": "Launched the Congressional YIMBY Caucus.",
+   "url": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-announces-launch-pro-housing-yimby-caucus-tackle",
+   "must": [
+    "YIMBY"
+   ]
+  },
+  {
+   "page": "overview",
+   "section": "Offices",
+   "text": "Washington office: 109 Cannon House Office Building, (202) 225-7924. Long Beach office: 415 West Ocean Blvd., Suite 2803, (562) 512-8489.",
+   "url": "https://robertgarcia.house.gov/",
+   "must": [
+    "109 Cannon House Office Building",
+    "(202) 225-7924",
+    "415 West Ocean Blvd",
+    "(562) 512-8489"
+   ]
+  }
+ ]
 }

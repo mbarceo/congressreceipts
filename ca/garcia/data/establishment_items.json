@@ -1,9 +1,9 @@
 {
  "_note": "Hand-curated, sourced items for establishment.html. Numbers in {braces} are filled by scripts/build_establishment.py from FEC data, House roll calls and data/alignment.json; never type a number here. Tag e = sign of establishment alignment, i = sign of independence. Headline is an editorial call; 'why' states the rule.",
  "question": "Establishment Democrat?",
- "headline": "TBD",
- "summary": "",
- "why": "",
+ "headline": "Mixed",
+ "summary": "House Democrats chose him as top Democrat on Oversight, 150–63, and he votes with most Democrats on nearly every roll call. But he is a Progressive Caucus member who took little money from party leaders' committees, none from Jeffries' or the DCCC, and broke with most Democrats on the January 2026 funding bills and a crypto-friendly IRS vote.",
+ "why": "\"Mixed\" because the signs point both ways: party-line voting (rank {rank} of {dems} among House Democrats) and a leadership post voted by the caucus count as establishment; progressive-caucus membership, {lead26} from party leaders' committees in 2025–26 and breaks on funding bills count as independent.",
  "roles": {
   "Hakeem Jeffries": "House Democratic Leader",
   "Katherine Clark": "Democratic Whip",
@@ -12,11 +12,124 @@
   "Steny Hoyer": "Former Majority Leader",
   "DCCC": "Party campaign committee"
  },
- "tiles": [],
+ "tiles": [
+  [
+   "{lead26}",
+   "From party leaders' committees in 2025–26, down from {lead24}"
+  ],
+  [
+   "{rank} of {dems}",
+   "Rank among House Democrats for party-line voting"
+  ],
+  [
+   "150–63",
+   "House Democrats' vote making him Oversight Ranking Member"
+  ],
+  [
+   "CPC",
+   "Member of the Congressional Progressive Caucus"
+  ]
+ ],
  "signs": {
-  "e": [],
-  "i": []
+  "e": [
+   {
+    "text": "Elected Democratic Caucus Leadership Representative (Nov 2024) and then Ranking Member of Oversight (Jun 2025), chosen by his colleagues 150-63.",
+    "src": [
+     [
+      "Caucus post",
+      "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-elected-democratic-caucus-leadership-representative"
+     ],
+     [
+      "Ranking Member",
+      "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-statement-election-ranking-member-house-oversight"
+     ]
+    ]
+   },
+   {
+    "text": "Ranks {rank} of {dems} House Democrats for party-line voting on all roll calls.",
+    "src": [
+     [
+      "Every vote",
+      "votes.html"
+     ]
+    ]
+   }
+  ],
+  "i": [
+   {
+    "text": "Member of the Congressional Progressive Caucus, and cosponsor of Medicare for All, the Raise the Wage Act and the Protecting the Right to Organize Act.",
+    "src": [
+     [
+      "His office",
+      "https://robertgarcia.house.gov/about/committees-and-caucuses"
+     ],
+     [
+      "Medicare for All",
+      "https://www.congress.gov/bill/119th-congress/house-bill/3069"
+     ],
+     [
+      "Protecting the Right to Organize Act",
+      "https://www.congress.gov/bill/119th-congress/house-bill/20"
+     ]
+    ]
+   },
+   {
+    "text": "Party leaders' committees gave {lead24} in 2023–24 and {lead26} in 2025–26; Jeffries' committees and the DCCC gave nothing, per FEC records.",
+    "src": [
+     [
+      "Money page",
+      "money.html#pacs"
+     ]
+    ]
+   }
+  ]
  },
- "timeline": [],
- "left": []
+ "timeline": [
+  {
+   "d": "2024-11-19",
+   "k": "e",
+   "text": "Elected Democratic Caucus Leadership Representative.",
+   "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-elected-democratic-caucus-leadership-representative"
+  },
+  {
+   "d": "2025-06-24",
+   "k": "e",
+   "text": "House Democrats elect him Ranking Member of the Oversight Committee, 150-63.",
+   "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-statement-election-ranking-member-house-oversight"
+  },
+  {
+   "d": "2025-08-20",
+   "k": "e",
+   "text": "Ceremonially sworn in as Ranking Member by Vice President Kamala Harris.",
+   "u": "https://robertgarcia.house.gov/media/press-releases/vice-president-kamala-harris-swears-congressman-robert-garcia-ranking-member"
+  },
+  {
+   "d": "2026-01-14",
+   "k": "i",
+   "text": "Votes no on H.R. 7006, a funding bill most Democrats supported.",
+   "u": "https://clerk.house.gov/Votes/202628"
+  },
+  {
+   "d": "2026-01-22",
+   "k": "i",
+   "text": "Votes no on the Consolidated Appropriations Act, 2026, which most Democrats supported.",
+   "u": "https://clerk.house.gov/Votes/202645"
+  },
+  {
+   "d": "2026-07-15",
+   "k": "i",
+   "text": "Votes for the Massie amendment to block $3.3 billion in military aid to Israel; Democrats split.",
+   "u": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-statement-massie-amendment"
+  }
+ ],
+ "left": [
+  {
+   "text": "Member of the Congressional Progressive Caucus.",
+   "u": "https://robertgarcia.house.gov/about/committees-and-caucuses"
+  },
+  {
+   "text": "Cosponsor of Medicare for All (H.R. 3069).",
+   "u": "https://www.congress.gov/bill/119th-congress/house-bill/3069"
+  }
+ ]
 }
