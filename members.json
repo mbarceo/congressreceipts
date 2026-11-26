@@ -108,6 +108,19 @@
    "portrait": "assets/portrait.jpg",
    "eventsResearched": false,
    "hub": false
+  },
+  {
+   "path": "ca/sanchez",
+   "name": "Linda T. S\u00e1nchez",
+   "party": "D",
+   "seat": "CA-38",
+   "chamber": "house",
+   "voteId": "S001156",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
