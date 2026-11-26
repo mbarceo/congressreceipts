@@ -40,6 +40,25 @@
 .pos{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;border-radius:999px;padding:2px 10px;white-space:nowrap;color:var(--c);background:color-mix(in srgb,var(--c) 16%,transparent)}
 .pos::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
 .pos.none{background:none;border:1px dashed var(--muted);color:var(--muted)}
+/* Polls */
+.polls{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+@media (max-width:760px){.polls{grid-template-columns:1fr}}
+.poll{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 18px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.poll h3{font-size:1.05rem}
+.poll .meta{font-size:.8rem;color:var(--muted);margin:0}
+.pr{display:flex;flex-direction:column;gap:5px}
+.pr .lab{font-size:.84rem;font-weight:600}
+.pb{display:flex;gap:2px;height:28px}
+.pb span{display:flex;align-items:center;justify-content:center;min-width:0;overflow:hidden;border-radius:3px;font-size:.78rem;font-weight:700;color:#10150f;background:var(--c)}
+.pb span.rest{background:transparent;border:1px dashed var(--muted);color:var(--muted);font-weight:500}
+.pk{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.78rem;color:var(--muted)}
+.pk i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px;background:var(--c)}
+.pk i.rest{background:transparent;border:1px dashed var(--muted)}
+.lead{display:grid;grid-template-columns:minmax(120px,170px) 1fr auto;gap:4px 10px;align-items:center;font-size:.84rem}
+.lead .tr{height:10px;background:var(--line);border-radius:5px;overflow:hidden}
+.lead .tr i{display:block;height:100%;background:var(--vh)}
+.lead b{font-family:var(--f-mono);font-size:.8rem}
+.poll .pn{margin:0;font-size:.76rem;color:var(--muted)}
 /* Where sources disagree */
 .dis{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
 .dis li{display:grid;grid-template-columns:minmax(150px,200px) 1fr;gap:4px 18px;padding:14px 0;border-top:1px solid var(--line)}
@@ -95,6 +114,13 @@ tr[hidden]{display:none}
     <div class="legend" id="legend"></div>
     <p class="muted" style="font-size:.8rem;margin:0">Each segment is one senator. Select one to jump to their row. Amy Klobuchar (MN) is left out because she was elected governor and can't vote in this election.</p>
   </div>
+
+  <section id="people">
+    <div class="sec-head"><span class="eyebrow">Polling</span><h2>What the people want</h2>
+      <p>Voters don't choose the leader. Senate Democrats do, in a secret ballot. These polls ask voters which candidate they would prefer. Wording and samples differ, so read each poll on its own.</p></div>
+    <div class="polls" id="polls"></div>
+    <p class="muted" style="font-size:.8rem;margin:0" id="pollnote"></p>
+  </section>
 
   <section id="disputes" hidden>
     <div class="sec-head"><span class="eyebrow">Where sources disagree</span><h2>Senators the sources don't agree on</h2>
@@ -160,6 +186,33 @@ const role = m => m.role === "senator_elect" ? "senator-elect" : m.role === "ine
 const gate = () => `<svg width="64" height="72" viewBox="0 0 64 72" aria-hidden="true"><line x1="9" y1="8" x2="9" y2="64"/><line x1="23" y1="8" x2="23" y2="64"/><line x1="37" y1="8" x2="37" y2="64"/><line x1="51" y1="8" x2="51" y2="64"/><line x1="2" y1="54" x2="58" y2="18"/></svg>`;
 const strokes = n => `<svg width="${14 * n + 4}" height="72" viewBox="0 0 ${14 * n + 4} 72" aria-hidden="true">${Array.from({length: n}, (_, i) => `<line x1="${9 + 14 * i}" y1="8" x2="${9 + 14 * i}" y2="64"/>`).join("")}</svg>`;
 const marks = n => gate().repeat(Math.floor(n / 5)) + (n % 5 ? strokes(n % 5) : "");
+
+// Polls: only numbers read on the cited page; a dashed segment is the part of the sample not given a label.
+const range = d => { const [a, b] = d.map(x => { const [y, m, dd] = x.split("-").map(Number); return {m: MON[m - 1], d: dd, y}; });
+  return a.m === b.m ? `${a.m} ${a.d}-${b.d}, ${b.y}` : `${a.m} ${a.d} - ${b.m} ${b.d}, ${b.y}`; };
+const seg = (v, c, cls = "", txt) => `<span class="${cls}" style="flex:${v} 1 0;--c:${c}" title="${esc(txt ?? v + "%")}">${esc(txt ?? v + "%")}</span>`;
+fetch("data/leadership_senate_polls.json").then(r => r.json()).then(P => {
+  $("polls").innerHTML = P.polls.map(p => {
+    let body = "";
+    if (p.id === "economist_yougov") {
+      body = p.rows.map(r => { const tot = r.schumer + r.van_hollen + r.not_sure;
+        return `<div class="pr"><span class="lab">${esc(r.group)}</span><div class="pb" role="img" aria-label="${esc(r.group)}: Schumer ${r.schumer}%, Van Hollen ${r.van_hollen}%, not sure ${r.not_sure}%${r.not_sure_is_remainder ? " (remainder)" : ""}">
+          ${seg(r.schumer / tot * 100, "var(--sc)", "", r.schumer + "%")}${seg(r.van_hollen / tot * 100, "var(--vh)", "", r.van_hollen + "%")}${seg(r.not_sure / tot * 100, "var(--stall)", "", r.not_sure + "%" + (r.not_sure_is_remainder ? "*" : ""))}</div></div>`; }).join("") +
+        `<div class="pk"><span><i style="--c:var(--sc)"></i>Schumer</span><span><i style="--c:var(--vh)"></i>Van Hollen</span><span><i style="--c:var(--stall)"></i>Not sure</span></div>`;
+    } else {
+      body = p.rows.map(r => { const rest = Math.max(0, 100 - r.value - r.versus);
+        return `<div class="pr"><span class="lab">${esc(r.label)} vs. ${esc(r.versus_label)}</span><div class="pb" role="img" aria-label="${r.value}% ${esc(r.label)}, ${r.versus}% ${esc(r.versus_label)}">
+          ${seg(r.value, "var(--accent)")}${seg(r.versus, "var(--stall)")}${rest ? seg(rest, "var(--muted)", "rest", "") : ""}</div></div>`; }).join("") +
+        `<div class="pk"><span><i style="--c:var(--accent)"></i>Wants a new leader</span><span><i style="--c:var(--stall)"></i>Keep current</span><span><i class="rest"></i>Rest of sample</span></div>
+        <div class="pr"><span class="lab">Van Hollen over Schumer, head to head (points ahead)</span>${p.head_to_head.van_hollen_lead_points.map(h => `<div class="lead"><span>${esc(h.group)}</span><span class="tr"><i style="width:${h.points / 30 * 100}%"></i></span><b>+${h.points}</b></div>`).join("")}</div>`;
+    }
+    return `<div class="poll"><h3>${esc(p.pollster)}</h3>
+      <p class="meta">${range(p.field_dates)} · ${esc(p.population)} · ${p.sample.toLocaleString("en-US")} people${p.moe ? ` · margin of error ±${p.moe} points` : ""}</p>
+      ${body}
+      ${p.notes.map(n => `<p class="pn">${esc(n)}</p>`).join("")}
+      <a href="${esc(p.source_url)}" target="_blank" rel="noopener">${esc(p.source_outlet)}: the poll</a></div>`; }).join("");
+  $("pollnote").textContent = "Only numbers printed on each poll's own page are shown. " + P.left_out;
+}).catch(() => { $("polls").innerHTML = '<p class="muted">The polls didn\'t load. Reload the page to try again.</p>'; });
 
 fetch("data/leadership_senate.json").then(r => r.json()).then(D => {
   const M = D.members;

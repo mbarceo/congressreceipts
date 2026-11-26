@@ -1,0 +1,52 @@
+{
+  "checked_on": "2026-11-26",
+  "checked_how": "Each number below was read in the text of the cited page by script, one request at a time. Numbers that appeared only in secondary reports or in chart images were left out.",
+  "polls": [
+    {
+      "id": "economist_yougov",
+      "pollster": "The Economist / YouGov",
+      "field_dates": ["2026-11-20", "2026-11-23"],
+      "population": "U.S. citizens",
+      "sample": 1623,
+      "summary": "Which of Schumer or Van Hollen people would rather have lead Senate Democrats.",
+      "rows": [
+        {"group": "All U.S. citizens", "schumer": 14, "van_hollen": 28, "not_sure": 59, "not_sure_is_remainder": false},
+        {"group": "Democrats", "schumer": 19, "van_hollen": 40, "not_sure": 41, "not_sure_is_remainder": true}
+      ],
+      "notes": [
+        "* The YouGov write-up gives 14%, 28% and 59% for all citizens and 19% and 40% for Democrats. The 41% for Democrats is the remainder, not a number printed on the page.",
+        "Percentages are rounded and may not add to 100."
+      ],
+      "source_url": "https://yougov.com/en-us/articles/56042-donald-trump-approval-summit-china-outages-measles-grand-theft-auto-gta6-thanksgiving-november-20-23-2026-economist-yougov-poll",
+      "source_outlet": "YouGov"
+    },
+    {
+      "id": "data_for_progress",
+      "pollster": "Data for Progress",
+      "field_dates": ["2026-11-13", "2026-11-15"],
+      "population": "Likely voters who are Democrats or lean Democratic",
+      "sample": 538,
+      "moe": 4,
+      "summary": "Whether Democratic-leaning voters want a new Senate leader, and which candidate they prefer.",
+      "rows": [
+        {"label": "Senate Democrats should choose a new leader", "value": 56, "versus_label": "Schumer should remain the leader", "versus": 32},
+        {"label": "Democratic leadership should choose new leaders", "value": 53, "versus_label": "keep current leaders", "versus": 42}
+      ],
+      "head_to_head": {
+        "question": "Choose between Van Hollen and Schumer to lead Senate Democrats, based on what they know about the candidates.",
+        "van_hollen_lead_points": [
+          {"group": "Democratic-leaning voters", "points": 8},
+          {"group": "Democrats", "points": 3},
+          {"group": "Independents who lean Democratic", "points": 30}
+        ]
+      },
+      "notes": [
+        "The page gives the head-to-head as margins (a plurality, plus 8 points overall). The exact shares are not printed in the page text, so they are not shown.",
+        "Subgroup results have larger margins of error, per the pollster."
+      ],
+      "source_url": "https://www.dataforprogress.org/blog/2026/11/16/democratic-leaning-voters-favor-van-hollen-over-schumer-for-majority-leader",
+      "source_outlet": "Data for Progress"
+    }
+  ],
+  "left_out": "An Indivisible/YouGov poll (Nov 7-9) appears in Wikipedia's table but its page was not found, so it is not shown. Member votes held by advocacy groups (MoveOn, Indivisible) are self-selected, not polls, and are not shown."
+}
