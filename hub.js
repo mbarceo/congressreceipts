@@ -9,7 +9,7 @@
 (() => {
   const base = (document.currentScript && document.currentScript.dataset.base) || "";
   const NAV = [["home", "index.html", "Home"], ["find", "find.html", "Find your rep"],
-               ["attendance", "attendance.html", "Who's showing up"], ["leaders", "leaders.html", "Leaders tracker"], ["backlog", "backlog.html", "Backlog Queue"]];
+               ["attendance", "attendance.html", "Who's showing up"], ["leaders", "leaders.html", "Leaders tracker"], ["leadership", "leadership.html", "Leadership races"], ["backlog", "backlog.html", "Backlog Queue"]];
   const here = document.body.dataset.page;
   if (!document.querySelector('link[rel~="icon"]')) { const ic = document.createElement("link"); ic.rel = "icon"; ic.type = "image/png"; ic.href = base + "assets/favicon.png"; document.head.appendChild(ic); }
   const head = document.createElement("header"); head.className = "cr-head" + (base ? " cr-static" : "");

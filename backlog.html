@@ -99,6 +99,6 @@ function render(){
 document.getElementById('q').addEventListener('input',render);
 Promise.all([fetch('data/congress.json').then(r=>r.json()),fetch('data/queue.json').then(r=>r.json())]).then(([d,qu])=>{data=d;queue=qu;render()});
 </script>
-<script src="hub.js?v=e1b5e319"></script>
+<script src="hub.js?v=6d7921b8"></script>
 </body>
 </html>
