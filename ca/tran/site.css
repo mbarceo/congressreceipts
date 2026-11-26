@@ -193,7 +193,7 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
   margin-bottom:-24px;padding-block:8px;background:color-mix(in srgb, var(--bg) 90%, transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
 .topbar.stuck{box-shadow:0 1px 0 var(--line), 0 8px 18px -12px rgba(0,0,0,.35)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:31;background:var(--bg)}
-.jump{position:relative}
+.jump{position:static} /* the menu anchors to the full-width .topbar, so it can't spill off the left edge when the button wraps to a narrow spot */
 .jump summary{list-style:none;cursor:pointer;font-size:.82rem;font-weight:600;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);white-space:nowrap}
 .jump summary::-webkit-details-marker{display:none}
 .jump summary::after{content:" \25BE";color:var(--muted)}

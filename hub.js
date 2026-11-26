@@ -9,7 +9,7 @@
 (() => {
   const base = (document.currentScript && document.currentScript.dataset.base) || "";
   const NAV = [["home", "index.html", "Home"], ["find", "find.html", "Find your rep"],
-               ["attendance", "attendance.html", "Who's showing up"], ["leaders", "leaders.html", "Leaders tracker"]];
+               ["attendance", "attendance.html", "Who's showing up"], ["leaders", "leaders.html", "Leaders tracker"], ["backlog", "backlog.html", "Backlog Queue"]];
   const here = document.body.dataset.page;
   const head = document.createElement("header"); head.className = "cr-head" + (base ? " cr-static" : "");
   head.innerHTML = `<div class="in"><a class="cr-brand" href="${base}index.html" aria-label="Congress Receipts home">

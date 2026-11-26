@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Every member of Congress by state and chamber, and which ones have a tracker so far.">
+<title>Backlog Queue · Congress Receipts</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="site.css?v=4836746f">
+<link rel="stylesheet" href="hub.css?v=e7599542">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+[hidden]{display:none!important}
+.ctl{display:flex;flex-direction:column;gap:12px}
+.ctl input[type=search]{background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font:inherit;min-height:44px;width:100%;max-width:420px}
+.ctl .filters{align-items:center}
+.ctl .filters .eyebrow{margin-right:4px}
+.chip-btn{min-height:36px}
+.stats{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:.88rem}
+.stats b{font-family:var(--f-mono);font-weight:500}
+.state{display:flex;flex-direction:column;gap:14px}
+.state h2{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.state h2 .mono{color:var(--muted);font-weight:400}
+.grp h3{margin-bottom:6px}
+.m{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.m>*{min-width:0}
+.nm{font-family:var(--f-display);font-weight:700;font-size:.98rem}
+.sub{color:var(--muted);font-size:.78rem;font-family:var(--f-mono);margin-top:2px}
+.pt{display:inline-block;min-width:18px;text-align:center;border-radius:4px;padding:0 5px;margin-right:6px}
+.pt.D{background:var(--la-soft);color:var(--la)} .pt.R{background:var(--bad-bg);color:var(--bad)} .pt.I{background:var(--flag-bg);color:var(--flag)}
+a.pill{text-decoration:none}
+a.pill:hover{text-decoration:underline}
+.empty{color:var(--muted)}
+</style>
+</head>
+<body data-page="backlog">
+<div class="wrap hub">
+  <header>
+    <span class="eyebrow">119th Congress · Who's next</span>
+    <h1>Backlog Queue</h1>
+    <p class="lede">Every current member of Congress, by state and chamber, and where each one stands on getting a tracking page. Finished trackers link to the live site.</p>
+    <div class="stats" id="stats"></div>
+  </header>
+  <div class="ctl">
+    <input id="q" type="search" placeholder="Search name or state" aria-label="Search by name or state">
+    <div class="filters" id="f-ch" role="group" aria-label="Chamber"><span class="eyebrow">Chamber</span></div>
+    <div class="filters" id="f-party" role="group" aria-label="Party"><span class="eyebrow">Party</span></div>
+    <div class="filters" id="f-status" role="group" aria-label="Status"><span class="eyebrow">Status</span></div>
+  </div>
+  <main class="view" id="list"></main>
+</div>
+<script>
+const LABELS={todo:['Not started','s-none'],next:['Next up','s-break'],progress:['In progress','s-progress'],done:['Live','s-delivered'],skip:['Skipped','s-stalled']};
+const F={ch:'all',party:'all',status:'all'};
+let data=[],queue={};
+const info=id=>queue[id]||{status:'todo'};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function chips(id,key,opts){
+  const el=document.getElementById(id);
+  opts.forEach(([v,t])=>{const b=document.createElement('button');b.type='button';b.className='chip-btn';b.textContent=t;b.dataset.v=v;
+    b.setAttribute('aria-pressed',v==='all');
+    b.onclick=()=>{F[key]=v;el.querySelectorAll('.chip-btn').forEach(x=>x.setAttribute('aria-pressed',x===b));render()};
+    el.appendChild(b)});
+}
+chips('f-ch','ch',[['all','All'],['Senate','Senate'],['House','House']]);
+chips('f-party','party',[['all','All'],['D','Democrat'],['R','Republican'],['I','Independent']]);
+chips('f-status','status',[['all','All'],['done','Live'],['progress','In progress'],['next','Next up'],['todo','Not started'],['skip','Skipped']]);
+
+function pill(id){
+  const i=info(id),[l,c]=LABELS[i.status]||LABELS.todo;
+  return i.url?`<a class="pill ${c}" href="${esc(i.url)}" target="_blank" rel="noopener">${l} ↗</a>`:`<span class="pill ${c}">${l}</span>`;
+}
+function render(){
+  const q=document.getElementById('q').value.trim().toLowerCase();
+  const rows=data.filter(r=>(F.ch==='all'||r.chamber===F.ch)&&(F.party==='all'||r.party===F.party)&&(F.status==='all'||info(r.bioguide).status===F.status)&&(!q||(r.name+' '+r.state_name+' '+r.state).toLowerCase().includes(q)));
+  const by=new Map();rows.forEach(r=>{if(!by.has(r.state_name))by.set(r.state_name,[]);by.get(r.state_name).push(r)});
+  let h='';
+  for(const [name,list] of by){
+    h+=`<section class="state"><div class="sec-head"><span class="eyebrow">${list[0].state}</span></div><h2>${esc(name)}<span class="mono">${list.length} shown</span></h2>`;
+    for(const c of ['Senate','House']){
+      const g=list.filter(r=>r.chamber===c);if(!g.length)continue;
+      h+=`<div class="grp"><h3>${c==='Senate'?'U.S. Senate':'U.S. House'}</h3>`;
+      for(const r of g){
+        const d=r.district==null?'Class '+r.senate_class:r.district===0?'At-large':'District '+r.district;
+        h+=`<div class="m"><div><div class="nm">${esc(r.name)}</div><div class="sub"><span class="pt ${r.party}">${r.party}</span>${d} · term ends ${r.term_end.slice(0,4)}</div></div>${pill(r.bioguide)}</div>`;
+      }
+      h+='</div>';
+    }
+    h+='</section>';
+  }
+  document.getElementById('list').innerHTML=h||'<p class="empty">No members match.</p>';
+  const cnt={};data.forEach(r=>{const s=info(r.bioguide).status;cnt[s]=(cnt[s]||0)+1});
+  document.getElementById('stats').innerHTML=`<span><b>${rows.length}</b> shown of ${data.length}</span>`+['done','progress','next','todo'].map(k=>`<span>${LABELS[k][0]} <b>${cnt[k]||0}</b></span>`).join('');
+}
+document.getElementById('q').addEventListener('input',render);
+Promise.all([fetch('data/congress.json').then(r=>r.json()),fetch('data/queue.json').then(r=>r.json())]).then(([d,qu])=>{data=d;queue=qu;render()});
+</script>
+<script src="hub.js?v=35b2dee5"></script>
+</body>
+</html>
