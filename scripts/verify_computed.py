@@ -19,7 +19,7 @@ def check(label, shown, actual, src, tol=None):
 # ---- Votes, from raw roll-call files (House or Senate, via votes_common) ----
 # Recomputed here with separate tallying code; only the file parser, the caucus rule (CAUCUS: independents who caucus
 # with the Democrats count as Democrats for unity) and the ranking threshold come from votes_common.
-from votes_common import load_rolls, MY_ID, LEADER, CAUCUS, unity_min_votes
+from votes_common import load_rolls, MY_ID, LEADER, CAUCUS, unity_min_votes, OWN
 ME, JEF = MY_ID, LEADER["voteId"]
 rolls = [(r["votes"], {k: CAUCUS.get(k) or p for k, p in r["party"].items()}) for r in load_rolls()]
 VSRC = "Senate roll-call XML (senate.gov)" if M.get("chamber", "house") == "senate" else "House Clerk roll-call XML"
@@ -33,7 +33,7 @@ elif both:
     check(f"Votes where the member split from {LEADER['name']}", es["ndiff"], splits, VSRC, 0)
     check(f"Agreement with {LEADER['name']} (%)", float(es["jeffAgree"]), round((len(both) - splits) / len(both) * 100, 1), VSRC, 0.05)
 def dside(v, party):
-    y = sum(1 for k, x in v.items() if party.get(k) == "D" and x == "Yea"); n = sum(1 for k, x in v.items() if party.get(k) == "D" and x == "Nay")
+    y = sum(1 for k, x in v.items() if party.get(k) == OWN and x == "Yea"); n = sum(1 for k, x in v.items() if party.get(k) == OWN and x == "Nay")
     return ("Yea" if y > n else "Nay" if n > y else None), y, n
 sides = [dside(v, p)[0] for v, p in rolls]
 def unity(m):
@@ -41,7 +41,7 @@ def unity(m):
     for (v, _), side in zip(rolls, sides):
         if side and v.get(m) in ("Yea", "Nay"): tot += 1; same += v[m] == side
     return same, tot
-dems = {k for v, p in rolls for k in v if p.get(k) == "D"}
+dems = {k for v, p in rolls for k in v if p.get(k) == OWN}
 MIN = unity_min_votes(sum(1 for s in sides if s))
 scores = {d: s / t for d in dems for s, t in [unity(d)] if t >= MIN}
 al = J("data/alignment.json") if have("data/alignment.json") else None
@@ -72,8 +72,8 @@ aip_ear = amt(lambda r: r.get("contributor_id") == "C00797670" and r.get("memo_c
 dmfi = amt(lambda r: r.get("contributor_id") == "C00710848")
 summ = J("data/fec/summary.json")
 pro_shown = sum(p["amount"] for p in summ["pacs"] if p["proIsrael"])
-check("AIPAC PAC, direct contributions", next((p["amount"] for p in summ["pacs"] if p["id"] == "C00797670" and p["kind"] != "Earmarked via conduit"), 0), aip_direct, "FEC Schedule A, committee C00797670")
-check("AIPAC PAC, earmarked donations", next((p["amount"] for p in summ["pacs"] if p["id"] == "C00797670" and p["kind"] == "Earmarked via conduit"), 0), aip_ear, "FEC Schedule A memo entries, committee C00797670")
+check("AIPAC PAC, direct contributions", sum(p["amount"] for p in summ["pacs"] if p["id"] == "C00797670" and p["kind"] != "Earmarked via conduit"), aip_direct, "FEC Schedule A, committee C00797670")
+check("AIPAC PAC, earmarked donations", sum(p["amount"] for p in summ["pacs"] if p["id"] == "C00797670" and p["kind"] == "Earmarked via conduit"), aip_ear, "FEC Schedule A memo entries, committee C00797670")
 check("AIPAC PAC, total (direct + earmarked)", sum(p["amount"] for p in summ["pacs"] if p["id"] == "C00797670"), aip_direct + aip_ear, "FEC Schedule A, committee C00797670")
 check("DMFI PAC", next((p["amount"] for p in summ["pacs"] if p["id"] == "C00710848"), 0), dmfi, "FEC Schedule A, committee C00710848")
 check("Pro-Israel money in the FEC filings, all cycles", pro_shown, aip_direct + aip_ear + dmfi + amt(lambda r: r.get("contributor_id") not in ("C00797670", "C00710848") and re.search(r"J ?STREET|NORPAC|PRO-ISRAEL AMERICA|JACPAC|JOINT ACTION COMMITTEE FOR POLITICAL", r.get("contributor_name") or "", re.I)), "FEC Schedule A")
@@ -91,13 +91,13 @@ lab = lambda c: f"{int(c) - 1}-{c[2:]}"
 for c in CYC:
     check(f"Party leaders' committees, {lab(c)}", sum(v.get("y" + c, 0) for v in lead.values()),
           sum(r.get("contribution_receipt_amount") or 0 for r in rows[c] if r.get("memo_code") != "X" and lead_match(r)),
-          "FEC Schedule A, by leader committee ID or name (fec.leaders in tracker.config.json)")
+          "FEC Schedule A, matched to each party leader's committees by FEC committee ID")
 calc = J("data/fec/establishment_calc.json")
 for c in CYC:
     for k in ("corporate", "labor", "trade"):
         shown = num(es[f"corp{c[2:]}"]) if k == "corporate" and es and es.get(f"corp{c[2:]}") else calc[c]["cat"].get(k, 0)
         check(f"{k.title()} PAC money, {lab(c)}", shown, calc[c]["cat"].get(k, 0),
-              "FEC Schedule A, sorted by FEC organization type then name (scripts/build_establishment.py)")
+              "FEC Schedule A, sorted by the FEC's organization type, then by committee name")
 
 # ---- Member-specific figures typed on the pages (tracker.config.json "computedChecks"; none by default) ----
 # Each: {"label", "shown" (the figure the page states), "contribs" | "outside" | "saved": {...}, "tol"}:

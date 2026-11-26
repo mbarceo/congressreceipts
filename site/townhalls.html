@@ -93,7 +93,7 @@ getJSON("data/overview.json").then(ov => {
     <div><div><span class="k">${esc(e.type)}</span>${e.role ? `<span class="evrole">${e.role === "hosted" ? "Hosted" : "Took part"}</span>` : ""}</div><div class="t">${esc(e.title)}</div>
     ${e.city?`<div class="muted">${esc(e.city)}</div>`:""}${e.notes?`<p class="ex">${esc(e.notes)}</p>`:""}
     <div class="ev-links"><a class="src" href="${esc(e.source)}" target="_blank" rel="noopener">Source</a></div></div></article>`).join("")
-    || `<p class="muted">No events listed yet: add sourced events to data/events.json, then run <code>scripts/build_overview.py</code>.</p>`;
+    || `<p class="muted">No public events have been listed yet. Events appear here once they are found in the office's press releases or local news.</p>`;
 }).catch(() => { document.getElementById("thList").innerHTML = `<p class="muted"><span class="soon">Coming soon</span> Town halls and public events are being researched.</p>`; });
 });
 </script>

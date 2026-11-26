@@ -71,7 +71,7 @@ a.sbox{color:inherit;text-decoration:none}
     <div class="filters" id="chips" role="group" aria-label="Issues"></div>
   </section>
   <div id="issues"><p class="muted">Loading…</p></div>
-  <footer>Votes: <a href="{{voteSourceUrl}}" target="_blank" rel="noopener">{{voteSource}} roll calls</a>. Statements: <a href="{{pressUrl}}" target="_blank" rel="noopener">{{domain}}</a>. Picks live in <code>data/stance_picks.json</code>.</footer>
+  <footer>Votes: <a href="{{voteSourceUrl}}" target="_blank" rel="noopener">{{voteSource}} roll calls</a>. Statements: <a href="{{pressUrl}}" target="_blank" rel="noopener">{{domain}}</a>.</footer>
 </div>
 <script>
 TRACKER.ready.then(M => {
@@ -92,14 +92,14 @@ function israel(x){
     <p class="muted" style="margin:0;font-size:.8rem">This summarizes ${esc(M.poss)} record; it is not a judgment. Each tag describes the action itself, not ${esc(M.poss)} motives. ${esc(x.headlineWhy)} Antisemitism resolutions are not counted because they are not about Israeli policy.</p></section>`;
 }
 function voteRow(r){
-  const brk = (r.vote==="Yea"||r.vote==="Nay") && (r.dSide==="Yea"||r.dSide==="Nay") && r.vote!==r.dSide;
+  const brk = (r.vote==="Yea"||r.vote==="Nay") && ((r.pSide??r.dSide)==="Yea"||(r.pSide??r.dSide)==="Nay") && r.vote!==(r.pSide??r.dSide);
   return `<tr${brk?' class="brk"':""}>
     <td class="num">${fmtD(r.date)}</td>
     <td><div class="t"><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.bill)}</a> · ${esc(r.title)}</div>
       <div class="qq">${esc(r.q)}${brk?' · <span class="pill s-break">Breaks with party</span>':""}</div>
       ${r.note?`<div class="qq">${esc(r.note)}</div>`:""}</td>
     <td>${vpill(r.vote)}</td>
-    <td>${r.dSide?vpill(r.dSide):"—"}<div title="${r.cY!=null?'Democratic caucus, including independents who caucus with Democrats':'Democrats'}" class="qq num">${r.cY!=null?r.cY+"–"+r.cN:r.dY+"–"+r.dN}</div></td>
+    <td>${(r.pSide??r.dSide)?vpill(r.pSide??r.dSide):"—"}<div title="${(r.cY!=null&&!M.isRep)?'Democratic caucus, including independents who caucus with Democrats':M.ownPartyPl}" class="qq num">${(r.cY!=null&&!M.isRep)?r.cY+"–"+r.cN:(r.pY??r.dY)+"–"+(r.pN??r.dN)}</div></td>
     <td class="num">${esc(r.result)}<br>${r.yea}–${r.nay}</td></tr>`;
 }
 // Curated record items (stance_picks "items"): date, sentence, quote, pills, sources
@@ -108,8 +108,8 @@ function section(i){
   const items = i.items || [];
   const rec = items.length ? `<h3 class="sub">${esc(M.Poss)} record (${items.length})</h3><ul class="pp-list rec">${items.map(recRow).join("")}</ul>` : "";
   const votes = !i.rolls.length && items.length ? "" : i.rolls.length ? `<h3 class="sub">Votes (${i.rolls.length})</h3>
-    <p class="facts-line">${i.cast?`On ${i.cast} of these ${esc(M.subj)} cast a Yea or Nay, siding with most Democrats on ${i.withDems}.`:""}</p>
-    <div class="vtable"><table><thead><tr><th>Date</th><th>Bill and question</th><th>${esc(M.short)}</th><th>Most Dems</th><th>Result</th></tr></thead><tbody>${i.rolls.map(voteRow).join("")}</tbody></table></div>`
+    <p class="facts-line">${i.cast?`On ${i.cast} of these ${esc(M.subj)} cast a Yea or Nay, siding with most ${M.ownPartyPl} on ${i.withDems}.`:""}</p>
+    <div class="vtable"><table><thead><tr><th>Date</th><th>Bill and question</th><th>${esc(M.short)}</th><th>Most ${esc(M.ownPartyShort)}</th><th>Result</th></tr></thead><tbody>${i.rolls.map(voteRow).join("")}</tbody></table></div>`
     : `<h3 class="sub">Votes</h3><p class="muted">No roll calls picked for this issue yet.</p>`;
   const head = i.statements.slice(0,6), rest = i.statements.slice(6);
   const sts = !i.statements.length && items.length ? "" : `<h3 class="sub">${esc(M.Poss)} statements (${i.statements.length})</h3>
@@ -130,16 +130,17 @@ function ecard(c){
 }
 const box = (href, eb, q, v, sum, more) => `<a class="sbox flag" href="${esc(href)}"><span class="eyebrow">${esc(eb)}</span><div class="sbox-verdict"><span class="pp-q">${esc(q)}</span><span class="pp-v">${esc(v)}</span></div><p>${esc(sum)}</p><span class="sbox-more">${esc(more)} →</span></a>`;
 const get = p => fetch(p).then(r=>{ if(!r.ok) throw 0; return r.json(); }).catch(()=>null);
-Promise.all([get("data/stances.json"), get("data/cards.json"), get("data/overview.json"), get("data/establishment.json")]).then(([d,cd,ov,es])=>{
+Promise.all([get("data/stances.json"), get("data/cards.json"), get("data/overview.json"), get(M.isRep ? "data/allegiance.json" : "data/establishment.json")]).then(([d,cd,ov,es])=>{
   if(!d){ document.getElementById("issues").innerHTML = '<p class="muted"><span class="soon">Coming soon</span> Issue-by-issue stances are being researched.</p>'; document.getElementById("flagBoxes").innerHTML = '<p class="muted">Verdicts appear once the stances and cards are built.</p>'; return; }
   const C = cd ? Object.fromEntries(cd.cards.map(c=>[c.key,c])) : {};
   const home = ov && ov.tiles.find(t=>/homeless/i.test(t.q));
-  const boxes = [box("#israel-palestine","Israel and Palestine",d.israel.question,verdict(d.israel.headline),d.israel.summary,`See all ${d.israel.items.length} items`)];
+  const showIsrael = d.israel && (d.israel.items.length || !M.isRep);   // Republican trackers show it only once it has items
+  const boxes = showIsrael ? [box("#israel-palestine","Israel and Palestine",d.israel.question,verdict(d.israel.headline),d.israel.summary,`See all ${d.israel.items.length} items`)] : [];
   [["ice","Immigration enforcement"],["police","Policing and crime"],["corporate","Money and business"]].forEach(([k])=>{ const c=C[k]; if(c) boxes.push(box(`#card-${k}`,c.eb,c.q,c.v,c.short||c.rule,`See all ${c.n} items`)); });
   if(home) boxes.push(box("#homelessness","Homelessness",home.q,home.v,home.rule,"See the homelessness section"));
-  if(es) boxes.push(box("establishment.html","Party ties",es.question,verdict(es.headline),es.why,"Open the Establishment tab"));
+  if(es) boxes.push(M.isRep ? box("allegiance.html","Allegiance",es.question,verdict(es.headline),es.why,"Open the Allegiance tab") : box("establishment.html","Party ties",es.question,verdict(es.headline),es.why,"Open the Establishment tab"));
   document.getElementById("flagBoxes").innerHTML = boxes.join("");
-  document.getElementById("cards").innerHTML = israel(d.israel) + ["ice","police","corporate"].filter(k=>C[k]).map(k=>ecard(C[k])).join("");
+  document.getElementById("cards").innerHTML = (showIsrael ? israel(d.israel) : "") + ["ice","police","corporate"].filter(k=>C[k]).map(k=>ecard(C[k])).join("");
   document.getElementById("issues").innerHTML = d.issues.map(section).join("");
   document.getElementById("chips").innerHTML = d.issues.map(i=>`<a class="chip-btn" href="#${esc(i.id)}">${esc(i.name)}</a>`).join("");
   if(location.hash){ const t=document.querySelector(location.hash); if(t) t.scrollIntoView(); }

@@ -28,7 +28,7 @@ for f, u in SRC.items():
     if not os.path.exists(p) or os.path.getsize(p) < 10000:
         subprocess.run(["curl", "-s", "-L", "-A", "Mozilla/5.0", "--max-time", "120", "-o", p, u], check=True)
 
-reg = [x for x in json.load(open(os.path.join(REPO, "members.json")))["members"] if x.get("live", True)]
+reg = [x for x in json.load(open(os.path.join(REPO, "members.json")))["members"] if x.get("live", True) and x.get("hub", True)]
 tracked = {m["voteId"]: m["path"] for m in reg}
 members = []
 

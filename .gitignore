@@ -24,3 +24,5 @@ __pycache__/
 **/data/geo/raw
 **/data/billstatus
 **/data/site_raw
+# White House statement PDFs downloaded by build_trump_positions.py
+data/sap_raw/

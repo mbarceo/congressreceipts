@@ -8,7 +8,7 @@ release's full text, or the build stops. Usage: python3 -I scripts/build_stances
 import json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from config import M, ROOT
-from votes_common import roll_phrases, fill_text, is_vote_url
+from votes_common import roll_phrases, fill_text, is_vote_url, own_side, OWN_NAME
 
 def load(p, default=None):
     f = os.path.join(ROOT, p)
@@ -48,14 +48,14 @@ for iss in picks["issues"]:
         if not v: problems.append(f"{iss['id']}: roll {rid} not in votes.json"); continue
         rolls.append({"id": rid, "date": v["date"], "bill": v["bill"], "title": v["desc"] or v["q"], "q": v["q"],
                       "vote": v["member"], "result": v["result"], "yea": v["yea"], "nay": v["nay"],
-                      "dY": v["dY"], "dN": v["dN"], "rY": v["rY"], "rN": v["rN"], "dSide": v["dSide"], **{k: v[k] for k in ("cY", "cN") if k in v},
+                      "dY": v["dY"], "dN": v["dN"], "rY": v["rY"], "rN": v["rN"], "dSide": v["dSide"], "pY": v.get("pY", v["dY"]), "pN": v.get("pN", v["dN"]), "pSide": own_side(v), **{k: v[k] for k in ("cY", "cN") if k in v},
                       "url": clerk(rid), "note": iss.get("notes", {}).get(rid)})
     rolls.sort(key=lambda r: r["date"], reverse=True)
     sts = {}
     if iss.get("statementRx"):
         rx = re.compile(iss["statementRx"], re.I)
         for s in english:
-            if rx.search(s["title"]): sts[s["u"]] = {"date": s["date"], "title": s["title"], "kind": s["kind"], "u": s["u"]}
+            if s["date"] >= iss.get("since", "") and rx.search(s["title"]): sts[s["u"]] = {"date": s["date"], "title": s["title"], "kind": s["kind"], "u": s["u"]}
     for sp in iss.get("statementPicks", []):
         s = pick_statement(sp["u"])
         if not s: continue
@@ -81,13 +81,13 @@ for iss in picks["issues"]:
         if it.get("q"): x["q"] = it["q"]
         for f in ("approx", "unv", "none"):
             if it.get(f): x[f] = it[f]
-        if it.get("brk") or (vs and all(v["member"] in ("Yea", "Nay") and v["dSide"] in ("Yea", "Nay") and v["member"] != v["dSide"] for v in vs)): x["brk"] = 1
+        if it.get("brk") or (vs and all(v["member"] in ("Yea", "Nay") and own_side(v) in ("Yea", "Nay") and v["member"] != own_side(v) for v in vs)): x["brk"] = 1
         items.append(x)
     items.sort(key=lambda x: x["d"], reverse=True)
     cast = [r for r in rolls if r["vote"] in ("Yea", "Nay")]
     out.append({"id": iss["id"], "name": iss["name"], "intro": iss["intro"], **({"items": items} if items else {}), "rolls": rolls, "statements": sts,
-                "withDems": sum(1 for r in cast if r["vote"] == r["dSide"]), "cast": len(cast),
-                "breaks": sum(1 for r in cast if r["dSide"] in ("Yea", "Nay") and r["vote"] != r["dSide"])})
+                "withDems": sum(1 for r in cast if r["vote"] == r["pSide"]), "cast": len(cast),   # withDems = with the member's own party (key name kept)
+                "breaks": sum(1 for r in cast if r["pSide"] in ("Yea", "Nay") and r["vote"] != r["pSide"])})
     print(f"{iss['name']}: {len(rolls)} votes ({out[-1]['breaks']} break with party), {len(sts)} statements")
 
 # ---- Israel / Palestine card: every item sourced; her vote filled from the Clerk record ----
