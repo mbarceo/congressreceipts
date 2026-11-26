@@ -1,5 +1,5 @@
 {
- "_note": "Every member on Congress Receipts. path = folder and URL (congressreceipts.org/<path>/). format: 'shared' members use site/ and scripts/ (published by scripts/publish.py); 'legacy' members keep their own pages and scripts until converted. chamber and voteId (House: bioguide; Senate: LIS id) feed the hub. eventsResearched: false until town halls and events have been collected.",
+ "_note": "Every member on Congress Receipts. path = folder and URL (congressreceipts.org/<path>/). format: 'shared' members use site/ and scripts/ (published by scripts/publish.py); 'legacy' members keep their own pages and scripts until converted. chamber and voteId (House: bioguide; Senate: LIS id) feed the hub. eventsResearched: false until town halls and events have been collected. live: false keeps a member out of every build and publish (pages, attendance, leaders, directory) until their tracker has passed run_checks; omit it (or true) for a finished tracker.",
  "members": [
   {
    "path": "ca/rivas",
@@ -55,7 +55,8 @@
    "voteId": "G000598",
    "format": "shared",
    "portrait": "assets/portrait.jpg",
-   "eventsResearched": false
+   "eventsResearched": false,
+   "live": false
   },
   {
    "path": "md/van-hollen",
@@ -66,7 +67,8 @@
    "voteId": "S390",
    "format": "shared",
    "portrait": "assets/portrait.jpg",
-   "eventsResearched": false
+   "eventsResearched": false,
+   "live": false
   }
  ]
 }

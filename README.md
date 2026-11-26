@@ -25,6 +25,8 @@ A member's URL is its folder: `congressreceipts.org/ca/padilla/`.
 - Add a member: scaffold with `scripts/new_tracker.py --out ca/<last>`, delete the copied `scripts/` and page
   files from the new folder, add it to `members.json` with format "shared", then follow the build steps.
 
+Unfinished members: set `"live": false` on a member in `members.json` and `publish.py`, the attendance, leaders and directory builds all skip them. Remove the flag once `./tr <member> run_checks` passes.
+
 API keys (FEC, congress.gov) are read from the macOS Keychain by `./tr`; they are never stored in this repo.
 
 ## Formats

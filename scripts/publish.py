@@ -39,6 +39,7 @@ members = json.load(open(os.path.join(REPO, "members.json")))["members"]
 only = sys.argv[1:] or None
 for mem in members:
     if only and mem["path"] not in only: continue
+    if mem.get("live") is False: print(f"{mem['path']}: skipped (live: false in members.json)"); continue
     dst = os.path.join(REPO, mem["path"]); base = "../" * mem["path"].count("/") + "../"
     if mem.get("format") != "shared":
         # Legacy members keep their own pages; they only get the shared header added in place
