@@ -2,7 +2,7 @@
 
 Saves GeoJSON to data/geo/raw/. Usage: python3 -I scripts/fetch_geo.py
 """
-import json, os, sys, urllib.parse, urllib.request
+import json, os, sys, time, urllib.parse, urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from config import CFG, M
 
@@ -17,10 +17,18 @@ def get(name, service, layer, where="1=1", bbox=None, offset="0.0003"):
     if bbox:
         q.update({"geometry": bbox, "geometryType": "esriGeometryEnvelope", "inSR": "4326",
                   "spatialRel": "esriSpatialRelIntersects"})
-    url = f"{BASE}{service}/MapServer/{layer}/query?" + urllib.parse.urlencode(q)
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-    data = json.load(urllib.request.urlopen(req, timeout=60))
-    if "features" not in data: raise SystemExit(f"{name}: TIGERweb error {data.get('error')}")
+    # TIGERweb caps each response (exceededTransferLimit); page through with resultOffset so a large map frame
+    # (e.g. a district with islands or two distant areas) does not silently lose cities. Two seconds between pages.
+    feats, offset = [], 0
+    while True:
+        url = f"{BASE}{service}/MapServer/{layer}/query?" + urllib.parse.urlencode({**q, "resultOffset": offset})
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        data = json.load(urllib.request.urlopen(req, timeout=60))
+        if "features" not in data: raise SystemExit(f"{name}: TIGERweb error {data.get('error')}")
+        feats += data["features"]
+        if not data.get("exceededTransferLimit") or not data["features"]: break
+        offset += len(data["features"]); time.sleep(2)
+    data["features"] = feats
     with open(os.path.join(OUT, name + ".geojson"), "w") as f:
         json.dump(data, f)
     print(name, len(data.get("features", [])), "features", data.get("error", ""))
