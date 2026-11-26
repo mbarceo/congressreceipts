@@ -3358,6 +3358,785 @@
    "townHalls": 0,
    "eventsResearched": false,
    "events": []
+  },
+  {
+   "name": "Robert Garcia",
+   "critical": [
+    {
+     "id": "2025-012",
+     "date": "2025-01-14",
+     "topic": "LGBTQ+ rights",
+     "bill": "H R 28",
+     "desc": "Protection of Women and Girls in Sports Act",
+     "q": "On Passage",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2025012"
+    },
+    {
+     "id": "2025-023",
+     "date": "2025-01-22",
+     "topic": "Immigration and ICE",
+     "bill": "S 5",
+     "desc": "Laken Riley Act",
+     "q": "On Passage",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2025023"
+    },
+    {
+     "id": "2025-071",
+     "date": "2025-03-11",
+     "topic": "Money and business",
+     "bill": "H J RES 25",
+     "desc": "Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Internal Revenue Service relating to “Gross Proceeds Reporting by Brokers That Regu",
+     "q": "On Passage",
+     "vote": "Yea",
+     "dSide": "Nay",
+     "status": "broke",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2025071"
+    },
+    {
+     "id": "2025-096",
+     "date": "2025-04-09",
+     "topic": "Money and business",
+     "bill": "S J RES 18",
+     "desc": "Disapproving the rule submitted by the Bureau of Consumer Financial Protection relating to “Overdraft Lending: Very Large Financial Institutions”",
+     "q": "On Passage",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2025096"
+    },
+    {
+     "id": "2025-095",
+     "date": "2025-04-09",
+     "topic": "Money and business",
+     "bill": "S J RES 28",
+     "desc": "Disappoving the rule submitted by the Bureau of Consumer Financial Protection relating to “Defining Larger Participants of a Market for General-Use Digital Consumer Payment Applications”",
+     "q": "On Passage",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2025095"
+    },
+    {
+     "id": "2025-171",
+     "date": "2025-06-12",
+     "topic": "Immigration and ICE",
+     "bill": "H R 2056",
+     "desc": "District of Columbia Federal Immigration Compliance Act",
+     "q": "On Passage",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2025171"
+    },
+    {
+     "id": "2025-166",
+     "date": "2025-06-12",
+     "topic": "Public safety",
+     "bill": "S 331",
+     "desc": "HALT Fentanyl Act",
+     "q": "On Passage",
+     "vote": "Nay",
+     "dSide": "Yea",
+     "status": "broke",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2025166"
+    },
+    {
+     "id": "2025-175",
+     "date": "2025-06-24",
+     "topic": "Oversight of the Trump administration",
+     "bill": "H RES 537",
+     "desc": "Impeaching Donald J. Trump, President of the United States, for high crimes and misdemeanors",
+     "q": "On Motion to Table",
+     "vote": "Not Voting",
+     "dSide": "Yea",
+     "status": "missed",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2025175"
+    },
+    {
+     "id": "2025-190",
+     "date": "2025-07-03",
+     "topic": "Cost of living, housing and tariffs",
+     "bill": "H R 1",
+     "desc": "One Big Beautiful Bill Act",
+     "q": "On Motion to Concur in the Senate Amendment",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2025190"
+    },
+    {
+     "id": "2025-200",
+     "date": "2025-07-17",
+     "topic": "Money and business",
+     "bill": "S 1582",
+     "desc": "GENIUS Act",
+     "q": "On Passage",
+     "vote": "Yea",
+     "dSide": "Nay",
+     "status": "broke",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2025200"
+    },
+    {
+     "id": "2025-199",
+     "date": "2025-07-17",
+     "topic": "Money and business",
+     "bill": "H R 3633",
+     "desc": "CLARITY Act",
+     "q": "On Passage",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2025199"
+    },
+    {
+     "id": "2025-281",
+     "date": "2025-09-19",
+     "topic": "Government funding and shutdowns",
+     "bill": "H R 5371",
+     "desc": "Continuing Appropriations and Extensions Act, 2026",
+     "q": "On Passage",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2025281"
+    },
+    {
+     "id": "2025-285",
+     "date": "2025-11-12",
+     "topic": "Government funding and shutdowns",
+     "bill": "H R 5371",
+     "desc": "Continuing Appropriations and Extensions Act, 2026",
+     "q": "On Motion to Concur in the Senate Amendment",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2025285"
+    },
+    {
+     "id": "2025-289",
+     "date": "2025-11-18",
+     "topic": "Epstein files",
+     "bill": "H R 4405",
+     "desc": "Epstein Files Transparency Act",
+     "q": "On Motion to Suspend the Rules and Pass",
+     "vote": "Yea",
+     "dSide": "Yea",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2025289"
+    },
+    {
+     "id": "2025-297",
+     "date": "2025-11-18",
+     "topic": "Epstein files",
+     "bill": "H RES 888",
+     "desc": "Censuring and condemning Delegate Stacey Plaskett and removing her from the House Permanent Select Committee on Intelligence for conduct that reflects discreditably on the House of Representatives for",
+     "q": "On Agreeing to the Resolution",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Failed",
+     "url": "https://clerk.house.gov/Votes/2025297"
+    },
+    {
+     "id": "2025-322",
+     "date": "2025-12-11",
+     "topic": "Oversight of the Trump administration",
+     "bill": "H RES 939",
+     "desc": "Impeaching Donald John Trump, President of the United States for high crimes and misdemeanors",
+     "q": "On Motion to Table",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2025322"
+    },
+    {
+     "id": "2025-349",
+     "date": "2025-12-17",
+     "topic": "Health care",
+     "bill": "H R 6703",
+     "desc": "Lower Health Care Premiums for All Americans Act",
+     "q": "On Passage",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2025349"
+    },
+    {
+     "id": "2025-362",
+     "date": "2025-12-18",
+     "topic": "Health care",
+     "bill": "H R 498",
+     "desc": "Do No Harm in Medicaid Act",
+     "q": "On Passage",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2025362"
+    },
+    {
+     "id": "2026-028",
+     "date": "2026-01-14",
+     "topic": "Government funding and shutdowns",
+     "bill": "H R 7006",
+     "desc": "Financial Services and General Government and National Security, Department of State, and Related Programs Appropriations Act, 2026",
+     "q": "On Passage",
+     "vote": "Nay",
+     "dSide": "Yea",
+     "status": "broke",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2026028"
+    },
+    {
+     "id": "2026-045",
+     "date": "2026-01-22",
+     "topic": "Government funding and shutdowns",
+     "bill": "H R 7148",
+     "desc": "Consolidated Appropriations Act, 2026",
+     "q": "On Passage",
+     "vote": "Nay",
+     "dSide": "Yea",
+     "status": "broke",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2026045"
+    },
+    {
+     "id": "2026-053",
+     "date": "2026-02-03",
+     "topic": "Government funding and shutdowns",
+     "bill": "H R 7148",
+     "desc": "Consolidated Appropriations Act, 2026",
+     "q": "On Motion to Concur in the Senate Amendments",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2026053"
+    },
+    {
+     "id": "2026-087",
+     "date": "2026-03-05",
+     "topic": "Immigration and ICE",
+     "bill": "H R 7744",
+     "desc": "Department of Homeland Security Appropriations Act, 2026",
+     "q": "On Passage",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2026087"
+    },
+    {
+     "id": "2026-094",
+     "date": "2026-03-18",
+     "topic": "Immigration and ICE",
+     "bill": "H R 1958",
+     "desc": "Deporting Fraudsters Act",
+     "q": "On Passage",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2026094"
+    },
+    {
+     "id": "2026-102",
+     "date": "2026-03-26",
+     "topic": "Immigration and ICE",
+     "bill": "H RES 1128",
+     "desc": "Expressing the support of the House of Representatives for the Department of Homeland Security",
+     "q": "On Agreeing to the Resolution, as Amended",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2026102"
+    },
+    {
+     "id": "2026-120",
+     "date": "2026-04-16",
+     "topic": "Immigration and ICE",
+     "bill": "H R 1689",
+     "desc": "To require the Secretary of Homeland Security to designate Haiti for temporary protected status",
+     "q": "On Passage",
+     "vote": "Yea",
+     "dSide": "Yea",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2026120"
+    },
+    {
+     "id": "2026-165",
+     "date": "2026-05-13",
+     "topic": "Public safety",
+     "bill": "H CON RES 96",
+     "desc": "Expressing support for law enforcement officers",
+     "q": "On Agreeing to the Resolution",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2026165"
+    },
+    {
+     "id": "2026-171",
+     "date": "2026-05-14",
+     "topic": "Public safety",
+     "bill": "H R 5625",
+     "desc": "Cashless Bail Reporting Act",
+     "q": "On Passage",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2026171"
+    },
+    {
+     "id": "2026-190",
+     "date": "2026-05-21",
+     "topic": "Guns and public safety",
+     "bill": "H R 1041",
+     "desc": "Veterans 2nd Amendment Protection Act",
+     "q": "On Passage",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2026190"
+    },
+    {
+     "id": "2026-216",
+     "date": "2026-06-09",
+     "topic": "Money and business",
+     "bill": "H R 5408",
+     "desc": "Faster Labor Contracts Act",
+     "q": "On Passage",
+     "vote": "Yea",
+     "dSide": "Yea",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2026216"
+    },
+    {
+     "id": "2026-224",
+     "date": "2026-06-23",
+     "topic": "Cost of living, housing and tariffs",
+     "bill": "H R 6644",
+     "desc": "Housing for the 21st Century Act",
+     "q": "On Motion to Suspend the Rules and Concur in Senate Adt to House Adt to Senate Adt",
+     "vote": "Yea",
+     "dSide": "Yea",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2026224"
+    },
+    {
+     "id": "2026-233",
+     "date": "2026-06-30",
+     "topic": "Epstein files",
+     "bill": "H RES 1399",
+     "desc": "Directing the Committee on Ethics to preserve and publicly release records relating to monetary settlements involving acts of sexual harassment",
+     "q": "On Agreeing to the Resolution",
+     "vote": "Yea",
+     "dSide": "Yea",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2026233"
+    },
+    {
+     "id": "2026-243",
+     "date": "2026-07-15",
+     "topic": "Israel and Palestine",
+     "bill": "H R 8595",
+     "desc": "",
+     "q": "On Agreeing to the Amendment",
+     "vote": "Yea",
+     "dSide": "Yea",
+     "status": "with",
+     "result": "Failed",
+     "url": "https://clerk.house.gov/Votes/2026243"
+    },
+    {
+     "id": "2026-272",
+     "date": "2026-07-21",
+     "topic": "Government funding and shutdowns",
+     "bill": "H R 9770",
+     "desc": "Making continuing appropriations for fiscal year 2027, and for other purposes",
+     "q": "On Passage",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2026272"
+    },
+    {
+     "id": "2026-298",
+     "date": "2026-09-15",
+     "topic": "Oversight of the Trump administration",
+     "bill": "H RES 1486",
+     "desc": "Impeaching Donald John Trump, President of the United States, for high crimes and misdemeanors",
+     "q": "On Motion to Table",
+     "vote": "Nay",
+     "dSide": "Nay",
+     "status": "with",
+     "result": "Passed",
+     "url": "https://clerk.house.gov/Votes/2026298"
+    }
+   ],
+   "party": "D",
+   "seat": "CA-42",
+   "chamber": "house",
+   "url": "ca/garcia/",
+   "portrait": "ca/garcia/assets/portrait.jpg",
+   "rolls": 689,
+   "missed": 40,
+   "present": 2,
+   "rate": 5.8,
+   "fewer": 364,
+   "missedVotes": [
+    {
+     "date": "2026-08-31",
+     "bill": "S 307",
+     "q": "On Motion to Suspend the Rules and Pass",
+     "desc": "Prison Staff Safety Enhancement Act",
+     "url": "https://clerk.house.gov/Votes/2026284"
+    },
+    {
+     "date": "2026-08-31",
+     "bill": "S 32",
+     "q": "On Motion to Suspend the Rules and Pass",
+     "desc": "Local Access to Courts Act",
+     "url": "https://clerk.house.gov/Votes/2026285"
+    },
+    {
+     "date": "2026-07-20",
+     "bill": "H R 4541",
+     "q": "On Motion to Suspend the Rules and Pass, as Amended",
+     "desc": "EARLY Act Reauthorization",
+     "url": "https://clerk.house.gov/Votes/2026250"
+    },
+    {
+     "date": "2026-07-20",
+     "bill": "H R 8823",
+     "q": "On Motion to Suspend the Rules and Pass, as Amended",
+     "desc": "Putting Patients First by Strengthening Provider Accountability in FECA Act",
+     "url": "https://clerk.house.gov/Votes/2026251"
+    },
+    {
+     "date": "2026-07-13",
+     "bill": "H R 3106",
+     "q": "On Motion to Suspend the Rules and Pass",
+     "desc": "Weatherizing Infrastructure in the North and Terrorism Emergency Readiness Act",
+     "url": "https://clerk.house.gov/Votes/2026234"
+    },
+    {
+     "date": "2026-07-13",
+     "bill": "H R 8897",
+     "q": "On Motion to Suspend the Rules and Pass, as Amended",
+     "desc": "Improving Travel for American Families Act",
+     "url": "https://clerk.house.gov/Votes/2026235"
+    },
+    {
+     "date": "2026-06-29",
+     "bill": "H R 7757",
+     "q": "On Motion to Suspend the Rules and Pass, as Amended",
+     "desc": "KIDS Act",
+     "url": "https://clerk.house.gov/Votes/2026228"
+    },
+    {
+     "date": "2026-06-29",
+     "bill": "H R 7128",
+     "q": "On Motion to Suspend the Rules and Pass, as Amended",
+     "desc": "TRIA Program Reauthorization Act",
+     "url": "https://clerk.house.gov/Votes/2026229"
+    },
+    {
+     "date": "2026-04-30",
+     "bill": "S 4465",
+     "q": "On Motion to Suspend the Rules and Pass",
+     "desc": "To amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978, and for other purposes",
+     "url": "https://clerk.house.gov/Votes/2026155"
+    },
+    {
+     "date": "2026-04-27",
+     "bill": "H R 7959",
+     "q": "On Motion to Suspend the Rules and Pass, as Amended",
+     "desc": "IRS Whistleblower Program Improvement Act",
+     "url": "https://clerk.house.gov/Votes/2026138"
+    },
+    {
+     "date": "2026-04-27",
+     "bill": "H R 227",
+     "q": "On Motion to Suspend the Rules and Pass, as Amended",
+     "desc": "Clergy Act",
+     "url": "https://clerk.house.gov/Votes/2026139"
+    },
+    {
+     "date": "2026-03-17",
+     "bill": "H R 4294",
+     "q": "On Motion to Suspend the Rules and Pass, as Amended",
+     "desc": "MAWS Act",
+     "url": "https://clerk.house.gov/Votes/2026088"
+    },
+    {
+     "date": "2026-03-17",
+     "bill": "S 3971",
+     "q": "On Motion to Suspend the Rules and Pass",
+     "desc": "Small Business Innovation and Economic Security Act",
+     "url": "https://clerk.house.gov/Votes/2026089"
+    },
+    {
+     "date": "2026-03-17",
+     "bill": "H RES 1115",
+     "q": "On Ordering the Previous Question",
+     "desc": "Providing for consideration of the bill (H.R. 556) Protecting Access for Hunters and Anglers Act; providing for consideration of the bill (H.R. 1958) Deporting Fraudsters Act; and ",
+     "url": "https://clerk.house.gov/Votes/2026090"
+    },
+    {
+     "date": "2026-03-17",
+     "bill": "H RES 1115",
+     "q": "On Agreeing to the Resolution",
+     "desc": "Providing for consideration of the bill (H.R. 556) Protecting Access for Hunters and Anglers Act; providing for consideration of the bill (H.R. 1958) Deporting Fraudsters Act; and ",
+     "url": "https://clerk.house.gov/Votes/2026091"
+    },
+    {
+     "date": "2026-02-09",
+     "bill": "H R 6644",
+     "q": "On Motion to Suspend the Rules and Pass, as Amended",
+     "desc": "Housing for the 21st Century Act",
+     "url": "https://clerk.house.gov/Votes/2026057"
+    },
+    {
+     "date": "2026-02-09",
+     "bill": "H R 1531",
+     "q": "On Motion to Suspend the Rules and Pass, as Amended",
+     "desc": "PROTECT Taiwan Act",
+     "url": "https://clerk.house.gov/Votes/2026058"
+    },
+    {
+     "date": "2025-12-01",
+     "bill": "H R 5348",
+     "q": "On Motion to Suspend the Rules and Pass, as Amended",
+     "desc": "Social Security Child Protection Act",
+     "url": "https://clerk.house.gov/Votes/2025306"
+    },
+    {
+     "date": "2025-12-01",
+     "bill": "H R 4423",
+     "q": "On Motion to Suspend the Rules and Pass, as Amended",
+     "desc": "No New Burma Funds Act",
+     "url": "https://clerk.house.gov/Votes/2025307"
+    },
+    {
+     "date": "2025-11-21",
+     "bill": "H CON RES 58",
+     "q": "On Agreeing to the Resolution",
+     "desc": "Denouncing the horrors of socialism",
+     "url": "https://clerk.house.gov/Votes/2025305"
+    },
+    {
+     "date": "2025-09-19",
+     "bill": "H RES 719",
+     "q": "On Agreeing to the Resolution",
+     "desc": "Honoring the life and legacy of Charles “Charlie” James Kirk",
+     "url": "https://clerk.house.gov/Votes/2025282"
+    },
+    {
+     "date": "2025-07-14",
+     "bill": "H R 1709",
+     "q": "On Motion to Suspend the Rules and Pass",
+     "desc": "Understanding Cybersecurity of Mobile Networks Act",
+     "url": "https://clerk.house.gov/Votes/2025191"
+    },
+    {
+     "date": "2025-07-14",
+     "bill": "H R 1770",
+     "q": "On Motion to Suspend the Rules and Pass",
+     "desc": "Consumer Safety Technology Act",
+     "url": "https://clerk.house.gov/Votes/2025192"
+    },
+    {
+     "date": "2025-07-14",
+     "bill": "S 1596",
+     "q": "On Motion to Suspend the Rules and Pass",
+     "desc": "Jocelyn Nungaray National Wildlife Refuge Act",
+     "url": "https://clerk.house.gov/Votes/2025193"
+    },
+    {
+     "date": "2025-06-24",
+     "bill": "H RES 537",
+     "q": "On Motion to Table",
+     "desc": "Impeaching Donald J. Trump, President of the United States, for high crimes and misdemeanors",
+     "url": "https://clerk.house.gov/Votes/2025175"
+    },
+    {
+     "date": "2025-05-19",
+     "bill": "H R 1263",
+     "q": "On Motion to Suspend the Rules and Pass",
+     "desc": "Strengthening the Quad Act",
+     "url": "https://clerk.house.gov/Votes/2025132"
+    },
+    {
+     "date": "2025-05-19",
+     "bill": "H R 1286",
+     "q": "On Motion to Suspend the Rules and Pass, as Amended",
+     "desc": "Simplifying Forms for Veterans Claims Act",
+     "url": "https://clerk.house.gov/Votes/2025133"
+    },
+    {
+     "date": "2025-03-31",
+     "bill": "H R 517",
+     "q": "On Motion to Suspend the Rules and Pass, as Amended",
+     "desc": "Filing Relief for Natural Disasters Act",
+     "url": "https://clerk.house.gov/Votes/2025084"
+    },
+    {
+     "date": "2025-03-31",
+     "bill": "H R 997",
+     "q": "On Motion to Suspend the Rules and Pass, as Amended",
+     "desc": "National Taxpayer Advocate Enhancement Act",
+     "url": "https://clerk.house.gov/Votes/2025085"
+    },
+    {
+     "date": "2025-03-27",
+     "bill": "H J RES 24",
+     "q": "On Passage",
+     "desc": "Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Department of Energy relating to “Energy Conservation Program: ",
+     "url": "https://clerk.house.gov/Votes/2025077"
+    },
+    {
+     "date": "2025-03-27",
+     "bill": "H J RES 75",
+     "q": "On Passage",
+     "desc": "Providing for congressional disapproval of the rule submitted by the Office of Energy Efficiency and Renewable Energy, Department of Energy relating to “Energy Conservation Program",
+     "url": "https://clerk.house.gov/Votes/2025078"
+    },
+    {
+     "date": "2025-03-27",
+     "bill": "H R 1048",
+     "q": "On Agreeing to the Amendment",
+     "desc": "",
+     "url": "https://clerk.house.gov/Votes/2025079"
+    },
+    {
+     "date": "2025-03-27",
+     "bill": "H R 1048",
+     "q": "On Agreeing to the Amendment",
+     "desc": "",
+     "url": "https://clerk.house.gov/Votes/2025080"
+    },
+    {
+     "date": "2025-03-27",
+     "bill": "H R 1048",
+     "q": "On Agreeing to the Amendment",
+     "desc": "",
+     "url": "https://clerk.house.gov/Votes/2025081"
+    },
+    {
+     "date": "2025-03-27",
+     "bill": "H R 1048",
+     "q": "On Agreeing to the Amendment",
+     "desc": "",
+     "url": "https://clerk.house.gov/Votes/2025082"
+    },
+    {
+     "date": "2025-03-27",
+     "bill": "H R 1048",
+     "q": "On Passage",
+     "desc": "DETERRENT Act",
+     "url": "https://clerk.house.gov/Votes/2025083"
+    },
+    {
+     "date": "2025-03-10",
+     "bill": "H R 495",
+     "q": "On Motion to Suspend the Rules and Pass",
+     "desc": "Subterranean Border Defense Act",
+     "url": "https://clerk.house.gov/Votes/2025063"
+    },
+    {
+     "date": "2025-03-10",
+     "bill": "H R 901",
+     "q": "On Motion to Suspend the Rules and Pass",
+     "desc": "Research Security and Accountability in DHS Act",
+     "url": "https://clerk.house.gov/Votes/2025064"
+    },
+    {
+     "date": "2025-03-10",
+     "bill": "H R 993",
+     "q": "On Motion to Suspend the Rules and Pass",
+     "desc": "Emerging Innovative Border Technologies Act",
+     "url": "https://clerk.house.gov/Votes/2025065"
+    },
+    {
+     "date": "2025-02-10",
+     "bill": "H R 736",
+     "q": "On Motion to Suspend the Rules and Pass",
+     "desc": "Protect Small Businesses from Excessive Paperwork Act",
+     "url": "https://clerk.house.gov/Votes/2025037"
+    }
+   ],
+   "townHalls": 0,
+   "eventsResearched": false,
+   "events": [
+    {
+     "date": "2026-04-24",
+     "type": "Groundbreaking",
+     "title": "Long Beach Airport terminal improvements groundbreaking",
+     "city": "Long Beach, CA",
+     "role": "",
+     "approx": "",
+     "source": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-joins-long-beach-airport-groundbreaking-ceremony"
+    },
+    {
+     "date": "2026-03-31",
+     "type": "Roundtable",
+     "title": "Roundtable with Epstein survivor Annie Farmer",
+     "city": "Long Beach, CA",
+     "role": "hosted",
+     "approx": "",
+     "source": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-statement-following-roundtable-discussion-epstein"
+    },
+    {
+     "date": "2025-09-23",
+     "type": "Groundbreaking",
+     "title": "Studebaker Road Transformation Project groundbreaking",
+     "city": "Long Beach, CA",
+     "role": "",
+     "approx": "",
+     "source": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-long-beach-leaders-break-ground-studebaker-road"
+    },
+    {
+     "date": "2025-08-20",
+     "type": "Ceremony",
+     "title": "Ceremonial swearing-in as Oversight Committee Ranking Member",
+     "city": "Long Beach, CA",
+     "role": "",
+     "approx": "",
+     "source": "https://robertgarcia.house.gov/media/press-releases/vice-president-kamala-harris-swears-congressman-robert-garcia-ranking-member"
+    }
+   ]
   }
  ]
 }
