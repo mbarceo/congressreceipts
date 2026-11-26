@@ -108,6 +108,19 @@
    "portrait": "assets/portrait.jpg",
    "eventsResearched": false,
    "hub": false
+  },
+  {
+   "path": "ca/valadao",
+   "name": "David G. Valadao",
+   "party": "R",
+   "seat": "CA-22",
+   "chamber": "house",
+   "voteId": "V000129",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
