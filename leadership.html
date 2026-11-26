@@ -11,6 +11,9 @@
 <link rel="stylesheet" href="hub.css?v=91a2553f">
 <style>
 :root{--sc:#f0a65c;--vh:#6ea6e6;--ag:#c99ae6}
+/* Jump-to-section bar (styles from site.css), placed under the sticky site header */
+.topbar{justify-content:flex-end;top:var(--crh,60px)}
+section,#race{scroll-margin-top:calc(var(--crh,60px) + 56px)}
 /* Tally: the count itself is the picture */
 .race{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .cand{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:8px;padding:16px 18px 14px;display:flex;flex-direction:column;gap:10px;min-width:0}
@@ -92,6 +95,7 @@
 </head>
 <body data-page="leadership">
 <div class="wrap hub">
+  <div class="topbar" id="jumpbar"><details class="jump" id="jump"><summary>Jump to section</summary><div class="jump-list" id="jumplist" role="list"></div></details></div>
   <header>
     <span class="eyebrow">Leadership races · 120th Congress</span>
     <h1>Who will lead Senate Democrats?</h1>
@@ -121,13 +125,13 @@
     <ul class="dis" id="dis"></ul>
   </section>
 
-  <section>
+  <section id="ledger">
     <div class="sec-head"><span class="eyebrow">Every senator</span><h2>Where each one stands, and the proof</h2></div>
     <div class="filters" id="filters" role="group" aria-label="Filter by position"></div>
     <div class="tiles" id="rows"></div>
   </section>
 
-  <section>
+  <section id="method">
     <div class="sec-head"><span class="eyebrow">How this page counts</span><h2>The rules behind the numbers</h2></div>
     <div class="defs">
       <div><b>Only public statements</b>A senator counts for a candidate only if they said so in public, or put out a statement. A report that someone is "leaning" does not count.</div>
@@ -263,7 +267,32 @@ fetch("data/leadership_senate.json").then(r => r.json()).then(D => {
     apply("all"); const tr = $("r-" + s.dataset.s); if (!tr) return;
     tr.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center"});
     tr.classList.add("hit"); setTimeout(() => tr.classList.remove("hit"), 1600); });
+  window.buildJump && buildJump();
 }).catch(() => { $("rows").innerHTML = '<p class="muted">The count didn\'t load. Reload the page to try again.</p>'; });
+
+// Jump to section: same menu as the member pages (styles in site.css)
+(() => {
+  const menu = $("jump"), list = $("jumplist"), reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const head = document.querySelector(".cr-head");
+  const off = () => document.documentElement.style.setProperty("--crh", (head ? head.offsetHeight : 60) + "px");
+  off(); addEventListener("resize", off);
+  window.buildJump = () => {
+    const items = [{el: $("race"), e: "Tally", t: "The count"}].concat([...document.querySelectorAll("section")]
+      .filter(x => x.offsetParent !== null && x.querySelector("h2"))
+      .map(x => ({el: x, e: (x.querySelector(".eyebrow") || {}).textContent, t: x.querySelector("h2").textContent})));
+    list.innerHTML = "";
+    items.forEach(({el, e, t}) => { const b = document.createElement("button");
+      b.type = "button"; b.setAttribute("role", "listitem");
+      b.innerHTML = (e ? '<span class="jl-e"></span>' : "") + '<span class="jl-t"></span>';
+      if (e) b.querySelector(".jl-e").textContent = e;
+      b.querySelector(".jl-t").textContent = t;
+      b.addEventListener("click", () => { menu.open = false; el.scrollIntoView({behavior: reduce ? "auto" : "smooth", block: "start"}); });
+      list.appendChild(b); });
+  };
+  document.addEventListener("click", e => { if (menu.open && !menu.contains(e.target)) menu.open = false; });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") menu.open = false; });
+  buildJump();
+})();
 
 // Back-to-top button: same as the member pages
 (() => { const top = document.createElement("button");
