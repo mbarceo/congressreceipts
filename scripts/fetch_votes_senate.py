@@ -4,7 +4,7 @@ Reads the per-session vote menus (roll_call_lists/vote_menu_<congress>_<session>
 exist, then fetches each vote's XML. Files already downloaded are skipped, so reruns only pick up new votes.
 Usage: python3 -I scripts/fetch_votes_senate.py
 """
-import os, sys, time, urllib.request
+import os, sys, time, urllib.error, urllib.request
 import xml.etree.ElementTree as ET
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from config import M, ROOT, rollcalls_dir
@@ -18,6 +18,11 @@ def get(url):
     for attempt in range(3):
         try:
             return urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=60).read()
+        except urllib.error.HTTPError as e:
+            if e.code in (403, 429):    # blocked or rate limited: stop, never retry around it
+                sys.exit(f"Blocked (HTTP {e.code}) at {url}: stopping. Wait a few hours, then rerun; downloaded files are kept.")
+            if attempt == 2: raise
+            time.sleep(3)
         except Exception as e:
             if attempt == 2: raise
             time.sleep(3)
@@ -38,7 +43,7 @@ for session in (1, 2):
         if b"<roll_call_vote" not in body[:400]:
             print(f"  skipped {year}-{n}: not a roll-call file"); continue
         open(path, "wb").write(body); new += 1
-        time.sleep(0.25)
+        time.sleep(3)
     total += len(numbers)
     print(f"{year} (session {session}): {len(numbers)} roll calls listed, {new} downloaded now")
 print(total, "Senate roll calls in this Congress")
