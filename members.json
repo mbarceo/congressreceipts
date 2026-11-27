@@ -2812,6 +2812,32 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "nh/goodlander",
+   "name": "Maggie Goodlander",
+   "party": "D",
+   "seat": "NH-2",
+   "chamber": "house",
+   "voteId": "G000604",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "nh/hassan",
+   "name": "Margaret Wood Hassan",
+   "party": "D",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S388",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
