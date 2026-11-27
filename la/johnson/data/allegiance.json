@@ -18,8 +18,8 @@
    "Jan. 6, 2021 objections to the 2020 electoral count voted for (Arizona and Pennsylvania)"
   ],
   [
-   "99.6%",
-   "Same vote as Steve Scalise on votes where both voted Yea or Nay"
+   "N/A",
+   "Same vote as a party leader: not applicable, since Johnson is the Speaker"
   ],
   [
    "99.8%",
@@ -36,10 +36,11 @@
  ],
  "leader": {
   "name": "Steve Scalise",
+  "na": true,
   "title": "House Majority Leader",
-  "agree": "99.6",
-  "both": 527,
-  "splits": 2,
+  "agree": null,
+  "both": 0,
+  "splits": 0,
   "unity": 99.8,
   "rank": 1,
   "tied": 0,
@@ -126,28 +127,7 @@
     "unity": 93.6
    }
   ],
-  "diffs": [
-   {
-    "id": "2025-195",
-    "date": "2025-07-15",
-    "bill": "H RES 580",
-    "q": "On Agreeing to the Resolution",
-    "title": "Providing for consideration of the bills (H.R. 4016) Department of Defense Appropriations Act, 2026; (H.R. 3633) CLARITY Act; (H.R. 1919) Anti-CBDC Surveillance State Act; and (S. 1582) GENIUS Act",
-    "me": "Yea",
-    "jeffries": "Nay",
-    "url": "https://clerk.house.gov/Votes/2025195"
-   },
-   {
-    "id": "2026-231",
-    "date": "2026-06-30",
-    "bill": "H RES 1398",
-    "q": "On Agreeing to the Resolution",
-    "title": "Providing for consideration of the bills H.R. 8800, H.R. 8595, and H.R. 8884; and providing for consideration of the resolution H. Res. 1383",
-    "me": "Yea",
-    "jeffries": "Nay",
-    "url": "https://clerk.house.gov/Votes/2026231"
-   }
-  ]
+  "diffs": []
  },
  "money": {
   "leaders": [
@@ -578,9 +558,9 @@
   "mandateN": 8,
   "mandateYea": 8,
   "haScore": 92,
-  "jeffAgree": "99.6",
-  "both": 527,
-  "ndiff": 2,
+  "jeffAgree": null,
+  "both": 0,
+  "ndiff": 0,
   "leaderName": "Steve Scalise",
   "unity": 99.8,
   "rank": 1,
