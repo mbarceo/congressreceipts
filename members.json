@@ -1668,6 +1668,71 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "ky/comer",
+   "name": "James Comer",
+   "party": "R",
+   "seat": "KY-1",
+   "chamber": "house",
+   "voteId": "C001108",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ky/guthrie",
+   "name": "Brett Guthrie",
+   "party": "R",
+   "seat": "KY-2",
+   "chamber": "house",
+   "voteId": "G000558",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ky/mcgarvey",
+   "name": "Morgan McGarvey",
+   "party": "D",
+   "seat": "KY-3",
+   "chamber": "house",
+   "voteId": "M001220",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ky/rogers",
+   "name": "Harold Rogers",
+   "party": "R",
+   "seat": "KY-5",
+   "chamber": "house",
+   "voteId": "R000395",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ky/paul",
+   "name": "Rand Paul",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S348",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
