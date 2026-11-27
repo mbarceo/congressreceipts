@@ -26,7 +26,9 @@
 .feat p{margin:0;color:var(--muted);font-size:.9rem}
 .feat .go{margin-top:auto;color:var(--accent);font-weight:600;font-size:.88rem}
 .feat .stat{font-family:var(--f-mono);font-size:.8rem;color:var(--muted)}
-.mem{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.mem{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:900px){.mem{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.mem{grid-template-columns:1fr}}
 .mcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:12px;text-decoration:none;color:var(--ink)}
 .mcard:hover{border-color:var(--accent)}
 .mcard .top{display:flex;gap:12px;align-items:center}
@@ -36,6 +38,9 @@
 .mcard dl{display:grid;grid-template-columns:1fr auto;gap:5px 10px;margin:0;font-size:.82rem}
 .mcard dt{color:var(--muted)} .mcard dd{margin:0;text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
 .mcard .pend{color:var(--muted);font-weight:400}
+.mcard.more{justify-content:center;gap:8px;border-style:dashed;min-height:150px}
+.mcard.more .nm{font-size:1.15rem}
+.mcard.more .go{color:var(--accent);font-weight:600;font-size:.9rem}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;counter-reset:s}
 .steps div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:.88rem}
 .steps div::before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;
@@ -104,13 +109,18 @@ Promise.all([fetch("data/leaders.json").then(r => r.json()), fetch("data/attenda
   $("aStat").textContent = `Missed votes: ${Math.min(...rates).toFixed(1)}% to ${Math.max(...rates).toFixed(1)}% among tracked members`;
   const sp = L.members.filter(m => m.agreeSplit != null).map(m => m.agreeSplit);
   $("lStat").textContent = `With their leader on split votes: ${Math.min(...sp).toFixed(0)}% to ${Math.max(...sp).toFixed(0)}%`;
-  $("mem").innerHTML = L.members.map(m => { const a = att[m.name] || {};
+  // Six tiles always (3 x 2): the five most recently checked trackers, then the "full list" tile
+  const shown = L.members.map((m, i) => ({ m, i })).sort((x, y) => ((y.m.checks && y.m.checks.checked) || "").localeCompare((x.m.checks && x.m.checks.checked) || "") || x.i - y.i).slice(0, 5).map(x => x.m);
+  $("mem").innerHTML = shown.map(m => { const a = att[m.name] || {};
     return `<a class="mcard" href="${esc(m.path)}"><div class="top"><img src="${esc(m.portrait)}" alt="Official portrait of ${esc(m.name)}">
       <div><div class="nm">${esc(m.name)}</div><div class="sub">${esc(m.party)} · ${esc(m.seat === "Senate" ? "U.S. Senate · " + m.path.slice(0, 2).toUpperCase() : m.seat)}</div></div></div>
       <dl><dt>Votes missed</dt><dd>${a.rate != null ? a.rate.toFixed(1) + "%" : "—"}</dd>
         <dt>With ${esc(m.leader.split(" ").pop())} on split votes</dt><dd>${m.agreeSplit != null ? m.agreeSplit.toFixed(1) + "%" : "—"}</dd>
         <dt>Establishment Democrat?</dt><dd class="${m.verdict ? "" : "pend"}">${esc(m.verdict || "Coming soon")}</dd>
-        <dt>Claims verified</dt><dd class="${m.checks ? "" : "pend"}">${m.checks ? `${m.checks.verified} of ${m.checks.total}` : "Coming soon"}</dd></dl></a>`; }).join("");
+        <dt>Claims verified</dt><dd class="${m.checks ? "" : "pend"}">${m.checks ? `${m.checks.verified} of ${m.checks.total}` : "Coming soon"}</dd></dl></a>`; }).join("") +
+    `<a class="mcard more" href="find.html"><div class="nm">Find the full list here</div>
+      <div class="sub">${D ? `All ${D.members.filter(m => !m.vacant).length} members of Congress, by ZIP code or name.` : "Every member of Congress, by ZIP code or name."}</div>
+      <div class="go">Find your rep \u2192</div></a>`;
 }).catch(() => { $("mem").innerHTML = '<p class="muted">The member list didn\'t load. Reload the page to try again.</p>'; });
 
 // Leadership race tiles: one line of live numbers each
