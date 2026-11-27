@@ -3072,6 +3072,71 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "nv/titus",
+   "name": "Dina Titus",
+   "party": "D",
+   "seat": "NV-1",
+   "chamber": "house",
+   "voteId": "T000468",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "nv/lee",
+   "name": "Susie Lee",
+   "party": "D",
+   "seat": "NV-3",
+   "chamber": "house",
+   "voteId": "L000590",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "nv/horsford",
+   "name": "Steven Horsford",
+   "party": "D",
+   "seat": "NV-4",
+   "chamber": "house",
+   "voteId": "H001066",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "nv/cortez-masto",
+   "name": "Catherine Cortez Masto",
+   "party": "D",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S385",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "nv/rosen",
+   "name": "Jacky Rosen",
+   "party": "D",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S402",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
