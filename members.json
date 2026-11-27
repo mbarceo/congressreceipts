@@ -4060,6 +4060,58 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "ri/amo",
+   "name": "Gabe Amo",
+   "party": "D",
+   "seat": "RI-1",
+   "chamber": "house",
+   "voteId": "A000380",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ri/magaziner",
+   "name": "Seth Magaziner",
+   "party": "D",
+   "seat": "RI-2",
+   "chamber": "house",
+   "voteId": "M001223",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ri/reed",
+   "name": "Jack Reed",
+   "party": "D",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S259",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ri/whitehouse",
+   "name": "Sheldon Whitehouse",
+   "party": "D",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S316",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
