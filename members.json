@@ -2760,6 +2760,58 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "ne/flood",
+   "name": "Mike Flood",
+   "party": "R",
+   "seat": "NE-1",
+   "chamber": "house",
+   "voteId": "F000474",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ne/smith",
+   "name": "Adrian Smith",
+   "party": "R",
+   "seat": "NE-3",
+   "chamber": "house",
+   "voteId": "S001172",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ne/fischer",
+   "name": "Deb Fischer",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S357",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ne/ricketts",
+   "name": "Pete Ricketts",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S423",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
