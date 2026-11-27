@@ -51,7 +51,7 @@
 
   <footer class="cr-foot muted" style="font-size:.82rem"><span id="src"></span></footer>
 </div>
-<script src="hub.js?v=6d7921b8"></script>
+<script src="hub.js?v=ce8e4641"></script>
 <script>
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const $ = id => document.getElementById(id);
@@ -95,7 +95,7 @@ async function run() {
   } else {
     const t = DIR.members.filter(m => m.path);
     msg = `${t.length} members have a tracker so far.`;
-    html = group("Tracked so far", t);
+    html = group("Tracked so far", t) + `<p class="muted" style="margin:0">Can't find your rep? <a href="backlog.html">Check the Backlog →</a></p>`;
   }
   $("msg").textContent = msg; $("out").innerHTML = html;
 }

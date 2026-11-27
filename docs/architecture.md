@@ -97,7 +97,7 @@ stateDiagram-v2
 2. Once the DOM is parsed it replaces every `{{token}}`, hides chamber-specific blocks, fills the portrait, and adds the sticky tab bar.
 3. The page's own script runs inside `TRACKER.ready.then(M => …)`, fetches the `data/*.json` files it needs, and renders them. A missing file shows a "not built yet" note.
 
-**Hub pages** (home, Find your rep, Who's showing up, Leaders tracker, Backlog Queue, About)
+**Hub pages** (home, Find your rep, Who's showing up, Leaders tracker, Backlog, About)
 - Plain HTML plus `hub.js`, which draws the header and footer (and a favicon if the page has none) and works on member pages too.
 - Each reads hub data from the root `data/` folder (see [pipeline.md](pipeline.md#hub-data)).
 

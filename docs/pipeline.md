@@ -149,8 +149,8 @@ The hub pages read JSON from the repository's `data/` folder:
 | `attendance.json` | home, Who's showing up | `build_attendance.py` | `members.json`, each member's `votes.json`, `events.json` and `data/rollcalls/` roll-call XML |
 | `leaders.json` | Leaders tracker | `build_leaders.py` | each member's committed `data/` |
 | `directory.json`, `zips.json` | Find your rep | `build_directory.py` | House Clerk member list, Census ZIP-to-district file, the newest Senate roll-call file in `data/rollcalls/senate` (download cache in `data/directory_raw/`, ignored) |
-| `congress.json` | Backlog Queue | `build_roster.py` | the `unitedstates/congress-legislators` current-members file |
-| `queue.json` | Backlog Queue | edited by hand | n/a |
+| `congress.json` | Backlog | `build_roster.py` | the `unitedstates/congress-legislators` current-members file |
+| `queue.json` | Backlog | edited by hand | n/a |
 
 `build_attendance.py` refuses to build if a tracker's `votes.json` disagrees with the official XML it recounts, or if two members of one chamber cover different roll-call ranges (refetch the older tracker's votes).
 

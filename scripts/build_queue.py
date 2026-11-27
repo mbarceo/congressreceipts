@@ -1,4 +1,4 @@
-"""Keeps data/queue.json (the Backlog Queue page) in step with members.json, so the status of a tracked member is never typed by hand.
+"""Keeps data/queue.json (the Backlog page) in step with members.json, so the status of a tracked member is never typed by hand.
 
     python3 -I scripts/build_queue.py           rewrite data/queue.json
     python3 -I scripts/build_queue.py --check   exit 1 if it is out of date (used by status.py --strict)
