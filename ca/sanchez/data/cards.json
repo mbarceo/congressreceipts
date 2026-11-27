@@ -1,0 +1,46 @@
+{
+ "cards": [
+  {
+   "key": "ice",
+   "q": "Pro-ICE?",
+   "eb": "Immigration enforcement",
+   "v": "No",
+   "rule": "\"No\" when nothing found in their record points toward ICE; \"Mostly no\" when at least three times as many items point the other way. Toward enforcement: 0 votes and 0 statements or actions. Against: 0 votes and 0 statements or actions.",
+   "pro": "Pro-enforcement",
+   "con": "Against ICE or for immigrants",
+   "section": "immigration",
+   "items": [],
+   "n": 0,
+   "npro": 0,
+   "ncon": 0
+  },
+  {
+   "key": "police",
+   "q": "Pro-police?",
+   "eb": "Policing and crime",
+   "v": "Mostly no",
+   "rule": "\"Mixed\" when at least 3 picked votes point each way. They cast 0 on the police or tough-on-crime side and 0 against.",
+   "pro": "Police or tough-on-crime side",
+   "con": "Against",
+   "section": null,
+   "items": [],
+   "n": 0,
+   "npro": 0,
+   "ncon": 0
+  },
+  {
+   "key": "corporate",
+   "q": "Pro-corporate?",
+   "eb": "Money and business",
+   "v": "No",
+   "rule": "Their votes decide the headline: 0 of the 0 business, finance and labor votes picked went the business way (a third or fewer is \"Mostly no\", two thirds or more \"Mostly yes\").",
+   "pro": "Business side",
+   "con": "Consumer or labor side",
+   "section": null,
+   "items": [],
+   "n": 0,
+   "npro": 0,
+   "ncon": 0
+  }
+ ]
+}
