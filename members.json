@@ -3644,6 +3644,71 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "ok/brecheen",
+   "name": "Josh Brecheen",
+   "party": "R",
+   "seat": "OK-2",
+   "chamber": "house",
+   "voteId": "B001317",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ok/lucas",
+   "name": "Frank D. Lucas",
+   "party": "R",
+   "seat": "OK-3",
+   "chamber": "house",
+   "voteId": "L000491",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ok/cole",
+   "name": "Tom Cole",
+   "party": "R",
+   "seat": "OK-4",
+   "chamber": "house",
+   "voteId": "C001053",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ok/bice",
+   "name": "Stephanie I. Bice",
+   "party": "R",
+   "seat": "OK-5",
+   "chamber": "house",
+   "voteId": "B000740",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ok/lankford",
+   "name": "James Lankford",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S378",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
