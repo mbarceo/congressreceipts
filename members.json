@@ -1733,6 +1733,58 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "la/scalise",
+   "name": "Steve Scalise",
+   "party": "R",
+   "seat": "LA-1",
+   "chamber": "house",
+   "voteId": "S001176",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "la/carter",
+   "name": "Troy A. Carter",
+   "party": "D",
+   "seat": "LA-2",
+   "chamber": "house",
+   "voteId": "C001125",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "la/higgins",
+   "name": "Clay Higgins",
+   "party": "R",
+   "seat": "LA-3",
+   "chamber": "house",
+   "voteId": "H001077",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "la/kennedy",
+   "name": "John Kennedy",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S389",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
