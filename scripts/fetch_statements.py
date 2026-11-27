@@ -102,7 +102,7 @@ def parse_date(s):
 def parse_house_evo(page_html):
     rows = []
     for blk in re.split(r'<div class="views-row', page_html)[1:]:
-        a = re.search(r'<div class="h[3-5][^>]*>\s*<a href="(/media/press-releases/[^"]+)">(.*?)</a>', blk, re.S)
+        a = re.search(r'<div class="h[3-5][^>]*>\s*<a href="(/media(?:-center)?/press-releases/[^"]+)">(.*?)</a>', blk, re.S)
         d = re.search(r'<div class="col-auto">\s*([A-Z][a-z]+ \d{1,2}, \d{4})', blk)
         b = re.search(r'evo-press-release__body">(.*?)</div>', blk, re.S)
         if a and d:
