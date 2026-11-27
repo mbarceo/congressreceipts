@@ -2435,6 +2435,84 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "ms/kelly",
+   "name": "Trent Kelly",
+   "party": "R",
+   "seat": "MS-1",
+   "chamber": "house",
+   "voteId": "K000388",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ms/thompson",
+   "name": "Bennie G. Thompson",
+   "party": "D",
+   "seat": "MS-2",
+   "chamber": "house",
+   "voteId": "T000193",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ms/guest",
+   "name": "Michael Guest",
+   "party": "R",
+   "seat": "MS-3",
+   "chamber": "house",
+   "voteId": "G000591",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ms/ezell",
+   "name": "Mike Ezell",
+   "party": "R",
+   "seat": "MS-4",
+   "chamber": "house",
+   "voteId": "E000235",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ms/hyde-smith",
+   "name": "Cindy Hyde-Smith",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S395",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ms/wicker",
+   "name": "Roger F. Wicker",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S318",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
