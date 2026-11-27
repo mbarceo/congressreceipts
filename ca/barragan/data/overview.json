@@ -1,0 +1,19 @@
+{
+ "tiles": [
+  {
+   "q": "Israel or Palestine?",
+   "v": "Not enough evidence yet",
+   "href": "stances.html#israel-palestine",
+   "rule": "The headline of the Israel and Palestine card, which tags each of its items by direction.",
+   "n": 4
+  },
+  {
+   "q": "Pro-ICE?",
+   "v": "No",
+   "href": "stances.html#card-ice",
+   "rule": "\"No\" when nothing found in their record points toward ICE; \"Mostly no\" when at least three times as many items point the other way. Toward enforcement: 0 votes and 0 statements or actions. Against: 1 vote and 0 statements or actions.",
+   "n": 1
+  }
+ ],
+ "events": []
+}

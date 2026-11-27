@@ -1,0 +1,20 @@
+{
+ "_note": "Every bill a page makes a claim about: role this member is said to have (sponsor, cosponsor or none) and the public law claimed, if any. Checked by scripts/verify_bills.py against govinfo BILLSTATUS.",
+ "bills": [
+  {
+   "bill": "hr29",
+   "role": "none",
+   "law": null
+  },
+  {
+   "bill": "hr1",
+   "role": "none",
+   "law": null
+  },
+  {
+   "bill": "hr498",
+   "role": "none",
+   "law": null
+  }
+ ]
+}

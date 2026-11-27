@@ -1,0 +1,130 @@
+{
+ "_note": "Hand-curated. Roll ids are chosen by reading the Clerk's titles; the member's vote is pulled from data/votes.json, never typed here. statementRx matches titles; statementPicks adds specific releases with a verbatim snippet found by 'rx' in the release's full text (data/statements_full.json). No editorial verdicts except the Israel card's headline, set in 'israel.headline'.",
+ "issues": [
+  {
+   "id": "immigration",
+   "name": "Immigration and ICE",
+   "intro": "Roll calls on immigration enforcement bills, and oversight actions and letters about ICE detention and data sharing.",
+   "statementRx": "",
+   "rolls": [
+    "2025-006"
+   ],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2025-01-07",
+     "roll": "2025-006",
+     "t": "{Vote} the Laken Riley Act (H.R. 29). It passed {yea}–{nay}."
+    },
+    {
+     "d": "2026-06-13",
+     "t": "Joined a letter to DHS and ICE after an oversight visit to the Dilley detention center, asking about DNA collection from detained families.",
+     "u": "https://barragan.house.gov/2026/06/13/barragan-castro-and-stanton-demand-transparency-on-dna-collection-of-detained-families-at-dilley-detention-facility/",
+     "q": "During our visit, we learned that ICE collects DNA samples from individuals detained at the facility, including parents and children."
+    },
+    {
+     "d": "2026-09-09",
+     "t": "Co-led a 53-member letter asking HHS and CMS to stop sharing Medicaid enrollee data with ICE.",
+     "u": "https://barragan.house.gov/2026/09/09/53-members-of-congress-demand-hhs-and-cms-halt-medicaid-data-sharing-with-ice/",
+     "q": "The role of HHS should be to protect the health of all those living in this country and provide essential human services, not to be a watchdog for DHS or act as immigration enforcement"
+    }
+   ]
+  },
+  {
+   "id": "health-care",
+   "name": "Health care and Medicaid",
+   "intro": "Roll calls on health and Medicaid bills, and the member's letters and releases on coverage.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2025-05-22",
+     "roll": "2025-145",
+     "t": "{Vote} H.R. 1, the reconciliation bill the Clerk lists as the One Big Beautiful Act. It passed {yea}–{nay}."
+    },
+    {
+     "d": "2025-12-18",
+     "roll": "2025-362",
+     "t": "{Vote} the Do No Harm in Medicaid Act (H.R. 498). It passed {yea}–{nay}."
+    },
+    {
+     "d": "2026-05-28",
+     "t": "Led the California Democratic delegation in a letter urging CMS to reverse a deferral of federal funding for in-home care.",
+     "u": "https://barragan.house.gov/2026/05/28/rep-barragan-leads-california-democratic-congressional-delegation-in-letter-to-cms-urging-reversal-of-decision-to-freeze-1-1-billion-in-federal-funds-to-home-care-for-seniors-and-people-w/",
+     "q": "reverse a decision to defer $1.1 billion in federal funding for California’s In-Home Supportive Services (IHSS) program"
+    }
+   ]
+  },
+  {
+   "id": "cost-of-living",
+   "name": "Housing, food and cost of living",
+   "intro": "Bills and statements on housing costs, tariffs on building materials and food assistance.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2026-09-17",
+     "t": "Introduced the Housing Tariff Exclusion Act to create a process to exclude some homebuilding materials from tariffs.",
+     "u": "https://barragan.house.gov/2026/09/17/rep-barragan-introduces-legislation-to-keep-tariffs-from-driving-up-the-cost-of-new-homes/",
+     "q": "Families are already facing the high cost of buying or renting a home. We should not make it more expensive to build the homes our communities need,"
+    },
+    {
+     "d": "2026-10-02",
+     "t": "Warned that a SNAP administrative cost shift in H.R. 1 took effect October 1, 2026.",
+     "u": "https://barragan.house.gov/2026/10/02/as-grocery-prices-skyrocket-congresswoman-barragan-sounds-the-alarm-on-new-trump-snap-cut-taking-effect-today/",
+     "q": "H.R. 1 cut the federal share of funding for SNAP administrative costs in half, meaning that states are now required to cover 75% of SNAP administrative costs."
+    }
+   ]
+  },
+  {
+   "id": "ports",
+   "name": "Ports and local infrastructure",
+   "intro": "Releases on Los Angeles and Long Beach port funding.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2026-09-16",
+     "t": "Announced a Harbor Maintenance Trust Fund provision for the Ports of Los Angeles and Long Beach in the House-passed Water Resources Development Act of 2026.",
+     "u": "https://barragan.house.gov/2026/09/16/barragan-secures-major-port-funding-fix-for-los-angeles-and-long-beach-in-house-passed-water-resources-bill/",
+     "q": "WRDA 2026 closes that loophole and requires the Army Corps to report annually to Congress on how the funding is distributed."
+    }
+   ]
+  }
+ ],
+ "israel": {
+  "question": "Israel or Palestine?",
+  "headline": "Not enough evidence yet",
+  "headlineWhy": "A verdict needs a statement or a vote that takes a side on Israel, Gaza or the Palestinians. None of the newest 30 releases addresses them, and the {nneutral} roll calls below are about the International Criminal Court and antisemitism, not aid or military action.",
+  "summary": "No statement on Israel or Palestine has been collected yet: only the newest 30 press releases (April 30 to October 23, 2026) have been read. The listed votes are Clerk roll calls.",
+  "items": [
+   {
+    "d": "2025-01-09",
+    "dir": "neutral",
+    "roll": "2025-007",
+    "text": "{Vote} the Illegitimate Court Counteraction Act (H.R. 23). It passed {yea}–{nay}."
+   },
+   {
+    "d": "2025-05-14",
+    "dir": "neutral",
+    "roll": "2025-129",
+    "text": "{Vote} H.Res. 352, calling on elected officials and civil society leaders to counter antisemitism. It passed {yea}–{nay}."
+   },
+   {
+    "d": "2025-06-09",
+    "dir": "neutral",
+    "roll": "2025-158",
+    "text": "{Vote} H.Res. 488, denouncing the antisemitic terrorist attack in Boulder, Colorado. It passed {yea}–{nay}."
+   },
+   {
+    "d": "2025-06-09",
+    "dir": "neutral",
+    "roll": "2025-159",
+    "text": "{Vote} H.Res. 481, condemning the rise in ideologically motivated attacks on Jewish individuals in the United States. It passed {yea}–{nay}."
+   }
+  ]
+ }
+}
