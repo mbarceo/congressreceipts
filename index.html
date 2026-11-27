@@ -95,6 +95,14 @@ const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;
 const $ = id => document.getElementById(id);
 const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 const fmt = d => { const t = new Date(d + "T12:00:00"); return `${MON[t.getMonth()]} ${t.getDate()}, ${t.getFullYear()}`; };
+// Stretch the last tile across whatever columns the final row has left, so the grid never shows a gap at any width
+function fillRow() {
+  const g = $("mem"), t = g.querySelector(".more"); if (!t) return;
+  t.style.gridColumn = "";
+  const cols = getComputedStyle(g).gridTemplateColumns.split(" ").length, n = g.children.length - 1;
+  t.style.gridColumn = `span ${cols - (n % cols)}`;
+}
+addEventListener("resize", fillRow);
 Promise.all([fetch("data/leaders.json").then(r => r.json()), fetch("data/attendance.json").then(r => r.json()),
              fetch("data/directory.json").then(r => r.json()).catch(() => null)]).then(([L, A, D]) => {
   const att = Object.fromEntries(A.members.map(m => [m.name, m]));
@@ -117,6 +125,7 @@ Promise.all([fetch("data/leaders.json").then(r => r.json()), fetch("data/attenda
     `<a class="mcard more" href="find.html"><div class="nm">Find the full list here</div>
       <div class="sub">${D ? `All ${D.members.filter(m => !m.vacant).length} members of Congress, by ZIP code or name.` : "Every member of Congress, by ZIP code or name."}</div>
       <div class="go">Find your rep \u2192</div></a>`;
+  fillRow();
 }).catch(() => { $("mem").innerHTML = '<p class="muted">The member list didn\'t load. Reload the page to try again.</p>'; });
 
 // Leadership race tiles: one line of live numbers each
