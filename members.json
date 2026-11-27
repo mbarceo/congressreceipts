@@ -641,6 +641,45 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "de/mcbride",
+   "name": "Sarah McBride",
+   "party": "D",
+   "seat": "DE-AL",
+   "chamber": "house",
+   "voteId": "M001238",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "de/blunt-rochester",
+   "name": "Lisa Blunt Rochester",
+   "party": "D",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S430",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "de/coons",
+   "name": "Christopher A. Coons",
+   "party": "D",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S337",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
