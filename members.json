@@ -563,6 +563,84 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "ct/courtney",
+   "name": "Joe Courtney",
+   "party": "D",
+   "seat": "CT-2",
+   "chamber": "house",
+   "voteId": "C001069",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ct/delauro",
+   "name": "Rosa L. DeLauro",
+   "party": "D",
+   "seat": "CT-3",
+   "chamber": "house",
+   "voteId": "D000216",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ct/himes",
+   "name": "James A. Himes",
+   "party": "D",
+   "seat": "CT-4",
+   "chamber": "house",
+   "voteId": "H001047",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ct/hayes",
+   "name": "Jahana Hayes",
+   "party": "D",
+   "seat": "CT-5",
+   "chamber": "house",
+   "voteId": "H001081",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ct/blumenthal",
+   "name": "Richard Blumenthal",
+   "party": "D",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S341",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ct/murphy",
+   "name": "Christopher Murphy",
+   "party": "D",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S364",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
