@@ -2019,6 +2019,45 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "me/pingree",
+   "name": "Chellie Pingree",
+   "party": "D",
+   "seat": "ME-1",
+   "chamber": "house",
+   "voteId": "P000597",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "me/collins",
+   "name": "Susan M. Collins",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S252",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "me/king",
+   "name": "Angus S. King, Jr.",
+   "party": "D",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S363",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
