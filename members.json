@@ -5243,6 +5243,19 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "wy/barrasso",
+   "name": "John Barrasso",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S317",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
