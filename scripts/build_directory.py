@@ -8,13 +8,16 @@ Sources (official, downloaded into data/directory_raw/, which stays out of git):
   ZIPs:   Census Bureau ZCTA-to-119th-district relationship file. A ZIP code area that crosses a district line maps
           to every district it touches, and the page says so.
 Tracked members are matched through members.json (House by bioguide, Senate by LIS id).
-Usage: python3 -I scripts/build_directory.py
+Usage: python3 -I scripts/build_directory.py [--reuse-zips]
+  --reuse-zips  keep the committed data/zips.json and skip the Census download (the ZIP-to-district file does not change
+                when a member's tracker is added; only a redistricting or special election needs the full rebuild)
 """
-import datetime, glob, json, os, re, subprocess
+import datetime, glob, json, os, re, subprocess, sys
 import xml.etree.ElementTree as ET
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW = os.path.join(REPO, "data/directory_raw"); os.makedirs(RAW, exist_ok=True)
+REUSE = "--reuse-zips" in sys.argv[1:] and os.path.exists(os.path.join(REPO, "data/zips.json"))
 SRC = {"house.xml": "https://clerk.house.gov/xml/lists/MemberData.xml",
        "zcta_cd119.txt": "https://www2.census.gov/geo/docs/maps-data/data/rel2020/cd-sld/tab20_cd11920_zcta520_natl.txt"}
 FIPS = {"01": "AL", "02": "AK", "04": "AZ", "05": "AR", "06": "CA", "08": "CO", "09": "CT", "10": "DE", "11": "DC", "12": "FL", "13": "GA",
@@ -24,6 +27,7 @@ FIPS = {"01": "AL", "02": "AK", "04": "AZ", "05": "AR", "06": "CA", "08": "CO", 
         "49": "UT", "50": "VT", "51": "VA", "53": "WA", "54": "WV", "55": "WI", "56": "WY", "60": "AS", "66": "GU", "69": "MP", "72": "PR", "78": "VI"}
 
 for f, u in SRC.items():
+    if REUSE and f == "zcta_cd119.txt": continue
     p = os.path.join(RAW, f)
     if not os.path.exists(p) or os.path.getsize(p) < 10000:
         subprocess.run(["curl", "-s", "-L", "-A", "Mozilla/5.0", "--max-time", "120", "-o", p, u], check=True)
@@ -51,15 +55,18 @@ for m in ET.parse(sen[-1]).getroot().iter("member"):
 
 # ZIP code area -> district(s)
 zips = {}
-with open(os.path.join(RAW, "zcta_cd119.txt"), encoding="utf-8-sig") as f:
-    head = f.readline().strip().split("|"); gi, zi = head.index("GEOID_CD119_20"), head.index("GEOID_ZCTA5_20")
-    for line in f:
-        c = line.rstrip("\n").split("|")
-        z, g = c[zi], c[gi]
-        if not z or g[:2] not in FIPS or g[2:] == "ZZ": continue
-        seat = f"{FIPS[g[:2]]}-{'AL' if g[2:] in ('00', '98') else str(int(g[2:]))}"
-        zips.setdefault(z, [])
-        if seat not in zips[z]: zips[z].append(seat)
+if REUSE:
+    zips = json.load(open(os.path.join(REPO, "data/zips.json")))
+else:
+    with open(os.path.join(RAW, "zcta_cd119.txt"), encoding="utf-8-sig") as f:
+      head = f.readline().strip().split("|"); gi, zi = head.index("GEOID_CD119_20"), head.index("GEOID_ZCTA5_20")
+      for line in f:
+          c = line.rstrip("\n").split("|")
+          z, g = c[zi], c[gi]
+          if not z or g[:2] not in FIPS or g[2:] == "ZZ": continue
+          seat = f"{FIPS[g[:2]]}-{'AL' if g[2:] in ('00', '98') else str(int(g[2:]))}"
+          zips.setdefault(z, [])
+          if seat not in zips[z]: zips[z].append(seat)
 
 missing = [p for p in tracked.values() if p not in {m["path"] for m in members}]
 if missing: raise SystemExit(f"Tracked members not found in the official lists: {missing}")
