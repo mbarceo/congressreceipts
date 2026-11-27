@@ -215,7 +215,8 @@ const G = {
 const ORDER = ["schumer", "van_hollen", "against_schumer", "undecided", "no_statement", "ineligible"];
 const RC = {primary: "Own statement", news: "News report", list: "Secondhand list", stale: "Older than the race", none: "No source"};
 // Links the checker could not open (site blocks scripts, or can't be read by one) stay tagged until they are confirmed
-const UNCHECKED = new Set(["skipped_host_blocked", "blocked", "skipped_unreadable_site", "fetch_failed"]);
+// Rows with no source yet (no_url, or tracker-only in the House) stay tagged too, until a source is found
+const UNCHECKED = new Set(["skipped_host_blocked", "blocked", "skipped_unreadable_site", "fetch_failed", "no_url", "none_to_check"]);
 const vipTag = (c, manual) => UNCHECKED.has(c) && !manual ? '<span class="vip">Verification in progress</span>' : "";
 const CK = {
   quote_verified: "Quote found word for word",
@@ -302,7 +303,7 @@ fetch("data/leadership_senate.json").then(r => r.json()).then(D => {
       <div class="h"><span class="nm">${esc(m.name)}<small>${esc(m.state)} · ${role(m)}${m.is_candidate ? " · candidate" : ""}</small></span><span class="pos${g.none ? " none" : ""}">${g.label}</span></div>
       <p>${esc(m.summary)}</p>
       ${m.disputed ? `<div class="flag"><b>Sources disagree.</b> ${esc(m.note)}</div>` : m.note ? `<div class="note">${esc(m.note)}</div>` : ""}
-      <div class="rc">${rc}${vipTag(m.check, m.manual_confirmed_on)}<small><span class="kind">${esc(meta)}</span></small>${agree(m.agreement) ? `<small>${esc(agree(m.agreement))}</small>` : ""}</div></article>`; }).join("");
+      <div class="rc">${rc}${m.group === "ineligible" ? "" : vipTag(m.check, m.manual_confirmed_on)}<small><span class="kind">${esc(meta)}</span></small>${agree(m.agreement) ? `<small>${esc(agree(m.agreement))}</small>` : ""}</div></article>`; }).join("");
   if (D.checks_run) { const c = D.check_counts, n = k => c[k] || 0;
     const byHand = D.members.filter(m => m.manual_confirmed_on).length;
     const notChecked = n("skipped_host_blocked") + n("blocked") + n("skipped_unreadable_site") + n("fetch_failed") - byHand;
