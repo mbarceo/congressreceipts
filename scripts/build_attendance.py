@@ -83,12 +83,15 @@ for m in (x for x in CFG["members"] if x.get("live", True) and x.get("hub", True
     key = "member" if "member" in votes[0] else next(k for k in votes[0] if k not in
           {"y", "n", "date", "bill", "q", "desc", "type", "result", "yea", "nay", "dY", "dN", "rY", "rN", "iY", "iN", "cY", "cN", "dSide", "rSide", "pSide", "pY", "pN", "url", "title"})
     mine = [v for v in votes if v[key] == "Not Voting"]
+    # "Not in record" = the member has no entry in that roll's official XML (a Speaker votes at their own discretion and is
+    # usually absent from it). That is not a missed vote, so those rolls are left out of the missed count and the rate.
+    recorded = [v for v in votes if v[key] != "Not in record"]
     cast, missed, nfiles = official_counts(m["chamber"], os.path.join(ROOT, "data/rollcalls", m["chamber"], "119"))
-    if cast[m["voteId"]] != len(votes) or missed[m["voteId"]] != len(mine):
-        problems.append(f"{m['name']}: tracker shows {len(mine)} missed of {len(votes)}, official XML has {missed[m['voteId']]} of {cast[m['voteId']]}")
+    if cast[m["voteId"]] != len(recorded) or missed[m["voteId"]] != len(mine):
+        problems.append(f"{m['name']}: tracker shows {len(mine)} missed of {len(recorded)}, official XML has {missed[m['voteId']]} of {cast[m['voteId']]}")
     full = max(cast.values())
     rates = {k: missed[k] / cast[k] for k in cast if cast[k] >= 0.8 * full}
-    rate = len(mine) / len(votes)
+    rate = len(mine) / len(recorded)
     ch = chambers.setdefault(m["chamber"], {"rolls": full, "members": len(rates), "median": round(statistics.median(rates.values()) * 100, 1),
                                              "through": max(v["date"] for v in votes)})
     if full != ch["rolls"]:
@@ -121,14 +124,14 @@ for m in (x for x in CFG["members"] if x.get("live", True) and x.get("hub", True
         v = by.get(rid)
         if not v: problems.append(f"{m['name']}: critical roll {rid} not in votes.json"); continue
         me, side = v[key], v.get("pSide", v.get("dSide", ""))
-        status = ("missed" if me == "Not Voting" else "present" if me == "Present"
+        status = ("missed" if me == "Not Voting" else "norecord" if me == "Not in record" else "present" if me == "Present"
                   else "broke" if side in ("Yea", "Nay") and me != side else "with")
         crit.append({"id": rid, "date": v["date"], "topic": topic, "bill": v.get("bill", ""), "desc": (v.get("desc") or v.get("title") or "")[:200],
                      "q": v.get("q", ""), "vote": me, "dSide": side, "status": status, "result": v.get("result", ""),
                      "url": v.get("url") or vote_url(m["chamber"], v["y"], v["n"])})
     crit.sort(key=lambda c: c["date"])
     out.append({"name": m["name"], "critical": crit, "party": m["party"], "seat": m["seat"], "chamber": m["chamber"], "url": m["url"], "portrait": f"{m['path']}/{m['portrait']}",
-                "rolls": len(votes), "missed": len(mine), "present": sum(1 for v in votes if v[key] == "Present"),
+                "rolls": len(recorded), "notInRecord": len(votes) - len(recorded), "missed": len(mine), "present": sum(1 for v in votes if v[key] == "Present"),
                 "rate": round(rate * 100, 1), "fewer": sum(1 for r in rates.values() if r < rate),
                 "missedVotes": [{"date": v["date"], "bill": v.get("bill", ""), "q": v.get("q", ""), "desc": (v.get("desc") or v.get("title") or "")[:180],
                                  "url": v.get("url") or vote_url(m["chamber"], v["y"], v["n"])} for v in sorted(mine, key=lambda v: v["date"], reverse=True)],
