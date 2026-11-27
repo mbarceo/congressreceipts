@@ -23,7 +23,7 @@ cd congressreceipts
 You can push branches directly. **Never push to `main`**; everything goes through a pull request.
 
 ### 2. Requirements
-- macOS or Linux (on Windows use WSL). `git`, and Python 3 (`zsh` only for a few legacy helpers) (developed on 3.14; standard library only, nothing to `pip install`).
+- macOS or Linux (on Windows use WSL), `git`, and Python 3 (developed on 3.14; standard library only, nothing to `pip install`). `./tr` needs only `sh`; `zsh` is used by a few legacy helpers.
 - The GitHub CLI (`gh`) is optional but handy: `gh auth login`.
 - About 1 GB of free disk per few trackers while building (raw downloads other than roll-call XML, which is committed in `data/rollcalls/`).
 
