@@ -14,6 +14,26 @@ Congress Receipts (congressreceipts.org) is a **static website**: HTML, CSS, Jav
 └──────────────────┘                                                     site/*.html + site.js render the JSON in the browser
 ```
 
+## Where work happens
+
+```mermaid
+flowchart LR
+    subgraph Sources["Official sources"]
+        S1[Clerk and senate.gov roll-call XML]
+        S2[FEC API]
+        S3[congress.gov API and govinfo]
+        S4[Member press pages, Wayback]
+    end
+    Sources -- "fetch_*  (paced, one request at a time)" --> RAW[(data/raw ... not in git)]
+    RAW -- "build_*  (rebuild.py, offline)" --> JSON[(data/*.json in git)]
+    CUR[Curated inputs<br/>stance_picks, promises, ...] --> JSON
+    JSON -- "run_checks re-derives every claim" --> JSON
+    JSON -- "publish.py" --> PAGES[Stub pages in each member folder]
+    PAGES -- "PR, then merge to main" --> GH[GitHub Pages]
+```
+
+Fetching and checking touch other people's websites, so they are paced and sometimes only work from the maintainer's Mac; building, rebuilding and publishing are offline and work anywhere. The split is spelled out in [how to add a member](howto/add-a-member.md#where-each-step-can-run).
+
 ## The two halves
 
 | | What | Where | Who writes it |
@@ -46,6 +66,19 @@ docs/                           this documentation
 ```
 
 A member's URL is its folder: `congressreceipts.org/ca/padilla/`.
+
+### Member folder states
+
+```mermaid
+stateDiagram-v2
+    [*] --> Skeleton: new_tracker.py --register (live false)
+    Skeleton --> Curating: portrait, votes, FEC, statements, picks
+    Curating --> Ready: run_checks passes, live flag removed
+    Ready --> Live: publish.py member, PR merged
+    Live --> Curating: refresh (new votes, filings; claims re-checked after 15 days)
+```
+
+`members.json` is the single source for this: `data/queue.json` and the hub pages are derived from it.
 
 ## Key design decisions
 
@@ -83,7 +116,7 @@ The old per-member repositories (`ca-rep-29-tracker`, `ca-rep-45-tracker`, …) 
 ## Members and formats
 
 `members.json` lists each member with a `format`:
-- `shared`: uses `site/` and `scripts/`. Every new member is `shared`.
+- `shared`: uses `site/` and `scripts/`. Every new member is `shared`, with `pages: "stub"` (the member folder holds thin HTML stubs that load `site/` through `site/shell.js`; older members have full copies of `site/`).
 - `legacy`: the older layout, where a member kept its own pages and scripts. No member uses it today; `./tr` still detects a member-local `scripts/` folder, and `publish.py` only adds the shared header to such members.
 
 ## What reads what (the dependency map)
@@ -102,7 +135,7 @@ Because `build_attendance.py` recounts missed votes from the official XML as a c
 ## Stack and requirements
 
 - Python 3 (developed on 3.14), **standard library only**. No `pip install`.
-- A POSIX shell with `zsh` for `./tr` and the key wrappers (macOS, Linux, or WSL on Windows).
+- A POSIX shell for `./tr` (plain `sh` plus `scripts/runner.py`; macOS, Linux, cloud sessions or WSL). A few legacy helpers (`run_checks.sh`, `fetch_votes.sh`, the key wrappers) still use `zsh`.
 - `git` and the GitHub CLI `gh` (optional, for pull requests).
 - Free API keys: FEC and congress.gov (see [CONTRIBUTING.md](../CONTRIBUTING.md#api-keys)).
 - Front end: hand-written HTML, CSS and vanilla JavaScript. No framework, no bundler, no npm.

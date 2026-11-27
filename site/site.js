@@ -64,7 +64,7 @@
       voteSourceLong: senate ? "the Senate's official roll-call votes (senate.gov)" : "the House Clerk's official roll-call records",
       voteSourceUrl: senate ? "https://www.senate.gov/legislative/votes_new.htm" : "https://clerk.house.gov/Votes",
       voteXml: senate ? "senate.gov/legislative/LIS/roll_call_votes" : "clerk.house.gov/evs",
-      leaderName, leaderLast, leaderPoss: poss(leaderLast), leaderTitle: L.title || `${chamberName} ${isRep ? "Republican" : "Democratic"} leader`,
+      leaderNA: L.compareVotes === false, leaderName, leaderLast, leaderPoss: poss(leaderLast), leaderTitle: L.title || `${chamberName} ${isRep ? "Republican" : "Democratic"} leader`,
       congress, congressOrd: ord(congress), since, inOfficeSince: m.inOfficeSince || "",
       committees: m.committees || [],
     };

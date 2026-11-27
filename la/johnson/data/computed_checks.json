@@ -1,26 +1,5 @@
 [
  {
-  "label": "Votes where the member and Steve Scalise both cast Yea or Nay",
-  "shown": 527,
-  "actual": 527,
-  "ok": true,
-  "source": "House Clerk roll-call XML"
- },
- {
-  "label": "Votes where the member split from Steve Scalise",
-  "shown": 2,
-  "actual": 2,
-  "ok": true,
-  "source": "House Clerk roll-call XML"
- },
- {
-  "label": "Agreement with Steve Scalise (%)",
-  "shown": 99.6,
-  "actual": 99.6,
-  "ok": true,
-  "source": "House Clerk roll-call XML"
- },
- {
   "label": "Party-unity score (%)",
   "shown": 99.8,
   "actual": 99.8,

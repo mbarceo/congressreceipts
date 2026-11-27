@@ -20,8 +20,10 @@ for m in (x for x in J("members.json")["members"] if x.get("live", True) and x.g
     cfg = J(p, "tracker.config.json") or {}
     leader = (cfg.get("leader") or {}).get("name") or LEADER[m["chamber"]]
     peer = next((x for x in al.get("peers", []) if x["name"] == leader), {})
+    if (cfg.get("leader") or {}).get("compareVotes") is False: peer = {}   # no vote comparison (e.g. the Speaker): shown as N/A
     es = J(p, "data/establishment.json"); ev = J(p, "data/establishment_votes.json")
     nums = (es or {}).get("nums", {})
+    if (cfg.get("leader") or {}).get("compareVotes") is False: nums, ev = {}, None
     lead = J(p, "data/fec/leadership.json") or {}
     cycles = sorted({k[1:] for v in lead.values() for k in v if k.startswith("y")})
     money = {c: round(sum(v.get("y" + c, 0) for v in lead.values())) for c in cycles}

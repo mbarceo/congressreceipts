@@ -1,0 +1,27 @@
+{
+ "party": "D",
+ "partyName": "Democrats",
+ "memberUnity": 95.7,
+ "memberRank": 169,
+ "memberTied": 0,
+ "dems": 215,
+ "medianUnity": 97.5,
+ "rolls": 689,
+ "contested": 76,
+ "israelRolls": 12,
+ "peers": [
+  {
+   "id": "J000294",
+   "name": "Hakeem Jeffries",
+   "dist": "NY-8",
+   "group": "Party leadership",
+   "all": 95.6,
+   "n": 652,
+   "contested": 67.1,
+   "nc": 73,
+   "israel": 91.7,
+   "ni": 12,
+   "unity": 98.7
+  }
+ ]
+}

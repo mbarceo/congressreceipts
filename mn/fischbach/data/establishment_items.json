@@ -1,0 +1,22 @@
+{
+ "_note": "Hand-curated, sourced items for establishment.html. Numbers in {braces} are filled by scripts/build_establishment.py from FEC data, House roll calls and data/alignment.json; never type a number here. Tag e = sign of establishment alignment, i = sign of independence. Headline is an editorial call; 'why' states the rule.",
+ "question": "Establishment Democrat?",
+ "headline": "TBD",
+ "summary": "",
+ "why": "",
+ "roles": {
+  "Hakeem Jeffries": "House Democratic Leader",
+  "Katherine Clark": "Democratic Whip",
+  "Nancy Pelosi": "Speaker Emerita",
+  "Pete Aguilar": "Caucus Chair",
+  "Steny Hoyer": "Former Majority Leader",
+  "DCCC": "Party campaign committee"
+ },
+ "tiles": [],
+ "signs": {
+  "e": [],
+  "i": []
+ },
+ "timeline": [],
+ "left": []
+}

@@ -61,6 +61,16 @@ def agreement(row):
     }
 
 
+
+def load_manual(race):
+    """Links a person opened and read by hand (the checker could not). Matched by name AND the source_url
+    the row has now, so changing a source drops the confirmation. Columns: race,name,source_url,confirmed_by,confirmed_on,note."""
+    f = ROOT / "data" / "leadership" / "manual_confirmations.csv"
+    if not f.exists():
+        return {}
+    with f.open(encoding="utf-8") as fh:
+        return {r["name"]: r for r in csv.DictReader(fh) if r["race"] == race and r["confirmed_on"].strip()}
+
 def main():
     with SRC.open(encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
@@ -99,6 +109,7 @@ def main():
 
     # Attach the script check from verify_senate_quotes.py, if it has been run.
     vfile = ROOT / "data" / "leadership" / "verification_senate.csv"
+    manual = load_manual("senate")
     checks = {}
     if vfile.exists():
         with vfile.open(encoding="utf-8") as f:
@@ -108,6 +119,8 @@ def main():
         m["check"] = c["result"] if c else "not_run"
         m["quotes_found"] = int(c["quotes_found"] or 0) if c else 0
         m["quotes_total"] = int(c["quotes_total"] or 0) if c else 0
+        mc = manual.get(m["name"])
+        m["manual_confirmed_on"] = mc["confirmed_on"] if mc and mc["source_url"] == m["source_url"] else ""
 
     names = [m["name"] for m in members]
     dupes = [n for n, c in Counter(names).items() if c > 1]

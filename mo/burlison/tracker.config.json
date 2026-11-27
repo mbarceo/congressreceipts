@@ -1,0 +1,435 @@
+{
+  "_note": "Member-specific values. Scripts read it through scripts/config.py; pages read member, leader and profile through site.js. Fields starting with TODO must be filled before the step that needs them.",
+  "member": {
+    "name": "Eric Burlison",
+    "first": "Eric",
+    "last": "Burlison",
+    "short": "Burlison",
+    "honorific": "Rep.",
+    "title": "Rep. Eric Burlison",
+    "pronouns": {
+      "subj": "they",
+      "obj": "them",
+      "poss": "their"
+    },
+    "bioguide": "B001316",
+    "voteId": "B001316",
+    "party": "Republican",
+    "state": "MO",
+    "stateName": "Missouri",
+    "chamber": "house",
+    "district": "7",
+    "districtLabel": "MO-7",
+    "seatLabel": "Missouri's 7th District",
+    "geoid": "2907",
+    "area": "MO-7",
+    "congress": 119,
+    "inOfficeSince": "TODO: YYYY-MM-DD sworn in (current service)",
+    "site": "https://burlison.house.gov",
+    "domain": "burlison.house.gov",
+    "pressPath": "/media/press-releases",
+    "pressLayout": "auto",
+    "campaignSite": "",
+    "portrait": "assets/portrait.jpg",
+    "committees": [],
+    "portraitSource": "https://bioguide.congress.gov/photo/B001316.jpg",
+    "portraitSize": [
+      175,
+      219
+    ]
+  },
+  "leader": {
+    "name": "Mike Johnson",
+    "voteId": "J000299",
+    "title": "Speaker of the House"
+  },
+  "fec": {
+    "candidateId": "TODO",
+    "committeeId": "TODO",
+    "cycles": [
+      2024,
+      2026
+    ],
+    "cycleLabels": {
+      "2024": "2023-24",
+      "2026": "2025-26"
+    },
+    "keyEnv": "FEC_API_KEY",
+    "leadershipRx": "JEFFRIES|JEFF PAC",
+    "_leadersNote": "leaders.<chamber> lists the party leaders whose committees' money build_establishment.py totals per cycle (chamber = member.chamber). A gift counts when the giving committee's FEC ID is in 'ids' or its name matches 'rx' (name-only matches are printed for checking). 'numKey' exposes a leader's all-cycle total to establishment_items.json as {dccc} or {dscc}. leadershipRx/leadershipIds drive the Money page's single-leader box: House 'JEFFRIES|JEFF PAC'; Senate 'SCHUMER|^IMPACT$' with leadershipIds [\"C00346312\", \"C00348607\"].",
+    "leaders": {
+      "house": {
+        "title": "House Democratic leadership",
+        "note": "",
+        "list": [
+          {
+            "name": "Hakeem Jeffries",
+            "role": "House Democratic Leader",
+            "rx": "JEFFRIES|JEFF PAC"
+          },
+          {
+            "name": "Nancy Pelosi",
+            "role": "Speaker Emerita",
+            "rx": "PELOSI|PAC TO THE FUTURE"
+          },
+          {
+            "name": "Katherine Clark",
+            "role": "Democratic Whip",
+            "rx": "KATHERINE CLARK|CLARK FRONTLINE|FAIR SHOT PAC|FIGHT FOR A DEMOCRATIC MAJORITY"
+          },
+          {
+            "name": "Pete Aguilar",
+            "role": "Caucus Chair",
+            "rx": "AGUILAR|CA LUV PAC|CALIFORNIA LEADERSHIP UNITED|PROGRESSIVE MAJORITY PAC"
+          },
+          {
+            "name": "Steny Hoyer",
+            "role": "Former Majority Leader",
+            "rx": "HOYER|AMERIPAC|SAVING AMERICAN DEMOCRACY"
+          },
+          {
+            "name": "DCCC",
+            "role": "Party campaign committee",
+            "rx": "^DCCC|DEMOCRATIC CONGRESSIONAL CAMPAIGN",
+            "numKey": "dccc"
+          }
+        ]
+      },
+      "senate": {
+        "title": "Senate Democratic leadership",
+        "note": "Contributions from each Senate Democratic leader's campaign committee, leadership PAC and joint fundraising committees, and from the DSCC, from FEC filings. Committees are matched by FEC committee ID; roles are from senate.gov's leadership page.",
+        "_source": "Roles: https://www.senate.gov/senators/leadership.htm (read 2026-11-25). Committee IDs: FEC API /committees/ by sponsor_candidate_id (leadership PACs) and by candidate_id (principal and joint fundraising committees), read 2026-11-25; each leader's 'src' links the FEC committee pages. Sanders (Chair of Outreach, an independent), Cortez Masto (Vice Chair of Outreach) and the deputy secretaries Schatz and Murphy are listed on senate.gov but left out here; add them if wanted.",
+        "list": [
+          {
+            "name": "Chuck Schumer",
+            "role": "Democratic Leader",
+            "ids": [
+              "C00346312",
+              "C00348607"
+            ],
+            "rx": "SCHUMER|^IMPACT$",
+            "committees": [
+              "FRIENDS OF SCHUMER (principal campaign committee)",
+              "IMPACT (leadership PAC)"
+            ],
+            "src": [
+              "https://www.fec.gov/data/committee/C00346312/",
+              "https://www.fec.gov/data/committee/C00348607/"
+            ]
+          },
+          {
+            "name": "Dick Durbin",
+            "role": "Democratic Whip",
+            "ids": [
+              "C00148999",
+              "C00347195"
+            ],
+            "rx": "DURBIN|^PRAIRIE (PAC|POLITICAL ACTION COMMITTEE)$",
+            "committees": [
+              "FRIENDS OF DICK DURBIN COMMITTEE (principal campaign committee)",
+              "PRAIRIE POLITICAL ACTION COMMITTEE (leadership PAC)"
+            ],
+            "src": [
+              "https://www.fec.gov/data/committee/C00148999/",
+              "https://www.fec.gov/data/committee/C00347195/"
+            ]
+          },
+          {
+            "name": "Amy Klobuchar",
+            "role": "Chair of Steering & Policy Committee",
+            "ids": [
+              "C00431353",
+              "C00431874"
+            ],
+            "rx": "KLOBUCHAR|FOLLOW THE NORTH STAR",
+            "committees": [
+              "KLOBUCHAR FOR MINNESOTA (principal campaign committee)",
+              "FOLLOW THE NORTH STAR FUND (leadership PAC)"
+            ],
+            "src": [
+              "https://www.fec.gov/data/committee/C00431353/",
+              "https://www.fec.gov/data/committee/C00431874/"
+            ]
+          },
+          {
+            "name": "Cory Booker",
+            "role": "Chair of Strategic Communications Committee",
+            "ids": [
+              "C00540500",
+              "C00497131",
+              "C00548586"
+            ],
+            "rx": "CORY BOOKER|BOOKER SENATE VICTORY|^PURPOSE PAC$",
+            "committees": [
+              "CORY BOOKER FOR SENATE (principal campaign committee)",
+              "PURPOSE PAC (leadership PAC)",
+              "BOOKER SENATE VICTORY (joint fundraising, 2016-2020)"
+            ],
+            "src": [
+              "https://www.fec.gov/data/committee/C00540500/",
+              "https://www.fec.gov/data/committee/C00497131/",
+              "https://www.fec.gov/data/committee/C00548586/"
+            ]
+          },
+          {
+            "name": "Mark Warner",
+            "role": "Vice Chair of the Conference",
+            "ids": [
+              "C00438713",
+              "C00412791",
+              "C00623330"
+            ],
+            "rx": "MARK WARNER|^FORWARD TOGETHER PAC$|^VIRGINIA TOGETHER$",
+            "committees": [
+              "FRIENDS OF MARK WARNER (principal campaign committee)",
+              "FORWARD TOGETHER PAC (leadership PAC)",
+              "VIRGINIA TOGETHER (joint fundraising, 2016-2020)"
+            ],
+            "src": [
+              "https://www.fec.gov/data/committee/C00438713/",
+              "https://www.fec.gov/data/committee/C00412791/",
+              "https://www.fec.gov/data/committee/C00623330/"
+            ]
+          },
+          {
+            "name": "Elizabeth Warren",
+            "role": "Vice Chair of the Conference",
+            "ids": [
+              "C00500843",
+              "C00912543",
+              "C00540195"
+            ],
+            "rx": "WARREN FOR SENATE|ELIZABETH WARREN|^FIGHT PAC$|LEVEL PLAYING FIELD",
+            "committees": [
+              "WARREN FOR SENATE, INC. (principal campaign committee)",
+              "FIGHT PAC (leadership PAC, 2026)",
+              "PAC FOR A LEVEL PLAYING FIELD (leadership PAC, 2012-2018)"
+            ],
+            "src": [
+              "https://www.fec.gov/data/committee/C00500843/",
+              "https://www.fec.gov/data/committee/C00912543/",
+              "https://www.fec.gov/data/committee/C00540195/"
+            ]
+          },
+          {
+            "name": "Tammy Baldwin",
+            "role": "Democratic Conference Secretary",
+            "ids": [
+              "C00326801",
+              "C00525295"
+            ],
+            "rx": "TAMMY BALDWIN|BALDWIN WISCONSIN VICTORY",
+            "committees": [
+              "TAMMY BALDWIN FOR SENATE (principal campaign committee)",
+              "BALDWIN WISCONSIN VICTORY FUND (joint fundraising)"
+            ],
+            "src": [
+              "https://www.fec.gov/data/committee/C00326801/",
+              "https://www.fec.gov/data/committee/C00525295/"
+            ]
+          },
+          {
+            "name": "DSCC",
+            "role": "Senate Democrats' party campaign committee",
+            "ids": [
+              "C00042366"
+            ],
+            "rx": "^DSCC$|^DEMOCRATIC SENATORIAL CAMPAIGN COMMITTEE$",
+            "numKey": "dscc",
+            "committees": [
+              "DSCC (national party committee)"
+            ],
+            "src": [
+              "https://www.fec.gov/data/committee/C00042366/"
+            ],
+            "_why": "Exact names only: joint fundraising committees the member shares with the DSCC (e.g. 'DSCC VICE CHAIR PADILLA FUND', '2024 DEM SENATE VICTORY: MD + PA + DSCC') pass on money the member's own fundraising raised, so they are not DSCC gifts."
+          }
+        ]
+      }
+    },
+    "watch": [
+      {
+        "id": "detention",
+        "label": "Immigration detention and surveillance contractors",
+        "why": "Companies that profit from ICE detention or enforcement technology.",
+        "rx": "GEO GROUP|CORECIVIC|CORE CIVIC|PALANTIR|ANDURIL|AXON|MOTOROLA SOLUTIONS|CLEARVIEW"
+      },
+      {
+        "id": "police",
+        "label": "Police, sheriff and public-safety groups",
+        "why": "Law-enforcement unions, associations and corrections groups.",
+        "rx": "POLICE|SHERIFF|FRATERNAL ORDER|LAW ENFORCEMENT|PEACE OFFICER|CORRECTION|PROTECTIVE LEAGUE|FIREFIGHTER|FIRE FIGHTER"
+      },
+      {
+        "id": "realestate",
+        "label": "Real estate, landlord and developer groups",
+        "why": "Industry money on the housing side of the cost-of-living fight.",
+        "rx": "REALTOR|HOME BUILDERS|APARTMENT|MULTIFAMILY|MORTGAGE BANKERS|REAL ESTATE|LANDLORD|PROPERTY OWNERS|REALTY|PROPERTIES|DEVELOPMENT CO"
+      },
+      {
+        "id": "tenant",
+        "label": "Tenant, housing and homelessness advocates",
+        "why": "Groups working on affordable housing and homelessness.",
+        "rx": "TENANT|LOW INCOME HOUSING|HABITAT FOR HUMANITY|HOUSING AUTHORIT|HOMELESS|NAHRO|AFFORDABLE HOUSING|HOUSING ACTION"
+      },
+      {
+        "id": "labor",
+        "label": "Labor unions",
+        "why": "Union PACs and member-funded labor committees.",
+        "rx": "\\bUNION\\b|WORKERS|TEACHERS|SEIU|AFL-CIO|TEAMSTERS|LABORERS|ELECTRICAL|CARPENTERS|MACHINISTS|NURSES|\\bCOPE\\b"
+      },
+      {
+        "id": "tech",
+        "label": "Technology and AI companies",
+        "why": "TODO: why this category matters for Burlison's district.",
+        "rx": "GOOGLE|ALPHABET|MICROSOFT|AMAZON|\\bMETA\\b|FACEBOOK|APPLE INC|OPENAI|ANTHROPIC|NVIDIA|AUTODESK|INTEL\\b|QUALCOMM|ORACLE|SALESFORCE"
+      },
+      {
+        "id": "health",
+        "label": "Health care, insurers and pharma",
+        "why": "TODO: why this category matters for Burlison's district.",
+        "rx": "HEALTH|MEDICAL|HOSPITAL|PHARMA|INSURANCE|KAISER|AMERICAN MEDICAL|DENTAL"
+      },
+      {
+        "id": "civil",
+        "label": "Latino, immigrant and civil-rights groups",
+        "why": "TODO: why this category matters for Burlison's district.",
+        "rx": "LATINO|HISPANIC|MEXICAN AMERICAN|UNIDOSUS|IMMIGRA|\\bACLU\\b|NAACP|CHCI|BOLD PAC|LA RAZA"
+      }
+    ],
+    "_cyclesNote": "cycles are FEC two-year periods named by their even end year. House: the first race and the current cycle. Senate (six-year terms): resolve_fec.py writes the election cycle that began the current term through the current cycle, e.g. Padilla (elected 2022) 2022, 2024, 2026; Schiff (elected 2024) 2024, 2026. Every build script loops over this list.",
+    "leadershipIds": []
+  },
+  "geo": {
+    "_note": "County FIPS codes the district touches and a short code for each county (build_map.py colors by these).",
+    "countyFips": [],
+    "counties": {},
+    "padLon": 0.035,
+    "padLat": 0.03
+  },
+  "statements": {
+    "localTerms": "",
+    "defaultLang": "en",
+    "_note": "localTerms: |-separated place names that mark a release as local news (lowercase)."
+  },
+  "peers": [
+    {
+      "id": "J000294",
+      "name": "Hakeem Jeffries",
+      "dist": "NY-8",
+      "group": "Party leadership"
+    }
+  ],
+  "overview": {
+    "_note": "Member-specific Overview tiles (scripts/build_overview.py). costPromise: start of the promise 'issue' in data/promises.json whose status answers 'Delivering on cost of living?'. themes: [{q, rx, section, noun}] counts press releases mentioning a topic (e.g. Luz Rivas: Focused on homelessness?). votes: [{q, roll, section, what}] shows one recorded vote (e.g. the Epstein Files Transparency Act, House roll 2025-289).",
+    "costPromise": "Economic opportunity",
+    "themes": [],
+    "votes": []
+  },
+  "_peersNote": "Members to compare with on the Overview and Money pages: {id, name, dist, group}. id is the vote id (bioguide for the House, LIS id for the Senate). Groups appear in config order; the build counts 'Party leadership', 'Centrist' and 'Progressive' in its summary.",
+  "profile": {
+    "_note": "Curated page text, rendered by the pages at runtime. Strings allow [label](url), **bold** and {{tokens}} (e.g. {{short}}, {{poss}}). Every fact typed here also goes in data/claims_static.json with its source.",
+    "lede": "",
+    "facts": [],
+    "factSources": [],
+    "committees": [],
+    "committeesNote": "",
+    "caucuses": [],
+    "promiseYear": "",
+    "promisesIntro": "",
+    "offices": [],
+    "online": [],
+    "onlineNote": "",
+    "handles": [],
+    "channelsNote": "",
+    "money": {
+      "watchIntro": "",
+      "trackaipacNote": ""
+    },
+    "events": {
+      "intro": "",
+      "help": "",
+      "ask": ""
+    },
+    "_examples": {
+      "facts": [
+        {
+          "label": "Background",
+          "value": "..."
+        },
+        {
+          "label": "2024 general",
+          "value": "Won 60.1% to 39.9% over ..."
+        }
+      ],
+      "factSources": [
+        "2024 general (certified): ... [Secretary of State](https://...)"
+      ],
+      "committees": [
+        {
+          "name": "Judiciary Committee",
+          "subs": [
+            {
+              "name": "... Subcommittee",
+              "role": "Ranking member"
+            }
+          ],
+          "blurb": "What it oversees. [Source](https://...)"
+        }
+      ],
+      "caucuses": [
+        [
+          "Congressional Progressive Caucus",
+          "Member"
+        ]
+      ],
+      "offices": [
+        {
+          "name": "Washington, D.C. office",
+          "lines": [
+            "...",
+            "Washington, DC 20510"
+          ],
+          "phone": "(202) 224-0000",
+          "note": "Best for votes and legislation."
+        }
+      ],
+      "online": [
+        "[Contact form](https://...)"
+      ],
+      "handles": [
+        {
+          "platform": "X",
+          "office": {
+            "text": "@...",
+            "url": "https://x.com/..."
+          },
+          "campaign": {
+            "text": "@...",
+            "url": "https://x.com/..."
+          }
+        }
+      ]
+    },
+    "map": {
+      "heading": "",
+      "intro": "",
+      "note": "",
+      "modes": [
+        {
+          "key": "new",
+          "label": "New lines"
+        },
+        {
+          "key": "old",
+          "label": "Current lines"
+        }
+      ],
+      "population": null,
+      "kinds": {},
+      "neighbors": [],
+      "smallLabels": [],
+      "_note": "modes: build_map.py writes 'new' (cd120) and 'old' (cd119). population: {mode, total, parts: [[kind, label, residents, note]], source}."
+    }
+  }
+}
