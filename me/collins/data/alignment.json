@@ -1,0 +1,27 @@
+{
+ "party": "R",
+ "partyName": "Republicans",
+ "memberUnity": 84.5,
+ "memberRank": 52,
+ "memberTied": 0,
+ "dems": 53,
+ "medianUnity": 99.1,
+ "rolls": 938,
+ "contested": 36,
+ "israelRolls": 34,
+ "peers": [
+  {
+   "id": "S270",
+   "name": "Chuck Schumer",
+   "dist": "NY",
+   "group": "Party leadership",
+   "all": 23.0,
+   "n": 934,
+   "contested": 80.6,
+   "nc": 36,
+   "israel": 50.0,
+   "ni": 34,
+   "unity": null
+  }
+ ]
+}
