@@ -1590,6 +1590,84 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "ks/mann",
+   "name": "Tracey Mann",
+   "party": "R",
+   "seat": "KS-1",
+   "chamber": "house",
+   "voteId": "M000871",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ks/schmidt",
+   "name": "Derek Schmidt",
+   "party": "R",
+   "seat": "KS-2",
+   "chamber": "house",
+   "voteId": "S001228",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ks/davids",
+   "name": "Sharice Davids",
+   "party": "D",
+   "seat": "KS-3",
+   "chamber": "house",
+   "voteId": "D000629",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ks/estes",
+   "name": "Ron Estes",
+   "party": "R",
+   "seat": "KS-4",
+   "chamber": "house",
+   "voteId": "E000298",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ks/marshall",
+   "name": "Roger Marshall",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S411",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ks/moran",
+   "name": "Jerry Moran",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S347",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
