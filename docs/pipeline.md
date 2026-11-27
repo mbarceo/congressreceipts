@@ -80,6 +80,7 @@ flowchart TD
 | `resolve_fec.py` | FEC key | `fec.candidateId`, `committeeId`, `cycles` in the config | Run once per member. If several candidates match it writes nothing; set the ids by hand |
 | `fetch_fec.py` | FEC key | `data/fec/raw/` | Cycle totals and every committee contribution. Rate-limited; resumable |
 | `fetch_trackaipac.py` | none | `data/trackaipac.json` | Third-party figure, shown beside FEC data and labeled |
+| `fetch_heritage_action_ie.py` | FEC key | `data/heritage_action_ie.json` (shared, not per member) | Heritage Action's independent expenditures for or against named candidates (FEC Schedule E). Heritage Action has no candidate-contributing PAC. Not yet shown on any page; a tracker would look its member up by `fec.candidateId` |
 | `fetch_bills.py` | congress.gov key | `data/member_bills.json` | Every bill the member sponsored or cosponsored |
 | `fetch_portrait.py` | none | `assets/portrait.jpg` | Bioguide first (kept current). Open the image to confirm it |
 | `fetch_geo.py` | none | `data/geo/raw/` | Census boundary shapes, House only |

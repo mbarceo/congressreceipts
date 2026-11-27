@@ -26,4 +26,5 @@ __pycache__/
 **/data/site_raw
 # White House statement PDFs downloaded by build_trump_positions.py
 data/sap_raw/
+data/heritage_action/raw/
 **/data/.rebuild_state.json
