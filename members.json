@@ -1122,6 +1122,19 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "gu/moylan",
+   "name": "James C. Moylan",
+   "party": "R",
+   "seat": "GU-AL",
+   "chamber": "house",
+   "voteId": "M001219",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
