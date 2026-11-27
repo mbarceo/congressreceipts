@@ -1,0 +1,27 @@
+{
+ "party": "R",
+ "partyName": "Republicans",
+ "memberUnity": 96.3,
+ "memberRank": 136,
+ "memberTied": 0,
+ "dems": 221,
+ "medianUnity": 97.1,
+ "rolls": 689,
+ "contested": 94,
+ "israelRolls": 12,
+ "peers": [
+  {
+   "id": "J000294",
+   "name": "Hakeem Jeffries",
+   "dist": "NY-8",
+   "group": "Party leadership",
+   "all": 33.8,
+   "n": 666,
+   "contested": 85.1,
+   "nc": 94,
+   "israel": 36.4,
+   "ni": 11,
+   "unity": null
+  }
+ ]
+}
