@@ -5738,6 +5738,84 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "al/moore",
+   "name": "Barry Moore",
+   "party": "R",
+   "seat": "AL-1",
+   "chamber": "house",
+   "voteId": "M001212",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "la/letlow",
+   "name": "Julia Letlow",
+   "party": "R",
+   "seat": "LA-5",
+   "chamber": "house",
+   "voteId": "L000595",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ok/hern",
+   "name": "Kevin Hern",
+   "party": "R",
+   "seat": "OK-1",
+   "chamber": "house",
+   "voteId": "H001082",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ky/barr",
+   "name": "Andy Barr",
+   "party": "R",
+   "seat": "KY-6",
+   "chamber": "house",
+   "voteId": "B001282",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "wy/hageman",
+   "name": "Harriet M. Hageman",
+   "party": "R",
+   "seat": "WY-AL",
+   "chamber": "house",
+   "voteId": "H001096",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "nh/pappas",
+   "name": "Chris Pappas",
+   "party": "D",
+   "seat": "NH-1",
+   "chamber": "house",
+   "voteId": "P000614",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
