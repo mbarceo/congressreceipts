@@ -2,19 +2,115 @@
  "_note": "Hand-curated. Roll ids are chosen by reading the Clerk's titles; the member's vote is pulled from data/votes.json, never typed here. statementRx matches titles; statementPicks adds specific releases with a verbatim snippet found by 'rx' in the release's full text (data/statements_full.json). No editorial verdicts except the Israel card's headline, set in 'israel.headline'.",
  "issues": [
   {
-   "id": "example-issue",
-   "name": "Example issue (replace)",
-   "intro": "One or two neutral sentences on what this section covers.",
-   "statementRx": "keyword|another keyword",
+   "id": "trade",
+   "name": "Trade and tariffs",
+   "intro": "Statements from the Ways and Means Trade Subcommittee's ranking member on tariffs and trade policy.",
+   "statementRx": "",
+   "rolls": [],
    "statementPicks": [],
-   "rolls": []
+   "items": [
+    {
+     "d": "2026-11-16",
+     "t": "Responded to a threat to double tariffs on Mexico.",
+     "u": "https://lindasanchez.house.gov/media-center/press-releases/sanchez-trumps-latest-mexico-tariff-threat",
+     "q": "Tariffs should be a tool to level the playing field for American workers and businesses, not a weapon to scapegoat immigrants or settle political scores."
+    },
+    {
+     "d": "2026-07-23",
+     "t": "Criticized a round of tariffs the administration said were meant to combat forced labor.",
+     "u": "https://lindasanchez.house.gov/media-center/press-releases/sanchez-trumps-latest-tariffs-arent-serious-attempt-combat-forced-labor",
+     "q": "We need to take forced labor seriously."
+    },
+    {
+     "d": "2026-10-29",
+     "t": "Joined Los Angeles County colleagues for a roundtable on trade policy at the Port of Los Angeles.",
+     "u": "https://lindasanchez.house.gov/media-center/press-releases/sanchez-la-county-members-spotlight-cost-trumps-trade-polices-port-los",
+     "q": "It’s clear that President Trump’s chaotic trade policies are hurting Americans"
+    }
+   ]
+  },
+  {
+   "id": "immigration",
+   "name": "Immigration and taxpayer data",
+   "intro": "A roll call on immigration enforcement and a court filing on IRS data shared with ICE.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2025-01-07",
+     "roll": "2025-006",
+     "t": "{Vote} the Laken Riley Act (H.R. 29). It passed {yea}–{nay}."
+    },
+    {
+     "d": "2026-07-30",
+     "t": "Led a bicameral amicus brief on IRS-to-ICE taxpayer address sharing.",
+     "u": "https://lindasanchez.house.gov/media-center/press-releases/sanchez-chc-colleagues-lead-amicus-brief-fight-over-irs-ice-taxpayer",
+     "q": "led 85 House and Senate Democrats in filing a bicameral amicus brief urging the U.S. Court of Appeals for the First Circuit to uphold a lower court’s order blocking Immigration and Customs Enforcement from using – or even viewing – tens of thousands of taxpayers’ addresses obtained from the IRS"
+    }
+   ]
+  },
+  {
+   "id": "health-care",
+   "name": "Health care and Medicaid",
+   "intro": "Roll calls on health care and Medicaid bills.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2025-05-22",
+     "roll": "2025-145",
+     "t": "{Vote} H.R. 1, the reconciliation bill the Clerk lists as the One Big Beautiful Act. It passed {yea}–{nay}."
+    },
+    {
+     "d": "2025-12-18",
+     "roll": "2025-362",
+     "t": "{Vote} the Do No Harm in Medicaid Act (H.R. 498). It passed {yea}–{nay}."
+    }
+   ]
+  },
+  {
+   "id": "housing-retirement",
+   "name": "Housing and Social Security",
+   "intro": "Bills the member introduced on rental housing and surviving-spouse Social Security benefits.",
+   "statementRx": "",
+   "rolls": [],
+   "statementPicks": [],
+   "items": [
+    {
+     "d": "2026-05-21",
+     "t": "Introduced the bipartisan Rental Housing Investment Act.",
+     "u": "https://lindasanchez.house.gov/media-center/press-releases/bipartisan-bill-would-tackle-rental-housing-shortage-lower-costs",
+     "q": "Southern California families are being priced out of their own communities"
+    },
+    {
+     "d": "2026-09-02",
+     "t": "Introduced the Protecting Our Widows and Widowers in Retirement (POWR) Act.",
+     "u": "https://lindasanchez.house.gov/media-center/press-releases/sanchez-introduces-bill-strengthen-social-security-benefits-widows-0",
+     "q": "After decades of hard work and paying into the system, widows and widowers deserve to keep the benefits they earned together."
+    }
+   ]
   }
  ],
  "israel": {
   "question": "Israel or Palestine?",
-  "headline": "TBD",
-  "headlineWhy": "State the rule behind the headline once the items are in.",
-  "summary": "",
-  "items": []
+  "headline": "Mixed",
+  "headlineWhy": "\"Mixed\" because the items point both ways: {npal} toward conditions on offensive weapons for Israel and {nisr} toward continued defensive aid.",
+  "summary": "One statement so far, from the newest 30 releases: the member cosponsored the Block the Bombs Act, which covers offensive weapons only, and said defensive aid for close allies should continue.",
+  "items": [
+   {
+    "d": "2026-07-14",
+    "dir": "pal",
+    "u": "https://lindasanchez.house.gov/media-center/press-releases/sanchez-cosponsors-block-bombs-act",
+    "text": "Cosponsored the Block the Bombs Act, saying “I oppose providing offensive weapons to Prime Minister Netanyahu and his far-right government without meaningful safeguards or accountability.”"
+   },
+   {
+    "d": "2026-07-14",
+    "dir": "isr",
+    "u": "https://lindasanchez.house.gov/media-center/press-releases/sanchez-cosponsors-block-bombs-act",
+    "text": "In the same statement: “While I have consistently supported defensive aid for close American allies, military aid for Israel must include strong conditions to prevent further suffering.”"
+   }
+  ]
  }
 }
