@@ -253,6 +253,62 @@
     "total": 318,
     "checked": "2026-11-26"
    }
+  },
+  {
+   "name": "Nanette Diaz Barrag\u00e1n",
+   "party": "D",
+   "seat": "CA-44",
+   "chamber": "house",
+   "path": "ca/barragan/",
+   "portrait": "ca/barragan/assets/portrait.jpg",
+   "leader": "Hakeem Jeffries",
+   "agree": 98.3,
+   "agreeN": 660,
+   "agreeSplit": 85.5,
+   "splitVotes": 76,
+   "splits": 11,
+   "unity": 98.5,
+   "rank": 29,
+   "dems": 215,
+   "money": {
+    "2024": 0,
+    "2026": 0
+   },
+   "moneyTotal": 0,
+   "verdict": null,
+   "checks": {
+    "verified": 13,
+    "total": 13,
+    "checked": "2026-11-27"
+   }
+  },
+  {
+   "name": "Linda T. S\u00e1nchez",
+   "party": "D",
+   "seat": "CA-41",
+   "chamber": "house",
+   "path": "ca/sanchez/",
+   "portrait": "ca/sanchez/assets/portrait.jpg",
+   "leader": "Hakeem Jeffries",
+   "agree": 97.8,
+   "agreeN": 669,
+   "agreeSplit": 81.2,
+   "splitVotes": 76,
+   "splits": 15,
+   "unity": 98.7,
+   "rank": 24,
+   "dems": 215,
+   "money": {
+    "2024": 0,
+    "2026": 23033
+   },
+   "moneyTotal": 23033,
+   "verdict": null,
+   "checks": {
+    "verified": 11,
+    "total": 11,
+    "checked": "2026-11-27"
+   }
   }
  ]
 }
