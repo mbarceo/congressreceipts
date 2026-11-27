@@ -32,6 +32,9 @@ def extract(h):
     m = re.search(r'<div[^>]+class="[^"]*\bentry-content\b[^"]*"[^>]*>(.*?)(?=<footer|<div[^>]+class="[^"]*\b(?:sharedaddy|post-navigation|entry-footer)\b)', h, re.S)
     if m:
         return text(m.group(1))
+    m = re.search(r'<div class\s*=\s*"content">(.*?)(?=</div>\s*</div>\s*</div>\s*</main>)', h, re.S)   # barragan.house.gov
+    if m:
+        return text(m.group(1))
     return None
 
 def body(u):
