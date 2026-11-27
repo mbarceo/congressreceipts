@@ -5191,6 +5191,58 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "wv/miller",
+   "name": "Carol D. Miller",
+   "party": "R",
+   "seat": "WV-1",
+   "chamber": "house",
+   "voteId": "M001205",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "wv/moore",
+   "name": "Riley M. Moore",
+   "party": "R",
+   "seat": "WV-2",
+   "chamber": "house",
+   "voteId": "M001235",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "wv/capito",
+   "name": "Shelley Moore Capito",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S372",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "wv/justice",
+   "name": "James C. Justice",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S437",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
