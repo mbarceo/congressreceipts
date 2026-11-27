@@ -26,7 +26,7 @@ Every file below is JSON. Skeletons for a new member are in `template/`; each cu
 
 `publish.py`, `build_attendance.py`, `build_leaders.py` and `build_directory.py` all read this file. Entries with `"live": false` are skipped by all of them, so register a member early with the flag set and remove it when the tracker is finished (see [publish-and-deploy](howto/publish-and-deploy.md)).
 
-## `data/queue.json` (Backlog Queue page)
+## `data/queue.json` (Backlog page)
 
 ```json
 { "R000620": { "status": "done", "url": "https://congressreceipts.org/ca/rivas/" },

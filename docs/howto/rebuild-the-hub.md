@@ -1,6 +1,6 @@
 # How to rebuild the hub pages
 
-The hub pages (home, Who's showing up, Leaders tracker, Find your rep, Backlog Queue) read JSON from the root `data/` folder. Rebuild it after a member's data changes or a member is added.
+The hub pages (home, Who's showing up, Leaders tracker, Find your rep, Backlog) read JSON from the root `data/` folder. Rebuild it after a member's data changes or a member is added.
 
 ```bash
 python3 -I scripts/build_attendance.py     # home + Who's showing up  → data/attendance.json

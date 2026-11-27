@@ -26,6 +26,9 @@
 .feat p{margin:0;color:var(--muted);font-size:.9rem}
 .feat .go{margin-top:auto;color:var(--accent);font-weight:600;font-size:.88rem}
 .feat .stat{font-family:var(--f-mono);font-size:.8rem;color:var(--muted)}
+.backlog-cta{margin:18px 0 0;display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;color:var(--muted)}
+.backlog-cta a{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 16px;color:var(--accent);font-weight:600;font-size:.9rem;text-decoration:none}
+.backlog-cta a:hover{border-color:var(--accent)}
 .mem{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 @media(max-width:900px){.mem{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.mem{grid-template-columns:1fr}}
@@ -77,6 +80,7 @@
   <section>
     <div class="sec-head"><span class="eyebrow">Tracked so far</span><h2>The members</h2><p>Each tracker covers votes, money, stances, promises, town halls and statements. More members are on the way.</p></div>
     <div class="mem" id="mem"></div>
+    <p class="backlog-cta">Can't find your rep? <a href="backlog.html">Check the Backlog →</a></p>
   </section>
 
   <section id="how">
@@ -91,7 +95,7 @@
   </section>
 
 </div>
-<script src="hub.js?v=6d7921b8"></script>
+<script src="hub.js?v=ce8e4641"></script>
 <script>
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const $ = id => document.getElementById(id);

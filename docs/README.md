@@ -22,7 +22,7 @@ Diagrams in these docs are [Mermaid](https://mermaid.js.org/); GitHub renders th
 | Change the site's pages, header or design | [howto/edit-shared-pages.md](howto/edit-shared-pages.md) |
 | Understand publishing and deployment | [howto/publish-and-deploy.md](howto/publish-and-deploy.md) |
 | Support a new press-release page layout | [howto/add-a-press-layout.md](howto/add-a-press-layout.md) |
-| Update the Backlog Queue | [howto/update-the-queue.md](howto/update-the-queue.md) |
+| Update the Backlog | [howto/update-the-queue.md](howto/update-the-queue.md) |
 | Rebuild the home, attendance, leaders and Find pages | [howto/rebuild-the-hub.md](howto/rebuild-the-hub.md) |
 
 ## For Claude Code and other AI agents

@@ -8,7 +8,7 @@ Welcome. This guide gets you from zero to your first pull request, including how
 - **Refresh a tracker** with new votes, releases or filings: [refresh-a-member](docs/howto/refresh-a-member.md)
 - **Improve the site** (pages, design, the hub): [edit-shared-pages](docs/howto/edit-shared-pages.md)
 - **Support a new press-release layout**: [add-a-press-layout](docs/howto/add-a-press-layout.md)
-- **Update the Backlog Queue**: [update-the-queue](docs/howto/update-the-queue.md)
+- **Update the Backlog**: [update-the-queue](docs/howto/update-the-queue.md)
 
 Before you pick a member, check `data/queue.json` and the open pull requests, and tell the others which member you are taking (mark them `progress` in the queue, in a small pull request of its own).
 

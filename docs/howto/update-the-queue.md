@@ -1,6 +1,6 @@
-# How to update the Backlog Queue
+# How to update the Backlog
 
-The Backlog Queue page (`backlog.html`) lists every sitting member of Congress by state and chamber with the status of their tracker. It joins two files:
+The Backlog page (`backlog.html`) lists every sitting member of Congress by state and chamber with the status of their tracker. It joins two files:
 
 - `data/congress.json`: the roster, built by `scripts/build_roster.py` from the `unitedstates/congress-legislators` current-members file.
 - `data/queue.json`: the status. Entries for tracked members are generated from `members.json` by `scripts/build_queue.py`; only entries for people with no tracker (`skip`) are edited by hand.
