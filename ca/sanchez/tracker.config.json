@@ -21,7 +21,7 @@
     "district": "41",
     "districtLabel": "CA-41",
     "seatLabel": "California's 38th District",
-    "geoid": "0638",
+    "geoid": "0641",
     "area": "CA-41",
     "congress": 119,
     "inOfficeSince": "TODO: YYYY-MM-DD sworn in (current service)",
@@ -37,7 +37,8 @@
       175,
       263
     ],
-    "trackaipacSlug": "member-linda-sanchez-ca-38-d"
+    "trackaipacSlug": "member-linda-sanchez-ca-38-d",
+    "geoidOld": "0638"
   },
   "leader": {
     "name": "Hakeem Jeffries",
@@ -304,10 +305,12 @@
   "geo": {
     "_note": "County FIPS codes the district touches and a short code for each county (build_map.py colors by these).",
     "countyFips": [
-      "06037"
+      "06037",
+      "06059"
     ],
     "counties": {
-      "Los Angeles County": "LA"
+      "Los Angeles County": "LA",
+      "Orange County": "OC"
     },
     "padLon": 0.035,
     "padLat": 0.03
