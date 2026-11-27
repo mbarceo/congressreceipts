@@ -2513,6 +2513,32 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "mt/downing",
+   "name": "Troy Downing",
+   "party": "R",
+   "seat": "MT-2",
+   "chamber": "house",
+   "voteId": "D000634",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "mt/sheehy",
+   "name": "Tim Sheehy",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S435",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
