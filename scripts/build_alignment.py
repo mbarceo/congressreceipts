@@ -47,8 +47,12 @@ for d in dems:
 ranked = sorted(unity, key=lambda k: -unity[k])
 contested = lambda r, s=dict(zip([x["id"] for x in rolls], sides)): s[r["id"]][1] >= 0.10
 
-out = {"party": OWN, "partyName": OWN_NAME, "memberUnity": round(unity[TRAN] * 100, 1), "memberRank": 1 + sum(1 for k in ranked if unity[k] > unity[TRAN]),  # ties share a rank
-       "memberTied": sum(1 for k in ranked if unity[k] == unity[TRAN]) - 1, "dems": len(ranked),
+# A member under the minimum party-side votes (a non-voting delegate, or someone sworn in late) is not ranked: unity, rank and ties are null.
+mine = unity.get(TRAN)
+if mine is None: print(f"{TRAN} has fewer than {MIN_VOTES} party-side votes: not ranked for party unity (memberUnity, memberRank, memberTied are null).")
+out = {"party": OWN, "partyName": OWN_NAME, "memberUnity": None if mine is None else round(mine * 100, 1),
+       "memberRank": None if mine is None else 1 + sum(1 for k in ranked if unity[k] > mine),  # ties share a rank
+       "memberTied": None if mine is None else sum(1 for k in ranked if unity[k] == mine) - 1, "dems": len(ranked),
        "medianUnity": round(sorted(unity.values())[len(unity) // 2] * 100, 1),
        "rolls": len(rolls), "contested": sum(1 for r in rolls if contested(r)),
        "israelRolls": sum(1 for r in rolls if r["israel"]), "peers": []}

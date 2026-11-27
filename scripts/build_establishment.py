@@ -99,6 +99,8 @@ for r in load_rolls():
         if a != b:
             diffs.append({"id": r["id"], "date": r["date"], "bill": r["bill"], "q": r["q"], "title": r["desc"] or r.get("amend", ""),
                           "me": a, "jeffries": b, "url": r["url"]})
+if LEADER.get("compareVotes") is False:   # e.g. the Speaker: no vote comparison with a party leader (page shows N/A)
+    both, diffs = 0, []
 usd = lambda x: f"${round(x):,}"
 al = json.load(open(os.path.join(ROOT, "data/alignment.json"))); peer = {p["name"]: p for p in al["peers"]}
 L = json.load(open(os.path.join(ROOT, "data/fec/leadership.json")))

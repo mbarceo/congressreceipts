@@ -1,0 +1,37 @@
+{
+ "_note": "Evidence cards for the Stances page's 'big questions'. Each item points one way: 'pro' or 'con' (labels per card). Roll items: 'yea' says which side a Yea vote is on; the member's vote, and therefore the item's side, comes from data/votes.json. Release items: 'stmt' must match one release. Headlines are computed in scripts/build_cards.py by the rule stated on each card. Build: python3 -I scripts/build_cards.py (after build_stances.py and build_establishment.py).",
+ "cards": [
+  {
+   "key": "ice",
+   "q": "Pro-ICE?",
+   "eb": "Immigration enforcement",
+   "pro": "Pro-enforcement",
+   "con": "Against ICE or for immigrants",
+   "section": "immigration",
+   "rollsFromIssue": "immigration",
+   "issueYea": "pro",
+   "items": []
+  },
+  {
+   "key": "police",
+   "q": "Pro-police?",
+   "eb": "Policing and crime",
+   "pro": "Police or tough-on-crime side",
+   "con": "Against",
+   "section": "public-safety",
+   "rollsFromIssue": "public-safety",
+   "issueYea": "pro",
+   "items": []
+  },
+  {
+   "key": "corporate",
+   "q": "Pro-corporate?",
+   "eb": "Money and business",
+   "pro": "Business side",
+   "con": "Consumer or labor side",
+   "section": null,
+   "rolls": [],
+   "items": []
+  }
+ ]
+}

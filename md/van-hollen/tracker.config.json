@@ -3,7 +3,7 @@
   "member": {
     "name": "Chris Van Hollen",
     "first": "Chris",
-    "last": "Hollen",
+    "last": "Van Hollen",
     "short": "Van Hollen",
     "honorific": "Sen.",
     "title": "Sen. Chris Van Hollen",
@@ -22,14 +22,19 @@
     "seatLabel": "Maryland",
     "area": "Maryland",
     "congress": 119,
-    "inOfficeSince": "TODO: YYYY-MM-DD sworn in (current service)",
+    "inOfficeSince": "2017-01-03",
     "site": "https://www.vanhollen.senate.gov",
-    "domain": "hollen.senate.gov",
-    "pressPath": "/newsroom/press-releases",
+    "domain": "vanhollen.senate.gov",
+    "pressPath": "/news/press-releases",
     "pressLayout": "auto",
     "campaignSite": "",
     "portrait": "assets/portrait.jpg",
-    "committees": [],
+    "committees": [
+      "Appropriations",
+      "Banking, Housing, and Urban Affairs",
+      "Budget",
+      "Foreign Relations"
+    ],
     "portraitSource": "https://bioguide.congress.gov/photo/V000128.jpg",
     "portraitSize": [
       178,
@@ -281,19 +286,19 @@
       {
         "id": "tech",
         "label": "Technology and AI companies",
-        "why": "TODO: why this category matters for Van Hollen's state.",
+        "why": "Technology and AI companies and their PACs: shown so readers can see how much this sector gives.",
         "rx": "GOOGLE|ALPHABET|MICROSOFT|AMAZON|\\bMETA\\b|FACEBOOK|APPLE INC|OPENAI|ANTHROPIC|NVIDIA|AUTODESK|INTEL\\b|QUALCOMM|ORACLE|SALESFORCE"
       },
       {
         "id": "health",
         "label": "Health care, insurers and pharma",
-        "why": "TODO: why this category matters for Van Hollen's state.",
+        "why": "Hospitals, insurers, drug makers and medical groups: shown so readers can see how much this sector gives.",
         "rx": "HEALTH|MEDICAL|HOSPITAL|PHARMA|INSURANCE|KAISER|AMERICAN MEDICAL|DENTAL"
       },
       {
         "id": "civil",
         "label": "Latino, immigrant and civil-rights groups",
-        "why": "TODO: why this category matters for Van Hollen's state.",
+        "why": "Immigrant-rights, civil-rights and Latino advocacy groups: shown so readers can see how much they give.",
         "rx": "LATINO|HISPANIC|MEXICAN AMERICAN|UNIDOSUS|IMMIGRA|\\bACLU\\b|NAACP|CHCI|BOLD PAC|LA RAZA"
       }
     ],
@@ -331,8 +336,72 @@
     "lede": "",
     "facts": [],
     "factSources": [],
-    "committees": [],
-    "committeesNote": "",
+    "committees": [
+      {
+        "name": "Appropriations Committee",
+        "subs": [
+          {
+            "name": "Commerce, Justice, Science, and Related Agencies Subcommittee",
+            "role": "Ranking member"
+          },
+          {
+            "name": "Department of Homeland Security Subcommittee",
+            "role": "Member"
+          },
+          {
+            "name": "Department of Interior, Environment, and Related Agencies Subcommittee",
+            "role": "Member"
+          },
+          {
+            "name": "Financial Services and General Government Subcommittee",
+            "role": "Member"
+          },
+          {
+            "name": "Transportation, Housing and Urban Development, and Related Agencies Subcommittee",
+            "role": "Member"
+          }
+        ]
+      },
+      {
+        "name": "Banking, Housing, and Urban Affairs Committee",
+        "subs": [
+          {
+            "name": "Digital Assets Subcommittee",
+            "role": "Member"
+          },
+          {
+            "name": "Housing, Transportation, and Community Development Subcommittee",
+            "role": "Member"
+          },
+          {
+            "name": "National Security and International Trade and Finance Subcommittee",
+            "role": "Member"
+          }
+        ]
+      },
+      {
+        "name": "Budget Committee",
+        "subs": []
+      },
+      {
+        "name": "Foreign Relations Committee",
+        "subs": [
+          {
+            "name": "Africa and Global Health Policy Subcommittee",
+            "role": "Member"
+          },
+          {
+            "name": "East Asia, the Pacific, and International Cybersecurity Policy Subcommittee",
+            "role": "Member"
+          },
+          {
+            "name": "State Department and USAID Management, International Operations, and Bilateral International Development Subcommittee",
+            "role": "Ranking member"
+          }
+        ]
+      }
+    ],
+    "committeesNote": "Source: [senate.gov committee assignments](https://www.senate.gov/general/committee_assignments/assignments.htm), read Nov 26, 2026.",
     "caucuses": [],
     "promiseYear": "",
     "promisesIntro": "",

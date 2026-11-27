@@ -107,7 +107,11 @@
    },
    "moneyTotal": 25000,
    "verdict": null,
-   "checks": null
+   "checks": {
+    "verified": 62,
+    "total": 62,
+    "checked": "2026-11-26"
+   }
   },
   {
    "name": "Robert Garcia",
@@ -132,9 +136,122 @@
    "moneyTotal": 19000,
    "verdict": "Mixed",
    "checks": {
-    "verified": 137,
-    "total": 137,
+    "verified": 388,
+    "total": 388,
     "checked": "2026-11-25"
+   }
+  },
+  {
+   "name": "Chris Van Hollen",
+   "party": "D",
+   "seat": "Senate",
+   "chamber": "senate",
+   "path": "md/van-hollen/",
+   "portrait": "md/van-hollen/assets/portrait.jpg",
+   "leader": "Chuck Schumer",
+   "agree": 95.9,
+   "agreeN": 920,
+   "agreeSplit": 80.3,
+   "splitVotes": 180,
+   "splits": 38,
+   "unity": 96.5,
+   "rank": 12,
+   "dems": 47,
+   "money": {
+    "2022": 50000,
+    "2024": 0,
+    "2026": 0
+   },
+   "moneyTotal": 50000,
+   "verdict": "Mostly yes",
+   "checks": {
+    "verified": 99,
+    "total": 99,
+    "checked": "2026-11-26"
+   }
+  },
+  {
+   "name": "Jim Jordan",
+   "party": "R",
+   "seat": "OH-4",
+   "chamber": "house",
+   "path": "oh/jordan/",
+   "portrait": "oh/jordan/assets/portrait.jpg",
+   "leader": "Mike Johnson",
+   "agree": 98.7,
+   "agreeN": 519,
+   "agreeSplit": 80.6,
+   "splitVotes": 94,
+   "splits": 7,
+   "unity": 96.4,
+   "rank": 134,
+   "dems": 221,
+   "money": {
+    "2024": 0,
+    "2026": 2000
+   },
+   "moneyTotal": 2000,
+   "verdict": null,
+   "checks": {
+    "verified": 318,
+    "total": 318,
+    "checked": "2026-11-26"
+   }
+  },
+  {
+   "name": "Ken Calvert",
+   "party": "R",
+   "seat": "CA-41",
+   "chamber": "house",
+   "path": "ca/calvert/",
+   "portrait": "ca/calvert/assets/portrait.jpg",
+   "leader": "Mike Johnson",
+   "agree": 99.6,
+   "agreeN": 530,
+   "agreeSplit": 94.7,
+   "splitVotes": 94,
+   "splits": 2,
+   "unity": 97.5,
+   "rank": 92,
+   "dems": 221,
+   "money": {
+    "2024": 223227,
+    "2026": 195829
+   },
+   "moneyTotal": 419056,
+   "verdict": null,
+   "checks": {
+    "verified": 319,
+    "total": 319,
+    "checked": "2026-11-26"
+   }
+  },
+  {
+   "name": "Mike Johnson",
+   "party": "R",
+   "seat": "LA-4",
+   "chamber": "house",
+   "path": "la/johnson/",
+   "portrait": "la/johnson/assets/portrait.jpg",
+   "leader": "Steve Scalise",
+   "agree": null,
+   "agreeN": null,
+   "agreeSplit": null,
+   "splitVotes": 94,
+   "splits": null,
+   "unity": 99.8,
+   "rank": 1,
+   "dems": 221,
+   "money": {
+    "2024": 0,
+    "2026": 0
+   },
+   "moneyTotal": 0,
+   "verdict": null,
+   "checks": {
+    "verified": 318,
+    "total": 318,
+    "checked": "2026-11-26"
    }
   }
  ]

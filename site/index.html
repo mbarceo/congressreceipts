@@ -351,7 +351,7 @@ function renderAlignment(a, ta, votes, fec){
   const lc = `${M.leaderPoss} committees`;
   if(j) items.push(j.total ? `Received ${usd(j.total)} from ${esc(lc)}: ${j.items.map(p => `${esc(p.name.replace(/\s+/g," ").trim())} ${usd(p.amount)} (${Object.keys(p.byCycle).join(", ")})`).join("; ")}, per FEC filings. <a class="src" href="money.html#pacs">Money tab</a>` : `No contributions from ${esc(lc)} in ${M.poss} FEC filings. <a class="src" href="money.html#pacs">Money tab</a>`);
   const jp = a.peers.find(p => p.name === M.leaderName);
-  if(jp) items.push(`Agrees with ${esc(M.leaderLast)} on ${jp.all}% of votes and ${jp.contested}% of contested votes. <a class="src" href="${PARTYPAGE}">${M.isRep ? "Allegiance" : "Establishment"} tab</a>`);
+  if(jp && !M.leaderNA) items.push(`Agrees with ${esc(M.leaderLast)} on ${jp.all}% of votes and ${jp.contested}% of contested votes. <a class="src" href="${PARTYPAGE}">${M.isRep ? "Allegiance" : "Establishment"} tab</a>`);
   (P.leaderTies || []).forEach(x => items.push(md(x)));   // curated, sourced ties (also in data/claims_static.json)
   $("leaderTies").innerHTML = items.length ? items.map(x => `<li>${x}</li>`).join("") : `<li class="muted">Appears once votes and FEC data are built.</li>`;
 }

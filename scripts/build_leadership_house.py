@@ -98,6 +98,16 @@ def date_text(raw):
     return f"{m.group(1)}-{m.group(2)}" if m else ""
 
 
+
+def load_manual(race):
+    """Links a person opened and read by hand (the checker could not). Matched by name AND the source_url
+    the row has now, so changing a source drops the confirmation. Columns: race,name,source_url,confirmed_by,confirmed_on,note."""
+    f = ROOT / "data" / "leadership" / "manual_confirmations.csv"
+    if not f.exists():
+        return {}
+    with f.open(encoding="utf-8") as fh:
+        return {r["name"]: r for r in csv.DictReader(fh) if r["race"] == race and r["confirmed_on"].strip()}
+
 def main():
     snap = json.loads(SNAP.read_text(encoding="utf-8"))["house_speaker"]
     tracker = {}
@@ -109,6 +119,7 @@ def main():
         recs = {r["name"]: r for r in csv.DictReader(f)}
 
     vfile = ROOT / "data" / "leadership" / "verification_house.csv"
+    manual = load_manual("house")
     checks = {}
     if vfile.exists():
         with vfile.open(encoding="utf-8") as f:
@@ -149,6 +160,7 @@ def main():
             "disputed": name in DISPUTE, "dispute_note": DISPUTE.get(name, ""),
             "differs_from_tracker": group != tgroup,
             "check": "none_to_check" if tracker_only else checks.get(name, "not_run"),
+            "manual_confirmed_on": "" if tracker_only or name not in manual or manual[name]["source_url"] != r["source_url"] else manual[name]["confirmed_on"],
         })
 
     if errors:

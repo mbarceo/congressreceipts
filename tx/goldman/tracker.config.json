@@ -1,0 +1,358 @@
+{
+  "_note": "Member-specific values. Scripts read it through scripts/config.py; pages read member, leader and profile through site.js. Fields starting with TODO must be filled before the step that needs them.",
+  "member": {
+    "name": "Craig A. Goldman",
+    "first": "Craig",
+    "last": "Goldman",
+    "short": "Goldman",
+    "honorific": "Rep.",
+    "title": "Rep. Craig A. Goldman",
+    "pronouns": {
+      "subj": "they",
+      "obj": "them",
+      "poss": "their"
+    },
+    "bioguide": "G000601",
+    "voteId": "G000601",
+    "party": "Republican",
+    "state": "TX",
+    "stateName": "Texas",
+    "chamber": "house",
+    "district": "12",
+    "districtLabel": "TX-12",
+    "seatLabel": "Texas's 12th District",
+    "geoid": "4812",
+    "area": "TX-12",
+    "congress": 119,
+    "inOfficeSince": "TODO: YYYY-MM-DD sworn in (current service)",
+    "site": "https://craiggoldman.house.gov",
+    "domain": "craiggoldman.house.gov",
+    "pressPath": "/media/press-releases",
+    "pressLayout": "auto",
+    "campaignSite": "",
+    "portrait": "assets/portrait.jpg",
+    "committees": [],
+    "portraitSource": "https://bioguide.congress.gov/photo/G000601.jpg",
+    "portraitSize": [
+      1000,
+      1250
+    ]
+  },
+  "leader": {
+    "name": "Mike Johnson",
+    "voteId": "J000299",
+    "title": "Speaker of the House"
+  },
+  "fec": {
+    "candidateId": "H4TX12065",
+    "committeeId": "C00855528",
+    "cycles": [
+      2024,
+      2026
+    ],
+    "cycleLabels": {
+      "2024": "2023-24",
+      "2026": "2025-26"
+    },
+    "keyEnv": "FEC_API_KEY",
+    "leadershipRx": "MIKE JOHNSON|JOHNSON LEADERSHIP FUND",
+    "_leadersNote": "leaders.<chamber> lists the party leaders whose committees' money build_establishment.py totals per cycle (chamber = member.chamber). A gift counts when the giving committee's FEC ID is in 'ids' or its name matches 'rx' (name-only matches are printed for checking). 'numKey' exposes a leader's all-cycle total to establishment_items.json as {dccc} or {dscc}. leadershipRx/leadershipIds drive the Money page's single-leader box: House 'JEFFRIES|JEFF PAC'; Senate 'SCHUMER|^IMPACT$' with leadershipIds [\"C00346312\", \"C00348607\"].",
+    "leaders": {
+      "house": {
+        "title": "House Republican leadership and Trump",
+        "note": "Contributions from each leader's campaign committee, leadership PAC and joint fundraising committees, from the NRCC, and from President Trump's committees, from FEC filings. Committees are matched by FEC committee ID. Roles are from house.gov and the Clerk. Super PACs such as the Congressional Leadership Fund cannot give to candidates; their independent spending is not counted here.",
+        "list": [
+          {
+            "name": "Mike Johnson",
+            "role": "Speaker of the House",
+            "ids": [
+              "C00608695",
+              "C00771246"
+            ],
+            "rx": "MIKE JOHNSON|JOHNSON LEADERSHIP FUND",
+            "committees": [
+              "MIKE JOHNSON FOR LOUISIANA (principal campaign committee)",
+              "JOHNSON LEADERSHIP FUND (joint fundraising committee)"
+            ],
+            "src": [
+              "https://www.fec.gov/data/committee/C00608695/",
+              "https://www.fec.gov/data/committee/C00771246/"
+            ]
+          },
+          {
+            "name": "Steve Scalise",
+            "role": "House Majority Leader",
+            "ids": [
+              "C00394957",
+              "C00467431",
+              "C00568162",
+              "C00857144"
+            ],
+            "rx": "SCALISE|EYE OF THE TIGER",
+            "committees": [
+              "SCALISE FOR CONGRESS (principal campaign committee)",
+              "THE EYE OF THE TIGER POLITICAL ACTION COMMITTEE (leadership PAC)",
+              "SCALISE LEADERSHIP FUND (joint fundraising committee)",
+              "SCALISE LEADERSHIP FUND 2024 (joint fundraising committee)"
+            ],
+            "src": [
+              "https://www.fec.gov/data/committee/C00394957/",
+              "https://www.fec.gov/data/committee/C00467431/",
+              "https://www.fec.gov/data/committee/C00568162/",
+              "https://www.fec.gov/data/committee/C00857144/"
+            ]
+          },
+          {
+            "name": "Tom Emmer",
+            "role": "House Majority Whip",
+            "ids": [
+              "C00545749",
+              "C00592089",
+              "C00859058"
+            ],
+            "rx": "EMMER",
+            "committees": [
+              "EMMER FOR CONGRESS (principal campaign committee)",
+              "EMMER MAJORITY BUILDERS (joint fundraising committee)",
+              "ELECTING MAJORITY MAKING EFFECTIVE REPUBLICANS PAC (leadership PAC, 'Emmer PAC')"
+            ],
+            "src": [
+              "https://www.fec.gov/data/committee/C00545749/",
+              "https://www.fec.gov/data/committee/C00859058/",
+              "https://www.fec.gov/data/committee/C00592089/"
+            ]
+          },
+          {
+            "name": "NRCC",
+            "role": "Party campaign committee",
+            "ids": [
+              "C00075820"
+            ],
+            "rx": "^NRCC$|NATIONAL REPUBLICAN CONGRESSIONAL COMMITTEE",
+            "numKey": "nrcc",
+            "committees": [
+              "NRCC (party committee)"
+            ],
+            "src": [
+              "https://www.fec.gov/data/committee/C00075820/"
+            ]
+          },
+          {
+            "name": "Donald Trump",
+            "role": "President; his committees and leadership PACs",
+            "ids": [
+              "C00828541",
+              "C00762591",
+              "C00580100",
+              "C00873893",
+              "C00770941"
+            ],
+            "rx": "NEVER SURRENDER, INC|SAVE AMERICA PAC|MAKE AMERICA GREAT AGAIN PAC|TRUMP NATIONAL COMMITTEE|TRUMP SAVE AMERICA",
+            "committees": [
+              "NEVER SURRENDER, INC. (leadership PAC)",
+              "SAVE AMERICA PAC (leadership PAC)",
+              "MAKE AMERICA GREAT AGAIN PAC",
+              "TRUMP NATIONAL COMMITTEE JFC, INC. (joint fundraising)",
+              "TRUMP SAVE AMERICA JOINT FUNDRAISING COMMITTEE"
+            ],
+            "src": [
+              "https://www.fec.gov/data/committee/C00828541/",
+              "https://www.fec.gov/data/committee/C00762591/",
+              "https://www.fec.gov/data/committee/C00580100/",
+              "https://www.fec.gov/data/committee/C00873893/",
+              "https://www.fec.gov/data/committee/C00770941/"
+            ],
+            "numKey": "trump"
+          }
+        ]
+      }
+    },
+    "watch": [
+      {
+        "id": "detention",
+        "label": "Immigration detention and surveillance contractors",
+        "why": "Companies that profit from ICE detention or enforcement technology.",
+        "rx": "GEO GROUP|CORECIVIC|CORE CIVIC|PALANTIR|ANDURIL|AXON|MOTOROLA SOLUTIONS|CLEARVIEW"
+      },
+      {
+        "id": "police",
+        "label": "Police, sheriff and public-safety groups",
+        "why": "Law-enforcement unions, associations and corrections groups.",
+        "rx": "POLICE|SHERIFF|FRATERNAL ORDER|LAW ENFORCEMENT|PEACE OFFICER|CORRECTION|PROTECTIVE LEAGUE|FIREFIGHTER|FIRE FIGHTER"
+      },
+      {
+        "id": "realestate",
+        "label": "Real estate, landlord and developer groups",
+        "why": "Industry money on the housing side of the cost-of-living fight.",
+        "rx": "REALTOR|HOME BUILDERS|APARTMENT|MULTIFAMILY|MORTGAGE BANKERS|REAL ESTATE|LANDLORD|PROPERTY OWNERS|REALTY|PROPERTIES|DEVELOPMENT CO"
+      },
+      {
+        "id": "tenant",
+        "label": "Tenant, housing and homelessness advocates",
+        "why": "Groups working on affordable housing and homelessness.",
+        "rx": "TENANT|LOW INCOME HOUSING|HABITAT FOR HUMANITY|HOUSING AUTHORIT|HOMELESS|NAHRO|AFFORDABLE HOUSING|HOUSING ACTION"
+      },
+      {
+        "id": "labor",
+        "label": "Labor unions",
+        "why": "Union PACs and member-funded labor committees.",
+        "rx": "\\bUNION\\b|WORKERS|TEACHERS|SEIU|AFL-CIO|TEAMSTERS|LABORERS|ELECTRICAL|CARPENTERS|MACHINISTS|NURSES|\\bCOPE\\b"
+      },
+      {
+        "id": "tech",
+        "label": "Technology and AI companies",
+        "why": "TODO: why this category matters for Goldman's district.",
+        "rx": "GOOGLE|ALPHABET|MICROSOFT|AMAZON|\\bMETA\\b|FACEBOOK|APPLE INC|OPENAI|ANTHROPIC|NVIDIA|AUTODESK|INTEL\\b|QUALCOMM|ORACLE|SALESFORCE"
+      },
+      {
+        "id": "health",
+        "label": "Health care, insurers and pharma",
+        "why": "TODO: why this category matters for Goldman's district.",
+        "rx": "HEALTH|MEDICAL|HOSPITAL|PHARMA|INSURANCE|KAISER|AMERICAN MEDICAL|DENTAL"
+      },
+      {
+        "id": "civil",
+        "label": "Latino, immigrant and civil-rights groups",
+        "why": "TODO: why this category matters for Goldman's district.",
+        "rx": "LATINO|HISPANIC|MEXICAN AMERICAN|UNIDOSUS|IMMIGRA|\\bACLU\\b|NAACP|CHCI|BOLD PAC|LA RAZA"
+      }
+    ],
+    "_cyclesNote": "cycles are FEC two-year periods named by their even end year. House: the first race and the current cycle. Senate (six-year terms): resolve_fec.py writes the election cycle that began the current term through the current cycle, e.g. Padilla (elected 2022) 2022, 2024, 2026; Schiff (elected 2024) 2024, 2026. Every build script loops over this list.",
+    "leadershipIds": [
+      "C00608695",
+      "C00771246"
+    ]
+  },
+  "geo": {
+    "_note": "County FIPS codes the district touches and a short code for each county (build_map.py colors by these).",
+    "countyFips": [],
+    "counties": {},
+    "padLon": 0.035,
+    "padLat": 0.03
+  },
+  "statements": {
+    "localTerms": "",
+    "defaultLang": "en",
+    "_note": "localTerms: |-separated place names that mark a release as local news (lowercase)."
+  },
+  "peers": [
+    {
+      "id": "J000294",
+      "name": "Hakeem Jeffries",
+      "dist": "NY-8",
+      "group": "Party leadership"
+    }
+  ],
+  "overview": {
+    "_note": "Member-specific Overview tiles (scripts/build_overview.py). costPromise: start of the promise 'issue' in data/promises.json whose status answers 'Delivering on cost of living?'. themes: [{q, rx, section, noun}] counts press releases mentioning a topic (e.g. Luz Rivas: Focused on homelessness?). votes: [{q, roll, section, what}] shows one recorded vote (e.g. the Epstein Files Transparency Act, House roll 2025-289).",
+    "costPromise": "Economic opportunity",
+    "themes": [],
+    "votes": []
+  },
+  "_peersNote": "Members to compare with on the Overview and Money pages: {id, name, dist, group}. id is the vote id (bioguide for the House, LIS id for the Senate). Groups appear in config order; the build counts 'Party leadership', 'Centrist' and 'Progressive' in its summary.",
+  "profile": {
+    "_note": "Curated page text, rendered by the pages at runtime. Strings allow [label](url), **bold** and {{tokens}} (e.g. {{short}}, {{poss}}). Every fact typed here also goes in data/claims_static.json with its source.",
+    "lede": "",
+    "facts": [],
+    "factSources": [],
+    "committees": [],
+    "committeesNote": "",
+    "caucuses": [],
+    "promiseYear": "",
+    "promisesIntro": "",
+    "offices": [],
+    "online": [],
+    "onlineNote": "",
+    "handles": [],
+    "channelsNote": "",
+    "money": {
+      "watchIntro": "",
+      "trackaipacNote": ""
+    },
+    "events": {
+      "intro": "",
+      "help": "",
+      "ask": ""
+    },
+    "_examples": {
+      "facts": [
+        {
+          "label": "Background",
+          "value": "..."
+        },
+        {
+          "label": "2024 general",
+          "value": "Won 60.1% to 39.9% over ..."
+        }
+      ],
+      "factSources": [
+        "2024 general (certified): ... [Secretary of State](https://...)"
+      ],
+      "committees": [
+        {
+          "name": "Judiciary Committee",
+          "subs": [
+            {
+              "name": "... Subcommittee",
+              "role": "Ranking member"
+            }
+          ],
+          "blurb": "What it oversees. [Source](https://...)"
+        }
+      ],
+      "caucuses": [
+        [
+          "Congressional Progressive Caucus",
+          "Member"
+        ]
+      ],
+      "offices": [
+        {
+          "name": "Washington, D.C. office",
+          "lines": [
+            "...",
+            "Washington, DC 20510"
+          ],
+          "phone": "(202) 224-0000",
+          "note": "Best for votes and legislation."
+        }
+      ],
+      "online": [
+        "[Contact form](https://...)"
+      ],
+      "handles": [
+        {
+          "platform": "X",
+          "office": {
+            "text": "@...",
+            "url": "https://x.com/..."
+          },
+          "campaign": {
+            "text": "@...",
+            "url": "https://x.com/..."
+          }
+        }
+      ]
+    },
+    "map": {
+      "heading": "",
+      "intro": "",
+      "note": "",
+      "modes": [
+        {
+          "key": "new",
+          "label": "New lines"
+        },
+        {
+          "key": "old",
+          "label": "Current lines"
+        }
+      ],
+      "population": null,
+      "kinds": {},
+      "neighbors": [],
+      "smallLabels": [],
+      "_note": "modes: build_map.py writes 'new' (cd120) and 'old' (cd119). population: {mode, total, parts: [[kind, label, residents, note]], source}."
+    }
+  }
+}

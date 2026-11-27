@@ -103,6 +103,7 @@ const MARK = {
   broke:   {label: "Broke with most Democrats", svg: (x, y) => `<path d="M${x} ${y-6}L${x+6} ${y}L${x} ${y+6}L${x-6} ${y}Z" fill="var(--st-broke)" stroke="var(--surface)" stroke-width="2"/>`},
   missed:  {label: "Didn't vote (Not Voting)", svg: (x, y) => `<circle cx="${x}" cy="${y}" r="5" fill="var(--surface)" stroke="var(--st-missed)" stroke-width="2.5"/>`},
   present: {label: "Voted Present", svg: (x, y) => `<circle cx="${x}" cy="${y}" r="5" fill="var(--surface)" stroke="var(--st-missed)" stroke-width="2" stroke-dasharray="2 2"/>`},
+  norecord:{label: "Not in the official record (the Speaker usually does not vote)", svg: (x, y) => `<rect x="${x-4}" y="${y-4}" width="8" height="8" fill="var(--surface)" stroke="var(--st-with)" stroke-width="2"/>`},
   with:    {label: "Voted with most Democrats", svg: (x, y) => `<circle cx="${x}" cy="${y}" r="3" fill="var(--st-with)"/>`},
 };
 const icon = k => `<svg width="14" height="14" viewBox="-7 -7 14 14" aria-hidden="true">${MARK[k].svg(0, 0)}</svg>`;
@@ -118,6 +119,7 @@ fetch("data/attendance.json").then(r => r.json()).then(D => {
       <div><div class="nm">${esc(m.name)}</div><div class="sub">${esc(m.party)} · ${esc(m.seat === "Senate" ? "U.S. Senate" : m.seat)}</div></div></div>
       <div><span class="big">${m.rate.toFixed(1)}%</span> <span class="sub">of votes missed</span></div>
       <dl><dt>Missed</dt><dd>${m.missed} of ${m.rolls} roll calls</dd>
+        ${m.notInRecord ? `<dt>Not recorded</dt><dd>${m.notInRecord} more roll calls with no entry for ${esc(m.name.split(" ").pop())} in the official record (the Speaker votes at their own discretion); not counted as missed</dd>` : ""}
         <dt>Chamber</dt><dd>median ${c.median}%; ${m.fewer} of ${c.members} ${m.chamber === "senate" ? "senators" : "representatives"} missed fewer</dd>
         <dt>Critical</dt><dd>${m.critical.filter(x => x.status === "missed").length} missed, ${m.critical.filter(x => x.status === "broke").length} broke with party, of ${m.critical.length}</dd>
         <dt>At home</dt><dd>${ev}</dd></dl>
@@ -130,7 +132,7 @@ fetch("data/attendance.json").then(r => r.json()).then(D => {
     `<button class="chip" data-t="${esc(v)}" aria-pressed="${v === "" ? "true" : "false"}">${esc(l)}</button>`).join("");
   $("filters").addEventListener("click", e => { const b = e.target.closest(".chip"); if (!b) return;
     topic = b.dataset.t; $("filters").querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed", x === b)); draw(); });
-  $("legend").innerHTML = ["broke", "missed", "present", "with"].map(k => `<span>${icon(k)}${MARK[k].label}</span>`).join("");
+  $("legend").innerHTML = ["broke", "missed", "present", "with", "norecord"].filter(k => k !== "norecord" || M.some(m => m.critical.some(x => x.status === "norecord"))).map(k => `<span>${icon(k)}${MARK[k].label}</span>`).join("");
 
   const all = M.flatMap(m => m.critical.map(x => x.date));
   const t0 = new Date("2025-01-01T00:00:00").getTime(), t1 = new Date(all.sort().pop() + "T23:59:59").getTime();
