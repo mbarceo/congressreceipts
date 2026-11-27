@@ -166,7 +166,9 @@
   "senate_class": null,
   "party": "R",
   "term_end": "2027-01-03",
-  "url": "https://radewagen.house.gov"
+  "url": "https://radewagen.house.gov",
+  "nonVoting": true,
+  "role": "Delegate"
  },
  {
   "name": "Ruben Gallego",
@@ -1362,7 +1364,9 @@
   "senate_class": null,
   "party": "D",
   "term_end": "2027-01-03",
-  "url": "https://norton.house.gov"
+  "url": "https://norton.house.gov",
+  "nonVoting": true,
+  "role": "Delegate"
  },
  {
   "name": "Ashley Moody",
@@ -1960,7 +1964,9 @@
   "senate_class": null,
   "party": "R",
   "term_end": "2027-01-03",
-  "url": "https://moylan.house.gov"
+  "url": "https://moylan.house.gov",
+  "nonVoting": true,
+  "role": "Delegate"
  },
  {
   "name": "Mazie K. Hirono",
@@ -4794,7 +4800,9 @@
   "senate_class": null,
   "party": "R",
   "term_end": "2027-01-03",
-  "url": "https://king-hinds.house.gov"
+  "url": "https://king-hinds.house.gov",
+  "nonVoting": true,
+  "role": "Delegate"
  },
  {
   "name": "Jon Husted",
@@ -5470,7 +5478,9 @@
   "senate_class": null,
   "party": "D",
   "term_end": "2027-01-03",
-  "url": "https://hernandez.house.gov"
+  "url": "https://hernandez.house.gov",
+  "nonVoting": true,
+  "role": "Resident Commissioner"
  },
  {
   "name": "Jack Reed",
@@ -6341,7 +6351,9 @@
   "senate_class": null,
   "party": "D",
   "term_end": "2027-01-03",
-  "url": "https://plaskett.house.gov"
+  "url": "https://plaskett.house.gov",
+  "nonVoting": true,
+  "role": "Delegate"
  },
  {
   "name": "John R. Curtis",

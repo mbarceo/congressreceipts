@@ -7,7 +7,7 @@
 <title>Find Your Rep · Congress Receipts</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="site.css?v=86652562">
+<link rel="stylesheet" href="site.css?v=6f55b713">
 <link rel="stylesheet" href="hub.css?v=91a2553f">
 <style>
 .search{display:flex;gap:8px;flex-wrap:wrap}
@@ -25,6 +25,7 @@
 .rep .sub{font-size:.8rem;color:var(--muted)}
 .rep a.go{font-size:.85rem;font-weight:600}
 .rep.tracked{border-color:var(--accent)}
+.chip-s.nv{color:var(--ink);border-color:var(--accent)}
 .chip-s{display:inline-block;font-size:.72rem;border:1px solid var(--line);border-radius:999px;padding:1px 8px;color:var(--muted);width:max-content}
 .group h3{margin:6px 0 10px}
 </style>
@@ -44,6 +45,7 @@
       <select id="st" aria-label="Browse by state"><option value="">Browse by state</option></select>
     </form>
     <p class="note" id="msg" aria-live="polite"></p>
+    <p class="note">The District of Columbia, Puerto Rico, American Samoa, Guam, the Northern Mariana Islands and the U.S. Virgin Islands each send a non-voting Delegate (Puerto Rico: Resident Commissioner) to the House. They cannot vote on the House floor. <a href="https://en.wikipedia.org/wiki/Non-voting_members_of_the_United_States_House_of_Representatives" target="_blank" rel="noopener">More</a></p>
     <div id="out" style="display:flex;flex-direction:column;gap:22px"></div>
   </section>
 
@@ -62,6 +64,7 @@ const card = m => {
   const t = TRACK[m.path];
   return `<article class="rep${m.path ? " tracked" : ""}">${t ? `<img class="av" src="${esc(t.portrait)}" alt="Official portrait of ${esc(m.name)}">` : `<span class="av" aria-hidden="true">${esc(m.vacant ? "—" : initials(m.name))}</span>`}
     <div class="t"><span class="nm">${esc(m.name)}</span><span class="sub">${esc(m.vacant ? "Seat vacant" : (PARTY[m.party] || m.party))} · ${esc(seatLabel(m))}</span>
+    ${m.nonVoting ? `<span class="chip-s nv" title="${esc(m.role)}s sit in the House but cannot vote on the floor">Non-voting ${esc(m.role.toLowerCase())}</span>` : ""}
     ${m.path ? `<a class="go" href="${esc(m.path)}/">Open the tracker →</a>` : `<span class="chip-s">Not tracked yet</span>`}</div></article>`;
 };
 const group = (title, list) => list.length ? `<div class="group"><h3>${esc(title)}</h3><div class="results">${list.map(card).join("")}</div></div>` : "";

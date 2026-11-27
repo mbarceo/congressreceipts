@@ -8,7 +8,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="site.css?v=86652562">
+<link rel="stylesheet" href="site.css?v=6f55b713">
 <link rel="stylesheet" href="hub.css?v=91a2553f">
 <style>
 .skipbox{margin:0 0 18px;padding:10px 14px;border:1px solid var(--line,#2a2f36);border-radius:8px}.skipbox summary{cursor:pointer;font-weight:600}.skiptbl{border-collapse:collapse;margin-top:10px}.skiptbl th,.skiptbl td{padding:4px 14px 4px 0;text-align:left}
@@ -30,6 +30,7 @@ body{margin:0}
 .m>*{min-width:0}
 .nm{font-family:var(--f-display);font-weight:700;font-size:.98rem}
 .sub{color:var(--muted);font-size:.78rem;font-family:var(--f-mono);margin-top:2px}
+.nv{color:var(--ink)}
 .pt{display:inline-block;min-width:18px;text-align:center;border-radius:4px;padding:0 5px;margin-right:6px}
 .pt.D{background:var(--la-soft);color:var(--la)} .pt.R{background:var(--bad-bg);color:var(--bad)} .pt.I{background:var(--flag-bg);color:var(--flag)}
 a.pill{text-decoration:none}
@@ -95,7 +96,7 @@ function render(){
       h+=`<div class="grp"><h3>${c==='Senate'?'U.S. Senate':'U.S. House'}</h3>`;
       for(const r of g){
         const d=r.district==null?'Class '+r.senate_class:r.district===0?'At-large':'District '+r.district;
-        h+=`<div class="m"><div><div class="nm">${esc(r.name)}</div><div class="sub"><span class="pt ${r.party}">${r.party}</span>${d} · term ends ${r.term_end.slice(0,4)}</div></div>${pill(r.bioguide)}</div>`;
+        h+=`<div class="m"><div><div class="nm">${esc(r.name)}</div><div class="sub"><span class="pt ${r.party}">${r.party}</span>${d} · term ends ${r.term_end.slice(0,4)}${r.nonVoting?` · <span class="nv" title="Cannot vote on the House floor">Non-voting ${esc(r.role.toLowerCase())}</span>`:''}</div></div>${pill(r.bioguide)}</div>`;
       }
       h+='</div>';
     }
