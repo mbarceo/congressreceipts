@@ -44,8 +44,8 @@
     "title": "House Democratic leader"
   },
   "fec": {
-    "candidateId": "TODO",
-    "committeeId": "TODO",
+    "candidateId": "H0TX24209",
+    "committeeId": "C00714865",
     "cycles": [
       2024,
       2026
@@ -55,194 +55,114 @@
       "2026": "2025-26"
     },
     "keyEnv": "FEC_API_KEY",
-    "leadershipRx": "JEFFRIES|JEFF PAC",
+    "leadershipRx": "MIKE JOHNSON|JOHNSON LEADERSHIP FUND",
     "_leadersNote": "leaders.<chamber> lists the party leaders whose committees' money build_establishment.py totals per cycle (chamber = member.chamber). A gift counts when the giving committee's FEC ID is in 'ids' or its name matches 'rx' (name-only matches are printed for checking). 'numKey' exposes a leader's all-cycle total to establishment_items.json as {dccc} or {dscc}. leadershipRx/leadershipIds drive the Money page's single-leader box: House 'JEFFRIES|JEFF PAC'; Senate 'SCHUMER|^IMPACT$' with leadershipIds [\"C00346312\", \"C00348607\"].",
     "leaders": {
       "house": {
-        "title": "House Democratic leadership",
-        "note": "",
+        "title": "House Republican leadership and Trump",
+        "note": "Contributions from each leader's campaign committee, leadership PAC and joint fundraising committees, from the NRCC, and from President Trump's committees, from FEC filings. Committees are matched by FEC committee ID. Roles are from house.gov and the Clerk. Super PACs such as the Congressional Leadership Fund cannot give to candidates; their independent spending is not counted here.",
         "list": [
           {
-            "name": "Hakeem Jeffries",
-            "role": "House Democratic Leader",
-            "rx": "JEFFRIES|JEFF PAC"
+            "name": "Mike Johnson",
+            "role": "Speaker of the House",
+            "ids": [
+              "C00608695",
+              "C00771246"
+            ],
+            "rx": "MIKE JOHNSON|JOHNSON LEADERSHIP FUND",
+            "committees": [
+              "MIKE JOHNSON FOR LOUISIANA (principal campaign committee)",
+              "JOHNSON LEADERSHIP FUND (joint fundraising committee)"
+            ],
+            "src": [
+              "https://www.fec.gov/data/committee/C00608695/",
+              "https://www.fec.gov/data/committee/C00771246/"
+            ]
           },
           {
-            "name": "Nancy Pelosi",
-            "role": "Speaker Emerita",
-            "rx": "PELOSI|PAC TO THE FUTURE"
+            "name": "Steve Scalise",
+            "role": "House Majority Leader",
+            "ids": [
+              "C00394957",
+              "C00467431",
+              "C00568162",
+              "C00857144"
+            ],
+            "rx": "SCALISE|EYE OF THE TIGER",
+            "committees": [
+              "SCALISE FOR CONGRESS (principal campaign committee)",
+              "THE EYE OF THE TIGER POLITICAL ACTION COMMITTEE (leadership PAC)",
+              "SCALISE LEADERSHIP FUND (joint fundraising committee)",
+              "SCALISE LEADERSHIP FUND 2024 (joint fundraising committee)"
+            ],
+            "src": [
+              "https://www.fec.gov/data/committee/C00394957/",
+              "https://www.fec.gov/data/committee/C00467431/",
+              "https://www.fec.gov/data/committee/C00568162/",
+              "https://www.fec.gov/data/committee/C00857144/"
+            ]
           },
           {
-            "name": "Katherine Clark",
-            "role": "Democratic Whip",
-            "rx": "KATHERINE CLARK|CLARK FRONTLINE|FAIR SHOT PAC|FIGHT FOR A DEMOCRATIC MAJORITY"
+            "name": "Tom Emmer",
+            "role": "House Majority Whip",
+            "ids": [
+              "C00545749",
+              "C00592089",
+              "C00859058"
+            ],
+            "rx": "EMMER",
+            "committees": [
+              "EMMER FOR CONGRESS (principal campaign committee)",
+              "EMMER MAJORITY BUILDERS (joint fundraising committee)",
+              "ELECTING MAJORITY MAKING EFFECTIVE REPUBLICANS PAC (leadership PAC, 'Emmer PAC')"
+            ],
+            "src": [
+              "https://www.fec.gov/data/committee/C00545749/",
+              "https://www.fec.gov/data/committee/C00859058/",
+              "https://www.fec.gov/data/committee/C00592089/"
+            ]
           },
           {
-            "name": "Pete Aguilar",
-            "role": "Caucus Chair",
-            "rx": "AGUILAR|CA LUV PAC|CALIFORNIA LEADERSHIP UNITED|PROGRESSIVE MAJORITY PAC"
-          },
-          {
-            "name": "Steny Hoyer",
-            "role": "Former Majority Leader",
-            "rx": "HOYER|AMERIPAC|SAVING AMERICAN DEMOCRACY"
-          },
-          {
-            "name": "DCCC",
+            "name": "NRCC",
             "role": "Party campaign committee",
-            "rx": "^DCCC|DEMOCRATIC CONGRESSIONAL CAMPAIGN",
-            "numKey": "dccc"
-          }
-        ]
-      },
-      "senate": {
-        "title": "Senate Democratic leadership",
-        "note": "Contributions from each Senate Democratic leader's campaign committee, leadership PAC and joint fundraising committees, and from the DSCC, from FEC filings. Committees are matched by FEC committee ID; roles are from senate.gov's leadership page.",
-        "_source": "Roles: https://www.senate.gov/senators/leadership.htm (read 2026-11-25). Committee IDs: FEC API /committees/ by sponsor_candidate_id (leadership PACs) and by candidate_id (principal and joint fundraising committees), read 2026-11-25; each leader's 'src' links the FEC committee pages. Sanders (Chair of Outreach, an independent), Cortez Masto (Vice Chair of Outreach) and the deputy secretaries Schatz and Murphy are listed on senate.gov but left out here; add them if wanted.",
-        "list": [
-          {
-            "name": "Chuck Schumer",
-            "role": "Democratic Leader",
             "ids": [
-              "C00346312",
-              "C00348607"
+              "C00075820"
             ],
-            "rx": "SCHUMER|^IMPACT$",
+            "rx": "^NRCC$|NATIONAL REPUBLICAN CONGRESSIONAL COMMITTEE",
+            "numKey": "nrcc",
             "committees": [
-              "FRIENDS OF SCHUMER (principal campaign committee)",
-              "IMPACT (leadership PAC)"
+              "NRCC (party committee)"
             ],
             "src": [
-              "https://www.fec.gov/data/committee/C00346312/",
-              "https://www.fec.gov/data/committee/C00348607/"
+              "https://www.fec.gov/data/committee/C00075820/"
             ]
           },
           {
-            "name": "Dick Durbin",
-            "role": "Democratic Whip",
+            "name": "Donald Trump",
+            "role": "President; his committees and leadership PACs",
             "ids": [
-              "C00148999",
-              "C00347195"
+              "C00828541",
+              "C00762591",
+              "C00580100",
+              "C00873893",
+              "C00770941"
             ],
-            "rx": "DURBIN|^PRAIRIE (PAC|POLITICAL ACTION COMMITTEE)$",
+            "rx": "NEVER SURRENDER, INC|SAVE AMERICA PAC|MAKE AMERICA GREAT AGAIN PAC|TRUMP NATIONAL COMMITTEE|TRUMP SAVE AMERICA",
             "committees": [
-              "FRIENDS OF DICK DURBIN COMMITTEE (principal campaign committee)",
-              "PRAIRIE POLITICAL ACTION COMMITTEE (leadership PAC)"
+              "NEVER SURRENDER, INC. (leadership PAC)",
+              "SAVE AMERICA PAC (leadership PAC)",
+              "MAKE AMERICA GREAT AGAIN PAC",
+              "TRUMP NATIONAL COMMITTEE JFC, INC. (joint fundraising)",
+              "TRUMP SAVE AMERICA JOINT FUNDRAISING COMMITTEE"
             ],
             "src": [
-              "https://www.fec.gov/data/committee/C00148999/",
-              "https://www.fec.gov/data/committee/C00347195/"
-            ]
-          },
-          {
-            "name": "Amy Klobuchar",
-            "role": "Chair of Steering & Policy Committee",
-            "ids": [
-              "C00431353",
-              "C00431874"
+              "https://www.fec.gov/data/committee/C00828541/",
+              "https://www.fec.gov/data/committee/C00762591/",
+              "https://www.fec.gov/data/committee/C00580100/",
+              "https://www.fec.gov/data/committee/C00873893/",
+              "https://www.fec.gov/data/committee/C00770941/"
             ],
-            "rx": "KLOBUCHAR|FOLLOW THE NORTH STAR",
-            "committees": [
-              "KLOBUCHAR FOR MINNESOTA (principal campaign committee)",
-              "FOLLOW THE NORTH STAR FUND (leadership PAC)"
-            ],
-            "src": [
-              "https://www.fec.gov/data/committee/C00431353/",
-              "https://www.fec.gov/data/committee/C00431874/"
-            ]
-          },
-          {
-            "name": "Cory Booker",
-            "role": "Chair of Strategic Communications Committee",
-            "ids": [
-              "C00540500",
-              "C00497131",
-              "C00548586"
-            ],
-            "rx": "CORY BOOKER|BOOKER SENATE VICTORY|^PURPOSE PAC$",
-            "committees": [
-              "CORY BOOKER FOR SENATE (principal campaign committee)",
-              "PURPOSE PAC (leadership PAC)",
-              "BOOKER SENATE VICTORY (joint fundraising, 2016-2020)"
-            ],
-            "src": [
-              "https://www.fec.gov/data/committee/C00540500/",
-              "https://www.fec.gov/data/committee/C00497131/",
-              "https://www.fec.gov/data/committee/C00548586/"
-            ]
-          },
-          {
-            "name": "Mark Warner",
-            "role": "Vice Chair of the Conference",
-            "ids": [
-              "C00438713",
-              "C00412791",
-              "C00623330"
-            ],
-            "rx": "MARK WARNER|^FORWARD TOGETHER PAC$|^VIRGINIA TOGETHER$",
-            "committees": [
-              "FRIENDS OF MARK WARNER (principal campaign committee)",
-              "FORWARD TOGETHER PAC (leadership PAC)",
-              "VIRGINIA TOGETHER (joint fundraising, 2016-2020)"
-            ],
-            "src": [
-              "https://www.fec.gov/data/committee/C00438713/",
-              "https://www.fec.gov/data/committee/C00412791/",
-              "https://www.fec.gov/data/committee/C00623330/"
-            ]
-          },
-          {
-            "name": "Elizabeth Warren",
-            "role": "Vice Chair of the Conference",
-            "ids": [
-              "C00500843",
-              "C00912543",
-              "C00540195"
-            ],
-            "rx": "WARREN FOR SENATE|ELIZABETH WARREN|^FIGHT PAC$|LEVEL PLAYING FIELD",
-            "committees": [
-              "WARREN FOR SENATE, INC. (principal campaign committee)",
-              "FIGHT PAC (leadership PAC, 2026)",
-              "PAC FOR A LEVEL PLAYING FIELD (leadership PAC, 2012-2018)"
-            ],
-            "src": [
-              "https://www.fec.gov/data/committee/C00500843/",
-              "https://www.fec.gov/data/committee/C00912543/",
-              "https://www.fec.gov/data/committee/C00540195/"
-            ]
-          },
-          {
-            "name": "Tammy Baldwin",
-            "role": "Democratic Conference Secretary",
-            "ids": [
-              "C00326801",
-              "C00525295"
-            ],
-            "rx": "TAMMY BALDWIN|BALDWIN WISCONSIN VICTORY",
-            "committees": [
-              "TAMMY BALDWIN FOR SENATE (principal campaign committee)",
-              "BALDWIN WISCONSIN VICTORY FUND (joint fundraising)"
-            ],
-            "src": [
-              "https://www.fec.gov/data/committee/C00326801/",
-              "https://www.fec.gov/data/committee/C00525295/"
-            ]
-          },
-          {
-            "name": "DSCC",
-            "role": "Senate Democrats' party campaign committee",
-            "ids": [
-              "C00042366"
-            ],
-            "rx": "^DSCC$|^DEMOCRATIC SENATORIAL CAMPAIGN COMMITTEE$",
-            "numKey": "dscc",
-            "committees": [
-              "DSCC (national party committee)"
-            ],
-            "src": [
-              "https://www.fec.gov/data/committee/C00042366/"
-            ],
-            "_why": "Exact names only: joint fundraising committees the member shares with the DSCC (e.g. 'DSCC VICE CHAIR PADILLA FUND', '2024 DEM SENATE VICTORY: MD + PA + DSCC') pass on money the member's own fundraising raised, so they are not DSCC gifts."
+            "numKey": "trump"
           }
         ]
       }
@@ -298,7 +218,10 @@
       }
     ],
     "_cyclesNote": "cycles are FEC two-year periods named by their even end year. House: the first race and the current cycle. Senate (six-year terms): resolve_fec.py writes the election cycle that began the current term through the current cycle, e.g. Padilla (elected 2022) 2022, 2024, 2026; Schiff (elected 2024) 2024, 2026. Every build script loops over this list.",
-    "leadershipIds": []
+    "leadershipIds": [
+      "C00608695",
+      "C00771246"
+    ]
   },
   "geo": {
     "_note": "County FIPS codes the district touches and a short code for each county (build_map.py colors by these).",
