@@ -1,0 +1,33 @@
+{
+ "tiles": [
+  {
+   "q": "Israel or Palestine?",
+   "v": "Not enough evidence yet",
+   "href": "stances.html#israel-palestine",
+   "rule": "The headline of the Israel and Palestine card, which tags each of its items by direction.",
+   "n": 4
+  },
+  {
+   "q": "Pro-ICE?",
+   "v": "No",
+   "href": "stances.html#card-ice",
+   "rule": "\"No\" when nothing found in their record points toward ICE; \"Mostly no\" when at least three times as many items point the other way. Toward enforcement: 0 votes and 0 statements or actions. Against: 0 votes and 0 statements or actions.",
+   "n": 0
+  },
+  {
+   "q": "Pro-police?",
+   "v": "Mostly no",
+   "href": "stances.html#card-police",
+   "rule": "\"Mixed\" when at least 3 picked votes point each way. They cast 0 on the police or tough-on-crime side and 0 against.",
+   "n": 0
+  },
+  {
+   "q": "Pro-corporate?",
+   "v": "No",
+   "href": "stances.html#card-corporate",
+   "rule": "Their votes decide the headline: 0 of the 0 business, finance and labor votes picked went the business way (a third or fewer is \"Mostly no\", two thirds or more \"Mostly yes\").",
+   "n": 0
+  }
+ ],
+ "events": []
+}
