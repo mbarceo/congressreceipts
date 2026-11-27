@@ -28,6 +28,8 @@
 .chip-s.nv{color:var(--ink);border-color:var(--accent)}
 .chip-s{display:inline-block;font-size:.72rem;border:1px solid var(--line);border-radius:999px;padding:1px 8px;color:var(--muted);width:max-content}
 .group h3{margin:6px 0 10px}
+.congress-banner{border:1px solid var(--accent);border-radius:8px;padding:10px 14px;margin:0 0 16px;font-size:.88rem;line-height:1.5}
+.congress-banner strong{display:block;margin-bottom:2px}
 </style>
 </head>
 <body data-page="find">
@@ -39,6 +41,10 @@
   </header>
 
   <section>
+    <div class="congress-banner" role="note">
+      <strong>This list shows the current, 119th Congress.</strong>
+      The 120th Congress is sworn in on January 3, 2027. Some members will have different districts or will be replaced, so a ZIP code may point to a different House member after that date. We will update this page then. A member's tracker may already show the district they won for 2027.
+    </div>
     <form class="search" id="f" role="search" onsubmit="return false">
       <label class="sr" for="q" hidden>ZIP code or name</label>
       <input id="q" type="search" inputmode="search" autocomplete="postal-code" placeholder="ZIP code or name, e.g. 91331 or Padilla" aria-label="ZIP code or name">

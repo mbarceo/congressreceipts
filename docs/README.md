@@ -24,6 +24,7 @@ Diagrams in these docs are [Mermaid](https://mermaid.js.org/); GitHub renders th
 | Support a new press-release page layout | [howto/add-a-press-layout.md](howto/add-a-press-layout.md) |
 | Update the Backlog Queue | [howto/update-the-queue.md](howto/update-the-queue.md) |
 | Rebuild the home, attendance, leaders and Find pages | [howto/rebuild-the-hub.md](howto/rebuild-the-hub.md) |
+| Switch Find your rep to the 120th Congress (Jan 2027) | [howto/switch-to-120th.md](howto/switch-to-120th.md) |
 
 ## For Claude Code and other AI agents
 
