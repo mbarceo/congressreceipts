@@ -15,6 +15,9 @@ You are working inside the Congress Receipts repository. The project's rules are
 
 ## Before touching anything
 
+- **Check whether the folder already exists** as a hidden skeleton (`live: false` in `members.json`, folder with portrait, votes, maybe FEC). If so, continue from what is missing (`python3 -I scripts/status.py <member>`); do not scaffold again.
+- Cloud versus the maintainer's Mac: statements, Track AIPAC, Wayback promise sources and `run_checks` are blocked from the cloud (403). Do the rest, say which steps need the Mac, and give her `git checkout <branch>` first in any git commands. The flow diagrams are in `docs/howto/add-a-member.md`.
+
 - Confirm who the member is (name, chamber, state, district) and that nobody else is already building them (`data/queue.json`, open pull requests: `gh pr list`).
 - Work on a new branch in its own worktree: `git fetch origin && git worktree add ../congressreceipts-<last> -b add-<state>-<last> origin/main`. Other sessions may have uncommitted work in the main folder; never mix into it.
 - API keys must be available to `./tr` (macOS Keychain items `fec-api-key` and `congress-api-key`, or env vars `FEC_API_KEY` / `CONGRESS_API_KEY`). If they are missing, tell the user how to store them (CONTRIBUTING.md) and stop. Never ask the user to paste a key into the chat.
@@ -25,7 +28,7 @@ You are working inside the Congress Receipts repository. The project's rules are
 2. Portrait (`./tr <member> fetch_portrait`), then open `assets/portrait.jpg` and confirm it is the current official photo.
 3. Votes → statements → money → bills, each through `./tr <member> <script>`; check each result against the live source before moving on (first rows of statements, roll-call counts, FEC ids).
 4. Curate: read the member's real record first (`data/votes.json`, `data/statements.json`, `data/member_bills.json`), then write `stance_picks.json`, `promises.json`, `card_picks.json`, `establishment_items.json`, `events.json`, `claims_static.json`, `bills.json`, and the `profile` block in the config. Generate these with a small script that **asserts every quote is a verbatim substring of its source's full text** before writing, and resolves release slugs to exactly one URL.
-5. Rebuild in order (`build_stances` → `build_promises` → `build_establishment` → `build_cards` → `build_overview`), then `./tr <member> run_checks`. Fix data until it passes; never edit a checker.
+5. Rebuild with `python3 -I scripts/rebuild.py <member>` (or the `build_*` steps in order: stances, promises, establishment, cards, overview), then `./tr <member> run_checks`. Fix data until it passes; never edit a checker.
 6. Preview (`python3 -m http.server 8000`) and read every page: portrait, names, pronouns, tallies, links. Check for leftovers from other members.
 7. Register the member in `members.json` (or scaffold with `new_tracker.py --register`, which does it and refreshes `data/queue.json`) with `"live": false` and `"pages": "stub"` from the start (stub pages load the shared `site/` pages, so the member folder holds no copies). Only when checks pass, remove the flag, run `python3 -I scripts/publish.py <member path>` (one member), and open a pull request containing just this member's folder and `members.json`.
 
