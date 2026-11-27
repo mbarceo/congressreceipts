@@ -254,7 +254,7 @@ const seg = (v, c, cls = "", txt) => `<span class="${cls}" style="flex:${v} 1 0;
 fetch("data/leadership_senate_endorsements.json").then(r => r.json()).then(E => {
   $("endo").innerHTML = E.items.map(e => `<div class="endo"><h3>${esc(e.handle)} <span class="muted" style="font-weight:400;font-size:.85rem">on ${esc(e.platform)} · backs ${e.endorses === "van_hollen" ? "Van Hollen" : "Schumer"}</span></h3>
     <blockquote>${esc(e.quote)}</blockquote>
-    <p class="meta">${esc(e.identity)}</p>
+    <p class="meta">${esc(e.identity)}${e.identity_source_url ? ` <a href="${esc(e.identity_source_url)}" target="_blank" rel="noopener">Office source</a>` : ""}</p>
     <p class="meta">${esc(e.date_note)} ${esc(e.how_read)}</p>
     <a href="${esc(e.source_url)}" target="_blank" rel="noopener">The post on ${esc(e.platform)}</a></div>`).join("");
   if (window.buildJump) window.buildJump();
