@@ -53,194 +53,134 @@
       "2026": "2025-26"
     },
     "keyEnv": "FEC_API_KEY",
-    "leadershipRx": "SCHUMER|^IMPACT$",
+    "leadershipRx": "THUNE|HEARTLAND VALUES|COMMONSENSE, CONSERVATIVE VALUES",
     "_leadersNote": "leaders.<chamber> lists the party leaders whose committees' money build_establishment.py totals per cycle (chamber = member.chamber). A gift counts when the giving committee's FEC ID is in 'ids' or its name matches 'rx' (name-only matches are printed for checking). 'numKey' exposes a leader's all-cycle total to establishment_items.json as {dccc} or {dscc}. leadershipRx/leadershipIds drive the Money page's single-leader box: House 'JEFFRIES|JEFF PAC'; Senate 'SCHUMER|^IMPACT$' with leadershipIds [\"C00346312\", \"C00348607\"].",
     "leaders": {
-      "house": {
-        "title": "House Democratic leadership",
-        "note": "",
-        "list": [
-          {
-            "name": "Hakeem Jeffries",
-            "role": "House Democratic Leader",
-            "rx": "JEFFRIES|JEFF PAC"
-          },
-          {
-            "name": "Nancy Pelosi",
-            "role": "Speaker Emerita",
-            "rx": "PELOSI|PAC TO THE FUTURE"
-          },
-          {
-            "name": "Katherine Clark",
-            "role": "Democratic Whip",
-            "rx": "KATHERINE CLARK|CLARK FRONTLINE|FAIR SHOT PAC|FIGHT FOR A DEMOCRATIC MAJORITY"
-          },
-          {
-            "name": "Pete Aguilar",
-            "role": "Caucus Chair",
-            "rx": "AGUILAR|CA LUV PAC|CALIFORNIA LEADERSHIP UNITED|PROGRESSIVE MAJORITY PAC"
-          },
-          {
-            "name": "Steny Hoyer",
-            "role": "Former Majority Leader",
-            "rx": "HOYER|AMERIPAC|SAVING AMERICAN DEMOCRACY"
-          },
-          {
-            "name": "DCCC",
-            "role": "Party campaign committee",
-            "rx": "^DCCC|DEMOCRATIC CONGRESSIONAL CAMPAIGN",
-            "numKey": "dccc"
-          }
-        ]
-      },
       "senate": {
-        "title": "Senate Democratic leadership",
-        "note": "Contributions from each Senate Democratic leader's campaign committee, leadership PAC and joint fundraising committees, and from the DSCC, from FEC filings. Committees are matched by FEC committee ID; roles are from senate.gov's leadership page.",
-        "_source": "Roles: https://www.senate.gov/senators/leadership.htm (read 2026-11-25). Committee IDs: FEC API /committees/ by sponsor_candidate_id (leadership PACs) and by candidate_id (principal and joint fundraising committees), read 2026-11-25; each leader's 'src' links the FEC committee pages. Sanders (Chair of Outreach, an independent), Cortez Masto (Vice Chair of Outreach) and the deputy secretaries Schatz and Murphy are listed on senate.gov but left out here; add them if wanted.",
+        "title": "Senate Republican leadership and Trump",
+        "note": "Contributions from each Senate Republican leader's campaign committee, leadership PAC and joint fundraising committees, from the NRSC, and from President Trump's committees, from FEC filings. Committees are matched by FEC committee ID. Super PACs such as the Senate Leadership Fund cannot give to candidates; their independent spending is not counted here.",
+        "_source": "Committee IDs: FEC API /candidate/<id>/committees/, /committees/?sponsor_candidate_id= and /committees/?q= (cycles 2024 and 2026), read 2026-11-27; each leader's 'src' links the FEC committee pages. Roles (Thune leader, Barrasso whip, Cotton conference chair) are from memory of the 119th Congress and NOT yet confirmed on senate.gov (blocked from the cloud): confirm at https://www.senate.gov/senators/leadership.htm, and add Capito, Lankford or others if wanted. Trump committee IDs copied from the House Republican block.",
         "list": [
           {
-            "name": "Chuck Schumer",
-            "role": "Democratic Leader",
+            "name": "John Thune",
+            "role": "Senate Majority Leader",
             "ids": [
-              "C00346312",
-              "C00348607"
+              "C00409581",
+              "C00409003",
+              "C00748186",
+              "C00837435",
+              "C00822494",
+              "C00673715"
             ],
-            "rx": "SCHUMER|^IMPACT$",
+            "rx": "THUNE|HEARTLAND VALUES|COMMONSENSE, CONSERVATIVE VALUES",
             "committees": [
-              "FRIENDS OF SCHUMER (principal campaign committee)",
-              "IMPACT (leadership PAC)"
+              "FRIENDS OF JOHN THUNE (principal campaign committee)",
+              "HEARTLAND VALUES PAC (leadership PAC)",
+              "COMMONSENSE, CONSERVATIVE VALUES PAC (leadership PAC)",
+              "2024 THUNE REPUBLICAN SENATE VICTORY, JOHN THUNE VICTORY COMMITTEE, THUNE VICTORY COMMITTEE (joint fundraising)"
             ],
             "src": [
-              "https://www.fec.gov/data/committee/C00346312/",
-              "https://www.fec.gov/data/committee/C00348607/"
+              "https://www.fec.gov/data/committee/C00409581/",
+              "https://www.fec.gov/data/committee/C00409003/",
+              "https://www.fec.gov/data/committee/C00748186/",
+              "https://www.fec.gov/data/committee/C00837435/",
+              "https://www.fec.gov/data/committee/C00822494/",
+              "https://www.fec.gov/data/committee/C00673715/"
             ]
           },
           {
-            "name": "Dick Durbin",
-            "role": "Democratic Whip",
+            "name": "John Barrasso",
+            "role": "Senate Majority Whip",
             "ids": [
-              "C00148999",
-              "C00347195"
+              "C00436386",
+              "C00442368",
+              "C00837666",
+              "C00948547",
+              "C00876375",
+              "C00764373"
             ],
-            "rx": "DURBIN|^PRAIRIE (PAC|POLITICAL ACTION COMMITTEE)$",
+            "rx": "BARRASSO|COMMON VALUES PAC",
             "committees": [
-              "FRIENDS OF DICK DURBIN COMMITTEE (principal campaign committee)",
-              "PRAIRIE POLITICAL ACTION COMMITTEE (leadership PAC)"
+              "FRIENDS OF JOHN BARRASSO (principal campaign committee)",
+              "COMMON VALUES PAC (leadership PAC)",
+              "BARRASSO BLACKBURN, BARRASSO HUSTED MOODY, BARRASSO SHEEHY and BARRASSO VICTORY committees (joint fundraising, 2024-2026)"
             ],
             "src": [
-              "https://www.fec.gov/data/committee/C00148999/",
-              "https://www.fec.gov/data/committee/C00347195/"
+              "https://www.fec.gov/data/committee/C00436386/",
+              "https://www.fec.gov/data/committee/C00442368/",
+              "https://www.fec.gov/data/committee/C00837666/",
+              "https://www.fec.gov/data/committee/C00948547/",
+              "https://www.fec.gov/data/committee/C00876375/",
+              "https://www.fec.gov/data/committee/C00764373/"
             ]
           },
           {
-            "name": "Amy Klobuchar",
-            "role": "Chair of Steering & Policy Committee",
+            "name": "Tom Cotton",
+            "role": "Chair of the Republican Conference",
             "ids": [
-              "C00431353",
-              "C00431874"
+              "C00499988",
+              "C00296640",
+              "C00571018",
+              "C00774703",
+              "C00956730"
             ],
-            "rx": "KLOBUCHAR|FOLLOW THE NORTH STAR",
+            "rx": "COTTON FOR SENATE|COTTON VICTORY|COTTON MAJORITY|REPUBLICAN MAJORITY FUND$",
             "committees": [
-              "KLOBUCHAR FOR MINNESOTA (principal campaign committee)",
-              "FOLLOW THE NORTH STAR FUND (leadership PAC)"
+              "COTTON FOR SENATE, INC. (principal campaign committee)",
+              "REPUBLICAN MAJORITY FUND (leadership PAC)",
+              "COTTON VICTORY, COTTON MAJORITY COMMITTEE and TOM COTTON VICTORY (joint fundraising)"
             ],
             "src": [
-              "https://www.fec.gov/data/committee/C00431353/",
-              "https://www.fec.gov/data/committee/C00431874/"
+              "https://www.fec.gov/data/committee/C00499988/",
+              "https://www.fec.gov/data/committee/C00296640/",
+              "https://www.fec.gov/data/committee/C00571018/",
+              "https://www.fec.gov/data/committee/C00774703/",
+              "https://www.fec.gov/data/committee/C00956730/"
             ]
           },
           {
-            "name": "Cory Booker",
-            "role": "Chair of Strategic Communications Committee",
+            "name": "NRSC",
+            "role": "Party campaign committee",
             "ids": [
-              "C00540500",
-              "C00497131",
-              "C00548586"
+              "C00027466",
+              "C00091009"
             ],
-            "rx": "CORY BOOKER|BOOKER SENATE VICTORY|^PURPOSE PAC$",
+            "rx": "^NRSC$|NATIONAL REPUBLICAN SENATORIAL COMMITTEE",
+            "numKey": "nrsc",
             "committees": [
-              "CORY BOOKER FOR SENATE (principal campaign committee)",
-              "PURPOSE PAC (leadership PAC)",
-              "BOOKER SENATE VICTORY (joint fundraising, 2016-2020)"
+              "NRSC (national party committee)"
             ],
             "src": [
-              "https://www.fec.gov/data/committee/C00540500/",
-              "https://www.fec.gov/data/committee/C00497131/",
-              "https://www.fec.gov/data/committee/C00548586/"
+              "https://www.fec.gov/data/committee/C00027466/",
+              "https://www.fec.gov/data/committee/C00091009/"
             ]
           },
           {
-            "name": "Mark Warner",
-            "role": "Vice Chair of the Conference",
+            "name": "Donald Trump",
+            "role": "President; his committees and leadership PACs",
             "ids": [
-              "C00438713",
-              "C00412791",
-              "C00623330"
+              "C00828541",
+              "C00762591",
+              "C00580100",
+              "C00873893",
+              "C00770941"
             ],
-            "rx": "MARK WARNER|^FORWARD TOGETHER PAC$|^VIRGINIA TOGETHER$",
+            "rx": "NEVER SURRENDER, INC|SAVE AMERICA PAC|MAKE AMERICA GREAT AGAIN PAC|TRUMP NATIONAL COMMITTEE|TRUMP SAVE AMERICA",
             "committees": [
-              "FRIENDS OF MARK WARNER (principal campaign committee)",
-              "FORWARD TOGETHER PAC (leadership PAC)",
-              "VIRGINIA TOGETHER (joint fundraising, 2016-2020)"
+              "NEVER SURRENDER, INC. (leadership PAC)",
+              "SAVE AMERICA PAC (leadership PAC)",
+              "MAKE AMERICA GREAT AGAIN PAC",
+              "TRUMP NATIONAL COMMITTEE JFC, INC. (joint fundraising)",
+              "TRUMP SAVE AMERICA JOINT FUNDRAISING COMMITTEE"
             ],
             "src": [
-              "https://www.fec.gov/data/committee/C00438713/",
-              "https://www.fec.gov/data/committee/C00412791/",
-              "https://www.fec.gov/data/committee/C00623330/"
-            ]
-          },
-          {
-            "name": "Elizabeth Warren",
-            "role": "Vice Chair of the Conference",
-            "ids": [
-              "C00500843",
-              "C00912543",
-              "C00540195"
+              "https://www.fec.gov/data/committee/C00828541/",
+              "https://www.fec.gov/data/committee/C00762591/",
+              "https://www.fec.gov/data/committee/C00580100/",
+              "https://www.fec.gov/data/committee/C00873893/",
+              "https://www.fec.gov/data/committee/C00770941/"
             ],
-            "rx": "WARREN FOR SENATE|ELIZABETH WARREN|^FIGHT PAC$|LEVEL PLAYING FIELD",
-            "committees": [
-              "WARREN FOR SENATE, INC. (principal campaign committee)",
-              "FIGHT PAC (leadership PAC, 2026)",
-              "PAC FOR A LEVEL PLAYING FIELD (leadership PAC, 2012-2018)"
-            ],
-            "src": [
-              "https://www.fec.gov/data/committee/C00500843/",
-              "https://www.fec.gov/data/committee/C00912543/",
-              "https://www.fec.gov/data/committee/C00540195/"
-            ]
-          },
-          {
-            "name": "Tammy Baldwin",
-            "role": "Democratic Conference Secretary",
-            "ids": [
-              "C00326801",
-              "C00525295"
-            ],
-            "rx": "TAMMY BALDWIN|BALDWIN WISCONSIN VICTORY",
-            "committees": [
-              "TAMMY BALDWIN FOR SENATE (principal campaign committee)",
-              "BALDWIN WISCONSIN VICTORY FUND (joint fundraising)"
-            ],
-            "src": [
-              "https://www.fec.gov/data/committee/C00326801/",
-              "https://www.fec.gov/data/committee/C00525295/"
-            ]
-          },
-          {
-            "name": "DSCC",
-            "role": "Senate Democrats' party campaign committee",
-            "ids": [
-              "C00042366"
-            ],
-            "rx": "^DSCC$|^DEMOCRATIC SENATORIAL CAMPAIGN COMMITTEE$",
-            "numKey": "dscc",
-            "committees": [
-              "DSCC (national party committee)"
-            ],
-            "src": [
-              "https://www.fec.gov/data/committee/C00042366/"
-            ],
-            "_why": "Exact names only: joint fundraising committees the member shares with the DSCC (e.g. 'DSCC VICE CHAIR PADILLA FUND', '2024 DEM SENATE VICTORY: MD + PA + DSCC') pass on money the member's own fundraising raised, so they are not DSCC gifts."
+            "numKey": "trump"
           }
         ]
       }
@@ -297,8 +237,12 @@
     ],
     "_cyclesNote": "cycles are FEC two-year periods named by their even end year. House: the first race and the current cycle. Senate (six-year terms): resolve_fec.py writes the election cycle that began the current term through the current cycle, e.g. Padilla (elected 2022) 2022, 2024, 2026; Schiff (elected 2024) 2024, 2026. Every build script loops over this list.",
     "leadershipIds": [
-      "C00346312",
-      "C00348607"
+      "C00409581",
+      "C00409003",
+      "C00748186",
+      "C00837435",
+      "C00822494",
+      "C00673715"
     ]
   },
   "geo": {
