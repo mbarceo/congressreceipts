@@ -1,6 +1,0 @@
-{
- "_note": "Hand-curated campaign promises and the record against them. kind 'explicit' = the member's own words in 2024; 'record' = implied by the record the member's 2024 site ran on, not a stated pledge. Actions: 'roll' fills the member's vote and the tally from data/votes.json; 'stmt' must match exactly one release in data/statements.json; 'u' is any other source. Status is an editorial call: 'why' must say what it rests on. Build: python3 -I scripts/build_promises.py",
- "sources": {},
- "noPromise": "",
- "promises": []
-}
