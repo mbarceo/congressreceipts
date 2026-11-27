@@ -216,7 +216,7 @@ const ORDER = ["schumer", "van_hollen", "against_schumer", "undecided", "no_stat
 const RC = {primary: "Own statement", news: "News report", list: "Secondhand list", stale: "Older than the race", none: "No source"};
 // Links the checker could not open (site blocks scripts, or can't be read by one) stay tagged until they are confirmed
 const UNCHECKED = new Set(["skipped_host_blocked", "blocked", "skipped_unreadable_site", "fetch_failed"]);
-const vipTag = c => UNCHECKED.has(c) ? '<span class="vip">Verification in progress</span>' : "";
+const vipTag = (c, manual) => UNCHECKED.has(c) && !manual ? '<span class="vip">Verification in progress</span>' : "";
 const CK = {
   quote_verified: "Quote found word for word",
   name_near_race: "Page covers this senator and the race",
@@ -297,15 +297,16 @@ fetch("data/leadership_senate.json").then(r => r.json()).then(D => {
     return t === (w === "agrees" ? "agrees" : "differs") ? `Whip tracker and Wikipedia ${t.replace(/s$/, "")}` : `Whip tracker ${t}; Wikipedia ${w === "agrees" ? "agrees" : "differs"}`; };
   $("rows").innerHTML = rows.map(m => { const g = G[m.group];
     const rc = m.source_url ? `<a href="${esc(m.source_url)}" target="_blank" rel="noopener">${esc(m.source_outlet)}, ${dshort(m.source_date)}</a>` : `<span class="muted">No source</span>`;
-    const meta = [RC[m.receipt], CK[m.check]].filter(Boolean).join(" · ");
+    const meta = [RC[m.receipt], m.manual_confirmed_on ? "Confirmed by hand on " + dlong(m.manual_confirmed_on) : CK[m.check]].filter(Boolean).join(" · ");
     return `<article class="sen" id="r-${slug(m.name)}" data-g="${m.group}" style="--c:${g.c}">
       <div class="h"><span class="nm">${esc(m.name)}<small>${esc(m.state)} · ${role(m)}${m.is_candidate ? " · candidate" : ""}</small></span><span class="pos${g.none ? " none" : ""}">${g.label}</span></div>
       <p>${esc(m.summary)}</p>
       ${m.disputed ? `<div class="flag"><b>Sources disagree.</b> ${esc(m.note)}</div>` : m.note ? `<div class="note">${esc(m.note)}</div>` : ""}
-      <div class="rc">${rc}${vipTag(m.check)}<small><span class="kind">${esc(meta)}</span></small>${agree(m.agreement) ? `<small>${esc(agree(m.agreement))}</small>` : ""}</div></article>`; }).join("");
+      <div class="rc">${rc}${vipTag(m.check, m.manual_confirmed_on)}<small><span class="kind">${esc(meta)}</span></small>${agree(m.agreement) ? `<small>${esc(agree(m.agreement))}</small>` : ""}</div></article>`; }).join("");
   if (D.checks_run) { const c = D.check_counts, n = k => c[k] || 0;
-    const notChecked = n("skipped_host_blocked") + n("blocked") + n("skipped_unreadable_site") + n("fetch_failed");
-    $("checknote").textContent = `On ${dlong(D.checks_run)} each link was opened by script. ${n("quote_verified")} quotes matched word for word and ${n("name_near_race")} pages cover the senator and the race. ${notChecked} links couldn't be read by script, and ${n("no_url")} senators have no source. A page that mentions a senator doesn't prove the position, so read the quote.`; }
+    const byHand = D.members.filter(m => m.manual_confirmed_on).length;
+    const notChecked = n("skipped_host_blocked") + n("blocked") + n("skipped_unreadable_site") + n("fetch_failed") - byHand;
+    $("checknote").textContent = `On ${dlong(D.checks_run)} each link was opened by script. ${n("quote_verified")} quotes matched word for word and ${n("name_near_race")} pages cover the senator and the race. ${byHand ? byHand + " links the script couldn't read were confirmed by hand, " : ""}${notChecked} links couldn't be read by script or confirmed, and ${n("no_url")} senators have no source. A page that mentions a senator doesn't prove the position, so read the quote.`; }
 
   // Filters
   const chips = [["all", "All"]].concat(ORDER.slice(0, 5).map(g => [g, `${G[g].label} ${D.counts[g]}`]));
@@ -382,12 +383,12 @@ fetch("data/leadership_house.json").then(r => r.json()).then(H => {
 
   $("hrows").innerHTML = M.map(m => { const g = HG[m.group];
     const rc = m.source_url ? `<a href="${esc(m.source_url)}" target="_blank" rel="noopener">${esc(m.source_outlet)}${m.source_date ? ", " + dsrc(m.source_date) : ""}</a>` : `<span class="muted">No statement found</span>`;
-    const kind = m.tracker_only ? "Listed by the whip tracker" : [RC[m.receipt], CKH[m.check]].filter(Boolean).join(" \u00b7 ");
+    const kind = m.tracker_only ? "Listed by the whip tracker" : [RC[m.receipt], m.manual_confirmed_on ? "Confirmed by hand on " + dlong(m.manual_confirmed_on) : CKH[m.check]].filter(Boolean).join(" \u00b7 ");
     return `<article class="sen${m.tracker_only ? " tonly" : ""}" id="hr-${slug(m.name)}" data-g="${m.group}" style="--c:${g.c}">
       <div class="h"><span class="nm">${esc(m.name)}<small>${esc(m.district)}</small></span><span class="pos">${g.label}</span></div>
       <p>${esc(m.summary)}</p>
       ${m.differs_from_tracker ? `<div class="note">Newer reports differ from the whip tracker.</div>` : ""}
-      <div class="rc">${rc}${vipTag(m.check)}<small><span class="kind">${esc(kind)}</span></small></div></article>`; }).join("");
+      <div class="rc">${rc}${vipTag(m.check, m.manual_confirmed_on)}<small><span class="kind">${esc(kind)}</span></small></div></article>`; }).join("");
 
   const chips = [["all", "All"]].concat(HORDER.map(g => [g, `${HG[g].label} ${C[g].sourced + C[g].tracker_only}`]));
   $("hfilters").innerHTML = chips.map(([k, l], i) => `<button class="chip-btn" data-f="${k}" aria-pressed="${i === 0}">${l}</button>`).join("");
@@ -400,8 +401,9 @@ fetch("data/leadership_house.json").then(r => r.json()).then(H => {
     t.classList.add("hit"); setTimeout(() => t.classList.remove("hit"), 1600); });
   if (H.checks_run) { const c = H.check_counts, n = k => c[k] || 0;
     const ok = n("name_near_jeffries") + n("quote_verified") + n("quote_not_on_page") + n("name_found_only");
-    const notChecked = n("skipped_host_blocked") + n("blocked") + n("skipped_unreadable_site") + n("fetch_failed");
-    $("hchecknote").textContent = `On ${dlong(H.checks_run)} each link was opened by script. ${ok} pages opened and name the member; ${n("quote_verified") + n("name_near_jeffries")} of those cover the member and Jeffries. ${notChecked} links couldn't be read by script, and ${H.counts.backs.tracker_only + H.counts.leaning.tracker_only + H.counts.undecided.tracker_only} members are listed by the tracker with no source. A page that mentions a member doesn't prove the position.`; }
+    const byHand = H.members.filter(m => m.manual_confirmed_on).length;
+    const notChecked = n("skipped_host_blocked") + n("blocked") + n("skipped_unreadable_site") + n("fetch_failed") - byHand;
+    $("hchecknote").textContent = `On ${dlong(H.checks_run)} each link was opened by script. ${ok} pages opened and name the member; ${n("quote_verified") + n("name_near_jeffries")} of those cover the member and Jeffries. ${byHand ? byHand + " links the script couldn't read were confirmed by hand, " : ""}${notChecked} links couldn't be read by script or confirmed, and ${H.counts.backs.tracker_only + H.counts.leaning.tracker_only + H.counts.undecided.tracker_only} members are listed by the tracker with no source. A page that mentions a member doesn't prove the position.`; }
   window.buildJump && buildJump();
 }).catch(() => { $("hrows").innerHTML = '<p class="muted">The House count didn\'t load. Reload the page to try again.</p>'; });
 
