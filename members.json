@@ -4658,6 +4658,71 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "ut/moore",
+   "name": "Blake D. Moore",
+   "party": "R",
+   "seat": "UT-1",
+   "chamber": "house",
+   "voteId": "M001213",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ut/maloy",
+   "name": "Celeste Maloy",
+   "party": "R",
+   "seat": "UT-2",
+   "chamber": "house",
+   "voteId": "M001228",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ut/kennedy",
+   "name": "Mike Kennedy",
+   "party": "R",
+   "seat": "UT-3",
+   "chamber": "house",
+   "voteId": "K000403",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ut/curtis",
+   "name": "John R. Curtis",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S431",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ut/lee",
+   "name": "Mike Lee",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S346",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
