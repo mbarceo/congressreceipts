@@ -1135,6 +1135,58 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "hi/case",
+   "name": "Ed Case",
+   "party": "D",
+   "seat": "HI-1",
+   "chamber": "house",
+   "voteId": "C001055",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "hi/tokuda",
+   "name": "Jill N. Tokuda",
+   "party": "D",
+   "seat": "HI-2",
+   "chamber": "house",
+   "voteId": "T000487",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "hi/hirono",
+   "name": "Mazie K. Hirono",
+   "party": "D",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S361",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "hi/schatz",
+   "name": "Brian Schatz",
+   "party": "D",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S353",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
