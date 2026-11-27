@@ -1187,6 +1187,45 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "ia/miller-meeks",
+   "name": "Mariannette Miller-Meeks",
+   "party": "R",
+   "seat": "IA-1",
+   "chamber": "house",
+   "voteId": "M001215",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ia/nunn",
+   "name": "Zachary Nunn",
+   "party": "R",
+   "seat": "IA-3",
+   "chamber": "house",
+   "voteId": "N000193",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ia/grassley",
+   "name": "Chuck Grassley",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S153",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
