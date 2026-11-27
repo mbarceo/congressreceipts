@@ -199,6 +199,45 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "ak/begich",
+   "name": "Nicholas J. Begich III",
+   "party": "R",
+   "seat": "AK-AL",
+   "chamber": "house",
+   "voteId": "B001323",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ak/murkowski",
+   "name": "Lisa Murkowski",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S288",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ak/sullivan",
+   "name": "Dan Sullivan",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S383",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
