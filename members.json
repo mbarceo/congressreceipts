@@ -3007,6 +3007,71 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "nm/stansbury",
+   "name": "Melanie A. Stansbury",
+   "party": "D",
+   "seat": "NM-1",
+   "chamber": "house",
+   "voteId": "S001218",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "nm/vasquez",
+   "name": "Gabe Vasquez",
+   "party": "D",
+   "seat": "NM-2",
+   "chamber": "house",
+   "voteId": "V000136",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "nm/leger-fernandez",
+   "name": "Teresa Leger Fernandez",
+   "party": "D",
+   "seat": "NM-3",
+   "chamber": "house",
+   "voteId": "L000273",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "nm/heinrich",
+   "name": "Martin Heinrich",
+   "party": "D",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S359",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "nm/lujan",
+   "name": "Ben Ray Luj\u00e1n",
+   "party": "D",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S409",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
