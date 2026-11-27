@@ -109,14 +109,22 @@ Promise.all([fetch("data/leaders.json").then(r => r.json()), fetch("data/attenda
   $("aStat").textContent = `Missed votes: ${Math.min(...rates).toFixed(1)}% to ${Math.max(...rates).toFixed(1)}% among tracked members`;
   const sp = L.members.filter(m => m.agreeSplit != null).map(m => m.agreeSplit);
   $("lStat").textContent = `With their leader on split votes: ${Math.min(...sp).toFixed(0)}% to ${Math.max(...sp).toFixed(0)}%`;
-  // Six tiles always (3 x 2): the five most recently checked trackers, then the "full list" tile
-  const shown = L.members.map((m, i) => ({ m, i })).sort((x, y) => ((y.m.checks && y.m.checks.checked) || "").localeCompare((x.m.checks && x.m.checks.checked) || "") || x.i - y.i).slice(0, 5).map(x => x.m);
+  // Six tiles always (3 x 2): five trackers balanced across the parties, then the "full list" tile.
+  // Within each party the most recently checked come first; the parties then alternate, starting with the party
+  // that has the newest check, so the five are as even as the roster allows (3 + 2 with a bigger party first).
+  const when = m => (m.checks && m.checks.checked) || "";
+  const byParty = {};
+  L.members.forEach((m, i) => (byParty[m.party] = byParty[m.party] || []).push({ m, i }));
+  Object.values(byParty).forEach(g => g.sort((x, y) => when(y.m).localeCompare(when(x.m)) || x.i - y.i));
+  const order = Object.keys(byParty).sort((p, q) => when(byParty[q][0].m).localeCompare(when(byParty[p][0].m)) || byParty[q].length - byParty[p].length);
+  const shown = [];
+  for (let r = 0; shown.length < 5 && order.some(k => byParty[k][r]); r++) order.forEach(k => { if (shown.length < 5 && byParty[k][r]) shown.push(byParty[k][r].m); });
   $("mem").innerHTML = shown.map(m => { const a = att[m.name] || {};
     return `<a class="mcard" href="${esc(m.path)}"><div class="top"><img src="${esc(m.portrait)}" alt="Official portrait of ${esc(m.name)}">
       <div><div class="nm">${esc(m.name)}</div><div class="sub">${esc(m.party)} · ${esc(m.seat === "Senate" ? "U.S. Senate · " + m.path.slice(0, 2).toUpperCase() : m.seat)}</div></div></div>
       <dl><dt>Votes missed</dt><dd>${a.rate != null ? a.rate.toFixed(1) + "%" : "—"}</dd>
         <dt>With ${esc(m.leader.split(" ").pop())} on split votes</dt><dd>${m.agreeSplit != null ? m.agreeSplit.toFixed(1) + "%" : "—"}</dd>
-        <dt>Establishment Democrat?</dt><dd class="${m.verdict ? "" : "pend"}">${esc(m.verdict || "Coming soon")}</dd>
+        <dt>Establishment alignment?</dt><dd class="${m.verdict ? "" : "pend"}">${esc(m.verdict || "Coming soon")}</dd>
         <dt>Claims verified</dt><dd class="${m.checks ? "" : "pend"}">${m.checks ? `${m.checks.verified} of ${m.checks.total}` : "Coming soon"}</dd></dl></a>`; }).join("") +
     `<a class="mcard more" href="find.html"><div class="nm">Find the full list here</div>
       <div class="sub">${D ? `All ${D.members.filter(m => !m.vacant).length} members of Congress, by ZIP code or name.` : "Every member of Congress, by ZIP code or name."}</div>
