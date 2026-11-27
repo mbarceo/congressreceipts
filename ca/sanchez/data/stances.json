@@ -53,10 +53,32 @@
      "more": []
     }
    ],
-   "rolls": [],
+   "rolls": [
+    {
+     "id": "2025-006",
+     "date": "2025-01-07",
+     "bill": "H R 29",
+     "title": "Laken Riley Act",
+     "q": "On Passage",
+     "vote": "Nay",
+     "result": "Passed",
+     "yea": 264,
+     "nay": 159,
+     "dY": 48,
+     "dN": 159,
+     "rY": 216,
+     "rN": 0,
+     "dSide": "Nay",
+     "pY": 48,
+     "pN": 159,
+     "pSide": "Nay",
+     "url": "https://clerk.house.gov/Votes/2025006",
+     "note": null
+    }
+   ],
    "statements": [],
-   "withDems": 0,
-   "cast": 0,
+   "withDems": 1,
+   "cast": 1,
    "breaks": 0
   },
   {
