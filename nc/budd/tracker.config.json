@@ -59,7 +59,7 @@
       "senate": {
         "title": "Senate Republican leadership and Trump",
         "note": "Contributions from each Senate Republican leader's campaign committee, leadership PAC and joint fundraising committees, from the NRSC, and from President Trump's committees, from FEC filings. Committees are matched by FEC committee ID. Super PACs such as the Senate Leadership Fund cannot give to candidates; their independent spending is not counted here.",
-        "_source": "Committee IDs: FEC API /candidate/<id>/committees/, /committees/?sponsor_candidate_id= and /committees/?q= (cycles 2024 and 2026), read 2026-11-27; each leader's 'src' links the FEC committee pages. Roles (Thune leader, Barrasso whip, Cotton conference chair) are from memory of the 119th Congress and NOT yet confirmed on senate.gov (blocked from the cloud): confirm at https://www.senate.gov/senators/leadership.htm, and add Capito, Lankford or others if wanted. Trump committee IDs copied from the House Republican block.",
+        "_source": "Committee IDs: FEC API /candidate/<id>/committees/, /committees/?sponsor_candidate_id= and /committees/?q= (cycles 2024 and 2026), read 2026-11-27; each leader's 'src' links the FEC committee pages. Roles (Thune leader, Barrasso whip, Cotton conference chair) are confirmed against the Senate Leadership & Officers page (https://www.senate.gov/senators/leadership.htm) as saved by the maintainer, dated Sept 30, 2026. Trump committee IDs copied from the House Republican block.",
         "list": [
           {
             "name": "John Thune",
@@ -121,29 +121,26 @@
               "C00499988",
               "C00296640",
               "C00571018",
-              "C00774703",
-              "C00956730"
+              "C00774703"
             ],
             "rx": "COTTON FOR SENATE|COTTON VICTORY|COTTON MAJORITY|REPUBLICAN MAJORITY FUND$",
             "committees": [
               "COTTON FOR SENATE, INC. (principal campaign committee)",
               "REPUBLICAN MAJORITY FUND (leadership PAC)",
-              "COTTON VICTORY, COTTON MAJORITY COMMITTEE and TOM COTTON VICTORY (joint fundraising)"
+              "COTTON VICTORY and COTTON MAJORITY COMMITTEE (joint fundraising)"
             ],
             "src": [
               "https://www.fec.gov/data/committee/C00499988/",
               "https://www.fec.gov/data/committee/C00296640/",
               "https://www.fec.gov/data/committee/C00571018/",
-              "https://www.fec.gov/data/committee/C00774703/",
-              "https://www.fec.gov/data/committee/C00956730/"
+              "https://www.fec.gov/data/committee/C00774703/"
             ]
           },
           {
             "name": "NRSC",
             "role": "Party campaign committee",
             "ids": [
-              "C00027466",
-              "C00091009"
+              "C00027466"
             ],
             "rx": "^NRSC$|NATIONAL REPUBLICAN SENATORIAL COMMITTEE",
             "numKey": "nrsc",
@@ -151,8 +148,7 @@
               "NRSC (national party committee)"
             ],
             "src": [
-              "https://www.fec.gov/data/committee/C00027466/",
-              "https://www.fec.gov/data/committee/C00091009/"
+              "https://www.fec.gov/data/committee/C00027466/"
             ]
           },
           {
