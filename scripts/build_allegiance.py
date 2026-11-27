@@ -81,7 +81,7 @@ fill = lambda s: str(s).format_map(Safe(nums))
 
 out = {"question": items["question"], "headline": items["headline"], "rule": items.get("rule") or trump["rule"], "why": fill(items.get("why") or trump["why"]),
        "summary": fill(items.get("summary", "")), "tiles": [[fill(a), fill(b)] for a, b in items.get("tiles", [])],
-       "leader": {"name": LEADER["name"], "title": LEADER.get("title", ""), "agree": est.get("nums", {}).get("jeffAgree"), "both": est.get("nums", {}).get("both"),
+       "leader": {"name": LEADER["name"], "na": LEADER.get("compareVotes") is False, "title": LEADER.get("title", ""), "agree": est.get("nums", {}).get("jeffAgree"), "both": est.get("nums", {}).get("both"),
                   "splits": est.get("nums", {}).get("ndiff"), "unity": al.get("memberUnity"), "rank": al.get("memberRank"), "tied": al.get("memberTied", 0),
                   "ofParty": al.get("dems"), "medianUnity": al.get("medianUnity"), "contested": al.get("contested"),
                   "peers": al.get("peers", []), "diffs": est.get("jeffriesDiffs", [])},

@@ -159,7 +159,10 @@ fetch("data/allegiance.json").then(r=>{ if(!r.ok) throw 0; return r.json(); }).t
   // Party leadership votes
   const Ld = d.leader;
   document.querySelectorAll(".leaderName").forEach(e=>e.textContent=Ld.name);
-  if(Ld.both){
+  if(Ld.na){
+    $("breaksNote").textContent = `N/A. ${M.short} is the Speaker, so a comparison with a party leader's votes does not apply.`;
+    document.querySelector("#breaks .handles").hidden = true;
+  } else if(Ld.both){
     $("breaksNote").textContent = `${M.Subj} and ${Ld.name} both cast a Yea or Nay on ${Ld.both} roll calls in this Congress. They split on ${Ld.splits}, listed below with the official wording.`;
     $("voteTiles").innerHTML = tiles([[Ld.agree+"%","Same vote as "+Ld.name],[Ld.unity+"%",`Votes cast with the ${M.ownParty} majority (rank ${Ld.rank}${Ld.tied?", tied,":""} of ${Ld.ofParty})`],[Ld.medianUnity+"%",`The typical ${M.chamberName} ${M.ownPartyNoun}`]].filter(([a])=>!/^(null|undefined)%$/.test(a)));
     $("breakRows").innerHTML = Ld.diffs.map(x=>`<tr><td class="mono" style="white-space:nowrap;font-size:.78rem">${esc(x.date)}</td><td><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.bill)}</a> · ${esc(x.title)}<div class="qq">${esc(x.q)}</div></td><td>${vp(x.me)}</td><td>${vp(x.jeffries)}</td></tr>`).join("");
