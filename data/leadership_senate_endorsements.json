@@ -2,8 +2,8 @@
   "note": "Endorsements from people who do not vote in the Senate Democratic leader election. They are not part of any count on this page. Curated by hand; there is no script for this file.",
   "items": [
     {
-      "handle": "@ericaforpa",
-      "identity": "Believed to be Erica Deuso, mayor of Downingtown, Pennsylvania (in office since January 5, 2026, per Wikipedia). The site maintainer identified the account; no page we could read links this Threads handle to Ms. Deuso, so the match is not independently confirmed.",
+      "handle": "Erica Deuso, Mayor of Downingtown, PA (@ericaforpa)",
+      "identity": "Personal account, not the borough's official page (the profile bio says \"Personal page, personal opinions\" and points to @DowningtownMayor for official posts). Deuso is the mayor of Downingtown, Pennsylvania, in office since January 5, 2026, per Wikipedia. The profile name and bio were read from a screenshot supplied by the site maintainer.",
       "identity_source_url": "https://en.wikipedia.org/wiki/Erica_Deuso",
       "endorses": "van_hollen",
       "quote": "I am unequivocally endorsing Senator Chris Van Hollen to become the next Senate Majority Leader and calling on Senator Chuck Schumer to step aside.",
@@ -11,7 +11,7 @@
       "source_url": "https://www.threads.com/share/BAQE3x8ooH",
       "source_date": "2026-11-26",
       "date_note": "Date is approximate: the post was shown as 20 hours old in a screenshot taken on November 27.",
-      "how_read": "The link was supplied by the site maintainer. Scripts cannot open Threads, so the quote was read from the maintainer's screenshot of the post (first of three posts in the thread), not checked by script."
+      "how_read": "The post link and a screenshot of the profile were supplied by the site maintainer. Scripts cannot open Threads, so the quote and the profile bio were read from screenshots, not checked by script."
     }
   ]
 }
