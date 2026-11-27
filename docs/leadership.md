@@ -9,7 +9,7 @@ It is a hand-built hub page, not a member tracker. It is not generated from `sit
 | What | Where |
 |---|---|
 | The page (markup, styles, script) | `leadership.html` |
-| Data the page reads | `data/leadership_senate.json`, `data/leadership_house.json`, `data/leadership_senate_polls.json` |
+| Data the page reads | `data/leadership_senate.json`, `data/leadership_house.json`, `data/leadership_senate_polls.json`, `data/leadership_senate_endorsements.json` |
 | Curated inputs | `data/leadership/senate_positions.csv`, `data/leadership/house_receipts.csv`, `data/leadership/whip_tracker_snapshot.json` |
 | Link-check results (committed as the record) | `data/leadership/verification_senate.csv`, `data/leadership/verification_house.csv` |
 | Build scripts | `scripts/build_leadership_senate.py`, `scripts/build_leadership_house.py` |
@@ -17,6 +17,8 @@ It is a hand-built hub page, not a member tracker. It is not generated from `sit
 | Saved pages and block list (git-ignored) | `data/raw/leadership_pages/`, `data/raw/leadership_blocked_hosts.txt` |
 
 `data/leadership_senate_polls.json` is curated by hand. Every number in it was read on the poll's own page. There is no script for it.
+
+`data/leadership_senate_endorsements.json` is also curated by hand: the "Notable endorsements" section on the Senate tab, for people who do not vote in the election. These are never counted. Each item needs the post or article link and its date; label an endorser by handle and say "identity not verified" unless a source names them.
 
 ## How the data flows
 

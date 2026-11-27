@@ -56,6 +56,9 @@ section,#race{scroll-margin-top:calc(var(--crh,60px) + 56px)}
 .pos{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;border-radius:999px;padding:2px 10px;white-space:nowrap;color:var(--c);background:color-mix(in srgb,var(--c) 16%,transparent)}
 .pos::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
 .pos.none{background:none;border:1px dashed var(--muted);color:var(--muted)}
+.endo{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.endo blockquote{margin:0;padding-left:12px;border-left:3px solid var(--vh)}
+.endo .meta{font-size:.8rem;color:var(--muted);margin:0}
 /* Polls */
 .polls{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
 @media (max-width:760px){.polls{grid-template-columns:1fr}}
@@ -130,6 +133,12 @@ section,#race{scroll-margin-top:calc(var(--crh,60px) + 56px)}
       <p>Voters don't choose the leader. Senate Democrats do, in a secret ballot. These polls ask voters which candidate they would prefer. Wording and samples differ, so read each poll on its own.</p></div>
     <div class="polls" id="polls"></div>
     <p class="muted" style="font-size:.8rem;margin:0" id="pollnote"></p>
+  </section>
+
+  <section id="notable">
+    <div class="sec-head"><span class="eyebrow">Outside the count</span><h2>Notable endorsements</h2>
+      <p>Public endorsements from people who don't vote in this election. They are not counted in the totals above.</p></div>
+    <div id="endo" style="display:flex;flex-direction:column;gap:14px"></div>
   </section>
 
   <section id="disputes" hidden>
@@ -242,6 +251,14 @@ const marks = n => gate().repeat(Math.floor(n / 5)) + (n % 5 ? strokes(n % 5) : 
 const range = d => { const [a, b] = d.map(x => { const [y, m, dd] = x.split("-").map(Number); return {m: MON[m - 1], d: dd, y}; });
   return a.m === b.m ? `${a.m} ${a.d}-${b.d}, ${b.y}` : `${a.m} ${a.d} - ${b.m} ${b.d}, ${b.y}`; };
 const seg = (v, c, cls = "", txt) => `<span class="${cls}" style="flex:${v} 1 0;--c:${c}" title="${esc(txt ?? v + "%")}">${esc(txt ?? v + "%")}</span>`;
+fetch("data/leadership_senate_endorsements.json").then(r => r.json()).then(E => {
+  $("endo").innerHTML = E.items.map(e => `<div class="endo"><h3>${esc(e.handle)} <span class="muted" style="font-weight:400;font-size:.85rem">on ${esc(e.platform)} · backs ${e.endorses === "van_hollen" ? "Van Hollen" : "Schumer"}</span></h3>
+    <blockquote>${esc(e.quote)}</blockquote>
+    <p class="meta">${esc(e.identity)}${e.identity_source_url ? ` <a href="${esc(e.identity_source_url)}" target="_blank" rel="noopener">Office source</a>` : ""}</p>
+    <p class="meta">${esc(e.date_note)} ${esc(e.how_read)}</p>
+    <a href="${esc(e.source_url)}" target="_blank" rel="noopener">The post on ${esc(e.platform)}</a></div>`).join("");
+  if (window.buildJump) window.buildJump();
+}).catch(() => { $("endo").innerHTML = '<p class="muted">The endorsements didn\'t load. Reload the page to try again.</p>'; });
 fetch("data/leadership_senate_polls.json").then(r => r.json()).then(P => {
   $("polls").innerHTML = P.polls.map(p => {
     let body = "";
