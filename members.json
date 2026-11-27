@@ -4892,6 +4892,45 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "vt/balint",
+   "name": "Becca Balint",
+   "party": "D",
+   "seat": "VT-AL",
+   "chamber": "house",
+   "voteId": "B001318",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "vt/sanders",
+   "name": "Bernard Sanders",
+   "party": "D",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S313",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "vt/welch",
+   "name": "Peter Welch",
+   "party": "D",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S422",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
