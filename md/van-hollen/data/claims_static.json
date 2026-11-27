@@ -1,4 +1,23 @@
 {
  "_note": "Facts typed directly into the pages (not built from data). Each lists the exact terms that must appear on its source. 'check': 'clerk-committees' verifies committee seats against her own entry in the Clerk's member file instead of a text search.",
- "claims": []
+ "claims": [
+  {
+   "page": "overview",
+   "section": "Committees",
+   "text": "Committees: Appropriations; Banking, Housing, and Urban Affairs; Budget; Foreign Relations.",
+   "url": "https://www.senate.gov/general/committee_assignments/assignments.htm",
+   "check": "senate-committees",
+   "must": [
+    "Appropriations",
+    "Banking, Housing, and Urban Affairs",
+    "Budget",
+    "Foreign Relations",
+    "Commerce, Justice, Science, and Related Agencies",
+    "Department of Homeland Security",
+    "Digital Assets",
+    "Africa and Global Health Policy",
+    "State Department and USAID Management"
+   ]
+  }
+ ]
 }

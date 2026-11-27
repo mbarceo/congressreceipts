@@ -1,0 +1,74 @@
+# Weekly refresh of the roll-call data and the hub pages (Who's showing up, Leaders tracker, queue).
+# It never merges and never pushes to main: it opens ONE pull request with the data changes for the maintainer to review and merge.
+# Pacing follows CLAUDE.md "Go slow": one request every 3 seconds, a single job, stop at the first 403 or 429.
+# Needs no API keys (House Clerk and senate.gov vote XML are public). Repo setting required once:
+#   Settings > Actions > General > Workflow permissions > "Allow GitHub Actions to create and approve pull requests".
+name: Refresh hub data
+
+on:
+  schedule:
+    - cron: "17 13 * * 1"   # Mondays 13:17 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: refresh-hub
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # One request at a time, 3 s apart; each script exits non-zero at the first 403/429 and keeps what it downloaded.
+      - name: Fetch new House roll calls
+        run: bash scripts/fetch_votes.sh
+      - name: Fetch new Senate roll calls
+        run: python3 -I scripts/fetch_votes_senate.py
+
+      # Offline: rebuild every live member's page data, then the hub files. A member whose raw FEC data is not in
+      # git can fail a late step; that is logged and shown in the PR, and the member's committed output is kept.
+      - name: Rebuild members
+        run: |
+          set +e
+          python3 -I scripts/rebuild.py --all 2>&1 | tee rebuild.log
+          exit 0
+      - name: Rebuild hub files
+        run: |
+          python3 -I scripts/build_attendance.py
+          python3 -I scripts/build_leaders.py
+          python3 -I scripts/build_queue.py
+
+      - name: Open a pull request if anything changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -e
+          git add -- data ':(glob)*/*/data'
+          if git diff --cached --quiet; then echo "Nothing new."; exit 0; fi
+          day=$(date -u +%F)
+          branch="bot/refresh-hub-$day"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git commit -m "Refresh roll calls and hub data ($day)"
+          git push -u origin "$branch"
+          {
+            echo "Automated weekly refresh: new official roll-call XML, rebuilt member vote data, and the hub files (attendance, leaders, queue). Nothing here is typed by hand."
+            echo
+            echo "Review the diff in data/ and the member folders, then merge. Not auto-merged."
+            echo
+            echo "Rebuild messages:"
+            echo '```'
+            grep -E "Failed|rror" rebuild.log || echo "none"
+            echo '```'
+          } > body.md
+          gh pr create --base main --head "$branch" --title "Refresh roll calls and hub data ($day)" --body-file body.md

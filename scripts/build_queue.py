@@ -6,7 +6,7 @@
 Rule for every member in members.json (keyed by the bioguide id in its tracker.config.json):
   done      live, and on the hub (no "live": false and no "hub": false); url = https://congressreceipts.org/<path>/
   progress  everything else: live: false (not published) or hub: false (published but unfinished)
-Entries for people with no tracker (status "next" or "skip", or hand-set "progress") are editorial and are kept exactly as they are.
+Entries for people with no tracker (status "skip", or hand-set "progress") are editorial and are kept exactly as they are.
 A member with a placeholder bioguide id (X000000, a member-elect) is left out. Prints what changed.
 """
 import json, os, re, sys

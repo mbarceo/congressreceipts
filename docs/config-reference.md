@@ -32,7 +32,7 @@ Every file below is JSON. Skeletons for a new member are in `template/`; each cu
 { "R000620": { "status": "done", "url": "https://congressreceipts.org/ca/rivas/" },
   "G000598": { "status": "progress" } }
 ```
-Entries for tracked members are generated from `members.json` by `scripts/build_queue.py` (`done` + `url` when live and on the hub, otherwise `progress`); do not hand-edit them. Keyed by **bioguide id** of a sitting member (the page lists everyone in `data/congress.json`). `status`: `done`, `progress`, `next` or `skip`; anyone not listed is "Not started". Add `url` once the tracker is live. Someone who has been elected but not yet sworn in has no bioguide id and cannot be listed.
+Entries for tracked members are generated from `members.json` by `scripts/build_queue.py` (`done` + `url` when live and on the hub, otherwise `progress`); do not hand-edit them. Keyed by **bioguide id** of a sitting member (the page lists everyone in `data/congress.json`). `status`: `done`, `progress` or `skip`; anyone not listed is "Not started". Add `url` once the tracker is live. Someone who has been elected but not yet sworn in has no bioguide id and cannot be listed.
 
 ## `<member>/tracker.config.json`
 

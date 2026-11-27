@@ -6,7 +6,7 @@ or public-domain government photos keyed by bioguide ID):
   2. House only: House Clerk member images (clerk.house.gov/images/members/<ID>.jpg)
   3. congress.gov (img/member/<id>_200.jpg)
   4. The public-domain congressional image set (unitedstates.github.io/...): larger but can be outdated
-The first real JPEG of reasonable size is kept. Look at the saved photo to confirm it's current.
+The first real JPEG of reasonable size is kept, and the later sources are not requested. Look at the saved photo to confirm it's current.
 Usage: python3 -I scripts/fetch_portrait.py
 """
 import json, os, struct, sys, urllib.request
@@ -42,6 +42,7 @@ for url in sources:
     if not size or size[0] < 150 or len(body) < 8000:
         print("  not a usable photo at", url); continue
     found.append((size[0] * size[1], url, body, size))
+    break   # first usable source in priority order wins; do not call the remaining hosts (go slow on government sites)
 if not found:
     raise SystemExit("No official portrait found. Ask the user before using any other photo.")
 # Take the first usable source in priority order, not the largest: bioguide is the official directory and is kept
