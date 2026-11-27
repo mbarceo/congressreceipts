@@ -4112,6 +4112,84 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "sc/wilson",
+   "name": "Joe Wilson",
+   "party": "R",
+   "seat": "SC-2",
+   "chamber": "house",
+   "voteId": "W000795",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "sc/biggs",
+   "name": "Sheri Biggs",
+   "party": "R",
+   "seat": "SC-3",
+   "chamber": "house",
+   "voteId": "B001325",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "sc/timmons",
+   "name": "William R. Timmons IV",
+   "party": "R",
+   "seat": "SC-4",
+   "chamber": "house",
+   "voteId": "T000480",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "sc/clyburn",
+   "name": "James E. Clyburn",
+   "party": "D",
+   "seat": "SC-6",
+   "chamber": "house",
+   "voteId": "C000537",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "sc/fry",
+   "name": "Russell Fry",
+   "party": "R",
+   "seat": "SC-7",
+   "chamber": "house",
+   "voteId": "F000478",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "sc/scott",
+   "name": "Tim Scott",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S365",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
