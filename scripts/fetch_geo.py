@@ -40,10 +40,13 @@ def get(name, service, layer, where="1=1", bbox=None, offset="0.0003"):
         json.dump(data, f)
     print(name, len(data.get("features", [])), "features", data.get("error", ""))
 
-GEOID = f"GEOID='{M['geoid']}'"
+# "geoid" is the member's district in the 120th Congress (new map). A district that changed number can set "geoidOld"
+# to the 119th-Congress district the member represented (Sánchez: CA-38 became CA-41); it defaults to "geoid".
+GEOID_NEW = f"GEOID='{M['geoid']}'"
+GEOID_OLD = f"GEOID='{M.get('geoidOld') or M['geoid']}'"
 cds = {}
-for name, svc, layer in (("cd120", "tigerWMS_Current", 54), ("cd119", "Legislative", 4)):
-    get(name, svc, layer, GEOID)
+for name, svc, layer, where in (("cd120", "tigerWMS_Current", 54, GEOID_NEW), ("cd119", "Legislative", 4, GEOID_OLD)):
+    get(name, svc, layer, where)
     cds[name] = json.load(open(os.path.join(OUT, name + ".geojson")))["features"][0]["geometry"]
 # Map frame: both district shapes, padded, so the same script works for any district
 pts = [p for g in cds.values() for poly in (g["coordinates"] if g["type"] == "MultiPolygon" else [g["coordinates"]]) for r in poly for p in r]
