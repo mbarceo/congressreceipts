@@ -4190,6 +4190,32 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "sd/rounds",
+   "name": "Mike Rounds",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S381",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "sd/thune",
+   "name": "John Thune",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S303",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
