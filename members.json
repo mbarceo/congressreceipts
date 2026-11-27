@@ -5256,6 +5256,19 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "ga/scott",
+   "name": "Austin Scott",
+   "party": "R",
+   "seat": "GA-8",
+   "chamber": "house",
+   "voteId": "S001189",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
