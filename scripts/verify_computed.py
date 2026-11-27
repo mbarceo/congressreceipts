@@ -27,7 +27,8 @@ have = lambda p: os.path.exists(os.path.join(ROOT, p))
 both = [(v[ME], v[JEF]) for v, _ in rolls if v.get(ME) in ("Yea", "Nay") and v.get(JEF) in ("Yea", "Nay")]
 splits = sum(a != b for a, b in both)
 es = J("data/establishment.json")["nums"] if have("data/establishment.json") else None
-if es is None: print("skip: leader-agreement checks (data/establishment.json not built yet)")
+if LEADER.get("compareVotes") is False: print("skip: leader-agreement checks (leader.compareVotes is false)")
+elif es is None: print("skip: leader-agreement checks (data/establishment.json not built yet)")
 elif both:
     check(f"Votes where the member and {LEADER['name']} both cast Yea or Nay", es["both"], len(both), VSRC, 0)
     check(f"Votes where the member split from {LEADER['name']}", es["ndiff"], splits, VSRC, 0)
