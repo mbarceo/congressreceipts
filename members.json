@@ -1226,6 +1226,58 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "id/fulcher",
+   "name": "Russ Fulcher",
+   "party": "R",
+   "seat": "ID-1",
+   "chamber": "house",
+   "voteId": "F000469",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "id/simpson",
+   "name": "Michael K. Simpson",
+   "party": "R",
+   "seat": "ID-2",
+   "chamber": "house",
+   "voteId": "S001148",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "id/crapo",
+   "name": "Mike Crapo",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S266",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "id/risch",
+   "name": "James E. Risch",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S323",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
