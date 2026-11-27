@@ -108,6 +108,97 @@
    "portrait": "assets/portrait.jpg",
    "eventsResearched": false,
    "hub": false
+  },
+  {
+   "path": "al/figures",
+   "name": "Shomari Figures",
+   "party": "D",
+   "seat": "AL-2",
+   "chamber": "house",
+   "voteId": "F000481",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "al/rogers",
+   "name": "Mike Rogers",
+   "party": "R",
+   "seat": "AL-3",
+   "chamber": "house",
+   "voteId": "R000575",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "al/aderholt",
+   "name": "Robert B. Aderholt",
+   "party": "R",
+   "seat": "AL-4",
+   "chamber": "house",
+   "voteId": "A000055",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "al/strong",
+   "name": "Dale W. Strong",
+   "party": "R",
+   "seat": "AL-5",
+   "chamber": "house",
+   "voteId": "S001220",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "al/palmer",
+   "name": "Gary J. Palmer",
+   "party": "R",
+   "seat": "AL-6",
+   "chamber": "house",
+   "voteId": "P000609",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "al/sewell",
+   "name": "Terri A. Sewell",
+   "party": "D",
+   "seat": "AL-7",
+   "chamber": "house",
+   "voteId": "S001185",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "al/britt",
+   "name": "Katie Boyd Britt",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S416",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
