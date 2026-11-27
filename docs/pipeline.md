@@ -33,6 +33,28 @@ python3 -I scripts/rebuild.py ca/rivas --dry-run | --force | --adopt | --checks
 
 ### Rebuild order for one member
 
+```mermaid
+flowchart TD
+    subgraph FETCH["1 FETCH (paced, manual, network)"]
+        f1[fetch_votes / fetch_votes_senate] --> b1
+        f2[fetch_statements] --> f3[fetch_statement_bodies]
+        f4[resolve_fec] --> f5[fetch_fec] --> b3
+        f5 --> f6[fetch_trackaipac]
+        f7[fetch_bills]
+    end
+    subgraph BUILD["2 BUILD (offline, rebuild.py)"]
+        b1[build_votes] --> b2[build_alignment]
+        b3[build_fec]
+        b2 --> b4[build_stances]
+        f3 --> b4
+        f6 --> b4
+        b3 --> b4
+        b4 --> b5[build_promises] --> b6[build_establishment] --> b7[build_cards] --> b8[build_overview]
+    end
+    b8 --> V["3 VERIFY: run_checks (network, 15-day cache)"]
+    V --> P["4 PUBLISH: publish.py member"]
+```
+
 1. **Raw data**
    - Votes: House `fetch_votes` (shell script, House Clerk XML) or Senate `fetch_votes_senate` (senate.gov XML) → `build_votes` → `build_alignment`
    - Statements: `fetch_statements` → `fetch_statement_bodies`

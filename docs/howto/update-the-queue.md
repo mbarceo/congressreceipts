@@ -5,6 +5,16 @@ The Backlog Queue page (`backlog.html`) lists every sitting member of Congress b
 - `data/congress.json`: the roster, built by `scripts/build_roster.py` from the `unitedstates/congress-legislators` current-members file.
 - `data/queue.json`: the status. Entries for tracked members are generated from `members.json` by `scripts/build_queue.py`; only entries for people with no tracker (`skip`) are edited by hand.
 
+```mermaid
+flowchart LR
+    M[members.json] -- build_queue.py --> Q[data/queue.json]
+    H[hand-edited skip entries] --> Q
+    R[data/congress.json roster] --> B[backlog.html]
+    Q --> B
+    M -. live false .-> P[progress]
+    M -. live and on hub .-> D[done]
+```
+
 ## Tracked members: nothing to type
 
 Run `python3 -I scripts/build_queue.py` after you add a member or change `live` / `hub` in `members.json`. A member that is live and on the hub becomes `done` with its URL (`https://congressreceipts.org/<path>/`); anything else in `members.json` (`"live": false` or `"hub": false`) is `progress`. `python3 -I scripts/status.py` (and `build_queue.py --check`) flag a queue that is out of date. Entries for people with no tracker are left alone.
