@@ -228,19 +228,6 @@
    "eventsResearched": false
   },
   {
-   "path": "ak/sullivan",
-   "name": "Dan Sullivan",
-   "party": "R",
-   "seat": "Senate",
-   "chamber": "senate",
-   "voteId": "S383",
-   "format": "shared",
-   "pages": "stub",
-   "portrait": "assets/portrait.jpg",
-   "live": false,
-   "eventsResearched": false
-  },
-  {
    "path": "ar/crawford",
    "name": "Eric A. \"Rick\" Crawford",
    "party": "R",
@@ -468,32 +455,6 @@
    "seat": "CO-3",
    "chamber": "house",
    "voteId": "H001100",
-   "format": "shared",
-   "pages": "stub",
-   "portrait": "assets/portrait.jpg",
-   "live": false,
-   "eventsResearched": false
-  },
-  {
-   "path": "co/boebert",
-   "name": "Lauren Boebert",
-   "party": "R",
-   "seat": "CO-4",
-   "chamber": "house",
-   "voteId": "B000825",
-   "format": "shared",
-   "pages": "stub",
-   "portrait": "assets/portrait.jpg",
-   "live": false,
-   "eventsResearched": false
-  },
-  {
-   "path": "co/crank",
-   "name": "Jeff Crank",
-   "party": "R",
-   "seat": "CO-5",
-   "chamber": "house",
-   "voteId": "C001137",
    "format": "shared",
    "pages": "stub",
    "portrait": "assets/portrait.jpg",
@@ -1645,19 +1606,6 @@
    "eventsResearched": false
   },
   {
-   "path": "ks/marshall",
-   "name": "Roger Marshall",
-   "party": "R",
-   "seat": "Senate",
-   "chamber": "senate",
-   "voteId": "S411",
-   "format": "shared",
-   "pages": "stub",
-   "portrait": "assets/portrait.jpg",
-   "live": false,
-   "eventsResearched": false
-  },
-  {
    "path": "ks/moran",
    "name": "Jerry Moran",
    "party": "R",
@@ -2035,19 +1983,6 @@
    "eventsResearched": false
   },
   {
-   "path": "me/collins",
-   "name": "Susan M. Collins",
-   "party": "R",
-   "seat": "Senate",
-   "chamber": "senate",
-   "voteId": "S252",
-   "format": "shared",
-   "pages": "stub",
-   "portrait": "assets/portrait.jpg",
-   "live": false,
-   "eventsResearched": false
-  },
-  {
    "path": "me/king",
    "name": "Angus S. King, Jr.",
    "party": "D",
@@ -2100,19 +2035,6 @@
    "eventsResearched": false
   },
   {
-   "path": "mi/huizenga",
-   "name": "Bill Huizenga",
-   "party": "R",
-   "seat": "MI-4",
-   "chamber": "house",
-   "voteId": "H001058",
-   "format": "shared",
-   "pages": "stub",
-   "portrait": "assets/portrait.jpg",
-   "live": false,
-   "eventsResearched": false
-  },
-  {
    "path": "mi/walberg",
    "name": "Tim Walberg",
    "party": "R",
@@ -2132,19 +2054,6 @@
    "seat": "MI-6",
    "chamber": "house",
    "voteId": "D000624",
-   "format": "shared",
-   "pages": "stub",
-   "portrait": "assets/portrait.jpg",
-   "live": false,
-   "eventsResearched": false
-  },
-  {
-   "path": "mi/barrett",
-   "name": "Tom Barrett",
-   "party": "R",
-   "seat": "MI-7",
-   "chamber": "house",
-   "voteId": "B001321",
    "format": "shared",
    "pages": "stub",
    "portrait": "assets/portrait.jpg",
@@ -2321,19 +2230,6 @@
    "eventsResearched": false
   },
   {
-   "path": "mo/wagner",
-   "name": "Ann Wagner",
-   "party": "R",
-   "seat": "MO-2",
-   "chamber": "house",
-   "voteId": "W000812",
-   "format": "shared",
-   "pages": "stub",
-   "portrait": "assets/portrait.jpg",
-   "live": false,
-   "eventsResearched": false
-  },
-  {
    "path": "mo/onder",
    "name": "Robert F. Onder, Jr.",
    "party": "R",
@@ -2490,19 +2386,6 @@
    "eventsResearched": false
   },
   {
-   "path": "ms/hyde-smith",
-   "name": "Cindy Hyde-Smith",
-   "party": "R",
-   "seat": "Senate",
-   "chamber": "senate",
-   "voteId": "S395",
-   "format": "shared",
-   "pages": "stub",
-   "portrait": "assets/portrait.jpg",
-   "live": false,
-   "eventsResearched": false
-  },
-  {
    "path": "ms/wicker",
    "name": "Roger F. Wicker",
    "party": "R",
@@ -2581,19 +2464,6 @@
    "eventsResearched": false
   },
   {
-   "path": "nc/mcdowell",
-   "name": "Addison P. McDowell",
-   "party": "R",
-   "seat": "NC-6",
-   "chamber": "house",
-   "voteId": "M001240",
-   "format": "shared",
-   "pages": "stub",
-   "portrait": "assets/portrait.jpg",
-   "live": false,
-   "eventsResearched": false
-  },
-  {
    "path": "nc/rouzer",
    "name": "David Rouzer",
    "party": "R",
@@ -2620,19 +2490,6 @@
    "eventsResearched": false
   },
   {
-   "path": "nc/hudson",
-   "name": "Richard Hudson",
-   "party": "R",
-   "seat": "NC-9",
-   "chamber": "house",
-   "voteId": "H001067",
-   "format": "shared",
-   "pages": "stub",
-   "portrait": "assets/portrait.jpg",
-   "live": false,
-   "eventsResearched": false
-  },
-  {
    "path": "nc/harrigan",
    "name": "Pat Harrigan",
    "party": "R",
@@ -2652,32 +2509,6 @@
    "seat": "NC-12",
    "chamber": "house",
    "voteId": "A000370",
-   "format": "shared",
-   "pages": "stub",
-   "portrait": "assets/portrait.jpg",
-   "live": false,
-   "eventsResearched": false
-  },
-  {
-   "path": "nc/knott",
-   "name": "Brad Knott",
-   "party": "R",
-   "seat": "NC-13",
-   "chamber": "house",
-   "voteId": "K000405",
-   "format": "shared",
-   "pages": "stub",
-   "portrait": "assets/portrait.jpg",
-   "live": false,
-   "eventsResearched": false
-  },
-  {
-   "path": "nc/moore",
-   "name": "Tim Moore",
-   "party": "R",
-   "seat": "NC-14",
-   "chamber": "house",
-   "voteId": "M001236",
    "format": "shared",
    "pages": "stub",
    "portrait": "assets/portrait.jpg",
@@ -2821,19 +2652,6 @@
    "seat": "NJ-1",
    "chamber": "house",
    "voteId": "N000188",
-   "format": "shared",
-   "pages": "stub",
-   "portrait": "assets/portrait.jpg",
-   "live": false,
-   "eventsResearched": false
-  },
-  {
-   "path": "nj/van-drew",
-   "name": "Jefferson Van Drew",
-   "party": "R",
-   "seat": "NJ-2",
-   "chamber": "house",
-   "voteId": "V000133",
    "format": "shared",
    "pages": "stub",
    "portrait": "assets/portrait.jpg",
@@ -3270,19 +3088,6 @@
    "eventsResearched": false
   },
   {
-   "path": "ny/lawler",
-   "name": "Michael Lawler",
-   "party": "R",
-   "seat": "NY-17",
-   "chamber": "house",
-   "voteId": "L000599",
-   "format": "shared",
-   "pages": "stub",
-   "portrait": "assets/portrait.jpg",
-   "live": false,
-   "eventsResearched": false
-  },
-  {
    "path": "ny/ryan",
    "name": "Patrick Ryan",
    "party": "D",
@@ -3517,19 +3322,6 @@
    "eventsResearched": false
   },
   {
-   "path": "oh/turner",
-   "name": "Michael R. Turner",
-   "party": "R",
-   "seat": "OH-10",
-   "chamber": "house",
-   "voteId": "T000463",
-   "format": "shared",
-   "pages": "stub",
-   "portrait": "assets/portrait.jpg",
-   "live": false,
-   "eventsResearched": false
-  },
-  {
    "path": "oh/brown",
    "name": "Shontel M. Brown",
    "party": "D",
@@ -3575,32 +3367,6 @@
    "seat": "OH-14",
    "chamber": "house",
    "voteId": "J000295",
-   "format": "shared",
-   "pages": "stub",
-   "portrait": "assets/portrait.jpg",
-   "live": false,
-   "eventsResearched": false
-  },
-  {
-   "path": "oh/carey",
-   "name": "Mike Carey",
-   "party": "R",
-   "seat": "OH-15",
-   "chamber": "house",
-   "voteId": "C001126",
-   "format": "shared",
-   "pages": "stub",
-   "portrait": "assets/portrait.jpg",
-   "live": false,
-   "eventsResearched": false
-  },
-  {
-   "path": "oh/husted",
-   "name": "Jon Husted",
-   "party": "R",
-   "seat": "Senate",
-   "chamber": "senate",
-   "voteId": "S438",
    "format": "shared",
    "pages": "stub",
    "portrait": "assets/portrait.jpg",
@@ -3783,19 +3549,6 @@
    "seat": "Senate",
    "chamber": "senate",
    "voteId": "S247",
-   "format": "shared",
-   "pages": "stub",
-   "portrait": "assets/portrait.jpg",
-   "live": false,
-   "eventsResearched": false
-  },
-  {
-   "path": "pa/fitzpatrick",
-   "name": "Brian K. Fitzpatrick",
-   "party": "R",
-   "seat": "PA-1",
-   "chamber": "house",
-   "voteId": "F000466",
    "format": "shared",
    "pages": "stub",
    "portrait": "assets/portrait.jpg",
@@ -4687,19 +4440,6 @@
    "eventsResearched": false
   },
   {
-   "path": "va/wittman",
-   "name": "Robert J. Wittman",
-   "party": "R",
-   "seat": "VA-1",
-   "chamber": "house",
-   "voteId": "W000804",
-   "format": "shared",
-   "pages": "stub",
-   "portrait": "assets/portrait.jpg",
-   "live": false,
-   "eventsResearched": false
-  },
-  {
    "path": "va/kiggans",
    "name": "Jennifer A. Kiggans",
    "party": "R",
@@ -5038,38 +4778,12 @@
    "eventsResearched": false
   },
   {
-   "path": "wi/steil",
-   "name": "Bryan Steil",
-   "party": "R",
-   "seat": "WI-1",
-   "chamber": "house",
-   "voteId": "S001213",
-   "format": "shared",
-   "pages": "stub",
-   "portrait": "assets/portrait.jpg",
-   "live": false,
-   "eventsResearched": false
-  },
-  {
    "path": "wi/pocan",
    "name": "Mark Pocan",
    "party": "D",
    "seat": "WI-2",
    "chamber": "house",
    "voteId": "P000607",
-   "format": "shared",
-   "pages": "stub",
-   "portrait": "assets/portrait.jpg",
-   "live": false,
-   "eventsResearched": false
-  },
-  {
-   "path": "wi/van-orden",
-   "name": "Derrick Van Orden",
-   "party": "R",
-   "seat": "WI-3",
-   "chamber": "house",
-   "voteId": "V000135",
    "format": "shared",
    "pages": "stub",
    "portrait": "assets/portrait.jpg",
