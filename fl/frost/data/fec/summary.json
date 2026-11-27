@@ -1,0 +1,3499 @@
+{
+ "cycles": {
+  "all": {
+   "label": "Both cycles",
+   "slices": {
+    "small": 3885004.79,
+    "large": 3214273.98,
+    "proisrael": 2500.0,
+    "otherpac": 740201.01,
+    "party": 0.0,
+    "other": 59028.08
+   },
+   "through": "2026-10-14",
+   "note": "Pro-Israel slice combines direct PAC gifts and donations earmarked through J Street PAC across both cycles."
+  },
+  "2024": {
+   "label": "2023-24",
+   "slices": {
+    "small": 1924972.05,
+    "large": 1754791.95,
+    "proisrael": 2500.0,
+    "otherpac": 376351.01,
+    "party": 0.0,
+    "other": 7223.77
+   },
+   "through": "2024-12-31",
+   "receipts": 4065838.78,
+   "proDirect": 2500.0,
+   "proEarmark": 0.0,
+   "note": "Pro-Israel slice: $2,500 in direct PAC gifts plus $0 in individual donations earmarked through J Street PAC."
+  },
+  "2026": {
+   "label": "2025-26",
+   "slices": {
+    "small": 1960032.74,
+    "large": 1459482.03,
+    "proisrael": 0.0,
+    "otherpac": 363850.0,
+    "party": 0.0,
+    "other": 51804.31
+   },
+   "through": "2026-10-14",
+   "receipts": 3835169.08,
+   "proDirect": 0.0,
+   "proEarmark": 0.0,
+   "note": "Pro-Israel slice: $0 in direct PAC gifts plus $0 in individual donations earmarked through J Street PAC."
+  }
+ },
+ "pacs": [
+  {
+   "name": "MADSOUL VICTORY FUND",
+   "id": "C00865220",
+   "kind": "Joint fundraising",
+   "proIsrael": false,
+   "amount": 33000.0,
+   "n": 3,
+   "byCycle": {
+    "2024": 0,
+    "2026": 33000.0
+   }
+  },
+  {
+   "name": "SEIU COPE (SERVICE EMPLOYEES INTERNATIONAL UNION COMMITTEE ON POLITICAL EDUCATION)",
+   "id": "C00004036",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 20000.0,
+   "n": 8,
+   "byCycle": {
+    "2024": 10000.0,
+    "2026": 10000.0
+   }
+  },
+  {
+   "name": "INTERNATIONAL BROTHERHOOD OF ELECTRICAL WORKERS POLITICAL ACTION COMMITTEE",
+   "id": "C00027342",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 20000.0,
+   "n": 4,
+   "byCycle": {
+    "2024": 10000.0,
+    "2026": 10000.0
+   }
+  },
+  {
+   "name": "MACHINISTS NON PARTISAN POLITICAL LEAGUE OF THE INTERNATIONAL ASSOCIATION OF MACHINISTS & AEROSPACE WORKERS",
+   "id": "C00002469",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 20000.0,
+   "n": 4,
+   "byCycle": {
+    "2024": 10000.0,
+    "2026": 10000.0
+   }
+  },
+  {
+   "name": "TRANSPORT WORKERS UNION OF AMERICA POLITICAL CONTRIBUTIONS COMMITTEE",
+   "id": "C00008268",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 20000.0,
+   "n": 9,
+   "byCycle": {
+    "2024": 10000.0,
+    "2026": 10000.0
+   }
+  },
+  {
+   "name": "INTERNATIONAL UNION OF PAINTERS AND ALLIED TRADES POLITICAL ACTION TOGETHER POLITICAL COMMITTEE",
+   "id": "C00000885",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 15000.0,
+   "n": 4,
+   "byCycle": {
+    "2024": 10000.0,
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "CHC BOLD PAC",
+   "id": "C00365536",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 15000.0,
+   "n": 4,
+   "byCycle": {
+    "2024": 10000.0,
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "UAW - V - CAP (UAW VOLUNTARY COMMUNITY ACTION PROGRAM) 'INT'L UNION UNITED AUTOMOBILE AEROSPACE & AGRICULTURAL IMPLEMENT WORKERS OF AMERICA UAW",
+   "id": "C00002840",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 15000.0,
+   "n": 3,
+   "byCycle": {
+    "2024": 10000.0,
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "DEMAND JUSTICE PAC",
+   "id": "C00760827",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 15000.0,
+   "n": 3,
+   "byCycle": {
+    "2024": 10000.0,
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "COMMUNICATIONS WORKERS OF AMERICA - COPE POLITICAL CONTRIBUTIONS COMMITTEE",
+   "id": "C00002089",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 15000.0,
+   "n": 4,
+   "byCycle": {
+    "2024": 10000.0,
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "INTERNATIONAL ASSOCIATION OF SHEET METAL, AIR, RAIL AND TRANSPORTATION WORKERS POLITICAL ACTION LEAGUE",
+   "id": "C00007542",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 15000.0,
+   "n": 4,
+   "byCycle": {
+    "2024": 10000.0,
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "LEADERS WE DESERVE",
+   "id": "C00843110",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 13550.0,
+   "n": 4,
+   "byCycle": {
+    "2024": 5800.0,
+    "2026": 7750.0
+   }
+  },
+  {
+   "name": "AIR LINE PILOTS ASSOCIATION PAC",
+   "id": "C00035451",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 13000.0,
+   "n": 7,
+   "byCycle": {
+    "2024": 3000.0,
+    "2026": 10000.0
+   }
+  },
+  {
+   "name": "NATIONAL AIR TRAFFIC CONTROLLERS ASSOCIATION PAC",
+   "id": "C00238725",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 12500.0,
+   "n": 8,
+   "byCycle": {
+    "2024": 6500.0,
+    "2026": 6000.0
+   }
+  },
+  {
+   "name": "AMALGAMATED TRANSIT UNION - COPE",
+   "id": "C00032995",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 12500.0,
+   "n": 5,
+   "byCycle": {
+    "2024": 2500.0,
+    "2026": 10000.0
+   }
+  },
+  {
+   "name": "ASSOCIATION OF PROFESSIONAL FLIGHT ATTENDANTS (APFA PAC) POLITICAL ACTION COMMITTEE",
+   "id": "C00246421",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 12000.0,
+   "n": 11,
+   "byCycle": {
+    "2024": 2000.0,
+    "2026": 10000.0
+   }
+  },
+  {
+   "name": "LABORERS' INTERNATIONAL UNION OF NORTH AMERICA (LIUNA) PAC",
+   "id": "C00007922",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 11500.0,
+   "n": 3,
+   "byCycle": {
+    "2024": 2500.0,
+    "2026": 9000.0
+   }
+  },
+  {
+   "name": "NATIONAL ASSOCIATION OF LETTER CARRIERS OF U.S.A PAC (LETTER CARRIER POLITICAL FUND)",
+   "id": "C00023580",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 11000.0,
+   "n": 7,
+   "byCycle": {
+    "2024": 6000.0,
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "AMERICAN ASSOCIATION FOR JUSTICE PAC",
+   "id": "C00024521",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 11000.0,
+   "n": 6,
+   "byCycle": {
+    "2024": 5000.0,
+    "2026": 6000.0
+   }
+  },
+  {
+   "name": "DEMOCRACY SUMMER LEADERSHIP PAC",
+   "id": "C00664318",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 10300.0,
+   "n": 6,
+   "byCycle": {
+    "2024": 5300.0,
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "MOVEON.ORG POLITICAL ACTION",
+   "id": "C00341396",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 10000.0,
+   "n": 2,
+   "byCycle": {
+    "2024": 5000.0,
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "UNITE HERE TIP CAMPAIGN COMMITTEE",
+   "id": "C00004861",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 10000.0,
+   "n": 3,
+   "byCycle": {
+    "2024": 5000.0,
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "JANE FONDA CLIMATE PAC",
+   "id": "C00806893",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 10000.0,
+   "n": 2,
+   "byCycle": {
+    "2024": 5000.0,
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "D.R.I.V.E. - DEMOCRAT, REPUBLICAN, INDEPENDENT VOTER EDUCATION (THE PAC OF THE INTERNATIONAL BROTHERHOOD OF TEAMSTERS)",
+   "id": "C00032979",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 10000.0,
+   "n": 3,
+   "byCycle": {
+    "2024": 2500.0,
+    "2026": 7500.0
+   }
+  },
+  {
+   "name": "DEFEND THE VOTE",
+   "id": "C00764233",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 10000.0,
+   "n": 4,
+   "byCycle": {
+    "2024": 5000.0,
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "POLITICAL ACTION COMMITTEE OF THE INTERNATIONAL ALLIANCE OF THEATRICAL STAGE EMPLOYEES",
+   "id": "C00344325",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 10000.0,
+   "n": 4,
+   "byCycle": {
+    "2024": 5000.0,
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "NATIONAL ELEVATOR CONSTRUCTORS PAC/ INTN'L UNION OF ELEVATOR CONSTRUCTORS (NEC PAC)",
+   "id": "C00383950",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 10000.0,
+   "n": 4,
+   "byCycle": {
+    "2024": 5000.0,
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "MEDICARE FOR ALL",
+   "id": "C00685552",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 10000.0,
+   "n": 2,
+   "byCycle": {
+    "2024": 5000.0,
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "PAC TO THE FUTURE",
+   "id": "C00344234",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 10000.0,
+   "n": 2,
+   "byCycle": {
+    "2024": 10000.0
+   }
+  },
+  {
+   "name": "COURAGE TO CHANGE",
+   "id": "C00692202",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 10000.0,
+   "n": 2,
+   "byCycle": {
+    "2026": 10000.0
+   }
+  },
+  {
+   "name": "UNITED POSTMASTERS AND MANAGERS OF AMERICA POLITICAL FUND (UPMA PAC)",
+   "id": "C00100404",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 9000.0,
+   "n": 3,
+   "byCycle": {
+    "2024": 5000.0,
+    "2026": 4000.0
+   }
+  },
+  {
+   "name": "AMERICAN POSTAL WORKERS UNION COMMITTEE ON POLITICAL ACTION (APWU COPA)",
+   "id": "C00010322",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 8000.0,
+   "n": 5,
+   "byCycle": {
+    "2024": 6000.0,
+    "2026": 2000.0
+   }
+  },
+  {
+   "name": "BROTHERHOOD OF RAILROAD SIGNALMEN PAC",
+   "id": "C00011262",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 8000.0,
+   "n": 3,
+   "byCycle": {
+    "2024": 500.0,
+    "2026": 7500.0
+   }
+  },
+  {
+   "name": "END CITIZENS UNITED",
+   "id": "C00573261",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 7500.0,
+   "n": 4,
+   "byCycle": {
+    "2024": 3500.0,
+    "2026": 4000.0
+   }
+  },
+  {
+   "name": "NATIONAL BEER WHOLESALERS ASSOCIATION POLITICAL ACTION COMMITTEE",
+   "id": "C00144766",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 7500.0,
+   "n": 3,
+   "byCycle": {
+    "2024": 2500.0,
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "ENGINEERS POLITICAL EDUCATION COMMITTEE (EPEC)/INTERNATIONAL UNION OF OPERATING ENGINEERS",
+   "id": "C00029504",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 7500.0,
+   "n": 4,
+   "byCycle": {
+    "2024": 5000.0,
+    "2026": 2500.0
+   }
+  },
+  {
+   "name": "BUILDING RELATIONSHIPS IN DIVERSE GEOGRAPHIC ENVIRONMENTS PAC",
+   "id": "C00399196",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 7500.0,
+   "n": 2,
+   "byCycle": {
+    "2024": 7500.0
+   }
+  },
+  {
+   "name": "PROGRESSIVE VOTERS OF AMERICA",
+   "id": "C00406553",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 7500.0,
+   "n": 2,
+   "byCycle": {
+    "2024": 2500.0,
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "AMERICAN FEDERATION OF STATE COUNTY AND MUNICIPAL EMPLOYEES AFL-CIO",
+   "id": "C90011172",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 7500.0,
+   "n": 3,
+   "byCycle": {
+    "2024": 7500.0
+   }
+  },
+  {
+   "name": "AMERICAN FEDERATION OF TEACHERS, AFL-CIO COMMITTEE ON POLITICAL EDUCATION",
+   "id": "C00028860",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 7500.0,
+   "n": 3,
+   "byCycle": {
+    "2024": 2500.0,
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "AMERICAN FEDERATION OF STATE COUNTY AND MUNICIPAL EMPLOYEES PEOPLE",
+   "id": "C00011114",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 7500.0,
+   "n": 3,
+   "byCycle": {
+    "2026": 7500.0
+   }
+  },
+  {
+   "name": "NELSON MULLINS RILEY & SCARBOROUGH, LLP FEDERAL POLITICAL COMMITTEE",
+   "id": "C00278895",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 6500.0,
+   "n": 5,
+   "byCycle": {
+    "2024": 3500.0,
+    "2026": 3000.0
+   }
+  },
+  {
+   "name": "NATIONAL TREASURY EMPLOYEES UNION PAC",
+   "id": "C00107128",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 6000.0,
+   "n": 3,
+   "byCycle": {
+    "2024": 3000.0,
+    "2026": 3000.0
+   }
+  },
+  {
+   "name": "FAIR SHOT PAC",
+   "id": "C00574970",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 6000.0,
+   "n": 3,
+   "byCycle": {
+    "2024": 1000.0,
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "NATIONAL NURSES UNITED PAC - A FUND FOR A HEALTHY AMERICA",
+   "id": "C00446237",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 5000.0,
+   "n": 3,
+   "byCycle": {
+    "2024": 2000.0,
+    "2026": 3000.0
+   }
+  },
+  {
+   "name": "HUMAN RIGHTS CAMPAIGN PAC",
+   "id": "C00235853",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 5000.0,
+   "n": 3,
+   "byCycle": {
+    "2024": 5000.0
+   }
+  },
+  {
+   "name": "CULAC THE PAC OF CREDIT UNION NATIONAL ASSOCIATION",
+   "id": "C00007880",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 5000.0,
+   "n": 2,
+   "byCycle": {
+    "2024": 5000.0
+   }
+  },
+  {
+   "name": "AMERIPAC: THE FUND FOR A GREATER AMERICA",
+   "id": "C00271338",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 5000.0,
+   "n": 2,
+   "byCycle": {
+    "2024": 5000.0
+   }
+  },
+  {
+   "name": "AMERICAN HOTEL & LODGING ASSOCIATION POLITICAL ACTION COMMITTEE (HOTELPAC)",
+   "id": "C00001198",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 5000.0,
+   "n": 2,
+   "byCycle": {
+    "2024": 2500.0,
+    "2026": 2500.0
+   }
+  },
+  {
+   "name": "TEAMSTERS UNION LOCAL #115 POLITICAL ACTION FUND (AKA DRIVE-LOCAL NO. 115)",
+   "id": "C00010876",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 5000.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 5000.0
+   }
+  },
+  {
+   "name": "AMERICAN OPTOMETRIC ASSOCIATION PAC (AOA-PAC)",
+   "id": "C00024968",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 5000.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 5000.0
+   }
+  },
+  {
+   "name": "AMERICAN FEDERATION OF GOVT. EMPL. POLITICAL ACTION COMMITTEE (AFGE PAC)",
+   "id": "C00009936",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 5000.0,
+   "n": 2,
+   "byCycle": {
+    "2024": 2500.0,
+    "2026": 2500.0
+   }
+  },
+  {
+   "name": "NATIONAL ASSOCIATION OF REALTORS POLITICAL ACTION COMMITTEE",
+   "id": "C00030718",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 5000.0,
+   "n": 4,
+   "byCycle": {
+    "2024": 2000.0,
+    "2026": 3000.0
+   }
+  },
+  {
+   "name": "ALPHA KAPPA ALPHA SORORITY PAC, INC. (AKA AKA 1908 PAC)",
+   "id": "C00886036",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 5000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "PLANNED PARENTHOOD ACTION FUND INC PAC, DBA PLANNED PARENTHOOD FEDERAL PAC",
+   "id": "C00314617",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 5000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "PURPOSE PAC",
+   "id": "C00497131",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 5000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "CONGRESSIONAL BLACK CAUCUS POLITICAL ACTION COMMITTEE",
+   "id": "C00147512",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 5000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "THE NEA FUND FOR CHILDREN AND PUBLIC EDUCATION POLITICAL ACTION COMMITTEE",
+   "id": "C00003251",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 5000.0,
+   "n": 2,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "AMERICAN MOBILIZATION POLITICAL ACTION COMMITTEE",
+   "id": "C00459925",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 5000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "JOBS, EDUCATION, & FAMILIES FIRST (JEFF PAC)",
+   "id": "C00617803",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 5000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "SMART TD POLITICAL ACTION COMMITTEE",
+   "id": "C00001636",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 5000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "NATIONAL POSTAL MAIL HANDLERS UNION PAC",
+   "id": "C00345306",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 4500.0,
+   "n": 3,
+   "byCycle": {
+    "2024": 3500.0,
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "NATIONAL EDUCATION ASSOCIATION (NEA)",
+   "id": "C30000848",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 4000.0,
+   "n": 2,
+   "byCycle": {
+    "2024": 4000.0
+   }
+  },
+  {
+   "name": "JAMIE RASKIN FOR CONGRESS",
+   "id": "C00575126",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 4000.0,
+   "n": 3,
+   "byCycle": {
+    "2024": 2000.0,
+    "2026": 2000.0
+   }
+  },
+  {
+   "name": "LEAGUE OF CONSERVATION VOTERS ACTION FUND (LCVAF)",
+   "id": "C00252940",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 4000.0,
+   "n": 4,
+   "byCycle": {
+    "2024": 2000.0,
+    "2026": 2000.0
+   }
+  },
+  {
+   "name": "TED LIEU FOR CONGRESS",
+   "id": "C00556506",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 4000.0,
+   "n": 4,
+   "byCycle": {
+    "2024": 4000.0
+   }
+  },
+  {
+   "name": "PETE AGUILAR FOR CONGRESS",
+   "id": "C00510461",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 4000.0,
+   "n": 2,
+   "byCycle": {
+    "2024": 2000.0,
+    "2026": 2000.0
+   }
+  },
+  {
+   "name": "THE NATIONAL RURAL ELECTRIC COOPERATIVE ASSOCIATION ACTION COMMITTEE FOR RURAL ELECTRIFICATION (AMERICA'S ELECTRIC COOPERATIVES PAC)",
+   "id": "C00002972",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 4000.0,
+   "n": 2,
+   "byCycle": {
+    "2024": 2500.0,
+    "2026": 1500.0
+   }
+  },
+  {
+   "name": "NANCY PELOSI FOR CONGRESS",
+   "id": "C00213512",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 4000.0,
+   "n": 2,
+   "byCycle": {
+    "2024": 4000.0
+   }
+  },
+  {
+   "name": "BMI POLITICAL ACTION COMMITTEE (BMI PAC)",
+   "id": "C00653188",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 3500.0,
+   "n": 2,
+   "byCycle": {
+    "2024": 1000.0,
+    "2026": 2500.0
+   }
+  },
+  {
+   "name": "AMERICAN BANKERS ASSOCIATION PAC (BANKPAC)",
+   "id": "C00004275",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 3500.0,
+   "n": 3,
+   "byCycle": {
+    "2024": 2500.0,
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "CHRISTOPHER STREET PROJECT POLITICAL ACTION COMMITTEE",
+   "id": "C00893461",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 3500.0,
+   "n": 2,
+   "byCycle": {
+    "2026": 3500.0
+   }
+  },
+  {
+   "name": "ALPHA KAPPA ALPHA SORORITY PAC, INC (AKA AKA 1908 PAC)",
+   "id": "C00886036",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 3300.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 3300.0
+   }
+  },
+  {
+   "name": "BAN ASSAULT WEAPONS NOW PAC",
+   "id": "C00848937",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 3300.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 3300.0
+   }
+  },
+  {
+   "name": "ALLIANCE FOR RETIRED AMERICANS POLITICAL ACTION FUND",
+   "id": "C00436188",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 3000.0,
+   "n": 3,
+   "byCycle": {
+    "2024": 1000.0,
+    "2026": 2000.0
+   }
+  },
+  {
+   "name": "HOLLAND & KNIGHT COMMITTEE FOR EFFECTIVE GOVERNMENT",
+   "id": "C00171330",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 3000.0,
+   "n": 3,
+   "byCycle": {
+    "2024": 2000.0,
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "PROFESSIONAL AVIATION SAFETY SPECIALISTS PAC (PASS PAC)",
+   "id": "C00286807",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 3000.0,
+   "n": 3,
+   "byCycle": {
+    "2024": 2000.0,
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "COMMITTEE FOR A DEMOCRATIC FUTURE",
+   "id": "C00370122",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 3000.0,
+   "n": 3,
+   "byCycle": {
+    "2024": 2000.0,
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "NATIONAL ACTIVE AND RETIRED FEDERAL EMPLOYEES ASSOCIATION POLITICAL ACTION COMMITTEE (NARFE-PAC)",
+   "id": "C00091561",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 3000.0,
+   "n": 3,
+   "byCycle": {
+    "2024": 2000.0,
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "CITIZENS FOR CANCER AWARENESS FEDERAL PAC",
+   "id": "C00455907",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 3000.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 3000.0
+   }
+  },
+  {
+   "name": "GRAYROBINSON P.A. PAC",
+   "id": "C00224790",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 3000.0,
+   "n": 2,
+   "byCycle": {
+    "2024": 1000.0,
+    "2026": 2000.0
+   }
+  },
+  {
+   "name": "NATIONAL ASSOCIATION OF POSTAL SUPERVISORS PAC",
+   "id": "C00092957",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 3000.0,
+   "n": 3,
+   "byCycle": {
+    "2024": 2000.0,
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "SIERRA CLUB POLITICAL COMMITTEE",
+   "id": "C00135368",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2500.0,
+   "n": 2,
+   "byCycle": {
+    "2024": 1000.0,
+    "2026": 1500.0
+   }
+  },
+  {
+   "name": "BROTHERHOOD OF LOCOMOTIVE ENGINEERS AND TRAINMEN PAC FUND",
+   "id": "C00099234",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2500.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 2500.0
+   }
+  },
+  {
+   "name": "BAPS PUBLIC AFFAIRS, INC. POLITICAL ACTION COMMITTEE (BAPS PAC)",
+   "id": "C00753475",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2500.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 2500.0
+   }
+  },
+  {
+   "name": "AUTO CARE ASSOCIATION PAC",
+   "id": "C00250753",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2500.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 2500.0
+   }
+  },
+  {
+   "name": "AMERICAN FEDERATION OF STATE COUNTY AND MUNICIPAL EMPLOYEES AFL-CIO",
+   "id": "C00011114",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2500.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 2500.0
+   }
+  },
+  {
+   "name": "BARRAGAN FOR CONGRESS",
+   "id": "C00577353",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2500.0,
+   "n": 2,
+   "byCycle": {
+    "2024": 1500.0,
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "BRIDGE PAC",
+   "id": "C00790915",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2500.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 2500.0
+   }
+  },
+  {
+   "name": "JOINT ACTION COMMITTEE FOR POLITICAL AFFAIRS",
+   "id": "C00139659",
+   "kind": "PAC or committee",
+   "proIsrael": true,
+   "amount": 2500.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 2500.0
+   }
+  },
+  {
+   "name": "INT'L UNION OF BRICKLAYERS AND ALLIED CRAFTWORKERS",
+   "id": "C00003632",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2500.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 2500.0
+   }
+  },
+  {
+   "name": "NATIONAL CONFECTIONERS ASSOCIATION OF THE UNITED STATES, INC. POLITICAL ACTION COMMITTEE (CANDY PAC)",
+   "id": "C00003855",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2500.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 2500.0
+   }
+  },
+  {
+   "name": "AMERICAN COUNCIL OF ENGINEERING COMPANIES PAC",
+   "id": "C00010868",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2500.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 2500.0
+   }
+  },
+  {
+   "name": "BAN ASSAULT WEAPONS NOW",
+   "id": "C00816454",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2500.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 2500.0
+   }
+  },
+  {
+   "name": "NATIONAL RURAL LETTER CARRIERS' ASSOCIATION POLITICAL ACTION COMMITTEE",
+   "id": "C00072025",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2500.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 2500.0
+   }
+  },
+  {
+   "name": "JUNTOS POLITICAL ACTION COMMITTEE",
+   "id": "C00892752",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2500.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 2500.0
+   }
+  },
+  {
+   "name": "NETJETS ASSOCIATION OF SHARED AIRCRAFT PILOTS POLITICAL ACTION COMMITTEE",
+   "id": "C00488262",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2500.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 2500.0
+   }
+  },
+  {
+   "name": "TRANSPORTATION TRADES DEPARTMENT AFL-CIO POLITICAL ACTION COMMITTEE (TTD/PAC)",
+   "id": "C00280909",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2500.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 2500.0
+   }
+  },
+  {
+   "name": "STOP GUN VIOLENCE PAC",
+   "id": "C00819912",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2500.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 2500.0
+   }
+  },
+  {
+   "name": "AMERICAN FEDERATION OF STATE COUNTY & MUNICIPAL EMPLOYEES  P E O P L E",
+   "id": "C00011114",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2500.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 2500.0
+   }
+  },
+  {
+   "name": "EVERYTOWN FOR GUN SAFETY ACTION FUND, INC. PAC (EVERYTOWN PAC)",
+   "id": "C00640086",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2000.0,
+   "n": 2,
+   "byCycle": {
+    "2024": 1000.0,
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "KING & SPALDING NONPARTISAN COMMITTEE FOR GOOD GOVERNMENT",
+   "id": "C00204453",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2000.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 2000.0
+   }
+  },
+  {
+   "name": "FRIENDS OF DON BEYER",
+   "id": "C00555888",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2000.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 2000.0
+   }
+  },
+  {
+   "name": "THE CENTER FOR FREETHOUGHT EQUALITY PAC",
+   "id": "C00545202",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2000.0,
+   "n": 2,
+   "byCycle": {
+    "2024": 1000.0,
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "UNITED MINE WORKERS OF AMERICA",
+   "id": "C00013342",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2000.0,
+   "n": 2,
+   "byCycle": {
+    "2024": 2000.0
+   }
+  },
+  {
+   "name": "WINE AND SPIRITS WHOLESALERS OF AMERICA, INC. PAC",
+   "id": "C00147173",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2000.0,
+   "n": 2,
+   "byCycle": {
+    "2024": 2000.0
+   }
+  },
+  {
+   "name": "GREG CASAR FOR CONGRESS",
+   "id": "C00791897",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 2000.0
+   }
+  },
+  {
+   "name": "JUSTICE LEAGUE POLITICAL ACTION COMMITTEE",
+   "id": "C00823773",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 2000.0
+   }
+  },
+  {
+   "name": "WARREN FOR SENATE, INC.",
+   "id": "C00500843",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 2000.0
+   }
+  },
+  {
+   "name": "NATIONAL WOODEN PALLET & CONTAINER ASSOCIATION POLITICAL ACTION COMMITTEE (PALLETPAC)",
+   "id": "C00668921",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1500.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 1500.0
+   }
+  },
+  {
+   "name": "NATIONAL WEATHER SERVICE EMPLOYEES ORGANIZATION POLITICAL ACTION COMMITTEE",
+   "id": "C00318311",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1500.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 1500.0
+   }
+  },
+  {
+   "name": "FUTURE FORUM PAC",
+   "id": "C00625988",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1500.0,
+   "n": 3,
+   "byCycle": {
+    "2024": 1500.0
+   }
+  },
+  {
+   "name": "LIVABLE COMMUNITIES PAC",
+   "id": "C00426965",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1500.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 1500.0
+   }
+  },
+  {
+   "name": "REVIVING AMERICAN JOBS AGAIN PAC",
+   "id": "C00649772",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1001.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 1001.0
+   }
+  },
+  {
+   "name": "SECURE PROGRESS",
+   "id": "C00890939",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 1000.0
+   }
+  },
+  {
+   "name": "EDUCATE AND INNOVATE PAC",
+   "id": "C00564187",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 1000.0
+   }
+  },
+  {
+   "name": "UNITED PILOTS PAC/UNITED AIRLINES MASTER EXECUTIVE COUNCIL",
+   "id": "C00251009",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 1000.0
+   }
+  },
+  {
+   "name": "NATIONAL ASSOCIATION OF CHAIN DRUG STORES, INC. POLITICAL ACTION COMMITTEE",
+   "id": "C00022368",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 1000.0
+   }
+  },
+  {
+   "name": "AMERICAN NURSES ASSOCIATION PAC",
+   "id": "C00017525",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 1000.0
+   }
+  },
+  {
+   "name": "IMMIGRANTS' LIST",
+   "id": "C00430280",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 1000.0
+   }
+  },
+  {
+   "name": "FLORIDA FOR EVERYONE",
+   "id": null,
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 1000.0
+   }
+  },
+  {
+   "name": "NAPOLITANO FOR CONGRESS",
+   "id": "C00334706",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 1000.0
+   }
+  },
+  {
+   "name": "GIFFORDS PAC",
+   "id": "C00540443",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 1000.0
+   }
+  },
+  {
+   "name": "AMERICAN ASSOCIATION OF NURSE ANESTHETICS (CRNA-PAC)",
+   "id": "C00173153",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 1000.0
+   }
+  },
+  {
+   "name": "SPIKE PAC",
+   "id": "C00787317",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 1000.0
+   }
+  },
+  {
+   "name": "CALIFORNIA LEADERSHIP UNITED FOR VICTORY PAC (CA LUV PAC)",
+   "id": "C00573709",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 1000.0
+   }
+  },
+  {
+   "name": "INTERNATIONAL ASSOCIATION OF FIRE FIGHTERS",
+   "id": "C70003108",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 1000.0
+   }
+  },
+  {
+   "name": "THE COUNCIL OF INSURANCE AGENTS & BROKERS PAC",
+   "id": "C00039578",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 1000.0
+   }
+  },
+  {
+   "name": "MARINE ENGINEERS' BENEFICIAL ASSOCIATION POLITICAL ACTION FUND (MEBA-PAF)",
+   "id": "C00279380",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 1000.0
+   }
+  },
+  {
+   "name": "CEMENT MASONS AND PLASTERERS LOCAL 592 PAC",
+   "id": "C00319905",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 1000.0
+   }
+  },
+  {
+   "name": "ACTORS' EQUITY ASSOCIATION POLITICAL ACTION COMMITTEE",
+   "id": "C00835868",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "AMERICAN DENTAL POLITICAL ACTION COMMITTEE (ADPAC)",
+   "id": "C00000729",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "NORTH AMERICA'S BUILDING TRADES UNIONS POLITICAL EDUCATION FUND",
+   "id": "C00003160",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "BUILD AMERICA PAC",
+   "id": "C00377143",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "DEMOCRATS WIN FUND",
+   "id": "C00894881",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "OVERSIGHT ACTION FUND",
+   "id": "C00904623",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "AMERICAN MOSAIC PAC",
+   "id": "C00694471",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "BACK PAC",
+   "id": "C00566562",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "PAC FOR GOOD",
+   "id": "C00768887",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "BEND THE ARC JEWISH ACTION, INC. PAC",
+   "id": "C00573253",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "DEMOCRATIC CONSERVATION ALLIANCE PAC",
+   "id": "C00657452",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "INT'L ASSOCIATION OF BRIDGE, STRUCTURAL, ORNAMENTAL AND REINFORCING IRON WORKERS",
+   "id": "C00027359",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "INTERNATIONAL ASSOCIATION OF FIRE FIGHTERS INTERESTED IN REGISTRATION AND EDUCATION POLITICAL ACTION COMMITTEE",
+   "id": "C00029447",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "VOTERS OF TOMORROW PAC",
+   "id": "C00833103",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 600.0,
+   "n": 2,
+   "byCycle": {
+    "2024": 100.0,
+    "2026": 500.0
+   }
+  },
+  {
+   "name": "FLORIDA MUNICIPAL ELECTRIC ASSOCIATION INC FMEA PAC",
+   "id": "C00377754",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 500.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 500.0
+   }
+  },
+  {
+   "name": "BARNES & THORNBURG POLITICAL ACTION COMMITTEE",
+   "id": "C00395947",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 500.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 500.0
+   }
+  },
+  {
+   "name": "MISSISSIPPI BAND OF CHOCTAW INDIANS",
+   "id": "C00401224",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 500.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 500.0
+   }
+  },
+  {
+   "name": "CONGRESS MAJORITY PAC",
+   "id": "C00890889",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 100.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 100.0
+   }
+  },
+  {
+   "name": "EVELYN TERRY HOUSE DISTRICT 71",
+   "id": null,
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 50.0,
+   "n": 1,
+   "byCycle": {
+    "2024": 50.0
+   }
+  }
+ ],
+ "jeffries": {
+  "total": 5000.0,
+  "items": [
+   {
+    "name": "JOBS, EDUCATION, & FAMILIES FIRST (JEFF PAC)",
+    "id": "C00617803",
+    "kind": "PAC or committee",
+    "proIsrael": false,
+    "amount": 5000.0,
+    "n": 1,
+    "byCycle": {
+     "2026": 5000.0
+    }
+   }
+  ]
+ },
+ "employers": [
+  {
+   "name": "Anthropic",
+   "total": 17500.0,
+   "count": 5,
+   "byCycle": {
+    "2026": 17500.0
+   },
+   "law": false
+  },
+  {
+   "name": "Badia Spices",
+   "total": 13600.0,
+   "count": 4,
+   "byCycle": {
+    "2024": 6600.0,
+    "2026": 7000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Nbc",
+   "total": 13600.0,
+   "count": 4,
+   "byCycle": {
+    "2024": 6600.0,
+    "2026": 7000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Vlp Law",
+   "total": 13200.0,
+   "count": 4,
+   "byCycle": {
+    "2024": 13200.0
+   },
+   "law": true
+  },
+  {
+   "name": "Smarthinking",
+   "total": 13200.0,
+   "count": 4,
+   "byCycle": {
+    "2024": 13200.0
+   },
+   "law": false
+  },
+  {
+   "name": "Bad Robot Productions",
+   "total": 13200.0,
+   "count": 4,
+   "byCycle": {
+    "2024": 13200.0
+   },
+   "law": false
+  },
+  {
+   "name": "Amd Homes, Llc",
+   "total": 12600.0,
+   "count": 10,
+   "byCycle": {
+    "2024": 6600.0,
+    "2026": 6000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Morgan & Morgan",
+   "total": 11300.0,
+   "count": 4,
+   "byCycle": {
+    "2024": 3300.0,
+    "2026": 8000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Trustly, Inc.",
+   "total": 10300.0,
+   "count": 3,
+   "byCycle": {
+    "2024": 3300.0,
+    "2026": 7000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Siebert Williams Shank & Co., Llc",
+   "total": 10300.0,
+   "count": 4,
+   "byCycle": {
+    "2024": 3300.0,
+    "2026": 7000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Bethesda Terrace Management",
+   "total": 10100.0,
+   "count": 3,
+   "byCycle": {
+    "2024": 6600.0,
+    "2026": 3500.0
+   },
+   "law": false
+  },
+  {
+   "name": "State Of Illinois",
+   "total": 10100.0,
+   "count": 3,
+   "byCycle": {
+    "2024": 6600.0,
+    "2026": 3500.0
+   },
+   "law": false
+  },
+  {
+   "name": "L.E.K. Consulting",
+   "total": 10100.0,
+   "count": 3,
+   "byCycle": {
+    "2024": 6600.0,
+    "2026": 3500.0
+   },
+   "law": false
+  },
+  {
+   "name": "Amscot Financial, Inc.",
+   "total": 8500.0,
+   "count": 3,
+   "byCycle": {
+    "2024": 8500.0
+   },
+   "law": false
+  },
+  {
+   "name": "Dwk Law",
+   "total": 7550.0,
+   "count": 3,
+   "byCycle": {
+    "2024": 3300.0,
+    "2026": 4250.0
+   },
+   "law": true
+  },
+  {
+   "name": "Kurzban Kurzban Tetzeli & Pratt, Pa",
+   "total": 7500.0,
+   "count": 6,
+   "byCycle": {
+    "2024": 3000.0,
+    "2026": 4500.0
+   },
+   "law": false
+  },
+  {
+   "name": "Losey Pllc",
+   "total": 7432.0,
+   "count": 18,
+   "byCycle": {
+    "2026": 7432.0
+   },
+   "law": true
+  },
+  {
+   "name": "Bodeen Music And Sound Design Llc",
+   "total": 7000.0,
+   "count": 2,
+   "byCycle": {
+    "2026": 7000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Buchanan Ingersoll & Rooney",
+   "total": 7000.0,
+   "count": 3,
+   "byCycle": {
+    "2026": 7000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Spotlight Power Llc",
+   "total": 7000.0,
+   "count": 2,
+   "byCycle": {
+    "2026": 7000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Evergreen Wealth",
+   "total": 7000.0,
+   "count": 2,
+   "byCycle": {
+    "2026": 7000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Mcarthurglen Group",
+   "total": 7000.0,
+   "count": 2,
+   "byCycle": {
+    "2026": 7000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Linkedin",
+   "total": 7000.0,
+   "count": 2,
+   "byCycle": {
+    "2026": 7000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Gfp Real Estate",
+   "total": 6800.0,
+   "count": 2,
+   "byCycle": {
+    "2024": 3300.0,
+    "2026": 3500.0
+   },
+   "law": false
+  },
+  {
+   "name": "Advent Health",
+   "total": 6750.0,
+   "count": 15,
+   "byCycle": {
+    "2024": 6750.0
+   },
+   "law": false
+  },
+  {
+   "name": "Dreyden Investments",
+   "total": 6600.0,
+   "count": 2,
+   "byCycle": {
+    "2024": 6600.0
+   },
+   "law": false
+  },
+  {
+   "name": "Boyland Auto Orlando",
+   "total": 6600.0,
+   "count": 2,
+   "byCycle": {
+    "2024": 6600.0
+   },
+   "law": false
+  },
+  {
+   "name": "Perkins + Will",
+   "total": 6600.0,
+   "count": 2,
+   "byCycle": {
+    "2024": 6600.0
+   },
+   "law": false
+  },
+  {
+   "name": "Sagner Companies",
+   "total": 6600.0,
+   "count": 4,
+   "byCycle": {
+    "2024": 6600.0
+   },
+   "law": false
+  },
+  {
+   "name": "Fahr, Llc",
+   "total": 6600.0,
+   "count": 2,
+   "byCycle": {
+    "2024": 6600.0
+   },
+   "law": false
+  },
+  {
+   "name": "Sv Angel",
+   "total": 6600.0,
+   "count": 3,
+   "byCycle": {
+    "2024": 6600.0
+   },
+   "law": false
+  },
+  {
+   "name": "The Maher Law Firm",
+   "total": 6600.0,
+   "count": 2,
+   "byCycle": {
+    "2024": 6600.0
+   },
+   "law": true
+  },
+  {
+   "name": "Triad Isotopes Inc",
+   "total": 6600.0,
+   "count": 2,
+   "byCycle": {
+    "2024": 6600.0
+   },
+   "law": false
+  },
+  {
+   "name": "The Commerce Fund Of Florida, Llc",
+   "total": 6600.0,
+   "count": 2,
+   "byCycle": {
+    "2024": 6600.0
+   },
+   "law": false
+  },
+  {
+   "name": "Paloma Partners Advisors, Lp",
+   "total": 6500.0,
+   "count": 3,
+   "byCycle": {
+    "2024": 6500.0
+   },
+   "law": false
+  },
+  {
+   "name": "Grassroots Analytics",
+   "total": 6355.89,
+   "count": 5,
+   "byCycle": {
+    "2024": 3355.89,
+    "2026": 3000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Adventhealth",
+   "total": 6325.0,
+   "count": 7,
+   "byCycle": {
+    "2024": 2325.0,
+    "2026": 4000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Ey",
+   "total": 6200.0,
+   "count": 5,
+   "byCycle": {
+    "2026": 6200.0
+   },
+   "law": false
+  },
+  {
+   "name": "Rafferty Domnick Cunningham Yaffa",
+   "total": 6000.0,
+   "count": 3,
+   "byCycle": {
+    "2026": 6000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Central Florida Public Affairs",
+   "total": 5800.0,
+   "count": 3,
+   "byCycle": {
+    "2024": 5800.0
+   },
+   "law": false
+  },
+  {
+   "name": "Invariant",
+   "total": 5750.0,
+   "count": 5,
+   "byCycle": {
+    "2026": 5750.0
+   },
+   "law": false
+  },
+  {
+   "name": "Rt Specialty",
+   "total": 5500.0,
+   "count": 8,
+   "byCycle": {
+    "2024": 5500.0
+   },
+   "law": false
+  },
+  {
+   "name": "Redibis Enterprises Llc",
+   "total": 5148.0,
+   "count": 54,
+   "byCycle": {
+    "2024": 3249.0,
+    "2026": 1899.0
+   },
+   "law": false
+  },
+  {
+   "name": "Domnick Cunningham & Yaffa",
+   "total": 5100.0,
+   "count": 4,
+   "byCycle": {
+    "2024": 5100.0
+   },
+   "law": false
+  },
+  {
+   "name": "The Haggard Law Firm",
+   "total": 5000.0,
+   "count": 2,
+   "byCycle": {
+    "2024": 5000.0
+   },
+   "law": true
+  },
+  {
+   "name": "Wca",
+   "total": 5000.0,
+   "count": 2,
+   "byCycle": {
+    "2024": 5000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Vmd Ventures",
+   "total": 5000.0,
+   "count": 2,
+   "byCycle": {
+    "2024": 5000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Fayard For Senate",
+   "total": 5000.0,
+   "count": 3,
+   "byCycle": {
+    "2024": 5000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Bounds Law Group",
+   "total": 5000.0,
+   "count": 2,
+   "byCycle": {
+    "2024": 2500.0,
+    "2026": 2500.0
+   },
+   "law": true
+  },
+  {
+   "name": "Paradigm",
+   "total": 5000.0,
+   "count": 2,
+   "byCycle": {
+    "2026": 5000.0
+   },
+   "law": false
+  },
+  {
+   "name": "University Of Central Florida",
+   "total": 4513.0,
+   "count": 49,
+   "byCycle": {
+    "2026": 4513.0
+   },
+   "law": false
+  },
+  {
+   "name": "Warner Media",
+   "total": 4300.0,
+   "count": 3,
+   "byCycle": {
+    "2024": 4300.0
+   },
+   "law": false
+  },
+  {
+   "name": "Artstream",
+   "total": 4300.0,
+   "count": 2,
+   "byCycle": {
+    "2024": 3300.0,
+    "2026": 1000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Dashboard Technology",
+   "total": 4300.0,
+   "count": 2,
+   "byCycle": {
+    "2024": 3300.0,
+    "2026": 1000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Etreasure, Inc.",
+   "total": 4250.0,
+   "count": 2,
+   "byCycle": {
+    "2026": 4250.0
+   },
+   "law": false
+  },
+  {
+   "name": "5000 Broadway Productions",
+   "total": 4250.0,
+   "count": 3,
+   "byCycle": {
+    "2026": 4250.0
+   },
+   "law": false
+  },
+  {
+   "name": "Shiksa Enterprises",
+   "total": 4104.0,
+   "count": 10,
+   "byCycle": {
+    "2026": 4104.0
+   },
+   "law": false
+  },
+  {
+   "name": "Tyson Foods",
+   "total": 4025.0,
+   "count": 23,
+   "byCycle": {
+    "2024": 4025.0
+   },
+   "law": false
+  },
+  {
+   "name": "Mainframe Real Estate",
+   "total": 3800.0,
+   "count": 2,
+   "byCycle": {
+    "2024": 3800.0
+   },
+   "law": false
+  },
+  {
+   "name": "Mirram Group",
+   "total": 3500.0,
+   "count": 3,
+   "byCycle": {
+    "2024": 3500.0
+   },
+   "law": false
+  }
+ ],
+ "donors": [
+  {
+   "employer": "Smarthinking",
+   "occupation": "Instructor",
+   "total": 17700.0,
+   "byCycle": {
+    "2024": 13200.0,
+    "2026": 4500.0
+   }
+  },
+  {
+   "employer": "Self Employed",
+   "occupation": "Sound Designer",
+   "total": 13600.0,
+   "byCycle": {
+    "2024": 6600.0,
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Nbc",
+   "occupation": "Actor",
+   "total": 13600.0,
+   "byCycle": {
+    "2024": 6600.0,
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Dreyden Investments",
+   "occupation": "Investor",
+   "total": 13600.0,
+   "byCycle": {
+    "2024": 6600.0,
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 13600.0,
+   "byCycle": {
+    "2024": 6600.0,
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Vlp Law",
+   "occupation": "Attorney",
+   "total": 13200.0,
+   "byCycle": {
+    "2024": 13200.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 12000.0,
+   "byCycle": {
+    "2026": 12000.0
+   }
+  },
+  {
+   "employer": "Amd Homes, Llc",
+   "occupation": "Developer",
+   "total": 11550.0,
+   "byCycle": {
+    "2024": 6050.0,
+    "2026": 5500.0
+   }
+  },
+  {
+   "employer": "Guardian Life Insurance Company",
+   "occupation": "Field Representative",
+   "total": 11000.0,
+   "byCycle": {
+    "2024": 4000.0,
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 11000.0,
+   "byCycle": {
+    "2024": 6000.0,
+    "2026": 5000.0
+   }
+  },
+  {
+   "employer": "Washington Intern Student Housing",
+   "occupation": "Managing Member",
+   "total": 10500.0,
+   "byCycle": {
+    "2024": 5500.0,
+    "2026": 5000.0
+   }
+  },
+  {
+   "employer": "Trustly, Inc.",
+   "occupation": "Attorney",
+   "total": 10300.0,
+   "byCycle": {
+    "2024": 3300.0,
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Siebert Williams Shank & Co., Llc",
+   "occupation": "Finance",
+   "total": 10300.0,
+   "byCycle": {
+    "2024": 3300.0,
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Bethesda Terrace Management",
+   "occupation": "Manager",
+   "total": 10100.0,
+   "byCycle": {
+    "2024": 6600.0,
+    "2026": 3500.0
+   }
+  },
+  {
+   "employer": "State Of Illinois",
+   "occupation": "Governor",
+   "total": 10100.0,
+   "byCycle": {
+    "2024": 6600.0,
+    "2026": 3500.0
+   }
+  },
+  {
+   "employer": "L.E.K. Consulting",
+   "occupation": "Consultant",
+   "total": 10100.0,
+   "byCycle": {
+    "2024": 6600.0,
+    "2026": 3500.0
+   }
+  },
+  {
+   "employer": "Self Employed",
+   "occupation": "Real Estate",
+   "total": 9100.0,
+   "byCycle": {
+    "2024": 6600.0,
+    "2026": 2500.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 8800.0,
+   "byCycle": {
+    "2024": 8800.0
+   }
+  },
+  {
+   "employer": "Self Employed",
+   "occupation": "Investor",
+   "total": 8600.0,
+   "byCycle": {
+    "2024": 6600.0,
+    "2026": 2000.0
+   }
+  },
+  {
+   "employer": "Domnick Cunningham & Whalen",
+   "occupation": "Attorney",
+   "total": 8500.0,
+   "byCycle": {
+    "2024": 2500.0,
+    "2026": 6000.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 8300.0,
+   "byCycle": {
+    "2024": 5800.0,
+    "2026": 2500.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Retired",
+   "total": 8300.0,
+   "byCycle": {
+    "2024": 3300.0,
+    "2026": 5000.0
+   }
+  },
+  {
+   "employer": "Accenture",
+   "occupation": "Consulting",
+   "total": 7800.0,
+   "byCycle": {
+    "2024": 3300.0,
+    "2026": 4500.0
+   }
+  },
+  {
+   "employer": "Sagner Companies",
+   "occupation": "Social Worker",
+   "total": 7600.0,
+   "byCycle": {
+    "2024": 5600.0,
+    "2026": 2000.0
+   }
+  },
+  {
+   "employer": "Dwk Law",
+   "occupation": "Attorney",
+   "total": 7550.0,
+   "byCycle": {
+    "2024": 3300.0,
+    "2026": 4250.0
+   }
+  },
+  {
+   "employer": "Paradigm",
+   "occupation": "Senior Vice President",
+   "total": 7500.0,
+   "byCycle": {
+    "2026": 7500.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 7300.0,
+   "byCycle": {
+    "2024": 2300.0,
+    "2026": 5000.0
+   }
+  },
+  {
+   "employer": "Mirram Group",
+   "occupation": "Managing Partner",
+   "total": 7250.0,
+   "byCycle": {
+    "2024": 3000.0,
+    "2026": 4250.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 7100.0,
+   "byCycle": {
+    "2024": 6100.0,
+    "2026": 1000.0
+   }
+  },
+  {
+   "employer": "Self Employed",
+   "occupation": "Management Consultant",
+   "total": 7000.0,
+   "byCycle": {
+    "2024": 5000.0,
+    "2026": 2000.0
+   }
+  },
+  {
+   "employer": "Self Employed",
+   "occupation": "Physician",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Evergreen Wealth",
+   "occupation": "Executive",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Mcarthurglen Group",
+   "occupation": "Builder",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Losey Pllc",
+   "occupation": "Attorney",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Spotlight Power Llc",
+   "occupation": "Executive Director",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Retired",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Buchanan Ingersoll & Rooney",
+   "occupation": "Attorney",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Linkedin",
+   "occupation": "Founder",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Gfp Real Estate",
+   "occupation": "Real Estate",
+   "total": 6800.0,
+   "byCycle": {
+    "2024": 3300.0,
+    "2026": 3500.0
+   }
+  },
+  {
+   "employer": "Self Employed",
+   "occupation": "Talent Agent",
+   "total": 6800.0,
+   "byCycle": {
+    "2024": 3300.0,
+    "2026": 3500.0
+   }
+  },
+  {
+   "employer": "Advent Health",
+   "occupation": "Attorney",
+   "total": 6800.0,
+   "byCycle": {
+    "2024": 3300.0,
+    "2026": 3500.0
+   }
+  },
+  {
+   "employer": "Self Employed",
+   "occupation": "Elder Care Advocate",
+   "total": 6800.0,
+   "byCycle": {
+    "2024": 3300.0,
+    "2026": 3500.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 6800.0,
+   "byCycle": {
+    "2024": 1300.0,
+    "2026": 5500.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Retired",
+   "total": 6600.0,
+   "byCycle": {
+    "2024": 6600.0
+   }
+  },
+  {
+   "employer": "Self Employed",
+   "occupation": "Attorney",
+   "total": 6600.0,
+   "byCycle": {
+    "2024": 6600.0
+   }
+  },
+  {
+   "employer": "The Maher Law Firm",
+   "occupation": "Attorney",
+   "total": 6600.0,
+   "byCycle": {
+    "2024": 6600.0
+   }
+  },
+  {
+   "employer": "Self Employed",
+   "occupation": "Real Estate",
+   "total": 6600.0,
+   "byCycle": {
+    "2024": 6600.0
+   }
+  },
+  {
+   "employer": "Self Employed",
+   "occupation": "Investor",
+   "total": 6600.0,
+   "byCycle": {
+    "2024": 6600.0
+   }
+  },
+  {
+   "employer": "Bad Robot Productions",
+   "occupation": "Co-Ceo",
+   "total": 6600.0,
+   "byCycle": {
+    "2024": 6600.0
+   }
+  },
+  {
+   "employer": "Fahr, Llc",
+   "occupation": "Advocacy",
+   "total": 6600.0,
+   "byCycle": {
+    "2024": 6600.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 6600.0,
+   "byCycle": {
+    "2024": 6600.0
+   }
+  },
+  {
+   "employer": "Bad Robot Productions",
+   "occupation": "Co-Ceo",
+   "total": 6600.0,
+   "byCycle": {
+    "2024": 6600.0
+   }
+  },
+  {
+   "employer": "Boyland Auto Orlando",
+   "occupation": "Business Owner",
+   "total": 6600.0,
+   "byCycle": {
+    "2024": 6600.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Retired",
+   "total": 6600.0,
+   "byCycle": {
+    "2024": 6600.0
+   }
+  },
+  {
+   "employer": "Triad Isotopes Inc",
+   "occupation": "President",
+   "total": 6600.0,
+   "byCycle": {
+    "2024": 6600.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 6600.0,
+   "byCycle": {
+    "2024": 6600.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 6600.0,
+   "byCycle": {
+    "2024": 6600.0
+   }
+  },
+  {
+   "employer": "Self Employed",
+   "occupation": "Director",
+   "total": 6600.0,
+   "byCycle": {
+    "2024": 6600.0
+   }
+  },
+  {
+   "employer": "Self Employed",
+   "occupation": "Actress",
+   "total": 6600.0,
+   "byCycle": {
+    "2024": 6600.0
+   }
+  },
+  {
+   "employer": "Self Employed",
+   "occupation": "Producer",
+   "total": 6600.0,
+   "byCycle": {
+    "2024": 6600.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 6600.0,
+   "byCycle": {
+    "2024": 6600.0
+   }
+  },
+  {
+   "employer": "Self Employed",
+   "occupation": "Producer",
+   "total": 6600.0,
+   "byCycle": {
+    "2024": 6600.0
+   }
+  },
+  {
+   "employer": "None",
+   "occupation": "Homemaker",
+   "total": 6600.0,
+   "byCycle": {
+    "2024": 6600.0
+   }
+  },
+  {
+   "employer": "The Commerce Fund Of Florida, Llc",
+   "occupation": "Real Estate Developer",
+   "total": 6600.0,
+   "byCycle": {
+    "2024": 6600.0
+   }
+  },
+  {
+   "employer": "Badia Spices",
+   "occupation": "Business Owner",
+   "total": 6600.0,
+   "byCycle": {
+    "2024": 6600.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Retired",
+   "total": 6600.0,
+   "byCycle": {
+    "2024": 6600.0
+   }
+  },
+  {
+   "employer": "Perkins + Will",
+   "occupation": "Architect",
+   "total": 6600.0,
+   "byCycle": {
+    "2024": 6600.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 6400.0,
+   "byCycle": {
+    "2024": 3900.0,
+    "2026": 2500.0
+   }
+  },
+  {
+   "employer": "Sv Angel",
+   "occupation": "Founder",
+   "total": 6000.0,
+   "byCycle": {
+    "2024": 6000.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 6000.0,
+   "byCycle": {
+    "2024": 6000.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 6000.0,
+   "byCycle": {
+    "2026": 6000.0
+   }
+  },
+  {
+   "employer": "Self Employed",
+   "occupation": "Producer",
+   "total": 6000.0,
+   "byCycle": {
+    "2026": 6000.0
+   }
+  },
+  {
+   "employer": "Self Employed",
+   "occupation": "Attorney",
+   "total": 5500.0,
+   "byCycle": {
+    "2024": 2000.0,
+    "2026": 3500.0
+   }
+  },
+  {
+   "employer": "Self Employed",
+   "occupation": "Activist",
+   "total": 5400.0,
+   "byCycle": {
+    "2024": 5400.0
+   }
+  },
+  {
+   "employer": "The Haggard Law Firm",
+   "occupation": "Attorney",
+   "total": 5000.0,
+   "byCycle": {
+    "2024": 5000.0
+   }
+  },
+  {
+   "employer": "None",
+   "occupation": "Homemaker",
+   "total": 5000.0,
+   "byCycle": {
+    "2024": 5000.0
+   }
+  },
+  {
+   "employer": "Vmd Ventures",
+   "occupation": "Ceo",
+   "total": 5000.0,
+   "byCycle": {
+    "2024": 5000.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 5000.0,
+   "byCycle": {
+    "2024": 5000.0
+   }
+  },
+  {
+   "employer": "Wca",
+   "occupation": "Executive",
+   "total": 5000.0,
+   "byCycle": {
+    "2024": 5000.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 5000.0,
+   "byCycle": {
+    "2024": 5000.0
+   }
+  },
+  {
+   "employer": "Fayard For Senate",
+   "occupation": "Consultant",
+   "total": 5000.0,
+   "byCycle": {
+    "2024": 5000.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 5000.0,
+   "byCycle": {
+    "2024": 2000.0,
+    "2026": 3000.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 5000.0,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 5000.0,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "employer": "Seacoast Bank",
+   "occupation": "Board Member",
+   "total": 4500.0,
+   "byCycle": {
+    "2024": 2000.0,
+    "2026": 2500.0
+   }
+  },
+  {
+   "employer": "Atex Distributing",
+   "occupation": "Business Owner",
+   "total": 4500.0,
+   "byCycle": {
+    "2024": 1000.0,
+    "2026": 3500.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 4500.0,
+   "byCycle": {
+    "2026": 4500.0
+   }
+  },
+  {
+   "employer": "Kurzban Kurzban Tetzeli & Pratt, Pa",
+   "occupation": "Attorney",
+   "total": 4500.0,
+   "byCycle": {
+    "2026": 4500.0
+   }
+  },
+  {
+   "employer": "Self Employed",
+   "occupation": "Talent Manager",
+   "total": 4300.0,
+   "byCycle": {
+    "2024": 4300.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 4300.0,
+   "byCycle": {
+    "2024": 3300.0,
+    "2026": 1000.0
+   }
+  },
+  {
+   "employer": "Artstream",
+   "occupation": "Executive Director",
+   "total": 4300.0,
+   "byCycle": {
+    "2024": 3300.0,
+    "2026": 1000.0
+   }
+  },
+  {
+   "employer": "Dashboard Technology",
+   "occupation": "President",
+   "total": 4300.0,
+   "byCycle": {
+    "2024": 3300.0,
+    "2026": 1000.0
+   }
+  },
+  {
+   "employer": "Wendover Housing Partners",
+   "occupation": "Developer",
+   "total": 4300.0,
+   "byCycle": {
+    "2024": 3300.0,
+    "2026": 1000.0
+   }
+  }
+ ],
+ "outside": [
+  {
+   "cycle": "2024",
+   "committee": "LATINO VICTORY FUND",
+   "id": "C00562777",
+   "side": "support",
+   "total": 13000.0
+  },
+  {
+   "cycle": "2024",
+   "committee": "WORKING FAMILIES PARTY PAC",
+   "id": "C00606962",
+   "side": "support",
+   "total": 2377.0
+  },
+  {
+   "cycle": "2024",
+   "committee": "SIERRA CLUB INDEPENDENT ACTION",
+   "id": "C00483693",
+   "side": "support",
+   "total": 10.0
+  },
+  {
+   "cycle": "2026",
+   "committee": "SIERRA CLUB INDEPENDENT ACTION",
+   "id": "C00483693",
+   "side": "support",
+   "total": 10.0
+  }
+ ],
+ "watch": [
+  {
+   "id": "detention",
+   "label": "Immigration detention and surveillance contractors",
+   "why": "Companies that profit from ICE detention or enforcement technology.",
+   "pacTotal": 0,
+   "empTotal": 0,
+   "pacs": [],
+   "employers": []
+  },
+  {
+   "id": "police",
+   "label": "Police, sheriff and public-safety groups",
+   "why": "Law-enforcement unions, associations and corrections groups.",
+   "pacTotal": 2000.0,
+   "empTotal": 0,
+   "pacs": [
+    {
+     "name": "INTERNATIONAL ASSOCIATION OF FIRE FIGHTERS",
+     "id": "C70003108",
+     "amount": 1000.0,
+     "byCycle": {
+      "2024": 1000.0
+     }
+    },
+    {
+     "name": "INTERNATIONAL ASSOCIATION OF FIRE FIGHTERS INTERESTED IN REGISTRATION AND EDUCATION POLITICAL ACTION COMMITTEE",
+     "id": "C00029447",
+     "amount": 1000.0,
+     "byCycle": {
+      "2026": 1000.0
+     }
+    }
+   ],
+   "employers": []
+  },
+  {
+   "id": "realestate",
+   "label": "Real estate, landlord and developer groups",
+   "why": "Industry money on the housing side of the cost-of-living fight.",
+   "pacTotal": 5000.0,
+   "empTotal": 10600.0,
+   "pacs": [
+    {
+     "name": "NATIONAL ASSOCIATION OF REALTORS POLITICAL ACTION COMMITTEE",
+     "id": "C00030718",
+     "amount": 5000.0,
+     "byCycle": {
+      "2024": 2000.0,
+      "2026": 3000.0
+     }
+    }
+   ],
+   "employers": [
+    {
+     "name": "Gfp Real Estate",
+     "total": 6800.0,
+     "byCycle": {
+      "2024": 3300.0,
+      "2026": 3500.0
+     }
+    },
+    {
+     "name": "Mainframe Real Estate",
+     "total": 3800.0,
+     "byCycle": {
+      "2024": 3800.0
+     }
+    }
+   ]
+  },
+  {
+   "id": "tenant",
+   "label": "Tenant, housing and homelessness advocates",
+   "why": "Groups working on affordable housing and homelessness.",
+   "pacTotal": 0,
+   "empTotal": 0,
+   "pacs": [],
+   "employers": []
+  },
+  {
+   "id": "labor",
+   "label": "Labor unions",
+   "why": "Union PACs and member-funded labor committees.",
+   "pacTotal": 251500.0,
+   "empTotal": 0,
+   "pacs": [
+    {
+     "name": "SEIU COPE (SERVICE EMPLOYEES INTERNATIONAL UNION COMMITTEE ON POLITICAL EDUCATION)",
+     "id": "C00004036",
+     "amount": 20000.0,
+     "byCycle": {
+      "2024": 10000.0,
+      "2026": 10000.0
+     }
+    },
+    {
+     "name": "INTERNATIONAL BROTHERHOOD OF ELECTRICAL WORKERS POLITICAL ACTION COMMITTEE",
+     "id": "C00027342",
+     "amount": 20000.0,
+     "byCycle": {
+      "2024": 10000.0,
+      "2026": 10000.0
+     }
+    },
+    {
+     "name": "MACHINISTS NON PARTISAN POLITICAL LEAGUE OF THE INTERNATIONAL ASSOCIATION OF MACHINISTS & AEROSPACE WORKERS",
+     "id": "C00002469",
+     "amount": 20000.0,
+     "byCycle": {
+      "2024": 10000.0,
+      "2026": 10000.0
+     }
+    },
+    {
+     "name": "TRANSPORT WORKERS UNION OF AMERICA POLITICAL CONTRIBUTIONS COMMITTEE",
+     "id": "C00008268",
+     "amount": 20000.0,
+     "byCycle": {
+      "2024": 10000.0,
+      "2026": 10000.0
+     }
+    },
+    {
+     "name": "INTERNATIONAL UNION OF PAINTERS AND ALLIED TRADES POLITICAL ACTION TOGETHER POLITICAL COMMITTEE",
+     "id": "C00000885",
+     "amount": 15000.0,
+     "byCycle": {
+      "2024": 10000.0,
+      "2026": 5000.0
+     }
+    },
+    {
+     "name": "UAW - V - CAP (UAW VOLUNTARY COMMUNITY ACTION PROGRAM) 'INT'L UNION UNITED AUTOMOBILE AEROSPACE & AGRICULTURAL IMPLEMENT WORKERS OF AMERICA UAW",
+     "id": "C00002840",
+     "amount": 15000.0,
+     "byCycle": {
+      "2024": 10000.0,
+      "2026": 5000.0
+     }
+    },
+    {
+     "name": "COMMUNICATIONS WORKERS OF AMERICA - COPE POLITICAL CONTRIBUTIONS COMMITTEE",
+     "id": "C00002089",
+     "amount": 15000.0,
+     "byCycle": {
+      "2024": 10000.0,
+      "2026": 5000.0
+     }
+    },
+    {
+     "name": "INTERNATIONAL ASSOCIATION OF SHEET METAL, AIR, RAIL AND TRANSPORTATION WORKERS POLITICAL ACTION LEAGUE",
+     "id": "C00007542",
+     "amount": 15000.0,
+     "byCycle": {
+      "2024": 10000.0,
+      "2026": 5000.0
+     }
+    },
+    {
+     "name": "AMALGAMATED TRANSIT UNION - COPE",
+     "id": "C00032995",
+     "amount": 12500.0,
+     "byCycle": {
+      "2024": 2500.0,
+      "2026": 10000.0
+     }
+    },
+    {
+     "name": "LABORERS' INTERNATIONAL UNION OF NORTH AMERICA (LIUNA) PAC",
+     "id": "C00007922",
+     "amount": 11500.0,
+     "byCycle": {
+      "2024": 2500.0,
+      "2026": 9000.0
+     }
+    },
+    {
+     "name": "D.R.I.V.E. - DEMOCRAT, REPUBLICAN, INDEPENDENT VOTER EDUCATION (THE PAC OF THE INTERNATIONAL BROTHERHOOD OF TEAMSTERS)",
+     "id": "C00032979",
+     "amount": 10000.0,
+     "byCycle": {
+      "2024": 2500.0,
+      "2026": 7500.0
+     }
+    },
+    {
+     "name": "NATIONAL ELEVATOR CONSTRUCTORS PAC/ INTN'L UNION OF ELEVATOR CONSTRUCTORS (NEC PAC)",
+     "id": "C00383950",
+     "amount": 10000.0,
+     "byCycle": {
+      "2024": 5000.0,
+      "2026": 5000.0
+     }
+    }
+   ],
+   "employers": []
+  },
+  {
+   "id": "tech",
+   "label": "Technology and AI companies",
+   "why": "TODO: why this category matters for Frost's district.",
+   "pacTotal": 0,
+   "empTotal": 17500.0,
+   "pacs": [],
+   "employers": [
+    {
+     "name": "Anthropic",
+     "total": 17500.0,
+     "byCycle": {
+      "2026": 17500.0
+     }
+    }
+   ]
+  },
+  {
+   "id": "health",
+   "label": "Health care, insurers and pharma",
+   "why": "TODO: why this category matters for Frost's district.",
+   "pacTotal": 7000.0,
+   "empTotal": 13075.0,
+   "pacs": [
+    {
+     "name": "NATIONAL NURSES UNITED PAC - A FUND FOR A HEALTHY AMERICA",
+     "id": "C00446237",
+     "amount": 5000.0,
+     "byCycle": {
+      "2024": 2000.0,
+      "2026": 3000.0
+     }
+    },
+    {
+     "name": "THE COUNCIL OF INSURANCE AGENTS & BROKERS PAC",
+     "id": "C00039578",
+     "amount": 1000.0,
+     "byCycle": {
+      "2024": 1000.0
+     }
+    },
+    {
+     "name": "AMERICAN DENTAL POLITICAL ACTION COMMITTEE (ADPAC)",
+     "id": "C00000729",
+     "amount": 1000.0,
+     "byCycle": {
+      "2026": 1000.0
+     }
+    }
+   ],
+   "employers": [
+    {
+     "name": "Advent Health",
+     "total": 6750.0,
+     "byCycle": {
+      "2024": 6750.0
+     }
+    },
+    {
+     "name": "Adventhealth",
+     "total": 6325.0,
+     "byCycle": {
+      "2024": 2325.0,
+      "2026": 4000.0
+     }
+    }
+   ]
+  },
+  {
+   "id": "civil",
+   "label": "Latino, immigrant and civil-rights groups",
+   "why": "TODO: why this category matters for Frost's district.",
+   "pacTotal": 16000.0,
+   "empTotal": 0,
+   "pacs": [
+    {
+     "name": "CHC BOLD PAC",
+     "id": "C00365536",
+     "amount": 15000.0,
+     "byCycle": {
+      "2024": 10000.0,
+      "2026": 5000.0
+     }
+    },
+    {
+     "name": "IMMIGRANTS' LIST",
+     "id": "C00430280",
+     "amount": 1000.0,
+     "byCycle": {
+      "2024": 1000.0
+     }
+    }
+   ],
+   "employers": []
+  }
+ ],
+ "ids": {
+  "member": "Maxwell Frost",
+  "candidateId": "H2FL10259",
+  "committeeId": "C00786822"
+ }
+}
