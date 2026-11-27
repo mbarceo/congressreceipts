@@ -1,0 +1,26 @@
+{
+ "cards": [
+  {
+   "key": "ice",
+   "q": "Pro-ICE?",
+   "eb": "Immigration enforcement",
+   "v": "No",
+   "rule": "\"No\" when nothing found in their record points toward ICE; \"Mostly no\" when at least three times as many items point the other way. Toward enforcement: 0 votes and 0 statements or actions. Against: 1 vote and 0 statements or actions.",
+   "pro": "Pro-enforcement",
+   "con": "Against ICE or for immigrants",
+   "section": "immigration",
+   "items": [
+    {
+     "d": "2025-01",
+     "s": "con",
+     "t": "Voted Nay on H R 29, Laken Riley Act. It passed 264–159; Democrats 48–159.",
+     "u": "https://clerk.house.gov/Votes/2025006",
+     "brk": false
+    }
+   ],
+   "n": 1,
+   "npro": 0,
+   "ncon": 1
+  }
+ ]
+}
