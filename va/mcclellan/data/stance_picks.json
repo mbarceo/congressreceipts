@@ -1,0 +1,20 @@
+{
+ "_note": "Hand-curated. Roll ids are chosen by reading the Clerk's titles; the member's vote is pulled from data/votes.json, never typed here. statementRx matches titles; statementPicks adds specific releases with a verbatim snippet found by 'rx' in the release's full text (data/statements_full.json). No editorial verdicts except the Israel card's headline, set in 'israel.headline'.",
+ "issues": [
+  {
+   "id": "example-issue",
+   "name": "Example issue (replace)",
+   "intro": "One or two neutral sentences on what this section covers.",
+   "statementRx": "keyword|another keyword",
+   "statementPicks": [],
+   "rolls": []
+  }
+ ],
+ "israel": {
+  "question": "Israel or Palestine?",
+  "headline": "TBD",
+  "headlineWhy": "State the rule behind the headline once the items are in.",
+  "summary": "",
+  "items": []
+ }
+}

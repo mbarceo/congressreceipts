@@ -9,6 +9,8 @@ List-page layouts (tracker.config.json member.pressLayout; "auto" or missing = d
                   release; pages are ?jsf=jet-engine:<query-id>&pagenum=N (1-based; the first page has no query)
   wp-elementor    WordPress + Elementor loop grid (e.g. schiff.senate.gov): one e-loop-item per release;
                   pages are <pressPath><N>/ (taken from the page's own "next page" link)
+  senate-article  vanhollen.senate.gov: one <li class="PageList__item"> per release (ArticleBlock: date in
+                  Heading--time, title in ArticleTitle, excerpt in ArticleBlock__excerpt); pages are ?pagenum_rs=N (1-based)
 Another CMS: add a parse_* function, a pager rule and a detect() rule. Each parser must cut the page into one
 block per release and read title, date and excerpt from that block only.
 Page 0 is always re-fetched; later pages are cached in data/statements_raw/. --max-pages caps a run (senators
@@ -132,10 +134,23 @@ def parse_wp_elementor(page_html):
     return parse_wp(page_html, r'<div[^>]+class="[^"]*\be-loop-item\b',
                     r'post-excerpt\.default"\s*>\s*<div class="elementor-widget-container">(.*?)</div>')
 
-PARSERS = {"house-evo": parse_house_evo, "wp-jetengine": parse_wp_jetengine, "wp-elementor": parse_wp_elementor}
+def parse_senate_article(page_html):
+    """Senate "ArticleBlock" list pages (e.g. vanhollen.senate.gov): one PageList__item per release."""
+    rows = []
+    for blk in re.split(r'<li[^>]+class="PageList__item', page_html)[1:]:
+        blk = re.split(r"</li>", blk)[0]
+        a = re.search(r'<a [^>]*href="([^"#]+)"[^>]*>\s*<h2[^>]*ArticleTitle[^>]*>(.*?)</h2>', blk, re.S)
+        d = re.search(r'Heading--time[^>]*>(.*?)</p>', blk, re.S)
+        b = re.search(r'ArticleBlock__excerpt">(.*?)<a class="ArticleBlock__moreLink', blk, re.S)
+        if a and d:
+            rows.append((html.unescape(a.group(1)), a.group(2), d.group(1), b.group(1) if b else ""))
+    return rows
+
+PARSERS = {"senate-article": parse_senate_article, "house-evo": parse_house_evo, "wp-jetengine": parse_wp_jetengine, "wp-elementor": parse_wp_elementor}
 
 def detect(page_html):
     if 'class="views-row' in page_html and "evo-press-release" in page_html: return "house-evo"
+    if "PageList__item" in page_html and "ArticleBlock__excerpt" in page_html: return "senate-article"
     if "jet-listing-grid__item" in page_html: return "wp-jetengine"
     if "e-loop-item" in page_html: return "wp-elementor"
     raise SystemExit(f"Unrecognized press-release list layout at {BASE}{M['pressPath']}: add a parser to "
@@ -146,6 +161,8 @@ def pager(layout, page0):
     first = BASE + M["pressPath"]
     if layout == "house-evo":
         return (lambda n: f"{first}?page={n}"), None
+    if layout == "senate-article":
+        return (lambda n: first if n == 0 else f"{first}?pagenum_rs={n + 1}"), None
     if layout == "wp-jetengine":
         q = re.search(r'jet-smart-filters-pagination[^>]*data-query-id="([^"]*)"', page0)
         n_pages = re.search(r'data-pages="(\d+)"', page0)
