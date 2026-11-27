@@ -303,8 +303,12 @@
   },
   "geo": {
     "_note": "County FIPS codes the district touches and a short code for each county (build_map.py colors by these).",
-    "countyFips": [],
-    "counties": {},
+    "countyFips": [
+      "06037"
+    ],
+    "counties": {
+      "Los Angeles County": "LA"
+    },
     "padLon": 0.035,
     "padLat": 0.03
   },
