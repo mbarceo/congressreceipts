@@ -2721,6 +2721,45 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "nd/fedorchak",
+   "name": "Julie Fedorchak",
+   "party": "R",
+   "seat": "ND-AL",
+   "chamber": "house",
+   "voteId": "F000482",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "nd/cramer",
+   "name": "Kevin Cramer",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S398",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "nd/hoeven",
+   "name": "John Hoeven",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S344",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
