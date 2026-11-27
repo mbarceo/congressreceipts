@@ -269,3 +269,6 @@ dialog.detail::backdrop{background:rgba(5,10,8,.7);-webkit-backdrop-filter:blur(
 /* "In progress" notice: tracker.config.json "status" */
 .inprogress{margin:0 0 14px;padding:10px 14px;border:1px solid var(--prog);border-radius:10px;background:var(--prog-bg);color:var(--ink);font-size:.88rem;line-height:1.45}
 .inprogress b{color:var(--prog);font-weight:700}
+
+.nv-note{max-width:65ch;margin:12px 0 0;background:var(--surface);padding:10px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:6px;font-size:.88rem;color:var(--muted)}
+.nv-note b{color:var(--ink)}

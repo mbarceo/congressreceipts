@@ -70,6 +70,8 @@ def member_fields(a):
          "pronouns": {"subj": subj, "obj": obj, "poss": ps},
          "bioguide": a.bioguide, "voteId": a.vote_id or (a.bioguide if not senate else "TODO: Senate LIS id, e.g. S413 (lis_member_id in any senate.gov vote XML)"),
          "party": a.party, "state": st, "stateName": state_name, "chamber": a.chamber}
+    if not senate and st in NONVOTING:
+        m["nonVoting"] = True; m["nonVotingRole"] = NONVOTING[st]   # shown as a "Non-voting member" note on every page of the tracker
     if senate:
         m.update({"districtLabel": st, "seatLabel": state_name, "area": a.area or state_name})
     else:
@@ -158,6 +160,9 @@ def build_config(tmpl, a, m):
                                  "population": None, "kinds": {}, "neighbors": [], "smallLabels": [],
                                  "_note": "modes: build_map.py writes 'new' (cd120) and 'old' (cd119). population: {mode, total, parts: [[kind, label, residents, note]], source}."}
     return cfg
+
+
+NONVOTING = {"AS": "Delegate", "DC": "Delegate", "GU": "Delegate", "MP": "Delegate", "VI": "Delegate", "PR": "Resident Commissioner"}
 
 
 def register(a, m, rel):

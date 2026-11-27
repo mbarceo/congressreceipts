@@ -33,17 +33,20 @@ for f, u in SRC.items():
         subprocess.run(["curl", "-s", "-L", "-A", "Mozilla/5.0", "--max-time", "120", "-o", p, u], check=True)
 
 reg = [x for x in json.load(open(os.path.join(REPO, "members.json")))["members"] if x.get("live", True) and x.get("hub", True)]
+NONVOTING = {"AS": "Delegate", "DC": "Delegate", "GU": "Delegate", "MP": "Delegate", "VI": "Delegate", "PR": "Resident Commissioner"}  # House seats with no floor vote
 tracked = {m["voteId"]: m["path"] for m in reg}
 members = []
 
 # House: one entry per seat; vacancies are kept so a ZIP in a vacant district says so
 for m in ET.parse(os.path.join(RAW, "house.xml")).getroot().iter("member"):
     sd = m.findtext("statedistrict") or ""; st, dn = sd[:2], sd[2:]
+    st = "AS" if st == "AQ" else st   # the Clerk codes American Samoa as AQ; everything else here uses the postal code AS
     i = m.find("member-info"); bid = (i.findtext("bioguideID") or "").strip()
     name = re.sub(r"\s+", " ", (i.findtext("official-name") or "").strip())
     seat = f"{st}-{'AL' if dn in ('00', '') else str(int(dn))}"
     members.append({"name": name or "Vacant", "party": (i.findtext("party") or "").strip(), "state": st, "seat": seat,
-                    "chamber": "house", "id": bid, "vacant": not name, "path": tracked.get(bid)})
+                    "chamber": "house", "id": bid, "vacant": not name, "path": tracked.get(bid),
+                    **({"nonVoting": True, "role": NONVOTING[st]} if st in NONVOTING else {})})
 
 # Senate: the newest roll-call file lists all 100 senators
 sen = sorted(glob.glob(os.path.join(REPO, "data/rollcalls/senate/*/senate-*.xml")), key=os.path.basename)

@@ -21,6 +21,9 @@
 
   // Every display value a page may use. Explicit config fields win; the rest are derived with fallbacks,
   // so an older config (name/short/title/district only) still renders.
+  // Delegates (AS, DC, GU, MP, VI) and Puerto Rico's Resident Commissioner sit in the House but cannot vote on the floor.
+  // A tracker config can say so with member.nonVoting; otherwise it follows from the seat's state code.
+  const NONVOTING = {AS: "Delegate", DC: "Delegate", GU: "Delegate", MP: "Delegate", VI: "Delegate", PR: "Resident Commissioner"};
   function build(cfg){
     const m = cfg.member || {}, L = cfg.leader || {}, P = cfg.profile || {};
     const senate = String(m.chamber || "house").toLowerCase() === "senate";
@@ -41,6 +44,7 @@
     const leaderLast = leaderName.split(/\s+/).pop();
     const since = /^\d{4}-\d{2}/.test(m.inOfficeSince || "") ? `${MON[+m.inOfficeSince.slice(5,7)-1]} ${m.inOfficeSince.slice(0,4)}` : (m.inOfficeSince || "");
     const congress = +(m.congress || 119);
+    const nvRole = !senate && (m.nonVotingRole || NONVOTING[m.state] || (m.nonVoting ? "Delegate" : "")), nonVoting = m.nonVoting === false ? "" : nvRole;
     const chamberName = senate ? "Senate" : "House";
     return {
       cfg, profile: P, chamber: senate ? "senate" : "house", senate, house: !senate,
@@ -67,6 +71,8 @@
       leaderNA: L.compareVotes === false, leaderName, leaderLast, leaderPoss: poss(leaderLast), leaderTitle: L.title || `${chamberName} ${isRep ? "Republican" : "Democratic"} leader`,
       congress, congressOrd: ord(congress), since, inOfficeSince: m.inOfficeSince || "",
       committees: m.committees || [],
+      nonVoting, nonVotingRole: nonVoting,
+      nonVotingNote: nonVoting ? `${short} is a non-voting ${nonVoting} in the U.S. House. ${nonVoting === "Delegate" ? "Delegates" : "The Resident Commissioner"} can introduce bills, serve on committees and speak in debate, but cannot vote on the House floor, so vote-based figures on this tracker may be limited or missing.` : "",
     };
   }
 
