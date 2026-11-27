@@ -238,6 +238,84 @@
    "portrait": "assets/portrait.jpg",
    "live": false,
    "eventsResearched": false
+  },
+  {
+   "path": "ar/crawford",
+   "name": "Eric A. \"Rick\" Crawford",
+   "party": "R",
+   "seat": "AR-1",
+   "chamber": "house",
+   "voteId": "C001087",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ar/hill",
+   "name": "J. French Hill",
+   "party": "R",
+   "seat": "AR-2",
+   "chamber": "house",
+   "voteId": "H001072",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ar/womack",
+   "name": "Steve Womack",
+   "party": "R",
+   "seat": "AR-3",
+   "chamber": "house",
+   "voteId": "W000809",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ar/westerman",
+   "name": "Bruce Westerman",
+   "party": "R",
+   "seat": "AR-4",
+   "chamber": "house",
+   "voteId": "W000821",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ar/boozman",
+   "name": "John Boozman",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S343",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
+  },
+  {
+   "path": "ar/cotton",
+   "name": "Tom Cotton",
+   "party": "R",
+   "seat": "Senate",
+   "chamber": "senate",
+   "voteId": "S374",
+   "format": "shared",
+   "pages": "stub",
+   "portrait": "assets/portrait.jpg",
+   "live": false,
+   "eventsResearched": false
   }
  ]
 }
