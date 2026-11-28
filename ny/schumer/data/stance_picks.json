@@ -1,20 +1,79 @@
 {
- "_note": "Hand-curated. Roll ids are chosen by reading the Clerk's titles; the member's vote is pulled from data/votes.json, never typed here. statementRx matches titles; statementPicks adds specific releases with a verbatim snippet found by 'rx' in the release's full text (data/statements_full.json). No editorial verdicts except the Israel card's headline, set in 'israel.headline'.",
- "issues": [
-  {
-   "id": "example-issue",
-   "name": "Example issue (replace)",
-   "intro": "One or two neutral sentences on what this section covers.",
-   "statementRx": "keyword|another keyword",
-   "statementPicks": [],
-   "rolls": []
+  "_note": "Hand-curated. Roll ids are chosen by reading the Clerk's titles; the member's vote is pulled from data/votes.json, never typed here. statementRx matches titles; statementPicks adds specific releases with a verbatim snippet found by 'rx' in the release's full text (data/statements_full.json). No editorial verdicts except the Israel card's headline, set in 'israel.headline'.",
+  "issues": [
+    {
+      "id": "cost-of-living",
+      "name": "Cost of living and energy",
+      "intro": "His statements on gas, heating and utility costs, many tied to the Iran war.",
+      "statementRx": "gas prices|heating|energy prices|utility|cost of living|tariff",
+      "statementPicks": [],
+      "rolls": [],
+      "items": []
+    },
+    {
+      "id": "health-care",
+      "name": "Health care",
+      "intro": "His statements on health care costs and coverage.",
+      "statementRx": "health care|medicaid|premium",
+      "statementPicks": [],
+      "rolls": [],
+      "items": []
+    },
+    {
+      "id": "government-funding",
+      "name": "Government funding",
+      "intro": "Votes on funding bills and his statements on them.",
+      "statementRx": "shutdown|appropriations|government funding",
+      "statementPicks": [],
+      "rolls": [],
+      "items": [
+        {
+          "d": "2025-03-14",
+          "roll": "2025-133",
+          "t": "{Vote} H.R. 1968, a continuing appropriations bill for the fiscal year ending September 30, 2025. The bill passed."
+        }
+      ]
+    },
+    {
+      "id": "chips-upstate",
+      "name": "Semiconductors and upstate investment",
+      "intro": "His statements on CHIPS grants and science jobs in upstate New York.",
+      "statementRx": "CHIPS|semiconductor|nanotech|Albany|Corning|GlobalFoundries",
+      "statementPicks": [],
+      "rolls": [],
+      "items": []
+    },
+    {
+      "id": "iran-war-powers",
+      "name": "Iran war and war powers",
+      "intro": "Votes on war powers resolutions, and his statements on the Iran war.",
+      "statementRx": "Iran war|war powers|Iran",
+      "statementPicks": [],
+      "rolls": [],
+      "items": [
+        {
+          "d": "2025-06-27",
+          "roll": "2025-328",
+          "t": "{Vote} the motion to discharge S.J. Res. 59, a war powers resolution to remove U.S. forces from hostilities against Iran. The motion was rejected."
+        },
+        {
+          "d": "2025-11-06",
+          "roll": "2025-608",
+          "t": "{Vote} the motion to discharge S.J. Res. 90, a war powers resolution on Venezuela. The motion was rejected."
+        },
+        {
+          "d": "2026-01-08",
+          "roll": "2026-005",
+          "t": "{Vote} the motion to discharge S.J. Res. 98, a war powers resolution on Venezuela. The motion was agreed to."
+        }
+      ]
+    }
+  ],
+  "israel": {
+    "question": "Israel or Palestine?",
+    "headline": "TBD",
+    "headlineWhy": "State the rule behind the headline once the items are in.",
+    "summary": "",
+    "items": []
   }
- ],
- "israel": {
-  "question": "Israel or Palestine?",
-  "headline": "TBD",
-  "headlineWhy": "State the rule behind the headline once the items are in.",
-  "summary": "",
-  "items": []
- }
 }
