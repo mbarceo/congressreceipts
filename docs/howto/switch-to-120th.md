@@ -27,6 +27,21 @@ python3 -I scripts/build_directory.py --congress 120
 
 It reads the Census ZIP file `tab20_cd12020_zcta520_natl.txt` (column `GEOID_CD120_20`), the Clerk's `MemberData.xml`, and the newest Senate roll call in `data/rollcalls/senate/120/`. **Checked 2026-11-28: Census has not published this file.** The `rel2020/cd-sld/` folder lists only 118th and 119th ZIP files, and the guessed 120th URL returns 404. Re-check the folder before the switch and pass `--zcta-url` if the file appears under a different name. If it never appears, the fallback is to compute ZIP-to-district from the 120th boundaries that `fetch_geo.py` already pulls from TIGERweb (the layer trackers use for new-district maps); that would be a new script.
 
+## Fallback if Census never publishes a 120th ZIP file
+
+Only needed if the `rel2020/cd-sld/` folder still has no 120th file in late December.
+
+**Constraints found 2026-11-28.** `tigerweb.geo.census.gov` (the boundary service `fetch_geo.py` uses) is blocked in the cloud environment, so this runs on Marilyn's Mac, or after that host is allowed. Scripts are stdlib-only Python, so there is no `shapely` for polygon overlap.
+
+**Plan.**
+1. **Reuse every state that did not redistrict.** A state whose district lines are the same in the 119th and 120th keeps its rows in `data/zips.json`. Decide which states changed by comparing each state's 119th and 120th district shapes (TIGERweb layers 4 and 54, the ones the tracker maps already use), or from the official list of new maps; do not guess the list.
+2. **Recompute only the changed states.** For each changed state, ask TIGERweb for the ZIP code areas (ZCTAs) that intersect each 120th district, two seconds between requests, one at a time, stopping at the first 403 or 429 (repo rule).
+3. **Drop border-touching false positives.** An intersect query also returns ZIP areas that only touch a district edge. Keep a ZIP in a district only when a grid of sample points inside the ZIP area (pure-Python point-in-polygon) falls in that district; ZIPs that split between districts keep every district they touch, as the Census file does today.
+4. **Write the result** in the same shape as `data/zips.json` and a note in `data/directory.json` `sources` saying these rows are computed from TIGERweb, not the Census relationship file.
+5. **Check** against the 119th: running the same script on the 119th layer for one unchanged state must reproduce the committed `zips.json` rows for it. If it does not, do not publish the computed rows.
+
+**Effort.** About a day to write and verify, then roughly an hour of throttled requests for a few changed states. The Census file, if it appears, replaces all of this with one command.
+
 ## What cannot be prepared before January 3
 
 - The Clerk's member list and first 2027 Senate roll call do not exist until the new members are sworn in, so the final directory cannot be built early.
