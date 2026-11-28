@@ -11,6 +11,8 @@ List-page layouts (tracker.config.json member.pressLayout; "auto" or missing = d
                   pages are <pressPath><N>/ (taken from the page's own "next page" link)
   senate-article  vanhollen.senate.gov: one <li class="PageList__item"> per release (ArticleBlock: date in
                   Heading--time, title in ArticleTitle, excerpt in ArticleBlock__excerpt); pages are ?pagenum_rs=N (1-based)
+  wp-json         WordPress REST API (e.g. jeffries.house.gov): /wp-json/wp/v2/posts?categories=<member.pressCategory>,
+                  100 per page; title, date, link and excerpt come straight from the JSON (no HTML scraping)
   wp-pagenavi     WordPress theme with <div class="post"> cards and WP-PageNavi (e.g. barragan.house.gov): the list
                   has title, link and date but no excerpt; pages are <pressPath>/page/<N>/
 Another CMS: add a parse_* function, a pager rule and a detect() rule. Each parser must cut the page into one
@@ -160,7 +162,15 @@ def parse_wp_pagenavi(page_html):
             rows.append((html.unescape(a.group(1)), t.group(1), d.group(1), ""))
     return rows
 
-PARSERS = {"wp-pagenavi": parse_wp_pagenavi, "senate-article": parse_senate_article, "house-evo": parse_house_evo, "wp-jetengine": parse_wp_jetengine, "wp-elementor": parse_wp_elementor}
+def parse_wp_json(page_text):
+    """WordPress REST API list (/wp-json/wp/v2/posts): a JSON array of posts. Title and excerpt are HTML fragments
+    (clean() strips them); the date is ISO, so only its YYYY-MM-DD part is passed on."""
+    rows = []
+    for post in json.loads(page_text):
+        rows.append((post["link"], post["title"]["rendered"], post["date"][:10], post["excerpt"]["rendered"]))
+    return rows
+
+PARSERS = {"wp-json": parse_wp_json, "wp-pagenavi": parse_wp_pagenavi, "senate-article": parse_senate_article, "house-evo": parse_house_evo, "wp-jetengine": parse_wp_jetengine, "wp-elementor": parse_wp_elementor}
 
 def detect(page_html):
     if 'class="views-row' in page_html and "evo-press-release" in page_html: return "house-evo"
@@ -192,12 +202,18 @@ def pager(layout, page0):
         tpl = re.sub(r"/2/?$", "/{n}/", html.unescape(nxt.group(1))) if nxt else first.rstrip("/") + "/{n}/"
         n_pages = re.search(r'data-max-page="(\d+)"', page0)
         return (lambda n: first if n == 0 else tpl.format(n=n + 1)), (int(n_pages.group(1)) if n_pages else None)
+    if layout == "wp-json":
+        cat = M.get("pressCategory")
+        if not cat: raise SystemExit("member.pressLayout wp-json needs member.pressCategory (the WordPress category id).")
+        return (lambda n: f"{BASE}/wp-json/wp/v2/posts?categories={cat}&per_page=100&page={n + 1}"), None
     raise SystemExit(f"Unknown member.pressLayout {layout!r}; use one of {', '.join(PARSERS)} or auto.")
 
 layout = M.get("pressLayout") or "auto"
 house_url = layout == "house-evo" or (layout == "auto" and ".house.gov" in BASE)
 url = (lambda n: f"{BASE}{M['pressPath']}?page={n}") if house_url else (lambda n: f"{BASE}{M['pressPath']}")
 out, seen, page, last = [], set(), 0, None
+if layout == "wp-json":   # the REST API is paged by its own URL scheme, so set it before the first fetch
+    url, _ = pager(layout, "")
 while True:
     path = os.path.join(RAW, f"p{page}.html")
     if os.path.exists(path) and page > 0:
@@ -238,7 +254,7 @@ while True:
                     "title": title, "ex": ex[:260], "u": href if href.startswith("http") else BASE + href,
                     "topics": topics or ["Other"], "kind": kind, "lang": lang})
     print(f"page {page}: {len(rows)} rows, {new} new")
-    if not new or (last and page + 1 >= last):
+    if not new or (last and page + 1 >= last) or (layout == "wp-json" and len(rows) < 100):
         break
     if MAX_PAGES and page + 1 >= MAX_PAGES:
         print(f"stopped at --max-pages {MAX_PAGES} ({last or '?'} list pages in all)"); break
