@@ -1,20 +1,75 @@
 {
- "_note": "Hand-curated. Roll ids are chosen by reading the Clerk's titles; the member's vote is pulled from data/votes.json, never typed here. statementRx matches titles; statementPicks adds specific releases with a verbatim snippet found by 'rx' in the release's full text (data/statements_full.json). No editorial verdicts except the Israel card's headline, set in 'israel.headline'.",
- "issues": [
-  {
-   "id": "example-issue",
-   "name": "Example issue (replace)",
-   "intro": "One or two neutral sentences on what this section covers.",
-   "statementRx": "keyword|another keyword",
-   "statementPicks": [],
-   "rolls": []
+  "_note": "Hand-curated. Roll ids are chosen by reading the Clerk's titles; the member's vote is pulled from data/votes.json, never typed here. statementRx matches titles; statementPicks adds specific releases with a verbatim snippet found by 'rx' in the release's full text (data/statements_full.json). No editorial verdicts except the Israel card's headline, set in 'israel.headline'.",
+  "issues": [
+    {
+      "id": "aviation",
+      "name": "Aviation noise and airports",
+      "intro": "His letters and pushes on airplane noise near JFK and LaGuardia, from statements. No roll calls chosen yet.",
+      "statementRx": "airplane noise|JFK|LGA|FAA|flight path|airport",
+      "statementPicks": [],
+      "rolls": [],
+      "items": []
+    },
+    {
+      "id": "health",
+      "name": "Health care costs and fraud",
+      "intro": "His health care fraud bill and his push to repeal a premium rule, with the House votes on health premiums.",
+      "statementRx": "health care fraud|premium|Medicare|Medicaid",
+      "statementPicks": [],
+      "rolls": [],
+      "items": [
+        {
+          "d": "2025-12-17",
+          "roll": "2025-349",
+          "t": "{Vote} the Lower Health Care Premiums for All Americans Act (H.R. 6703), on final passage."
+        }
+      ]
+    },
+    {
+      "id": "dhs-funding",
+      "name": "Immigration and DHS funding",
+      "intro": "His bipartisan bill with Rep. Fitzpatrick on DHS and ICE, and his push to fund TSA, Coast Guard and FEMA.",
+      "statementRx": "DHS|TSA|Coast Guard|FEMA|ICE",
+      "statementPicks": [],
+      "rolls": [],
+      "items": []
+    },
+    {
+      "id": "taxpayers",
+      "name": "Taxpayers and government funding",
+      "intro": "His bills on fraud victims' taxes and on government shutdowns, with the House vote on his fraud-victim tax bill.",
+      "statementRx": "shutdown|taxpayer|unemployment",
+      "statementPicks": [],
+      "rolls": [],
+      "items": [
+        {
+          "d": "2026-09-15",
+          "roll": "2026-305",
+          "t": "{Vote} the Tax Relief for Fraud Victims Act, on final passage."
+        }
+      ]
+    },
+    {
+      "id": "long-island",
+      "name": "Long Island and local projects",
+      "intro": "His work on Long Island Sound, the Sea Cliff sewer expansion and local water projects.",
+      "statementRx": "Long Island|Sea Cliff|oyster|sewer|Sound",
+      "statementPicks": [],
+      "rolls": [],
+      "items": [
+        {
+          "d": "2026-09-16",
+          "roll": "2026-313",
+          "t": "{Vote} the Water Resources Development Act, on final passage."
+        }
+      ]
+    }
+  ],
+  "israel": {
+    "question": "Israel or Palestine?",
+    "headline": "TBD",
+    "headlineWhy": "State the rule behind the headline once the items are in.",
+    "summary": "",
+    "items": []
   }
- ],
- "israel": {
-  "question": "Israel or Palestine?",
-  "headline": "TBD",
-  "headlineWhy": "State the rule behind the headline once the items are in.",
-  "summary": "",
-  "items": []
- }
 }
