@@ -44,14 +44,12 @@
     "title": "House Democratic leader"
   },
   "fec": {
-    "candidateId": "TODO",
-    "committeeId": "TODO",
+    "candidateId": "H6TX18232",
+    "committeeId": "C00899831",
     "cycles": [
-      2024,
       2026
     ],
     "cycleLabels": {
-      "2024": "2023-24",
       "2026": "2025-26"
     },
     "keyEnv": "FEC_API_KEY",

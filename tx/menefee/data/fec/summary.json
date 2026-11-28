@@ -1,0 +1,2131 @@
+{
+ "cycles": {
+  "all": {
+   "label": "All 1 cycles",
+   "slices": {
+    "small": 714561.25,
+    "large": 2749391.74,
+    "proisrael": 0.0,
+    "otherpac": 292367.67,
+    "party": 0.0,
+    "other": 5456.62
+   },
+   "through": "2026-10-14",
+   "note": "Pro-Israel slice combines direct PAC gifts and donations earmarked through J Street PAC across all 1 cycles."
+  },
+  "2026": {
+   "label": "2025-26",
+   "slices": {
+    "small": 714561.25,
+    "large": 2749391.74,
+    "proisrael": 0.0,
+    "otherpac": 292367.67,
+    "party": 0.0,
+    "other": 5456.62
+   },
+   "through": "2026-10-14",
+   "receipts": 3761777.28,
+   "proDirect": 0.0,
+   "proEarmark": 0.0,
+   "note": "Pro-Israel slice: $0 in direct PAC gifts plus $0 in individual donations earmarked through J Street PAC."
+  }
+ },
+ "pacs": [
+  {
+   "name": "JANE FONDA CLIMATE PAC",
+   "id": "C00806893",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 20000.0,
+   "n": 4,
+   "byCycle": {
+    "2026": 20000.0
+   }
+  },
+  {
+   "name": "AAJ",
+   "id": "C00024521",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 15000.0,
+   "n": 4,
+   "byCycle": {
+    "2026": 15000.0
+   }
+  },
+  {
+   "name": "MEDICARE FOR ALL",
+   "id": "C00685552",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 15000.0,
+   "n": 3,
+   "byCycle": {
+    "2026": 15000.0
+   }
+  },
+  {
+   "name": "D.R.I.V.E. - DEMOCRAT, REPUBLICAN, INDEPENDENT VOTER EDUCATION (THE PAC OF THE INTERNATIONAL BROTHERHOOD OF TEAMSTERS)",
+   "id": "C00032979",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 15000.0,
+   "n": 3,
+   "byCycle": {
+    "2026": 15000.0
+   }
+  },
+  {
+   "name": "MIDWEST REGION LABORERS' POLITICAL LEAGUE",
+   "id": "C00342907",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 15000.0,
+   "n": 3,
+   "byCycle": {
+    "2026": 15000.0
+   }
+  },
+  {
+   "name": "HOUSTON PILOTS",
+   "id": "C00842898",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 11000.0,
+   "n": 6,
+   "byCycle": {
+    "2026": 11000.0
+   }
+  },
+  {
+   "name": "INTERNATIONAL ASSOCIATION OF SHEET METAL, AIR, RAIL AND TRANSPORTATION WORKERS POLITICAL ACTION LEAGUE",
+   "id": "C00007542",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 10000.0,
+   "n": 2,
+   "byCycle": {
+    "2026": 10000.0
+   }
+  },
+  {
+   "name": "UA UNION PLUMBERS & PIPEFITTERS VOTE! PAC (UNITED ASSOCIATION OF JOURNEYMEN AND APPRENTICES OF THE PLUMBING & PIPEFITTING INDUSTRY OF THE UNITED STATES AND CANADA)",
+   "id": "C00012476",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 10000.0,
+   "n": 2,
+   "byCycle": {
+    "2026": 10000.0
+   }
+  },
+  {
+   "name": "LEADERS WE DESERVE",
+   "id": "C00843110",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 10000.0,
+   "n": 3,
+   "byCycle": {
+    "2026": 10000.0
+   }
+  },
+  {
+   "name": "CONGRESSIONAL PROGRESSIVE CAUCUS",
+   "id": "C00513176",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 10000.0,
+   "n": 2,
+   "byCycle": {
+    "2026": 10000.0
+   }
+  },
+  {
+   "name": "CARPENTERS LEGISLATIVE IMPROVEMENT COMMITTEE UNITED BROTHERHOOD OF CARPENTERS AND JOINERS",
+   "id": "C00001016",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 10000.0,
+   "n": 2,
+   "byCycle": {
+    "2026": 10000.0
+   }
+  },
+  {
+   "name": "FORGING PROGRESS",
+   "id": "C00901496",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 7000.0,
+   "n": 2,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "name": "FAIR SHOT PAC",
+   "id": "C00574970",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 5000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "AAJ PAC",
+   "id": "C00024521",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 5000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "INTERNATIONAL UNION OF PAINTERS AND ALLIED TRADES POLITICAL ACTION TOGETHER POLITICAL COMMITTEE",
+   "id": "C00000885",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 5000.0,
+   "n": 3,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "DEFEND THE VOTE",
+   "id": "C00764233",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 5000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "INTERNATIONAL LONGSHOREMEN'S ASSOCIATION COMMITTEE ON POLITICAL EDUCATION",
+   "id": "C00158576",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 5000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "TAXPAC",
+   "id": "C00562587",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 5000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "YOUTH SAVE DEMOCRACY PAC",
+   "id": "C00832493",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 5000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "WAY TO LEAD",
+   "id": "C00686832",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 5000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "name": "FUELING INDIVIDUAL RIGHTS EVERYWHERE (FIRE) PAC",
+   "id": "C00829655",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 4000.0,
+   "n": 2,
+   "byCycle": {
+    "2026": 4000.0
+   }
+  },
+  {
+   "name": "INTERNATIONAL BROTHERHOOD OF ELECTRICAL WORKERS POLITICAL ACTION COMMITTEE",
+   "id": "C00027342",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 3500.0,
+   "n": 3,
+   "byCycle": {
+    "2026": 3500.0
+   }
+  },
+  {
+   "name": "BLACK WOMEN OF GREATER HOUSTON POLITICAL ACTION COMMITTEE",
+   "id": "C00795195",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 3300.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 3300.0
+   }
+  },
+  {
+   "name": "NATIONAL NURSES UNITED PAC - A FUND FOR A HEALTHY AMERICA",
+   "id": "C00446237",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 3000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 3000.0
+   }
+  },
+  {
+   "name": "AMERICAN OPTOMETRIC ASSOCIATION POLITICAL ACTION COMMITTEE",
+   "id": "C00024968",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2500.0,
+   "n": 3,
+   "byCycle": {
+    "2026": 2500.0
+   }
+  },
+  {
+   "name": "NATIONAL AUTOMOBILE DEALERS ASSOCIATION POLITICAL ACTION COMMITTEE",
+   "id": "C00040998",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2500.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 2500.0
+   }
+  },
+  {
+   "name": "NATIONAL BEER WHOLESALERS ASSOCIATION POLITICAL ACTION COMMITTEE",
+   "id": "C00144766",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2500.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 2500.0
+   }
+  },
+  {
+   "name": "NATIONAL ELEVATOR CONSTRUCTORS PAC/ INTN'L  UNION OF ELEVATOR CONSTRUCTORS (NEC PAC)",
+   "id": "C00383950",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2500.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 2500.0
+   }
+  },
+  {
+   "name": "JUSTICE LEAGUE PAC",
+   "id": "C00823773",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2000.0,
+   "n": 2,
+   "byCycle": {
+    "2026": 2000.0
+   }
+  },
+  {
+   "name": "DONT GIVE UP THE SHIP PAC",
+   "id": "C00921833",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2000.0,
+   "n": 2,
+   "byCycle": {
+    "2026": 2000.0
+   }
+  },
+  {
+   "name": "BEYOND THOUGHTS AND PRAYERS PAC",
+   "id": "C00786392",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 2000.0
+   }
+  },
+  {
+   "name": "UNITEDEMOCRATS PAC",
+   "id": "C00740126",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 2000.0
+   }
+  },
+  {
+   "name": "OUR FIGHT OUR FUTURE",
+   "id": "C00811216",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 2000.0
+   }
+  },
+  {
+   "name": "ERICA LEE CARTER FOR TEXAS",
+   "id": "C00886473",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 2000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 2000.0
+   }
+  },
+  {
+   "name": "NOT SO OLD FASHIONED PAC",
+   "id": "C00829663",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "AKIN GUMP STRAUSS HAUER & FELD LLP CIVIC ACTION COMMITTEE (AKA AKIN GUMP PAC)",
+   "id": "C00104901",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "ASSOCIATION OF PROFESSIONAL FLIGHT ATTENDANTS (APFA PAC) POLITICAL ACTION COMMITTEE",
+   "id": "C00246421",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "PAC FOR GOOD",
+   "id": "C00768887",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "LINA HIDALGO FOR HARRIS COUNTY",
+   "id": null,
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "DEMOCRACY SUMMER LEADERSHIP PAC",
+   "id": "C00664318",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "MAXWELL ALEJANDRO FROST FOR CONGRESS",
+   "id": "C00786822",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "TROUTMAN PEPPER LOCKE LLP POLITICAL ACTION COMMITTEE, INC.",
+   "id": "C00311142",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "ENVIRONMENTAL DEFENSE ACTION FUND PAC (EDAF PAC)",
+   "id": "C00471540",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 1000.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 1000.0
+   }
+  },
+  {
+   "name": "TEXAS ORGANIZING PROJECT POLITICAL ACTION COMMITTEE",
+   "id": "C00756940",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 967.67,
+   "n": 1,
+   "byCycle": {
+    "2026": 967.67
+   }
+  },
+  {
+   "name": "SIERRA CLUB POLITICAL COMMITTEE",
+   "id": "C00135368",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 500.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 500.0
+   }
+  },
+  {
+   "name": "PERSEVERE PAC",
+   "id": "C00918326",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 250.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 250.0
+   }
+  },
+  {
+   "name": "THE CENTER FOR FREETHOUGHT EQUALITY PAC",
+   "id": "C00545202",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 250.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 250.0
+   }
+  },
+  {
+   "name": "SUSTAINABLE ENERGY AND ENVIRONMENT COALITION PAC (SEEC PAC)",
+   "id": "C00581785",
+   "kind": "PAC or committee",
+   "proIsrael": false,
+   "amount": 100.0,
+   "n": 1,
+   "byCycle": {
+    "2026": 100.0
+   }
+  }
+ ],
+ "jeffries": {
+  "total": 0,
+  "items": []
+ },
+ "employers": [
+  {
+   "name": "Self",
+   "total": 199670.95,
+   "count": 208,
+   "byCycle": {
+    "2026": 199670.95
+   },
+   "law": false
+  },
+  {
+   "name": "Kirkland & Ellis Llp",
+   "total": 83110.0,
+   "count": 71,
+   "byCycle": {
+    "2026": 83110.0
+   },
+   "law": true
+  },
+  {
+   "name": "Aza",
+   "total": 50850.0,
+   "count": 38,
+   "byCycle": {
+    "2026": 50850.0
+   },
+   "law": false
+  },
+  {
+   "name": "Norton Rose Fulbright Us Llp",
+   "total": 42743.0,
+   "count": 48,
+   "byCycle": {
+    "2026": 42743.0
+   },
+   "law": true
+  },
+  {
+   "name": "Harris County",
+   "total": 31125.0,
+   "count": 32,
+   "byCycle": {
+    "2026": 31125.0
+   },
+   "law": false
+  },
+  {
+   "name": "Yetter Coleman",
+   "total": 26000.0,
+   "count": 14,
+   "byCycle": {
+    "2026": 26000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Norton Rose Fulbright",
+   "total": 24750.0,
+   "count": 31,
+   "byCycle": {
+    "2026": 24750.0
+   },
+   "law": false
+  },
+  {
+   "name": "Susman Godfrey Llp",
+   "total": 22500.0,
+   "count": 15,
+   "byCycle": {
+    "2026": 22500.0
+   },
+   "law": true
+  },
+  {
+   "name": "Arnold Ventures",
+   "total": 21000.0,
+   "count": 6,
+   "byCycle": {
+    "2026": 21000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Mukerji Law Firm",
+   "total": 18850.0,
+   "count": 11,
+   "byCycle": {
+    "2026": 18850.0
+   },
+   "law": true
+  },
+  {
+   "name": "Mcmillan Law Firm",
+   "total": 17500.0,
+   "count": 6,
+   "byCycle": {
+    "2026": 17500.0
+   },
+   "law": true
+  },
+  {
+   "name": "Greenberg Traurig Llp",
+   "total": 14500.0,
+   "count": 13,
+   "byCycle": {
+    "2026": 14500.0
+   },
+   "law": true
+  },
+  {
+   "name": "Evercore",
+   "total": 14000.0,
+   "count": 4,
+   "byCycle": {
+    "2026": 14000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Hillday",
+   "total": 14000.0,
+   "count": 4,
+   "byCycle": {
+    "2026": 14000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Goodnight Hospitality",
+   "total": 14000.0,
+   "count": 4,
+   "byCycle": {
+    "2026": 14000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Steptoe Llp",
+   "total": 13500.0,
+   "count": 6,
+   "byCycle": {
+    "2026": 13500.0
+   },
+   "law": true
+  },
+  {
+   "name": "Jonesgranger Law Firm",
+   "total": 13500.0,
+   "count": 7,
+   "byCycle": {
+    "2026": 13500.0
+   },
+   "law": true
+  },
+  {
+   "name": "Chevron",
+   "total": 13250.0,
+   "count": 10,
+   "byCycle": {
+    "2026": 13250.0
+   },
+   "law": false
+  },
+  {
+   "name": "City Of Houston",
+   "total": 12950.0,
+   "count": 13,
+   "byCycle": {
+    "2026": 12950.0
+   },
+   "law": false
+  },
+  {
+   "name": "Mckinsey",
+   "total": 12669.32,
+   "count": 9,
+   "byCycle": {
+    "2026": 12669.32
+   },
+   "law": false
+  },
+  {
+   "name": "Biscuit Home",
+   "total": 12000.0,
+   "count": 4,
+   "byCycle": {
+    "2026": 12000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Stewart Strategies & Solutions",
+   "total": 11800.0,
+   "count": 4,
+   "byCycle": {
+    "2026": 11800.0
+   },
+   "law": false
+  },
+  {
+   "name": "Gibbs & Bruns",
+   "total": 11000.0,
+   "count": 8,
+   "byCycle": {
+    "2026": 11000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Sumitomo Corporation Of Americas",
+   "total": 10800.0,
+   "count": 5,
+   "byCycle": {
+    "2026": 10800.0
+   },
+   "law": false
+  },
+  {
+   "name": "Elkhoury Law Pllc",
+   "total": 10537.0,
+   "count": 6,
+   "byCycle": {
+    "2026": 10537.0
+   },
+   "law": true
+  },
+  {
+   "name": "Olivier Inc",
+   "total": 10500.0,
+   "count": 6,
+   "byCycle": {
+    "2026": 10500.0
+   },
+   "law": false
+  },
+  {
+   "name": "Advanced Diagnostics Healthcare",
+   "total": 10500.0,
+   "count": 3,
+   "byCycle": {
+    "2026": 10500.0
+   },
+   "law": false
+  },
+  {
+   "name": "Baker Botts",
+   "total": 10250.0,
+   "count": 6,
+   "byCycle": {
+    "2026": 10250.0
+   },
+   "law": false
+  },
+  {
+   "name": "Spencer Fane Llp",
+   "total": 9555.0,
+   "count": 28,
+   "byCycle": {
+    "2026": 9555.0
+   },
+   "law": true
+  },
+  {
+   "name": "The Harris Law Firm",
+   "total": 9500.0,
+   "count": 3,
+   "byCycle": {
+    "2026": 9500.0
+   },
+   "law": true
+  },
+  {
+   "name": "Abraham Watkins Nichols Agosto Aziz &",
+   "total": 9500.0,
+   "count": 3,
+   "byCycle": {
+    "2026": 9500.0
+   },
+   "law": false
+  },
+  {
+   "name": "Law Office Of Minnie Tsai Nelson Pllc",
+   "total": 9000.0,
+   "count": 3,
+   "byCycle": {
+    "2026": 9000.0
+   },
+   "law": true
+  },
+  {
+   "name": "Mccall Parkhurst",
+   "total": 9000.0,
+   "count": 4,
+   "byCycle": {
+    "2026": 9000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Linebargergogganblair&Sampson",
+   "total": 8500.0,
+   "count": 3,
+   "byCycle": {
+    "2026": 8500.0
+   },
+   "law": false
+  },
+  {
+   "name": "Hunton Andrews Kurth Llp",
+   "total": 8000.0,
+   "count": 4,
+   "byCycle": {
+    "2026": 8000.0
+   },
+   "law": true
+  },
+  {
+   "name": "Outreach Strategists Llc",
+   "total": 8000.0,
+   "count": 3,
+   "byCycle": {
+    "2026": 8000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Murphy Ball Stratton Llp",
+   "total": 7500.0,
+   "count": 6,
+   "byCycle": {
+    "2026": 7500.0
+   },
+   "law": true
+  },
+  {
+   "name": "Pillsbury Winthrop",
+   "total": 7500.0,
+   "count": 7,
+   "byCycle": {
+    "2026": 7500.0
+   },
+   "law": false
+  },
+  {
+   "name": "Gray Reed & Mcgraw Llp",
+   "total": 7500.0,
+   "count": 5,
+   "byCycle": {
+    "2026": 7500.0
+   },
+   "law": true
+  },
+  {
+   "name": "Gibson Dunn & Crutcher",
+   "total": 7250.0,
+   "count": 3,
+   "byCycle": {
+    "2026": 7250.0
+   },
+   "law": false
+  },
+  {
+   "name": "Allen Boone Humphries Robinson",
+   "total": 7153.85,
+   "count": 6,
+   "byCycle": {
+    "2026": 7153.85
+   },
+   "law": false
+  },
+  {
+   "name": "Stretch To Kindergarten",
+   "total": 7000.0,
+   "count": 2,
+   "byCycle": {
+    "2026": 7000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Fmg Construction",
+   "total": 7000.0,
+   "count": 2,
+   "byCycle": {
+    "2026": 7000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Ims",
+   "total": 7000.0,
+   "count": 3,
+   "byCycle": {
+    "2026": 7000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Holland And Knight",
+   "total": 7000.0,
+   "count": 2,
+   "byCycle": {
+    "2026": 7000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Phillips Lytle Llp",
+   "total": 7000.0,
+   "count": 2,
+   "byCycle": {
+    "2026": 7000.0
+   },
+   "law": true
+  },
+  {
+   "name": "Richard Schechter P.C.",
+   "total": 7000.0,
+   "count": 4,
+   "byCycle": {
+    "2026": 7000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Mostyn Law",
+   "total": 7000.0,
+   "count": 2,
+   "byCycle": {
+    "2026": 7000.0
+   },
+   "law": true
+  },
+  {
+   "name": "Democracy In Color",
+   "total": 7000.0,
+   "count": 2,
+   "byCycle": {
+    "2026": 7000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Hillco Partners",
+   "total": 7000.0,
+   "count": 2,
+   "byCycle": {
+    "2026": 7000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Arnold & Itkin Llp",
+   "total": 7000.0,
+   "count": 2,
+   "byCycle": {
+    "2026": 7000.0
+   },
+   "law": true
+  },
+  {
+   "name": "Mckinsey And Company",
+   "total": 7000.0,
+   "count": 2,
+   "byCycle": {
+    "2026": 7000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Womack Development & Investment Realto",
+   "total": 7000.0,
+   "count": 3,
+   "byCycle": {
+    "2026": 7000.0
+   },
+   "law": false
+  },
+  {
+   "name": "Foley & Lardner Llp",
+   "total": 7000.0,
+   "count": 4,
+   "byCycle": {
+    "2026": 7000.0
+   },
+   "law": true
+  },
+  {
+   "name": "Ronald Green & Associates Pllc",
+   "total": 7000.0,
+   "count": 2,
+   "byCycle": {
+    "2026": 7000.0
+   },
+   "law": true
+  },
+  {
+   "name": "Brooke Staffing Company",
+   "total": 7000.0,
+   "count": 2,
+   "byCycle": {
+    "2026": 7000.0
+   },
+   "law": false
+  },
+  {
+   "name": "The Taft Law Firm Pc",
+   "total": 6500.0,
+   "count": 4,
+   "byCycle": {
+    "2026": 6500.0
+   },
+   "law": true
+  },
+  {
+   "name": "Usaf",
+   "total": 6500.0,
+   "count": 2,
+   "byCycle": {
+    "2026": 6500.0
+   },
+   "law": false
+  },
+  {
+   "name": "The Clifford Group Inc.",
+   "total": 6500.0,
+   "count": 10,
+   "byCycle": {
+    "2026": 6500.0
+   },
+   "law": false
+  },
+  {
+   "name": "Hcltech",
+   "total": 6500.0,
+   "count": 6,
+   "byCycle": {
+    "2026": 6500.0
+   },
+   "law": false
+  }
+ ],
+ "donors": [
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 21000.0,
+   "byCycle": {
+    "2026": 21000.0
+   }
+  },
+  {
+   "employer": "Kirkland & Ellis",
+   "occupation": "Lawyer",
+   "total": 17500.0,
+   "byCycle": {
+    "2026": 17500.0
+   }
+  },
+  {
+   "employer": "Goodnight Hospitality",
+   "occupation": "Hospitality",
+   "total": 17500.0,
+   "byCycle": {
+    "2026": 17500.0
+   }
+  },
+  {
+   "employer": "Hillday",
+   "occupation": "Public Relations",
+   "total": 14000.0,
+   "byCycle": {
+    "2026": 14000.0
+   }
+  },
+  {
+   "employer": "Evercore",
+   "occupation": "Investment Banker",
+   "total": 14000.0,
+   "byCycle": {
+    "2026": 14000.0
+   }
+  },
+  {
+   "employer": "Mckinsey",
+   "occupation": "Consultant",
+   "total": 14000.0,
+   "byCycle": {
+    "2026": 14000.0
+   }
+  },
+  {
+   "employer": "Arnold Ventures",
+   "occupation": "Co-Founder",
+   "total": 14000.0,
+   "byCycle": {
+    "2026": 14000.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 13750.0,
+   "byCycle": {
+    "2026": 13750.0
+   }
+  },
+  {
+   "employer": "Ronald Green & Associates Pllc",
+   "occupation": "Attorney",
+   "total": 13300.0,
+   "byCycle": {
+    "2026": 13300.0
+   }
+  },
+  {
+   "employer": "Mcmillan Law Firm",
+   "occupation": "Attorney",
+   "total": 13000.0,
+   "byCycle": {
+    "2026": 13000.0
+   }
+  },
+  {
+   "employer": "Stewart Strategies & Solutions",
+   "occupation": "Lobbyist",
+   "total": 11800.0,
+   "byCycle": {
+    "2026": 11800.0
+   }
+  },
+  {
+   "employer": "None",
+   "occupation": "Not Employed",
+   "total": 10500.0,
+   "byCycle": {
+    "2026": 10500.0
+   }
+  },
+  {
+   "employer": "Advanced Diagnostics Healthcare",
+   "occupation": "Physician",
+   "total": 10500.0,
+   "byCycle": {
+    "2026": 10500.0
+   }
+  },
+  {
+   "employer": "Self",
+   "occupation": "Attorney/Volunteer",
+   "total": 10500.0,
+   "byCycle": {
+    "2026": 10500.0
+   }
+  },
+  {
+   "employer": "Susman Godfrey Llp",
+   "occupation": "Lawyer",
+   "total": 10500.0,
+   "byCycle": {
+    "2026": 10500.0
+   }
+  },
+  {
+   "employer": "Law Office Of Nelson M. Jones, Iii",
+   "occupation": "Attorney",
+   "total": 10500.0,
+   "byCycle": {
+    "2026": 10500.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 10500.0,
+   "byCycle": {
+    "2026": 10500.0
+   }
+  },
+  {
+   "employer": "Self",
+   "occupation": "Investor",
+   "total": 10500.0,
+   "byCycle": {
+    "2026": 10500.0
+   }
+  },
+  {
+   "employer": "Norton Rose Fulbright Us Llp",
+   "occupation": "Attorney",
+   "total": 10500.0,
+   "byCycle": {
+    "2026": 10500.0
+   }
+  },
+  {
+   "employer": "City Of Houston",
+   "occupation": "City Controller",
+   "total": 10500.0,
+   "byCycle": {
+    "2026": 10500.0
+   }
+  },
+  {
+   "employer": "Harris County",
+   "occupation": "Lawyer",
+   "total": 10500.0,
+   "byCycle": {
+    "2026": 10500.0
+   }
+  },
+  {
+   "employer": "Chevron",
+   "occupation": "Vice President",
+   "total": 10500.0,
+   "byCycle": {
+    "2026": 10500.0
+   }
+  },
+  {
+   "employer": "Steptoe Llp",
+   "occupation": "Lawyer",
+   "total": 10500.0,
+   "byCycle": {
+    "2026": 10500.0
+   }
+  },
+  {
+   "employer": "Law Firm",
+   "occupation": "Lawyer",
+   "total": 10500.0,
+   "byCycle": {
+    "2026": 10500.0
+   }
+  },
+  {
+   "employer": "Sumitomo Corporation Of Americas",
+   "occupation": "Lawyer",
+   "total": 10500.0,
+   "byCycle": {
+    "2026": 10500.0
+   }
+  },
+  {
+   "employer": "Biscuit Home",
+   "occupation": "Owner",
+   "total": 10500.0,
+   "byCycle": {
+    "2026": 10500.0
+   }
+  },
+  {
+   "employer": "Yetter Coleman",
+   "occupation": "Attorney",
+   "total": 10500.0,
+   "byCycle": {
+    "2026": 10500.0
+   }
+  },
+  {
+   "employer": "Jonesgranger Law Firm",
+   "occupation": "Attorney",
+   "total": 10000.0,
+   "byCycle": {
+    "2026": 10000.0
+   }
+  },
+  {
+   "employer": "Mukerji Law Firm",
+   "occupation": "Attorney",
+   "total": 9750.0,
+   "byCycle": {
+    "2026": 9750.0
+   }
+  },
+  {
+   "employer": "Abraham Watkins Nichols Agosto Aziz &",
+   "occupation": "Attorney",
+   "total": 9500.0,
+   "byCycle": {
+    "2026": 9500.0
+   }
+  },
+  {
+   "employer": "Mostyn Law",
+   "occupation": "Lawye",
+   "total": 9500.0,
+   "byCycle": {
+    "2026": 9500.0
+   }
+  },
+  {
+   "employer": "Phillips Lytle Llp",
+   "occupation": "Lawyer",
+   "total": 9500.0,
+   "byCycle": {
+    "2026": 9500.0
+   }
+  },
+  {
+   "employer": "God'S Grace Community Church",
+   "occupation": "Pastor",
+   "total": 8500.0,
+   "byCycle": {
+    "2026": 8500.0
+   }
+  },
+  {
+   "employer": "Baker Botts",
+   "occupation": "Lawyer",
+   "total": 7500.0,
+   "byCycle": {
+    "2026": 7500.0
+   }
+  },
+  {
+   "employer": "Retired",
+   "occupation": "Md",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "",
+   "occupation": "",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Aza",
+   "occupation": "Attorney",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Vital Allergy & Asthma Center",
+   "occupation": "Physician",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Outreach Strategists Llc",
+   "occupation": "Managing Director",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "None",
+   "occupation": "Not Employed",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "None",
+   "occupation": "Retired",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Cloverleaf",
+   "occupation": "Ceo",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Aza",
+   "occupation": "Lawyer",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Lovett",
+   "occupation": "Self",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Self",
+   "occupation": "Activist",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Nelson Mullins Riley Scarborough",
+   "occupation": "Lawyer",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Democracy In Color",
+   "occupation": "Writer",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Linebargergogganblair&Sampson",
+   "occupation": "Attorney",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Medley Partners Llc",
+   "occupation": "Managing Director",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Elkhoury Law Pllc",
+   "occupation": "Attorney",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Law Office Of Minnie Tsai Nelson Pllc",
+   "occupation": "Attorney",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Stretch To Kindergarten",
+   "occupation": "Ceo",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Raquel Olivier.",
+   "occupation": "Consultant",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Self Employed",
+   "occupation": "Lawyer",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Arnold Ventures",
+   "occupation": "Co-Founder",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Kirkland & Ellis Llp",
+   "occupation": "Lawyer",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Hillco Partners",
+   "occupation": "Consultant",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "",
+   "occupation": "",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Holland And Knight",
+   "occupation": "Consultant",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Brooke Staffing Company",
+   "occupation": "Ceo",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Fmg Construction",
+   "occupation": "Ceo",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "None",
+   "occupation": "Not Employed",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 7000.0,
+   "byCycle": {
+    "2026": 7000.0
+   }
+  },
+  {
+   "employer": "Donald Henley",
+   "occupation": "Professional Musician",
+   "total": 6800.0,
+   "byCycle": {
+    "2026": 6800.0
+   }
+  },
+  {
+   "employer": "Womack Development & Investment Realto",
+   "occupation": "Owner/President",
+   "total": 6800.0,
+   "byCycle": {
+    "2026": 6800.0
+   }
+  },
+  {
+   "employer": "Usaf",
+   "occupation": "Contracting Officer",
+   "total": 6500.0,
+   "byCycle": {
+    "2026": 6500.0
+   }
+  },
+  {
+   "employer": "None",
+   "occupation": "Not Employed",
+   "total": 6500.0,
+   "byCycle": {
+    "2026": 6500.0
+   }
+  },
+  {
+   "employer": "Mukerji Law Firm",
+   "occupation": "Attorney",
+   "total": 6250.0,
+   "byCycle": {
+    "2026": 6250.0
+   }
+  },
+  {
+   "employer": "Kirkland & Ellis Llp",
+   "occupation": "Attorney",
+   "total": 6000.0,
+   "byCycle": {
+    "2026": 6000.0
+   }
+  },
+  {
+   "employer": "Self Employed",
+   "occupation": "Zilkha Family Office",
+   "total": 6000.0,
+   "byCycle": {
+    "2026": 6000.0
+   }
+  },
+  {
+   "employer": "Self",
+   "occupation": "Lawyer",
+   "total": 6000.0,
+   "byCycle": {
+    "2026": 6000.0
+   }
+  },
+  {
+   "employer": "The Harris Law Firm",
+   "occupation": "Attorney",
+   "total": 6000.0,
+   "byCycle": {
+    "2026": 6000.0
+   }
+  },
+  {
+   "employer": "None",
+   "occupation": "Retired",
+   "total": 6000.0,
+   "byCycle": {
+    "2026": 6000.0
+   }
+  },
+  {
+   "employer": "Kirkland & Ellis",
+   "occupation": "Attorney",
+   "total": 6000.0,
+   "byCycle": {
+    "2026": 6000.0
+   }
+  },
+  {
+   "employer": "Allen Boone Humphries Robinson",
+   "occupation": "Attorney",
+   "total": 5800.0,
+   "byCycle": {
+    "2026": 5800.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 5750.0,
+   "byCycle": {
+    "2026": 5750.0
+   }
+  },
+  {
+   "employer": "Norton Rose Fulbright Us Llp",
+   "occupation": "Attorney",
+   "total": 5000.0,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "employer": "Dunhill Construction",
+   "occupation": "Director Of Business Development",
+   "total": 5000.0,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "employer": "Yetter Coleman Llp",
+   "occupation": "Lawyer",
+   "total": 5000.0,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 5000.0,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "employer": "Self-Employed",
+   "occupation": "Attorney",
+   "total": 5000.0,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "employer": "Hunton Andrews Kurth Llp",
+   "occupation": "Attorney",
+   "total": 5000.0,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "employer": "Murphy Ball Stratton",
+   "occupation": "Attorney",
+   "total": 5000.0,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 5000.0,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "employer": "Not Employed",
+   "occupation": "Not Employed",
+   "total": 5000.0,
+   "byCycle": {
+    "2026": 5000.0
+   }
+  },
+  {
+   "employer": "Grant Financial",
+   "occupation": "Entrepreneur",
+   "total": 3500.0,
+   "byCycle": {
+    "2026": 3500.0
+   }
+  },
+  {
+   "employer": "Baldwin Real Estate Investments",
+   "occupation": "Co Founder",
+   "total": 3500.0,
+   "byCycle": {
+    "2026": 3500.0
+   }
+  },
+  {
+   "employer": "Coats Rose",
+   "occupation": "Attorney",
+   "total": 3500.0,
+   "byCycle": {
+    "2026": 3500.0
+   }
+  },
+  {
+   "employer": "Self",
+   "occupation": "Attorney",
+   "total": 3500.0,
+   "byCycle": {
+    "2026": 3500.0
+   }
+  },
+  {
+   "employer": "Coinbase",
+   "occupation": "Ceo",
+   "total": 3500.0,
+   "byCycle": {
+    "2026": 3500.0
+   }
+  },
+  {
+   "employer": "Aza",
+   "occupation": "Attorney",
+   "total": 3500.0,
+   "byCycle": {
+    "2026": 3500.0
+   }
+  },
+  {
+   "employer": "Pur Noire",
+   "occupation": "Winemaker",
+   "total": 3500.0,
+   "byCycle": {
+    "2026": 3500.0
+   }
+  },
+  {
+   "employer": "Solar Law",
+   "occupation": "Attorney",
+   "total": 3500.0,
+   "byCycle": {
+    "2026": 3500.0
+   }
+  },
+  {
+   "employer": "Gastroenterology Associates Of Texas",
+   "occupation": "Physician",
+   "total": 3500.0,
+   "byCycle": {
+    "2026": 3500.0
+   }
+  },
+  {
+   "employer": "Loewy Law Firm",
+   "occupation": "Hr Director",
+   "total": 3500.0,
+   "byCycle": {
+    "2026": 3500.0
+   }
+  },
+  {
+   "employer": "Self",
+   "occupation": "Self Employed",
+   "total": 3500.0,
+   "byCycle": {
+    "2026": 3500.0
+   }
+  },
+  {
+   "employer": "Greenberg Traurig",
+   "occupation": "Attorney",
+   "total": 3500.0,
+   "byCycle": {
+    "2026": 3500.0
+   }
+  },
+  {
+   "employer": "Monty Ramirez",
+   "occupation": "Attorney",
+   "total": 3500.0,
+   "byCycle": {
+    "2026": 3500.0
+   }
+  }
+ ],
+ "outside": [
+  {
+   "cycle": "2026",
+   "committee": "PROTECT PROGRESS",
+   "id": "C00848440",
+   "side": "support",
+   "total": 6471279.97
+  },
+  {
+   "cycle": "2026",
+   "committee": "LEADERS WE DESERVE",
+   "id": "C00843110",
+   "side": "support",
+   "total": 286584.18
+  },
+  {
+   "cycle": "2026",
+   "committee": "PROJECT 218",
+   "id": "C00871368",
+   "side": "support",
+   "total": 199999.87
+  },
+  {
+   "cycle": "2026",
+   "committee": "CONGRESSIONAL PROGRESSIVE CAUCUS PAC",
+   "id": "C00513176",
+   "side": "support",
+   "total": 100000.0
+  },
+  {
+   "cycle": "2026",
+   "committee": "TEXAS ORGANIZING PROJECT POLITICAL ACTION COMMITTEE",
+   "id": "C00756940",
+   "side": "support",
+   "total": 48877.38
+  },
+  {
+   "cycle": "2026",
+   "committee": "SIERRA CLUB INDEPENDENT ACTION",
+   "id": "C00483693",
+   "side": "support",
+   "total": 10.0
+  }
+ ],
+ "watch": [
+  {
+   "id": "detention",
+   "label": "Immigration detention and surveillance contractors",
+   "why": "Companies that profit from ICE detention or enforcement technology.",
+   "pacTotal": 0,
+   "empTotal": 0,
+   "pacs": [],
+   "employers": []
+  },
+  {
+   "id": "police",
+   "label": "Police, sheriff and public-safety groups",
+   "why": "Law-enforcement unions, associations and corrections groups.",
+   "pacTotal": 0,
+   "empTotal": 0,
+   "pacs": [],
+   "employers": []
+  },
+  {
+   "id": "realestate",
+   "label": "Real estate, landlord and developer groups",
+   "why": "Industry money on the housing side of the cost-of-living fight.",
+   "pacTotal": 0,
+   "empTotal": 0,
+   "pacs": [],
+   "employers": []
+  },
+  {
+   "id": "tenant",
+   "label": "Tenant, housing and homelessness advocates",
+   "why": "Groups working on affordable housing and homelessness.",
+   "pacTotal": 0,
+   "empTotal": 0,
+   "pacs": [],
+   "employers": []
+  },
+  {
+   "id": "labor",
+   "label": "Labor unions",
+   "why": "Union PACs and member-funded labor committees.",
+   "pacTotal": 74000.0,
+   "empTotal": 0,
+   "pacs": [
+    {
+     "name": "D.R.I.V.E. - DEMOCRAT, REPUBLICAN, INDEPENDENT VOTER EDUCATION (THE PAC OF THE INTERNATIONAL BROTHERHOOD OF TEAMSTERS)",
+     "id": "C00032979",
+     "amount": 15000.0,
+     "byCycle": {
+      "2026": 15000.0
+     }
+    },
+    {
+     "name": "MIDWEST REGION LABORERS' POLITICAL LEAGUE",
+     "id": "C00342907",
+     "amount": 15000.0,
+     "byCycle": {
+      "2026": 15000.0
+     }
+    },
+    {
+     "name": "INTERNATIONAL ASSOCIATION OF SHEET METAL, AIR, RAIL AND TRANSPORTATION WORKERS POLITICAL ACTION LEAGUE",
+     "id": "C00007542",
+     "amount": 10000.0,
+     "byCycle": {
+      "2026": 10000.0
+     }
+    },
+    {
+     "name": "UA UNION PLUMBERS & PIPEFITTERS VOTE! PAC (UNITED ASSOCIATION OF JOURNEYMEN AND APPRENTICES OF THE PLUMBING & PIPEFITTING INDUSTRY OF THE UNITED STATES AND CANADA)",
+     "id": "C00012476",
+     "amount": 10000.0,
+     "byCycle": {
+      "2026": 10000.0
+     }
+    },
+    {
+     "name": "CARPENTERS LEGISLATIVE IMPROVEMENT COMMITTEE UNITED BROTHERHOOD OF CARPENTERS AND JOINERS",
+     "id": "C00001016",
+     "amount": 10000.0,
+     "byCycle": {
+      "2026": 10000.0
+     }
+    },
+    {
+     "name": "INTERNATIONAL UNION OF PAINTERS AND ALLIED TRADES POLITICAL ACTION TOGETHER POLITICAL COMMITTEE",
+     "id": "C00000885",
+     "amount": 5000.0,
+     "byCycle": {
+      "2026": 5000.0
+     }
+    },
+    {
+     "name": "INTERNATIONAL BROTHERHOOD OF ELECTRICAL WORKERS POLITICAL ACTION COMMITTEE",
+     "id": "C00027342",
+     "amount": 3500.0,
+     "byCycle": {
+      "2026": 3500.0
+     }
+    },
+    {
+     "name": "NATIONAL NURSES UNITED PAC - A FUND FOR A HEALTHY AMERICA",
+     "id": "C00446237",
+     "amount": 3000.0,
+     "byCycle": {
+      "2026": 3000.0
+     }
+    },
+    {
+     "name": "NATIONAL ELEVATOR CONSTRUCTORS PAC/ INTN'L  UNION OF ELEVATOR CONSTRUCTORS (NEC PAC)",
+     "id": "C00383950",
+     "amount": 2500.0,
+     "byCycle": {
+      "2026": 2500.0
+     }
+    }
+   ],
+   "employers": []
+  },
+  {
+   "id": "tech",
+   "label": "Technology and AI companies",
+   "why": "TODO: why this category matters for Menefee's district.",
+   "pacTotal": 0,
+   "empTotal": 0,
+   "pacs": [],
+   "employers": []
+  },
+  {
+   "id": "health",
+   "label": "Health care, insurers and pharma",
+   "why": "TODO: why this category matters for Menefee's district.",
+   "pacTotal": 3000.0,
+   "empTotal": 24500.0,
+   "pacs": [
+    {
+     "name": "NATIONAL NURSES UNITED PAC - A FUND FOR A HEALTHY AMERICA",
+     "id": "C00446237",
+     "amount": 3000.0,
+     "byCycle": {
+      "2026": 3000.0
+     }
+    }
+   ],
+   "employers": [
+    {
+     "name": "Goodnight Hospitality",
+     "total": 14000.0,
+     "byCycle": {
+      "2026": 14000.0
+     }
+    },
+    {
+     "name": "Advanced Diagnostics Healthcare",
+     "total": 10500.0,
+     "byCycle": {
+      "2026": 10500.0
+     }
+    }
+   ]
+  },
+  {
+   "id": "civil",
+   "label": "Latino, immigrant and civil-rights groups",
+   "why": "TODO: why this category matters for Menefee's district.",
+   "pacTotal": 0,
+   "empTotal": 0,
+   "pacs": [],
+   "employers": []
+  }
+ ],
+ "ids": {
+  "member": "Christian D. Menefee",
+  "candidateId": "H6TX18232",
+  "committeeId": "C00899831"
+ }
+}
