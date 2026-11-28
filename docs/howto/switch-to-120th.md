@@ -25,7 +25,7 @@ For the directory and ZIP lookup, nearly. `build_directory.py` now takes `--cong
 python3 -I scripts/build_directory.py --congress 120
 ```
 
-It reads the Census ZIP file `tab20_cd12020_zcta520_natl.txt` (column `GEOID_CD120_20`), the Clerk's `MemberData.xml`, and the newest Senate roll call in `data/rollcalls/senate/120/`. The file name follows the 119th pattern and is **not yet confirmed to exist**; pass `--zcta-url` if Census names it differently. The cloud environment cannot reach `www2.census.gov` (network policy), so that download runs on Marilyn's Mac or after the host is allowed.
+It reads the Census ZIP file `tab20_cd12020_zcta520_natl.txt` (column `GEOID_CD120_20`), the Clerk's `MemberData.xml`, and the newest Senate roll call in `data/rollcalls/senate/120/`. **Checked 2026-11-28: Census has not published this file.** The `rel2020/cd-sld/` folder lists only 118th and 119th ZIP files, and the guessed 120th URL returns 404. Re-check the folder before the switch and pass `--zcta-url` if the file appears under a different name. If it never appears, the fallback is to compute ZIP-to-district from the 120th boundaries that `fetch_geo.py` already pulls from TIGERweb (the layer trackers use for new-district maps); that would be a new script.
 
 ## What cannot be prepared before January 3
 
