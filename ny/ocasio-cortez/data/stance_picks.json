@@ -1,20 +1,122 @@
 {
- "_note": "Hand-curated. Roll ids are chosen by reading the Clerk's titles; the member's vote is pulled from data/votes.json, never typed here. statementRx matches titles; statementPicks adds specific releases with a verbatim snippet found by 'rx' in the release's full text (data/statements_full.json). No editorial verdicts except the Israel card's headline, set in 'israel.headline'.",
- "issues": [
-  {
-   "id": "example-issue",
-   "name": "Example issue (replace)",
-   "intro": "One or two neutral sentences on what this section covers.",
-   "statementRx": "keyword|another keyword",
-   "statementPicks": [],
-   "rolls": []
+  "_note": "Hand-curated. Roll ids are chosen by reading the Clerk's titles; the member's vote is pulled from data/votes.json, never typed here. statementRx matches titles; statementPicks adds specific releases with a verbatim snippet found by 'rx' in the release's full text (data/statements_full.json). No editorial verdicts except the Israel card's headline, set in 'israel.headline'.",
+  "issues": [
+    {
+      "id": "health",
+      "name": "Health care",
+      "intro": "Votes on health coverage and costs, and statements on the same subjects.",
+      "statementRx": "health|medicaid|medicare|insulin|premium",
+      "statementPicks": [],
+      "rolls": [],
+      "items": [
+        {
+          "d": "2025-01-23",
+          "roll": "2025-027",
+          "t": "{Vote} the Born-Alive Abortion Survivors Protection Act (H.R. 21), on final passage."
+        },
+        {
+          "d": "2025-12-17",
+          "roll": "2025-349",
+          "t": "{Vote} the Lower Health Care Premiums for All Americans Act (H.R. 6703), on final passage."
+        },
+        {
+          "d": "2025-12-18",
+          "roll": "2025-362",
+          "t": "{Vote} the Do No Harm in Medicaid Act (H.R. 498), on final passage."
+        },
+        {
+          "d": "2026-11-19",
+          "roll": "2026-327",
+          "t": "{Vote} the Preventive Health Savings Act (H.R. 4464)."
+        }
+      ]
+    },
+    {
+      "id": "cost",
+      "name": "Cost of living",
+      "intro": "Votes on housing and cost bills, and statements on prices, rent and wages.",
+      "statementRx": "cost|tariff|price|rent|housing|wage|grocer",
+      "statementPicks": [],
+      "rolls": [],
+      "items": [
+        {
+          "d": "2026-02-09",
+          "roll": "2026-057",
+          "t": "{Vote} the Housing for the 21st Century Act, under a motion to suspend the rules."
+        }
+      ]
+    },
+    {
+      "id": "immigration",
+      "name": "Immigration and ICE",
+      "intro": "Votes on immigration and deportation bills, and statements on enforcement.",
+      "statementRx": "\\bICE\\b|immigra|deport|detention",
+      "statementPicks": [],
+      "rolls": [],
+      "items": [
+        {
+          "d": "2025-06-12",
+          "roll": "2025-171",
+          "t": "{Vote} the District of Columbia Federal Immigration Compliance Act, on final passage."
+        },
+        {
+          "d": "2026-03-18",
+          "roll": "2026-094",
+          "t": "{Vote} the Deporting Fraudsters Act, on final passage."
+        }
+      ]
+    },
+    {
+      "id": "safety-environment",
+      "name": "Public safety and environment",
+      "intro": "Votes on environmental rules and D.C. public safety, and statements on the same subjects.",
+      "statementRx": "climate|clean|environment|firearm|gun|police|public safety",
+      "statementPicks": [],
+      "rolls": [],
+      "items": [
+        {
+          "d": "2025-04-30",
+          "roll": "2025-111",
+          "t": "{Vote} the congressional disapproval of an EPA rule on California motor vehicle standards, on final passage."
+        },
+        {
+          "d": "2025-05-22",
+          "roll": "2025-143",
+          "t": "{Vote} the congressional disapproval of an Environmental Protection Agency rule, on final passage."
+        },
+        {
+          "d": "2025-11-19",
+          "roll": "2025-299",
+          "t": "{Vote} the CLEAN DC Act, on final passage."
+        }
+      ]
+    },
+    {
+      "id": "rights",
+      "name": "Rights and democracy",
+      "intro": "Votes on voting rights, government transparency and impeachment, and statements on the same subjects.",
+      "statementRx": "vot(e|es|ing)|democra|epstein|civil rights|impeach",
+      "statementPicks": [],
+      "rolls": [],
+      "items": [
+        {
+          "d": "2025-06-10",
+          "roll": "2025-163",
+          "t": "{Vote} a bill to prohibit non-citizens from voting in federal elections, on final passage."
+        },
+        {
+          "d": "2025-11-18",
+          "roll": "2025-289",
+          "t": "{Vote} the Epstein Files Transparency Act, under a motion to suspend the rules."
+        }
+      ]
+    }
+  ],
+  "israel": {
+    "question": "Israel or Palestine?",
+    "headline": "TBD",
+    "headlineWhy": "State the rule behind the headline once the items are in.",
+    "summary": "",
+    "items": []
   }
- ],
- "israel": {
-  "question": "Israel or Palestine?",
-  "headline": "TBD",
-  "headlineWhy": "State the rule behind the headline once the items are in.",
-  "summary": "",
-  "items": []
- }
 }
