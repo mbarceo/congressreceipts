@@ -10,8 +10,10 @@
 .cr-logo.sm{height:34px}
 .cr-nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
 .cr-nav a{font-size:.88rem;font-weight:600;text-decoration:none;color:var(--muted);padding:7px 13px;border-radius:999px;white-space:nowrap}
-.cr-nav a:hover{color:var(--ink)}
-.cr-nav a[aria-current="page"]{background:var(--accent);color:var(--on-accent)}
+.cr-nav a:hover{color:var(--rm-text)}
+.cr-nav a[aria-current="page"]{background:var(--accent);color:var(--on-accent);position:relative}
+/* Pink underline marks the current page (restrained Rosa Mexicano accent) */
+.cr-nav a[aria-current="page"]::after{content:"";position:absolute;left:14px;right:14px;bottom:2px;height:2px;border-radius:2px;background:var(--rm)}
 .cr-menu{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:6px 10px;font:inherit;font-size:.85rem;cursor:pointer}
 @media (max-width:760px){
   .cr-menu{display:block}
@@ -19,6 +21,7 @@
     background:var(--surface);border-bottom:1px solid var(--line);padding:8px max(16px,env(safe-area-inset-left,0px)) 12px}
   .cr-head.open .cr-nav{display:flex}
   .cr-nav a{padding:10px 12px;border-radius:8px}
+  .cr-nav a[aria-current="page"]::after{left:12px;right:auto;width:28px}
 }
 .wrap.hub{padding-top:28px}
 /* On member tracker pages the header scrolls away; the tracker's own page tabs (.topbar) stay pinned */
