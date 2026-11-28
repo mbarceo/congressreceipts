@@ -28,6 +28,28 @@
 .chip-s.nv{color:var(--ink);border-color:var(--accent)}
 .chip-s{display:inline-block;font-size:.72rem;border:1px solid var(--line);border-radius:999px;padding:1px 8px;color:var(--muted);width:max-content}
 .group h3{margin:6px 0 10px}
+h2.sec{font-size:1.1rem;margin:0 0 10px}
+.tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tools .btn-ghost{margin-left:auto}
+.tools button{background:none;color:var(--muted);font:inherit;font-size:.88rem;font-weight:600;border:1px solid var(--divider);border-radius:999px;padding:6px 14px;cursor:pointer}
+.tools button:hover{color:var(--ink)}
+details.st{border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+details.st+details.st{margin-top:8px}
+details.st>summary{cursor:pointer;list-style:none;padding:14px 16px;display:flex;gap:10px;align-items:center;font-family:var(--f-display);font-weight:700}
+details.st>summary::-webkit-details-marker{display:none}
+details.st>summary::before{content:"▸";color:var(--accent);transition:transform .15s}
+details.st[open]>summary::before{transform:rotate(90deg)}
+details.st>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:12px}
+.cnt{margin-left:auto;font-family:var(--f-mono);font-weight:400;font-size:.78rem;color:var(--muted)}
+.rows{padding:0 16px 8px}
+.row{display:flex;align-items:center;gap:12px;padding:8px 4px;border-top:1px solid var(--line);text-decoration:none;color:var(--ink);min-width:0}
+.row:hover .nm{color:var(--accent)}
+.row .av{width:30px;height:38px;font-size:.7rem}
+.row .nm{font-size:.95rem;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row .sub{white-space:nowrap}
+.row .arr{color:var(--accent)}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
+.dot.D{background:#6aa7ff}.dot.R{background:#ff7a7a}.dot.I{background:#c9b458}
 .congress-banner{border:1px solid var(--accent);border-radius:8px;padding:10px 14px;margin:0 0 16px;font-size:.88rem;line-height:1.5}
 .congress-banner strong{display:block;margin-bottom:2px}
 </style>
@@ -45,6 +67,8 @@
       <strong>This list shows the current, 119th Congress.</strong>
       The 120th Congress is sworn in on January 3, 2027. Some members will have different districts or will be replaced, so a ZIP code may point to a different House member after that date. We will update this page then. A member's tracker may already show the district they won for 2027.
     </div>
+    <div id="recent" class="group" hidden></div>
+    <h2 class="sec" id="findh">Find a member</h2>
     <form class="search" id="f" role="search" onsubmit="return false">
       <label class="sr" for="q" hidden>ZIP code or name</label>
       <input id="q" type="search" inputmode="search" autocomplete="postal-code" placeholder="ZIP code or name, e.g. 91331 or Padilla" aria-label="ZIP code or name">
@@ -74,10 +98,20 @@ const card = m => {
     ${m.path ? `<a class="go" href="${esc(m.path)}/">Open the tracker →</a>` : `<span class="chip-s">Not tracked yet</span>`}</div></article>`;
 };
 const group = (title, list) => list.length ? `<div class="group"><h3>${esc(title)}</h3><div class="results">${list.map(card).join("")}</div></div>` : "";
+const row = m => {
+  const t = TRACK[m.path];
+  return `<a class="row" href="${esc(m.path)}/">${t ? `<img class="av" src="${esc(t.portrait)}" alt="" loading="lazy">` : `<span class="av" aria-hidden="true">${esc(initials(m.name))}</span>`}<span class="nm">${esc(m.name)}</span><span class="sub"><span class="dot ${esc((m.party || "I")[0])}"></span>${esc((m.party || "I")[0])} · ${esc(m.chamber === "senate" ? "Senate" : m.seat)}</span><span class="arr" aria-hidden="true">→</span></a>`;
+};
+const RECENT = 3;
+const byState = (list, open) => {
+  const names = [...new Set(list.map(m => m.state))].sort((a, b) => (STATES[a] || a).localeCompare(STATES[b] || b));
+  return names.map(s => { const l = list.filter(m => m.state === s).sort((a, b) => (a.chamber === b.chamber ? sortH(a, b) : a.chamber === "senate" ? -1 : 1));
+    return `<details class="st"${s === open ? " open" : ""}><summary>${esc(STATES[s] || s)}<span class="cnt">${l.length} tracked</span></summary><div class="rows">${l.map(row).join("")}</div></details>`; }).join("");
+};
 const sortH = (a, b) => (parseInt(a.seat.split("-")[1]) || 0) - (parseInt(b.seat.split("-")[1]) || 0);
 
 async function run() {
-  const q = $("q").value.trim(), st = $("st").value; let html = "", msg = "";
+  const q = $("q").value.trim(), st = $("st").value; let html = "", msg = "", recent = false;
   if (/^\d{5}$/.test(q)) {
     ZIPS = ZIPS || await fetch("data/zips.json").then(r => r.json());
     const seats = ZIPS[q];
@@ -101,9 +135,18 @@ async function run() {
   } else {
     const t = DIR.members.filter(m => m.path);
     msg = `${t.length} members have a tracker so far.`;
-    html = group("Tracked so far", t) + `<p class="muted" style="margin:0">Can't find your rep? <a href="backlog.html">Check the Backlog →</a></p>`;
+    const first = t.find(m => m.state === "CA") ? "CA" : t[0].state;
+    html = `<div class="tools"><button type="button" id="ex">Expand all</button><button type="button" id="co">Collapse all</button><a class="btn-ghost" href="backlog.html">Can't find your rep? Check the Backlog →</a></div><div>${byState(t, first)}</div><p class="muted" style="margin:0">Can't find your rep? <a href="backlog.html">Check the Backlog →</a></p>`;
+    recent = true;
   }
   $("msg").textContent = msg; $("out").innerHTML = html;
+  const rb = $("recent"); rb.hidden = !recent; $("findh").hidden = !recent;
+  if (recent) {
+    const r = Object.keys(TRACK).slice(-RECENT).reverse().map(p => DIR.members.find(m => m.path === p)).filter(Boolean);   // newest last in members.json
+    rb.innerHTML = `<h2 class="sec">Recently added</h2><div class="results">${r.map(card).join("")}</div>`;
+    $("ex").onclick = () => document.querySelectorAll("details.st").forEach(d => d.open = true);
+    $("co").onclick = () => document.querySelectorAll("details.st").forEach(d => d.open = false);
+  }
 }
 
 Promise.all([fetch("data/directory.json").then(r => r.json()), fetch("data/leaders.json").then(r => r.json())]).then(([d, l]) => {
