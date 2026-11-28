@@ -6,7 +6,14 @@
       "name": "Cost of living and energy",
       "intro": "His statements on gas, heating and utility costs, many tied to the Iran war.",
       "statementRx": "gas prices|heating|energy prices|utility|cost of living|tariff",
-      "statementPicks": [],
+      "statementPicks": [
+        {
+          "d": "2026-05-04",
+          "t": "Schumer said gas prices were at new highs for families and blamed Trump and congressional Republicans.",
+          "u": "https://www.schumer.senate.gov/newsroom/press-releases/as-gas-prices-surge-in-rochester-finger-lakes-schumer-demands-an-end-to-trumps-reckless-iran-war-announces-he-will-force-weekly-votes-to-end-war-and-calls-on-ny-house-republicans-to-stand-up-for-families-paying-the-price-for-trumps-war",
+          "q": "Gas prices just reached new highs and families are seeing no relief in sight, but Trump and Congressional Republicans don’t seem to care about the pain American families are feeling at the pump,”"
+        }
+      ],
       "rolls": [],
       "items": []
     },
@@ -15,7 +22,14 @@
       "name": "Health care",
       "intro": "His statements on health care costs and coverage.",
       "statementRx": "health care|medicaid|premium",
-      "statementPicks": [],
+      "statementPicks": [
+        {
+          "d": "2025-11-01",
+          "t": "Schumer said that without action to extend the ACA tax credits, 4 million people are estimated to become uninsured.",
+          "u": "https://www.schumer.senate.gov/newsroom/press-releases/schumer-with-open-enrollment-for-health-insurance-starting-today-new-yorkers-in-every-region-face-skyrocketing-premiums-because-trump-and-republicans-refuse-to-extend-aca-tax-credits-and-address-the-healthcare-crisis-they-created",
+          "q": "In addition, if Republicans in Congress take no action to extend the ACA tax credits, 4 million people are estimated to become uninsured."
+        }
+      ],
       "rolls": [],
       "items": []
     },
@@ -39,7 +53,14 @@
       "name": "Semiconductors and upstate investment",
       "intro": "His statements on CHIPS grants and science jobs in upstate New York.",
       "statementRx": "CHIPS|semiconductor|nanotech|Albany|Corning|GlobalFoundries",
-      "statementPicks": [],
+      "statementPicks": [
+        {
+          "d": "2026-11-13",
+          "t": "Schumer tied a Capital Region manufacturing expansion to his CHIPS and Science Law.",
+          "u": "https://www.schumer.senate.gov/newsroom/press-releases/schumer-celebrates-historic-moment-for-capital-region-as-globalfoundries-breaks-ground-on-transformational-10-billion-investment-senator-delivered-billions-from-his-chips-and-science-law-to-make-second-chip-fab-in-malta-possible",
+          "q": "Thanks to billions from Schumer’s CHIPS & Science Law, this expansion will create thousands of good-paying manufacturing and union construction jobs in the Capital Region."
+        }
+      ],
       "rolls": [],
       "items": []
     },
@@ -48,7 +69,14 @@
       "name": "Iran war and war powers",
       "intro": "Votes on war powers resolutions, and his statements on the Iran war.",
       "statementRx": "Iran war|war powers|Iran",
-      "statementPicks": [],
+      "statementPicks": [
+        {
+          "d": "2026-07-29",
+          "t": "Schumer said New Yorkers are bearing the cost of the Iran war and other policies.",
+          "u": "https://www.schumer.senate.gov/newsroom/press-releases/schumer-reveals-trumps-iran-war-has-already-cost-lower-hudson-valley-families-122-million-more-at-the-pumpan-extra-504-per-household-on-gas-alone",
+          "q": "New Yorkers are bearing the cost of failed policies, including tariffs, cuts to vital programs like SNAP and Medicaid, and a reckless war in Iran that has driven up food and fuel prices, putting even greater strain on the budgets of Upstate New York families."
+        }
+      ],
       "rolls": [],
       "items": [
         {
