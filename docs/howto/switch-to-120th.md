@@ -31,16 +31,25 @@ It reads the Census ZIP file `tab20_cd12020_zcta520_natl.txt` (column `GEOID_CD1
 
 Only needed if the `rel2020/cd-sld/` folder still has no 120th file in late December.
 
-**Constraints found 2026-11-28.** `tigerweb.geo.census.gov` (the boundary service `fetch_geo.py` uses) is blocked in the cloud environment, so this runs on Marilyn's Mac, or after that host is allowed. Scripts are stdlib-only Python, so there is no `shapely` for polygon overlap.
+**The script exists:** `scripts/build_zips_from_tiger.py` (stdlib only; needs `tigerweb.geo.census.gov`, allowed in the cloud environment since 2026-11-28; throttled two seconds per request; raw tiles cached in git-ignored `data/geo/raw/zips/`).
 
-**Plan.**
-1. **Reuse every state that did not redistrict.** A state whose district lines are the same in the 119th and 120th keeps its rows in `data/zips.json`. Decide which states changed by comparing each state's 119th and 120th district shapes (TIGERweb layers 4 and 54, the ones the tracker maps already use), or from the official list of new maps; do not guess the list.
-2. **Recompute only the changed states.** For each changed state, ask TIGERweb for the ZIP code areas (ZCTAs) that intersect each 120th district, two seconds between requests, one at a time, stopping at the first 403 or 429 (repo rule).
-3. **Drop border-touching false positives.** An intersect query also returns ZIP areas that only touch a district edge. Keep a ZIP in a district only when a grid of sample points inside the ZIP area (pure-Python point-in-polygon) falls in that district; ZIPs that split between districts keep every district they touch, as the Census file does today.
-4. **Write the result** in the same shape as `data/zips.json` and a note in `data/directory.json` `sources` saying these rows are computed from TIGERweb, not the Census relationship file.
-5. **Check** against the 119th: running the same script on the 119th layer for one unchanged state must reproduce the committed `zips.json` rows for it. If it does not, do not publish the computed rows.
+```bash
+python3 -I scripts/build_zips_from_tiger.py --changed --congress 120          # dry run: lists changed states and how many ZIP rows differ
+python3 -I scripts/build_zips_from_tiger.py --changed --congress 120 --write  # replaces those rows in data/zips.json
+python3 -I scripts/build_zips_from_tiger.py --validate UT --congress 119      # accuracy check against the committed 119th rows
+```
 
-**Effort.** About a day to write and verify, then roughly an hour of throttled requests for a few changed states. The Census file, if it appears, replaces all of this with one command.
+**What it does.**
+1. Finds states whose districts changed by comparing each district's land area in the 119th and 120th TIGERweb layers. On 2026-11-28 that flagged AL, CA, FL, IL, LA, MO, NC, OH, SC, TN, TX and UT. Some may be tiny boundary corrections rather than new maps; recomputing them is harmless.
+2. Keeps every ZIP row for the other states.
+3. For each changed state, downloads district shapes and ZIP areas, samples a grid of points inside each ZIP area, and lists a district when at least 0.2% of the points fall in it (and always the district with the most).
+4. A ZIP that also touches an unchanged state keeps that state's seats.
+
+**How accurate.** Checked against the committed 119th rows for Utah: 300 of 304 ZIPs match (98.7%). The four misses each omit a thin sliver district that the Census file lists. The method never invented a district in that test. Treat the result as a stand-in: the page already says a ZIP can cross district lines, and the Census file replaces it as soon as it exists. Only Utah has been validated; run `--validate` on one more changed state before publishing, and do not publish computed rows if agreement is clearly worse.
+
+Record in `data/directory.json` `sources.zips` that the changed states' rows are computed from TIGERweb, not the Census relationship file.
+
+**Effort.** Script done. A full `--changed` run is a few hours of throttled requests (Texas and California are the big ones); run it on Marilyn's Mac or in the cloud, one state at a time.
 
 ## What cannot be prepared before January 3
 
