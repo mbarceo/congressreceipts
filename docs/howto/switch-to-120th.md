@@ -19,7 +19,23 @@ Members who lost or retired are still the legal representatives until January 3,
 
 ## Is one `--congress 120` rebuild enough?
 
-Not yet. There is no `--congress` option: the Congress number and the Census file name are constants in `scripts/build_directory.py` and `scripts/fetch_geo.py`. The switch PR should (1) add a `--congress` option (default 119), (2) point the ZIP source at the 120th file, (3) rebuild, (4) remove the banner. Then update tracker configs one at a time. Roll-call XML for the 120th goes in `data/rollcalls/<chamber>/120/` as usual.
+For the directory and ZIP lookup, nearly. `build_directory.py` now takes `--congress N` (default 119) and `--zcta-url`:
+
+```bash
+python3 -I scripts/build_directory.py --congress 120
+```
+
+It reads the Census ZIP file `tab20_cd12020_zcta520_natl.txt` (column `GEOID_CD120_20`), the Clerk's `MemberData.xml`, and the newest Senate roll call in `data/rollcalls/senate/120/`. The file name follows the 119th pattern and is **not yet confirmed to exist**; pass `--zcta-url` if Census names it differently. The cloud environment cannot reach `www2.census.gov` (network policy), so that download runs on Marilyn's Mac or after the host is allowed.
+
+## What cannot be prepared before January 3
+
+- The Clerk's member list and first 2027 Senate roll call do not exist until the new members are sworn in, so the final directory cannot be built early.
+- The six House members who won Senate seats switch chamber, seat and `voteId` only when sworn in.
+- Each tracker's `district`, `chamber` and `voteId` changes go in per-member PRs after that.
+
+## Roll-out
+
+Merging to `main` publishes, so the roll-out is the merge of one small PR: directory rebuild, hub rebuild, banner removed. Prepare the branch with the steps above on January 3 (or just before, if the Clerk list is already live), then Marilyn merges.
 
 ## Mismatch we already have on purpose
 
