@@ -19,7 +19,47 @@ Members who lost or retired are still the legal representatives until January 3,
 
 ## Is one `--congress 120` rebuild enough?
 
-Not yet. There is no `--congress` option: the Congress number and the Census file name are constants in `scripts/build_directory.py` and `scripts/fetch_geo.py`. The switch PR should (1) add a `--congress` option (default 119), (2) point the ZIP source at the 120th file, (3) rebuild, (4) remove the banner. Then update tracker configs one at a time. Roll-call XML for the 120th goes in `data/rollcalls/<chamber>/120/` as usual.
+For the directory and ZIP lookup, nearly. `build_directory.py` now takes `--congress N` (default 119) and `--zcta-url`:
+
+```bash
+python3 -I scripts/build_directory.py --congress 120
+```
+
+It reads the Census ZIP file `tab20_cd12020_zcta520_natl.txt` (column `GEOID_CD120_20`), the Clerk's `MemberData.xml`, and the newest Senate roll call in `data/rollcalls/senate/120/`. **Checked 2026-11-28: Census has not published this file.** The `rel2020/cd-sld/` folder lists only 118th and 119th ZIP files, and the guessed 120th URL returns 404. Re-check the folder before the switch and pass `--zcta-url` if the file appears under a different name. If it never appears, the fallback is to compute ZIP-to-district from the 120th boundaries that `fetch_geo.py` already pulls from TIGERweb (the layer trackers use for new-district maps); that would be a new script.
+
+## Fallback if Census never publishes a 120th ZIP file
+
+Only needed if the `rel2020/cd-sld/` folder still has no 120th file in late December.
+
+**The script exists:** `scripts/build_zips_from_tiger.py` (stdlib only; needs `tigerweb.geo.census.gov`, allowed in the cloud environment since 2026-11-28; throttled two seconds per request; raw tiles cached in git-ignored `data/geo/raw/zips/`).
+
+```bash
+python3 -I scripts/build_zips_from_tiger.py --changed --congress 120          # dry run: lists changed states and how many ZIP rows differ
+python3 -I scripts/build_zips_from_tiger.py --changed --congress 120 --write  # replaces those rows in data/zips.json
+python3 -I scripts/build_zips_from_tiger.py --validate UT --congress 119      # accuracy check against the committed 119th rows
+```
+
+**What it does.**
+1. Finds states whose districts changed by comparing each district's land area in the 119th and 120th TIGERweb layers. On 2026-11-28 that flagged AL, CA, FL, IL, LA, MO, NC, OH, SC, TN, TX and UT. Some may be tiny boundary corrections rather than new maps; recomputing them is harmless.
+2. Keeps every ZIP row for the other states.
+3. For each changed state, downloads district shapes and ZIP areas, samples a grid of points inside each ZIP area, and lists a district when at least 0.2% of the points fall in it (and always the district with the most).
+4. A ZIP that also touches an unchanged state keeps that state's seats.
+
+**How accurate.** Checked against the committed 119th rows for Utah: 300 of 304 ZIPs match (98.7%). The four misses each omit a thin sliver district that the Census file lists. The method never invented a district in that test. Treat the result as a stand-in: the page already says a ZIP can cross district lines, and the Census file replaces it as soon as it exists. Only Utah has been validated; run `--validate` on one more changed state before publishing, and do not publish computed rows if agreement is clearly worse.
+
+Record in `data/directory.json` `sources.zips` that the changed states' rows are computed from TIGERweb, not the Census relationship file.
+
+**Effort.** Script done. A full `--changed` run is a few hours of throttled requests (Texas and California are the big ones); run it on Marilyn's Mac or in the cloud, one state at a time.
+
+## What cannot be prepared before January 3
+
+- The Clerk's member list and first 2027 Senate roll call do not exist until the new members are sworn in, so the final directory cannot be built early.
+- The six House members who won Senate seats switch chamber, seat and `voteId` only when sworn in.
+- Each tracker's `district`, `chamber` and `voteId` changes go in per-member PRs after that.
+
+## Roll-out
+
+Merging to `main` publishes, so the roll-out is the merge of one small PR: directory rebuild, hub rebuild, banner removed. Prepare the branch with the steps above on January 3 (or just before, if the Clerk list is already live), then Marilyn merges.
 
 ## Mismatch we already have on purpose
 

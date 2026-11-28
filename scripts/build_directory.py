@@ -8,7 +8,11 @@ Sources (official, downloaded into data/directory_raw/, which stays out of git):
   ZIPs:   Census Bureau ZCTA-to-119th-district relationship file. A ZIP code area that crosses a district line maps
           to every district it touches, and the page says so.
 Tracked members are matched through members.json (House by bioguide, Senate by LIS id).
-Usage: python3 -I scripts/build_directory.py [--reuse-zips]
+Usage: python3 -I scripts/build_directory.py [--congress N] [--zcta-url URL] [--reuse-zips]
+  --congress N  which Congress the directory describes (default 119). 120 reads the ZIP file tab20_cd12020_zcta520_natl.txt
+                (column GEOID_CD120_20) and the newest Senate XML under data/rollcalls/senate/120. Use it on or after
+                Jan 3, 2027, once the Clerk's MemberData.xml lists the 120th House and a 2027 Senate roll call exists.
+  --zcta-url U  override the Census ZIP file URL if the file name differs from the pattern above
   --reuse-zips  keep the committed data/zips.json and skip the Census download (the ZIP-to-district file does not change
                 when a member's tracker is added; only a redistricting or special election needs the full rebuild)
 """
@@ -17,9 +21,14 @@ import xml.etree.ElementTree as ET
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW = os.path.join(REPO, "data/directory_raw"); os.makedirs(RAW, exist_ok=True)
-REUSE = "--reuse-zips" in sys.argv[1:] and os.path.exists(os.path.join(REPO, "data/zips.json"))
-SRC = {"house.xml": "https://clerk.house.gov/xml/lists/MemberData.xml",
-       "zcta_cd119.txt": "https://www2.census.gov/geo/docs/maps-data/data/rel2020/cd-sld/tab20_cd11920_zcta520_natl.txt"}
+ARGS = sys.argv[1:]
+def opt(name, default):
+    return ARGS[ARGS.index(name) + 1] if name in ARGS and ARGS.index(name) + 1 < len(ARGS) else default
+CONGRESS = int(opt("--congress", "119"))
+ZNAME = f"zcta_cd{CONGRESS}.txt"
+ZURL = opt("--zcta-url", f"https://www2.census.gov/geo/docs/maps-data/data/rel2020/cd-sld/tab20_cd{CONGRESS}20_zcta520_natl.txt")
+REUSE = "--reuse-zips" in ARGS and os.path.exists(os.path.join(REPO, "data/zips.json"))
+SRC = {"house.xml": "https://clerk.house.gov/xml/lists/MemberData.xml", ZNAME: ZURL}
 FIPS = {"01": "AL", "02": "AK", "04": "AZ", "05": "AR", "06": "CA", "08": "CO", "09": "CT", "10": "DE", "11": "DC", "12": "FL", "13": "GA",
         "15": "HI", "16": "ID", "17": "IL", "18": "IN", "19": "IA", "20": "KS", "21": "KY", "22": "LA", "23": "ME", "24": "MD", "25": "MA",
         "26": "MI", "27": "MN", "28": "MS", "29": "MO", "30": "MT", "31": "NE", "32": "NV", "33": "NH", "34": "NJ", "35": "NM", "36": "NY",
@@ -27,7 +36,7 @@ FIPS = {"01": "AL", "02": "AK", "04": "AZ", "05": "AR", "06": "CA", "08": "CO", 
         "49": "UT", "50": "VT", "51": "VA", "53": "WA", "54": "WV", "55": "WI", "56": "WY", "60": "AS", "66": "GU", "69": "MP", "72": "PR", "78": "VI"}
 
 for f, u in SRC.items():
-    if REUSE and f == "zcta_cd119.txt": continue
+    if REUSE and f == ZNAME: continue
     p = os.path.join(RAW, f)
     if not os.path.exists(p) or os.path.getsize(p) < 10000:
         subprocess.run(["curl", "-s", "-L", "-A", "Mozilla/5.0", "--max-time", "120", "-o", p, u], check=True)
@@ -49,8 +58,8 @@ for m in ET.parse(os.path.join(RAW, "house.xml")).getroot().iter("member"):
                     **({"nonVoting": True, "role": NONVOTING[st]} if st in NONVOTING else {})})
 
 # Senate: the newest roll-call file lists all 100 senators
-sen = sorted(glob.glob(os.path.join(REPO, "data/rollcalls/senate/*/senate-*.xml")), key=os.path.basename)
-if not sen: raise SystemExit("No Senate roll-call XML under data/rollcalls/senate; run fetch_votes_senate first.")
+sen = sorted(glob.glob(os.path.join(REPO, "data/rollcalls/senate", str(CONGRESS), "senate-*.xml")), key=os.path.basename)
+if not sen: raise SystemExit("No Senate roll-call XML under data/rollcalls/senate/" + str(CONGRESS) + "; run fetch_votes_senate first.")
 for m in ET.parse(sen[-1]).getroot().iter("member"):
     lis = m.findtext("lis_member_id")
     members.append({"name": f"{m.findtext('first_name')} {m.findtext('last_name')}", "party": m.findtext("party"), "state": m.findtext("state"),
@@ -61,8 +70,8 @@ zips = {}
 if REUSE:
     zips = json.load(open(os.path.join(REPO, "data/zips.json")))
 else:
-    with open(os.path.join(RAW, "zcta_cd119.txt"), encoding="utf-8-sig") as f:
-      head = f.readline().strip().split("|"); gi, zi = head.index("GEOID_CD119_20"), head.index("GEOID_ZCTA5_20")
+    with open(os.path.join(RAW, ZNAME), encoding="utf-8-sig") as f:
+      head = f.readline().strip().split("|"); gi, zi = head.index(f"GEOID_CD{CONGRESS}_20"), head.index("GEOID_ZCTA5_20")
       for line in f:
           c = line.rstrip("\n").split("|")
           z, g = c[zi], c[gi]
@@ -74,7 +83,7 @@ else:
 missing = [p for p in tracked.values() if p not in {m["path"] for m in members}]
 if missing: raise SystemExit(f"Tracked members not found in the official lists: {missing}")
 json.dump({"members": members, "built": datetime.date.today().isoformat(),
-           "sources": {"house": SRC["house.xml"], "senate": "senate.gov roll-call XML (" + os.path.basename(sen[-1]) + ")", "zips": SRC["zcta_cd119.txt"]}},
+           "sources": {"house": SRC["house.xml"], "senate": "senate.gov roll-call XML (" + os.path.basename(sen[-1]) + ")", "zips": ZURL}, "congress": CONGRESS},
           open(os.path.join(REPO, "data/directory.json"), "w"), separators=(",", ":"))
 json.dump(zips, open(os.path.join(REPO, "data/zips.json"), "w"), separators=(",", ":"))
 h, s = sum(m["chamber"] == "house" for m in members), sum(m["chamber"] == "senate" for m in members)
